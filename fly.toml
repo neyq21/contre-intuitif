@@ -1,6 +1,5 @@
 # Configuration Fly.io. L'application est construite avec le Dockerfile ;
 # la base SQLite vit sur le volume « donnees » monté dans /data.
-app = "contre-intuitif"
 primary_region = "cdg"
 
 [build]
@@ -23,9 +22,6 @@ primary_region = "cdg"
   source = "donnees"
   destination = "/data"
   initial_size = "1gb"
-  auto_extend_size_threshold = 80
-  auto_extend_size_increment = "1GB"
-  auto_extend_size_limit = "10GB"
 
 [[vm]]
   size = "shared-cpu-1x"
