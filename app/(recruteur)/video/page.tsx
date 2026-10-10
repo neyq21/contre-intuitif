@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { videoDisponible } from "@/lib/contenu/charger";
+import { urlVideo, videoDisponible } from "@/lib/contenu/charger";
 import { lireReglage, ouvrirBase } from "@/lib/stockage/sqlite";
 
 export const dynamic = "force-dynamic";
@@ -12,7 +12,7 @@ export default function PageVideo() {
     <div className="space-y-6 max-w-[52rem]">
       <h1 className="text-4xl">Le kit en 2 min 35</h1>
       {presente ? (
-        <video controls preload="metadata" className="w-full rounded-m bg-nuit" src="/Presentation-kit-5-portes.mp4">
+        <video controls preload="metadata" className="w-full rounded-m bg-nuit" src={urlVideo()}>
           Votre navigateur ne lit pas cette vidéo : ouvrez le fichier Presentation-kit-5-portes.mp4 directement.
         </video>
       ) : (

@@ -46,7 +46,21 @@ export function chargerTexte(nom: "LICENCE.txt" | "LISEZ-MOI.txt"): string {
   return readFileSync(chemin, "utf8");
 }
 
-/** La vidéo n'est servie que si le fichier est réellement présent dans `public/`. */
+/**
+ * Chemin de la vidéo : `public/Presentation-kit-5-portes.mp4` (servie en statique), ou le
+ * dossier `DOSSIER_VIDEO` (volume persistant en hébergement, servie par /api/video).
+ */
+export function cheminVideo(): string {
+  const dossier = process.env.DOSSIER_VIDEO;
+  return dossier ? join(dossier, "Presentation-kit-5-portes.mp4") : join(process.cwd(), "public", "Presentation-kit-5-portes.mp4");
+}
+
+/** Adresse à mettre dans la balise <video>. */
+export function urlVideo(): string {
+  return process.env.DOSSIER_VIDEO ? "/api/video" : "/Presentation-kit-5-portes.mp4";
+}
+
+/** La vidéo n'est servie que si le fichier est réellement présent. */
 export function videoDisponible(): boolean {
-  return existsSync(/*turbopackIgnore: true*/ join(process.cwd(), "public", "Presentation-kit-5-portes.mp4"));
+  return existsSync(/*turbopackIgnore: true*/ cheminVideo());
 }

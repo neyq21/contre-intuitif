@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { mkdir, writeFile } from "node:fs/promises";
+import { dirname } from "node:path";
+import { cheminVideo } from "@/lib/contenu/charger";
 import { sessionCourante } from "@/lib/admin/session";
 import { journaliser, ouvrirBase } from "@/lib/stockage/sqlite";
 
@@ -17,7 +18,9 @@ export async function POST(request: Request) {
   if (!octets.length || octets.length > TAILLE_MAX) return NextResponse.json({ erreur: "Fichier vide ou trop gros (300 Mo max)" }, { status: 400 });
   // Signature MP4 : « ftyp » aux octets 4 à 8.
   if (String.fromCharCode(...octets.slice(4, 8)) !== "ftyp") return NextResponse.json({ erreur: "Ce fichier n'est pas un MP4" }, { status: 400 });
-  await writeFile(join(process.cwd(), "public", "Presentation-kit-5-portes.mp4"), octets);
+  const chemin = cheminVideo();
+  await mkdir(dirname(chemin), { recursive: true });
+  await writeFile(chemin, octets);
   journaliser(ouvrirBase(), admin.email, "video_deposee", "Presentation-kit-5-portes.mp4", `${Math.round(octets.length / 1024 / 1024)} Mo`);
   return NextResponse.json({ ok: true });
 }

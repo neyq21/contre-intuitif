@@ -62,3 +62,20 @@ contenu/           JSON du kit (source du seed), LICENCE, LISEZ-MOI
 ```
 
 Les écarts avec `LISEZ-MOI.txt` sont dans `ECARTS.md`.
+
+## Mettre en ligne (Fly.io)
+
+Le dépôt contient `Dockerfile` et `fly.toml` : la base SQLite et la vidéo vivent sur le volume `donnees` (monté dans `/data`), donc survivent aux redéploiements.
+
+Depuis « Launch from GitHub » sur fly.io : choisir le dépôt, la branche, la région `cdg`, port interne `3000`, machine `shared-cpu-1x` / 1 Go, **pas** de PostgreSQL, et ajouter les variables :
+
+| Clé | Valeur |
+|---|---|
+| `URL_PUBLIQUE` | `https://<nom-de-l-app>.fly.dev` (ou votre domaine) |
+| `EMAIL_ADMIN` | votre e-mail admin |
+| `MOT_DE_PASSE_INITIAL` | un mot de passe long (à changer ensuite dans Admin → Compte) |
+| `EMAIL_DEMANDES_METIER` | e-mail qui reçoit les demandes |
+| `NOM_JURIDIQUE` | nom sur la licence |
+| `SITE_CONTACT` | adresse de la page contact |
+
+Puis « Déployer ». Pour un domaine personnalisé : `fly certs add kit.votre-domaine.fr` et un enregistrement DNS CNAME vers `<nom-de-l-app>.fly.dev`.

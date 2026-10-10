@@ -1,0 +1,9 @@
+node_modules
+.next
+data
+captures-e2e
+docs
+scripts
+tests
+.git
+*.md
