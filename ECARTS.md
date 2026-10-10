@@ -16,3 +16,9 @@ Ce fichier ne liste que les vrais écarts. Il est mis à jour à chaque phase.
 - **« Autre tirage » sans banque.** Les 25 métiers sans banque gardent les questions du kit ; le bouton est inactif et l'écran le dit.
 - **Mode « Essayer comme un candidat ».** Pour les portes 2 et 5, c'est la personne qui s'auto-évalue avec les réponses prévues (juste / partielle / à éviter), puisqu'aucun évaluateur n'existe en mode essai.
 - **Exemple fictif.** Recréé par l'application (métier Serveur, trois personnes, deux évaluateurs), étiqueté FICTIF partout, supprimable comme un recrutement normal.
+
+## Phase 2
+
+- **Lien d'annonce.** Le lien ouvert à tous ne préremplit aucun prénom : la personne indique elle-même un prénom ou un code au début de l'épreuve, et ses réponses reviennent avec ce nom. Le déroulé n'est jamais proposé avec ce lien (règle du kit).
+- **E-mail de retour.** Le kit v5 parle d'un envoi « en un clic » des réponses. Ici, l'écran de fin propose « Copier le code », le fichier, et un bouton « Envoyer par e-mail » (mailto) seulement si le recruteur a renseigné son e-mail de retour dans « Données et réglages ». Aucun envoi ne passe par le serveur.
+- **Aucun écart fonctionnel** par rapport au LISEZ-MOI sur : fichier d'épreuve sans corrigé, lien chiffré (clé dans le fragment, blob opaque 90 jours), import par code ou fichier, questions du recruteur avec détecteur, « Décrire mon besoin » (3 exemples du kit testés), profil de travail, déroulé (refusable, jamais si besoin signalé, jamais dans la note), archive sans déroulé ni besoins, impression. Vérifié par `scripts/verification-distance.mjs`.

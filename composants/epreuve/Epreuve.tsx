@@ -46,6 +46,8 @@ export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "T
   const [besoins, setBesoins] = useState<{ liste: string[]; autre: string }>(() => initial?.besoins ?? lireBrouillon(paquet)?.besoins ?? { liste: [], autre: "" });
   const [derouleAccepte, setDerouleAccepte] = useState<boolean>(initial?.deroule ? true : false);
   const [porteRegardee, setPorteRegardee] = useState<PorteId | null>(null);
+  // Lien ouvert à tous (annonce) : la personne indique elle-même un prénom ou un code.
+  const [nomLibre, setNomLibre] = useState("");
   const deroule = useRef<EvenementDeroule[]>(initial?.deroule ?? []);
   const haut = useRef<HTMLDivElement>(null);
 
@@ -88,7 +90,7 @@ export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "T
       schema: "ci5p-reponses/2",
       recrutement_id: paquet.recrutement_id,
       epreuve_empreinte: paquet.empreinte,
-      candidat: { id: paquet.candidat?.id ?? null, nom: paquet.candidat?.nom ?? null },
+      candidat: { id: paquet.candidat?.id ?? null, nom: paquet.candidat?.nom ?? (nomLibre.trim() || null) },
       rendu_le: new Date().toISOString(),
       competences,
       profil_travail: paquet.profil_travail && Object.keys(profil).length ? profil : null,
@@ -175,6 +177,14 @@ export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "T
             })}
           </ul>
 
+          {!paquet.candidat ? (
+            <label className="block carte">
+              <span className="etiquette">Votre prénom, ou le code que l&apos;on vous a donné</span>
+              <input className="champ" value={nomLibre} onChange={(e) => setNomLibre(e.target.value)} autoComplete="given-name" />
+              <span className="aide block mt-1">Pour que la personne qui recrute retrouve vos réponses. Rien d&apos;autre n&apos;est demandé.</span>
+            </label>
+          ) : null}
+
           <fieldset className="carte space-y-3">
             <legend className="font-ui font-semibold px-1">De quoi avez-vous besoin pour que l&apos;épreuve se passe bien ? (facultatif)</legend>
             <p className="aide">Vous n&apos;avez pas à vous justifier ni à parler de votre santé.</p>
@@ -218,7 +228,7 @@ export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "T
             </p>
           ) : null}
 
-          <button type="button" className="bouton bouton-principal w-full tel:w-auto" onClick={() => aller({ type: "competence", index: 0 }, "avant")}>
+          <button type="button" className="bouton bouton-principal w-full tel:w-auto" disabled={!paquet.candidat && !nomLibre.trim()} onClick={() => aller({ type: "competence", index: 0 }, "avant")}>
             Commencer
           </button>
         </section>

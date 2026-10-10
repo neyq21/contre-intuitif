@@ -8,6 +8,7 @@ import { decoderCode, importerReponses, lireJson } from "@/lib/fichiers/formats"
 import { figer, nouveauCandidat, rattacherReponses, remplacerRecrutement } from "@/lib/stockage/recrutements";
 import type { Candidat } from "@/lib/stockage/modele";
 import { useRecrutement } from "./useRecrutement";
+import { LienAnnonce } from "./LienAnnonce";
 
 const DECISIONS = { retenu: "Retenu", non_retenu: "Non retenu", vivier: "Vivier", en_attente: "En attente" } as const;
 
@@ -208,6 +209,8 @@ export function Candidats({ id }: { id: string }) {
           <input type="file" accept="application/json,.json" className="champ" onChange={(e) => importerFichier(e.target.files?.[0])} />
         </label>
       </section>
+
+      <LienAnnonce r={r} base={base} pack={pack} />
 
       <p className="aide">
         Lien privé du recrutement (cet ordinateur seulement) :{" "}

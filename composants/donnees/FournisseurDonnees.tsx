@@ -84,16 +84,15 @@ export function FournisseurDonnees({ children }: { children: ReactNode }) {
   }, [rafraichirCatalogue]);
 
   const modifier = useCallback(async (fn: (etat: Etat) => Etat | void) => {
-    const tache = file.current.then(async () => {
-      const courant = etatRef.current ?? (await lireEtat());
-      const copie: Etat = structuredClone(courant);
-      const resultat = fn(copie);
-      const suivant = resultat ?? copie;
-      suivant.modifie_le = new Date().toISOString();
-      etatRef.current = suivant;
-      setEtat(suivant);
-      await ecrireEtat(suivant);
-    });
+    // L'état React change tout de suite (interface réactive) ; l'écriture IndexedDB est mise en file.
+    const courant = etatRef.current ?? (await lireEtat());
+    const copie: Etat = structuredClone(courant);
+    const resultat = fn(copie);
+    const suivant = resultat ?? copie;
+    suivant.modifie_le = new Date().toISOString();
+    etatRef.current = suivant;
+    setEtat(suivant);
+    const tache = file.current.then(() => ecrireEtat(suivant));
     file.current = tache.catch(() => undefined);
     return tache;
   }, []);
