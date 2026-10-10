@@ -1,6 +1,6 @@
 # Configuration Fly.io. L'application est construite avec le Dockerfile ;
-# la base SQLite vit sur le volume « donnees » monté dans /data.
-app = "contre-intuitif"
+# la base SQLite et la vidéo vivent sur le volume « data » monté dans /data.
+# Le nom de l'application est celui choisi sur Fly (option -a) : il n'est pas fixé ici.
 primary_region = "cdg"
 
 [build]
@@ -20,7 +20,7 @@ primary_region = "cdg"
   min_machines_running = 0
 
 [[mounts]]
-  source = "donnees"
+  source = "data"
   destination = "/data"
   initial_size = "1gb"
   auto_extend_size_threshold = 80

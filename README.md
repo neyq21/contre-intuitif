@@ -65,7 +65,7 @@ Les écarts avec `LISEZ-MOI.txt` sont dans `ECARTS.md`.
 
 ## Mettre en ligne (Fly.io)
 
-Le dépôt contient `Dockerfile` et `fly.toml` : la base SQLite et la vidéo vivent sur le volume `donnees` (monté dans `/data`), donc survivent aux redéploiements.
+Le dépôt contient `Dockerfile` et `fly.toml` : la base SQLite et la vidéo vivent sur le volume `data` (monté dans `/data`), donc survivent aux redéploiements.
 
 Depuis « Launch from GitHub » sur fly.io : choisir le dépôt, la branche, la région `cdg`, port interne `3000`, machine `shared-cpu-1x` / 1 Go, **pas** de PostgreSQL, et ajouter les variables :
 
