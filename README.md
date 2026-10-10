@@ -78,4 +78,23 @@ Depuis « Launch from GitHub » sur fly.io : choisir le dépôt, la branche, la 
 | `NOM_JURIDIQUE` | nom sur la licence |
 | `SITE_CONTACT` | adresse de la page contact |
 
-Puis « Déployer ». Pour un domaine personnalisé : `fly certs add kit.votre-domaine.fr` et un enregistrement DNS CNAME vers `<nom-de-l-app>.fly.dev`.
+Puis « Déployer ».
+
+### Depuis votre ordinateur (plus fiable : l'erreur complète s'affiche)
+
+Dans PowerShell, dans le dossier du projet :
+
+```powershell
+iwr https://fly.io/install.ps1 -useb | iex     # installe flyctl (une fois), puis rouvrir PowerShell
+fly auth login
+fly apps list                                  # repérer le nom exact de l'app (ex. contre-intuitive)
+fly volumes list -a NOM_APP                    # s'il n'y a pas de volume « data » en cdg :
+fly volumes create data -a NOM_APP --region cdg --size 1 --yes
+fly secrets set -a NOM_APP MOT_DE_PASSE_INITIAL="un-mot-de-passe-long" EMAIL_ADMIN="vous@exemple.fr" EMAIL_DEMANDES_METIER="vous@exemple.fr" URL_PUBLIQUE="https://NOM_APP.fly.dev" NOM_JURIDIQUE="Contre-Intuitif" SITE_CONTACT="https://votre-site"
+fly deploy -a NOM_APP                          # construit l'image sur Fly (pas de Docker local) et déploie
+fly logs -a NOM_APP                            # journal de l'application en direct
+```
+
+`fly.toml` ne fixe pas le nom de l'app : il vient toujours de `-a`.
+
+Pour un domaine personnalisé : `fly certs add kit.votre-domaine.fr` et un enregistrement DNS CNAME vers `<nom-de-l-app>.fly.dev`.
