@@ -156,6 +156,8 @@ export interface PaquetCandidat {
   deroule: boolean;
   /** Prénom ou code prérempli pour un lien personnel. */
   candidat: { id: string; nom: string } | null;
+  /** Où renvoyer les réponses (e-mail du recruteur, s'il l'a renseigné). */
+  retour?: { email: string } | null;
   /** Textes d'accueil (portes, besoins, échelle) copiés de la base pour fonctionner hors catalogue. */
   textes: TextesEpreuve;
 }
@@ -288,6 +290,8 @@ export interface ReglagesRecruteur {
   evaluateur_courant: string | null;
   nom_recruteur: string;
   entreprise: string;
+  /** E-mail où les candidats renvoient leur code (facultatif, dans le paquet d'épreuve). */
+  email_retour?: string;
 }
 
 export interface Etat {

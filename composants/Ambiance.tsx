@@ -1,8 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 type AmbianceId = "papier" | "nuit";
+
+// Petit magasin autour de localStorage, pour lire les réglages sans décalage d'hydratation.
+const abonnes = new Set<() => void>();
+function notifier() {
+  abonnes.forEach((f) => f());
+}
+function abonner(f: () => void) {
+  abonnes.add(f);
+  window.addEventListener("storage", f);
+  return () => {
+    abonnes.delete(f);
+    window.removeEventListener("storage", f);
+  };
+}
 
 function lire(cle: string): string | null {
   try {
@@ -21,32 +35,26 @@ function ecrire(cle: string, valeur: string): void {
 
 /** Réglages d'affichage : ambiance papier / nuit, mode lisible, mots clés. Stockés sur cet appareil. */
 export function Ambiance({ compact = false }: { compact?: boolean }) {
-  const [ambiance, setAmbiance] = useState<AmbianceId>("papier");
-  const [lisible, setLisible] = useState(false);
-  const [motsCles, setMotsCles] = useState(true);
-
-  useEffect(() => {
-    setAmbiance(lire("ci5p.ambiance") === "nuit" ? "nuit" : "papier");
-    setLisible(lire("ci5p.lisible") === "1");
-    setMotsCles(lire("ci5p.mots_cles") !== "0");
-  }, []);
+  const ambiance = useSyncExternalStore<AmbianceId>(abonner, () => (lire("ci5p.ambiance") === "nuit" ? "nuit" : "papier"), () => "papier");
+  const lisible = useSyncExternalStore(abonner, () => lire("ci5p.lisible") === "1", () => false);
+  const motsCles = useSyncExternalStore(abonner, () => lire("ci5p.mots_cles") !== "0", () => true);
 
   function changerAmbiance(a: AmbianceId) {
-    setAmbiance(a);
     ecrire("ci5p.ambiance", a);
     document.documentElement.dataset.ambiance = a;
+    notifier();
   }
   function changerLisible(v: boolean) {
-    setLisible(v);
     ecrire("ci5p.lisible", v ? "1" : "0");
     if (v) document.documentElement.dataset.lisible = "1";
     else delete document.documentElement.dataset.lisible;
+    notifier();
   }
   function changerMotsCles(v: boolean) {
-    setMotsCles(v);
     ecrire("ci5p.mots_cles", v ? "1" : "0");
     if (v) delete document.documentElement.dataset.motsCles;
     else document.documentElement.dataset.motsCles = "0";
+    notifier();
   }
 
   return (

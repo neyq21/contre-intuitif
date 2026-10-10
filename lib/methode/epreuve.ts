@@ -164,7 +164,7 @@ export function paquetCandidat(
   base: Base,
   recrutementId: string,
   candidat: { id: string; nom: string } | null,
-  options: { deroule?: boolean } = {},
+  options: { deroule?: boolean; emailRetour?: string } = {},
 ): PaquetCandidat {
   return {
     schema: "ci5p-epreuve-candidat/1",
@@ -177,6 +177,7 @@ export function paquetCandidat(
     profil_travail: epreuve.profil_travail.phrases && epreuve.profil_travail.items.length ? epreuve.profil_travail : null,
     deroule: options.deroule ?? epreuve.deroule,
     candidat,
+    retour: options.emailRetour ? { email: options.emailRetour } : null,
     textes: textesEpreuve(base),
   };
 }
