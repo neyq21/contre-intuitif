@@ -68,7 +68,7 @@ export default function Accueil() {
         <h2 id="etapes" className="text-3xl">
           Trois étapes
         </h2>
-        <ol className="grid gap-4 tel:grid-cols-3">
+        <ol className="grid gap-4 lg:grid-cols-3">
           {etapes.map((e) => (
             <li key={e.n} className="carte flex flex-col gap-3">
               <span className="pilule w-fit">Étape {e.n}</span>
@@ -93,7 +93,7 @@ export default function Accueil() {
         <p className="text-texte-2 max-w-[42rem]">
           <Texte>{base.guide.methode2}</Texte>
         </p>
-        <ul className="grid gap-3 tel:grid-cols-5">
+        <ul className="grid gap-3 tel:grid-cols-2 lg:grid-cols-5">
           {portes.map((p) => (
             <li key={p.id} className="carte p-4 space-y-1">
               <span className="pilule">Porte {p.n}</span>
@@ -119,10 +119,6 @@ export default function Accueil() {
       </section>
 
       <footer className="text-sm text-texte-3 space-y-1">
-        <p>
-          Ce kit n&apos;est ni un avis juridique, ni un outil de diagnostic, ni une intelligence artificielle : les calculs suivent
-          des règles fixes, expliquées dans « Méthode et droit ».
-        </p>
         <p>
           Sources vérifiées {base.meta.sources_verifiees}. © 2026 {base.meta.marque} · {base.meta.comptes}
         </p>

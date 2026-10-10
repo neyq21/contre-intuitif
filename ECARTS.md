@@ -30,3 +30,13 @@ Ce fichier ne liste que les vrais écarts. Il est mis à jour à chaque phase.
 - **Jours fériés.** Les 72 h ouvrées comptent du lundi au vendredi ; les jours fériés français sont ignorés en v1, comme le permet le prompt.
 - **Envoi de l'e-mail au demandeur.** Pas d'envoi réel en v1 : bouton « Copier le message au demandeur » (prévu par le prompt).
 - **Mot de passe initial.** Celui des RÉGLAGES sert seulement au premier démarrage (il est haché dans la base). Changez-le depuis « Compte » après la première connexion : il figure dans le dépôt (`lib/reglages.ts`, `.env.example`) comme le prompt l'a demandé.
+
+## Phase 4
+
+- **PWA.** Manifest, icônes, service worker (`public/sw.js`) : les fichiers de l'application sont mis en cache, les pages visitées aussi ; le catalogue est déjà en cache dans IndexedDB. Jamais `/api/` ni `/admin` en cache. Vérifié hors ligne par `scripts/verification-finition.mjs`.
+- **Icônes.** Aucun logo n'a été fourni (`marque/` absent) : une icône simple « 5 » aux couleurs du kit (lime sur nuit) a été générée. À remplacer par la charte si elle existe.
+- **Rien d'autre.** Responsive 390 / 768 / 1280, mode lisible, mode nuit, page licence (texte du kit, non réécrit), mentions « ni avis juridique, ni diagnostic, ni IA » sur toutes les pages recruteur et sur la page d'épreuve.
+
+## Note (hors prompt, pas de code)
+
+L'hébergement public (`URL_PUBLIQUE` autre que localhost, HTTPS, sauvegarde du SQLite) est une phase ultérieure, hors de ce prompt. Aucun « compte recruteur dans le cloud » n'est proposé : les données des candidats restent sur l'ordinateur du recruteur.

@@ -22,6 +22,8 @@ export interface EpreuveProps {
   onTerminer: (reponses: Reponses) => void;
   /** Texte du bouton final. */
   libelleFin?: string;
+  /** Lien ouvert à tous : la personne indique un prénom ou un code avant de commencer. */
+  demanderNom?: boolean;
 }
 
 const CLE_BROUILLON = (empreinte: string, cid: string | null) => `ci5p.epreuve.${empreinte}.${cid ?? "anonyme"}`;
@@ -36,7 +38,7 @@ function lireBrouillon(paquet: PaquetCandidat): Partial<Reponses> | null {
   }
 }
 
-export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "Terminer et rendre mes réponses" }: EpreuveProps) {
+export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "Terminer et rendre mes réponses", demanderNom = false }: EpreuveProps) {
   const [ecran, setEcran] = useState<Ecran>({ type: "accueil" });
   // Reprise d'un brouillon laissé sur cet appareil (fermeture de l'onglet), sinon l'état initial.
   const [competences, setCompetences] = useState<Partial<Record<CodeCompetence, ReponsesCompetence>>>(() => initial?.competences ?? lireBrouillon(paquet)?.competences ?? {});
@@ -177,7 +179,7 @@ export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "T
             })}
           </ul>
 
-          {!paquet.candidat ? (
+          {demanderNom && !paquet.candidat ? (
             <label className="block carte">
               <span className="etiquette">Votre prénom, ou le code que l&apos;on vous a donné</span>
               <input className="champ" value={nomLibre} onChange={(e) => setNomLibre(e.target.value)} autoComplete="given-name" />
@@ -228,7 +230,7 @@ export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "T
             </p>
           ) : null}
 
-          <button type="button" className="bouton bouton-principal w-full tel:w-auto" disabled={!paquet.candidat && !nomLibre.trim()} onClick={() => aller({ type: "competence", index: 0 }, "avant")}>
+          <button type="button" className="bouton bouton-principal w-full tel:w-auto" disabled={demanderNom && !paquet.candidat && !nomLibre.trim()} onClick={() => aller({ type: "competence", index: 0 }, "avant")}>
             Commencer
           </button>
         </section>
@@ -247,7 +249,7 @@ export function Epreuve({ paquet, initial, onChange, onTerminer, libelleFin = "T
 
           <div className="space-y-3">
             <h2 className="font-ui text-lg font-semibold">{repComp?.porte ? "Votre porte" : "Choisissez votre porte"}</h2>
-            <div className="grid gap-2 tel:grid-cols-5" role="radiogroup" aria-label="Porte">
+            <div className="grid gap-2 tel:grid-cols-3 lg:grid-cols-5" role="radiogroup" aria-label="Porte">
               {portesDeComp.map((p) => {
                 const t = texteporte(p);
                 const actif = repComp?.porte === p;

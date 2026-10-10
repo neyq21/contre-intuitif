@@ -104,7 +104,7 @@ export function PageMetiers({ domaineId }: { domaineId?: string }) {
             {!domaine && catalogue.base.domaines_a_venir.length ? (
               <section className="space-y-2">
                 <h2 className="text-2xl">Domaines à venir</h2>
-                <ul className="grid gap-2 tel:grid-cols-3">
+                <ul className="grid gap-2 lg:grid-cols-3">
                   {catalogue.base.domaines_a_venir.map((d) => (
                     <li key={d.id} className="carte p-3">
                       <strong>{d.nom}</strong>

@@ -61,7 +61,7 @@ export function Exemple() {
         <p className="aide">Le classement aide à décider, il ne décide pas. Le profil de travail est à côté (voir l&apos;analyse de chaque personne).</p>
       </section>
 
-      <section className="grid gap-3 tel:grid-cols-3">
+      <section className="grid gap-3 lg:grid-cols-3">
         <Link href={`/recrutements/${r.id}/preparer/poste`} className="carte hover:bg-surface-2">
           <span className="block text-xl font-titre">1. Préparer</span>
           <span className="block text-sm text-texte-2">Le poste, l&apos;épreuve, les questions, l&apos;entretien, les envois, vérifier.</span>

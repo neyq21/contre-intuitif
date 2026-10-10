@@ -50,7 +50,7 @@ export function EpreuveEnLigne({ token }: { token: string }) {
   if (erreur) return <Message type="alerte">{erreur}</Message>;
   if (!paquet) return <Chargement texte="Ouverture de votre épreuve…" />;
   if (reponses) return <FinEpreuve paquet={paquet} reponses={reponses} />;
-  return <Epreuve paquet={paquet} onTerminer={setReponses} />;
+  return <Epreuve paquet={paquet} onTerminer={setReponses} demanderNom={!paquet.candidat} />;
 }
 
 export function EpreuveDepuisFichier() {
@@ -69,7 +69,7 @@ export function EpreuveDepuisFichier() {
   }
 
   if (paquet && reponses) return <FinEpreuve paquet={paquet} reponses={reponses} />;
-  if (paquet) return <Epreuve paquet={paquet} onTerminer={setReponses} />;
+  if (paquet) return <Epreuve paquet={paquet} onTerminer={setReponses} demanderNom={!paquet.candidat} />;
   return (
     <div className="mx-auto max-w-[40rem] space-y-4">
       <h1 className="text-3xl">Ouvrir un fichier d&apos;épreuve</h1>

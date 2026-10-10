@@ -1,4 +1,5 @@
 import { Navigation } from "@/composants/Navigation";
+import { Mentions } from "@/composants/Mentions";
 import { FournisseurDonnees } from "@/composants/donnees/FournisseurDonnees";
 import { ouvrirBase, lireBase } from "@/lib/stockage/sqlite";
 
@@ -21,6 +22,9 @@ export default function LayoutRecruteur({ children }: { children: React.ReactNod
           className="contenu-principal min-h-dvh tel:ml-[var(--rail)] px-4 py-6 tel:px-10 tel:py-10 max-tel:pb-24 max-w-[1100px]"
         >
           {children}
+          <footer className="mt-12 border-t border-bord pt-4 no-print">
+            <Mentions compact />
+          </footer>
         </main>
       </div>
     </FournisseurDonnees>

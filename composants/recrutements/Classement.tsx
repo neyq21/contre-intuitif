@@ -27,7 +27,7 @@ export function Classement({ id }: { id: string }) {
       {!lignes.length ? <p className="aide">Aucune personne pour l&apos;instant.</p> : null}
 
       {/* Ordinateur : tableau. Téléphone : pile de cartes. */}
-      <div className="hidden tel:block overflow-x-auto">
+      <div className="hidden lg:block overflow-x-auto">
         <table className="tableau">
           <thead>
             <tr>
@@ -78,7 +78,7 @@ export function Classement({ id }: { id: string }) {
           </tbody>
         </table>
       </div>
-      <ul className="tel:hidden space-y-3">
+      <ul className="lg:hidden space-y-3">
         {lignes.map((l) => {
           const c = candidats.find((x) => x.id === l.id);
           const a = analyses.get(l.id);

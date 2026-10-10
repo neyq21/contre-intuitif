@@ -92,10 +92,11 @@ export function Bouton({
   children,
   variante = "",
   type = "button",
+  className = "",
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variante?: "" | "principal" | "encre" | "discret" | "alerte" }) {
   return (
-    <button type={type} className={`bouton ${variante ? `bouton-${variante}` : ""} ${props.className ?? ""}`} {...props}>
+    <button type={type} className={`bouton ${variante ? `bouton-${variante}` : ""} ${className}`} {...props}>
       {children}
     </button>
   );
