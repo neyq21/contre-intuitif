@@ -1,0 +1,2598 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "vendeur",
+  "version": "2026.10",
+  "nom": "Vendeur / Vendeuse en magasin",
+  "secteur": "commerce",
+  "alias": [
+    "vendeur",
+    "vendeuse",
+    "conseiller de vente",
+    "conseillère de vente",
+    "vendeur en prêt-à-porter",
+    "employé de boutique",
+    "assistant de magasin",
+    "vendeur en magasin",
+    "vendeur de sport"
+  ],
+  "resume": "Accueille les clients, les conseille selon leur besoin, tient la caisse et réapprovisionne les rayons du magasin.",
+  "contexte": "Un magasin d'articles de sport de 200 m² dans une rue commerçante, ouvert de 10 h à 19 h, avec trois vendeurs et un responsable de magasin.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C7",
+      "titre": "Conseiller le client selon son besoin, sans forcer la vente",
+      "pourquoi": "Un client revient quand on a compris son besoin et qu'on lui a dit les faits, même si la meilleure solution coûte plus cher.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Des chaussures de course pour un client",
+        "texte": "Samedi, 11 h. Un client entre et vous dit qu'il cherche des chaussures de course. Vous avez deux modèles de ce type en rayon (voir la fiche). Vous ne pouvez pas faire de remise : seul le responsable en accorde. Pour un article en plus, la règle du magasin est de le proposer une seule fois, et seulement s'il sert au client.",
+        "document": {
+          "type": "tableau",
+          "titre": "Fiche des deux modèles en rayon",
+          "colonnes": [
+            "Modèle",
+            "Terrain conseillé",
+            "Semelle",
+            "Prix"
+          ],
+          "lignes": [
+            [
+              "Allure 2",
+              "Route et chemins secs",
+              "Lisse et légère",
+              "89 €"
+            ],
+            [
+              "Sentier 4",
+              "Sentiers de terre et de boue",
+              "Crantée, accroche sur sol mouillé",
+              "119 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le client dit : « Je cherche des chaussures de course. » Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui montre le modèle le plus cher, qui est le plus complet.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande sa pointure, puis je lui apporte une paire à essayer.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande où il court, à quelle fréquence et quel budget il a prévu.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis de regarder le rayon et de m'appeler s'il a besoin d'aide.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Le mot « course » peut vouloir dire route ou sentier, 5 km ou 20 km. Le terrain, la fréquence et le budget décident du modèle. La pointure se demande ensuite.",
+              "relance": "Que voulez-vous savoir sur un client avant de lui montrer un produit ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le client répond qu'il court deux fois par semaine, environ 10 km, en forêt, sur des sentiers de terre **souvent boueux**. Son budget est de **90 €**. Que lui présentez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Les deux modèles, avec leur prix et leur terrain : le Sentier 4 à 119 €, l'Allure 2 à 89 €.",
+                  "points": 2,
+                  "repere": "c1_options"
+                },
+                {
+                  "id": "b",
+                  "texte": "Seulement l'Allure 2 à 89 €, parce que c'est le modèle qui rentre dans son budget.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Seulement le Sentier 4, parce que c'est celui qui convient à ses sentiers boueux.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Le modèle le plus vendu du magasin, parce qu'il plaît à beaucoup de clients.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Le client a deux contraintes : un terrain boueux et 90 € de budget. Chaque modèle n'en respecte qu'une. Il doit voir les deux pour choisir. Un seul modèle, même adapté, ne lui laisse pas le choix.",
+              "relance": "Comment choisissez-vous entre deux produits quand l'un convient mieux mais coûte plus cher ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client regarde le prix du Sentier 4 et dit : « 119 €, c'est trop cher pour moi. » **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Je peux vous faire 10 % de remise pour que vous le preniez aujourd'hui. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "« L'Allure 2 est à 89 €, dans votre budget. Elle accroche moins que le Sentier 4 sur la boue. »",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                },
+                {
+                  "id": "c",
+                  "texte": "« L'Allure 2 est à 89 €, dans votre budget. Elle convient aussi très bien à la boue. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Il y a l'Allure 2 à 89 €, qui rentre dans votre budget. »",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Vous ne pouvez pas accorder de remise, et vous ne cachez pas la limite de l'Allure 2 sur la boue. Proposer le modèle à 89 € sans dire cette limite laisse le client choisir sans tous les faits.",
+              "relance": "Que répondez-vous à un client qui trouve un produit trop cher ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le client choisit l'Allure 2 et veut la **pointure 43**. En rayon, il ne reste que les pointures 42 et 44. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis que la pointure 43 arrivera sûrement demain.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui fais essayer la 42 ou la 44 et je lui dis de prendre celle qui va le mieux.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis qu'il n'y a plus de 43 et qu'il doit prendre une autre pointure.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je vérifie le stock en réserve et sur l'écran, puis je lui dis ce que j'ai trouvé.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "La pointure 43 est peut-être en réserve : on vérifie avant de répondre. Dire « demain » sans le savoir est une promesse. Dire « il n'y en a plus » sans regarder est une supposition.",
+              "relance": "Comment savez-vous si une pointure est disponible avant de répondre au client ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La pointure 43 est trouvée en réserve. Le magasin vend des chaussettes de course à 12 € la paire. Que faites-vous **avant la caisse** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'ajoute une paire de chaussettes sur son ticket sans lui demander son avis.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne propose rien du tout, pour ne pas avoir l'air de forcer la vente.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande s'il a des chaussettes de course et, s'il n'en a pas, je lui présente celles à 12 €.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis qu'il risque de se blesser s'il n'achète pas les chaussettes du magasin.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "On propose ce qui sert au client, une seule fois, après avoir demandé s'il en a besoin. Ajouter sans demander ou inventer un risque force la vente. Ne rien proposer est honnête, mais le client ne sait pas ce que vous avez.",
+              "relance": "Comment proposez-vous un article en plus sans forcer le client ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand un client me dit « Je cherche des chaussures de course », **je commence par**…",
+              "justes": [
+                {
+                  "texte": "lui demander où il court, à quelle fréquence et quel budget il a prévu",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "poser des questions sur son terrain et sa distance avant de lui montrer un modèle",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "lui demander l'usage qu'il veut en faire, puis son budget",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui demander sa pointure",
+                  "repere": null
+                },
+                {
+                  "texte": "lui montrer deux modèles, puis lui poser des questions sur son usage",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui montrer le modèle le plus cher, parce qu'il est le plus complet",
+                  "repere": "c7_impose"
+                },
+                {
+                  "texte": "lui dire de regarder seul et de m'appeler s'il a besoin",
+                  "repere": "c7_ignore"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour l'aider à choisir entre l'Allure 2 et le Sentier 4, **je lui donne**…",
+              "justes": [
+                {
+                  "texte": "les faits : le terrain de chaque modèle, son prix et ce que chacun apporte pour ses sentiers",
+                  "repere": "c1_options"
+                },
+                {
+                  "texte": "le prix des deux modèles, et je lui dis lequel accroche mieux sur la boue",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "les deux options, avec ce que chacune permet et ce qu'elle ne permet pas",
+                  "repere": "c1_options"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "mon avis sur le modèle que je préfère",
+                  "repere": null
+                },
+                {
+                  "texte": "le prix de chaque modèle",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "seulement le modèle le plus cher, parce que c'est le meilleur",
+                  "repere": "c7_impose"
+                },
+                {
+                  "texte": "l'Allure 2 en disant qu'elle convient aussi à la boue",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour proposer des chaussettes **en plus**, je…",
+              "justes": [
+                {
+                  "texte": "lui demande d'abord s'il a déjà des chaussettes de course",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "lui dis leur prix et à quoi elles servent, une seule fois",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "les propose seulement s'il en a besoin, et j'accepte sa réponse",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui propose les chaussettes sans lui demander s'il en a déjà",
+                  "repere": null
+                },
+                {
+                  "texte": "ne lui propose rien",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "les ajoute à son ticket sans lui demander",
+                  "repere": "c7_impose"
+                },
+                {
+                  "texte": "insiste jusqu'à ce qu'il en prenne une paire",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Reformule le besoin avant de présenter un modèle : « Vous courez en forêt, sur sol boueux, avec 90 € de budget. »",
+              "repere": "c7_besoin"
+            },
+            {
+              "texte": "Fait essayer la paire et demande au client si elle est confortable avant de passer en caisse.",
+              "repere": "c7_suivi"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Pour des sentiers boueux, le Sentier 4 est le plus adapté, mais il coûte 119 €. L'Allure 2 coûte 89 €, mais elle accroche moins sur la boue. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client veut savoir quel est le modèle le plus léger. Que lui dites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un client hésite entre deux modèles de chaussures de course. Que lui dites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client trouve l'Allure 2 trop chère. Que lui dites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un client court sur des sentiers boueux et son budget est de 90 €. Que lui dites-vous des deux modèles ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le client court sur des sentiers de terre souvent boueux.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le client court deux fois par semaine.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le budget du client est de 90 €.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le Sentier 4 est le modèle le plus vendu du magasin.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le Sentier 4 coûte 119 €, l'Allure 2 coûte 89 €.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le magasin vend aussi des chaussettes de course.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je choisis pour lui et je lui apporte le Sentier 4 en pointure 43.",
+                "points": 0,
+                "repere": "c7_impose"
+              },
+              {
+                "id": "b",
+                "texte": "Je lui laisse choisir entre les deux modèles, puis je lui fais essayer sa pointure.",
+                "points": 2,
+                "repere": "c7_suivi"
+              },
+              {
+                "id": "c",
+                "texte": "Je lui laisse choisir entre les deux modèles, puis je l'oriente vers la caisse.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je lui promets que l'Allure 2 tiendra aussi bien dans la boue que le Sentier 4.",
+                "points": 0,
+                "repere": "c3_faux"
+              }
+            ]
+          },
+          "explication": "La réponse relie les deux faits du client (sol boueux, 90 € de budget) aux deux modèles. Le client a alors tous les éléments pour choisir lui-même."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous dites au client",
+          "consigne": "Pour **chaque phrase** dite à un client qui cherche des chaussures de course, choisissez **son effet**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Aide le client à choisir"
+            },
+            {
+              "id": "k2",
+              "nom": "Ne l'aide pas à choisir"
+            },
+            {
+              "id": "k3",
+              "nom": "Force la vente"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "« Vous courez où, et à quelle fréquence ? »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle cherche le besoin avant de proposer un produit."
+            },
+            {
+              "id": "e2",
+              "texte": "« Prenez celui-ci, c'est le plus cher, donc le meilleur. »",
+              "accepte": [
+                "k3",
+                "k2"
+              ],
+              "explication": "Elle pousse le plus cher, sans lien avec le besoin : elle force la vente et n'aide pas à choisir."
+            },
+            {
+              "id": "e3",
+              "texte": "« L'Allure 2 est à 89 €. Elle accroche moins sur la boue. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle donne un prix et une limite : deux faits utiles pour décider."
+            },
+            {
+              "id": "e4",
+              "texte": "« Regardez dans le rayon, je suis là si besoin. » (au client qui vient de demander un conseil)",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le client a demandé de l'aide : cette phrase ne répond pas à sa demande."
+            },
+            {
+              "id": "e5",
+              "texte": "« Il n'en reste presque plus, décidez maintenant ! » (alors que le stock est plein)",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Elle invente une urgence pour pousser à l'achat."
+            },
+            {
+              "id": "e6",
+              "texte": "« Pour la boue, le Sentier 4 est mieux. Pour la route, l'Allure 2 suffit. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle relie chaque modèle à un usage : le client peut choisir."
+            },
+            {
+              "id": "e7",
+              "texte": "« Je ne sais pas, voyez avec mon collègue. » (alors que la réponse est sur la fiche du modèle)",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "La réponse était disponible : le client est renvoyé sans raison."
+            },
+            {
+              "id": "e8",
+              "texte": "« Je mets les chaussettes sur votre ticket, vous verrez bien. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Ajouter un article sans demander son avis au client force la vente."
+            }
+          ],
+          "repere_reussite": "c7_besoin",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue un client qui cherche des chaussures de course avec un budget limité. La personne candidate le conseille, avec la fiche des deux modèles.",
+            "criteres": [
+              {
+                "texte": "Pose des questions sur le terrain, la fréquence et le budget",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "Présente les deux modèles avec des faits : terrain et prix",
+                "repere": "c1_options"
+              },
+              {
+                "texte": "Dit aussi la limite de l'Allure 2 sur la boue, sans promettre de remise",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Propose les chaussettes une seule fois et accepte un refus",
+                "repere": "c7_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Fait essayer la paire et vérifie le confort avant la caisse",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que demandez-vous** au client **avant** de lui montrer un modèle ?",
+              "justes": [
+                {
+                  "texte": "Où il court, à quelle fréquence et son budget.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Le terrain, la distance et ce qu'il veut dépenser.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Ce qu'il fait avec ses chaussures, pour savoir quel modèle lui convient.",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Sa pointure.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je lui montre le modèle le plus vendu.",
+                  "repere": "c7_ignore"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le client trouve le Sentier 4 trop cher. **Que lui répondez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Qu'il y a l'Allure 2 à 89 €, et qu'elle accroche moins sur la boue.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Que l'Allure 2 est dans son budget, et je lui dis ce qu'elle fait moins bien.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Je redonne les faits des deux modèles et je le laisse choisir.",
+                  "repere": "c1_options"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que l'Allure 2 est moins chère.",
+                  "repere": null
+                },
+                {
+                  "texte": "Que je ne peux pas faire de remise.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que je lui fais 10 % de remise.",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "Que l'Allure 2 convient aussi bien à la boue.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment proposez-vous** des chaussettes en plus ?",
+              "justes": [
+                {
+                  "texte": "Je demande s'il en a déjà, puis je donne le prix, une seule fois.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Je dis à quoi elles servent, et j'accepte sa réponse.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "Je ne propose que ce qui lui sert pour sa course.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que le magasin en vend.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je les ajoute au ticket.",
+                  "repere": "c7_impose"
+                },
+                {
+                  "texte": "J'insiste jusqu'à ce qu'il accepte.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose au client d'essayer les deux modèles avant de décider.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner dès le premier jour les fiches produits et les règles de vente : qui accorde une remise, quand proposer un article en plus.",
+        "Prévoir une demi-journée en binôme avec un vendeur expérimenté pour s'entraîner à poser les questions sur l'usage et le budget."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Traiter un retour ou une réclamation selon les règles du magasin",
+      "pourquoi": "Un client mécontent reste fidèle quand son problème est pris au sérieux et réglé selon la règle, sans promesse qu'on ne peut pas tenir.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Une semelle qui se décolle",
+        "texte": "Mardi, 15 h. Un client rapporte une paire de chaussures de course achetée il y a 12 jours. Il a son ticket. La semelle se décolle sur le côté gauche, sur environ 4 cm. Il dit les avoir portées trois fois et demande à être remboursé tout de suite. Le responsable est en réserve et peut venir en deux minutes.",
+        "document": {
+          "type": "liste",
+          "titre": "Règles du magasin pour les retours (extrait)",
+          "items": [
+            "Changement d'avis : échange ou avoir (bon d'achat) dans les 30 jours, avec le ticket, si l'article est neuf et ses étiquettes en place.",
+            "Article défectueux : le vendeur ne décide pas seul. Il vérifie le ticket, appelle le responsable, puis remplit la fiche de retour avec la décision.",
+            "Le responsable choisit la solution : échange, avoir, remboursement ou envoi au fabricant.",
+            "Un article rapporté ne retourne jamais en rayon sans l'accord du responsable."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le client pose les chaussures sur le comptoir et demande à être remboursé tout de suite. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis qu'il sera remboursé, puisque la semelle est abîmée.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde son ticket pour vérifier la date et l'article.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis de repasser plus tard, quand le responsable aura le temps.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'écoute le client, je regarde le défaut avec lui et je vérifie son ticket.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "On vérifie les faits avant de répondre : le défaut visible, la date et l'article sur le ticket. Le ticket seul ne dit rien du défaut. Promettre un remboursement ou renvoyer le client, c'est répondre sans avoir vérifié.",
+              "relance": "Quand un client rapporte un article, que vérifiez-vous avant de lui répondre ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le défaut est bien visible et le ticket date de 12 jours. Le client insiste : « Je veux mon argent maintenant. » **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Je ne peux pas décider seul. J'appelle le responsable maintenant et je reviens avec sa réponse. »",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je vous rembourse tout de suite, la semelle est visiblement défectueuse. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "« C'est le responsable qui décide. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Le magasin ne rembourse pas, il échange seulement dans les 30 jours. »",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "Pour un article défectueux, seul le responsable choisit la solution. Vous dites ce qui va se passer et vous revenez avec sa réponse. « C'est le responsable qui décide » est vrai, mais ne dit pas au client ce qui se passe maintenant.",
+              "relance": "Que dites-vous à un client qui demande ce que vous n'avez pas le droit d'accorder ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client dit : « Dans une autre enseigne, on m'a remboursé sans poser de questions. » **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Alors allez dans cette enseigne : ici, nous avons nos règles et je ne peux rien y changer. »",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je comprends. Je vais voir si je peux faire une exception, cela ne devrait pas poser de problème. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je comprends que cela vous agace. Le responsable arrive dans deux minutes et décide de la solution. »",
+                  "points": 2,
+                  "repere": "c7_apaise"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je ne peux pas vous répondre pour les autres magasins. »",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "On reconnaît l'agacement du client, puis on lui donne des faits : qui décide, et quand. Promettre une exception ou répondre sèchement n'aide pas. Ne pas parler des autres magasins est correct, mais ne dit rien de la suite.",
+              "relance": "Comment répondez-vous à un client qui compare avec un autre magasin ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le responsable décide d'échanger les chaussures contre une paire neuve du même modèle. Que faites-vous **avant de la donner** au client ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui donne la boîte fermée : une paire neuve n'a pas de défaut.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je sors la paire neuve de la boîte et je vérifie la semelle et les coutures devant le client.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui donne la paire d'exposition du rayon, que d'autres clients ont déjà essayée.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je vérifie que la pointure écrite sur la boîte est la bonne.",
+                  "points": 1,
+                  "repere": "c1_verifie"
+                }
+              ],
+              "explication": "Une paire neuve peut avoir le même défaut. Vous vérifiez la semelle et les coutures devant le client, avant de la lui remettre. Vérifier seulement la pointure ne suffit pas.",
+              "relance": "Comment vous assurez-vous qu'une solution a bien réglé le problème du client ?"
+            },
+            {
+              "id": "q5",
+              "texte": "L'échange est fait. La paire défectueuse est sur le comptoir. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la remets en rayon : le défaut ne se voit pas de face.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la range en réserve avec les autres paires, pour la revendre plus tard.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je la mets de côté, hors du rayon, sans rien noter.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je la mets de côté avec la fiche de retour remplie : date d'achat, défaut, décision du responsable.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                }
+              ],
+              "explication": "Un article défectueux ne se revend pas : on le met de côté, avec une fiche qui permet au responsable d'agir et de répondre au fabricant. Sans fiche, l'information se perd.",
+              "relance": "Que faites-vous d'un article rapporté parce qu'il est défectueux ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand le client me rapporte les chaussures, **je commence par**…",
+              "justes": [
+                {
+                  "texte": "regarder le défaut avec lui et vérifier la date sur son ticket",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "l'écouter, puis examiner la semelle et le ticket avant de répondre",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "lui demander ce qu'il a remarqué, puis contrôler l'article et le ticket",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarder son ticket",
+                  "repere": null
+                },
+                {
+                  "texte": "lui demander combien de fois il les a portées",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dire qu'il sera remboursé",
+                  "repere": "c7_promesse"
+                },
+                {
+                  "texte": "lui dire que la semelle est abîmée parce qu'il les a mal utilisées",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Quand le client demande un remboursement tout de suite, je lui dis…",
+              "justes": [
+                {
+                  "texte": "que je ne peux pas décider seul, que j'appelle le responsable et que je reviens avec sa réponse",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "que le responsable décide de la solution et qu'il arrive dans deux minutes",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "ce qui va se passer : le responsable regarde la paire, décide, puis je reviens vers lui",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que c'est le responsable qui décide",
+                  "repere": null
+                },
+                {
+                  "texte": "que je suis désolé pour ce problème",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que je le rembourse moi-même",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "que c'est sûrement un défaut de fabrication, donc qu'il sera remboursé",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour la paire défectueuse, je…",
+              "justes": [
+                {
+                  "texte": "la mets de côté avec la fiche de retour remplie",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "note la date d'achat, le défaut et la décision du responsable sur la fiche",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "la garde hors du rayon, et le responsable décide ce qu'on en fait",
+                  "repere": "c6_bloque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la mets de côté sans rien noter",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la remets en rayon, car le défaut ne se voit pas de face",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "la range avec les paires neuves de la réserve",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Vérifie la paire neuve devant le client avant de la lui remettre.",
+              "repere": "c1_verifie"
+            },
+            {
+              "texte": "Propose de regarder si les autres paires du même modèle en rayon ont le même défaut.",
+              "repere": "c1_cause"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne peux pas décider seul pour un article défectueux. J'appelle le responsable, qui choisit la solution, et je reviens avec sa réponse. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client veut échanger des chaussures parce qu'elles ne lui plaisent plus. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un client rapporte un article et demande un remboursement. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client veut savoir si une paire existe en pointure 43. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un client rapporte des chaussures dont la semelle se décolle et veut être remboursé tout de suite. Que lui répondez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La semelle se décolle sur le côté gauche.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le client a acheté les chaussures il y a 12 jours.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Pour un article défectueux, le responsable choisit la solution.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client a perdu son ticket.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le client demande à être remboursé tout de suite.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le magasin ne rembourse jamais un article.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'appelle le responsable et je lui donne les faits : date d'achat, ticket, défaut constaté.",
+                "points": 2,
+                "repere": "c4_escalade"
+              },
+              {
+                "id": "b",
+                "texte": "J'appelle le responsable, sans lui dire ce que j'ai constaté.",
+                "points": 1,
+                "repere": "c3_flou"
+              },
+              {
+                "id": "c",
+                "texte": "Je dis au client d'aller chercher lui-même le responsable en réserve.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              },
+              {
+                "id": "d",
+                "texte": "Je commence à remplir un bon de remboursement avant l'arrivée du responsable.",
+                "points": 0,
+                "repere": "c1_precipite"
+              }
+            ]
+          },
+          "explication": "Pour un article défectueux, le vendeur ne décide pas seul : le responsable choisit la solution. Vous restez en lien avec le client et vous revenez avec la réponse."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Le traitement du retour, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de **l'arrivée** du client à **la fin** de l'échange.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Écouter le client et regarder le défaut avec lui"
+            },
+            {
+              "id": "e2",
+              "texte": "Vérifier la date et l'article sur le ticket"
+            },
+            {
+              "id": "e3",
+              "texte": "Appeler le responsable et lui donner les faits"
+            },
+            {
+              "id": "e4",
+              "texte": "Remplir la fiche de retour, avec la décision du responsable"
+            },
+            {
+              "id": "e5",
+              "texte": "Annoncer au client la décision du responsable"
+            },
+            {
+              "id": "e6",
+              "texte": "Vérifier la paire neuve devant le client avant de la lui remettre"
+            },
+            {
+              "id": "e7",
+              "texte": "Mettre la paire défectueuse de côté, avec sa fiche"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e3",
+              "explication": "On regarde le défaut avant d'appeler : le responsable demandera ce que vous avez constaté."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On vérifie le ticket avant d'appeler : le responsable décide avec la date et l'article."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "La fiche porte la date d'achat, lue sur le ticket."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "La fiche note la décision : elle ne peut être complète qu'après l'appel."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "La décision vient du responsable : on ne l'annonce qu'après."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "On ne prépare la paire neuve qu'une fois l'échange décidé."
+            },
+            {
+              "avant": "e4",
+              "apres": "e7",
+              "explication": "La paire part de côté avec sa fiche : on remplit la fiche avant."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 15 minutes : une personne joue le client qui rapporte une paire défectueuse et veut un remboursement tout de suite, une autre le responsable. La personne candidate traite le retour avec les règles du magasin et une fiche de retour vierge.",
+            "criteres": [
+              {
+                "texte": "Regarde le défaut et vérifie le ticket avant de répondre",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Ne promet pas de remboursement et dit que le responsable décide",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Remplit la fiche avec des faits : date d'achat, défaut, décision",
+                "repere": "c6_trace"
+              },
+              {
+                "texte": "Met la paire défectueuse de côté, hors du rayon",
+                "repere": "c6_bloque"
+              }
+            ],
+            "bonus": {
+              "texte": "Vérifie la paire neuve devant le client avant de la lui remettre",
+              "repere": "c1_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que vérifiez-vous** avant de répondre au client ?",
+              "justes": [
+                {
+                  "texte": "Le défaut sur la semelle, avec le client.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "La date et l'article sur son ticket.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "J'examine l'article et je lui demande comment le défaut est apparu.",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le ticket.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je lui dis qu'il sera remboursé.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le client demande un remboursement tout de suite. **Que lui répondez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Que je ne peux pas décider seul, que j'appelle le responsable et que je reviens avec sa réponse.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Que le responsable arrive dans deux minutes et choisit la solution.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Je lui explique ce qui va se passer : le responsable regarde la paire et décide.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je suis désolé pour ce problème.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "Que c'est le responsable qui décide.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que je le rembourse tout de suite.",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "Que le magasin ne rembourse jamais.",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que faites-vous** de la paire défectueuse ?",
+              "justes": [
+                {
+                  "texte": "Je la mets de côté avec la fiche de retour.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Je note la date d'achat, le défaut et la décision sur la fiche.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je ne la remets pas en rayon sans l'accord du responsable.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je la mets de côté.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je la remets en rayon.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de vérifier si d'autres paires du même modèle ont le même défaut.",
+              "repere": "c1_cause"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre dès le premier jour les règles de retour sur une page : ce que le vendeur décide seul, et ce qui revient au responsable.",
+        "Montrer une fiche de retour déjà remplie et l'endroit où l'on met les articles défectueux."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Servir plusieurs clients à la fois et tenir le rayon",
+      "pourquoi": "Un jour d'affluence, l'ordre des actions décide de la sécurité, de l'attente des clients et de l'état du rayon.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Cinq demandes en même temps au rayon",
+        "texte": "Samedi, 15 h 30. Vous êtes seul sur le rayon des chaussures pendant dix minutes : un collègue est en caisse, l'autre en pause. Cinq choses se passent en même temps (voir la liste). Le magasin ferme à 19 h. Le réassort (remplir les rayons avec les cartons reçus) fait partie de votre travail.",
+        "document": {
+          "type": "liste",
+          "titre": "À 15 h 30, en même temps",
+          "items": [
+            "Des boîtes à chaussures sont tombées au milieu de l'allée.",
+            "Une cliente est en cabine d'essayage. Elle vous a demandé une autre pointure il y a 5 minutes.",
+            "Un client attend au rayon depuis 2 minutes, une paire à la main. Il veut savoir si elle existe en pointure 43.",
+            "Une cliente vient d'entrer et regarde autour d'elle.",
+            "Un carton de 12 paires de chaussettes de sport est arrivé en réserve. Le rayon chaussettes est presque vide."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par quoi **commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Apporter l'autre pointure à la cliente en cabine.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "b",
+                  "texte": "Ramasser les boîtes tombées dans l'allée.",
+                  "points": 2,
+                  "repere": "c2_risque"
+                },
+                {
+                  "id": "c",
+                  "texte": "Ranger le carton de chaussettes, pour remplir le rayon vide.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Saluer la cliente qui vient d'entrer et lui montrer le rayon.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                }
+              ],
+              "explication": "Des boîtes au milieu de l'allée peuvent faire tomber quelqu'un : on les ramasse en premier, c'est rapide. La cliente en cabine vient juste après.",
+              "relance": "Pendant l'affluence, qu'est-ce qui passe avant tout le reste ?"
+            },
+            {
+              "id": "q2",
+              "texte": "L'allée est dégagée. Que faites-vous **maintenant** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'apporte l'autre pointure à la cliente en cabine, qui attend depuis 5 minutes.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je réponds au client qui attend au rayon avec sa paire à la main.",
+                  "points": 1,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'accueille la cliente qui vient d'entrer et je lui présente le rayon.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je range le carton de chaussettes en rayon, car il est presque vide.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "La cliente de la cabine attend depuis 5 minutes : c'est l'attente la plus longue, et apporter une pointure est rapide. Le client du rayon attend depuis 2 minutes : il passe juste après. Le carton peut attendre.",
+              "relance": "Quand plusieurs clients attendent, comment choisissez-vous qui servir en premier ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client au rayon vous fait signe. **Que lui dites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : je n'ai pas le temps de lui parler pendant que je suis occupé.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui fais un signe de la main pour dire que je l'ai vu, sans rien dire.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande de revenir dans un quart d'heure, quand je serai libre.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je suis à vous dans une minute, je finis avec une cliente. »",
+                  "points": 2,
+                  "repere": "c2_previent"
+                }
+              ],
+              "explication": "Une phrase courte avec un délai montre au client qu'il est vu et qu'il peut patienter. Un simple signe rassure un peu, mais ne dit pas combien de temps il va attendre.",
+              "relance": "Que dites-vous à un client dont vous ne pouvez pas vous occuper tout de suite ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous **rangez** les chaussettes en rayon. Un client vous **pose une question** sur un sac de sport. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis d'attendre que j'aie fini de ranger le carton.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui réponds en continuant de ranger les chaussettes.",
+                  "points": 1,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je m'arrête de ranger et je m'occupe de lui. Je finirai le carton après.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis de demander à un collègue, sans regarder s'il est libre.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                }
+              ],
+              "explication": "Un client qui pose une question passe avant le réassort : le carton peut attendre quelques minutes. Répondre en continuant de ranger partage votre attention entre deux tâches.",
+              "relance": "Que faites-vous quand un client vous demande quelque chose pendant que vous rangez ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 16 h, le calme revient pour **quelques minutes**. Que **préparez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends à côté de la caisse que les clients m'appellent.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je repère les rayons presque vides et je prépare le réassort avant l'affluence.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je range seulement le carton de chaussettes déjà arrivé.",
+                  "points": 1,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je range la réserve en premier, sans regarder les rayons ni les cabines.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Quand le calme revient, on prépare ce qui va manquer : rayons presque vides, vêtements à remettre en place. Ranger seulement le carton déjà arrivé est utile, mais ne prépare rien d'autre.",
+              "relance": "Entre deux vagues de clients, que préparez-vous ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Je **commence** par…",
+              "justes": [
+                {
+                  "texte": "ramasser les boîtes tombées dans l'allée, parce que quelqu'un peut tomber",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "dégager l'allée : la sécurité passe avant le reste",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "écarter les boîtes de l'allée en quelques secondes, avant de servir les clients",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "apporter l'autre pointure à la cliente en cabine, qui attend depuis 5 minutes",
+                  "repere": "c2_critere"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ranger le carton de chaussettes, parce que le rayon est vide",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "accueillir la cliente qui vient d'entrer",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Au client qui attend au rayon avec sa paire, je dis…",
+              "justes": [
+                {
+                  "texte": "« Je suis à vous dans une minute, je finis avec une cliente. »",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "que je l'ai vu et que je reviens vérifier sa pointure dans deux minutes",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "un délai précis, puis je reviens vers lui à l'heure annoncée",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "rien, mais je lui fais un signe de la main",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "de revenir dans un quart d'heure",
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "texte": "rien : je n'ai pas le temps de lui parler",
+                  "repere": "c2_silence"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand un client me pose une question **pendant que** je range les chaussettes, je…",
+              "justes": [
+                {
+                  "texte": "m'arrête de ranger et je m'occupe de lui",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "range le carton plus tard, quand plus aucun client n'attend",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "laisse le réassort de côté, parce que le client passe avant",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui réponds tout en continuant de ranger",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis d'attendre que j'aie fini le carton",
+                  "repere": "c7_ignore"
+                },
+                {
+                  "texte": "lui dis de demander à un collègue, sans regarder s'il est libre",
+                  "repere": "c7_renvoie"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Regroupe ses déplacements : en allant vérifier la pointure 43 en réserve, il rapporte aussi le carton de chaussettes.",
+              "repere": "c2_regroupe"
+            },
+            {
+              "texte": "Demande l'aide de son collègue en pause si l'affluence dépasse ce qu'il peut faire seul.",
+              "repere": "c4_aide"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je suis à vous dans une minute : je finis d'abord avec une cliente en cabine. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client demande où se trouve la caisse. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un client attend votre aide au rayon. Que lui dites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client vous demande de lui mettre une paire de côté. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un client attend depuis 2 minutes au rayon, mais vous apportez d'abord une pointure à une cliente en cabine. Que lui dites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La cliente en cabine attend depuis 5 minutes.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Un carton de chaussettes est arrivé en réserve.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le client au rayon attend depuis 2 minutes.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client veut la pointure 44.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Vous êtes seul sur le rayon pendant dix minutes.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La cliente en cabine veut passer en caisse.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je range le carton de chaussettes pendant que les deux clients attendent.",
+                "points": 0,
+                "repere": "c2_oubli"
+              },
+              {
+                "id": "b",
+                "texte": "Je vérifie d'abord la pointure du client, puis j'apporte la pointure à la cliente en cabine.",
+                "points": 1,
+                "repere": "c2_oubli"
+              },
+              {
+                "id": "c",
+                "texte": "J'apporte la pointure à la cliente en cabine, puis je reviens vérifier la pointure du client.",
+                "points": 2,
+                "repere": "c2_critere"
+              },
+              {
+                "id": "d",
+                "texte": "Je dis au client de revenir demain pour sa pointure.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              }
+            ]
+          },
+          "explication": "La réponse tient compte de deux attentes : 5 minutes pour la cliente en cabine, 2 minutes pour le client au rayon. Elle donne un délai court et la raison."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Les demandes de 15 h 30, par priorité",
+          "consigne": "Huit demandes se présentent au rayon à 15 h 30. Pour **chacune**, choisissez **comment vous la traitez**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Tout de suite, avant le reste"
+            },
+            {
+              "id": "k2",
+              "nom": "Client qui attend : je réponds ou je préviens"
+            },
+            {
+              "id": "k3",
+              "nom": "Quand plus aucun client n'attend"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Des boîtes à chaussures sont tombées au milieu de l'allée.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elles peuvent faire tomber quelqu'un : on les ramasse avant tout, en quelques secondes."
+            },
+            {
+              "id": "e2",
+              "texte": "Un présentoir de gourdes penche au bord de l'allée.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Il peut tomber sur un client : on le sécurise tout de suite."
+            },
+            {
+              "id": "e3",
+              "texte": "Une cliente en cabine attend une autre pointure depuis 5 minutes.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Un client qui attend passe avant les tâches du magasin : on le sert ou on lui dit quand on arrive."
+            },
+            {
+              "id": "e4",
+              "texte": "Un client attend au rayon, une paire à la main.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Il attend une réponse : on la lui donne ou on lui dit quand elle viendra."
+            },
+            {
+              "id": "e5",
+              "texte": "Une cliente vient d'entrer et regarde autour d'elle.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Elle a besoin d'être vue : un mot ou un signe suffit pour lui dire que vous arrivez."
+            },
+            {
+              "id": "e6",
+              "texte": "Un carton de 12 paires de chaussettes est arrivé en réserve.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le réassort se fait quand plus aucun client n'attend."
+            },
+            {
+              "id": "e7",
+              "texte": "Les étiquettes de prix du rayon promotion doivent être changées avant 17 h.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Il reste plus d'une heure et ce n'est pas urgent : cette tâche passe après les clients."
+            },
+            {
+              "id": "e8",
+              "texte": "Quatre clients font la queue en caisse et votre collègue est seul.",
+              "accepte": [
+                "k1",
+                "k2"
+              ],
+              "explication": "Des clients attendent : on aide ou on prévient. Sans danger, « tout de suite » et « je préviens » se défendent."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes : cinq demandes arrivent en même temps sur des cartes (boîtes tombées, cliente en cabine, client au rayon, nouvelle cliente, carton). La personne candidate dit dans quel ordre elle agit et ce qu'elle dit aux clients.",
+            "criteres": [
+              {
+                "texte": "Traite d'abord ce qui présente un risque",
+                "repere": "c2_risque"
+              },
+              {
+                "texte": "Sert d'abord la personne qui attend depuis le plus longtemps, pour une tâche courte",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Prévient chaque client qui attend, avec un délai",
+                "repere": "c2_previent"
+              },
+              {
+                "texte": "Remet le réassort après les clients",
+                "repere": "c2_contraintes"
+              }
+            ],
+            "bonus": {
+              "texte": "Regroupe ses déplacements ou demande l'aide d'un collègue",
+              "repere": "c2_regroupe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Par quoi **commencez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Les boîtes tombées dans l'allée, pour que personne ne tombe.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Je dégage l'allée, puis je m'occupe des clients.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "La sécurité d'abord : les boîtes au milieu de l'allée.",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "La cliente en cabine.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Le carton de chaussettes.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Dans quel **ordre** servez-vous **ensuite** les clients ?",
+              "justes": [
+                {
+                  "texte": "D'abord la cliente en cabine : elle attend depuis 5 minutes et la tâche est courte.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Celle qui attend en cabine, puis le client au rayon, puis la nouvelle cliente.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Les clients qui attendent avant le réassort, en les prévenant de leur tour.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je fais au plus logique.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Celui qui m'appelle le plus fort.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que dites-vous** au client qui attend au rayon ?",
+              "justes": [
+                {
+                  "texte": "Je suis à vous dans une minute, je finis avec une cliente.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Que je l'ai vu et que je reviens dans deux minutes.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Que je vérifie sa pointure dès que j'ai fini en cabine.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui fais un signe de la main.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je n'ai pas le temps.",
+                  "repere": "c2_silence"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande l'aide d'un collègue si l'affluence continue.",
+              "repere": "c4_aide"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner une règle de priorité écrite et simple : danger d'abord, puis les clients qui attendent, puis les tâches du magasin.",
+        "Prévoir un signal convenu pour appeler un collègue en renfort quand le rayon est trop chargé."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Tenir sa caisse et fermer le magasin sans erreur",
+      "pourquoi": "Un écart de caisse signalé se comprend et se corrige ; un écart caché ou compensé devient un vrai problème pour le magasin.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Il manque 10 € à la fermeture",
+        "texte": "Vendredi, 19 h 05. Le magasin vient de fermer. Vous fermez la caisse avec un collègue ; le responsable est parti à 18 h 30. Le ticket Z indique 540 € d'espèces, et le fond de caisse (la monnaie laissée dans le tiroir) est de 100 € : le tiroir doit contenir 640 €. Vous comptez 630 €.",
+        "document": {
+          "type": "liste",
+          "titre": "Procédure de fermeture (extrait)",
+          "items": [
+            "Imprimer le ticket Z : il donne le total des ventes de la journée.",
+            "Compter les espèces du tiroir. Montant attendu : fond de caisse (100 €) + espèces du ticket Z.",
+            "Si le montant est différent : recompter, vérifier les annulations du jour (ventes annulées en caisse), puis noter l'écart sur la fiche. Ne rien ajouter et ne rien retirer du tiroir.",
+            "Laisser le fond de caisse de 100 € dans le tiroir. Mettre le reste des espèces au coffre, avec la fiche de fermeture.",
+            "Faire signer la fiche par les deux personnes présentes.",
+            "Faire le tour du magasin (cabines, réserve), puis activer l'alarme."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous comptez 630 € au lieu de 640 €. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appelle le responsable tout de suite, sans recompter.",
+                  "points": 1,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je mets 10 € de ma poche dans le tiroir pour que le compte soit juste.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je recompte les espèces du tiroir avec mon collègue.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne fais rien : 10 € d'écart, ce n'est pas grave.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Les erreurs de comptage sont fréquentes : on recompte d'abord, à deux. L'écart n'est un fait qu'après ce deuxième comptage. Compléter avec son argent cache le problème.",
+              "relance": "Que faites-vous quand votre total ne correspond pas à celui de la caisse ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le **deuxième comptage** donne aussi 630 €. Que faites-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je note l'écart de 10 € sur la fiche, sans chercher d'où il vient.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde les annulations de la journée, puis je note l'écart sur la fiche.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'annule une vente de 10 € dans la caisse pour que les chiffres correspondent.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je suppose une erreur de monnaie rendue et je ne vérifie rien.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "La procédure demande de chercher la cause avant de noter : les annulations du jour peuvent l'expliquer. Noter sans chercher est possible, mais moins utile au responsable. Modifier la caisse pour tomber juste est interdit.",
+              "relance": "Comment cherchez-vous la cause d'un écart de caisse ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous **ne trouvez pas** la cause. Que **mettez-vous** sur la fiche de fermeture ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le total compté (630 €), l'écart de 10 € en moins et ce que j'ai vérifié.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "b",
+                  "texte": "L'écart de 10 € en moins, sans autre détail.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le total attendu (640 €), pour que la fiche soit juste.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : j'en parlerai au responsable quand je le verrai.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "La fiche est la trace que lit le responsable : total compté, écart et vérifications faites. Écrire le total attendu à la place cache l'écart. Ne rien écrire fait perdre l'information.",
+              "relance": "Que notez-vous quand vous découvrez un écart que vous ne pouvez pas expliquer ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Il faut maintenant **ranger les espèces**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je mets tout le contenu du tiroir au coffre, fond de caisse compris.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse les espèces sur le bureau de la réserve jusqu'à demain.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je laisse 100 € de fond de caisse dans le tiroir et je mets le reste au coffre, sans la fiche.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse le fond de caisse de 100 € dans le tiroir et je mets le reste au coffre, avec la fiche.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                }
+              ],
+              "explication": "Le fond de caisse reste dans le tiroir pour le lendemain. Le reste va au coffre avec la fiche. Sans la fiche, le responsable ne peut pas contrôler le dépôt.",
+              "relance": "Où vont les espèces d'une caisse à la fermeture ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Avant d'activer** l'alarme, que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : le magasin était vide à 19 h, personne n'a pu y entrer.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde les cabines seulement, car les clients y oublient des affaires.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je fais le tour du magasin avec mon collègue : cabines, réserve, puis j'active l'alarme.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'active l'alarme avant le tour du magasin pour gagner du temps.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Le tour du magasin (cabines, réserve) vérifie que personne ne reste à l'intérieur et que tout est fermé. L'alarme se met en dernier, une fois le tour terminé.",
+              "relance": "Que vérifiez-vous avant de quitter le magasin à la fermeture ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand je compte 630 € au lieu de 640 €, je…",
+              "justes": [
+                {
+                  "texte": "recompte le tiroir avec mon collègue",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "vérifie mon comptage avant de parler d'écart",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "recompte, puis je regarde les annulations de la journée",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens le responsable",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "mets 10 € de ma poche pour que ce soit juste",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "ne dis rien, c'est un petit écart",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Sur la fiche de fermeture, **j'écris**…",
+              "justes": [
+                {
+                  "texte": "le total compté, l'écart de 10 € en moins et ce que j'ai vérifié",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "630 € comptés, 640 € attendus, avec l'écart",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "l'écart tel qu'il est, avec les vérifications faites",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "l'écart de 10 €",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "640 €, le montant attendu, pour que la fiche soit juste",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "rien, j'en parlerai au responsable demain",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant** d'activer l'alarme, je…",
+              "justes": [
+                {
+                  "texte": "fais le tour des cabines et de la réserve",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "vérifie que personne ne reste dans le magasin",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "fais signer la fiche par mon collègue et par moi, puis je fais le tour du magasin",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde les cabines seulement",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "pars directement : le magasin était vide à 19 h",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "active l'alarme avant le tour pour gagner du temps",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de compter le tiroir à deux à chaque fermeture, pour repérer plus vite une erreur.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Prévient le responsable par une note ou un message dès ce soir, pour qu'il voie l'écart demain matin.",
+              "repere": "c4_informe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Compté : 630 €. Attendu : 640 €. Écart : 10 € en moins. J'ai recompté et regardé les annulations du jour. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le responsable vous demande comment s'est passée la journée. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous remplissez la fiche de fermeture de la caisse. Que notez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Votre collègue vous demande combien d'espèces mettre au coffre. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Vous comptez 630 € alors que la caisse attend 640 €, et vous avez déjà recompté. Que notez-vous sur la fiche ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le tiroir doit contenir 640 € : 100 € de fond de caisse et 540 € du ticket Z.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le responsable est parti à 18 h 30.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Vous comptez 630 € dans le tiroir.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le ticket Z indique 630 € d'espèces.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La procédure demande de noter l'écart sur la fiche.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le fond de caisse est de 150 €.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je mets 10 € de ma poche dans le tiroir.",
+                "points": 0,
+                "repere": "c6_cache"
+              },
+              {
+                "id": "b",
+                "texte": "Je fais signer la fiche par mon collègue et par moi, puis je la mets au coffre avec les espèces.",
+                "points": 2,
+                "repere": "c6_regle"
+              },
+              {
+                "id": "c",
+                "texte": "Je mets les espèces au coffre avec la fiche, sans la faire signer.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je laisse les espèces dans le tiroir jusqu'à demain.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              }
+            ]
+          },
+          "explication": "La fiche dit les faits : ce qui est compté, ce qui est attendu et l'écart. Le responsable la lit pour décider de la suite. Elle ne cache rien et ne corrige rien."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La fiche de fermeture de la caisse",
+          "consigne": "Voici la fiche de fermeture que vous avez remplie. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Ticket Z imprimé à 19 h 05",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Espèces selon le ticket Z : 540 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Montant attendu dans le tiroir : 640 € (100 € de fond de caisse + 540 €)",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Espèces comptées : 630 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Écart : 0 €",
+              "erreur": true,
+              "explication": "Vous avez compté 630 € pour 640 € attendus : l'écart est de 10 € en moins, pas de 0 €."
+            },
+            {
+              "id": "e6",
+              "texte": "Cause de l'écart : annulations du jour vérifiées, rien trouvé",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Dépôt au coffre : tout le contenu du tiroir, fond de caisse compris",
+              "erreur": true,
+              "explication": "Le fond de caisse de 100 € reste dans le tiroir pour le lendemain. Seul le reste va au coffre."
+            },
+            {
+              "id": "e8",
+              "texte": "Fiche signée par moi seul",
+              "erreur": true,
+              "explication": "La procédure demande la signature des deux personnes présentes."
+            },
+            {
+              "id": "e9",
+              "texte": "Tour du magasin fait (cabines, réserve), puis alarme activée",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Fermeture simulée de 15 minutes : une personne prépare un ticket Z et un tiroir avec un écart de 10 €. La personne candidate compte, cherche la cause, remplit la fiche et dit ce qu'elle fait des espèces.",
+            "criteres": [
+              {
+                "texte": "Recompte avant de parler d'écart",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Note le total compté, le total attendu et l'écart, sans les modifier",
+                "repere": "c6_trace"
+              },
+              {
+                "texte": "Laisse le fond de caisse et dépose le reste au coffre avec la fiche signée",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Fait le tour du magasin avant d'activer l'alarme",
+                "repere": "c6_controle"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévient le responsable par une note ou un message dès le soir",
+              "repere": "c4_informe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** quand vous comptez 630 € au lieu de 640 € ?",
+              "justes": [
+                {
+                  "texte": "Je recompte le tiroir avec mon collègue.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je vérifie mon comptage avant de parler d'écart.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je recompte, puis je regarde les annulations de la journée.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens le responsable.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je mets 10 € de ma poche.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Qu'écrivez-vous** sur la fiche de fermeture ?",
+              "justes": [
+                {
+                  "texte": "Le total compté, le total attendu et l'écart de 10 € en moins.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Ce que j'ai vérifié pour chercher la cause.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Les faits, sans rien changer aux chiffres.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "L'écart.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "640 €, pour que la fiche soit juste.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous des **espèces** et de la **fiche** ?",
+              "justes": [
+                {
+                  "texte": "Je laisse le fond de caisse dans le tiroir et je mets le reste au coffre.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je fais signer la fiche par mon collègue et par moi, et je la mets au coffre.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je dépose les espèces avec la fiche signée, puis je fais le tour du magasin.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je mets l'argent au coffre.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je laisse les espèces sur le bureau de la réserve jusqu'à demain.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de compter le tiroir à deux à chaque fermeture.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire la première fermeture à deux : comptage, ticket Z et fiche remplie, avec un collègue expérimenté.",
+        "Afficher la procédure de fermeture près de la caisse, avec ce qui va au coffre et ce qui reste dans le tiroir."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C7",
+      "texte": "Parlez d'**une fois** où vous avez conseillé une personne pour un achat. **Comment avez-vous compris** ce qu'elle cherchait ?",
+      "suite": [
+        "Qu'avez-vous proposé ?",
+        "Comment la personne a-t-elle fait son choix ?"
+      ],
+      "attendus": [
+        "Pose des questions sur l'usage et le budget",
+        "Présente des faits, pas seulement son avis",
+        "Laisse la personne choisir"
+      ],
+      "relance": "Que faites-vous quand le produit le plus adapté coûte plus cher que le budget ?",
+      "alternative": "Si vous n'avez jamais vendu : parlez d'un conseil donné à une personne pour un choix (matériel, sortie, logiciel) et de ce que vous lui avez demandé."
+    },
+    {
+      "id": "e2",
+      "competence": "C7",
+      "texte": "Un client trouve un produit trop cher et demande **une remise**. Vous **n'avez pas le droit** d'en accorder. Que lui répondez-vous ?",
+      "suite": [],
+      "attendus": [
+        "Explique simplement qui décide d'une remise",
+        "Propose une option dans son budget, avec les faits",
+        "Ne promet pas ce qu'il ne peut pas accorder"
+      ],
+      "relance": "Que faites-vous si le client insiste ?",
+      "alternative": "Imaginez qu'une personne vous demande une exception que le règlement ne permet pas. Que lui répondez-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C1",
+      "texte": "Parlez d'**une fois** où une personne vous a signalé un problème avec un produit ou un service. **Comment l'avez-vous traité** ?",
+      "suite": [
+        "Qu'avez-vous vérifié en premier ?",
+        "Qu'avez-vous dit à la personne ensuite ?"
+      ],
+      "attendus": [
+        "Vérifie les faits avant de répondre",
+        "Respecte la règle ou prévient la bonne personne",
+        "Dit à la personne ce qui va se passer"
+      ],
+      "relance": "Comment avez-vous vérifié que la personne était satisfaite de la solution ?",
+      "alternative": "Si vous n'avez jamais travaillé en magasin : parlez d'un problème signalé par une personne (études, association, vie quotidienne) et de ce que vous avez fait."
+    },
+    {
+      "id": "e4",
+      "competence": "C1",
+      "texte": "Un client rapporte un article et **n'a pas son ticket**. Que faites-vous ?",
+      "suite": [
+        "Et si le client se met en colère ?"
+      ],
+      "attendus": [
+        "Cherche la règle du magasin avant de répondre",
+        "Prévient le responsable plutôt que décider seul",
+        "Dit au client ce qui va se passer ensuite"
+      ],
+      "relance": "Qu'est-ce que vous ne promettez pas à ce moment-là ?",
+      "alternative": "Imaginez qu'une personne vous demande un service pour lequel il manque un papier obligatoire. Que lui répondez-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C2",
+      "texte": "Parlez d'**un moment** où plusieurs personnes avaient besoin de vous en même temps. Comment avez-vous choisi **qui aider en premier** ?",
+      "suite": [
+        "Que leur avez-vous dit ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : danger, attente, urgence",
+        "Prévient les personnes qui attendent",
+        "S'appuie sur un exemple réel"
+      ],
+      "relance": "Qu'auriez-vous fait si une personne de plus était arrivée ?",
+      "alternative": "Si vous n'avez jamais travaillé en magasin : dans n'importe quelle activité, comment choisissez-vous quand plusieurs demandes arrivent en même temps ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C2",
+      "texte": "Quand le magasin est calme, que **préparez-vous** pour **l'affluence suivante** ?",
+      "suite": [
+        "Comment savez-vous ce qui va manquer ?"
+      ],
+      "attendus": [
+        "Cite des tâches concrètes : réassort, rayons presque vides, cabines",
+        "Explique pourquoi elles font gagner du temps",
+        "S'arrête dès qu'un client a besoin d'aide"
+      ],
+      "relance": "Et si un client arrive pendant que vous rangez ?",
+      "alternative": "Quand vous préparez un événement ou une journée chargée, que préparez-vous à l'avance ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C6",
+      "texte": "**Comment contrôlez-vous** votre caisse à la fermeture ?",
+      "suite": [],
+      "attendus": [
+        "Compte les espèces et les compare au montant attendu",
+        "Recompte avant de parler d'écart",
+        "Note l'écart et prévient le responsable, sans le cacher"
+      ],
+      "relance": "Que faites-vous s'il manque 10 € dans le tiroir ?",
+      "alternative": "Quand vous comptez de l'argent ou du matériel (association, événement, stock), comment vérifiez-vous votre total ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C6",
+      "texte": "Parlez d'une erreur que vous avez faite avec un prix, un stock ou une caisse. **Comment l'avez-vous découverte** ?",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur sans la minimiser",
+        "Dit comment elle a été corrigée et signalée",
+        "Dit ce qui a changé pour éviter qu'elle revienne"
+      ],
+      "relance": "Qui avez-vous prévenu, et quand ?",
+      "alternative": "Parlez d'une erreur faite dans une activité (études, association, bricolage) et de ce que vous avez fait ensuite."
+    }
+  ],
+  "_pv": "f7f142d2ec"
+}

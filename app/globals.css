@@ -1,0 +1,448 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource/atkinson-hyperlegible-next/400.css";
+@import "@fontsource/atkinson-hyperlegible-next/500.css";
+@import "@fontsource/atkinson-hyperlegible-next/700.css";
+
+/* ---------------------------------------------------------------------------
+   Identité visuelle du kit v5 (à reprendre telle quelle)
+   nuit #07070C   craie #F5F3EF   lime #D4FF3A   rouge #FF5A3C
+   papier #FAF7EF encre #14141C   mousse #3F4E00
+   niveaux : 1 #8A2412 / #FFE3DC · 2 #7A4A00 / #FFEDCC · 3 #3A4800 / #E6F6AE · 4 #2F3FA8 / #E4E8FF
+   rayons 10 / 16 / 26 px · pilule 999 px
+   --------------------------------------------------------------------------- */
+
+:root {
+  --nuit: #07070c;
+  --craie: #f5f3ef;
+  --lime: #d4ff3a;
+  --rouge: #ff5a3c;
+  --papier: #faf7ef;
+  --encre: #14141c;
+  --mousse: #3f4e00;
+
+  --niveau-1: #8a2412;
+  --niveau-1-fond: #ffe3dc;
+  --niveau-2: #7a4a00;
+  --niveau-2-fond: #ffedcc;
+  --niveau-3: #3a4800;
+  --niveau-3-fond: #e6f6ae;
+  --niveau-4: #2f3fa8;
+  --niveau-4-fond: #e4e8ff;
+
+  --rayon-s: 10px;
+  --rayon-m: 16px;
+  --rayon-l: 26px;
+  --pilule: 999px;
+
+  --rail: 248px;
+
+  /* Ambiance papier (défaut) */
+  --fond: var(--papier);
+  --fond-2: #f1ede3;
+  --surface: #ffffff;
+  --surface-2: #f5f3ef;
+  --texte: var(--encre);
+  --texte-2: #4a4a56;
+  --texte-3: #6e6e7a;
+  --bord: #dcd7cb;
+  --bord-fort: #b9b3a4;
+  --accent: var(--mousse);
+  --accent-texte: #ffffff;
+  --accent-fond: var(--lime);
+  --accent-fond-texte: var(--encre);
+  --surligne: #d9f99d;
+  --surligne-texte: #1a2e05;
+  --alerte: var(--rouge);
+  --alerte-fond: #ffe3dc;
+  --alerte-texte: #8a2412;
+  --focus: var(--mousse);
+  --ombre: 0 1px 2px rgb(20 20 28 / 0.06), 0 4px 16px rgb(20 20 28 / 0.06);
+
+  --police-ui: "Geist Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --police-titre: "Instrument Serif", Georgia, serif;
+  --police-lisible: "Atkinson Hyperlegible Next", "Geist Variable", system-ui, sans-serif;
+  --police-courante: var(--police-ui);
+  --interligne: 1.55;
+  --espacement-lettres: 0;
+}
+
+html[data-ambiance="nuit"] {
+  --fond: var(--nuit);
+  --fond-2: #0f0f16;
+  --surface: #15151e;
+  --surface-2: #1c1c27;
+  --texte: var(--craie);
+  --texte-2: #c9c6bf;
+  --texte-3: #9a978f;
+  --bord: #2a2a38;
+  --bord-fort: #44445a;
+  --accent: var(--lime);
+  --accent-texte: var(--nuit);
+  --accent-fond: var(--lime);
+  --accent-fond-texte: var(--nuit);
+  --surligne: #3f4e00;
+  --surligne-texte: #e6f6ae;
+  --alerte: var(--rouge);
+  --alerte-fond: #3a1a14;
+  --alerte-texte: #ffb3a3;
+  --focus: var(--lime);
+  --ombre: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.5);
+  --niveau-1-fond: #3a1a14;
+  --niveau-1: #ffb3a3;
+  --niveau-2-fond: #3a2a08;
+  --niveau-2: #ffd48a;
+  --niveau-3-fond: #263200;
+  --niveau-3: #d4ff3a;
+  --niveau-4-fond: #1a2050;
+  --niveau-4: #b8c2ff;
+  color-scheme: dark;
+}
+
+html[data-lisible="1"] {
+  --police-courante: var(--police-lisible);
+  --police-titre: var(--police-lisible);
+  --interligne: 1.75;
+  --espacement-lettres: 0.01em;
+}
+
+@theme inline {
+  --color-nuit: var(--nuit);
+  --color-craie: var(--craie);
+  --color-lime: var(--lime);
+  --color-rouge: var(--rouge);
+  --color-papier: var(--papier);
+  --color-encre: var(--encre);
+  --color-mousse: var(--mousse);
+
+  --color-fond: var(--fond);
+  --color-fond-2: var(--fond-2);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-texte: var(--texte);
+  --color-texte-2: var(--texte-2);
+  --color-texte-3: var(--texte-3);
+  --color-bord: var(--bord);
+  --color-bord-fort: var(--bord-fort);
+  --color-accent: var(--accent);
+  --color-accent-texte: var(--accent-texte);
+  --color-accent-fond: var(--accent-fond);
+  --color-accent-fond-texte: var(--accent-fond-texte);
+  --color-surligne: var(--surligne);
+  --color-surligne-texte: var(--surligne-texte);
+  --color-alerte: var(--alerte);
+  --color-alerte-fond: var(--alerte-fond);
+  --color-alerte-texte: var(--alerte-texte);
+  --color-focus: var(--focus);
+
+  --color-niveau-1: var(--niveau-1);
+  --color-niveau-1-fond: var(--niveau-1-fond);
+  --color-niveau-2: var(--niveau-2);
+  --color-niveau-2-fond: var(--niveau-2-fond);
+  --color-niveau-3: var(--niveau-3);
+  --color-niveau-3-fond: var(--niveau-3-fond);
+  --color-niveau-4: var(--niveau-4);
+  --color-niveau-4-fond: var(--niveau-4-fond);
+
+  --radius-s: var(--rayon-s);
+  --radius-m: var(--rayon-m);
+  --radius-l: var(--rayon-l);
+  --radius-pilule: var(--pilule);
+
+  --font-ui: var(--police-courante);
+  --font-titre: var(--police-titre);
+
+  --shadow-carte: var(--ombre);
+
+  --breakpoint-tel: 760px;
+}
+
+/* Point de rupture téléphone : < 760 px. Tailwind : `max-tel:` et `tel:`. */
+@custom-variant tel (@media (min-width: 760px));
+@custom-variant max-tel (@media (max-width: 759.98px));
+
+html {
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police-courante);
+  line-height: var(--interligne);
+  letter-spacing: var(--espacement-lettres);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  background: var(--fond);
+  color: var(--texte);
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+.titre {
+  font-family: var(--police-titre);
+  font-weight: 400;
+  letter-spacing: var(--espacement-lettres);
+  line-height: 1.15;
+}
+
+/* Focus visible partout, cibles tactiles ≥ 44 px */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--rayon-s);
+}
+:where(button, [role="button"], input[type="checkbox"], input[type="radio"], select, summary) {
+  min-height: 44px;
+}
+:where(button, [role="button"]) {
+  cursor: pointer;
+}
+:where(input[type="checkbox"], input[type="radio"]) {
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  accent-color: var(--accent);
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+/* Mots clés surlignés (le kit met en vert ce qui est demandé) */
+mark.mot-cle {
+  background: var(--surligne);
+  color: var(--surligne-texte);
+  padding: 0 0.2em;
+  border-radius: 4px;
+  font-weight: 600;
+}
+html[data-mots-cles="0"] mark.mot-cle {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-weight: inherit;
+}
+
+/* Composants de base */
+.carte {
+  background: var(--surface);
+  border: 1px solid var(--bord);
+  border-radius: var(--rayon-m);
+  padding: 1.25rem;
+}
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--pilule);
+  border: 1px solid var(--bord-fort);
+  background: var(--surface);
+  color: var(--texte);
+  font: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.2;
+  transition: background 0.12s ease;
+}
+.bouton:hover {
+  background: var(--surface-2);
+}
+.bouton[aria-disabled="true"],
+.bouton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.bouton-principal {
+  background: var(--accent-fond);
+  color: var(--accent-fond-texte);
+  border-color: transparent;
+}
+.bouton-principal:hover {
+  filter: brightness(0.96);
+  background: var(--accent-fond);
+}
+.bouton-encre {
+  background: var(--encre);
+  color: var(--craie);
+  border-color: transparent;
+}
+html[data-ambiance="nuit"] .bouton-encre {
+  background: var(--craie);
+  color: var(--encre);
+}
+.bouton-encre:hover {
+  filter: brightness(1.1);
+}
+.bouton-discret {
+  border-color: transparent;
+  background: transparent;
+}
+.bouton-alerte {
+  color: var(--alerte-texte);
+  background: var(--alerte-fond);
+  border-color: transparent;
+}
+.pilule {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--pilule);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--bord);
+  background: var(--surface-2);
+  color: var(--texte-2);
+  white-space: nowrap;
+}
+.pilule-niveau-1 {
+  background: var(--niveau-1-fond);
+  color: var(--niveau-1);
+  border-color: transparent;
+}
+.pilule-niveau-2 {
+  background: var(--niveau-2-fond);
+  color: var(--niveau-2);
+  border-color: transparent;
+}
+.pilule-niveau-3 {
+  background: var(--niveau-3-fond);
+  color: var(--niveau-3);
+  border-color: transparent;
+}
+.pilule-niveau-4 {
+  background: var(--niveau-4-fond);
+  color: var(--niveau-4);
+  border-color: transparent;
+}
+.champ {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--bord-fort);
+  border-radius: var(--rayon-s);
+  background: var(--surface);
+  color: var(--texte);
+  font: inherit;
+  line-height: 1.4;
+}
+.champ::placeholder {
+  color: var(--texte-3);
+}
+textarea.champ {
+  min-height: 6rem;
+  resize: vertical;
+}
+.etiquette {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.aide {
+  color: var(--texte-2);
+  font-size: 0.925rem;
+}
+.encart {
+  border-left: 4px solid var(--accent);
+  background: var(--surface-2);
+  padding: 0.9rem 1rem;
+  border-radius: 0 var(--rayon-s) var(--rayon-s) 0;
+}
+.encart-alerte {
+  border-left-color: var(--alerte);
+  background: var(--alerte-fond);
+  color: var(--alerte-texte);
+}
+.prose-ci > * + * {
+  margin-top: 0.75rem;
+}
+.prose-ci ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.prose-ci ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+.prose-ci li + li {
+  margin-top: 0.3rem;
+}
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.tableau th,
+.tableau td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--bord);
+  vertical-align: top;
+}
+.tableau th {
+  font-weight: 600;
+  color: var(--texte-2);
+}
+.visuellement-cache {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Impression : fiches, analyses, fiche d'entretien */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .no-print,
+  nav,
+  .rail,
+  .barre-basse,
+  .tiroir-besoin {
+    display: none !important;
+  }
+  .contenu-principal {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  .carte {
+    border-color: #999;
+    break-inside: avoid;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .page-impression {
+    break-before: page;
+  }
+}

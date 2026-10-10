@@ -1,0 +1,2604 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "conseiller-clientele",
+  "version": "2026.10",
+  "nom": "Conseiller clientèle / Conseillère clientèle",
+  "secteur": "commerce",
+  "alias": [
+    "conseiller clientèle",
+    "conseillère clientèle",
+    "téléconseiller",
+    "téléconseillère",
+    "chargé de clientèle",
+    "service client",
+    "conseiller relation client à distance",
+    "support client",
+    "conseiller en relation client",
+    "conseiller service client"
+  ],
+  "resume": "Répond aux clients par téléphone, e-mail et messagerie, traite leurs réclamations dans les règles et transmet les dossiers aux autres services.",
+  "contexte": "Le service client à distance (téléphone, e-mail et messagerie) d'un site de vente en ligne d'articles pour la maison, ouvert du lundi au vendredi de 9 h à 18 h.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C7",
+      "titre": "Répondre à un client mécontent, dans les règles de la maison",
+      "pourquoi": "Un client mécontent a besoin d'une réponse claire, dans les règles, avec un délai qui sera tenu.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une lampe arrivée cassée",
+        "texte": "Mardi, 10 h 20. Un client vous appelle, agacé. Sa commande 48213, une lampe de table payée 64 €, est arrivée hier avec le pied cassé. Il dit : « Je veux une solution aujourd'hui. » Il demande aussi un bon d'achat « pour le dérangement ». Dans l'outil client, vous voyez la commande, livrée lundi. Aucune photo n'a encore été reçue.",
+        "document": {
+          "type": "liste",
+          "titre": "Les règles de la maison pour un article abîmé",
+          "items": [
+            "Vous proposez un remplacement ou un remboursement, une fois reçue la photo de l'article et de son emballage.",
+            "Le remplacement est expédié sous 3 jours ouvrés après réception de la photo.",
+            "Le remboursement se fait sur le moyen de paiement utilisé pour la commande, et sur aucun autre.",
+            "Un bon d'achat, une remise ou des frais de livraison offerts sont des gestes commerciaux : seul le responsable du service les décide. Il répond sous 48 heures."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le client vous explique son problème, agacé. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande d'envoyer une photo de la lampe avant de continuer.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je reformule : « Votre lampe est arrivée cassée, vous voulez une solution. »",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que je suis désolé et que ce problème n'arrive jamais chez nous.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui demande s'il n'a pas fait tomber la lampe en la déballant.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "Reformuler montre au client qu'il est compris, et vous vérifiez que vous avez bien compris. La photo sera nécessaire, mais la demander tout de suite ne répond pas à son problème.",
+              "relance": "Comment vérifiez-vous que vous avez bien compris la demande d'un client ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Avant de proposer une solution, **que regardez-vous** dans **l'outil client** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Seulement le montant payé, pour savoir combien rembourser.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "b",
+                  "texte": "Rien : le client sait ce qu'il a reçu, je le crois sur parole.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Ses autres commandes, pour voir s'il se plaint souvent.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "La commande 48213 : l'article, le montant, la date de livraison et les photos reçues.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "La commande donne les faits : article, montant, date de livraison, photos déjà reçues. Le montant seul permet de rembourser, mais pas de savoir où en est le dossier.",
+              "relance": "Que vérifiez-vous avant de répondre à une réclamation ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client dit : « Je veux une solution aujourd'hui. » **Quelle question** lui posez-vous pour **comprendre ce qu'il veut** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Souhaitez-vous le remplacement de la lampe ou son remboursement ? »",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Qu'attendez-vous de nous exactement pour régler ce problème ? »",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "« Voulez-vous en parler directement à mon responsable ? »",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Vous voulez donc être remboursé de la lampe, c'est bien cela ? »",
+                  "points": 0,
+                  "repere": "c7_impose"
+                }
+              ],
+              "explication": "Une question précise avec les deux solutions possibles lui permet de choisir. Une question trop ouverte est acceptable, mais ne lui propose rien de concret.",
+              "relance": "Quelle question posez-vous quand un client veut « une solution » sans dire laquelle ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Il choisit le remplacement et demande aussi **un bon d'achat** de 20 €. **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Je vous accorde 20 € pour vous excuser du dérangement. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Ce n'est pas possible, je ne peux rien vous accorder de plus. »",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je transmets votre demande au responsable, qui vous répond sous 48 heures. »",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je vous le promets : le responsable accepte toujours dans ce cas. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                }
+              ],
+              "explication": "Vous ne décidez pas d'un geste commercial : vous transmettez la demande et vous donnez le délai de réponse. Refuser est conforme à la règle, mais laisse le client sans réponse ni délai.",
+              "relance": "Quand un client demande un geste commercial que vous ne pouvez pas décider, que faites-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Jeudi**, vous ouvrez sa fiche : le remplacement est parti, mais la réponse du responsable **n'y figure pas**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je considère le dossier clos : le remplacement, le plus important, est parti.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je relance le responsable, puis je rappelle le client avec sa réponse.",
+                  "points": 2,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je dis au client d'appeler lui-même le responsable s'il veut sa réponse.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je relance le responsable, sans rien dire au client en attendant.",
+                  "points": 1,
+                  "repere": "c2_silence"
+                }
+              ],
+              "explication": "Le client attend une réponse depuis deux jours : vous la relancez, puis vous la lui donnez. Relancer sans le prévenir règle la moitié du problème.",
+              "relance": "Comment savez-vous qu'une demande de client est vraiment terminée ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand le client m'explique son problème, **je commence par**…",
+              "justes": [
+                {
+                  "texte": "reformuler sa situation pour vérifier que j'ai bien compris",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "lui dire que sa lampe est arrivée cassée et lui demander ce qu'il souhaite",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "l'écouter jusqu'au bout, puis reformuler ce qu'il demande",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "m'excuser pour le dérangement",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui demander s'il a fait tomber la lampe",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "lui dire de rappeler quand il sera plus calme",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Avant de lui proposer une solution, **je vérifie** dans **l'outil client**…",
+              "justes": [
+                {
+                  "texte": "la date de livraison et le contenu de la commande 48213",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "que la commande est bien livrée et si une photo a été reçue",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "le montant payé et le moyen de paiement utilisé",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le montant payé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : je le crois sur parole",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "si ce client s'est déjà plaint, pour savoir s'il exagère",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Au client qui demande **un bon d'achat**, je réponds que…",
+              "justes": [
+                {
+                  "texte": "je transmets sa demande au responsable, qui répond sous 48 heures",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "seul le responsable peut décider d'un bon d'achat, et je lui transmets la demande",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "le responsable va étudier sa demande et lui répondra sous 48 heures",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "je ne peux pas le lui accorder",
+                  "repere": "c7_regle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "je le lui accorde, pour le calmer",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "le responsable acceptera sûrement",
+                  "repere": "c7_promesse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de rappeler le client avec la réponse du responsable, sans attendre qu'il rappelle.",
+              "repere": "c7_suivi"
+            },
+            {
+              "texte": "Vérifie dans la fiche, deux jours plus tard, que le remplacement est bien parti.",
+              "repere": "c7_suivi"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne peux pas décider d'un bon d'achat moi-même. Je transmets votre demande au responsable, qui vous répond sous 48 heures. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client demande où en est le remplacement de sa lampe. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un client demande un geste commercial. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client veut être remboursé de sa lampe cassée. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le client dont la lampe est arrivée cassée choisit le remplacement et demande un bon d'achat de 20 €. Que lui répondez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La lampe a coûté 64 €.",
+                "juste": false
+              },
+              {
+                "id": "i2",
+                "texte": "Le client demande un bon d'achat de 20 €.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "La photo de la lampe a déjà été reçue.",
+                "juste": false
+              },
+              {
+                "id": "i4",
+                "texte": "Seul le responsable du service décide d'un geste commercial.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "Le remplacement part sous 3 jours ouvrés.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Un bon d'achat est un geste commercial.",
+                "juste": true
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'annonce au client que le responsable lui accordera le bon d'achat.",
+                "points": 0,
+                "repere": "c7_promesse"
+              },
+              {
+                "id": "b",
+                "texte": "J'écris la demande dans la fiche et je la transmets au responsable aujourd'hui.",
+                "points": 2,
+                "repere": "c4_escalade"
+              },
+              {
+                "id": "c",
+                "texte": "Je transmets la demande au responsable, sans l'écrire dans la fiche.",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Je ne fais rien de plus : c'est au client de relancer s'il veut une réponse.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              }
+            ]
+          },
+          "explication": "Un bon d'achat est un geste commercial : seul le responsable peut le décider. La réponse transmet la demande et donne le délai, sans rien promettre."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous faites, transmettez ou refusez",
+          "consigne": "**Pour chaque action, choisissez** : vous la faites vous-même, vous la transmettez au responsable, ou vous ne la faites pas.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je le fais moi-même"
+            },
+            {
+              "id": "k2",
+              "nom": "Je le transmets au responsable"
+            },
+            {
+              "id": "k3",
+              "nom": "Je ne le fais pas"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Offrir un bon d'achat de 20 €",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "C'est un geste commercial : seul le responsable le décide."
+            },
+            {
+              "id": "e2",
+              "texte": "Proposer le remplacement de la lampe",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La règle prévoit un remplacement ou un remboursement, une fois la photo reçue."
+            },
+            {
+              "id": "e3",
+              "texte": "Rembourser sur le compte bancaire d'une autre personne",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La règle impose le moyen de paiement utilisé pour la commande, et aucun autre."
+            },
+            {
+              "id": "e4",
+              "texte": "Demander la photo de la lampe et de son emballage",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La règle demande la photo avant le remplacement ou le remboursement."
+            },
+            {
+              "id": "e5",
+              "texte": "Offrir les frais de livraison de sa prochaine commande",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Des frais de livraison offerts sont un geste commercial : le responsable décide."
+            },
+            {
+              "id": "e6",
+              "texte": "Promettre que le responsable acceptera le bon d'achat",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Vous ne pouvez pas promettre la décision d'une autre personne."
+            },
+            {
+              "id": "e7",
+              "texte": "Rembourser les 64 € sur le moyen de paiement de la commande",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le remboursement est prévu par la règle, sur le moyen de paiement utilisé."
+            },
+            {
+              "id": "e8",
+              "texte": "Expédier le remplacement avant d'avoir reçu la photo",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La règle demande d'abord la photo, puis l'envoi sous 3 jours ouvrés."
+            }
+          ],
+          "repere_reussite": "c7_regle",
+          "repere_echec": "c7_hors_regle",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le client agacé de la commande 48213, une autre le responsable. La personne candidate répond avec la fiche de commande et les règles sous les yeux.",
+            "criteres": [
+              {
+                "texte": "Reformule la demande et pose une question précise : remplacement ou remboursement",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "Vérifie la commande dans la fiche avant de proposer une solution",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Propose une solution prévue par les règles, avec son délai",
+                "repere": "c7_alternative"
+              },
+              {
+                "texte": "Transmet le bon d'achat au responsable, sans le promettre, et donne le délai de réponse",
+                "repere": "c7_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Annonce qu'elle rappellera le client avec la réponse du responsable",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Le client vous explique son problème, agacé. Que lui **répondez-vous en premier** ?",
+              "justes": [
+                {
+                  "texte": "Je reformule son problème pour vérifier que j'ai bien compris.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Je lui demande ce qu'il souhaite : un remplacement ou un remboursement.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Je lui dis que j'ai compris que sa lampe est cassée et que je regarde sa commande.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je m'excuse pour la lampe cassée.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui demande s'il a fait tomber la lampe.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment proposez-vous** de régler son problème ?",
+              "justes": [
+                {
+                  "texte": "Je vérifie la commande, puis je propose un remplacement ou un remboursement.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Je demande la photo de la lampe et de l'emballage, comme le prévoit la règle.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "J'annonce le délai : le remplacement part sous 3 jours ouvrés après la photo.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je propose un remplacement, sans parler de la photo.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je rembourse tout de suite, sans photo, pour qu'il soit content.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le client demande **un bon d'achat** de 20 €. Que répondez-vous ?",
+              "justes": [
+                {
+                  "texte": "Que seul le responsable peut décider d'un bon d'achat, et que je lui transmets la demande.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Que le responsable lui répondra sous 48 heures.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Que je ne peux pas le lui promettre, mais que sa demande sera étudiée.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que ce n'est pas possible.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que je le lui accorde, pour le calmer.",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "Que le responsable acceptera sûrement.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de rappeler le client avec la réponse du responsable.",
+              "repere": "c7_suivi"
+            },
+            {
+              "texte": "Vérifie dans la fiche que le remplacement est bien parti.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit la liste des gestes commerciaux réservés au responsable, son délai de réponse et la phrase à dire au client en attendant.",
+        "Faire écouter deux appels de réclamation avec un collègue expérimenté, puis en parler : ce qui est reformulé, vérifié et annoncé."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Passer un dossier clair au service après-vente",
+      "pourquoi": "Un autre service ne peut décider que si le dossier est clair : sinon le client doit tout répéter et attend plus longtemps.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une cafetière qui ne chauffe plus",
+        "texte": "Jeudi, 14 h 30. Vous venez de finir l'appel d'un client dont la cafetière ne chauffe plus. Vous ne pouvez pas décider d'un remplacement : c'est le service après-vente (SAV) qui décide. Vous lui transmettez le dossier par écrit, dans l'outil. Le SAV lit votre message, puis rappelle le client sans lui reposer les mêmes questions. Voici vos notes d'appel.",
+        "document": {
+          "type": "tableau",
+          "titre": "Vos notes d'appel",
+          "colonnes": [
+            "Information",
+            "Notes prises pendant l'appel"
+          ],
+          "lignes": [
+            [
+              "Commande",
+              "51027, cafetière électrique CF-220, livrée le 8 septembre"
+            ],
+            [
+              "Panne",
+              "L'eau reste froide, le voyant s'allume"
+            ],
+            [
+              "Déjà essayé",
+              "Une autre prise, un nettoyage anticalcaire : sans effet"
+            ],
+            [
+              "Preuve",
+              "Vidéo de 20 secondes reçue par e-mail à 14 h 10"
+            ],
+            [
+              "Demande du client",
+              "Un remplacement"
+            ],
+            [
+              "Ce que vous lui avez dit",
+              "Le SAV décide et le rappelle sous 48 heures"
+            ],
+            [
+              "Contact",
+              "Téléphone, de préférence le matin"
+            ],
+            [
+              "Autre",
+              "Le client a aussi parlé d'une ancienne commande, livrée sans problème"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Par quoi commencez-vous** votre message au SAV ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Par le récit de l'appel, dans l'ordre où le client en a parlé.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Par le numéro de commande, puis les notes dans l'ordre du tableau.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Par la demande : le remplacement de la cafetière, commande 51027.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "d",
+                  "texte": "Par une phrase sur l'humeur du client pendant l'appel.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                }
+              ],
+              "explication": "Le SAV doit comprendre en une phrase ce qu'on lui demande et pour quelle commande. Le numéro de commande seul est utile, mais il ne dit pas la demande.",
+              "relance": "Que mettez-vous en première ligne quand vous passez un dossier à un autre service ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Que **doit contenir** votre message sur la **panne** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Ce qui ne marche pas, ce que le client a déjà essayé, et la vidéo reçue.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Seulement : « La cafetière ne marche plus. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rien : le SAV rappellera le client pour le lui demander.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "L'historique de toutes les commandes du client depuis son inscription.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                }
+              ],
+              "explication": "Le SAV décide à partir de votre message : il lui faut la panne, les essais déjà faits et la preuve reçue. « Ne marche plus » est vrai, mais ne lui apprend rien.",
+              "relance": "De quelles informations un collègue a-t-il besoin pour reprendre un dossier sans rappeler le client ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client a aussi parlé **d'une ancienne commande**, livrée sans problème. **Qu'en faites-vous** dans le message ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le recopie : cela peut toujours servir au SAV.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne le mets pas : cela n'aide pas le SAV à décider.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je l'ajoute à la fin du message, après tout le reste.",
+                  "points": 1,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au SAV de donner raison au client parce qu'il commande souvent.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                }
+              ],
+              "explication": "Le SAV décide à partir de la panne, pas de l'historique du client. Un détail sans rapport alourdit le message, même placé à la fin.",
+              "relance": "Comment choisissez-vous ce qu'il faut garder dans un résumé ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Que précisez-vous** au SAV sur **la suite** à donner au client ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que le client a été prévenu, sans dire quand.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que le SAV doit lui envoyer un remplacement sous 48 heures.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rien de plus : le SAV connaît déjà ses propres délais de rappel.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que le client attend son rappel sous 48 heures, de préférence le matin.",
+                  "points": 2,
+                  "repere": "c3_suite"
+                }
+              ],
+              "explication": "Le SAV doit savoir ce que le client attend et quand, pour le rappeler à temps. Dire seulement « il a été prévenu » ne donne ni le délai ni le bon moment.",
+              "relance": "Que dit votre message sur ce qui va se passer ensuite ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le **lendemain**, vous **ne voyez aucune réponse** du SAV dans l'outil. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends : le client sera sûrement rappelé dans les 48 heures.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je dis au client de rappeler le SAV lui-même.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je regarde si le SAV a ouvert le dossier, et sinon je le préviens directement.",
+                  "points": 2,
+                  "repere": "c3_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'envoie de nouveau le même message, sans regarder s'il est arrivé.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "On vérifie que le message est arrivé et lu, avant que le client attende pour rien. Renvoyer le même message sans regarder peut créer un doublon.",
+              "relance": "Comment savez-vous qu'un collègue a bien reçu un dossier ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "La **première ligne** de mon message au SAV dit…",
+              "justes": [
+                {
+                  "texte": "ce que le client demande : un remplacement de la cafetière de la commande 51027",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "que la cafetière 51027 ne chauffe plus et que le client veut un remplacement",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "la demande et le numéro de commande, avant tout le reste",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le numéro de commande",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que le client était très énervé",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "le récit de l'appel depuis le début",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour **décrire la panne**, j'écris…",
+              "justes": [
+                {
+                  "texte": "que l'eau reste froide et que le voyant s'allume",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "les essais déjà faits : une autre prise et un nettoyage anticalcaire",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "que le client a envoyé une vidéo de 20 secondes à 14 h 10",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que la cafetière ne marche plus",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : le SAV rappellera le client pour lui demander",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "tout ce que le client a dit pendant l'appel",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**À la fin** du message, je précise…",
+              "justes": [
+                {
+                  "texte": "que le client attend un rappel du SAV sous 48 heures, de préférence le matin",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "comment et quand joindre le client",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "ce que j'ai dit au client : le SAV décide et le rappelle",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le client a été prévenu",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que le SAV lui enverra un remplacement",
+                  "repere": "c7_promesse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Relit son message avec ses notes d'appel avant de l'envoyer.",
+              "repere": "c3_verifie"
+            },
+            {
+              "texte": "Vérifie le lendemain que le SAV a bien ouvert le dossier.",
+              "repere": "c3_verifie"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Commande 51027 : le client demande le remplacement de sa cafetière, qui ne chauffe plus. Vidéo jointe. Il attend votre rappel sous 48 heures, le matin. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client vous demande de lui renvoyer sa facture. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous passez un dossier au SAV. Quel message lui écrivez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Vous passez au SAV le dossier d'une lampe arrivée cassée. Quel message lui écrivez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le client de la commande 51027 veut le remplacement de sa cafetière, qui ne chauffe plus. Quel message écrivez-vous au SAV ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le client demande un remplacement.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le client a demandé un remboursement.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Une vidéo de la panne a été reçue.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client a parlé d'une ancienne commande, livrée sans problème.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le SAV a déjà rappelé le client.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le client attend un rappel du SAV sous 48 heures.",
+                "juste": true
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'envoie le message, puis je regarde dans l'outil que le SAV l'a bien reçu.",
+                "points": 2,
+                "repere": "c3_verifie"
+              },
+              {
+                "id": "b",
+                "texte": "J'envoie le message et je passe à l'appel suivant, sans rien vérifier.",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Je garde le message dans mes notes, au cas où le SAV le demanderait.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "d",
+                "texte": "Je rappelle le client pour lui redemander les détails de la panne.",
+                "points": 0,
+                "repere": "c3_flou"
+              }
+            ]
+          },
+          "explication": "Le message donne la demande, la commande, la panne, la preuve et le délai de rappel : le SAV peut décider sans reposer de questions. Chaque élément vient de vos notes d'appel."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Votre message au SAV, avant l'envoi",
+          "consigne": "Voici le message prêt à partir. Comparez-le à vos **notes d'appel** et cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Commande 51072 — cafetière électrique CF-220.",
+              "erreur": true,
+              "explication": "Vos notes indiquent la commande 51027. Avec 51072, le SAV ouvrirait le dossier d'un autre client."
+            },
+            {
+              "id": "e2",
+              "texte": "Livrée le 8 septembre.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Panne : l'eau reste froide, le voyant s'allume.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Déjà essayé : une autre prise et un nettoyage anticalcaire.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Preuve : une vidéo de 20 secondes, reçue par e-mail à 14 h 10.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Demande du client : un remplacement.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Dit au client : un remplacement lui sera envoyé sous 48 heures.",
+              "erreur": true,
+              "explication": "Vous lui avez dit que le SAV décide et le rappelle sous 48 heures. Aucun remplacement n'est promis."
+            },
+            {
+              "id": "e8",
+              "texte": "Joignable par téléphone, de préférence le soir.",
+              "erreur": true,
+              "explication": "Vos notes indiquent : de préférence le matin. Le SAV risquerait d'appeler au mauvais moment."
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "En simulation (15 minutes) : la personne candidate reçoit des notes d'appel sur un client, écrit le message pour le SAV dans l'outil ou sur papier, puis le relit.",
+            "criteres": [
+              {
+                "texte": "Place la demande et le numéro de commande en première ligne",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Donne la panne, les essais déjà faits et la preuve reçue",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Écrit ce que le client attend et le délai de rappel",
+                "repere": "c3_suite"
+              },
+              {
+                "texte": "Laisse de côté ce qui n'aide pas le SAV à décider",
+                "repere": "c3_adapte"
+              }
+            ],
+            "bonus": {
+              "texte": "Se relit avec les notes avant l'envoi et corrige une erreur ou un oubli",
+              "repere": "c3_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que mettez-vous **en première ligne** de votre message au SAV ?",
+              "justes": [
+                {
+                  "texte": "La demande du client : le remplacement de la cafetière de la commande 51027.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Ce que le client demande et le numéro de commande.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "La panne et la demande, en une seule phrase.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le numéro de commande.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Le récit de l'appel depuis le début.",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Quelles informations** ajoutez-vous pour que le SAV **ne repose pas** les mêmes questions au client ?",
+              "justes": [
+                {
+                  "texte": "Ce qui ne marche pas : l'eau reste froide, le voyant s'allume.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Les essais déjà faits : une autre prise, un nettoyage anticalcaire.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "La vidéo reçue, avec son heure d'arrivée.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Comment et quand joindre le client.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que la cafetière ne marche plus.",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le SAV rappellera le client pour lui demander.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que **laissez-vous de côté** dans votre message ?",
+              "justes": [
+                {
+                  "texte": "L'ancienne commande dont le client a parlé : elle n'aide pas le SAV à décider.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "Tout ce qui n'a pas de rapport avec la panne.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "Mon avis sur le client : je garde seulement les faits.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je raccourcis un peu, mais je garde presque tout.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je recopie toutes mes notes, au cas où.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Vérifie le lendemain que le SAV a ouvert le dossier.",
+              "repere": "c3_verifie"
+            },
+            {
+              "texte": "Se relit avec ses notes avant d'envoyer.",
+              "repere": "c3_verifie"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un modèle de message en quatre lignes : la demande, la panne avec les essais et la preuve, ce que le client attend, comment le joindre.",
+        "Faire relire les premiers messages par un collègue du SAV, qui dit ce qu'il a compris et ce qui lui manque."
+      ]
+    },
+    {
+      "code": "C5",
+      "titre": "Appliquer une nouvelle procédure dès le premier jour",
+      "pourquoi": "Une procédure change souvent : le client attend une réponse juste, et l'ancienne façon de faire peut coûter un colis ou une erreur.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un colis « livré » que la cliente n'a pas reçu",
+        "texte": "Lundi, 9 h 10. Depuis ce matin, une nouvelle procédure s'applique aux colis indiqués « livrés » que le client dit ne pas avoir reçus. Jusqu'à vendredi, vous renvoyiez un colis tout de suite. Une cliente vous appelle : sa commande 52114, un set de casseroles, est « livrée vendredi » d'après le suivi, mais elle n'a rien reçu. Elle demande un nouveau colis. Vous avez la note de service sous les yeux.",
+        "document": {
+          "type": "liste",
+          "titre": "Note de service : colis livré mais non reçu",
+          "items": [
+            "Ce qui change : vous ne renvoyez plus de colis et vous ne remboursez plus avant la réponse du transporteur.",
+            "D'abord, vérifiez le suivi dans l'outil : date de livraison et lieu de dépôt.",
+            "Demandez ensuite au client de chercher chez ses voisins et au lieu de dépôt indiqué.",
+            "Si le colis reste introuvable, ouvrez une enquête auprès du transporteur dans l'outil. Il répond sous 2 jours ouvrés.",
+            "Annoncez ce délai au client, puis notez l'enquête et le délai dans la fiche.",
+            "Quand le transporteur répond, proposez au client le renvoi ou le remboursement, à son choix.",
+            "Une question sur cette note : demandez à votre responsable d'équipe."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "La cliente demande un nouveau colis tout de suite. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je renvoie le colis, comme je le faisais jusqu'à vendredi.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je vérifie le suivi dans l'outil, comme la note le demande d'abord.",
+                  "points": 2,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis d'attendre quelques jours, sans lui expliquer pourquoi.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui explique la nouvelle procédure, avant de regarder le suivi.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "La première étape de la note est de vérifier le suivi : vous connaissez la date et le lieu de dépôt. Expliquer la procédure est utile, mais sans le suivi vous ne savez pas encore où chercher.",
+              "relance": "Comment vous assurez-vous d'appliquer correctement une procédure que vous venez de découvrir ?"
+            },
+            {
+              "id": "q2",
+              "texte": "La cliente demande ce qui se passera si elle **retrouve son colis** demain. La note **n'en parle pas**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis qu'elle pourra garder les deux colis.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis que je ne sais pas.",
+                  "points": 1,
+                  "repere": "c5_attend"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que dans ce cas il n'y aura aucun problème.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je pose la question à mon responsable d'équipe et je rappelle la cliente avec sa réponse.",
+                  "points": 2,
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "explication": "Quand la note ne couvre pas un cas, on pose la question à la bonne personne, ici le responsable d'équipe, et on reste honnête avec la cliente. Dire « je ne sais pas » est exact, mais ne règle rien.",
+              "relance": "Que faites-vous quand une procédure ne dit rien sur le cas que vous avez ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La cliente est surprise : « Avant, on me renvoyait un colis tout de suite. » **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Depuis ce matin, le transporteur répond d'abord à une enquête, sous 2 jours ouvrés. Ensuite, je vous propose un renvoi ou un remboursement. »",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "b",
+                  "texte": "« C'est la règle maintenant, je n'y peux rien. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Vous avez raison, je fais une exception pour vous : je renvoie le colis. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je ne sais pas pourquoi c'est différent, rappelez dans quelques jours. »",
+                  "points": 0,
+                  "repere": "c5_attend"
+                }
+              ],
+              "explication": "La cliente doit comprendre ce qui change et quand elle aura une réponse : l'enquête, le délai de 2 jours ouvrés, puis le renvoi ou le remboursement. « C'est la règle » est exact, mais ne l'aide pas.",
+              "relance": "Comment expliquez-vous à un client une règle qui vient de changer ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Mardi, votre responsable d'équipe vous signale que l'enquête de la commande 52114 **n'a pas été ouverte**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je réponds que l'enquête n'était pas nécessaire : la cliente avait cherché.",
+                  "points": 0,
+                  "repere": "c5_ignore"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'ouvre l'enquête maintenant.",
+                  "points": 1,
+                  "repere": "c5_corrige"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'ouvre l'enquête maintenant et je contrôle mes autres dossiers de la semaine.",
+                  "points": 2,
+                  "repere": "c5_corrige"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'ouvrirai l'enquête quand j'aurai un moment de libre.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "On corrige tout de suite, puis on cherche si le même oubli a pu se produire ailleurs. Ouvrir l'enquête règle ce dossier, mais pas les autres.",
+              "relance": "Que faites-vous quand un responsable ou un collègue vous signale une erreur ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Un collègue** vous dit : « Moi, je renvoie quand même le colis tout de suite, ça évite les réclamations. » **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je fais comme lui : il a plus d'expérience que moi.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je continue d'appliquer la note et je lui montre le passage sur le renvoi.",
+                  "points": 2,
+                  "repere": "c5_source"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je continue d'appliquer la note, sans lui en parler.",
+                  "points": 1,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse chaque cliente choisir entre l'ancienne et la nouvelle façon de faire.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "La note de service est la règle de l'équipe : on s'y appuie et on la montre. L'appliquer en silence est correct, mais le collègue continue de faire autrement.",
+              "relance": "Que faites-vous quand un collègue applique encore l'ancienne règle ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand la cliente demande un nouveau colis tout de suite, je…",
+              "justes": [
+                {
+                  "texte": "vérifie d'abord le suivi du colis dans l'outil, comme la note le demande",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "lui explique que la procédure a changé et que je commence par le suivi",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "relis la note de service avant de lui répondre",
+                  "repere": "c5_source"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis que je regarde ce que je peux faire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "renvoie le colis, comme avant",
+                  "repere": "c5_habitude"
+                },
+                {
+                  "texte": "lui dis de rappeler quand j'aurai appris la nouvelle règle",
+                  "repere": "c5_attend"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si la note **ne dit pas** ce qu'il faut faire dans un cas, je…",
+              "justes": [
+                {
+                  "texte": "demande à mon responsable d'équipe, comme la note l'indique",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "pose ma question avant de répondre au client",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "dis à la cliente que je reviens vers elle avec la réponse",
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "relis la note une seconde fois",
+                  "repere": "c5_source"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "choisis la solution qui me semble logique",
+                  "repere": "c5_devine"
+                },
+                {
+                  "texte": "fais comme avant",
+                  "repere": "c5_habitude"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand **un collègue** me dit de continuer comme avant, je…",
+              "justes": [
+                {
+                  "texte": "lui montre le passage de la note de service",
+                  "repere": "c5_source"
+                },
+                {
+                  "texte": "continue d'appliquer la nouvelle procédure",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "demande à mon responsable d'équipe si nous avons un doute",
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "continue d'appliquer la note sans lui en parler",
+                  "repere": "c5_applique"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "fais comme lui, parce qu'il a plus d'expérience",
+                  "repere": "c5_habitude"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'ajouter à la note le cas du colis retrouvé pendant l'enquête.",
+              "repere": "c5_ameliore"
+            },
+            {
+              "texte": "Prépare une phrase simple pour expliquer le changement aux clients.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Depuis ce matin, je ne renvoie plus de colis tout de suite. J'ouvre une enquête auprès du transporteur, qui répond sous 2 jours ouvrés. Je vous propose ensuite un renvoi ou un remboursement. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Une cliente dit que son colis est arrivé cassé. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Une cliente demande un nouveau colis. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Une cliente demande où en est son remboursement. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le colis d'une cliente est « livré », mais elle ne le trouve pas. Elle en veut un autre tout de suite. Que lui répondez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le suivi indique que le colis est livré.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le transporteur a déjà répondu à l'enquête.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La nouvelle procédure interdit de renvoyer avant la réponse du transporteur.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le colis contient un set de casseroles.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La cliente n'a pas retrouvé son colis.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La cliente a déjà été remboursée.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'ouvre l'enquête dans l'outil et je note le délai annoncé dans la fiche.",
+                "points": 2,
+                "repere": "c5_applique"
+              },
+              {
+                "id": "b",
+                "texte": "J'ouvre l'enquête dans l'outil, mais je ne note rien dans la fiche.",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Je renvoie un colis en attendant, pour ne pas la faire patienter.",
+                "points": 0,
+                "repere": "c5_habitude"
+              },
+              {
+                "id": "d",
+                "texte": "J'attends que la cliente me rappelle dans deux jours.",
+                "points": 0,
+                "repere": "c5_attend"
+              }
+            ]
+          },
+          "explication": "La réponse applique la nouvelle procédure : enquête d'abord, délai annoncé, renvoi ou remboursement ensuite. Le suivi « livré » et l'absence de réponse du transporteur expliquent pourquoi on ne renvoie pas tout de suite."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Le colis 52114, étape par étape",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, en suivant la **note de service**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Vérifier le suivi du transporteur dans l'outil"
+            },
+            {
+              "id": "e2",
+              "texte": "Demander à la cliente de chercher chez ses voisins et au lieu de dépôt"
+            },
+            {
+              "id": "e3",
+              "texte": "Ouvrir une enquête auprès du transporteur"
+            },
+            {
+              "id": "e4",
+              "texte": "Annoncer à la cliente que le transporteur répond sous 2 jours ouvrés"
+            },
+            {
+              "id": "e5",
+              "texte": "Lire la réponse du transporteur"
+            },
+            {
+              "id": "e6",
+              "texte": "Proposer à la cliente un renvoi ou un remboursement"
+            },
+            {
+              "id": "e7",
+              "texte": "Noter l'enquête et le délai dans la fiche client"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "Le suivi indique le lieu de dépôt : on le lit avant d'envoyer la cliente chercher."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "La note demande d'ouvrir l'enquête seulement si le colis reste introuvable."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "La réponse du transporteur arrive après l'ouverture de l'enquête."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "Le délai est annoncé pendant l'appel, avant que la réponse n'arrive."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "Le renvoi ou le remboursement se propose à la réponse du transporteur, pas avant."
+            },
+            {
+              "avant": "e3",
+              "apres": "e7",
+              "explication": "On note une enquête une fois qu'elle est ouverte."
+            },
+            {
+              "avant": "e4",
+              "apres": "e7",
+              "explication": "La fiche contient le délai annoncé : on le note après l'avoir annoncé."
+            }
+          ],
+          "repere_reussite": "c5_applique",
+          "repere_echec": "c5_habitude",
+          "reel": {
+            "consigne": "Simulation de 10 minutes : la personne candidate a la note de service. Elle traite l'appel d'une cliente jouée par l'évaluateur, avec une fiche client et un suivi de transporteur fictifs.",
+            "criteres": [
+              {
+                "texte": "Vérifie le suivi avant de répondre à la demande de renvoi",
+                "repere": "c5_applique"
+              },
+              {
+                "texte": "Ne renvoie pas et ne rembourse pas avant la réponse du transporteur",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Annonce le délai de 2 jours ouvrés et explique ce qui a changé",
+                "repere": "c7_suite"
+              },
+              {
+                "texte": "Note l'enquête et le délai dans la fiche",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Pose une question quand un cas n'est pas prévu par la note",
+              "repere": "c5_clarifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "La cliente demande un nouveau colis tout de suite. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je vérifie d'abord le suivi du colis dans l'outil, comme la note le demande.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Je lui explique que la procédure a changé et que je commence par le suivi.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Je relis la note de service avant de lui répondre.",
+                  "repere": "c5_source"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que je regarde ce que je peux faire.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je renvoie le colis, comme avant.",
+                  "repere": "c5_habitude"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le colis **reste introuvable**. Que faites-vous **ensuite** ?",
+              "justes": [
+                {
+                  "texte": "J'ouvre une enquête auprès du transporteur dans l'outil.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "J'annonce à la cliente que le transporteur répond sous 2 jours ouvrés.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Je note l'enquête et le délai dans la fiche client.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je propose le renvoi ou le remboursement seulement après sa réponse.",
+                  "repere": "c5_applique"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'ouvre l'enquête, sans annoncer de délai.",
+                  "repere": "c5_applique"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je renvoie un colis en attendant.",
+                  "repere": "c5_habitude"
+                },
+                {
+                  "texte": "Je rembourse tout de suite.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "La cliente demande ce qui se passe si elle **retrouve son colis**. La note **n'en parle pas**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je demande à mon responsable d'équipe, comme la note l'indique.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je dis à la cliente que je pose la question et que je reviens vers elle.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je ne réponds pas avant d'avoir la réponse du responsable.",
+                  "repere": "c5_source"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que je ne sais pas.",
+                  "repere": "c5_attend"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis qu'elle pourra garder les deux colis.",
+                  "repere": "c5_devine"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'ajouter à la note le cas du colis retrouvé pendant l'enquête.",
+              "repere": "c5_ameliore"
+            },
+            {
+              "texte": "Prépare une phrase simple pour expliquer le changement aux clients.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre la note de service par écrit, avec un exemple d'appel traité pas à pas, et indiquer qui répond aux questions sur la procédure.",
+        "La première semaine, faire relire deux dossiers par un collègue expérimenté pour vérifier que chaque étape de la nouvelle procédure est appliquée."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Gérer plusieurs demandes en attente",
+      "pourquoi": "Quand tout arrive en même temps, l'ordre choisi décide de ce qui part à temps et de ce que chaque client sait de l'attente.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Cinq demandes en attente avant 16 h",
+        "texte": "Mercredi, 15 h 10. Vous êtes seul sur la file clients jusqu'à 15 h 40, car vos collègues sont en formation. Cinq demandes attendent (voir le tableau). Les colis partent à 16 h : un colis qui n'est pas prêt à 16 h part le lendemain. Règle de la maison : un e-mail reçoit une réponse sous 24 heures.",
+        "document": {
+          "type": "tableau",
+          "titre": "Les demandes en attente à 15 h 10",
+          "colonnes": [
+            "Canal",
+            "Demande",
+            "À savoir"
+          ],
+          "lignes": [
+            [
+              "Message vocal de 15 h 00",
+              "Changer l'adresse de la commande 53310",
+              "Le colis part à 16 h. Il faut rappeler le client : 10 minutes."
+            ],
+            [
+              "Messagerie, écrit à 15 h 05",
+              "« Où en est ma commande 53281 ? »",
+              "Le suivi indique : livraison aujourd'hui. Réponse : 2 minutes."
+            ],
+            [
+              "Rappel promis à 15 h 30",
+              "Rappeler une cliente pour son remboursement, commande 53190",
+              "Vous lui avez donné cette heure. Le rappel dure 10 minutes."
+            ],
+            [
+              "E-mail reçu hier à 17 h 30",
+              "Une copie de facture",
+              "Réponse sous 24 heures. Réponse : 3 minutes."
+            ],
+            [
+              "E-mail reçu ce matin à 11 h",
+              "Une question sur la couleur d'une lampe",
+              "Réponse sous 24 heures. Réponse : 5 minutes."
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par **quelle demande commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le message vocal : l'adresse de la commande 53310, car le colis part à 16 h.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "b",
+                  "texte": "La messagerie : le client écrit depuis 15 h 05 et la réponse prend 2 minutes.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Le premier e-mail reçu, celui d'hier à 17 h 30.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "d",
+                  "texte": "L'e-mail de ce matin, parce que c'est une question facile.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "L'adresse est la seule demande dont l'échéance est dans moins d'une heure : après 16 h, le colis part demain. Répondre d'abord à la messagerie est possible, mais le critère est l'échéance, pas la durée.",
+              "relance": "Comment choisissez-vous quelle demande traiter en premier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le client de la messagerie attend depuis 15 h 05. **Quel message** lui envoyez-vous **avant de traiter l'adresse** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Merci de patienter. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Rappelez-nous plus tard, nous sommes très occupés. »",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je vous ai bien lu. Je termine une demande urgente et je vous réponds avant 15 h 30. »",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je vous réponds dans 2 minutes, c'est promis. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                }
+              ],
+              "explication": "Un bon message d'attente dit que la demande est vue et donne une heure réaliste. « Merci de patienter » rassure peu : le client ne sait pas combien de temps il attendra.",
+              "relance": "Que dites-vous à un client que vous ne pouvez pas traiter tout de suite ?"
+            },
+            {
+              "id": "q3",
+              "texte": "L'adresse est changée à **15 h 20**. Quelle demande traitez-vous **maintenant** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "L'e-mail sur la couleur de la lampe : c'est le plus facile.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je prends une pause : l'urgence est passée.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "c",
+                  "texte": "La copie de facture : elle doit partir avant 17 h 30.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Le client de la messagerie : il attend en direct et la réponse prend 2 minutes.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                }
+              ],
+              "explication": "Le client de la messagerie attend en direct depuis 15 h 05 et sa réponse est courte. La facture a jusqu'à 17 h 30 : elle est juste, mais elle peut passer après.",
+              "relance": "Qu'est-ce qui fait qu'une demande passe avant une autre ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Il est **15 h 27** et la copie de facture est partie. Vous devez rappeler une cliente à **15 h 30**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je commence l'e-mail sur la couleur de la lampe : 5 minutes.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'ouvre la fiche de la commande 53190, pour être prêt à l'heure.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'attends 15 h 30 sans rien faire d'autre.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je rappelle à 15 h 30 et j'ouvre la fiche pendant l'appel.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Préparer la fiche avant l'appel permet de répondre tout de suite à la cliente. Ouvrir la fiche pendant l'appel fait attendre la cliente et gâche une partie des 10 minutes.",
+              "relance": "Qu'est-ce que vous préparez avant un rappel promis à un client ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Votre collègue revient à **15 h 40** et de nouveaux appels arrivent. Il reste l'e-mail sur la couleur de la lampe, **reçu à 11 h**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le laisse de côté : une simple question de couleur n'est jamais urgente.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le note avec son heure limite, demain 11 h, et je le traite dès que possible.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le traite demain matin en arrivant, sans le noter nulle part.",
+                  "points": 1
+                },
+                {
+                  "id": "d",
+                  "texte": "J'y réponds pendant mes appels, en même temps, pour aller plus vite.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                }
+              ],
+              "explication": "L'e-mail a jusqu'à demain 11 h : on le garde visible avec son heure limite, puis on le traite dès que possible. Le traiter demain sans le noter tient le délai, mais rien n'empêche de l'oublier.",
+              "relance": "Comment faites-vous pour ne pas oublier une demande qui peut attendre ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour choisir par quelle demande commencer, **je regarde**…",
+              "justes": [
+                {
+                  "texte": "l'heure limite de chaque demande : l'adresse doit être changée avant 16 h",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "ce qui a l'échéance la plus proche, ici le colis qui part à 16 h",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "ce que je risque si j'attends : un colis qui part un jour plus tard",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "depuis quand chaque client attend",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'ordre dans lequel elles sont arrivées",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "la demande la plus facile à traiter",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Au client **qui attend** sur la messagerie, j'écris…",
+              "justes": [
+                {
+                  "texte": "que je l'ai bien lu et que je lui réponds avant 15 h 30",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "que sa demande est prise en compte, avec l'heure à laquelle il aura sa réponse",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "que je termine une demande urgente et que je lui réponds à 15 h 25 au plus tard",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "« Merci de patienter. »",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : je lui répondrai quand j'aurai fini",
+                  "repere": "c2_silence"
+                },
+                {
+                  "texte": "que je lui réponds dans 2 minutes, alors que ce sera plus long",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "À **15 h 27**, **avant** le rappel de 15 h 30, je…",
+              "justes": [
+                {
+                  "texte": "ouvre la fiche de la commande 53190 pour être prêt",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "prépare ce que je vais dire à la cliente",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "vérifie dans l'outil où en est son remboursement",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "attends l'heure du rappel",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "commence un long e-mail qui retardera le rappel",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "décale le rappel sans prévenir la cliente",
+                  "repere": "c2_silence"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose à un collègue de prendre l'e-mail le moins urgent.",
+              "repere": "c2_regroupe"
+            },
+            {
+              "texte": "Compte le temps de chaque demande pour vérifier que tout tient avant 16 h.",
+              "repere": "c2_contraintes"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je traite d'abord l'adresse de la commande 53310, car le colis part à 16 h. Je réponds à la messagerie avant 15 h 30, puis je fais le rappel. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Il est 15 h 10 et la file est vide. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Plusieurs demandes attendent. Quel est votre ordre de traitement ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client demande une copie de facture sur la messagerie. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "À 15 h 10, cinq demandes attendent : une adresse à changer avant 16 h, un client sur la messagerie, un rappel à 15 h 30 et deux e-mails. Quel est votre ordre ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le colis de la commande 53310 part à 16 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La copie de facture doit partir avant 16 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le client de la messagerie attend depuis 15 h 05.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le rappel de 15 h 30 concerne la commande 53310.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Un rappel est promis à 15 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La question sur la couleur doit partir avant 16 h.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je réponds d'abord aux deux e-mails, qui attendent depuis le plus longtemps.",
+                "points": 0,
+                "repere": "c2_arrivee"
+              },
+              {
+                "id": "b",
+                "texte": "J'écris un message d'attente à la messagerie, puis je rappelle le client de l'adresse.",
+                "points": 2,
+                "repere": "c2_previent"
+              },
+              {
+                "id": "c",
+                "texte": "Je rappelle le client de l'adresse, sans écrire au client de la messagerie.",
+                "points": 1,
+                "repere": "c2_silence"
+              },
+              {
+                "id": "d",
+                "texte": "Je commence par le rappel de 15 h 30, parce que c'est une heure promise.",
+                "points": 0,
+                "repere": "c2_oubli"
+              }
+            ]
+          },
+          "explication": "La réponse applique un critère clair : l'échéance la plus proche, puis les heures promises. Chaque fait de la situation (16 h, 15 h 05, 15 h 30) explique l'ordre."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Vos demandes de 15 h 10 à 15 h 40",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Changer l'adresse de la commande 53310 avec le client"
+            },
+            {
+              "id": "e2",
+              "texte": "Envoyer un message d'attente au client de la messagerie"
+            },
+            {
+              "id": "e3",
+              "texte": "Répondre au client de la messagerie sur la commande 53281"
+            },
+            {
+              "id": "e4",
+              "texte": "Faire le rappel de 15 h 30 pour le remboursement"
+            },
+            {
+              "id": "e5",
+              "texte": "Envoyer la copie de facture demandée par e-mail hier"
+            },
+            {
+              "id": "e6",
+              "texte": "Répondre à la question sur la couleur reçue par e-mail ce matin"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "Le message d'attente prend quelques secondes : il évite dix minutes de silence pendant l'adresse."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "Le message d'attente part avant la réponse : après la réponse, il ne sert plus à rien."
+            },
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "L'adresse doit être faite avant 16 h ; la facture a jusqu'à 17 h 30."
+            },
+            {
+              "avant": "e1",
+              "apres": "e6",
+              "explication": "L'adresse doit être faite avant 16 h ; l'e-mail de ce matin a jusqu'à demain 11 h."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "La facture doit partir avant 17 h 30 aujourd'hui ; la question sur la couleur a jusqu'à demain."
+            },
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "Le rappel est promis à 15 h 30 ; l'e-mail de ce matin peut attendre demain."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "Un client qui attend en direct passe avant un e-mail qui a 24 heures."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": "c2_arrivee",
+          "reel": {
+            "consigne": "Simulation de 15 minutes : l'évaluateur remet cinq cartes de demandes avec leurs heures limites. La personne choisit l'ordre, écrit le message d'attente et traite les deux premières demandes.",
+            "criteres": [
+              {
+                "texte": "Traite en premier la demande dont l'échéance est la plus proche",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Écrit un message d'attente avec une heure réaliste",
+                "repere": "c2_previent"
+              },
+              {
+                "texte": "Tient compte de l'heure promise pour le rappel",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Prépare le rappel avant l'heure promise",
+                "repere": "c2_anticipe"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de confier la demande la moins urgente à un collègue",
+              "repere": "c2_regroupe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Par **quelle demande commencez-vous** ?",
+              "justes": [
+                {
+                  "texte": "L'adresse de la commande 53310 : le colis part à 16 h.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Celle qui a l'échéance la plus proche : l'adresse.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Le changement d'adresse, parce qu'après 16 h le colis part demain.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le client de la messagerie, qui attend en direct.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Les e-mails, parce qu'ils attendent depuis hier.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que dites-vous** au client de la messagerie **qui attend** ?",
+              "justes": [
+                {
+                  "texte": "Que je l'ai bien lu et que je lui réponds avant 15 h 30.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Que sa demande est prise en compte, avec l'heure de ma réponse.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Que je termine une demande urgente et que je lui réponds à 15 h 25 au plus tard.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "« Merci de patienter. »",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je lui répondrai quand j'aurai fini.",
+                  "repere": "c2_silence"
+                },
+                {
+                  "texte": "Que je lui réponds dans 2 minutes, même si ce sera plus long.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Il est **15 h 27**. Que faites-vous **avant** le rappel de 15 h 30 ?",
+              "justes": [
+                {
+                  "texte": "J'ouvre la fiche de la commande 53190 pour être prêt.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je prépare ce que je vais dire à la cliente.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je vérifie dans l'outil où en est son remboursement.",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'attends l'heure du rappel.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je commence un long e-mail, quitte à rappeler en retard.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de confier l'e-mail le moins urgent à un collègue.",
+              "repere": "c2_regroupe"
+            },
+            {
+              "texte": "Prévient la cliente si le rappel doit avoir du retard.",
+              "repere": "c2_previent"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner une règle écrite pour choisir l'ordre : échéance du jour, heure promise, client en direct, puis e-mails du lendemain.",
+        "Fournir des messages d'attente types, avec l'heure à compléter, pour la messagerie et pour le téléphone."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où un client était mécontent. **Que s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous répondu au client ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit les faits et ce que le client demandait",
+        "Décrit ce qu'il a vérifié, puis ce qu'il a proposé dans les règles",
+        "Dit comment la situation s'est terminée"
+      ],
+      "relance": "Comment avez-vous vérifié que le client avait obtenu ce qu'il voulait ?",
+      "alternative": "Si vous n'avez jamais travaillé au contact de clients : parlez d'une personne mécontente que vous avez aidée (études, association, vie quotidienne)."
+    },
+    {
+      "id": "e2",
+      "competence": "C7",
+      "texte": "Un client demande un **bon d'achat** que vous **n'avez pas le droit** d'accorder. Que lui répondez-vous ?",
+      "suite": [
+        "Que lui dites-vous sur la suite ?"
+      ],
+      "attendus": [
+        "Explique simplement qui décide",
+        "Transmet la demande au responsable",
+        "Donne un délai de réponse, sans rien promettre"
+      ],
+      "relance": "Que dites-vous si le client insiste ?",
+      "alternative": "Une personne vous demande un geste que seule une autre personne peut décider (un remboursement, une dérogation). Que lui répondez-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez **transmis un dossier** à un collègue ou à un autre service. **Qu'aviez-vous écrit** ?",
+      "suite": [
+        "Qu'a pu faire votre collègue grâce à votre message ?"
+      ],
+      "attendus": [
+        "Cite les informations données : demande, faits, preuves, délai",
+        "Décrit un message clair, avec l'essentiel en premier",
+        "Dit comment il a vérifié que le message était compris"
+      ],
+      "relance": "Qu'est-ce que votre collègue a dû vous redemander ?",
+      "alternative": "Si vous n'avez jamais travaillé en service client : parlez d'une fois où vous avez passé une information importante à quelqu'un (études, association, travail ponctuel)."
+    },
+    {
+      "id": "e4",
+      "competence": "C3",
+      "texte": "Vous passez un dossier de client à un **autre service**. Que **contient votre message** ?",
+      "suite": [
+        "Qu'écrivez-vous en première ligne ?"
+      ],
+      "attendus": [
+        "Donne l'essentiel d'abord : la demande et le numéro de commande",
+        "Ajoute les faits utiles : panne, essais déjà faits, preuves, contact",
+        "Indique ce que le client attend et dans quel délai"
+      ],
+      "relance": "Que laissez-vous de côté dans ce message ?",
+      "alternative": "Imaginez que vous expliquez un problème (une panne, une erreur de facture) à quelqu'un qui doit le régler sans vous. Que lui écrivez-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C5",
+      "texte": "Parlez d'une fois où une consigne ou un outil **a changé** au travail. **Qu'avez-vous fait** ?",
+      "suite": [
+        "Comment avez-vous su quoi faire ?",
+        "Qu'avez-vous fait quand quelque chose n'était pas clair ?"
+      ],
+      "attendus": [
+        "Décrit le changement avec précision",
+        "Dit où il a cherché l'information : note, collègue, responsable",
+        "Dit comment il a vérifié qu'il appliquait bien la nouvelle consigne"
+      ],
+      "relance": "Qu'avez-vous fait quand l'ancienne façon de faire revenait par habitude ?",
+      "alternative": "Si vous n'avez jamais connu de changement au travail : parlez d'une nouvelle règle ou d'un nouvel outil que vous avez appris (études, association, loisir)."
+    },
+    {
+      "id": "e6",
+      "competence": "C5",
+      "texte": "Une **nouvelle procédure** démarre lundi. Un cas **n'est pas prévu** dans la note. Que faites-vous ?",
+      "suite": [
+        "Que dites-vous au client en attendant ?"
+      ],
+      "attendus": [
+        "Relit la note avant de décider",
+        "Pose la question à la bonne personne : responsable ou référent",
+        "Reste honnête avec le client et revient vers lui"
+      ],
+      "relance": "Que faites-vous si personne n'est disponible tout de suite ?",
+      "alternative": "Imaginez qu'on vous donne une nouvelle règle de travail et que vous rencontrez un cas qu'elle ne prévoit pas. Que faites-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C2",
+      "texte": "Parlez d'un moment où **plusieurs demandes** sont arrivées en même temps. **Comment avez-vous choisi l'ordre** ?",
+      "suite": [
+        "Qu'avez-vous dit à ceux qui ont attendu ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : échéance, urgence, heure promise",
+        "Prévient les personnes qui attendent",
+        "Dit comment il s'est assuré de ne rien oublier"
+      ],
+      "relance": "Que s'est-il passé pour la demande traitée en dernier ?",
+      "alternative": "Si vous n'avez jamais travaillé en service client : parlez d'un moment où plusieurs personnes vous demandaient quelque chose en même temps (études, association, travail)."
+    },
+    {
+      "id": "e8",
+      "competence": "C2",
+      "texte": "Vous avez promis un rappel à **15 h 30**. À **15 h 20**, une demande urgente arrive. Que faites-vous ?",
+      "suite": [],
+      "attendus": [
+        "Compare les échéances des deux demandes",
+        "Prévient la personne à rappeler et lui donne une nouvelle heure",
+        "Propose de confier l'une des demandes à un collègue, si possible"
+      ],
+      "relance": "Que faites-vous si la personne ne répond pas au rappel ?",
+      "alternative": "Imaginez que vous avez promis de rappeler quelqu'un à une heure précise, et qu'une urgence arrive juste avant. Que faites-vous ?"
+    }
+  ],
+  "_pv": "217f17cc35"
+}

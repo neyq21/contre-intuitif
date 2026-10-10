@@ -1,0 +1,2583 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "electricien",
+  "version": "2026.10",
+  "nom": "Électricien / Électricienne du bâtiment",
+  "secteur": "btp",
+  "alias": [
+    "électricien",
+    "électricienne",
+    "électricien du bâtiment",
+    "électricien installateur",
+    "électricien de chantier",
+    "électricien rénovation",
+    "courant faible",
+    "installateur électricien",
+    "monteur électricien",
+    "électricien dépanneur"
+  ],
+  "resume": "Installe, modifie et dépanne des installations électriques dans des logements et de petits locaux, en respectant les règles de sécurité.",
+  "contexte": "Une petite entreprise d'électricité (six personnes) qui fait de la rénovation de logements et de petits locaux professionnels, souvent chez des clients présents.",
+  "cadre": "Les travaux sur ou à proximité d'installations électriques demandent une habilitation électrique adaptée, délivrée par l'employeur.",
+  "competences": [
+    {
+      "code": "C8",
+      "titre": "Intervenir en sécurité sur une installation électrique",
+      "pourquoi": "Un oubli sur une installation électrique peut blesser quelqu'un ou provoquer un incendie : la sécurité passe avant la rapidité.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Remplacer une prise cassée dans un salon",
+        "texte": "Lundi, 9 h, dans un appartement occupé. Vous devez remplacer une prise dont le boîtier est fissuré, dans le salon. Vous êtes habilité pour ce travail et vous avez votre vérificateur d'absence de tension. Au tableau de l'entrée, certaines étiquettes sont effacées (voir la liste). Le client vous dit : « J'ai baissé le disjoncteur des prises du salon, vous pouvez y aller. »",
+        "document": {
+          "type": "tableau",
+          "titre": "Tableau de l'entrée : étiquettes lisibles",
+          "colonnes": [
+            "Disjoncteur",
+            "Étiquette"
+          ],
+          "lignes": [
+            [
+              "1",
+              "Lumières"
+            ],
+            [
+              "2",
+              "Prises salon (étiquette à moitié effacée)"
+            ],
+            [
+              "3",
+              "Prises cuisine"
+            ],
+            [
+              "4",
+              "Four"
+            ],
+            [
+              "5",
+              "Lave-linge"
+            ],
+            [
+              "6",
+              "Chauffage"
+            ],
+            [
+              "7",
+              "Aucune étiquette"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le client a baissé le disjoncteur 2, « Prises salon ». Que faites-vous **au tableau** **avant d'aller à la prise** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : le client l'a déjà baissé, je vais directement à la prise.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je vérifie que le disjoncteur 2 est bien baissé, puis je vais à la prise.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je vérifie qu'il est bien baissé, je le condamne et j'affiche « Ne pas manœuvrer ».",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au client de rester près du tableau pour qu'il ne touche à aucun disjoncteur.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Vous ne vous fiez pas à la parole du client : vous vérifiez vous-même. Condamner et afficher empêche quelqu'un de remonter le disjoncteur. Vérifier sans condamner est incomplet : un geste suffit à remettre le courant.",
+              "relance": "Comment vous assurez-vous que personne ne remet le courant pendant que vous travaillez ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le disjoncteur 2 est coupé et condamné. **Comment vous assurez-vous** qu'il n'y a **plus de tension** à la prise ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je teste mon vérificateur, puis je vérifie l'absence de tension à la prise.",
+                  "points": 2,
+                  "repere": "c8_outil"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde au tableau que le disjoncteur 2 est bien baissé : cela suffit.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je vérifie l'absence de tension à la prise avec mon vérificateur.",
+                  "points": 1,
+                  "repere": "c8_outil"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je branche une lampe sur la prise voisine : si elle reste éteinte, je continue.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Seul un appareil adapté, utilisé à la prise où vous travaillez, prouve que la tension est absente. Le contrôler d'abord évite de croire à tort que la prise est hors tension : l'appareil peut être en panne.",
+              "relance": "Comment prouvez-vous qu'un circuit est hors tension avant de toucher aux fils ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Votre vérificateur indique de la tension à la prise, alors que le disjoncteur 2 est baissé. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je démonte la prise avec des outils isolés, en travaillant très lentement et très prudemment.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je coupe le disjoncteur général de l'appartement, puis je revérifie à la prise avec mon vérificateur.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je suppose que mon vérificateur se trompe, je le range et je démonte la prise.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je n'ouvre pas la prise : je cherche quel autre circuit l'alimente, je le coupe et je revérifie.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "La tension détectée prouve que la prise est encore alimentée, par un autre circuit : on n'y touche pas. Couper le disjoncteur général est sûr, mais coupe tout l'appartement et laisse l'erreur d'étiquette en place.",
+              "relance": "Que faites-vous quand votre appareil indique de la tension alors que vous pensiez avoir coupé ?"
+            },
+            {
+              "id": "q4",
+              "texte": "La tension est absente et la prise est retirée. Le bout des fils et une borne sont noircis. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je raccorde la prise neuve sur les fils noircis : le cuivre conduit encore, donc cela ira très bien et le client attend.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je recoupe les fils jusqu'au cuivre sain, je raccorde la prise neuve selon la norme en vigueur et je cherche pourquoi elle a chauffé.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je recoupe les fils jusqu'au cuivre sain, puis je raccorde la prise neuve comme l'ancienne, sans chercher plus loin.",
+                  "points": 1,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je gratte le noir sur les fils avec du papier abrasif, puis je raccorde la prise neuve à la place de l'ancienne.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Un cuivre noirci a chauffé et conduit mal : on le recoupe jusqu'au cuivre sain, puis on raccorde selon la norme en vigueur. Chercher pourquoi la prise a chauffé (serrage, appareil très puissant) évite que cela recommence.",
+              "relance": "Que faites-vous quand vous trouvez une prise ou un fil qui a chauffé ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La prise neuve est posée et la plaque est fixée. Que faites-vous pour **remettre le circuit en service** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je range mes outils et je remonte le disjoncteur sans autre vérification : j'ai bien serré les fils.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je retire ma condamnation, je remonte le disjoncteur et je branche une lampe pour voir.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je contrôle mes raccordements, je retire ma condamnation, je remonte le disjoncteur et je teste la prise.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je remonte le disjoncteur, puis je demande au client d'essayer la prise lui-même.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Avant de remettre le courant, on contrôle son travail (raccordements, plaque), puis on teste la prise sous tension. Une lampe qui s'allume ne prouve pas que le câblage est correct.",
+              "relance": "Que contrôlez-vous avant de remettre un circuit sous tension ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Au tableau**, avant d'aller à la prise, je…",
+              "justes": [
+                {
+                  "texte": "vérifie que le bon disjoncteur est baissé, je le condamne et j'affiche une étiquette",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "m'assure que le disjoncteur « Prises salon » est baissé, je le verrouille et je mets « Ne pas manœuvrer »",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "ne me fie pas au client : je contrôle, je condamne et je signale moi-même",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "vérifie que le disjoncteur du salon est baissé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "laisse le disjoncteur que le client a baissé et je vais à la prise",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "demande au client de ne toucher à rien, cela suffit",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "**Pour savoir** s'il reste de la tension à la prise, je…",
+              "justes": [
+                {
+                  "texte": "contrôle mon vérificateur, puis je vérifie l'absence de tension à la prise elle-même",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "teste mon appareil, puis je mesure à l'endroit où je vais travailler",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "utilise mon vérificateur d'absence de tension sur la prise, avant de la démonter",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "vérifie avec mon vérificateur",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "regarde si le disjoncteur est baissé et je considère que c'est bon",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "branche une lampe pour voir si elle s'allume",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant** de remettre le courant, je…",
+              "justes": [
+                {
+                  "texte": "contrôle mes raccordements et la plaque",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "retire ma condamnation, je remonte le disjoncteur, puis je teste la prise",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "vérifie que mes outils ne sont plus dans la boîte et je préviens le client",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "fais les contrôles prévus par la norme en vigueur avant de remettre le courant",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "remonte le disjoncteur et je regarde si ça marche",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "remonte le disjoncteur sans rien vérifier, pour gagner du temps",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "laisse le client remonter le disjoncteur plus tard, sans essai",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de corriger l'étiquette du tableau pour que chaque circuit soit bien identifié.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Note l'intervention : circuit coupé, absence de tension vérifiée, heure de remise en service.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Explique au client pourquoi il ne doit pas toucher au disjoncteur étiqueté.",
+              "repere": "c8_pourquoi"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je n'ouvre pas la prise. Je cherche quel autre circuit l'alimente, je le coupe et je revérifie. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le client dit avoir baissé le disjoncteur 2. Que faites-vous au tableau avant d'aller à la prise ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Votre vérificateur indique de la tension à la prise, alors que le disjoncteur 2 est baissé. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Votre vérificateur indique de la tension à la prise. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le bout des fils de la prise est noirci. Que faites-vous avant de poser la prise neuve ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le vérificateur indique de la tension à la prise.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le client est présent dans l'appartement.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le disjoncteur 2 est déjà baissé.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le boîtier de la prise est fissuré.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Les étiquettes du tableau sont en partie effacées.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le disjoncteur général est déjà coupé.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je démonte la prise : j'ai coupé deux disjoncteurs, cela suffit.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "b",
+                "texte": "Je condamne aussi ce disjoncteur et je vérifie que la tension a disparu, puis je démonte la prise.",
+                "points": 2,
+                "repere": "c8_securite"
+              },
+              {
+                "id": "c",
+                "texte": "Je vérifie que la tension a disparu, puis je démonte la prise.",
+                "points": 1,
+                "repere": "c8_securite"
+              },
+              {
+                "id": "d",
+                "texte": "Je démonte la prise en gardant mon vérificateur à la main, pour contrôler pendant que je travaille.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "Une tension détectée alors que le disjoncteur 2 est baissé prouve qu'un autre circuit alimente la prise : l'étiquette ne suffit pas. On n'ouvre rien avant d'avoir coupé ce circuit et revérifié."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "La séquence de sécurité, de la coupure à l'essai",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de la coupure du courant à l'essai de la prise.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Condamner le disjoncteur et afficher « Ne pas manœuvrer »"
+            },
+            {
+              "id": "e2",
+              "texte": "Remplacer la prise"
+            },
+            {
+              "id": "e3",
+              "texte": "Repérer le disjoncteur du circuit de la prise"
+            },
+            {
+              "id": "e4",
+              "texte": "Tester la prise sous tension"
+            },
+            {
+              "id": "e5",
+              "texte": "Vérifier l'absence de tension à la prise avec un vérificateur"
+            },
+            {
+              "id": "e6",
+              "texte": "Retirer la condamnation et remonter le disjoncteur"
+            },
+            {
+              "id": "e7",
+              "texte": "Couper ce disjoncteur"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e3",
+              "apres": "e7",
+              "explication": "On coupe le bon circuit : il faut d'abord le repérer."
+            },
+            {
+              "avant": "e7",
+              "apres": "e1",
+              "explication": "On condamne un disjoncteur déjà coupé."
+            },
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "Le circuit est condamné avant la mesure : personne ne peut le remonter pendant la vérification."
+            },
+            {
+              "avant": "e5",
+              "apres": "e2",
+              "explication": "On ne démonte rien avant d'avoir vérifié l'absence de tension."
+            },
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "La condamnation reste en place pendant tout le remplacement de la prise."
+            },
+            {
+              "avant": "e2",
+              "apres": "e6",
+              "explication": "On remet le courant une fois la prise remplacée."
+            },
+            {
+              "avant": "e6",
+              "apres": "e4",
+              "explication": "On teste la prise une fois le courant remis."
+            }
+          ],
+          "repere_reussite": "c8_securite",
+          "repere_echec": "c8_erreur",
+          "reel": {
+            "consigne": "En atelier ou sur un coffret pédagogique, avec un électricien habilité présent (15 minutes) : la personne réalise et commente la séquence, de la coupure à l'essai d'une prise.",
+            "criteres": [
+              {
+                "texte": "Repère le bon circuit et le coupe elle-même",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Condamne et signale avant toute intervention",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Vérifie l'absence de tension avec un appareil adapté, à la prise",
+                "repere": "c8_outil"
+              },
+              {
+                "texte": "Contrôle son raccordement, puis teste la prise après la remise en service",
+                "repere": "c6_controle"
+              }
+            ],
+            "bonus": {
+              "texte": "Explique pourquoi on ne se fie ni à une étiquette ni à la parole d'un tiers",
+              "repere": "c8_pourquoi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous **au tableau** avant d'ouvrir la prise ?",
+              "justes": [
+                {
+                  "texte": "Je vérifie que le bon disjoncteur est baissé, je le condamne et j'affiche une étiquette.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je repère le circuit, je m'assure qu'il est coupé, puis je le condamne.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je ne compte pas sur le client : je contrôle et je signale moi-même.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je vérifie que le disjoncteur du salon est baissé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le client a déjà baissé le disjoncteur.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment vous assurez-vous** qu'il n'y a plus de tension à la prise ?",
+              "justes": [
+                {
+                  "texte": "Je contrôle mon vérificateur, puis je vérifie directement à la prise.",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "Je vérifie avec un appareil adapté, à l'endroit où je vais travailler.",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "Je mesure à la prise avant de la démonter, pas seulement au tableau.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je vérifie avec mon vérificateur.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je regarde que le disjoncteur est baissé.",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "Je branche une lampe pour voir si elle s'allume.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Votre vérificateur indique de la tension alors que le disjoncteur est baissé. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je n'ouvre pas la prise et je cherche quel autre circuit l'alimente.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je coupe l'autre circuit, je le condamne et je revérifie.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Si je ne trouve pas le circuit, je m'arrête et je préviens mon responsable.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je coupe le disjoncteur général, puis je revérifie.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je démonte quand même la prise avec des outils isolés.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Pense à corriger l'étiquette du tableau et à prévenir le client de l'erreur trouvée.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Se réfère à la norme en vigueur, et non à sa mémoire, quand il doute d'un point de l'installation.",
+              "repere": "c6_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire la séquence de sécurité à deux, sur un coffret d'essai, avant le premier chantier : couper, condamner, vérifier, signaler.",
+        "Vérifier le titre d'habilitation de la personne et préciser par écrit ce qu'elle a le droit de faire seule ou accompagnée."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Trouver la cause d'une panne par élimination",
+      "pourquoi": "Changer une pièce au hasard coûte du temps et laisse parfois le défaut en place : il faut chercher la cause, étape par étape.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un disjoncteur qui saute dans une cuisine",
+        "texte": "Jeudi, 14 h, chez un client. Depuis hier, le disjoncteur « Prises cuisine » saute plusieurs fois par jour. Le client pense que la bouilloire achetée la semaine dernière en est la cause. Quatre appareils sont branchés sur ce circuit (voir la liste). Vous êtes habilité et le client vous laisse le temps de chercher.",
+        "document": {
+          "type": "liste",
+          "titre": "Appareils branchés sur le circuit « Prises cuisine »",
+          "items": [
+            "Réfrigérateur, branché en permanence",
+            "Four à micro-ondes, ancien, utilisé chaque jour",
+            "Bouilloire, achetée la semaine dernière",
+            "Grille-pain, ancien, utilisé le matin"
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le client vous dit que le disjoncteur « Prises cuisine » saute depuis hier. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je mets un disjoncteur de calibre plus élevé, pour qu'il ne saute plus.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je demande au client quand il saute et quels appareils fonctionnent à ce moment-là.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je débranche tous les appareils du circuit, puis je remonte le disjoncteur.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je remplace le disjoncteur par un neuf, puis j'attends de voir si cela recommence.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                }
+              ],
+              "explication": "Il faut d'abord savoir quand et avec quoi le disjoncteur saute. Le calibre est choisi pour le câble, selon la norme en vigueur : l'augmenter cache le problème. Débrancher les appareils est utile, mais vient après les questions.",
+              "relance": "Que voulez-vous savoir avant de toucher au tableau ou aux appareils ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Tous les appareils sont débranchés. Vous remontez le disjoncteur : il tient dix minutes. Que faites-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le problème est réglé : je range mon matériel et je pars.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je rebranche seulement la bouilloire, puisque le client la soupçonne, et je regarde le disjoncteur.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je rebranche tous les appareils d'un coup : si cela saute, le problème vient de l'installation.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je rebranche les appareils un par un, en regardant le disjoncteur à chaque fois.",
+                  "points": 2,
+                  "repere": "c1_etapes"
+                }
+              ],
+              "explication": "Le disjoncteur tient sans appareil : la cause apparaît quand un appareil fonctionne. Les rebrancher un par un permet de les éliminer tous. Tester seulement la bouilloire laisse les trois autres sans réponse.",
+              "relance": "Comment êtes-vous sûr qu'un appareil n'est pas en cause ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous rebranchez les appareils un par un. Le réfrigérateur, la bouilloire et le grille-pain ne font rien sauter, mais le disjoncteur saute dès que le micro-ondes démarre. Que faites-vous **pour confirmer** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je branche le micro-ondes sur une prise d'un autre circuit et je regarde ce disjoncteur.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je conclus que le circuit de la cuisine est trop faible pour le micro-ondes.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je rebranche le micro-ondes une deuxième fois sur la même prise, pour revoir le problème.",
+                  "points": 1,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je remplace la prise du micro-ondes par une prise neuve, au cas où.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                }
+              ],
+              "explication": "Si le même appareil fait sauter un autre circuit, la cause est dans l'appareil, pas dans les prises ni les câbles de la cuisine. Refaire le même essai confirme le constat, mais ne dit pas où est la cause.",
+              "relance": "Comment prouvez-vous que la panne vient d'un appareil et pas de l'installation ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le micro-ondes fait aussi sauter l'autre circuit. **Que faites-vous du micro-ondes** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je l'ouvre pour chercher la pièce défectueuse et la changer.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le débranche et je dis au client qu'il est en panne.",
+                  "points": 1,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le laisse branché, mais sur une prise d'une autre pièce du logement.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le laisse débranché et je dis au client de le faire contrôler ou réparer.",
+                  "points": 2,
+                  "repere": "c8_role"
+                }
+              ],
+              "explication": "Un appareil n'est pas votre installation : l'ouvrir n'est pas votre rôle et c'est dangereux. Le client doit savoir de quoi il s'agit, ne plus l'utiliser et le faire contrôler ou réparer.",
+              "relance": "Que faites-vous quand la panne vient d'un appareil du client et pas de l'installation ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le micro-ondes est débranché. **Comment vérifiez-vous** que le problème est réglé ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je considère que c'est réglé : la cause est trouvée, je n'ai pas besoin de refaire d'essai.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je remonte le disjoncteur et je regarde qu'il tient quelques minutes, appareils seulement branchés.",
+                  "points": 1,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je fais fonctionner les autres appareils comme d'habitude pendant un moment, en regardant le disjoncteur.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je pars : c'est au client de me prévenir si cela recommence.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                }
+              ],
+              "explication": "On vérifie dans les conditions d'usage : les autres appareils fonctionnent comme d'habitude, un moment. Un disjoncteur qui tient appareils éteints ne prouve pas que la panne est réglée.",
+              "relance": "Comment vous assurez-vous qu'une panne est vraiment réparée avant de partir ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour chercher pourquoi le disjoncteur saute, je **commence par**…",
+              "justes": [
+                {
+                  "texte": "demander au client quand cela saute et avec quel appareil",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "lui demander depuis quand cela arrive et ce qui fonctionne à ce moment-là",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "débrancher les appareils du circuit pour voir si le disjoncteur tient",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarder le tableau",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "changer le disjoncteur",
+                  "repere": "c1_symptome"
+                },
+                {
+                  "texte": "mettre un disjoncteur plus gros",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour savoir **quel appareil** fait sauter le disjoncteur, je…",
+              "justes": [
+                {
+                  "texte": "rebranche les appareils un par un et je regarde le disjoncteur à chaque fois",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "les rebranche un à un, en laissant à chacun le temps de fonctionner",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "branche l'appareil suspect sur un autre circuit pour confirmer",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "rebranche tous les appareils et j'attends",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "accuse la bouilloire neuve, comme le dit le client",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "remplace les prises de la cuisine",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Une fois** l'appareil en cause trouvé, je…",
+              "justes": [
+                {
+                  "texte": "le laisse débranché et je dis au client de le faire contrôler",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "n'ouvre pas l'appareil : c'est le travail d'un réparateur",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "vérifie que le disjoncteur tient avec les autres appareils en marche",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dis au client que son appareil est en panne",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ouvre l'appareil pour chercher la panne",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "dis au client qu'il peut continuer à l'utiliser",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique au client la preuve : le micro-ondes fait aussi sauter un autre circuit.",
+              "repere": "c3_complet"
+            },
+            {
+              "texte": "Note dans le compte rendu les appareils testés et le résultat de chaque essai.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je le branche sur un autre circuit. S'il fait sauter celui-là aussi, la panne vient de l'appareil. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le disjoncteur saute même quand tous les appareils sont débranchés. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le disjoncteur saute dès que le micro-ondes démarre, les autres appareils fonctionnent seuls. Que faites-vous pour confirmer que l'appareil est en cause ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un appareil fait sauter le disjoncteur. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le disjoncteur « Prises cuisine » saute depuis hier. Que demandez-vous au client ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le disjoncteur saute dès que le micro-ondes démarre.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le client pense que la bouilloire neuve est en cause.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le réfrigérateur, la bouilloire et le grille-pain, branchés seuls, ne font rien sauter.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le réfrigérateur est branché en permanence.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Avec tous les appareils débranchés, le disjoncteur tient.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le micro-ondes a été acheté la semaine dernière.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'ouvre le micro-ondes pour chercher la panne.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "b",
+                "texte": "Je le laisse débranché et je dis au client de le faire contrôler ou réparer.",
+                "points": 2,
+                "repere": "c8_role"
+              },
+              {
+                "id": "c",
+                "texte": "Je dis au client que le micro-ondes est en panne.",
+                "points": 1,
+                "repere": "c8_role"
+              },
+              {
+                "id": "d",
+                "texte": "Je le remets sur le circuit de la cuisine, avec un disjoncteur plus gros.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "Si le défaut suit l'appareil sur un autre circuit, la cause est dans l'appareil et pas dans l'installation de la cuisine. Cette preuve permet de conclure sans changer de pièces au hasard."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Vos idées pour trouver la cause, classées",
+          "consigne": "Pour **chaque idée**, choisissez **la catégorie** qui convient dans la recherche de la cause.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Une étape simple de la recherche"
+            },
+            {
+              "id": "k2",
+              "nom": "À faire seulement si ces étapes ne suffisent pas"
+            },
+            {
+              "id": "k3",
+              "nom": "À ne pas faire"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Demander au client quand le disjoncteur saute",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Les faits du client orientent la recherche : quand, et avec quel appareil."
+            },
+            {
+              "id": "e2",
+              "texte": "Débrancher tous les appareils, puis les rebrancher un par un",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "On élimine les appareils un à un, sans rien changer."
+            },
+            {
+              "id": "e3",
+              "texte": "Brancher l'appareil suspect sur un autre circuit, pour confirmer",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Si le défaut suit l'appareil, la cause est dans l'appareil."
+            },
+            {
+              "id": "e4",
+              "texte": "Si le disjoncteur saute sans appareil branché : contrôler les raccordements dans les prises, circuit coupé et vérifié",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "On n'ouvre les prises que si les appareils sont éliminés, et seulement hors tension."
+            },
+            {
+              "id": "e5",
+              "texte": "Demander l'avis du responsable si la cause reste introuvable",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "On demande de l'aide quand les étapes simples ne donnent rien."
+            },
+            {
+              "id": "e6",
+              "texte": "Remplacer le disjoncteur par un calibre plus élevé",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le calibre est choisi pour le câble, selon la norme en vigueur : l'augmenter peut laisser un fil chauffer sans protection."
+            },
+            {
+              "id": "e7",
+              "texte": "Ouvrir le micro-ondes pour chercher la panne",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Ce n'est pas votre installation : ce n'est pas votre rôle et c'est dangereux."
+            },
+            {
+              "id": "e8",
+              "texte": "Changer toutes les prises de la cuisine par précaution",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Cela traite l'effet sans chercher la cause, et fait perdre du temps."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_precipite",
+          "reel": {
+            "consigne": "Sur un banc d'essai pédagogique (15 minutes), avec un électricien habilité présent : quatre appareils sont branchés sur un circuit et l'un d'eux est défectueux. La personne cherche la cause à voix haute.",
+            "criteres": [
+              {
+                "texte": "Relève les faits avant d'agir : quand, et avec quel appareil",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Élimine les appareils un par un, sans rien changer au hasard",
+                "repere": "c1_etapes"
+              },
+              {
+                "texte": "Confirme la cause en déplaçant l'appareil sur un autre circuit",
+                "repere": "c1_verifie"
+              },
+              {
+                "texte": "Reste dans son rôle : n'ouvre pas l'appareil et prévient le client",
+                "repere": "c8_role"
+              }
+            ],
+            "bonus": {
+              "texte": "Explique pourquoi on n'augmente pas le calibre d'un disjoncteur",
+              "repere": "c8_pourquoi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous **en premier** pour chercher la cause ?",
+              "justes": [
+                {
+                  "texte": "Je demande au client quand cela saute et avec quel appareil.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je relève les faits : depuis quand, et ce qui fonctionne à ce moment-là.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je débranche les appareils du circuit pour voir si le disjoncteur tient.",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde le tableau.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je change le disjoncteur.",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment trouvez-vous** quel appareil fait sauter le disjoncteur ?",
+              "justes": [
+                {
+                  "texte": "Je rebranche les appareils un par un en regardant le disjoncteur.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Je les teste un à un, et je n'en oublie aucun.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Je confirme en branchant l'appareil suspect sur un autre circuit.",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je commence par la bouilloire neuve, comme le dit le client.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je suis sûr que c'est la bouilloire : je n'ai pas besoin de tester.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous quand l'appareil en cause **est trouvé** ?",
+              "justes": [
+                {
+                  "texte": "Je le laisse débranché et je dis au client de le faire contrôler ou réparer.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je n'ouvre pas l'appareil : ce n'est pas mon rôle.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je vérifie que le disjoncteur tient avec les autres appareils en marche.",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je dis au client que son appareil est en panne.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'ouvre l'appareil pour essayer de le réparer.",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "Je mets un disjoncteur plus gros pour que cela tienne.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique au client la preuve trouvée et ce qu'il doit faire de l'appareil.",
+              "repere": "c3_complet"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Proposer une panne simulée sur un banc d'essai pour voir comment la personne cherche : questions, essais un par un, confirmation.",
+        "Rappeler dès le début la règle de l'entreprise : on ne change ni un disjoncteur ni son calibre sans l'accord du responsable."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Travailler chez un client qui occupe les lieux",
+      "pourquoi": "Chez lui, le client voit tout : la poussière, les horaires, les coupures de courant. Bien le prévenir et lui expliquer évite les tensions et les reprises.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une journée chez un client qui télétravaille",
+        "texte": "Mardi, 8 h 30, dans un logement occupé. Le client télétravaille dans la chambre et sera en visioconférence presque toute la journée. Votre mission : poser cinq prises dans le séjour. Les consignes de votre responsable sont dans le message ci-dessous.",
+        "document": {
+          "type": "message",
+          "titre": "Consignes du responsable pour mardi",
+          "de": "Le responsable de chantier",
+          "texte": "Séjour : cinq prises à poser. La cinquième, près de la fenêtre, ne peut pas être raccordée aujourd'hui : il manque une pièce, livrée demain. Le client est en visioconférence presque toute la journée : prévenez-le avant toute coupure de courant. Pas de perçage avant 9 h. Demain, retour à 8 h 30. Toute demande en plus : notez-la, je fais le devis et je rappelle le client demain."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous devez couper le circuit du séjour. La box internet du client est branchée dans cette pièce et il est **en visioconférence**. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande au client d'arrêter sa visioconférence pendant que je coupe le circuit.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens le client que je vais couper le circuit, puis je coupe aussitôt.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je préviens le client, je lui demande le moment qui le gêne le moins et je donne la durée.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je coupe tout de suite sans le prévenir : la coupure sera très courte, ça ira.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Le client travaille : une coupure imprévue peut lui faire perdre sa visioconférence. Prévenir, demander le moment le moins gênant et donner la durée respecte son besoin. Prévenir sans demander reste incomplet.",
+              "relance": "Comment prévenez-vous un client avant de couper le courant chez lui ?"
+            },
+            {
+              "id": "q2",
+              "texte": "À 11 h, de la poussière de perçage est tombée dans le couloir. Le client le remarque et n'est pas content. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui explique que la poussière est normale quand on perce un mur en rénovation.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je m'excuse, je nettoie tout de suite et je protège le sol avant de continuer à percer.",
+                  "points": 2,
+                  "repere": "c7_apaise"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je m'excuse et je lui dis que je nettoierai tout en fin de journée, avant de partir.",
+                  "points": 1,
+                  "repere": "c7_apaise"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ferme la porte du couloir pour qu'il ne la voie plus et je continue de percer.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Le client voit la poussière maintenant : nettoyer tout de suite et protéger la suite répond à sa gêne. Attendre la fin de journée est acceptable, mais la poussière continue de se répandre.",
+              "relance": "Comment limitez-vous la poussière et la saleté chez un client ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client voit votre étiquette « Ne pas manœuvrer » sur son tableau et demande **à quoi elle sert**. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis de ne pas toucher au tableau tant que l'étiquette est en place.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui détaille toute la procédure de consignation, avec tous les termes techniques.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que ce n'est pas son affaire et que je sais ce que je fais.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui explique qu'elle évite de remettre le courant par erreur, et que je l'enlève ensuite.",
+                  "points": 2,
+                  "repere": "c3_adapte"
+                }
+              ],
+              "explication": "Une explication simple et sa raison évitent que le client remonte le disjoncteur. « N'y touchez pas » ne dit pas pourquoi, et les termes techniques ne l'aident pas.",
+              "relance": "Comment expliquez-vous un geste de sécurité à quelqu'un qui n'est pas du métier ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le client vous demande une prise en plus dans la chambre. Elle **n'est pas dans le devis**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je note sa demande et l'endroit voulu, et je dis que le responsable le rappellera demain avec un devis.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la pose demain en plus de ma journée : on verra le prix plus tard, avec lui.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que je ne peux pas la poser, car elle n'est pas dans le devis.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui annonce un prix tout de suite, pour que ce soit réglé avant demain.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                }
+              ],
+              "explication": "Un travail en plus passe par le devis du responsable, qui vérifie aussi que la prise est possible à cet endroit, selon la norme en vigueur. Noter la demande et annoncer la suite répond au client sans promettre de prix. Refuser sans proposer de suite le laisse sans réponse.",
+              "relance": "Que répondez-vous quand un client demande un travail qui n'est pas prévu ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 16 h 45, le client est en visioconférence **jusqu'à 17 h 30**. Vous partez avant et vous lui laissez un mot. **Que mettez-vous dedans** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Seulement : « Travail terminé pour aujourd'hui, à demain. »",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Ce qui est fait, la prise de la fenêtre qui ne marche pas encore, et l'heure de mon retour.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "Ce qui est fait, et l'heure de mon retour demain.",
+                  "points": 1,
+                  "repere": "c3_suite"
+                },
+                {
+                  "id": "d",
+                  "texte": "La liste détaillée de tout le matériel que j'ai utilisé aujourd'hui, pièce par pièce.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                }
+              ],
+              "explication": "Le client doit savoir ce qu'il peut utiliser et quand vous revenez. La prise de la fenêtre n'est pas raccordée : le dire évite qu'il la branche. Sans cette information, le mot est incomplet.",
+              "relance": "Que dites-vous à un client à la fin d'une journée de chantier ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Avant de couper** le courant, je dis au client…",
+              "justes": [
+                {
+                  "texte": "ce que je coupe et combien de temps, et je lui demande quel moment le gêne le moins",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "que sa box sera coupée quelques minutes, pour qu'il choisisse le moment",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "que je dois couper le circuit du séjour, et je lui laisse le temps de s'organiser",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je vais couper le courant",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : la coupure est courte",
+                  "repere": "c7_ignore"
+                },
+                {
+                  "texte": "de se débrouiller avec sa visioconférence",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si le client est mécontent de la poussière, je…",
+              "justes": [
+                {
+                  "texte": "m'excuse et je nettoie tout de suite",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "nettoie le sol et je protège le couloir avant de continuer à percer",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "lui montre ce que je mets en place : bâche et aspirateur",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "m'excuse et je nettoierai ce soir",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis que c'est normal en rénovation",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "ferme la porte et je continue",
+                  "repere": "c7_ignore"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour la **prise en plus** que le client demande, je…",
+              "justes": [
+                {
+                  "texte": "note sa demande et je lui dis que le responsable le rappellera avec un devis",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "lui explique qu'un travail en plus passe par un devis, et que je transmets",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "regarde où il la veut, pour donner les bonnes informations au responsable",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis que ce n'est pas prévu",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la pose en plus sans rien dire",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "lui donne un prix tout de suite",
+                  "repere": "c7_promesse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Dit au client l'heure de son retour et ce qui est utilisable ce soir.",
+              "repere": "c7_suite"
+            },
+            {
+              "texte": "Laisse un mot clair quand le client est en visioconférence et ne peut pas être dérangé.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Demande au client ce qui compte le plus pour lui : calme, propreté, horaires.",
+              "repere": "c7_besoin"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je note votre demande. Elle n'est pas dans le devis : le responsable vous rappellera demain avec un prix. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le client demande si la poussière va durer toute la semaine. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le client vous fait une demande. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le client demande une prise en plus dans la chambre. Elle n'est pas dans le devis. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Le client demande à quelle heure vous revenez demain. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La prise en plus n'est pas dans le devis.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le client est en visioconférence presque toute la journée.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le responsable fait les devis des travaux en plus.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le perçage est interdit avant 9 h.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le responsable rappelle le client demain.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable a déjà accepté la prise en plus.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je dis au client d'appeler lui-même le responsable.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              },
+              {
+                "id": "b",
+                "texte": "Je note l'endroit voulu et je transmets la demande au responsable aujourd'hui.",
+                "points": 2,
+                "repere": "c7_suivi"
+              },
+              {
+                "id": "c",
+                "texte": "Je transmets la demande au responsable, sans préciser l'endroit voulu.",
+                "points": 1,
+                "repere": "c3_flou"
+              },
+              {
+                "id": "d",
+                "texte": "Je commence à passer le câble de la prise, pour gagner du temps demain.",
+                "points": 0,
+                "repere": "c7_hors_regle"
+              }
+            ]
+          },
+          "explication": "La réponse suit la règle de l'entreprise : une prise en plus passe par un devis du responsable. Elle ne promet ni travail ni prix, et dit quand le client aura une réponse."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le mot laissé au client, ligne par ligne",
+          "consigne": "Voici le mot que vous laissez au client à 16 h 45. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Bonjour, voici le point sur la journée de mardi.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Quatre prises du séjour sont posées et fonctionnent.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Les cinq prises fonctionnent : vous pouvez toutes les utiliser.",
+              "erreur": true,
+              "explication": "La cinquième prise, près de la fenêtre, n'est pas raccordée : il manque une pièce, livrée demain. Il faut dire de ne pas l'utiliser."
+            },
+            {
+              "id": "e4",
+              "texte": "La prise près de la fenêtre sera raccordée demain, quand la pièce arrivera.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Je reviens demain à 9 h 30.",
+              "erreur": true,
+              "explication": "Le responsable a demandé de revenir demain à 8 h 30."
+            },
+            {
+              "id": "e6",
+              "texte": "La prise en plus dans la chambre sera posée demain, sans supplément.",
+              "erreur": true,
+              "explication": "Cette prise n'est pas dans le devis : on ne promet ni le travail ni l'absence de supplément."
+            },
+            {
+              "id": "e7",
+              "texte": "Le responsable vous rappellera demain pour le devis de cette prise.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "J'ai passé l'aspirateur dans le séjour et le couloir.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e9",
+              "texte": "Vous pouvez joindre l'entreprise si vous avez une question.",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Exercice de 10 minutes : à partir du message du responsable et d'un bilan de journée fictif, la personne écrit le mot laissé au client, puis le relit à voix haute.",
+            "criteres": [
+              {
+                "texte": "Dit ce qui est fait et ce qui ne marche pas encore",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Donne l'heure exacte du retour",
+                "repere": "c7_suite"
+              },
+              {
+                "texte": "Ne promet ni travail ni prix qui ne sont pas au devis",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Écrit des phrases simples, sans jargon",
+                "repere": "c3_adapte"
+              }
+            ],
+            "bonus": {
+              "texte": "Relit son mot et corrige une erreur avant de le laisser",
+              "repere": "c6_anomalie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** quand le client se plaint de la poussière ?",
+              "justes": [
+                {
+                  "texte": "Je m'excuse et je nettoie tout de suite.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "Je protège le sol avant de continuer à percer.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Je lui montre ce que je mets en place pour limiter la poussière.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je m'excuse.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis que c'est normal en rénovation.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que répondez-vous à une demande de travail qui n'est **pas dans le devis** ?",
+              "justes": [
+                {
+                  "texte": "Je note la demande et je dis que le responsable rappellera avec un devis.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "J'explique simplement qu'un travail en plus passe par un devis.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je note l'endroit voulu pour donner les bons éléments au responsable.",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je dis que ce n'est pas prévu.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je dis que je le fais en plus et qu'on verra le prix après.",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "Je donne un prix tout de suite.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que mettez-vous** dans **le mot** laissé au client en fin de journée ?",
+              "justes": [
+                {
+                  "texte": "Ce qui est fait, ce qui ne marche pas encore, et l'heure de mon retour.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je dis de ne pas utiliser la prise qui n'est pas raccordée.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Que le responsable le rappellera demain pour le devis de la prise en plus.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que j'ai terminé pour aujourd'hui.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que tout fonctionne.",
+                  "repere": "c3_faux"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Relit son mot avant de le laisser, pour vérifier qu'il est juste et clair.",
+              "repere": "c3_verifie"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire un jeu de rôle court avant le premier chantier : annoncer une coupure de courant à un client en télétravail.",
+        "Donner par écrit la règle des travaux en plus : qui chiffre, quoi répondre au client, qui le rappelle et quand."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Organiser sa journée et son matériel sur un chantier",
+      "pourquoi": "Une pièce oubliée ou une coupure de courant mal placée fait perdre une demi-journée, au client comme à l'entreprise.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Préparer et tenir une journée chez une cliente",
+        "texte": "Lundi, 7 h 15, à l'atelier. Vous travaillez seul aujourd'hui chez une cliente, de 8 h 30 à 17 h. Elle demande : pas de bruit avant 9 h, et la coupure générale du courant seulement entre 12 h et 14 h, quand elle est absente. La fiche du chantier est ci-dessous.",
+        "document": {
+          "type": "tableau",
+          "titre": "Fiche du chantier de lundi",
+          "colonnes": [
+            "Endroit",
+            "Travaux prévus"
+          ],
+          "lignes": [
+            [
+              "Cuisine",
+              "Poser 2 prises au-dessus du plan de travail et 1 point lumineux au plafond"
+            ],
+            [
+              "Chambre",
+              "Déplacer 1 prise de courant"
+            ],
+            [
+              "Tableau",
+              "Ajouter 1 disjoncteur pour le nouveau circuit de la cuisine"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Il est 7 h 15 à l'atelier. **Comment préparez-vous le matériel** pour ce chantier ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je pars avec le matériel habituel : j'irai en magasin pour ce qui manque.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je charge le matériel de la cuisine, la partie la plus longue, et je verrai pour le reste.",
+                  "points": 1,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lis la fiche, je liste le matériel pour chaque endroit, puis je compare avec ce qui est chargé.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne regarde pas la fiche : je connais bien ce genre de chantier.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                }
+              ],
+              "explication": "La fiche dit tout ce qu'il faut : cuisine, chambre et tableau. Faire la liste de chaque endroit, puis la comparer au chargement, évite de repartir chercher une pièce. Charger seulement la cuisine oublie le reste.",
+              "relance": "Comment êtes-vous sûr de ne rien oublier avant de partir sur un chantier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous arrivez à 8 h 30. La cliente demande qu'il n'y ait **pas de bruit** avant 9 h. Que faites-vous **jusqu'à 9 h** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je protège la cuisine et je trace les emplacements ; à partir de 9 h, je perce.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'attends 9 h sans rien faire, puis je protège la cuisine et je perce.",
+                  "points": 1,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je perce tout de suite pour gagner du temps : elle comprendra.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je commence en même temps la cuisine, la chambre et le tableau, sans faire de bruit.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                }
+              ],
+              "explication": "Avant 9 h, on fait ce qui ne fait pas de bruit : protéger, tracer, repérer. Attendre sans rien faire respecte la demande, mais fait perdre une demi-heure.",
+              "relance": "Que préparez-vous quand une contrainte vous empêche de commencer le travail principal ?"
+            },
+            {
+              "id": "q3",
+              "texte": "À 10 h, vous voyez que le disjoncteur prévu pour le nouveau circuit **n'est pas dans la camionnette**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'en mets un autre de mon stock, qui n'est pas celui de la fiche : ça ira.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens le responsable et j'arrête tout jusqu'à sa réponse.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'en parle seulement en fin de journée, pour ne pas le déranger pendant son travail.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je préviens le responsable tout de suite et je continue les tâches qui n'en ont pas besoin.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                }
+              ],
+              "explication": "Prévenir tout de suite laisse le temps d'apporter la bonne pièce, et continuer le reste évite de perdre la journée. Poser un autre modèle est dangereux : le disjoncteur est choisi pour le circuit, selon la fiche et la norme en vigueur.",
+              "relance": "Que faites-vous quand il manque une pièce pendant un chantier ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Il est 11 h 45. La coupure générale est prévue à **12 h**, quand la cliente part. Que faites-vous **avant de couper** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je coupe tout de suite pour prendre de l'avance : la cliente ne le saura pas.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je prépare tout pour que la coupure soit courte et je rappelle à la cliente l'heure de remise du courant.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je prépare tout pour que la coupure soit courte, puis je coupe à 12 h.",
+                  "points": 1,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je coupe à 12 h et je prépare mes outils ensuite, pendant la coupure.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                }
+              ],
+              "explication": "Tout préparer avant de couper réduit le temps sans courant, et la cliente doit connaître l'heure de retour du courant. Sans cette information, la préparation seule reste incomplète.",
+              "relance": "Comment limitez-vous la durée d'une coupure de courant chez un client ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Il est **13 h 30**. Il reste du travail au tableau et la cliente **rentre à 14 h**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue jusqu'à avoir fini le raccordement, même si cela dépasse 14 h et que la cliente rentre.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je remets le courant partout à 14 h, même sur le circuit pas fini, pour tenir l'heure.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je remets le courant avant 14 h sur les circuits terminés, je condamne le nouveau et je préviens la cliente.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je remets le courant avant 14 h sur les circuits terminés et je laisse le nouveau circuit coupé.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "explication": "À 14 h, la cliente doit retrouver un logement utilisable et sûr : tableau refermé, circuits terminés remis en service, circuit commencé coupé et condamné, cliente prévenue. Sans cela, la solution est incomplète.",
+              "relance": "Que faites-vous quand le travail dépasse l'heure convenue avec le client ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Avant** de partir de l'atelier, je…",
+              "justes": [
+                {
+                  "texte": "lis la fiche du chantier et je fais la liste du matériel pour chaque endroit",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "compare ma liste avec ce que j'ai chargé dans la camionnette",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "vérifie que j'ai bien le disjoncteur prévu pour le tableau",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "charge le matériel habituel",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "pars et j'irai chercher ce qui manque en magasin",
+                  "repere": "c2_reactif"
+                },
+                {
+                  "texte": "ne regarde pas la fiche : je connais ce genre de chantier",
+                  "repere": "c5_devine"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Le matin, avant **9 h**, je…",
+              "justes": [
+                {
+                  "texte": "protège la cuisine et je trace les emplacements au crayon",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "prépare ce qui ne fait pas de bruit : protections, repérages, outils",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "vérifie les emplacements de la fiche avec la cliente avant de percer",
+                  "repere": "c3_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "attends 9 h",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "perce tout de suite pour gagner du temps",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "commence tout en même temps",
+                  "repere": "c2_dispersion"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Avant la coupure générale de **12 h**, je…",
+              "justes": [
+                {
+                  "texte": "prépare tout pour que la coupure soit courte",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "rappelle à la cliente l'heure de remise du courant",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "regroupe les gestes à faire au tableau pour couper le moins longtemps possible",
+                  "repere": "c2_regroupe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "vérifie l'heure",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "coupe plus tôt pour prendre de l'avance",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "prépare mon matériel après avoir coupé",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévoit une marge avant 14 h pour contrôler le circuit et remettre le courant.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Prévient le responsable dès qu'une pièce manque, pour qu'il anticipe.",
+              "repere": "c2_previent"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je remets le courant avant 14 h sur les circuits terminés. Je laisse le nouveau circuit coupé et condamné, et je préviens la cliente. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Vous n'avez pas fini le travail à l'heure prévue. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Il manque le disjoncteur du nouveau circuit. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Il est 13 h 30, il reste du travail au tableau et la cliente rentre à 14 h. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "La cliente demande de couper le courant plus tôt que prévu. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La cliente rentre à 14 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le bruit est interdit avant 9 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Il reste du travail au tableau à 13 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La fiche prévoit deux prises dans la cuisine.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La coupure générale n'est permise qu'entre 12 h et 14 h.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Il manque une pièce pour la chambre.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je pars : le travail restera pour la prochaine fois, sans rien noter.",
+                "points": 0,
+                "repere": "c2_silence"
+              },
+              {
+                "id": "b",
+                "texte": "Je note ce qui reste à faire et je préviens le responsable pour fixer le retour.",
+                "points": 2,
+                "repere": "c2_anticipe"
+              },
+              {
+                "id": "c",
+                "texte": "Je préviens le responsable que le travail n'est pas fini, sans dire ce qui reste à faire.",
+                "points": 1,
+                "repere": "c3_flou"
+              },
+              {
+                "id": "d",
+                "texte": "Je laisse le tableau ouvert pour finir plus vite demain.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "À 14 h, la cliente doit retrouver un logement utilisable et sûr. Les circuits terminés sont remis en service, le circuit commencé reste coupé et condamné, et la cliente est prévenue."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre journée chez la cliente, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de **7 h 15** jusqu'à la fin de la journée.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Faire le point avec la cliente sur le travail fait"
+            },
+            {
+              "id": "e2",
+              "texte": "Protéger le sol et les meubles de la cuisine"
+            },
+            {
+              "id": "e3",
+              "texte": "Couper le courant et raccorder le nouveau circuit au tableau"
+            },
+            {
+              "id": "e4",
+              "texte": "Percer et passer les câbles de la cuisine"
+            },
+            {
+              "id": "e5",
+              "texte": "Vérifier le matériel chargé avec la fiche du chantier"
+            },
+            {
+              "id": "e6",
+              "texte": "Contrôler le circuit puis remettre le courant"
+            },
+            {
+              "id": "e7",
+              "texte": "Rappeler à la cliente l'heure de remise du courant"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e5",
+              "apres": "e2",
+              "explication": "On vérifie le matériel avant de partir de l'atelier, donc avant de commencer."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "On protège avant de percer, à cause de la poussière."
+            },
+            {
+              "avant": "e4",
+              "apres": "e3",
+              "explication": "Les câbles sont passés avant d'être raccordés au tableau."
+            },
+            {
+              "avant": "e7",
+              "apres": "e3",
+              "explication": "On prévient la cliente avant de couper le courant."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "On contrôle le circuit une fois qu'il est raccordé."
+            },
+            {
+              "avant": "e6",
+              "apres": "e1",
+              "explication": "On fait le point avec la cliente une fois le circuit contrôlé et le courant remis."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": "c2_oubli",
+          "reel": {
+            "consigne": "Exercice de 15 minutes : à partir de la fiche du chantier et des demandes de la cliente, la personne écrit son plan de journée heure par heure et sa liste de matériel, puis les explique.",
+            "criteres": [
+              {
+                "texte": "Place le bruit après 9 h et la coupure générale entre 12 h et 14 h",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Passe les câbles avant le raccordement au tableau",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Dresse une liste de matériel complète à partir de la fiche",
+                "repere": "c2_anticipe"
+              },
+              {
+                "texte": "Prévoit de prévenir la cliente avant la coupure",
+                "repere": "c2_previent"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévoit une marge pour contrôler et remettre le courant avant 14 h",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment préparez-vous** votre matériel pour ce chantier ?",
+              "justes": [
+                {
+                  "texte": "Je lis la fiche et je fais la liste du matériel pour chaque endroit.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je compare ma liste avec ce que j'ai chargé avant de partir.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je vérifie en particulier le disjoncteur du nouveau circuit.",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je charge le matériel habituel.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je pars, et j'irai en magasin pour ce qui manque.",
+                  "repere": "c2_reactif"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Dans quel ordre** faites-vous les tâches de la journée ?",
+              "justes": [
+                {
+                  "texte": "Le bruit après 9 h, et le raccordement au tableau pendant la coupure de 12 h à 14 h.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je pars des demandes de la cliente : bruit, coupure, horaires.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je passe les câbles avant de raccorder au tableau.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je fais le plus important d'abord.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je prends les tâches dans l'ordre de la fiche, sans regarder les horaires.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Il est **13 h 30**, il reste du travail au tableau et la cliente **rentre à 14 h**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je remets le courant sur les circuits terminés avant 14 h.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je laisse le circuit commencé coupé et condamné.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je préviens la cliente de ce qui reste à faire.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens le responsable.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je continue après 14 h sans rien dire.",
+                  "repere": "c2_silence"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévoit une marge de temps pour contrôler et ranger avant le retour de la cliente.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner dès le premier jour une fiche de chantier type et une liste de matériel à cocher avant chaque départ.",
+        "Convenir de qui prévenir, et comment, en cas d'imprévu : pièce manquante, retard, travail plus long que prévu."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C8",
+      "texte": "Parlez d'une intervention où vous avez dû couper le courant avant de travailler. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Comment avez-vous su que le courant était bien coupé ?"
+      ],
+      "attendus": [
+        "Cite les étapes : couper, condamner, vérifier l'absence de tension",
+        "Vérifie avec un appareil adapté, à l'endroit où il va travailler",
+        "Signale l'intervention : étiquette, information des personnes présentes"
+      ],
+      "relance": "Que faites-vous si l'appareil indique qu'il reste de la tension ?",
+      "alternative": "Si vous n'avez jamais travaillé sur une installation : parlez d'une fois où vous avez vérifié qu'un appareil était hors tension avant de le démonter (atelier, cours, bricolage)."
+    },
+    {
+      "id": "e2",
+      "competence": "C8",
+      "texte": "Un client vous dit : « J'ai baissé le disjoncteur, le courant est coupé. » Que faites-vous **avant d'ouvrir la prise** ?",
+      "suite": [],
+      "attendus": [
+        "Ne se fie ni à la parole du client ni à l'étiquette seule",
+        "Vérifie l'absence de tension avec un appareil adapté",
+        "Explique pourquoi : une étiquette ou un geste peut être faux"
+      ],
+      "relance": "Et si l'appareil indique qu'il y a de la tension ?",
+      "alternative": "Un collègue vous dit « c'est éteint » avant que vous démontiez un appareil que vous n'avez pas vérifié. Que faites-vous avant de l'ouvrir ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C1",
+      "texte": "Parlez d'une panne que vous avez cherchée puis trouvée. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Qu'avez-vous éliminé en premier ?",
+        "Comment avez-vous vérifié que c'était réparé ?"
+      ],
+      "attendus": [
+        "Décrit des constats précis avant d'agir",
+        "Avance par étapes en éliminant des causes",
+        "Vérifie que la panne est bien réparée"
+      ],
+      "relance": "Qu'est-ce qui vous a mené à cette cause ?",
+      "alternative": "Si vous n'avez pas d'expérience de dépannage : parlez d'un appareil en panne que vous avez réussi à remettre en marche (travail, association, vie quotidienne)."
+    },
+    {
+      "id": "e4",
+      "competence": "C1",
+      "texte": "Un client vous dit : « Les prises de ma chambre ne marchent plus. » **Comment cherchez-vous la cause** ?",
+      "suite": [],
+      "attendus": [
+        "Pose des questions et vérifie les faits : disjoncteur, autres prises",
+        "Va du plus simple au plus long à vérifier",
+        "Coupe et vérifie l'absence de tension avant d'ouvrir une prise"
+      ],
+      "relance": "Que concluez-vous si les prises de la pièce voisine marchent ?",
+      "alternative": "Une lampe de bureau ne s'allume plus. Comment cherchez-vous pourquoi, étape par étape ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C7",
+      "texte": "Parlez d'un chantier fait chez un **client présent**. Qu'avez-vous fait pour **limiter la gêne** ?",
+      "suite": [
+        "Qu'est-ce qui a le plus gêné le client ?"
+      ],
+      "attendus": [
+        "Cite des actions concrètes : protections, propreté, horaires",
+        "Prévient le client des coupures de courant et du bruit",
+        "Fait le point avec le client en fin de journée"
+      ],
+      "relance": "Comment avez-vous su ce qui comptait pour ce client ?",
+      "alternative": "Si vous n'avez jamais travaillé chez un client : parlez d'une fois où vous avez rendu service chez quelqu'un par un travail pratique (stage, association, bénévolat)."
+    },
+    {
+      "id": "e6",
+      "competence": "C7",
+      "texte": "Un client vous demande d'ajouter une prise qui n'est **pas dans le devis**, « puisque vous êtes là ». **Que lui répondez-vous** ?",
+      "suite": [],
+      "attendus": [
+        "Explique simplement la règle : un travail en plus passe par un devis",
+        "Note la demande et regarde si c'est faisable",
+        "Annonce la suite : qui le rappelle, et quand"
+      ],
+      "relance": "Et s'il demande que ce soit fait aujourd'hui ?",
+      "alternative": "Quelqu'un vous demande un service en plus de ce qui était convenu, et vous ne pouvez pas décider seul. Que lui répondez-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où il vous a manqué **du matériel** sur un chantier. **Que s'est-il passé** ?",
+      "suite": [
+        "Qu'avez-vous fait sur le moment ?"
+      ],
+      "attendus": [
+        "Décrit ce qui manquait et la conséquence sur la journée",
+        "Dit comment il a limité la perte de temps",
+        "Dit ce qu'il fait maintenant pour ne plus l'oublier"
+      ],
+      "relance": "Comment vérifiez-vous votre liste avant de partir ?",
+      "alternative": "Parlez d'une fois où il vous a manqué quelque chose d'important pour une activité ou un projet (études, association, bricolage). Qu'avez-vous fait ensuite ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C2",
+      "texte": "Demain, vous avez trois tâches chez un client **absent l'après-midi**. Comment **choisissez-vous l'ordre** ?",
+      "suite": [
+        "Pouvez-vous donner un exemple ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : horaires du client, coupure de courant, bruit",
+        "Place la coupure de courant au bon moment et prévient le client",
+        "Prévoit le matériel, puis du temps pour contrôler et ranger"
+      ],
+      "relance": "Que faites-vous si une tâche prend plus de temps que prévu ?",
+      "alternative": "Quand plusieurs tâches dépendent des horaires d'une autre personne, comment choisissez-vous l'ordre dans lequel vous les faites ?"
+    }
+  ],
+  "_pv": "6503649142"
+}

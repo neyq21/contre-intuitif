@@ -1,0 +1,2488 @@
+{
+  "schema": "ci5p-base/2",
+  "meta": {
+    "titre": "La méthode des 5 portes",
+    "sous_titre": "Recruter les talents neurodivergents en changeant le test, pas la personne",
+    "marque": "Contre-Intuitif",
+    "slogan": "Changez le test. Pas la personne.",
+    "version": "5.0",
+    "date": "octobre 2026",
+    "sources_verifiees": "du 4 au 7 octobre 2026",
+    "comptes": "TikTok @contreintuitifoff · Instagram @contre.intuitifoff"
+  },
+  "niveaux": {
+    "1": "Insuffisant",
+    "2": "Partiel",
+    "3": "Attendu",
+    "4": "Remarquable"
+  },
+  "competences": [
+    {
+      "code": "C1",
+      "nom": "Résoudre un problème du poste",
+      "definition": "Comprendre un problème concret du poste, suivre une démarche et aboutir à une solution vérifiable.",
+      "ancres": {
+        "1": "Ne pose pas le problème, ou propose une solution sans lien avec la situation. Aucune vérification.",
+        "2": "Identifie une partie du problème. Démarche incomplète, ou solution non vérifiée.",
+        "3": "Identifie le problème principal, avance par étapes logiques, propose une solution qui marche et dit comment la vérifier.",
+        "4": "En plus : repère la cause profonde ou un risque peu visible, compare au moins deux options et justifie son choix."
+      },
+      "attention": "Notez la démarche, même si la personne dit d'abord « je ne sais pas ».",
+      "equivalence": [
+        "8 à 10 points sur 12 : cause la plus probable choisie et première vérification pertinente.",
+        "Les phrases nomment la cause probable, une démarche par étapes et la façon de vérifier.",
+        "Retrouve le problème de départ et la logique qui mène à la réponse ; propose la vérification suivante.",
+        "Le problème est résolu et la solution est vérifiée (test, mesure, contrôle).",
+        "Décrit le problème, les étapes et la vérification, à l'oral ou à l'écrit."
+      ],
+      "piste": "Lui confier des cas réels guidés : décrire le problème, vérifier une hypothèse, contrôler le résultat."
+    },
+    {
+      "code": "C2",
+      "nom": "Organiser et prioriser",
+      "definition": "Classer des tâches selon un critère explicite et tenir les contraintes (délais, ressources).",
+      "ancres": {
+        "1": "Traite les tâches dans l'ordre d'arrivée, sans critère. Oublie une contrainte imposée.",
+        "2": "Classe une partie des tâches, mais le critère reste flou, ou une échéance est ratée.",
+        "3": "Classe les tâches selon un critère dit à voix haute ou par écrit (urgence, impact, échéance), respecte les contraintes, prévoit quoi faire en cas d'imprévu.",
+        "4": "En plus : anticipe un conflit de priorités, prévient les bonnes personnes, regroupe ou délègue pour gagner du temps."
+      },
+      "attention": "Un ordre différent du vôtre peut être juste : notez le critère et le respect des contraintes.",
+      "equivalence": [
+        "8 à 10 points sur 12 : bon ordre global et bonne contrainte repérée.",
+        "Un ordre avec un critère explicite, et une réponse à l'imprévu.",
+        "Retrouve la contrainte qui explique la réponse et place la tâche suivante.",
+        "Le plan produit respecte toutes les échéances ; le critère est noté.",
+        "Donne l'ordre, le critère et quoi faire en cas d'imprévu."
+      ],
+      "piste": "Donner une règle de priorité écrite et simple, et faire le point ensemble en fin de journée les premières semaines."
+    },
+    {
+      "code": "C3",
+      "nom": "Transmettre une information claire",
+      "definition": "Faire passer une information juste et utile, à l'oral ou à l'écrit, au choix de la personne.",
+      "ancres": {
+        "1": "Le message principal n'apparaît pas, ou l'information est fausse.",
+        "2": "Message compréhensible mais incomplet, ou mal adapté au destinataire.",
+        "3": "Message juste et complet, l'essentiel d'abord, adapté au destinataire.",
+        "4": "En plus : anticipe les questions du destinataire, rend l'information utilisable (prochaine étape, délai), reste bref."
+      },
+      "attention": "Ne notez ni l'aisance à l'oral, ni le débit, ni le regard, ni l'orthographe (sauf exigence réelle du poste, avec les outils autorisés au travail).",
+      "equivalence": [
+        "8 à 10 points sur 12 : meilleur message choisi pour ce destinataire.",
+        "Les phrases donnent l'essentiel d'abord, sans erreur, adapté au destinataire.",
+        "Retrouve le destinataire et le but du message ; dit ce qui manquerait.",
+        "Le message produit est juste, complet, l'essentiel d'abord.",
+        "Le message dit ou écrit est juste, complet et adapté."
+      ],
+      "piste": "Proposer des modèles de messages (quoi, qui, quand, et ensuite) et relire les premiers ensemble."
+    },
+    {
+      "code": "C4",
+      "nom": "Travailler avec les autres",
+      "definition": "Coordonner, partager l'information, traiter un désaccord sur les faits.",
+      "ancres": {
+        "1": "Ne tient pas compte du rôle ni du besoin des autres dans la situation.",
+        "2": "Tient compte des autres en partie ; évite le désaccord ou impose sa solution.",
+        "3": "Décrit des actions concrètes : coordonner, informer, demander ou offrir de l'aide ; traite le désaccord sur les faits.",
+        "4": "En plus : met en place une règle, un outil ou un rituel qui évite que le problème revienne."
+      },
+      "attention": "Notez les actions décrites, pas le style social. Une réponse directe n'est pas une réponse impolie.",
+      "equivalence": [
+        "8 à 10 points sur 12 : actions de coordination et traitement du désaccord sur les faits.",
+        "Les phrases décrivent qui informer, quoi proposer, comment trancher.",
+        "Retrouve le désaccord de départ et pourquoi la solution l'apaise.",
+        "Le plan ou le jeu de rôle structuré contient des actions concrètes de coordination.",
+        "Décrit des actions concrètes, un désaccord traité sur les faits."
+      ],
+      "piste": "Présenter les interlocuteurs clés, leurs rôles, et prévoir un point d'équipe court et régulier."
+    },
+    {
+      "code": "C5",
+      "nom": "Apprendre et s'adapter",
+      "definition": "Intégrer une consigne, un outil ou un retour nouveau, et l'appliquer.",
+      "ancres": {
+        "1": "N'applique pas la consigne nouvelle ; répète la même approche malgré un retour.",
+        "2": "Applique la consigne en partie, ou seulement avec de l'aide.",
+        "3": "Applique correctement une consigne ou un outil nouveau après explication ; corrige après un retour.",
+        "4": "En plus : transfère à un cas voisin, ou propose une amélioration de la méthode."
+      },
+      "attention": "Une question de clarification est un bon signe, pas une faiblesse.",
+      "equivalence": [
+        "8 à 10 points sur 12 : applique correctement la nouvelle règle dans les cas proposés.",
+        "Les phrases appliquent la consigne nouvelle à la situation.",
+        "Retrouve la règle nouvelle qui explique la réponse.",
+        "Applique la consigne ou l'outil nouveau sans erreur importante.",
+        "Explique comment la consigne nouvelle a été apprise et appliquée."
+      ],
+      "piste": "Donner les consignes par écrit, avec un exemple, et un moment prévu pour poser ses questions."
+    },
+    {
+      "code": "C6",
+      "nom": "Fiabilité et qualité",
+      "definition": "Produire un résultat exact et le vérifier avec méthode.",
+      "ancres": {
+        "1": "Erreurs non repérées qui changent le résultat. Aucun contrôle.",
+        "2": "Contrôle partiel ; des erreurs mineures restent.",
+        "3": "Résultat exact selon les critères donnés ; vérifie avec une méthode (relecture, test, double contrôle).",
+        "4": "En plus : repère une erreur ou une incohérence dans les données fournies ; propose un contrôle qui évite qu'elle revienne."
+      },
+      "attention": "Avec un temps majoré, la note porte sur le résultat, pas sur la vitesse (sauf si la vitesse est une exigence réelle et mesurée pour tous).",
+      "equivalence": [
+        "8 à 10 points sur 12 : repère les erreurs et choisit le bon contrôle.",
+        "Les phrases nomment l'erreur, la correction et le contrôle.",
+        "Retrouve l'anomalie de départ et la vérification qui la prouve.",
+        "Résultat exact, contrôle visible (relecture, test, double vérification).",
+        "Décrit ses étapes de contrôle dans l'ordre."
+      ],
+      "piste": "Fournir une check-list de contrôle et faire relire les premiers travaux."
+    },
+    {
+      "code": "C7",
+      "nom": "Servir un client ou un usager",
+      "definition": "Comprendre le besoin réel et y répondre dans le respect des règles.",
+      "ancres": {
+        "1": "Ne traite pas la demande, ou aggrave la situation.",
+        "2": "Traite la demande mais oublie un élément : le besoin réel, la règle ou le suivi.",
+        "3": "Comprend le besoin réel, répond selon les règles, explique la suite et le délai.",
+        "4": "En plus : apaise une situation tendue avec des faits, propose une alternative acceptable, prévient un problème futur."
+      },
+      "attention": "Ne notez ni le sourire, ni la chaleur perçue, ni le ton : notez ce que la personne propose et vérifie.",
+      "equivalence": [
+        "8 à 10 points sur 12 : meilleure réponse au client et bonne information demandée.",
+        "Les phrases traitent le besoin réel, la règle et le suivi.",
+        "Retrouve la demande du client et ce qu'il fallait vérifier.",
+        "Les réponses produites sont justes, conformes aux règles, avec un délai.",
+        "Dit ou écrit la réponse au client et la suite donnée."
+      ],
+      "piste": "Donner par écrit ce que la règle permet ou non, et quoi répondre en attendant une décision."
+    },
+    {
+      "code": "C8",
+      "nom": "Maîtrise technique du métier",
+      "definition": "Savoirs et outils propres au poste, définis par le manager avant le recrutement.",
+      "ancres": {
+        "1": "Connaissance absente ou fausse sur un point essentiel.",
+        "2": "Bases présentes, avec des erreurs sur des points importants.",
+        "3": "Applique correctement les savoirs et outils requis au niveau d'entrée du poste.",
+        "4": "Va au-delà du niveau requis : explique le pourquoi, connaît les limites et les alternatives."
+      },
+      "attention": "Définissez par écrit le niveau requis avant le premier entretien.",
+      "equivalence": [
+        "8 à 10 points sur 12 : connaissances justes sur les points essentiels.",
+        "Les phrases emploient correctement les notions du métier.",
+        "Retrouve la notion du métier qui explique la réponse.",
+        "Applique correctement les savoirs et outils du poste.",
+        "Explique correctement les notions du métier."
+      ],
+      "piste": "Prévoir une formation courte sur les points techniques manqués, avec un tuteur."
+    }
+  ],
+  "reperes": [
+    {
+      "id": "c1_faits",
+      "comp": "C1",
+      "sens": "+",
+      "label": "Vérifie les faits avant d'agir",
+      "retour": "Vous vérifiez les faits avant d'agir."
+    },
+    {
+      "id": "c1_cause",
+      "comp": "C1",
+      "sens": "+",
+      "label": "Cherche la cause, pas seulement l'effet",
+      "retour": "Vous cherchez la cause d'un problème, pas seulement ses effets."
+    },
+    {
+      "id": "c1_etapes",
+      "comp": "C1",
+      "sens": "+",
+      "label": "Avance par étapes logiques",
+      "retour": "Vous avancez par étapes logiques."
+    },
+    {
+      "id": "c1_verifie",
+      "comp": "C1",
+      "sens": "+",
+      "label": "Vérifie que la solution fonctionne",
+      "retour": "Vous vérifiez que votre solution fonctionne."
+    },
+    {
+      "id": "c1_options",
+      "comp": "C1",
+      "sens": "+",
+      "label": "Compare plusieurs solutions",
+      "retour": "Vous comparez plusieurs solutions avant de choisir."
+    },
+    {
+      "id": "c1_aide",
+      "comp": "C1",
+      "sens": "+",
+      "label": "Va chercher l'information ou l'aide qui manque",
+      "retour": "Vous allez chercher l'information qui vous manque."
+    },
+    {
+      "id": "c1_precipite",
+      "comp": "C1",
+      "sens": "-",
+      "label": "Agit avant d'avoir compris le problème",
+      "conseil": "Prendre le temps de comprendre le problème avant d'agir."
+    },
+    {
+      "id": "c1_symptome",
+      "comp": "C1",
+      "sens": "-",
+      "label": "Traite l'effet sans chercher la cause",
+      "conseil": "Chercher la cause d'un problème, pas seulement ses effets."
+    },
+    {
+      "id": "c1_suppose",
+      "comp": "C1",
+      "sens": "-",
+      "label": "Conclut sans vérifier",
+      "conseil": "Vérifier une hypothèse avant de conclure."
+    },
+    {
+      "id": "c1_abandon",
+      "comp": "C1",
+      "sens": "-",
+      "label": "Laisse le problème sans solution",
+      "conseil": "Proposer au moins une piste, même partielle, face à un problème."
+    },
+    {
+      "id": "c2_critere",
+      "comp": "C2",
+      "sens": "+",
+      "label": "Choisit l'ordre avec un critère clair (urgence, impact, échéance)",
+      "retour": "Vous choisissez l'ordre de vos tâches avec un critère clair."
+    },
+    {
+      "id": "c2_risque",
+      "comp": "C2",
+      "sens": "+",
+      "label": "Traite d'abord ce qui présente un risque",
+      "retour": "Vous traitez d'abord ce qui présente un risque."
+    },
+    {
+      "id": "c2_contraintes",
+      "comp": "C2",
+      "sens": "+",
+      "label": "Tient compte des délais et des contraintes",
+      "retour": "Vous tenez compte des délais et des contraintes."
+    },
+    {
+      "id": "c2_previent",
+      "comp": "C2",
+      "sens": "+",
+      "label": "Prévient les personnes qui attendent",
+      "retour": "Vous prévenez les personnes qui attendent."
+    },
+    {
+      "id": "c2_anticipe",
+      "comp": "C2",
+      "sens": "+",
+      "label": "Anticipe la suite",
+      "retour": "Vous anticipez ce qui va arriver."
+    },
+    {
+      "id": "c2_regroupe",
+      "comp": "C2",
+      "sens": "+",
+      "label": "Regroupe ou délègue pour gagner du temps",
+      "retour": "Vous regroupez les tâches pour gagner du temps."
+    },
+    {
+      "id": "c2_arrivee",
+      "comp": "C2",
+      "sens": "-",
+      "label": "Suit l'ordre d'arrivée, sans critère",
+      "conseil": "Choisir l'ordre avec un critère clair : urgence, impact, échéance."
+    },
+    {
+      "id": "c2_oubli",
+      "comp": "C2",
+      "sens": "-",
+      "label": "Oublie une contrainte ou une échéance",
+      "conseil": "Vérifier toutes les contraintes avant de fixer un ordre."
+    },
+    {
+      "id": "c2_dispersion",
+      "comp": "C2",
+      "sens": "-",
+      "label": "Commence plusieurs choses à la fois",
+      "conseil": "Finir une tâche urgente avant d'en commencer une autre."
+    },
+    {
+      "id": "c2_silence",
+      "comp": "C2",
+      "sens": "-",
+      "label": "Ne prévient pas quand une tâche va attendre",
+      "conseil": "Prévenir les personnes concernées quand une tâche va attendre."
+    },
+    {
+      "id": "c2_reactif",
+      "comp": "C2",
+      "sens": "-",
+      "label": "Attend les demandes sans anticiper",
+      "conseil": "Préparer à l'avance ce qui va être demandé."
+    },
+    {
+      "id": "c3_essentiel",
+      "comp": "C3",
+      "sens": "+",
+      "label": "Donne l'essentiel d'abord",
+      "retour": "Vous donnez l'essentiel d'abord."
+    },
+    {
+      "id": "c3_adapte",
+      "comp": "C3",
+      "sens": "+",
+      "label": "Adapte le message à la personne",
+      "retour": "Vous adaptez votre message à la personne."
+    },
+    {
+      "id": "c3_complet",
+      "comp": "C3",
+      "sens": "+",
+      "label": "Donne les informations utiles (quoi, qui, quand)",
+      "retour": "Vos messages contiennent les informations utiles."
+    },
+    {
+      "id": "c3_suite",
+      "comp": "C3",
+      "sens": "+",
+      "label": "Dit ce qui va se passer ensuite",
+      "retour": "Vous dites clairement ce qui va se passer ensuite."
+    },
+    {
+      "id": "c3_trace",
+      "comp": "C3",
+      "sens": "+",
+      "label": "Laisse une trace écrite quand il le faut",
+      "retour": "Vous laissez une trace écrite quand c'est utile."
+    },
+    {
+      "id": "c3_verifie",
+      "comp": "C3",
+      "sens": "+",
+      "label": "Vérifie que le message est compris",
+      "retour": "Vous vérifiez que votre message est bien compris."
+    },
+    {
+      "id": "c3_flou",
+      "comp": "C3",
+      "sens": "-",
+      "label": "Message flou ou incomplet",
+      "conseil": "Donner des informations précises : quoi, qui, quand."
+    },
+    {
+      "id": "c3_faux",
+      "comp": "C3",
+      "sens": "-",
+      "label": "Information inexacte",
+      "conseil": "Vérifier une information avant de la transmettre."
+    },
+    {
+      "id": "c3_jargon",
+      "comp": "C3",
+      "sens": "-",
+      "label": "Jargon ou détails inutiles pour cette personne",
+      "conseil": "Choisir des mots que la personne comprend."
+    },
+    {
+      "id": "c3_oubli",
+      "comp": "C3",
+      "sens": "-",
+      "label": "Ne transmet pas une information importante",
+      "conseil": "Transmettre tout de suite les informations dont les autres ont besoin."
+    },
+    {
+      "id": "c4_informe",
+      "comp": "C4",
+      "sens": "+",
+      "label": "Informe les autres et se coordonne",
+      "retour": "Vous informez les autres et vous vous coordonnez."
+    },
+    {
+      "id": "c4_faits",
+      "comp": "C4",
+      "sens": "+",
+      "label": "Règle un désaccord à partir des faits",
+      "retour": "Vous réglez un désaccord en partant des faits."
+    },
+    {
+      "id": "c4_aide",
+      "comp": "C4",
+      "sens": "+",
+      "label": "Demande ou propose de l'aide",
+      "retour": "Vous savez demander ou proposer de l'aide."
+    },
+    {
+      "id": "c4_role",
+      "comp": "C4",
+      "sens": "+",
+      "label": "Respecte le rôle de chacun",
+      "retour": "Vous respectez le rôle de chacun."
+    },
+    {
+      "id": "c4_regle",
+      "comp": "C4",
+      "sens": "+",
+      "label": "Propose une règle pour que le problème ne revienne pas",
+      "retour": "Vous proposez des solutions durables pour l'équipe."
+    },
+    {
+      "id": "c4_escalade",
+      "comp": "C4",
+      "sens": "+",
+      "label": "Fait remonter au bon niveau quand c'est nécessaire",
+      "retour": "Vous savez faire remonter un problème au bon niveau."
+    },
+    {
+      "id": "c4_impose",
+      "comp": "C4",
+      "sens": "-",
+      "label": "Impose sa solution",
+      "conseil": "Chercher une solution avec les autres plutôt que l'imposer."
+    },
+    {
+      "id": "c4_evite",
+      "comp": "C4",
+      "sens": "-",
+      "label": "Évite le désaccord au lieu de le traiter",
+      "conseil": "Aborder un désaccord tôt, avec des faits."
+    },
+    {
+      "id": "c4_personne",
+      "comp": "C4",
+      "sens": "-",
+      "label": "Met en cause la personne plutôt que les faits",
+      "conseil": "Parler des faits, pas de la personne."
+    },
+    {
+      "id": "c4_seul",
+      "comp": "C4",
+      "sens": "-",
+      "label": "Agit seul sans prévenir",
+      "conseil": "Prévenir les collègues concernés avant d'agir."
+    },
+    {
+      "id": "c5_applique",
+      "comp": "C5",
+      "sens": "+",
+      "label": "Applique correctement une consigne nouvelle",
+      "retour": "Vous appliquez correctement une consigne nouvelle."
+    },
+    {
+      "id": "c5_clarifie",
+      "comp": "C5",
+      "sens": "+",
+      "label": "Pose une question pour clarifier",
+      "retour": "Vous posez des questions pour bien comprendre."
+    },
+    {
+      "id": "c5_corrige",
+      "comp": "C5",
+      "sens": "+",
+      "label": "Corrige après un retour",
+      "retour": "Vous tenez compte des retours."
+    },
+    {
+      "id": "c5_source",
+      "comp": "C5",
+      "sens": "+",
+      "label": "Va chercher la bonne source (procédure, notice, collègue)",
+      "retour": "Vous allez chercher la bonne information."
+    },
+    {
+      "id": "c5_transfere",
+      "comp": "C5",
+      "sens": "+",
+      "label": "Applique ce qu'il a appris à une situation voisine",
+      "retour": "Vous appliquez ce que vous apprenez à des situations nouvelles."
+    },
+    {
+      "id": "c5_ameliore",
+      "comp": "C5",
+      "sens": "+",
+      "label": "Propose une amélioration",
+      "retour": "Vous proposez des améliorations."
+    },
+    {
+      "id": "c5_habitude",
+      "comp": "C5",
+      "sens": "-",
+      "label": "Garde l'ancienne façon de faire",
+      "conseil": "Appliquer la nouvelle consigne, même quand l'ancienne habitude est plus confortable."
+    },
+    {
+      "id": "c5_ignore",
+      "comp": "C5",
+      "sens": "-",
+      "label": "Ne tient pas compte d'un retour",
+      "conseil": "Tenir compte d'un retour pour changer sa façon de faire."
+    },
+    {
+      "id": "c5_devine",
+      "comp": "C5",
+      "sens": "-",
+      "label": "Devine au lieu de vérifier la consigne",
+      "conseil": "Vérifier une consigne en cas de doute plutôt que deviner."
+    },
+    {
+      "id": "c5_attend",
+      "comp": "C5",
+      "sens": "-",
+      "label": "Attend sans chercher l'information",
+      "conseil": "Chercher l'information ou demander dès qu'elle manque."
+    },
+    {
+      "id": "c6_controle",
+      "comp": "C6",
+      "sens": "+",
+      "label": "Contrôle son travail avec méthode",
+      "retour": "Vous contrôlez votre travail avec méthode."
+    },
+    {
+      "id": "c6_anomalie",
+      "comp": "C6",
+      "sens": "+",
+      "label": "Repère une erreur ou une incohérence",
+      "retour": "Vous repérez les erreurs et les incohérences."
+    },
+    {
+      "id": "c6_regle",
+      "comp": "C6",
+      "sens": "+",
+      "label": "Respecte la procédure ou la norme",
+      "retour": "Vous respectez les procédures."
+    },
+    {
+      "id": "c6_trace",
+      "comp": "C6",
+      "sens": "+",
+      "label": "Garde une trace de ce qui a été fait",
+      "retour": "Vous gardez une trace de ce qui a été fait."
+    },
+    {
+      "id": "c6_recidive",
+      "comp": "C6",
+      "sens": "+",
+      "label": "Cherche à éviter que l'erreur revienne",
+      "retour": "Vous cherchez à éviter que l'erreur revienne."
+    },
+    {
+      "id": "c6_bloque",
+      "comp": "C6",
+      "sens": "+",
+      "label": "Met de côté ce qui n'est pas conforme",
+      "retour": "Vous mettez de côté ce qui n'est pas conforme."
+    },
+    {
+      "id": "c6_sans_controle",
+      "comp": "C6",
+      "sens": "-",
+      "label": "Ne contrôle pas",
+      "conseil": "Vérifier son travail avant de le transmettre."
+    },
+    {
+      "id": "c6_laisse",
+      "comp": "C6",
+      "sens": "-",
+      "label": "Laisse passer une erreur",
+      "conseil": "Corriger une erreur dès qu'on la voit."
+    },
+    {
+      "id": "c6_cache",
+      "comp": "C6",
+      "sens": "-",
+      "label": "Corrige ou compense sans le signaler",
+      "conseil": "Signaler une erreur, même corrigée, pour que l'équipe le sache."
+    },
+    {
+      "id": "c6_raccourci",
+      "comp": "C6",
+      "sens": "-",
+      "label": "Prend un raccourci qui fait courir un risque",
+      "conseil": "Suivre la procédure, même quand on est pressé."
+    },
+    {
+      "id": "c7_besoin",
+      "comp": "C7",
+      "sens": "+",
+      "label": "Cherche le besoin réel",
+      "retour": "Vous cherchez le besoin réel de la personne."
+    },
+    {
+      "id": "c7_regle",
+      "comp": "C7",
+      "sens": "+",
+      "label": "Répond dans le respect des règles",
+      "retour": "Vous répondez dans le respect des règles."
+    },
+    {
+      "id": "c7_suite",
+      "comp": "C7",
+      "sens": "+",
+      "label": "Annonce la suite et le délai",
+      "retour": "Vous annoncez clairement la suite et le délai."
+    },
+    {
+      "id": "c7_alternative",
+      "comp": "C7",
+      "sens": "+",
+      "label": "Propose une solution possible",
+      "retour": "Vous proposez des solutions possibles."
+    },
+    {
+      "id": "c7_apaise",
+      "comp": "C7",
+      "sens": "+",
+      "label": "Apaise avec des faits",
+      "retour": "Vous apaisez une situation tendue avec des faits."
+    },
+    {
+      "id": "c7_suivi",
+      "comp": "C7",
+      "sens": "+",
+      "label": "Suit la demande jusqu'au bout",
+      "retour": "Vous suivez une demande jusqu'au bout."
+    },
+    {
+      "id": "c7_promesse",
+      "comp": "C7",
+      "sens": "-",
+      "label": "Promet ce qui ne peut pas être tenu",
+      "conseil": "Annoncer seulement ce qui peut être tenu."
+    },
+    {
+      "id": "c7_ignore",
+      "comp": "C7",
+      "sens": "-",
+      "label": "Ne répond pas à la demande",
+      "conseil": "Répondre à la demande, même par une information d'attente."
+    },
+    {
+      "id": "c7_renvoie",
+      "comp": "C7",
+      "sens": "-",
+      "label": "Renvoie ailleurs sans suivi",
+      "conseil": "Accompagner la personne vers la bonne solution, sans la renvoyer seule."
+    },
+    {
+      "id": "c7_aggrave",
+      "comp": "C7",
+      "sens": "-",
+      "label": "Aggrave la situation",
+      "conseil": "Garder une réponse factuelle quand la situation se tend."
+    },
+    {
+      "id": "c7_hors_regle",
+      "comp": "C7",
+      "sens": "-",
+      "label": "Répond en dehors des règles",
+      "conseil": "Vérifier ce que la règle permet avant de répondre."
+    },
+    {
+      "id": "c7_impose",
+      "comp": "C7",
+      "sens": "-",
+      "label": "Décide à la place de la personne",
+      "conseil": "Demander son avis à la personne avant de décider pour elle."
+    },
+    {
+      "id": "c8_savoir",
+      "comp": "C8",
+      "sens": "+",
+      "label": "Connaissance juste du métier",
+      "retour": "Vos connaissances du métier sont justes."
+    },
+    {
+      "id": "c8_securite",
+      "comp": "C8",
+      "sens": "+",
+      "label": "Applique les règles de sécurité et d'hygiène",
+      "retour": "Vous appliquez les règles de sécurité et d'hygiène."
+    },
+    {
+      "id": "c8_outil",
+      "comp": "C8",
+      "sens": "+",
+      "label": "Choisit le bon outil ou la bonne méthode",
+      "retour": "Vous choisissez le bon outil et la bonne méthode."
+    },
+    {
+      "id": "c8_pourquoi",
+      "comp": "C8",
+      "sens": "+",
+      "label": "Sait expliquer le pourquoi",
+      "retour": "Vous savez expliquer le pourquoi de vos gestes."
+    },
+    {
+      "id": "c8_role",
+      "comp": "C8",
+      "sens": "+",
+      "label": "Reste dans son rôle et ses habilitations",
+      "retour": "Vous restez dans le cadre de votre rôle."
+    },
+    {
+      "id": "c8_precision",
+      "comp": "C8",
+      "sens": "+",
+      "label": "Précision du geste, de la mesure ou du calcul",
+      "retour": "Vous êtes précis dans vos gestes et vos calculs."
+    },
+    {
+      "id": "c8_erreur",
+      "comp": "C8",
+      "sens": "-",
+      "label": "Erreur technique sur un point important",
+      "conseil": "Revoir les bases techniques du poste sur ce point."
+    },
+    {
+      "id": "c8_danger",
+      "comp": "C8",
+      "sens": "-",
+      "label": "Met en danger (sécurité, hygiène, santé)",
+      "conseil": "Appliquer d'abord les règles de sécurité et d'hygiène."
+    },
+    {
+      "id": "c8_confusion",
+      "comp": "C8",
+      "sens": "-",
+      "label": "Confond deux notions proches",
+      "conseil": "Distinguer les notions proches du métier."
+    },
+    {
+      "id": "c8_hors_role",
+      "comp": "C8",
+      "sens": "-",
+      "label": "Sort de son rôle ou de ses habilitations",
+      "conseil": "Respecter les limites de son rôle et de ses habilitations."
+    }
+  ],
+  "portes": [
+    {
+      "id": "p1",
+      "n": 1,
+      "nom": "Choix multiples",
+      "court": "Choisir",
+      "carte": "Vous choisissez une réponse parmi quatre.",
+      "candidat": "Des questions à choix multiples. Pour chacune, vous choisissez une réponse parmi quatre. Plusieurs réponses peuvent sembler justes : choisissez la meilleure.",
+      "recruteur": "Des questions à quatre réponses (5 par défaut, de 3 à 10 au choix), corrigées automatiquement : meilleure réponse 2 points, réponse acceptable 1 point, les deux autres 0. Le total est ramené sur 10.",
+      "duree": "10 à 15 min"
+    },
+    {
+      "id": "p2",
+      "n": 2,
+      "nom": "Phrases à compléter",
+      "court": "Compléter",
+      "carte": "Vous complétez des débuts de phrase, avec vos mots.",
+      "candidat": "Des débuts de phrase à compléter avec vos mots. Quelques mots suffisent.",
+      "recruteur": "Des débuts de phrase (3 par défaut, de 2 à 6 au choix, dont les vôtres). La personne qui évalue relie chaque réponse à une réponse juste, partielle ou à éviter : plusieurs réponses justes sont prévues.",
+      "duree": "10 à 15 min"
+    },
+    {
+      "id": "p3",
+      "n": 3,
+      "nom": "Retrouvez la question",
+      "court": "Retrouver",
+      "carte": "On vous donne la réponse : vous retrouvez la question.",
+      "candidat": "On vous donne une réponse. Vous retrouvez la question de départ, puis les éléments qui l'expliquent, puis ce qu'on fait ensuite.",
+      "recruteur": "Trois étapes corrigées automatiquement : la question de départ (2 points), les trois indices justes (3 points), la suite (2 points).",
+      "duree": "10 min"
+    },
+    {
+      "id": "p4",
+      "n": 4,
+      "nom": "Défi pratique",
+      "court": "Faire",
+      "carte": "Une petite tâche à l'écran : ordonner, classer ou repérer.",
+      "candidat": "Une petite tâche du métier, à faire à l'écran : remettre des actions dans l'ordre, classer, ou repérer des erreurs.",
+      "recruteur": "Une tâche interactive corrigée automatiquement. Plusieurs ordres ou classements justes sont acceptés. Variante en situation réelle, observée avec une grille.",
+      "duree": "10 à 20 min"
+    },
+    {
+      "id": "p5",
+      "n": 5,
+      "nom": "Oral ou écrit",
+      "court": "Expliquer",
+      "carte": "Des questions courtes : vous répondez par écrit ou à l'oral.",
+      "candidat": "Des questions courtes. Vous répondez en écrivant, ou à l'oral, comme vous préférez.",
+      "recruteur": "Des questions (3 par défaut, de 2 à 6 au choix, dont les vôtres), une idée à la fois. Réponse écrite à l'écran ou orale notée par la personne qui évalue. Plusieurs réponses justes sont prévues.",
+      "duree": "10 à 15 min"
+    }
+  ],
+  "exemple": {
+    "situation": "Vous organisez une réunion de 6 personnes demain à 10 h. La salle prévue est déjà prise.",
+    "p1": {
+      "texte": "Que faites-vous en premier ?",
+      "options": [
+        "Je cherche une autre salle libre à 10 h.",
+        "J'annule la réunion.",
+        "J'attends demain pour voir.",
+        "Je préviens tout le monde que la réunion est annulée."
+      ]
+    },
+    "p2": {
+      "debut": "Je préviens les participants que…"
+    },
+    "p3": {
+      "reponse": "« J'ai réservé la salle B et j'ai prévenu les six personnes. »",
+      "consigne": "Quelle était la question ?"
+    },
+    "p4": {
+      "consigne": "Remettez ces actions dans l'ordre.",
+      "elements": [
+        "Vérifier les salles libres à 10 h",
+        "Réserver la salle B",
+        "Prévenir les participants"
+      ]
+    },
+    "p5": {
+      "texte": "Que faites-vous quand la salle prévue est déjà prise ?"
+    }
+  },
+  "baremes": {
+    "p1": {
+      "max": 10,
+      "seuils": [
+        [
+          9,
+          4
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "texte": "Chaque question : meilleure réponse 2 points, réponse acceptable 1 point. Avec 5 questions, total sur 10 : 9 ou 10 → niveau 4 ; 7 ou 8 → niveau 3 ; 5 ou 6 → niveau 2 ; 0 à 4 → niveau 1. Avec un autre nombre de questions (de 3 à 10), le total est ramené sur 10 avant d'appliquer les mêmes seuils. En répondant au hasard, la chance d'atteindre le niveau 3 est inférieure à 1 sur 10."
+    },
+    "p2": {
+      "max": 6,
+      "texte": "Chaque phrase : juste 2 points, partielle 1 point, à éviter ou absente 0. Avec 3 phrases : total 5 ou 6 → niveau 3, et niveau 4 si un élément « en plus » est présent ; 3 ou 4 → niveau 2 ; 0 à 2 → niveau 1. Avec un autre nombre de phrases (de 2 à 6), mêmes proportions : niveau 3 à partir des cinq sixièmes des points, niveau 2 à partir de la moitié."
+    },
+    "p3": {
+      "max": 7,
+      "seuils": [
+        [
+          7,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "texte": "Question de départ (2 points), indices (1 point par indice juste, moins 1 par indice faux, minimum 0), suite (2 points). Total 7 → niveau 4 ; 5 ou 6 → niveau 3 ; 3 ou 4 → niveau 2 ; 0 à 2 → niveau 1."
+    },
+    "p4": {
+      "seuils": [
+        [
+          0.85,
+          4
+        ],
+        [
+          0.6,
+          3
+        ],
+        [
+          0.3,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "texte": "Score corrigé du hasard, de 0 à 1 : 0,85 ou plus → niveau 4 ; 0,6 → niveau 3 ; 0,3 → niveau 2 ; en dessous → niveau 1. Ordonner : part des règles d'ordre respectées. Classer : part des éléments bien classés. Repérer : erreurs trouvées moins fausses alertes."
+    },
+    "p5": {
+      "max": 6,
+      "texte": "Comme la porte 2 : chaque réponse juste 2 points, partielle 1 point. Avec 3 questions : total 5 ou 6 → niveau 3, ou 4 avec un élément « en plus » ; 3 ou 4 → niveau 2 ; 0 à 2 → niveau 1. Avec un autre nombre de questions (de 2 à 6), mêmes proportions. Une question écrite par le recruteur se note avec la même grille, sans réponses prévues."
+    },
+    "reel": {
+      "texte": "Variante en situation réelle : 4 critères observés → niveau 3, ou 4 avec l'élément « en plus » ; 2 ou 3 critères → niveau 2 ; 0 ou 1 → niveau 1."
+    },
+    "entretien": {
+      "texte": "Entretien structuré : la personne qui évalue choisit le niveau de 1 à 4 avec les ancres ; les éléments attendus cochés servent de repères (tous → 3 ; au moins la moitié → 2)."
+    }
+  },
+  "secteurs": [
+    {
+      "id": "restauration",
+      "nom": "Hôtellerie et restauration",
+      "bientot": [
+        "Réceptionniste d'hôtel",
+        "Employé / Employée d'étage"
+      ]
+    },
+    {
+      "id": "sante-social",
+      "nom": "Santé et aide à la personne",
+      "bientot": [
+        "Pharmacien / Pharmacienne",
+        "Préparateur / Préparatrice en pharmacie",
+        "Auxiliaire de puériculture"
+      ]
+    },
+    {
+      "id": "proprete-securite",
+      "nom": "Propreté et sécurité"
+    },
+    {
+      "id": "commerce",
+      "nom": "Commerce, vente et relation client"
+    },
+    {
+      "id": "logistique",
+      "nom": "Logistique et transport",
+      "bientot": [
+        "Conducteur / Conductrice de bus",
+        "Agent / Agente de quai"
+      ]
+    },
+    {
+      "id": "industrie",
+      "nom": "Industrie et maintenance"
+    },
+    {
+      "id": "btp",
+      "nom": "Bâtiment"
+    },
+    {
+      "id": "bureau",
+      "nom": "Administratif et gestion"
+    },
+    {
+      "id": "numerique",
+      "nom": "Informatique et données"
+    },
+    {
+      "id": "communication-management",
+      "nom": "Communication et management"
+    },
+    {
+      "id": "agriculture",
+      "nom": "Agriculture"
+    },
+    {
+      "id": "education",
+      "nom": "Éducation et animation",
+      "bientot": [
+        "Agent territorial spécialisé des écoles maternelles (ATSEM)",
+        "Assistant / Assistante d'éducation",
+        "Formateur / Formatrice"
+      ]
+    }
+  ],
+  "ne_pas_noter": [
+    {
+      "titre": "Le regard, le contact visuel",
+      "raison": "Le non-verbal ne dit rien du travail ; les jugements sur le non-verbal pénalisent des personnes autistes [10]. Acas : ne tirez pas de conclusion du langage corporel [16]."
+    },
+    {
+      "titre": "La poignée de main",
+      "raison": "Elle pèse sur les notes des recruteurs sans rien dire du métier [11]."
+    },
+    {
+      "titre": "Le sourire, les expressions du visage",
+      "raison": "Impression, pas compétence. Les outils d'IA qui déduisent les émotions du visage ou de la voix sont interdits au travail, recrutement compris [35]."
+    },
+    {
+      "titre": "Le ton, le débit, l'accent, les hésitations",
+      "raison": "Seul compte le contenu de la réponse."
+    },
+    {
+      "titre": "L'agitation, le besoin de bouger, les gestes répétés",
+      "raison": "Ne dit rien de l'intérêt ni de la compétence [16]."
+    },
+    {
+      "titre": "Le temps de réflexion, le temps passé sur l'épreuve",
+      "raison": "Une réponse réfléchie vaut une réponse rapide. Le kit ne mesure jamais le temps, même quand le déroulé de l'épreuve est enregistré (option) : la vitesse n'est une exigence d'aucune compétence évaluée [42]."
+    },
+    {
+      "titre": "La demande de reformulation ou de répétition",
+      "raison": "C'est un bon réflexe professionnel."
+    },
+    {
+      "titre": "La prise de notes, la lecture de ses notes",
+      "raison": "Autorisées pour tous."
+    },
+    {
+      "titre": "La porte choisie",
+      "raison": "Toutes les portes mesurent la même compétence avec la même grille."
+    },
+    {
+      "titre": "Une demande d'aménagement",
+      "raison": "C'est une condition d'épreuve, pas une information sur la personne [28]."
+    },
+    {
+      "titre": "La tenue",
+      "raison": "Sauf exigence réelle d'hygiène ou de sécurité, annoncée à l'avance."
+    },
+    {
+      "titre": "Le « feeling », le « fit », le small talk",
+      "raison": "Non défini, non mesurable, source de biais [21]."
+    },
+    {
+      "titre": "L'orthographe",
+      "raison": "Sauf exigence réelle du poste, et alors avec les outils autorisés au travail."
+    },
+    {
+      "titre": "Une réponse directe ou sans formule de politesse",
+      "raison": "Notez ce qui est dit, pas la forme sociale."
+    }
+  ],
+  "a_eviter": [
+    {
+      "question": "« Êtes-vous autiste ? TDAH ? HPI ? »",
+      "pourquoi": "Interdit : santé et handicap (L1132-1), aucun lien avec le poste (L1221-6), donnée de santé (RGPD art. 9) [22][25][34].",
+      "a_la_place": "« De quoi avez-vous besoin pour que l'entretien se passe bien ? »"
+    },
+    {
+      "question": "« Avez-vous une RQTH ? »",
+      "pourquoi": "On ne l'exige pas. La personne peut la signaler si elle le souhaite, et seulement si elle le souhaite [22][31]. Le document éventuellement transmis est rangé à part, à accès restreint [34].",
+      "a_la_place": "Indiquez dans l'offre que des aménagements sont possibles pour tous, sans justification."
+    },
+    {
+      "question": "« Prenez-vous un traitement ? »",
+      "pourquoi": "Information de santé, sans lien avec le poste [22][34].",
+      "a_la_place": "Aucune question de remplacement : ne la posez pas."
+    },
+    {
+      "question": "« Parlez-moi de vous. »",
+      "pourquoi": "Trop ouverte : on ne sait pas ce qui est attendu [13].",
+      "a_la_place": "« Quel est votre poste actuel, et quelle tâche vous prend le plus de temps ? »"
+    },
+    {
+      "question": "« Quels sont vos trois défauts ? »",
+      "pourquoi": "Abstraite ; mesure surtout l'entraînement aux entretiens.",
+      "a_la_place": "« Parlez d'un retour reçu sur votre travail. » Puis : « Qu'avez-vous changé ? »"
+    },
+    {
+      "question": "« Où vous voyez-vous dans cinq ans ? »",
+      "pourquoi": "Abstraite, sans lien avec la réussite dans le poste.",
+      "a_la_place": "« Quelle compétence voulez-vous développer dans ce poste ? »"
+    },
+    {
+      "question": "« Comment gérez-vous le stress ? »",
+      "pourquoi": "Vague. Une situation concrète mesure mieux.",
+      "a_la_place": "« Deux demandes urgentes arrivent en même temps : laquelle traitez-vous d'abord ? »"
+    },
+    {
+      "question": "« Racontez une situation difficile, ce que vous avez fait, ce que vous en avez appris et ce que vous feriez autrement. »",
+      "pourquoi": "Question à tiroirs : quatre questions en une [13][14].",
+      "a_la_place": "Posez les quatre questions une par une."
+    },
+    {
+      "question": "« Si vous étiez un animal… »",
+      "pourquoi": "Aucun lien avec le poste [22].",
+      "a_la_place": "Une vraie situation du poste."
+    },
+    {
+      "question": "« Pourquoi ce trou dans votre CV ? »",
+      "pourquoi": "Peut pousser à révéler une information de santé ou de vie privée.",
+      "a_la_place": "Facultatif : « Une expérience, même en dehors d'un emploi, vous sert-elle pour ce poste ? »"
+    },
+    {
+      "question": "« Diriez-vous que vous êtes introverti ou extraverti ? »",
+      "pourquoi": "Personnalité, pas compétence.",
+      "a_la_place": "Une question sur une tâche réelle du poste."
+    },
+    {
+      "question": "« Vous pouvez me regarder quand vous parlez ? »",
+      "pourquoi": "Ne commentez jamais le regard ; ne le notez pas [10][16].",
+      "a_la_place": "Rien : laissez la personne répondre comme elle le souhaite."
+    },
+    {
+      "question": "« Avez-vous des enfants ? Un projet de grossesse ? »",
+      "pourquoi": "Discrimination interdite (situation de famille, grossesse) [25].",
+      "a_la_place": "Aucune question de remplacement."
+    },
+    {
+      "question": "« Vous comprenez le second degré ? »",
+      "pourquoi": "Sans lien avec le poste.",
+      "a_la_place": "Si l'humour fait vraiment partie du poste, mettez-le en situation concrète."
+    },
+    {
+      "question": "« Vous pouvez répondre sans vos notes ? »",
+      "pourquoi": "Les notes sont autorisées pour tous.",
+      "a_la_place": "« Prenez le temps qu'il vous faut. »"
+    },
+    {
+      "question": "« Vous êtes à l'aise en open space ? »",
+      "pourquoi": "Mieux vaut décrire l'environnement réel.",
+      "a_la_place": "« Le bureau est un open space de 20 personnes. Qu'est-ce qui vous aiderait à bien y travailler ? »"
+    }
+  ],
+  "profils": [
+    {
+      "id": "aut",
+      "nom": "Autisme",
+      "couleur": "#D4FF3A",
+      "inclut": "y compris ce qu'on appelait « syndrome d'Asperger »",
+      "chiffre": "1 à 2 % de la population ; environ 700 000 personnes en France [1][2]",
+      "obstacle": "Les questions floues ou abstraites (« Parlez-moi de vous »). Les jugements sur le non-verbal (regard, poignée de main, aisance) : en quelques secondes, l'impression l'emporte sur le contenu [10][11].",
+      "aide": "Des questions concrètes, une idée à la fois [13]. Des réponses jugées sur leur contenu : l'écart de jugement disparaît quand on lit la transcription des réponses [10][12] (l'effet de réponses rédigées n'a pas été testé). Un cadre calme et un déroulé annoncé [17]."
+    },
+    {
+      "id": "tdah",
+      "nom": "TDAH",
+      "couleur": "#FFB547",
+      "inclut": "trouble du déficit de l'attention, avec ou sans hyperactivité",
+      "chiffre": "3 % des adultes [1]",
+      "obstacle": "Les questions à tiroirs (trois questions en une) : en moyenne, la mémoire de travail est plus fragile chez les adultes TDAH, avec de fortes différences individuelles [14]. L'agitation visible, jugée à tort comme un manque d'intérêt.",
+      "aide": "Les questions envoyées à l'avance [16]. Une question à la fois. Le droit de noter et de relire ses notes. Une pause. Ne jamais noter l'agitation."
+    },
+    {
+      "id": "dys",
+      "nom": "Dys",
+      "couleur": "#55D6E6",
+      "inclut": "dyslexie, dysorthographie, dyspraxie, dyscalculie, dysphasie…",
+      "chiffre": "6 à 8 % de la population [1][3]",
+      "obstacle": "L'écrit chronométré, la lecture à voix haute, les consignes longues sur papier.",
+      "aide": "Le choix entre l'oral et l'écrit. Un tiers de temps en plus, comme aux concours de la fonction publique [20]. Les outils du quotidien autorisés (correcteur, dictée vocale). Des documents aérés."
+    },
+    {
+      "id": "hpi",
+      "nom": "Haut potentiel",
+      "couleur": "#8FA2FF",
+      "inclut": "HPI : QI de 130 ou plus — ce n'est ni un trouble ni un diagnostic médical",
+      "chiffre": "2,3 % de la population, par définition statistique",
+      "obstacle": "Aucune étude ne montre un obstacle propre aux hauts potentiels en entretien : ce guide ne leur en invente pas. Attention en revanche aux stéréotypes, et au haut potentiel qui masque un trouble dys (et l'inverse) [8].",
+      "aide": "Ce qui aide tout le monde : des questions précises, un vrai problème du poste à résoudre, une grille qui note le raisonnement."
+    },
+    {
+      "id": "hyper",
+      "nom": "Hypersensible",
+      "couleur": "#FF8FAB",
+      "inclut": "haute sensibilité de traitement sensoriel ; le terme « HPE » (haut potentiel émotionnel) n'a pas de définition validée",
+      "chiffre": "environ 30 % de personnes très sensibles [4]",
+      "obstacle": "Le bruit, la lumière forte, un open space, plusieurs personnes qui parlent en même temps [5]. Des réactions sensorielles fortes existent aussi chez des adultes TDAH ou autistes [6][7].",
+      "aide": "Une salle calme, une lumière douce, un nombre réduit d'interlocuteurs, un déroulé annoncé, la possibilité d'une pause ou d'une visio."
+    }
+  ],
+  "checklist": [
+    {
+      "titre": "Avant de recruter",
+      "items": [
+        {
+          "texte": "Les critères de sélection sont écrits avant le premier entretien, et chacun a un lien avec le poste.",
+          "statut": "Lien avec le poste : obligatoire (L1221-6). Critères écrits à l'avance : bonne pratique (Défenseur des droits)",
+          "comment": "Dans « Préparer », étape « Le poste » : gardez 2 à 4 compétences et fixez le niveau requis, de 1 à 4, avant le premier candidat.",
+          "sources": [
+            22,
+            21
+          ]
+        },
+        {
+          "texte": "Les candidats sont informés à l'avance des méthodes utilisées (entretien structuré, épreuve, 5 portes).",
+          "statut": "Code du travail L1221-8 : obligatoire",
+          "comment": "Ajoutez le paragraphe « Notre façon de recruter » à l'offre et la notice d'information à l'invitation.",
+          "sources": [
+            23
+          ]
+        },
+        {
+          "texte": "À partir de 50 salariés : le CSE est informé avant l'utilisation des nouvelles méthodes de recrutement.",
+          "statut": "Code du travail L2312-38 : obligatoire à partir de 50 salariés",
+          "comment": "Présentez la méthode (questions à l'avance, grille, 5 portes) avant le pilote. En dessous de 50 salariés, l'informer reste une bonne pratique.",
+          "sources": [
+            39
+          ]
+        },
+        {
+          "texte": "La notice d'information RGPD est prête : responsable, finalité, base légale, destinataires, durée, droits.",
+          "statut": "RGPD art. 13 ; guide CNIL : obligatoire",
+          "comment": "Modèle dans le fichier E-mails ; faites-le valider par votre DPO.",
+          "sources": [
+            31,
+            41
+          ]
+        },
+        {
+          "texte": "Aucun dispositif caché : pas d'enregistrement, pas d'outil d'analyse ou de tri dont le candidat n'est pas informé.",
+          "statut": "Code du travail L1221-9 : obligatoire",
+          "comment": "Listez les outils utilisés et citez-les dans la notice.",
+          "sources": [
+            24,
+            31
+          ]
+        },
+        {
+          "texte": "Aucun outil d'IA ne déduit les émotions des candidats à partir du visage ou de la voix.",
+          "statut": "Règlement IA, art. 5.1.f : interdit depuis le 2 février 2025",
+          "comment": "Vérifiez les options de vos logiciels de visio-entretien et de tri ; désactivez toute analyse d'émotions.",
+          "sources": [
+            35
+          ]
+        },
+        {
+          "texte": "Les outils d'IA de tri ou d'évaluation des candidats sont recensés pour préparer les obligations « haut risque ».",
+          "statut": "Règlement IA, annexe III : applicable à partir du 2 décembre 2027",
+          "comment": "Demandez à vos fournisseurs leur documentation et la possibilité d'un contrôle humain.",
+          "sources": [
+            36
+          ]
+        },
+        {
+          "texte": "Le taux d'emploi de travailleurs handicapés est suivi (6 % à partir de 20 salariés).",
+          "statut": "Code du travail L5212-1 et L5212-2 : obligatoire",
+          "comment": "Sinon, contribution versée à l'Urssaf ou à la MSA, reversée à l'Agefiph.",
+          "sources": [
+            29
+          ]
+        },
+        {
+          "texte": "À partir de 250 salariés : un référent handicap est désigné, et les recruteurs savent comment le joindre.",
+          "statut": "Code du travail L5213-6-1 : obligatoire",
+          "comment": "Mettez son contact dans l'e-mail de réponse positive (modèle 6).",
+          "sources": [
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "titre": "Pendant l'entretien et l'épreuve",
+      "items": [
+        {
+          "texte": "Chaque question a un lien direct et nécessaire avec le poste ou l'évaluation des aptitudes professionnelles.",
+          "statut": "Code du travail L1221-6 : obligatoire",
+          "comment": "Utilisez les questions d'entretien du métier (onglet Préparer, étape « L'entretien ») ; n'ajoutez aucune question de la liste « à éviter ».",
+          "sources": [
+            22
+          ]
+        },
+        {
+          "texte": "Aucune question sur la santé, un diagnostic, un traitement, la RQTH, la vie familiale, la grossesse.",
+          "statut": "Code du travail L1221-6 et L1132-1 : obligatoire",
+          "comment": "Une seule question permise sur le sujet : « De quoi avez-vous besoin ? », qui porte sur les conditions de l'épreuve.",
+          "sources": [
+            22,
+            25
+          ]
+        },
+        {
+          "texte": "Les mêmes questions et la même grille pour tous ; les relances sont neutres.",
+          "statut": "Bonne pratique (Défenseur des droits) ; utile comme preuve (L1134-1)",
+          "comment": "Imprimez la grille ; chaque personne note seule avant d'en discuter.",
+          "sources": [
+            21,
+            26
+          ]
+        },
+        {
+          "texte": "Chaque besoin exprimé est examiné, et des mesures appropriées sont mises en place, sans demander la raison.",
+          "statut": "Code du travail L5213-6 : obligatoire pour les bénéficiaires de l'obligation d'emploi",
+          "comment": "Les mesures sont adaptées au besoin réel, pas forcément celles demandées, sauf charge disproportionnée. Pour tous les autres candidats : bonne pratique.",
+          "sources": [
+            28
+          ]
+        },
+        {
+          "texte": "Rien n'est noté sur l'apparence, le regard, la poignée de main ou l'agitation.",
+          "statut": "Apparence physique, handicap, santé : L1132-1 (obligatoire) ; non-verbal : bonne pratique",
+          "comment": "Liste « Ne pas noter » au dos de la grille.",
+          "sources": [
+            25,
+            10,
+            11
+          ]
+        },
+        {
+          "texte": "Pas d'enregistrement de l'entretien sans information préalable.",
+          "statut": "Information préalable : obligatoire (L1221-9). Accord et alternative : bonne pratique",
+          "comment": "Si vous enregistrez, dites-le avant, demandez l'accord et proposez une alternative.",
+          "sources": [
+            24,
+            31
+          ]
+        },
+        {
+          "texte": "Si le déroulé de l'épreuve est activé : les candidats en sont informés avant, peuvent le refuser, et rien n'entre dans la note ni dans la décision.",
+          "statut": "Information préalable : obligatoire (L1221-8, L1221-9). CSE informé avant (L2312-38, à partir de 50 salariés). Droit d'opposition, hors note, données minimales : RGPD art. 5 et 21",
+          "comment": "Le kit adapte l'e-mail 2 et la notice, affiche le choix à l'accueil de l'épreuve, et ne demande jamais le déroulé à une personne qui a signalé un besoin d'aménagement, ni avec le lien d'annonce. Vérifiez avec votre DPO si une analyse d'impact (AIPD) est nécessaire.",
+          "sources": [
+            23,
+            24,
+            39,
+            43,
+            44,
+            31
+          ]
+        },
+        {
+          "texte": "Le profil de travail (les phrases « Au travail… » des savoir-être choisis) est annoncé avant l'épreuve, reste facultatif, n'est jamais noté, n'entre pas dans le classement et ne sert pas à écarter une candidature.",
+          "statut": "Information préalable des méthodes : obligatoire (L1221-8). Lien avec le poste : obligatoire (L1221-6). Ne pas s'en servir pour classer ni pour écarter une candidature : bonne pratique, appuyée par la recherche",
+          "comment": "La notice et l'e-mail d'invitation à l'épreuve (e-mail 2) l'annoncent automatiquement, avec le nombre de phrases, quand l'option est cochée (« Préparer », étape « L'épreuve »). Aucune phrase ne porte sur la santé. À partir de 50 salariés, informez le CSE : c'est une technique d'aide au recrutement.",
+          "sources": [
+            23,
+            22,
+            9,
+            46,
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "titre": "Données des candidats (CNIL et RGPD)",
+      "items": [
+        {
+          "texte": "Seules les données utiles au recrutement sont collectées.",
+          "statut": "Guide CNIL du recrutement : obligatoire (minimisation)",
+          "comment": "Pas de numéro de sécurité sociale ni de questions sur la famille (guide CNIL). Bonne pratique anti-discrimination : ne demandez ni photo ni âge.",
+          "sources": [
+            31
+          ]
+        },
+        {
+          "texte": "Les besoins d'aménagement sont notés sans leur raison, à part des grilles.",
+          "statut": "RGPD art. 9 : données de santé interdites, sauf exceptions",
+          "comment": "Écrivez « temps + 1/3 », « salle calme », jamais la raison, dans un fichier séparé des grilles, à accès restreint, supprimé en fin de processus.",
+          "sources": [
+            34
+          ]
+        },
+        {
+          "texte": "Un justificatif transmis volontairement (RQTH par exemple) est rangé à part, à accès restreint.",
+          "statut": "RGPD art. 9.2.b : exception pour les obligations de l'employeur en droit du travail",
+          "comment": "Seules les personnes qui organisent les aménagements y ont accès, le temps nécessaire.",
+          "sources": [
+            34
+          ]
+        },
+        {
+          "texte": "L'accès aux candidatures et aux grilles est limité aux personnes qui recrutent.",
+          "statut": "Guide CNIL du recrutement : obligatoire (sécurité)",
+          "comment": "Dossier partagé à accès restreint ; pas de grilles qui circulent par e-mail.",
+          "sources": [
+            31
+          ]
+        },
+        {
+          "texte": "Candidat non retenu : ses données quittent la base active à la fin du processus.",
+          "statut": "Référentiel CNIL de conservation RH (2026)",
+          "comment": "Supprimez, ou rangez en archive à accès restreint.",
+          "sources": [
+            32
+          ]
+        },
+        {
+          "texte": "Vivier : 2 ans au plus après le dernier contact, pour les profils qui intéressent l'entreprise.",
+          "statut": "Référentiel CNIL 2026 : si le candidat est informé et ne s'y oppose pas, ou y a consenti",
+          "comment": "Le plus sûr : recueillir son accord (modèle d'e-mail 7).",
+          "sources": [
+            32,
+            33
+          ]
+        },
+        {
+          "texte": "Preuves en cas de litige : archive à accès restreint, 5 ans au plus après que le poste a été pourvu.",
+          "statut": "Code du travail L1134-5 ; référentiel CNIL 2026",
+          "comment": "Gardez les grilles et les motifs de décision, pas plus.",
+          "sources": [
+            27,
+            32
+          ]
+        },
+        {
+          "texte": "Les demandes d'accès, de rectification ou d'effacement reçoivent une réponse dans le délai légal.",
+          "statut": "RGPD art. 12 : un mois, prolongeable de deux mois",
+          "comment": "Désignez la personne qui répond ; prévenez le candidat si un délai supplémentaire est nécessaire.",
+          "sources": [
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "titre": "Décision et suites",
+      "items": [
+        {
+          "texte": "La décision s'appuie sur les grilles et sur des faits notés.",
+          "statut": "Bonne pratique ; utile comme preuve (L1134-1)",
+          "comment": "Si un candidat présente des faits laissant supposer une discrimination, l'employeur doit prouver que sa décision repose sur des éléments objectifs.",
+          "sources": [
+            26,
+            21
+          ]
+        },
+        {
+          "texte": "Chaque personne reçoit une réponse, avec un retour utile si elle le souhaite.",
+          "statut": "Bonne pratique",
+          "comment": "Modèle 7 : un point fort, un point à développer.",
+          "sources": [
+            21
+          ]
+        },
+        {
+          "texte": "La personne recrutée est invitée à dire de quoi elle a besoin pour bien travailler.",
+          "statut": "Code du travail L5213-6 (bénéficiaires de l'obligation d'emploi) ; bonne pratique pour tous",
+          "comment": "Modèle 6 ; relais vers le référent handicap si la personne le souhaite.",
+          "sources": [
+            28,
+            30
+          ]
+        },
+        {
+          "texte": "Rappel : la discrimination à l'embauche est un délit.",
+          "statut": "Code pénal 225-1 et 225-2",
+          "comment": "Jusqu'à 3 ans d'emprisonnement et 45 000 € d'amende (225 000 € pour une personne morale), sauf exceptions prévues par la loi.",
+          "sources": [
+            21
+          ]
+        }
+      ]
+    }
+  ],
+  "emails": [
+    {
+      "n": 1,
+      "titre": "Invitation à l'entretien, avec les questions à l'avance",
+      "quand": "5 à 7 jours avant l'entretien",
+      "objet": "Votre entretien pour le poste de [poste] : déroulé et questions",
+      "corps": "Bonjour [Prénom],\n\nMerci pour votre candidature au poste de [poste]. Nous aimerions vous rencontrer.\n\nQuand : [jour date] à [heure], pendant [45] minutes.\nOù : [adresse, ou lien de visio].\nAvec : [Prénom Nom, fonction] et [Prénom Nom, fonction].\n\nComment ça se passe :\n1. [10] minutes : nous vous présentons le poste.\n2. [25] minutes : nous vous posons les questions ci-dessous, une par une. Vous pouvez répondre à l'oral ou à l'écrit, et garder vos notes sous les yeux.\n3. [10] minutes : vos questions.\n\nLes questions (les mêmes pour toutes les personnes candidates) :\n1. [Question 1]\n2. [Question 2]\n3. [Question 3]\n4. [Question 4]\n5. [Question 5]\n6. [Question 6]\n\nNous notons vos réponses avec une grille commune : ce que vous faites et comment vous le faites. Pas votre aisance à l'oral.\n\nDe quoi avez-vous besoin pour que l'entretien se passe bien ? Par exemple : un autre horaire, plus de temps, une pause, une salle calme, répondre à l'écrit, une visio sans caméra. Vous n'avez pas à vous justifier ni à parler de votre santé. Répondez simplement à ce message.\n\nVos données servent uniquement à ce recrutement : [lien vers la notice d'information].\n\nÀ bientôt,\n[Prénom Nom]\n[Fonction] · [Téléphone]"
+    },
+    {
+      "n": 2,
+      "titre": "L'épreuve à l'écran : comment ça se passe",
+      "quand": "Après l'entretien, 5 jours avant l'épreuve (ou avec l'invitation)",
+      "objet": "Épreuve pour le poste de [poste] : à l'écran, au format de votre choix",
+      "corps": "Bonjour [Prénom],\n\nProchaine étape : une épreuve sur des situations réelles du poste de [poste]. Elle se passe à l'écran, [sur place, le jour date / chez vous, avant le date, avec le fichier joint].\n\nPour chaque situation, vous choisissez la façon de répondre :\n• Porte 1 : choix multiples.\n• Porte 2 : phrases à compléter.\n• Porte 3 : la réponse est donnée, vous retrouvez la question.\n• Porte 4 : défi pratique à l'écran (remettre dans l'ordre, classer, repérer des erreurs).\n• Porte 5 : à l'oral ou à l'écrit, au choix.\n\nToutes les portes sont notées avec la même grille. Votre choix ne compte pas dans la note et ne sera pas commenté. Il n'y a pas de chronomètre : prenez le temps qu'il vous faut. Vous pouvez faire des pauses, agrandir le texte et faire lire les questions à voix haute.\n\nCe qui est mesuré : [compétences]. L'épreuve n'enregistre que vos réponses : ni le temps passé, ni rien d'autre.\n\nEt toujours : de quoi avez-vous besoin pour que l'épreuve se passe bien ?\n\nBien à vous,\n[Prénom Nom]"
+    },
+    {
+      "n": 3,
+      "titre": "« De quoi avez-vous besoin ? » (aménagements, sans diagnostic)",
+      "quand": "Avec l'invitation, ou seul",
+      "objet": "Préparer votre venue : de quoi avez-vous besoin ?",
+      "corps": "Bonjour [Prénom],\n\nNous voulons que l'entretien mesure vos compétences, pas votre habitude des entretiens. Nous posons donc la même question à chaque personne : de quoi avez-vous besoin pour que ça se passe bien ?\n\nVoici ce que nous pouvons organiser, par exemple :\n• recevoir les questions par écrit à l'avance (c'est déjà prévu) ;\n• répondre à l'écrit plutôt qu'à l'oral, ou l'inverse ;\n• un tiers de temps en plus ;\n• une pause au milieu ;\n• une salle calme, une lumière moins forte, moins de personnes en face de vous ;\n• un horaire précis ;\n• visiter les lieux avant ;\n• un entretien en visio ou sur place ;\n• une aide technique ou humaine (interprète, logiciel de lecture…).\n\nVous n'avez pas à expliquer pourquoi, ni à parler de votre santé. Seules les personnes qui organisent l'entretien sont informées, et votre demande n'entre pas dans l'évaluation.\n\nRépondez simplement à ce message, ou appelez-moi au [téléphone].\n\nBien à vous,\n[Prénom Nom]"
+    },
+    {
+      "n": 4,
+      "titre": "Confirmation pratique",
+      "quand": "2 jours avant",
+      "objet": "Confirmation : votre entretien du [date]",
+      "corps": "Bonjour [Prénom],\n\nC'est confirmé : [jour date], de [heure] à [heure].\n\nAdresse : [adresse].\nAccès : [transports, parking, entrée, étage]. Photo de l'entrée : [lien].\nÀ l'accueil, demandez [Prénom Nom].\n\nDans la salle, vous rencontrerez : [Prénom Nom, fonction] et [Prénom Nom, fonction].\nCe que nous avons prévu pour vous : [aménagements convenus].\nVous pouvez apporter vos notes, une bouteille d'eau et [ordinateur, documents].\n\nEn cas d'imprévu, même le jour même : [téléphone direct].\n\nÀ [jour],\n[Prénom Nom]"
+    },
+    {
+      "n": 5,
+      "titre": "Après l'entretien : les prochaines étapes",
+      "quand": "Le jour même",
+      "objet": "Merci : les prochaines étapes",
+      "corps": "Bonjour [Prénom],\n\nMerci pour l'entretien d'aujourd'hui.\n\nVoici la suite :\n1. D'ici le [date], les [trois] personnes présentes à l'entretien notent chacune de leur côté, puis comparent leurs grilles.\n2. Le [date], nous vous donnons une réponse, quelle qu'elle soit.\n\nVous voulez compléter une réponse ? Vous pouvez nous écrire jusqu'au [date] : nous en tiendrons compte. Cette possibilité est offerte à toutes les personnes candidates.\n\nBien à vous,\n[Prénom Nom]"
+    },
+    {
+      "n": 6,
+      "titre": "Réponse positive et préparation de l'arrivée",
+      "quand": "Dès la décision",
+      "objet": "Bonne nouvelle pour le poste de [poste]",
+      "corps": "Bonjour [Prénom],\n\nNous avons le plaisir de vous proposer le poste de [poste].\n\nNotre proposition : [type de contrat], début le [date], [rémunération]. [Prénom Nom] vous appellera le [date] pour en parler.\n\nPour préparer votre arrivée, la même question qu'à l'entretien : de quoi avez-vous besoin pour bien travailler ? Par exemple : un poste au calme, un casque anti-bruit, des consignes écrites, des horaires adaptés, un logiciel de dictée ou de lecture, un point régulier avec votre manager.\n\nSi vous êtes bénéficiaire de l'obligation d'emploi (par exemple avec une RQTH) et souhaitez nous le dire, [Prénom Nom], référent handicap de l'entreprise, peut vous accompagner en toute confidentialité. Ce n'est jamais obligatoire.\n\nVotre premier jour : [programme].\n\nAu plaisir de travailler avec vous,\n[Prénom Nom]"
+    },
+    {
+      "n": 7,
+      "titre": "Réponse négative, avec un retour utile",
+      "quand": "Dès la décision",
+      "objet": "Votre candidature au poste de [poste]",
+      "corps": "Bonjour [Prénom],\n\nMerci pour le temps que vous nous avez consacré. Nous ne retenons pas votre candidature pour ce poste.\n\nNotre décision repose sur la grille commune, utilisée pour toutes les personnes candidates. Voici ce que nous en retenons :\n• Un point fort : [compétence] : [fait observé].\n• À développer pour ce type de poste : [compétence] : [ce qui était attendu].\n\n[Option] Êtes-vous d'accord pour que nous gardions votre candidature pour de futurs postes, pendant 2 ans au plus ? Répondez simplement « oui » à ce message. Sans réponse de votre part, nous la supprimerons.\n\nVous voulez plus de détails ? Nous pouvons vous répondre par écrit ou par téléphone, au choix.\n\nNous vous souhaitons le meilleur pour la suite,\n[Prénom Nom]"
+    },
+    {
+      "n": 8,
+      "titre": "Briefing interne des personnes qui évaluent",
+      "quand": "Avant le premier entretien",
+      "objet": "[Poste] : règles d'évaluation (à lire avant le [date])",
+      "corps": "Bonjour à toutes et à tous,\n\nVous évaluez les personnes candidates au poste de [poste]. Voici nos règles, les mêmes pour tous :\n\n1. Posez les questions telles qu'elles sont écrites, une à la fois. Relances autorisées : « Pouvez-vous préciser ? », « Et ensuite ? ».\n2. Notez chaque compétence de 1 à 4 dans l'application, chacun avec son nom d'évaluateur, avant d'en parler entre vous.\n3. Notez des faits (ce que la personne dit ou fait), pas des impressions.\n4. Ne notez jamais : le regard, la poignée de main, l'aisance, le ton, l'agitation, le temps de réflexion, une demande de reformulation, la prise de notes, la porte choisie, un aménagement demandé.\n5. Aucune question sur la santé, un diagnostic, la RQTH ou la vie familiale. C'est interdit.\n6. Un aménagement (temps en plus, réponse écrite, pause) est une condition d'épreuve. On ne le commente pas.\n7. S'il y a 2 points d'écart ou plus entre vous sur une compétence, on en parle avec les faits notés.\n8. Les grilles sont confidentielles et rangées dans [outil], accès réservé à [personnes].\n\nLes grilles, les questions et l'épreuve sont dans l'application du kit, ouverte sur [ordinateur ou dossier].\n\nMerci !\n[Prénom Nom]"
+    }
+  ],
+  "bonus": [
+    {
+      "titre": "Paragraphe à ajouter à vos offres d'emploi",
+      "texte": "Notre façon de recruter : vous recevez les questions de l'entretien à l'avance. Elles sont concrètes et posées une à une. Toutes les personnes candidates ont les mêmes questions et la même grille. L'épreuve pratique se passe à l'écran, dans le format de votre choix parmi cinq, sans chronomètre. Et nous demandons à chacun de quoi il a besoin (plus de temps, l'écrit, une pause, une salle calme…), sans jamais demander pourquoi."
+    },
+    {
+      "titre": "Notice d'information des candidats (modèle à faire valider par votre DPO)",
+      "texte": "Responsable du traitement : [entreprise, adresse]. Délégué à la protection des données (DPO) : [contact].\nFinalité : gérer votre candidature au poste de [poste].\nBase légale : [à valider avec votre DPO, par exemple mesures précontractuelles prises à votre demande].\nDonnées traitées : CV, lettre, réponses aux questions et à l'épreuve, notes des personnes qui évaluent. Nous ne posons aucune question sur votre santé. Les besoins d'organisation que vous nous indiquez servent uniquement à organiser l'entretien. Si vous choisissez de nous transmettre un justificatif (une RQTH par exemple) pour un aménagement, il est conservé à part, à accès restreint, le temps nécessaire.\nMéthodes de recrutement (article L1221-8 du Code du travail) : entretien structuré avec des questions envoyées à l'avance ; épreuve à l'écran au format de votre choix (cinq portes) ; grille d'évaluation commune. Les réponses à choix sont corrigées automatiquement selon un barème fixe, écrit à l'avance ; les réponses rédigées ou orales sont évaluées par une personne avec la même grille. L'épreuve n'enregistre que vos réponses : ni le temps passé, ni l'image, ni la voix. Si vous passez l'épreuve en ligne, la page est fournie par Contre-Intuitif et hébergée par Shopify : ni l'un ni l'autre ne reçoit vos réponses ni votre prénom, seulement les données techniques de connexion. Aucune intelligence artificielle n'est utilisée. Les candidatures sont ensuite classées selon le nombre de compétences au niveau requis ; ce classement aide les personnes qui décident, il ne décide pas. La décision est prise par des personnes.\nDestinataires : [équipe recrutement, managers concernés].\nDurée de conservation : [fin du recrutement ; vivier 2 ans au plus, avec votre accord ; archives de preuve 5 ans au plus après que le poste a été pourvu, accès restreint].\nVos droits : accès, rectification, effacement, opposition, limitation, en écrivant à [contact]. Vous pouvez aussi saisir la CNIL (cnil.fr)."
+    }
+  ],
+  "relances": [
+    "« Pouvez-vous préciser ? »",
+    "« Et ensuite ? »",
+    "« Pouvez-vous donner un exemple ? »",
+    "« Prenez le temps qu'il vous faut. »"
+  ],
+  "besoins": [
+    "Recevoir les questions à l'avance",
+    "Répondre à l'écrit plutôt qu'à l'oral",
+    "Répondre à l'oral plutôt qu'à l'écrit",
+    "Un tiers de temps en plus",
+    "Une pause",
+    "Une salle calme",
+    "Une lumière moins forte",
+    "Moins de personnes en face",
+    "Un horaire précis",
+    "Visiter les lieux avant",
+    "Une visio, caméra facultative",
+    "Une aide technique (lecture vocale, dictée, grossissement)",
+    "Un interprète ou une aide humaine",
+    "Autre"
+  ],
+  "guide": {
+    "methode1": [
+      [
+        "Des questions à l'avance, une idée à la fois",
+        "Envoyez les questions de l'entretien **5 à 7 jours avant**. Le jour J, posez-les **une par une**, telles qu'elles sont écrites. Connaître la question ne donne pas la réponse : vous retirez seulement l'avantage de ceux qui improvisent bien.",
+        [
+          13,
+          16
+        ]
+      ],
+      [
+        "Mêmes questions, même grille",
+        "La grille dit, **avant le premier entretien**, à quoi ressemble une bonne réponse. Chaque personne **note seule**, puis on compare : deux points d'écart ou plus se discutent avec les faits notés.",
+        [
+          9,
+          21,
+          26
+        ]
+      ],
+      [
+        "Un vrai problème du poste",
+        "Pour savoir si quelqu'un sait faire le travail, confiez-lui **un morceau du travail**, **sans piège** et avec des critères annoncés. La mise en situation prédit mieux la réussite qu'une conversation libre.",
+        [
+          9
+        ]
+      ],
+      [
+        "« De quoi avez-vous besoin ? »",
+        "Posez cette question **à chaque personne**, dès l'invitation. Elle porte sur les conditions de l'épreuve (temps, écrit, pause, salle calme), **jamais sur la santé**. Notez le besoin, jamais la raison.",
+        [
+          16,
+          17,
+          18,
+          28
+        ]
+      ]
+    ],
+    "methode2": "Vous choisissez les compétences à mesurer. Pour chaque situation, le candidat **choisit sa porte**. Les cinq portes visent **le même niveau attendu** et sont notées avec **la même grille**. L'idée vient de la conception universelle de l'apprentissage : offrir plusieurs façons de montrer ce que l'on sait [19].",
+    "regles_portes": [
+      "Une compétence par situation, **définie avant**.",
+      "Les cinq portes visent **le même niveau attendu**.",
+      "La porte choisie n'est **ni notée, ni commentée**, ni utilisée pour décrire la personne.",
+      "**On ne devine jamais un profil** à partir de la porte choisie, et on ne recommande pas une porte selon un profil supposé."
+    ],
+    "pilote": [
+      [
+        "Semaine 1",
+        "Lancer",
+        "Choisir un ou deux postes qui recrutent souvent. Nommer une personne pilote et deux ou trois personnes qui évaluent. À partir de 50 salariés, informer le CSE [39]."
+      ],
+      [
+        "Semaine 2",
+        "Préparer",
+        "Créer le recrutement dans l'application, choisir les compétences et le niveau requis, relire les situations avec un titulaire du poste."
+      ],
+      [
+        "Semaine 3",
+        "Former",
+        "Briefing de 60 minutes : la grille, ce qu'on ne note pas, les interdits, chacun passe une porte."
+      ],
+      [
+        "Semaines 4 à 6",
+        "Recruter",
+        "Appliquer la méthode à chaque candidature. Comparer les évaluations après chaque entretien."
+      ],
+      [
+        "Semaine 7",
+        "Mesurer",
+        "Lire l'onglet Suivi : choix des portes, niveau moyen par porte, accord entre évaluateurs, demandes d'aménagement."
+      ],
+      [
+        "Semaine 8",
+        "Décider",
+        "Généraliser, ajuster ou arrêter. La réussite dans le poste se mesure ensuite, à 3 et 6 mois."
+      ]
+    ],
+    "faq": [
+      [
+        "C'est injuste pour les autres candidats ?",
+        "Tout le monde a les mêmes situations, le même choix de portes et la même grille. Que les portes soient d'égale difficulté, c'est ce que l'onglet Suivi vérifie."
+      ],
+      [
+        "On baisse le niveau ?",
+        "Non : le niveau requis est fixé avant, et il est le même pour toutes les portes."
+      ],
+      [
+        "Et si un candidat me dit qu'il est autiste ?",
+        "Remerciez-le, demandez-lui de quoi il a besoin, et n'en tenez compte ni dans la note ni dans le dossier. S'il le souhaite, donnez-lui le contact du référent handicap."
+      ],
+      [
+        "Peut-on demander la RQTH ?",
+        "On ne l'exige pas. La personne peut la signaler si elle le souhaite ; elle ouvre droit à des mesures appropriées, sauf charge disproportionnée [28]. Le justificatif éventuel est rangé à part, à accès restreint [34]."
+      ],
+      [
+        "Le poste exige vraiment l'oral.",
+        "Alors l'oral est une compétence du poste : mesurez-la dans une situation réelle (un appel, une présentation) avec une grille, pas dans la conversation de l'entretien."
+      ],
+      [
+        "Peut-on chronométrer l'épreuve ?",
+        "Non : le kit ne mesure jamais le temps, ni à l'écran ni en arrière-plan. La vitesse n'est une exigence d'aucune compétence du kit [42], et un temps compté pèse d'abord sur les personnes qui ont besoin d'un aménagement : pour les examens, un temps majoré d'un tiers fait partie des aménagements prévus [20]. Pour savoir comment une personne s'y est prise, l'option « déroulé de l'épreuve » (onglet Préparer) garde sa démarche, sans aucun temps, pour préparer des questions sur sa méthode de travail. Les personnes sont prévenues avant et peuvent refuser en un clic [23, 24, 44]."
+      ],
+      [
+        "L'application utilise-t-elle de l'intelligence artificielle ?",
+        "Non. Les calculs suivent des règles fixes, écrites à l'avance et affichées dans l'application. La décision reste prise par des personnes."
+      ],
+      [
+        "Où vont les données des candidats ?",
+        "Jamais chez Contre-Intuitif. Elles restent dans le navigateur de l'ordinateur où vous utilisez l'application. À distance, la page d'épreuve en ligne ne contient que les situations et les questions : les réponses restent dans le navigateur du candidat jusqu'à ce qu'il vous les envoie, par e-mail ou par fichier. Notre hébergeur (Shopify) ne reçoit que les données techniques de connexion. Sauvegardez vos données dans un fichier, et supprimez-les à la fin du recrutement."
+      ],
+      [
+        "Le métier dont j'ai besoin n'est pas dans la liste.",
+        "Utilisez « Demander un métier » : il est créé avec vous, puis vous l'importez dans l'application."
+      ],
+      [
+        "Peut-on choisir les questions de l'épreuve ?",
+        "Oui. Dans « Préparer », étape « Les questions », vous choisissez pour chaque compétence les questions de chaque porte et leur nombre, et les portes proposées (au moins 3, dont une sans écrit). Toutes les personnes d'un même recrutement ont exactement les mêmes questions. Dès qu'une personne a répondu, la sélection est figée ; pour en changer, dupliquez le recrutement."
+      ],
+      [
+        "Peut-on écrire ses propres questions ?",
+        "Oui : jusqu'à 2 par porte aux portes 2 et 5, et jusqu'à 3 par compétence à l'entretien. Le kit signale toute question qui touche à la santé, un handicap, la famille, l'âge, l'origine, la religion, les opinions ou la vie privée [22] [25]. Vos questions n'ont pas de réponses prévues : la personne qui évalue juge avec la grille commune, et elles ne sont pas étalonnées comme celles du kit."
+      ],
+      [
+        "Comment le kit comprend-il ma demande, sans IA ?",
+        "Avec des listes de mots-clés et de synonymes, toujours les mêmes, visibles dans le guide (« Choisir les questions »). Chaque réglage proposé dit quels mots de votre phrase l'ont déclenché, et tout reste modifiable. La phrase ne quitte pas votre ordinateur."
+      ]
+    ],
+    "limites": [
+      "Les 5 portes sont une proposition, pas une méthode déjà évaluée par une étude. Elles s'inspirent de la conception universelle de l'apprentissage [19] : l'onglet Suivi sert à vérifier qu'elles sont d'égale difficulté.",
+      "« Appuyée par la recherche » vaut surtout pour l'entretien structuré et la mise en situation [9]. Les autres étapes s'appuient sur une étude initiale [13], des données d'employeurs [18] et des guides officiels [16][17].",
+      "Les situations et les barèmes ont été écrits pour être réalistes au niveau d'entrée du poste. Relisez-les avec un titulaire du poste : vous connaissez vos règles internes mieux que nous.",
+      "L'épreuve ne remplace ni un diplôme, ni une habilitation, ni une autorisation obligatoire pour exercer.",
+      "Aucune étude ne montre un obstacle propre aux hauts potentiels en entretien : nous ne leur en inventons pas. « HPE » n'a ni définition ni test validés : nous parlons d'hypersensibilité [4][5].",
+      "Une réponse au hasard aux choix multiples a peu de chances d'atteindre le niveau attendu, mais pas zéro. Croisez toujours avec l'entretien.",
+      "Ce kit n'est ni un avis juridique, ni un outil de diagnostic. La décision de recrutement reste la vôtre."
+    ]
+  },
+  "sources": [
+    {
+      "n": 1,
+      "cat": "Données et profils",
+      "texte": "Gouvernement — Stratégie nationale pour les troubles du neurodéveloppement 2023-2027 (handicap.gouv.fr, 14 novembre 2023) : 1 personne sur 6 concernée ; autisme 1 à 2 % ; TDAH 6 % des enfants et 3 % des adultes ; troubles dys 8 % ; plus de la moitié ont un second trouble.",
+      "url": "https://handicap.gouv.fr/nouvelle-strategie-nationale-pour-les-troubles-du-neurodeveloppement-autisme-dys-tdah-tdi"
+    },
+    {
+      "n": 2,
+      "cat": "Données et profils",
+      "texte": "Inserm — Dossier « Autisme » (mis à jour le 30 août 2024) : environ 700 000 personnes autistes en France ; le syndrome d'Asperger fait partie du spectre de l'autisme.",
+      "url": "https://www.inserm.fr/dossier/autisme/"
+    },
+    {
+      "n": 3,
+      "cat": "Données et profils",
+      "texte": "Inserm — « Troubles des apprentissages : quand le cerveau dysfonctionne » (2019) : troubles dys, 6 à 8 % de la population.",
+      "url": "https://www.inserm.fr/actualite/troubles-apprentissages-quand-cerveau-dysfonctionne/"
+    },
+    {
+      "n": 4,
+      "cat": "Données et profils",
+      "texte": "Lionetti F. et al. (2018). Dandelions, tulips and orchids. Translational Psychiatry, 8, 24 : environ 30 % de personnes très sensibles.",
+      "url": "https://www.nature.com/articles/s41398-017-0090-6"
+    },
+    {
+      "n": 5,
+      "cat": "Données et profils",
+      "texte": "Aron E. N. & Aron A. (1997). Sensory-processing sensitivity and its relation to introversion and emotionality. Journal of Personality and Social Psychology, 73(2), 345-368.",
+      "url": "https://doi.org/10.1037/0022-3514.73.2.345"
+    },
+    {
+      "n": 6,
+      "cat": "Données et profils",
+      "texte": "Bijlenga D. et al. (2017). Atypical sensory profiles as core features of adult ADHD, irrespective of autistic symptoms. European Psychiatry, 43, 51-57 (116 adultes).",
+      "url": "https://apsard.org/atypical-sensory-profiles-in-adult-adhd-irrespective-of-autistic-symptoms/"
+    },
+    {
+      "n": 7,
+      "cat": "Données et profils",
+      "texte": "Crane L., Goddard L. & Pring L. (2009). Sensory processing in adults with autism spectrum disorders. Autism, 13(3), 215-228 (18 adultes).",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/1362361309103794"
+    },
+    {
+      "n": 8,
+      "cat": "Données et profils",
+      "texte": "Alonso Benito et al. (2026). Journal of Intelligence, 14(6), 108 : haut potentiel et dyslexie peuvent se masquer l'un l'autre (double exceptionnalité).",
+      "url": "https://www.mdpi.com/2079-3200/14/6/108"
+    },
+    {
+      "n": 9,
+      "cat": "Recherche sur le recrutement",
+      "texte": "Sackett P. R., Zhang C., Berry C. M. & Lievens F. (2022). Revisiting meta-analytic estimates of validity in personnel selection. Journal of Applied Psychology, 107(11), 2040-2068 : entretien structuré 0,42 ; questions de connaissances du métier 0,40 ; mise en situation 0,33 ; aptitudes cognitives 0,31 ; conscience professionnelle mesurée « au travail » 0,25, mesurée en général 0,19 ; entretien libre 0,19.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34968080/"
+    },
+    {
+      "n": 10,
+      "cat": "Recherche sur le recrutement",
+      "texte": "Sasson N. J. et al. (2017). Neurotypical peers are less willing to interact with those with autism based on thin slice judgments. Scientific Reports, 7, 40700.",
+      "url": "https://www.nature.com/articles/srep40700"
+    },
+    {
+      "n": 11,
+      "cat": "Recherche sur le recrutement",
+      "texte": "Stewart G. L. et al. (2008). Exploring the handshake in employment interviews. Journal of Applied Psychology, 93(5), 1139-1146 (98 entretiens simulés).",
+      "url": "https://www.semanticscholar.org/paper/Exploring-the-handshake-in-employment-interviews.-Stewart-Dustin/4ec52406b00a950aa5b9098ede199884d51f4507"
+    },
+    {
+      "n": 12,
+      "cat": "Recherche sur le recrutement",
+      "texte": "Whelpley C. E. & May C. P. (2023). Seeing is disliking: evidence of bias against individuals with autism spectrum disorder in traditional job interviews. Journal of Autism and Developmental Disorders, 53, 1363-1374 (vidéos ou transcriptions d'entretiens).",
+      "url": "https://link.springer.com/article/10.1007/s10803-022-05432-2"
+    },
+    {
+      "n": 13,
+      "cat": "Recherche sur le recrutement",
+      "texte": "Maras K. et al. (2021). Ameliorating the disadvantage for autistic job seekers: an initial evaluation of adapted employment interview questions. Autism, 25(4), 1060-1075 (50 personnes, sans groupe témoin).",
+      "url": "https://researchportal.bath.ac.uk/en/publications/ameliorating-the-disadvantage-for-autistic-job-seekers-an-initial/"
+    },
+    {
+      "n": 14,
+      "cat": "Recherche sur le recrutement",
+      "texte": "Alderson R. M. et al. (2013). ADHD and working memory in adults: a meta-analytic review (38 études). Neuropsychology, 27(3), 287-302.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23688211/"
+    },
+    {
+      "n": 15,
+      "cat": "Recherche sur le recrutement",
+      "texte": "Austin R. D. & Pisano G. P. (2017). Neurodiversity as a competitive advantage. Harvard Business Review, mai-juin 2017.",
+      "url": "https://www.hbs.edu/faculty/Pages/item.aspx?num=52624"
+    },
+    {
+      "n": 16,
+      "cat": "Guides pratiques",
+      "texte": "Acas (service public britannique) — Neurodiversity at work : making your organisation neuroinclusive (16 décembre 2025).",
+      "url": "https://www.acas.org.uk/neurodiversity-at-work/making-your-organisation-neuroinclusive"
+    },
+    {
+      "n": 17,
+      "cat": "Guides pratiques",
+      "texte": "Maison de l'autisme (gouvernement) — Travailler quand on est autiste : ressources employeurs (30 mars 2026).",
+      "url": "https://maisondelautisme.gouv.fr/fiches-pratiques-autisme/travailler-quand-on-est-autiste-ressources-employeurs/"
+    },
+    {
+      "n": 18,
+      "cat": "Guides pratiques",
+      "texte": "Job Accommodation Network (JAN, États-Unis) — Costs and benefits of accommodation : 61 % des 1 425 employeurs ayant indiqué un coût disent que l'aménagement de poste n'a rien coûté (2019-2024).",
+      "url": "https://askjan.org/topics/costs.cfm"
+    },
+    {
+      "n": 19,
+      "cat": "Guides pratiques",
+      "texte": "CAST — Universal Design for Learning Guidelines 3.0 (2024) : offrir plusieurs façons de montrer ce qu'on sait.",
+      "url": "https://udlguidelines.cast.org/"
+    },
+    {
+      "n": 20,
+      "cat": "Guides pratiques",
+      "texte": "Fonction publique — « Je suis en situation de handicap » : temps de composition majoré d'un tiers, temps de repos (décret n° 2020-523).",
+      "url": "https://www.fonction-publique.gouv.fr/devenir-agent-public/je-suis-en-situation-de-handicap"
+    },
+    {
+      "n": 21,
+      "cat": "Guides pratiques",
+      "texte": "Défenseur des droits — Pour un recrutement sans discrimination (guide, 2019) : grilles d'évaluation communes, traçabilité des décisions, sanctions pénales.",
+      "url": "https://www.defenseurdesdroits.fr/sites/default/files/2023-03/DDD_guide_recrutement-sans-discrimination_20190703.pdf"
+    },
+    {
+      "n": 22,
+      "cat": "Code du travail",
+      "texte": "Article L1221-6 : les informations demandées au candidat ont un lien direct et nécessaire avec l'emploi ou l'évaluation des aptitudes professionnelles.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1221-6"
+    },
+    {
+      "n": 23,
+      "cat": "Code du travail",
+      "texte": "Article L1221-8 : le candidat est expressément informé, avant leur mise en œuvre, des méthodes et techniques d'aide au recrutement ; résultats confidentiels ; méthodes pertinentes.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1221-8"
+    },
+    {
+      "n": 24,
+      "cat": "Code du travail",
+      "texte": "Article L1221-9 : aucune information personnelle ne peut être collectée par un dispositif non porté préalablement à la connaissance du candidat.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1221-9"
+    },
+    {
+      "n": 25,
+      "cat": "Code du travail",
+      "texte": "Article L1132-1 : aucune personne ne peut être écartée d'une procédure de recrutement en raison notamment de son état de santé, de sa perte d'autonomie, de son handicap ou de son apparence physique.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1132-1"
+    },
+    {
+      "n": 26,
+      "cat": "Code du travail",
+      "texte": "Article L1134-1 : si le candidat présente des faits laissant supposer une discrimination, l'employeur doit prouver que sa décision repose sur des éléments objectifs étrangers à toute discrimination.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1134-1"
+    },
+    {
+      "n": 27,
+      "cat": "Code du travail",
+      "texte": "Article L1134-5 : l'action en réparation d'une discrimination se prescrit par cinq ans à compter de sa révélation.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1134-5"
+    },
+    {
+      "n": 28,
+      "cat": "Code du travail",
+      "texte": "Article L5213-6 : l'employeur prend, en fonction des besoins dans une situation concrète, les mesures appropriées pour les bénéficiaires de l'obligation d'emploi, sauf charge disproportionnée ; le refus peut constituer une discrimination.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l5213-6"
+    },
+    {
+      "n": 42,
+      "cat": "Code du travail",
+      "texte": "Articles L1133-1 et L1133-3 : une différence de traitement n'est pas une discrimination si elle répond à une exigence professionnelle essentielle et déterminante, ou si elle repose sur une inaptitude constatée par le médecin du travail.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1133-3"
+    },
+    {
+      "n": 29,
+      "cat": "Code du travail",
+      "texte": "Articles L5212-1 et L5212-2 : obligation d'emploi de travailleurs handicapés (6 %) pour les employeurs d'au moins 20 salariés.",
+      "url": "https://www.monparcourshandicap.gouv.fr/aides/lobligation-demploi-des-travailleurs-handicapes-oeth"
+    },
+    {
+      "n": 30,
+      "cat": "Code du travail",
+      "texte": "Article L5213-6-1 : un référent chargé d'orienter, d'informer et d'accompagner les personnes en situation de handicap est désigné dans toute entreprise d'au moins 250 salariés.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l5213-6-1"
+    },
+    {
+      "n": 31,
+      "cat": "CNIL et RGPD",
+      "texte": "CNIL — Le guide du recrutement (30 janvier 2023) : données pertinentes et strictement nécessaires, information des candidats, pas de données de santé, tests en lien avec le poste.",
+      "url": "https://www.cnil.fr/fr/le-guide-du-recrutement"
+    },
+    {
+      "n": 32,
+      "cat": "CNIL et RGPD",
+      "texte": "CNIL — Référentiel « Les durées de conservation des données — gestion des ressources humaines » (2 avril 2026, mis à jour le 20 mai 2026).",
+      "url": "https://www.cnil.fr/sites/default/files/2026-04/referentiel_durees_de_conservation_gestion_des_ressources_humaines.pdf"
+    },
+    {
+      "n": 33,
+      "cat": "CNIL et RGPD",
+      "texte": "CNIL — « Recrutement : un employeur peut-il conserver mon dossier ? » : 2 ans au plus après le dernier contact, sauf accord du candidat.",
+      "url": "https://www.cnil.fr/fr/cnil-direct/question/recrutement-un-employeur-peut-il-conserver-mon-dossier"
+    },
+    {
+      "n": 34,
+      "cat": "CNIL et RGPD",
+      "texte": "RGPD, article 9 : traitement des données de santé interdit, sauf exceptions, dont les obligations de l'employeur en droit du travail (art. 9.2.b). Texte présenté par la CNIL.",
+      "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2"
+    },
+    {
+      "n": 40,
+      "cat": "CNIL et RGPD",
+      "texte": "CNIL — Recommandation sur les enquêtes de mesure de la diversité au travail (10 juin 2025) : seul le consentement libre et éclairé des répondants permet de collecter des données sensibles.",
+      "url": "https://www.cnil.fr/fr/recommandation-mesure-diversite-travail"
+    },
+    {
+      "n": 41,
+      "cat": "CNIL et RGPD",
+      "texte": "RGPD, articles 12 à 14 : information des personnes ; réponse aux demandes dans un délai d'un mois, prolongeable de deux mois. Texte présenté par la CNIL.",
+      "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3"
+    },
+    {
+      "n": 35,
+      "cat": "Intelligence artificielle",
+      "texte": "Règlement (UE) 2024/1689 sur l'IA, article 5.1.f : reconnaissance des émotions interdite sur le lieu de travail depuis le 2 février 2025 (sauf raisons médicales ou de sécurité) ; lignes directrices de la Commission du 4 février 2025 (exemple cité : le recrutement).",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act"
+    },
+    {
+      "n": 36,
+      "cat": "Intelligence artificielle",
+      "texte": "Commission européenne — « AI Omnibus enters into force » (27 juillet 2026) : règles sur les systèmes d'IA à haut risque de l'annexe III (dont recrutement) applicables à partir du 2 décembre 2027.",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force"
+    },
+    {
+      "n": 38,
+      "cat": "Guides pratiques",
+      "texte": "British Dyslexia Association — Dyslexia Style Guide 2023 : police sans empattement de 12 à 14 points, interligne 1,5, texte aligné à gauche, pas d'italique ni de soulignement, fond clair non blanc.",
+      "url": "https://www.bdadyslexia.org.uk/advice/employers/creating-a-dyslexia-friendly-workplace/dyslexia-friendly-style-guide"
+    },
+    {
+      "n": 39,
+      "cat": "Code du travail",
+      "texte": "Article L2312-38 (entreprises d'au moins 50 salariés) : le comité social et économique est informé, préalablement à leur utilisation, des méthodes ou techniques d'aide au recrutement.",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l2312-38"
+    },
+    {
+      "n": 37,
+      "cat": "Événement",
+      "texte": "Agefiph — Thème de la SEEPH 2026 : « Démystifier, simplifier, accompagner. L'emploi pour toutes et tous » (16-22 novembre 2026).",
+      "url": "https://www.agefiph.fr/actualites-handicap/theme-de-la-seeph-2026-demystifier-simplifier-accompagner-lemploi-pour-toutes"
+    },
+    {
+      "n": 43,
+      "cat": "CNIL et RGPD",
+      "texte": "RGPD, article 5.1.c : les données sont « adéquates, pertinentes et limitées à ce qui est nécessaire » au regard des finalités (minimisation). Texte présenté par la CNIL.",
+      "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2"
+    },
+    {
+      "n": 44,
+      "cat": "CNIL et RGPD",
+      "texte": "RGPD, article 21 : la personne peut s'opposer à tout moment, pour des raisons tenant à sa situation particulière, à un traitement fondé sur l'intérêt légitime. Texte présenté par la CNIL.",
+      "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3"
+    },
+    {
+      "n": 45,
+      "cat": "Données et profils",
+      "texte": "France Travail, enquête Besoins en main-d'œuvre (BMO) 2026 : 2,28 millions de projets de recrutement ; les métiers les plus recherchés sont les aides de cuisine et employés polyvalents de la restauration, les serveurs, les viticulteurs et arboriculteurs, les agriculteurs, les agents d'entretien de locaux, les aides à domicile, les aides-soignants, les employés de libre-service et les cuisiniers.",
+      "url": "https://www.francetravail.fr/candidat/decouvrir-le-marche-du-travail/besoins-en-main-doeuvre.html"
+    },
+    {
+      "n": 46,
+      "cat": "Données et profils",
+      "texte": "Lodi-Smith J., Rodgers J. D., Cunningham S. A., Lopata C. & Thomeer M. L. (2019). Meta-analysis of Big Five personality traits in autism spectrum disorder. Autism, 23(3), 556-565 : 14 études ; dans les 6 qui comparent personnes autistes et non autistes, les personnes autistes se décrivent plus bas sur les cinq grands traits de personnalité (de g = −0,88 pour la conscience professionnelle à g = −1,42 pour l'extraversion).",
+      "url": "https://journals.sagepub.com/doi/10.1177/1362361318766571"
+    },
+    {
+      "n": 47,
+      "cat": "Guides pratiques",
+      "texte": "France Travail — « Les 3 types de compétences à valoriser lors de votre candidature » : la liste des 16 savoir-être professionnels, dont « Faire preuve de rigueur et de précision », « Avoir le sens du service », « Gérer son stress » et « Travailler en équipe ».",
+      "url": "https://www.francetravail.fr/candidat/vos-recherches/preparer-votre-candidature/accompagne-dans-sa-recherche/les-3-types-de-competences-a-v-1.html"
+    },
+    {
+      "n": 48,
+      "cat": "Guides pratiques",
+      "texte": "Pôle emploi (aujourd'hui France Travail) — Les bonnes pratiques de rédaction des offres sur pole-emploi.fr, p. 13 : l'employeur sélectionne, dans la liste des savoir-être professionnels, « les 3 plus importants pour votre poste ».",
+      "url": "https://www.unea.fr/sites/default/files/bonnes_pratiques_redaction_offres_pe.fr_.pdf"
+    },
+    {
+      "n": 49,
+      "cat": "Recherche sur le recrutement",
+      "texte": "Putka D. J., Liu J. (HumRRO) & Lewis P. (National Center for O*NET Development), décembre 2025. Updating Higher-order Work Style Dimensions in the O*NET Work Styles Taxonomy : 21 styles de travail regroupés en 5 grandes dimensions, repris dans la base O*NET à partir de la version 30.1.",
+      "url": "https://www.onetcenter.org/reports/Higher_Order_Styles.html"
+    }
+  ],
+  "profil_travail": {
+    "titre": "Profil de travail",
+    "max_essentiels": 3,
+    "dimensions": [
+      {
+        "id": "rigueur",
+        "nom": "Rigueur et précision",
+        "ft": "Faire preuve de rigueur et de précision",
+        "definition": "Vérifie son travail, repère les erreurs et les détails qui comptent.",
+        "question": "Racontez une fois où vous avez repéré une erreur avant qu'elle pose problème. Qu'avez-vous fait ?",
+        "aide": "Une liste de contrôle écrite pour les points importants du poste.",
+        "plus": [
+          "c1_faits",
+          "c1_cause",
+          "c1_etapes",
+          "c1_verifie",
+          "c6_controle",
+          "c6_anomalie",
+          "c6_recidive",
+          "c8_precision"
+        ],
+        "moins": [
+          "c1_precipite",
+          "c1_symptome",
+          "c1_suppose",
+          "c6_sans_controle",
+          "c6_laisse"
+        ]
+      },
+      {
+        "id": "regles",
+        "nom": "Respect des règles et des engagements",
+        "ft": "Respecter ses engagements, assumer ses responsabilités",
+        "definition": "Applique les règles et la sécurité, tient ce qu'il promet, reste dans son rôle.",
+        "question": "Racontez une fois où une règle vous semblait gênante ou inutile. Qu'avez-vous fait ?",
+        "aide": "Les règles du poste par écrit, avec leur raison, et la personne à qui demander en cas de doute.",
+        "plus": [
+          "c6_regle",
+          "c6_trace",
+          "c6_bloque",
+          "c7_regle",
+          "c8_securite",
+          "c8_role"
+        ],
+        "moins": [
+          "c6_cache",
+          "c6_raccourci",
+          "c7_promesse",
+          "c7_hors_regle",
+          "c8_danger",
+          "c8_hors_role"
+        ]
+      },
+      {
+        "id": "organisation",
+        "nom": "Organisation",
+        "ft": "Organiser son travail selon les priorités et les objectifs",
+        "definition": "Choisit l'ordre des tâches avec un critère clair, anticipe et tient les délais.",
+        "question": "Racontez une journée où vous aviez trop de choses à faire. Comment avez-vous choisi l'ordre ?",
+        "aide": "Les priorités du jour écrites, et une personne à qui demander quand tout arrive en même temps.",
+        "plus": [
+          "c2_critere",
+          "c2_risque",
+          "c2_contraintes",
+          "c2_anticipe",
+          "c2_regroupe"
+        ],
+        "moins": [
+          "c2_arrivee",
+          "c2_oubli",
+          "c2_dispersion",
+          "c2_reactif"
+        ]
+      },
+      {
+        "id": "communication",
+        "nom": "Communication",
+        "ft": "Être à l'écoute",
+        "ft_proche": true,
+        "definition": "Transmet l'essentiel clairement, prévient les personnes concernées, vérifie qu'il est compris.",
+        "question": "Racontez une fois où vous avez dû transmettre une information importante. Comment avez-vous vérifié qu'elle était comprise ?",
+        "aide": "Des consignes écrites en plus de l'oral, et des modèles pour les messages fréquents.",
+        "plus": [
+          "c2_previent",
+          "c3_essentiel",
+          "c3_adapte",
+          "c3_complet",
+          "c3_suite",
+          "c3_trace",
+          "c3_verifie"
+        ],
+        "moins": [
+          "c2_silence",
+          "c3_flou",
+          "c3_faux",
+          "c3_jargon",
+          "c3_oubli"
+        ]
+      },
+      {
+        "id": "equipe",
+        "nom": "Travail en équipe",
+        "ft": "Travailler en équipe",
+        "definition": "Informe les autres, aide et demande de l'aide, règle les désaccords sur les faits.",
+        "question": "Racontez une fois où vous n'étiez pas d'accord avec un collègue. Comment l'avez-vous réglé ?",
+        "aide": "Un rôle clair pour chacun et un point d'équipe court et régulier.",
+        "plus": [
+          "c4_informe",
+          "c4_faits",
+          "c4_aide",
+          "c4_role",
+          "c4_regle",
+          "c4_escalade"
+        ],
+        "moins": [
+          "c4_impose",
+          "c4_evite",
+          "c4_personne",
+          "c4_seul"
+        ]
+      },
+      {
+        "id": "service",
+        "nom": "Sens du service",
+        "ft": "Avoir le sens du service",
+        "definition": "Cherche le besoin réel du client ou de l'usager, annonce la suite et suit la demande jusqu'au bout.",
+        "question": "Racontez une fois où un client ou un usager n'était pas satisfait. Qu'avez-vous fait ?",
+        "aide": "Des réponses types pour les demandes fréquentes, et savoir à qui passer la main.",
+        "plus": [
+          "c7_besoin",
+          "c7_suite",
+          "c7_alternative",
+          "c7_suivi"
+        ],
+        "moins": [
+          "c7_ignore",
+          "c7_renvoie",
+          "c7_impose"
+        ]
+      },
+      {
+        "id": "calme",
+        "nom": "Calme sous pression",
+        "ft": "Gérer son stress",
+        "definition": "Reste efficace quand le travail arrive d'un coup ou quand une personne est mécontente.",
+        "question": "Racontez un moment de forte activité ou d'imprévu. Qu'est-ce qui vous a aidé à rester efficace ?",
+        "aide": "Prévenir des pics d'activité, un endroit calme pour souffler, une personne ressource.",
+        "plus": [
+          "c7_apaise"
+        ],
+        "moins": [
+          "c7_aggrave"
+        ]
+      },
+      {
+        "id": "adaptation",
+        "nom": "Adaptation et autonomie",
+        "ft": "S'adapter aux changements",
+        "definition": "Applique une consigne nouvelle, va chercher l'information qui manque, propose des améliorations.",
+        "question": "Racontez une fois où une consigne ou un outil a changé. Comment vous y êtes-vous pris ?",
+        "aide": "Annoncer les changements à l'avance et par écrit, avec un temps pour prendre en main un nouvel outil.",
+        "plus": [
+          "c1_aide",
+          "c1_options",
+          "c5_applique",
+          "c5_clarifie",
+          "c5_corrige",
+          "c5_source",
+          "c5_transfere",
+          "c5_ameliore"
+        ],
+        "moins": [
+          "c1_abandon",
+          "c5_habitude",
+          "c5_ignore",
+          "c5_devine",
+          "c5_attend"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "r1",
+        "dim": "rigueur",
+        "texte": "Je vérifie mon travail avant de dire qu'il est fini."
+      },
+      {
+        "id": "o1",
+        "dim": "organisation",
+        "texte": "Quand j'ai plusieurs tâches, je choisis d'abord par laquelle commencer."
+      },
+      {
+        "id": "s1",
+        "dim": "service",
+        "texte": "Je cherche à comprendre ce dont le client ou l'usager a vraiment besoin."
+      },
+      {
+        "id": "t1",
+        "dim": "calme",
+        "texte": "Quand il y a beaucoup de travail d'un coup, je reste efficace."
+      },
+      {
+        "id": "e1",
+        "dim": "equipe",
+        "texte": "J'aide un collègue quand il en a besoin."
+      },
+      {
+        "id": "c1",
+        "dim": "communication",
+        "texte": "Quand je transmets une information, je dis l'essentiel en premier."
+      },
+      {
+        "id": "f1",
+        "dim": "regles",
+        "texte": "Quand je dis que je vais faire quelque chose, je le fais."
+      },
+      {
+        "id": "a1",
+        "dim": "adaptation",
+        "texte": "Quand une consigne change, j'applique la nouvelle."
+      },
+      {
+        "id": "r2",
+        "dim": "rigueur",
+        "texte": "Je remarque les erreurs et les détails qui ne vont pas."
+      },
+      {
+        "id": "o2",
+        "dim": "organisation",
+        "texte": "Je prépare à l'avance ce dont j'aurai besoin."
+      },
+      {
+        "id": "t2",
+        "dim": "calme",
+        "texte": "Après une erreur, je la corrige et je continue."
+      },
+      {
+        "id": "e2",
+        "dim": "equipe",
+        "texte": "Je tiens mes collègues au courant de ce que je fais."
+      },
+      {
+        "id": "s2",
+        "dim": "service",
+        "texte": "Je suis une demande jusqu'au bout."
+      },
+      {
+        "id": "c2",
+        "dim": "communication",
+        "texte": "Je vérifie que l'autre personne a bien compris."
+      },
+      {
+        "id": "f2",
+        "dim": "regles",
+        "texte": "Je respecte les règles de sécurité, même quand personne ne regarde."
+      },
+      {
+        "id": "a2",
+        "dim": "adaptation",
+        "texte": "Quand je ne sais pas, je cherche l'information ou je demande."
+      },
+      {
+        "id": "r3",
+        "dim": "rigueur",
+        "texte": "Je contrôle les chiffres, les quantités ou les dates."
+      },
+      {
+        "id": "o3",
+        "dim": "organisation",
+        "texte": "Je préviens quand une tâche va prendre du retard."
+      },
+      {
+        "id": "e3",
+        "dim": "equipe",
+        "texte": "En cas de désaccord, je parle des faits, pas de la personne."
+      },
+      {
+        "id": "t3",
+        "dim": "calme",
+        "texte": "Quand une personne est en colère contre moi, je reste poli et calme."
+      }
+    ],
+    "echelle": [
+      "Pas du tout",
+      "Plutôt pas",
+      "Ça dépend",
+      "Plutôt oui",
+      "Tout à fait"
+    ],
+    "ne_sait_pas": "Je ne sais pas",
+    "defauts": {
+      "serveur": [
+        "service",
+        "organisation",
+        "equipe"
+      ],
+      "cuisinier": [
+        "rigueur",
+        "organisation",
+        "equipe"
+      ],
+      "employe-restauration": [
+        "regles",
+        "equipe",
+        "organisation"
+      ],
+      "employe-libre-service": [
+        "rigueur",
+        "organisation",
+        "service"
+      ],
+      "hote-caisse": [
+        "rigueur",
+        "service",
+        "calme"
+      ],
+      "vendeur": [
+        "service",
+        "communication",
+        "adaptation"
+      ],
+      "commercial": [
+        "communication",
+        "service",
+        "organisation"
+      ],
+      "conseiller-clientele": [
+        "service",
+        "calme",
+        "communication"
+      ],
+      "agent-entretien": [
+        "rigueur",
+        "regles",
+        "organisation"
+      ],
+      "agent-securite": [
+        "regles",
+        "calme",
+        "communication"
+      ],
+      "aide-domicile": [
+        "service",
+        "regles",
+        "adaptation"
+      ],
+      "aide-soignant": [
+        "regles",
+        "equipe",
+        "service"
+      ],
+      "infirmier": [
+        "rigueur",
+        "regles",
+        "calme"
+      ],
+      "animateur": [
+        "regles",
+        "communication",
+        "adaptation"
+      ],
+      "preparateur-commandes": [
+        "rigueur",
+        "regles",
+        "organisation"
+      ],
+      "cariste": [
+        "regles",
+        "rigueur",
+        "organisation"
+      ],
+      "chauffeur-livreur": [
+        "regles",
+        "organisation",
+        "service"
+      ],
+      "operateur-production": [
+        "rigueur",
+        "regles",
+        "equipe"
+      ],
+      "controleur-qualite": [
+        "rigueur",
+        "regles",
+        "communication"
+      ],
+      "technicien-maintenance": [
+        "regles",
+        "rigueur",
+        "organisation"
+      ],
+      "electricien": [
+        "regles",
+        "rigueur",
+        "organisation"
+      ],
+      "plombier": [
+        "rigueur",
+        "service",
+        "organisation"
+      ],
+      "macon": [
+        "regles",
+        "rigueur",
+        "equipe"
+      ],
+      "assistant-administratif": [
+        "organisation",
+        "rigueur",
+        "communication"
+      ],
+      "comptable": [
+        "rigueur",
+        "regles",
+        "communication"
+      ],
+      "gestionnaire-paie": [
+        "rigueur",
+        "regles",
+        "communication"
+      ],
+      "developpeur": [
+        "rigueur",
+        "communication",
+        "equipe"
+      ],
+      "data-analyst": [
+        "rigueur",
+        "communication",
+        "adaptation"
+      ],
+      "testeur": [
+        "rigueur",
+        "communication",
+        "organisation"
+      ],
+      "support-informatique": [
+        "service",
+        "communication",
+        "calme"
+      ],
+      "communication": [
+        "communication",
+        "adaptation",
+        "organisation"
+      ],
+      "manager": [
+        "communication",
+        "equipe",
+        "organisation"
+      ],
+      "ouvrier-agricole": [
+        "regles",
+        "equipe",
+        "adaptation"
+      ]
+    },
+    "intro_candidat": "Quelques phrases sur votre façon de travailler : pour chacune, dites si elle vous ressemble. Il n'y a pas de bonne ou de mauvaise réponse, et ce n'est pas noté : la personne qui recrute s'en sert pour préparer l'entretien et votre arrivée. Aucune question sur la santé. Cette partie est facultative.",
+    "notice": "À la fin de l'épreuve, {n} phrases facultatives sur votre façon de travailler (par exemple : « {exemple} »). Elles ne sont pas notées, n'entrent pas dans le classement et ne servent pas à écarter une candidature : elles aident à préparer l'entretien et votre accueil. Vous pouvez ne pas y répondre, sans aucune conséquence. Aucune question ne porte sur la santé.",
+    "annonce": "À la fin, {n} phrases facultatives sur votre façon de travailler. Elles ne sont pas notées, n'entrent pas dans le classement et ne servent pas à écarter une candidature. Aucune question ne porte sur la santé. Vous pouvez passer cette partie.",
+    "annonce_courte": "À la fin, {n} phrases facultatives sur votre façon de travailler : jamais notées ni classées, jamais sur la santé. Vous pouvez les passer.",
+    "notice_situations": "Vos réponses aux situations servent aussi à repérer quelques savoir-être utiles au poste ({savoir_etre}), pour préparer l'entretien : cela n'entre ni dans la note ni dans le classement, et ne sert pas à écarter une candidature."
+  },
+  "domaines_a_venir": [
+    {
+      "id": "banque-assurance",
+      "nom": "Banque et assurance",
+      "exemples": [
+        "Conseiller / Conseillère bancaire",
+        "Chargé / Chargée de clientèle en assurance",
+        "Gestionnaire de sinistres"
+      ]
+    },
+    {
+      "id": "immobilier",
+      "nom": "Immobilier",
+      "exemples": [
+        "Agent immobilier / Agente immobilière",
+        "Gestionnaire locatif / Gestionnaire locative",
+        "Gardien / Gardienne d'immeuble"
+      ]
+    },
+    {
+      "id": "artisanat",
+      "nom": "Artisanat et métiers de bouche",
+      "exemples": [
+        "Boulanger / Boulangère",
+        "Boucher / Bouchère",
+        "Coiffeur / Coiffeuse"
+      ]
+    }
+  ],
+  "catalogue": {
+    "objectif": 100,
+    "lot": 20,
+    "delai": "72 h ouvrées (3 jours ouvrés)",
+    "promesse": "Votre métier n'y est pas ? Demandez-le : il est créé pour vous sous 72 h ouvrées (3 jours ouvrés) après réception de votre demande complète, avec ses 4 situations, ses 5 portes et son entretien.",
+    "plus_recrutes": [
+      "employe-restauration",
+      "serveur",
+      "ouvrier-agricole",
+      "agent-entretien",
+      "aide-domicile",
+      "aide-soignant",
+      "employe-libre-service",
+      "cuisinier"
+    ],
+    "plus_recrutes_source": 45
+  }
+}

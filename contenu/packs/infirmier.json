@@ -1,0 +1,2594 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "infirmier",
+  "version": "2026.10",
+  "nom": "Infirmier / Infirmière",
+  "secteur": "sante-social",
+  "alias": [
+    "infirmier",
+    "infirmière",
+    "IDE",
+    "infirmier diplômé d'État",
+    "infirmière diplômée d'État",
+    "infirmier en EHPAD",
+    "infirmier hospitalier",
+    "infirmière hospitalière",
+    "infirmier en soins généraux"
+  ],
+  "resume": "Réalise les soins, donne les traitements prescrits, surveille l'état des patients, alerte le médecin et transmet les informations à l'équipe.",
+  "contexte": "Un service de médecine polyvalente de 24 lits dans un hôpital, avec une équipe de jour (7 h à 19 h) et une équipe de nuit (19 h à 7 h).",
+  "cadre": "L'exercice demande le diplôme d'État d'infirmier et l'inscription à l'Ordre national des infirmiers.",
+  "competences": [
+    {
+      "code": "C8",
+      "titre": "Sécuriser l'administration des médicaments",
+      "pourquoi": "Une erreur de patient, de médicament, de dose, de voie ou d'heure peut nuire gravement au patient : chaque vérification compte.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Le pilulier de 8 h, chambre 14",
+        "texte": "Mercredi, 8 h. Vous donnez les traitements du matin. Le pilulier du patient de la chambre 14 a été préparé hier à 14 h. Hier à 16 h, le médecin a modifié la prescription. Le patient porte un bracelet d'identification. Avant de donner le traitement, vous comparez le pilulier avec la prescription du jour (voir le tableau).",
+        "document": {
+          "type": "tableau",
+          "titre": "Prescription du jour : chambre 14, patient né le 12 mars 1948 (extrait simplifié)",
+          "colonnes": [
+            "Médicament",
+            "Dose",
+            "Voie",
+            "Heures"
+          ],
+          "lignes": [
+            [
+              "Antalgique (contre la douleur)",
+              "1 comprimé",
+              "Par la bouche",
+              "8 h, 12 h, 20 h"
+            ],
+            [
+              "Antihypertenseur (contre la tension) : dose modifiée hier à 16 h",
+              "1 comprimé",
+              "Par la bouche",
+              "8 h"
+            ],
+            [
+              "Diurétique",
+              "Arrêté hier à 16 h",
+              "—",
+              "—"
+            ],
+            [
+              "Somnifère",
+              "1 comprimé",
+              "Par la bouche",
+              "20 h"
+            ],
+            [
+              "Antibiotique",
+              "1 poche",
+              "Perfusion dans la veine",
+              "8 h, 20 h"
+            ],
+            [
+              "Anticoagulant",
+              "1 injection",
+              "Sous la peau",
+              "20 h"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le pilulier a été préparé **avant la modification** de la prescription. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le donne tel quel : ma collègue l'a déjà vérifié en le préparant.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je compare chaque case du pilulier avec la prescription du jour.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je vérifie seulement les deux médicaments modifiés hier.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au patient s'il reconnaît ses comprimés habituels.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Seule la prescription du jour compte : on compare chaque case, car une erreur peut se trouver ailleurs que sur les lignes modifiées. Vérifier seulement les changements laisse passer les autres erreurs.",
+              "relance": "Quand un pilulier a été préparé par quelqu'un d'autre, que vérifiez-vous avant de le donner ?"
+            },
+            {
+              "id": "q2",
+              "texte": "La case de 8 h contient **2 comprimés** d'antihypertenseur. La prescription du jour indique **1 comprimé**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je donne les 2 comprimés, comme ma collègue les a préparés.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je demande au patient combien il en prend d'habitude, et je suis sa réponse.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je donne 1 comprimé, sans en parler à personne.",
+                  "points": 1,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je donne 1 comprimé, comme prescrit, et je signale l'erreur du pilulier.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                }
+              ],
+              "explication": "On donne la dose prescrite, jamais celle du pilulier ou de l'habitude. Signaler l'erreur permet de comprendre comment elle est arrivée ; la corriger sans rien dire ne l'empêche pas de revenir.",
+              "relance": "Si le pilulier et la prescription ne disent pas la même chose, lequel suivez-vous ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous entrez dans la chambre 14. **Comment vérifiez-vous l'identité** du patient ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande de dire son nom, son prénom et sa date de naissance, puis je compare avec le bracelet et le pilulier.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lis son bracelet d'identification et je le compare avec la prescription du jour.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je dis son nom et son prénom à voix haute, et je lui demande si c'est bien lui.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je me fie au numéro de la chambre, puisqu'il est écrit sur le pilulier et sur la porte.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Le patient dit lui-même son identité, puis on la compare avec le bracelet et le pilulier : c'est la vérification la plus sûre. Lire le bracelet seul est utile, mais ne permet pas de repérer un bracelet erroné.",
+              "relance": "Pourquoi demande-t-on au patient de dire lui-même son nom ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le patient vous dit : « D'habitude, je prends **2 comprimés** pour la tension. » **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Le médecin a changé la dose hier. Je le préviens que vous avez des questions. »",
+                  "points": 2,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "« C'est la prescription du médecin : je vous donne 1 comprimé. »",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Alors je vous donne le deuxième comprimé, puisque vous en avez l'habitude. »",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Ne vous inquiétez pas, cela ne change rien pour vous. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Le patient a le droit de savoir que son traitement a changé : vous le lui dites et vous transmettez sa question au médecin. « C'est prescrit » respecte la règle, mais ne répond pas à sa question.",
+              "relance": "Un patient conteste un traitement prescrit. Que faites-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le patient a pris son traitement de 8 h. Les erreurs du pilulier ont été corrigées avant. Que **faites-vous de ces erreurs** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien de plus : elles ont été corrigées avant que le patient les prenne.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'en parle à ma collègue à la prochaine relève, sans rien écrire.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je les signale selon la procédure du service, sans accuser personne.",
+                  "points": 2,
+                  "repere": "c6_recidive"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je dis à l'équipe qui s'est trompé, pour que cela serve de leçon.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Une erreur évitée se signale aussi, avec les faits et sans accuser : l'équipe comprend comment elle est arrivée et change ce qu'il faut. En parler sans trace écrite ne permet pas ce travail.",
+              "relance": "Que faites-vous quand vous découvrez une erreur avant qu'elle ait des conséquences ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Avant de donner** le pilulier de la chambre 14, je…",
+              "justes": [
+                {
+                  "texte": "compare chaque case avec la prescription du jour",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "vérifie les 5 B : bon patient, bon médicament, bonne dose, bonne voie, bon moment",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "contrôle tous les comprimés, puisque la prescription a changé après la préparation",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "vérifie les médicaments modifiés hier",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le donne tel quel : ma collègue l'a déjà vérifié",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "demande au patient s'il reconnaît ses comprimés",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour **vérifier l'identité** du patient, je…",
+              "justes": [
+                {
+                  "texte": "lui demande de dire son nom, son prénom et sa date de naissance",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "lui fais dire son identité, puis je compare avec son bracelet",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "compare ce qu'il me dit avec son bracelet et avec la prescription",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lis son bracelet d'identification",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis son nom et lui demande si c'est bien lui",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "me fie au numéro de la chambre",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour les **erreurs trouvées** dans le pilulier, je…",
+              "justes": [
+                {
+                  "texte": "donne seulement ce qui est prescrit, puis je signale les erreurs selon la procédure",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "retire le diurétique et les comprimés en trop, puis je signale les erreurs",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "corrige le pilulier avec la prescription et je fais une déclaration selon la procédure du service",
+                  "repere": "c6_recidive"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "corrige le pilulier, sans le signaler",
+                  "repere": "c6_cache"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "donne le pilulier tel qu'il a été préparé",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "demande au patient ce qu'il préfère prendre",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose une règle d'équipe : revérifier le pilulier quand la prescription change après sa préparation.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Trace dans le dossier chaque médicament au moment où il est donné.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne donne pas ce comprimé : le médecin l'a arrêté hier à 16 h. Je le retire du pilulier. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le patient de la chambre 14 refuse de prendre son diurétique. Que lui dites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "La case de 8 h contient un comprimé de diurétique. La prescription du jour indique « arrêté hier à 16 h ». Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un comprimé vous semble en trop dans un pilulier. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le médecin vous demande de préparer le pilulier de demain. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le pilulier contient un comprimé de diurétique dans la case de 8 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le patient porte un bracelet d'identification.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le médecin a arrêté le diurétique hier à 16 h.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le patient a du mal à avaler les comprimés.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le pilulier a été préparé avant la modification de la prescription.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "L'antibiotique est prévu à 8 h et à 20 h.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je continue à comparer les autres cases avec la prescription.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "b",
+                "texte": "Je garde le comprimé dans le pilulier pour demain matin.",
+                "points": 0,
+                "repere": "c6_laisse"
+              },
+              {
+                "id": "c",
+                "texte": "Je donne le reste du pilulier sans vérifier les autres cases.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "d",
+                "texte": "Je signale l'erreur selon la procédure du service.",
+                "points": 1,
+                "repere": "c6_recidive"
+              }
+            ]
+          },
+          "explication": "Le diurétique est dans le pilulier parce qu'il a été préparé avant l'arrêt de 16 h. Une erreur en cache parfois d'autres : on finit la comparaison avant de donner quoi que ce soit, puis on signale."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le pilulier de la chambre 14",
+          "consigne": "Comparez le pilulier avec la prescription du jour. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Étiquette du pilulier : chambre 14, patient né le 12 mars 1948",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Case 8 h : 1 comprimé d'antalgique",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Case 8 h : 2 comprimés d'antihypertenseur",
+              "erreur": true,
+              "explication": "La dose a été modifiée hier à 16 h : la prescription indique 1 comprimé."
+            },
+            {
+              "id": "e4",
+              "texte": "Case 8 h : 1 comprimé de diurétique",
+              "erreur": true,
+              "explication": "Le diurétique a été arrêté hier à 16 h : il ne doit plus être donné."
+            },
+            {
+              "id": "e5",
+              "texte": "Case 12 h : 1 comprimé d'antalgique",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Case 12 h : 1 comprimé de somnifère",
+              "erreur": true,
+              "explication": "Le somnifère est prescrit à 20 h, pas à 12 h : c'est une erreur de moment."
+            },
+            {
+              "id": "e7",
+              "texte": "Case 20 h : 1 comprimé d'antalgique",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "Case 20 h : 1 comprimé de somnifère",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes, avec un pilulier factice et une prescription fictive. Une personne joue le patient. La personne candidate vérifie le pilulier et l'identité du patient, puis dit ce qu'elle fait de chaque écart.",
+            "criteres": [
+              {
+                "texte": "Compare chaque case avec la prescription du jour",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère les écarts de médicament, de dose et d'heure",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Fait dire son identité au patient et la compare avec le bracelet",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Signale les erreurs selon la procédure, sans accuser personne",
+                "repere": "c6_recidive"
+              }
+            ],
+            "bonus": {
+              "texte": "Explique la règle des 5 B et à quoi sert chaque vérification",
+              "repere": "c8_pourquoi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que vérifiez-vous** avant de donner le pilulier de la chambre 14 ?",
+              "justes": [
+                {
+                  "texte": "Je compare chaque case avec la prescription du jour.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je vérifie les 5 B : patient, médicament, dose, voie et moment.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Je regarde ce qui a changé hier, puis je contrôle toutes les cases.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je vérifie les médicaments modifiés hier.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : ma collègue l'a déjà vérifié.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment vérifiez-vous** l'identité du patient ?",
+              "justes": [
+                {
+                  "texte": "Je lui demande de dire son nom, son prénom et sa date de naissance.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je lui fais dire son identité, puis je compare avec son bracelet.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je compare ce qu'il me dit avec le bracelet et la prescription.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde son bracelet.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je dis son nom et je lui demande si c'est bien lui.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous **des erreurs trouvées** dans le pilulier ?",
+              "justes": [
+                {
+                  "texte": "Je donne seulement ce qui est prescrit, puis je signale les erreurs.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je retire les comprimés en trop et je fais une déclaration selon la procédure.",
+                  "repere": "c6_recidive"
+                },
+                {
+                  "texte": "Je trace ce que j'ai donné et je signale les erreurs, sans accuser personne.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je corrige le pilulier, sans le signaler.",
+                  "repere": "c6_cache"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je donne le pilulier tel qu'il a été préparé.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de revérifier les piluliers quand une prescription change après leur préparation.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer dès le premier jour le circuit du médicament du service : prescription, préparation, contrôles, traçabilité, signalement.",
+        "Prévoir les premières tournées de médicaments en binôme avec un infirmier du service."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Organiser ses soins en début de poste",
+      "pourquoi": "En début de poste, l'ordre des soins protège les patients : un risque immédiat ou un soin à heure fixe ne peut pas attendre.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "7 h 30 : par où commencer ?",
+        "texte": "Mardi, 7 h 30. La relève avec l'équipe de nuit est terminée. Vous avez la charge de 12 patients. Les aides-soignants font les toilettes et servent les petits-déjeuners à 8 h. Voici les points notés pendant la relève (voir la liste).",
+        "document": {
+          "type": "liste",
+          "titre": "Points notés à la relève",
+          "items": [
+            "Chambre 5 : le patient vient de sonner. Il dit avoir du mal à respirer.",
+            "Chambre 8 : glycémie capillaire et insuline à faire avant le petit-déjeuner, selon la prescription.",
+            "Chambre 3 : à jeun pour une échographie à 9 h. Les aides-soignants ne sont pas encore prévenus.",
+            "Chambre 11 : antibiotique en perfusion prescrit à 8 h.",
+            "Chambre 6 : pansement à refaire ce matin.",
+            "Chambre 12 : pansement à refaire ce matin. Le patient est en isolement contact.",
+            "Chambre 2 : sortie à 11 h. Les documents de sortie sont à préparer."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par quoi **commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Aller voir le patient de la chambre 5, qui a du mal à respirer.",
+                  "points": 2,
+                  "repere": "c2_risque"
+                },
+                {
+                  "id": "b",
+                  "texte": "Faire d'abord la glycémie de la chambre 8, avant son petit-déjeuner.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Prévenir les aides-soignants que la chambre 3 doit rester à jeun.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Faire le tour de toutes les chambres, dans l'ordre des numéros.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                }
+              ],
+              "explication": "Une difficulté à respirer est un risque immédiat : on évalue d'abord ce patient. Prévenir les aides-soignants pour la chambre 3 est urgent aussi, mais cela prend quelques secondes et peut se faire juste après.",
+              "relance": "En début de poste, qu'est-ce qui passe avant tout le reste ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous avez vu le patient de la chambre 5 et prévenu le médecin. Il est **7 h 45**. Que faites-vous **avant 8 h** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Faire la glycémie capillaire et l'insuline de la chambre 8, avant que son petit-déjeuner arrive.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "b",
+                  "texte": "Refaire le pansement de la chambre 6, parce qu'il est rapide à faire.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Préparer les documents de sortie de la chambre 2, pour gagner du temps.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Prévenir les aides-soignants pour la chambre 3, puis faire la glycémie et l'insuline de la chambre 8.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "explication": "Avant 8 h, deux soins dépendent du petit-déjeuner : la chambre 3 à jeun et la glycémie de la chambre 8. Faire seulement la glycémie laisse servir un petit-déjeuner à un patient qui doit rester à jeun.",
+              "relance": "Comment repérez-vous les soins qui ont une heure limite ?"
+            },
+            {
+              "id": "q3",
+              "texte": "À 8 h 05, vous **préparez l'antibiotique** de la chambre 11. Un collègue vous dit que **la famille** de la chambre 2 est au téléphone. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je laisse ma préparation et je vais répondre, pour ne pas faire attendre la famille.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je demande au collègue de dire à la famille que je la rappelle dans 15 minutes.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je finis ma préparation, puis je vais répondre au téléphone.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au collègue de dire que je ne peux pas répondre ce matin.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Une interruption pendant la préparation d'un médicament favorise les erreurs : on termine, et on fait dire à la famille quand on la rappelle. Finir avant de répondre est juste, mais la famille attend sans savoir combien de temps.",
+              "relance": "Quand on vous interrompt pendant la préparation d'un médicament, que faites-vous ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Il vous reste les pansements des chambres 6 et 12. **Dans quel ordre** les faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La chambre 12 d'abord, parce que son pansement est le plus long.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "L'ordre n'a pas d'importance si je change de gants entre les deux.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "La chambre 6, puis la chambre 12 : on termine par le patient en isolement.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "La chambre 6, puis la chambre 12, parce qu'elle est au bout du couloir.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "On termine par le patient en isolement contact, pour ne pas transporter de germes vers les autres patients. Changer de gants ne suffit pas : l'hygiène des mains et l'ordre des soins comptent aussi.",
+              "relance": "Pourquoi termine-t-on par la chambre d'un patient en isolement ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À **10 h**, vos soins urgents sont faits. Que faites-vous pour la **sortie de 11 h** de la chambre 2 ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je vérifie que tous les documents de sortie sont prêts, et je demande au médecin ceux qui manquent.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'attends 11 h : le patient me dira s'il lui manque quelque chose.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je prépare les documents de sortie qui dépendent de moi, sans regarder les autres.",
+                  "points": 1,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande à l'aide-soignant de remettre les documents au patient, sans les relire moi-même.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Une sortie se prépare avant l'heure : vérifier les documents à 10 h laisse le temps de demander ceux qui manquent. Préparer seulement sa partie peut retarder la sortie si un document du médecin manque.",
+              "relance": "Comment préparez-vous une sortie prévue dans la matinée ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "En sortant de la relève, je **commence par**…",
+              "justes": [
+                {
+                  "texte": "aller voir le patient de la chambre 5, qui a du mal à respirer",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "évaluer la respiration du patient de la chambre 5",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "la chambre 5 : une difficulté à respirer passe avant le reste",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "prévenir les aides-soignants que la chambre 3 reste à jeun",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "faire le tour des chambres dans l'ordre des numéros",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "préparer les documents de sortie de la chambre 2",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Avant le petit-déjeuner de **8 h**, je…",
+              "justes": [
+                {
+                  "texte": "préviens les aides-soignants que la chambre 3 reste à jeun, puis je fais la glycémie de la chambre 8",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "fais la glycémie et l'insuline de la chambre 8, et je signale aux aides-soignants que la chambre 3 reste à jeun",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "m'assure que la chambre 3 ne reçoit pas de petit-déjeuner et que la glycémie de la chambre 8 est faite",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "fais la glycémie et l'insuline de la chambre 8",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "refais le pansement de la chambre 6, qui est rapide",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour les pansements des chambres **6 et 12**, je…",
+              "justes": [
+                {
+                  "texte": "fais la chambre 6 d'abord et je termine par la chambre 12, en isolement",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "garde la chambre 12 pour la fin, pour ne pas transporter de germes",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "commence par la chambre 6, puis j'applique les précautions d'isolement dans la chambre 12",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "fais la chambre 6, puis la chambre 12",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "commence par la chambre 12, dont le pansement est le plus long",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "fais les deux à la suite en changeant seulement de gants",
+                  "repere": "c8_erreur"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note sur une feuille de route les soins à heure fixe de la matinée.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Demande l'aide d'un collègue si deux urgences arrivent en même temps.",
+              "repere": "c4_aide"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je vais d'abord voir le patient de la chambre 5. Juste après, je préviens les aides-soignants que la chambre 3 reste à jeun. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "À 7 h 30, le patient de la chambre 5 a du mal à respirer, et la chambre 3 doit rester à jeun avant le petit-déjeuner de 8 h. Par quoi commencez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Plusieurs patients ont besoin de vous en début de poste. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Les aides-soignants vous demandent quels patients doivent rester à jeun. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le patient de la chambre 5 demande son petit-déjeuner. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le patient de la chambre 2 sort à 11 h.",
+                "juste": false
+              },
+              {
+                "id": "i2",
+                "texte": "Le patient de la chambre 5 dit avoir du mal à respirer.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Le patient de la chambre 5 est en isolement.",
+                "juste": false
+              },
+              {
+                "id": "i4",
+                "texte": "Le petit-déjeuner est servi à 8 h.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "La chambre 6 a un pansement à refaire.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "La chambre 3 doit rester à jeun pour son échographie.",
+                "juste": true
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je prépare les documents de sortie de la chambre 2.",
+                "points": 0,
+                "repere": "c2_oubli"
+              },
+              {
+                "id": "b",
+                "texte": "Je pose l'antibiotique de la chambre 11, prescrit à 8 h.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je fais la glycémie et l'insuline de la chambre 8 avant 8 h.",
+                "points": 2,
+                "repere": "c2_contraintes"
+              },
+              {
+                "id": "d",
+                "texte": "Je refais le pansement de la chambre 12.",
+                "points": 0,
+                "repere": "c2_oubli"
+              }
+            ]
+          },
+          "explication": "La réponse suit deux critères : le risque d'abord (la respiration), puis l'heure limite (le petit-déjeuner de 8 h). La glycémie de la chambre 8 dépend aussi du petit-déjeuner : elle vient ensuite, avant l'antibiotique."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Vos soins de 7 h 30 à 10 h",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites. **Plusieurs ordres** sont possibles.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Refaire le pansement de la chambre 12 (isolement contact)"
+            },
+            {
+              "id": "e2",
+              "texte": "Poser l'antibiotique de la chambre 11, prescrit à 8 h"
+            },
+            {
+              "id": "e3",
+              "texte": "Aller voir le patient de la chambre 5, qui a du mal à respirer"
+            },
+            {
+              "id": "e4",
+              "texte": "Préparer les documents de sortie de la chambre 2"
+            },
+            {
+              "id": "e5",
+              "texte": "Prévenir les aides-soignants que la chambre 3 reste à jeun"
+            },
+            {
+              "id": "e6",
+              "texte": "Refaire le pansement de la chambre 6"
+            },
+            {
+              "id": "e7",
+              "texte": "Faire la glycémie et l'insuline de la chambre 8"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e3",
+              "apres": "e7",
+              "explication": "Une difficulté à respirer est un risque immédiat : elle passe avant la glycémie."
+            },
+            {
+              "avant": "e3",
+              "apres": "e2",
+              "explication": "Le patient qui respire mal passe avant l'antibiotique de 8 h."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "La chambre 3 doit être signalée avant le petit-déjeuner de 8 h ; le pansement n'a pas d'heure fixe."
+            },
+            {
+              "avant": "e7",
+              "apres": "e6",
+              "explication": "La glycémie et l'insuline se font avant le petit-déjeuner de 8 h ; le pansement peut attendre."
+            },
+            {
+              "avant": "e5",
+              "apres": "e4",
+              "explication": "L'information « à jeun » doit arriver avant 8 h ; la sortie n'est qu'à 11 h."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "L'antibiotique est prescrit à 8 h ; les documents de sortie sont pour 11 h."
+            },
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "Le soin à heure fixe passe avant le pansement, qui n'a pas d'heure."
+            },
+            {
+              "avant": "e6",
+              "apres": "e1",
+              "explication": "On termine par la chambre en isolement, pour ne pas transporter de germes vers les autres patients."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes : la personne reçoit la liste de la relève sur papier. Elle dit dans quel ordre elle fait ses soins et pourquoi. Puis on ajoute un imprévu : un appel de famille pendant la préparation d'un médicament.",
+            "criteres": [
+              {
+                "texte": "Commence par le patient qui présente un risque",
+                "repere": "c2_risque"
+              },
+              {
+                "texte": "Respecte les heures fixes : à jeun, glycémie avant le repas, antibiotique",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Termine par le patient en isolement",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Prévient la personne qui attend quand un soin ou un appel doit attendre",
+                "repere": "c2_previent"
+              }
+            ],
+            "bonus": {
+              "texte": "Note sa feuille de route avec les heures fixes avant de commencer",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Par quoi **commencez-vous** à 7 h 30 ?",
+              "justes": [
+                {
+                  "texte": "Par le patient de la chambre 5, qui a du mal à respirer.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Je vais évaluer la respiration du patient de la chambre 5.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "La chambre 5 d'abord : c'est un risque immédiat.",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens les aides-soignants pour la chambre 3.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je fais le tour des chambres dans l'ordre des numéros.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment choisissez-vous** l'ordre des autres soins ?",
+              "justes": [
+                {
+                  "texte": "D'abord les soins à heure fixe, puis ceux qui peuvent attendre.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Ce qui dépend du petit-déjeuner de 8 h, puis l'antibiotique, puis le reste.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Selon l'heure limite de chaque soin, en finissant par la chambre en isolement.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je fais au plus vite.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je commence par ce qui est le plus rapide.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Dans quel ordre** faites-vous les pansements des chambres 6 et 12 ?",
+              "justes": [
+                {
+                  "texte": "La chambre 6, puis la chambre 12, qui est en isolement.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je termine par la chambre 12, pour ne pas transporter de germes.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "La 6 d'abord ; la 12 en dernier, avec les précautions d'isolement.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "La 6, puis la 12.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Peu importe, je change de gants entre les deux.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient les patients ou les familles quand un soin ou une réponse va attendre.",
+              "repere": "c2_previent"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire les premières relèves en binôme et donner une feuille de route avec les soins à heure fixe du service.",
+        "Écrire les règles de priorité du service : risque pour le patient, puis heures fixes, puis le reste, isolement en dernier."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Repérer une dégradation, alerter et transmettre",
+      "pourquoi": "Une dégradation repérée tôt et bien transmise au médecin permet d'agir à temps ; un message flou fait perdre de précieuses minutes.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Chambre 7 : l'état du patient change",
+        "texte": "Jeudi, 14 h. Le patient de la chambre 7 est hospitalisé depuis deux jours pour une pneumonie. Vous préparez les traitements de 16 h. Un aide-soignant vient vous voir avec ses relevés : « Il n'est pas comme ce matin. » Le tableau compare vos relevés de 8 h et les siens de 14 h. Le médecin du service est joignable par téléphone.",
+        "document": {
+          "type": "tableau",
+          "titre": "Relevés du patient de la chambre 7",
+          "colonnes": [
+            "Observation",
+            "À 8 h, par vous",
+            "À 14 h, par l'aide-soignant"
+          ],
+          "lignes": [
+            [
+              "Respiration",
+              "Calme",
+              "Rapide, il parle par phrases courtes"
+            ],
+            [
+              "Saturation en oxygène",
+              "Dans l'objectif fixé par le médecin",
+              "En dessous de l'objectif fixé par le médecin"
+            ],
+            [
+              "Conscience",
+              "Bien réveillé, répond normalement",
+              "Somnolent, répond quand on lui parle"
+            ],
+            [
+              "Peau",
+              "Normale",
+              "Pâle et en sueur"
+            ],
+            [
+              "Température",
+              "Pas de fièvre",
+              "Fièvre"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je finis la préparation des traitements de 16 h, puis je vais le voir.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'appelle le médecin avec les relevés de l'aide-soignant, sans voir le patient.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je vais voir le patient tout de suite pour l'évaluer moi-même.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je dis à l'aide-soignant que c'est sûrement la fièvre et que cela va passer.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Les relevés de l'aide-soignant sont une alerte sérieuse : vous allez voir le patient tout de suite pour l'évaluer vous-même. Appeler le médecin sans l'avoir vu est rapide, mais il vous demandera votre propre évaluation.",
+              "relance": "Quand un aide-soignant vous signale un changement chez un patient, que faites-vous ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Au lit du patient, vous **constatez la même chose** que l'aide-soignant. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appelle le médecin et je lui dis que le patient ne va pas bien.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'appelle le médecin maintenant, avec les relevés de 8 h et de 14 h.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je reprends ses relevés dans une heure, pour voir si cela s'aggrave.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui donne un médicament contre la fièvre, puis je le surveille.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                }
+              ],
+              "explication": "La respiration, la saturation et la conscience se sont aggravées depuis 8 h : on appelle le médecin sans attendre. Dire seulement « il ne va pas bien » ne lui permet pas de juger l'urgence.",
+              "relance": "Quels signes vous font appeler le médecin sans attendre ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Au téléphone, **comment présentez-vous** la situation au médecin ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je dis qui je suis et pour quel patient, ce qui a changé depuis 8 h, puis ce que je demande.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lis au médecin toutes les observations notées dans le dossier depuis son entrée à l'hôpital.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je donne les relevés de 14 h, puis j'attends ses questions.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui demande de venir quand il pourra, sans donner plus de détails.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Un message structuré (méthode SAED : situation, antécédents, évaluation, demande) aide le médecin à décider vite. Les relevés seuls ne disent ni ce qui a changé ni ce que vous attendez.",
+              "relance": "Comment organisez-vous un appel au médecin pour qu'il comprenne vite ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le médecin dit qu'il arrive dans **10 minutes**. **En l'attendant**, que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je retourne à mes autres soins, et je reviens dans la chambre quand le médecin arrive.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je reste près de lui pour le rassurer, en attendant le médecin.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui donne à boire, pour qu'il se sente mieux.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je reste près de lui, je l'installe en position demi-assise et je surveille sa respiration.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "L'état du patient peut s'aggraver vite : vous restez avec lui, vous l'installez pour l'aider à respirer et vous surveillez. Le rassurer ne suffit pas ; somnolent, il risque d'avaler de travers s'il boit (fausse route).",
+              "relance": "Que surveillez-vous chez un patient qui respire mal, en attendant le médecin ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le médecin a examiné le patient et fait une prescription. Que **notez-vous dans le dossier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Les relevés de 14 h et l'heure de mon appel au médecin.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "b",
+                  "texte": "Une transmission ciblée : les données, les actions faites et le résultat.",
+                  "points": 2,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rien : la prescription du médecin est déjà dans le logiciel.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien pour l'instant : je le dirai à l'équipe de nuit à la relève.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "La transmission ciblée garde la trace des faits : ce qui a été observé, ce qui a été fait, le résultat. Les relevés et l'heure de l'appel sont utiles, mais l'équipe suivante ne sait pas ce qui a été fait ni l'effet obtenu.",
+              "relance": "Comment écrivez-vous une transmission sur un changement d'état d'un patient ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand l'aide-soignant me montre **ses relevés**, je…",
+              "justes": [
+                {
+                  "texte": "vais tout de suite voir le patient pour l'évaluer moi-même",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "compare ses relevés avec ceux de 8 h, puis je vais au lit du patient",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "arrête ma préparation et je vais évaluer le patient",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "appelle le médecin avec ses relevés, sans voir le patient",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "finis d'abord mes traitements de 16 h",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "lui dis que c'est sûrement la fièvre",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Au téléphone, je dis **au médecin**…",
+              "justes": [
+                {
+                  "texte": "qui je suis, quel patient, ce qui a changé depuis 8 h et ce que je demande",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "la situation, les antécédents, mon évaluation et ma demande (méthode SAED)",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "que plusieurs signes se sont aggravés depuis 8 h, et je lui demande de venir",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "les relevés de 14 h",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que le patient ne va pas bien, sans détails",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "À la relève de 19 h, je **transmets** à **l'infirmier de nuit**…",
+              "justes": [
+                {
+                  "texte": "ce qui a changé à 14 h, ce qui a été fait et ce qu'il faut surveiller cette nuit",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "la dégradation de 14 h, la prescription du médecin et l'état du patient à 19 h",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "les signes à surveiller et quand rappeler le médecin",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le patient a eu un souci cet après-midi",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : tout est dans le dossier",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Dit à l'aide-soignant ce que le médecin a décidé et ce qu'il doit signaler.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Propose de revoir avec les aides-soignants les signes qui doivent faire appeler l'infirmier.",
+              "repere": "c4_regle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je suis l'infirmier du service de médecine, pour le patient de la chambre 7, hospitalisé pour une pneumonie. Par rapport à 8 h, il respire plus vite, il est somnolent et sa saturation est sous l'objectif. Pouvez-vous venir le voir ? »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "L'aide-soignant vous demande comment va le patient de la chambre 7. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous appelez le médecin pour un patient. Que lui dites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "À 14 h, le patient de la chambre 7 respire vite, il est somnolent et sa saturation a baissé depuis 8 h. Vous appelez le médecin. Que lui dites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "La famille du patient de la chambre 7 appelle pour avoir des nouvelles. Que lui dites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La respiration est plus rapide qu'à 8 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le patient demande à voir sa famille.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Vous préparez les traitements de 16 h.",
+                "juste": false
+              },
+              {
+                "id": "i4",
+                "texte": "Le patient est somnolent.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "La visite du médecin est prévue demain matin.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "La saturation est en dessous de l'objectif fixé par le médecin.",
+                "juste": true
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je retourne à mes soins en attendant le médecin.",
+                "points": 0,
+                "repere": "c1_abandon"
+              },
+              {
+                "id": "b",
+                "texte": "Je reste près du patient et je surveille sa respiration.",
+                "points": 2,
+                "repere": "c8_securite"
+              },
+              {
+                "id": "c",
+                "texte": "Je note l'appel dans le dossier, puis je retourne voir le patient.",
+                "points": 1,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "d",
+                "texte": "Je lui donne à boire pour le soulager.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "La réponse suit un ordre clair : qui appelle, pour quel patient, ce qui a changé, puis la demande. Le médecin peut ainsi juger l'urgence ; ensuite, on reste près du patient jusqu'à son arrivée."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "La transmission ciblée de la chambre 7",
+          "consigne": "Vous écrivez une transmission ciblée sur la respiration du patient. **Classez chaque élément** dans sa partie, ou dans « **Ne s'écrit pas** ».",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Données : ce qui est observé"
+            },
+            {
+              "id": "k2",
+              "nom": "Actions : ce qui est fait"
+            },
+            {
+              "id": "k3",
+              "nom": "Résultats : l'effet obtenu"
+            },
+            {
+              "id": "k4",
+              "nom": "Ne s'écrit pas"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "14 h : l'aide-soignant signale une respiration rapide, des sueurs et une somnolence.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est une observation : elle fait partie des données qui ont déclenché la surveillance."
+            },
+            {
+              "id": "e2",
+              "texte": "14 h 05 : respiration rapide, saturation sous l'objectif, patient somnolent.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Ce sont vos propres observations : ce sont des données."
+            },
+            {
+              "id": "e3",
+              "texte": "14 h 10 : médecin appelé et informé des relevés.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Appeler le médecin est une action."
+            },
+            {
+              "id": "e4",
+              "texte": "14 h 10 : patient installé en position demi-assise.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "C'est un soin que vous avez fait : une action."
+            },
+            {
+              "id": "e5",
+              "texte": "14 h 25 : oxygène posé selon la prescription du médecin.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Un soin fait sur prescription est une action."
+            },
+            {
+              "id": "e6",
+              "texte": "15 h : respire plus calmement, saturation dans l'objectif.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est l'effet des actions : un résultat."
+            },
+            {
+              "id": "e7",
+              "texte": "15 h : bien réveillé, répond normalement.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "L'état du patient après les actions est un résultat."
+            },
+            {
+              "id": "e8",
+              "texte": "Patient difficile, il sonne sans arrêt.",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "C'est un jugement sur la personne, pas une observation utile au soin."
+            },
+            {
+              "id": "e9",
+              "texte": "Le médecin avait l'air pressé au téléphone.",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "Une impression sur un collègue n'a pas sa place dans le dossier du patient."
+            }
+          ],
+          "repere_reussite": "c3_trace",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Mise en situation de 20 minutes : la personne reçoit des relevés fictifs, appelle un « médecin » joué par un collègue, puis écrit la transmission ciblée.",
+            "criteres": [
+              {
+                "texte": "Évalue elle-même le patient avant d'appeler",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Donne au médecin un message structuré : situation, antécédents, évaluation, demande",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Écrit une transmission ciblée : données, actions, résultats",
+                "repere": "c3_trace"
+              },
+              {
+                "texte": "N'écrit que des faits, sans jugement sur la personne",
+                "repere": "c3_essentiel"
+              }
+            ],
+            "bonus": {
+              "texte": "Informe l'aide-soignant de la suite et de ce qu'il doit signaler",
+              "repere": "c4_informe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** quand l'aide-soignant vous montre ses relevés ?",
+              "justes": [
+                {
+                  "texte": "Je vais voir le patient tout de suite pour l'évaluer moi-même.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je compare avec les relevés de 8 h et je vais au lit du patient.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "J'arrête ma préparation et je vérifie sa respiration, sa conscience et sa saturation.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'appelle le médecin avec les relevés de l'aide-soignant.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je finis d'abord mes autres soins.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que dites-vous** au médecin au téléphone ?",
+              "justes": [
+                {
+                  "texte": "Qui je suis, le patient, ce qui a changé depuis 8 h et ma demande.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je suis la méthode SAED : situation, antécédents, évaluation, demande.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Les signes qui se sont aggravés, puis je lui demande de venir.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Les relevés de 14 h.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que le patient ne va pas bien.",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que **notez-vous** dans le dossier **après le passage** du médecin ?",
+              "justes": [
+                {
+                  "texte": "Une transmission ciblée : données, actions, résultats.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Ce que j'ai observé, ce qui a été fait et l'effet obtenu.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Les relevés, l'appel au médecin, le soin fait et l'état du patient ensuite.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le médecin est passé.",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : la prescription est dans le logiciel.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Dit à l'aide-soignant ce que le médecin a décidé et le remercie de son alerte.",
+              "repere": "c4_informe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner le support d'appel du service, par exemple la fiche SAED, et faire un appel simulé la première semaine.",
+        "Relire ensemble les premières transmissions ciblées, à partir de cas réels du service."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Informer le patient et sa famille dans le respect du secret",
+      "pourquoi": "Le patient et sa famille font confiance à l'équipe quand l'information est juste, donnée par la bonne personne et dans le respect du secret.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une fille inquiète, des résultats pas encore annoncés",
+        "texte": "Vendredi, 16 h. Dans le couloir, la fille du patient de la chambre 9 vous arrête. Elle est inquiète et parle fort. Elle veut connaître les résultats du scanner fait ce matin à son père. Les résultats sont dans le dossier, mais le médecin ne les a pas encore annoncés au patient. Le médecin passe dans les chambres à 17 h. À son entrée, le patient a accepté que sa fille soit informée. Il a refusé que l'on donne des nouvelles par téléphone.",
+        "document": null
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Que faites-vous **d'abord** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande de revenir à 17 h, quand le médecin sera là.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je l'écoute dans le couloir, pour ne pas perdre de temps.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande de parler moins fort, car elle dérange les patients.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je l'invite dans une pièce au calme, à l'écart, pour écouter sa demande.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                }
+              ],
+              "explication": "À l'écart, elle peut parler librement et personne d'autre n'entend ce qui concerne son père : c'est le respect du secret. L'écouter dans le couloir répond à sa demande, mais d'autres personnes peuvent entendre.",
+              "relance": "Où parlez-vous avec une famille d'informations sur un patient ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Elle vous demande ce que montre **le scanner** de son père. **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« C'est le médecin qui donne les résultats. Je lui demande de vous voir avec votre père. »",
+                  "points": 2,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je n'ai pas le droit de vous donner les résultats, je suis désolé. »",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je ne peux rien vous dire, mais ce n'est rien d'inquiétant. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Votre père a donné son accord à l'entrée : je vous lis le compte rendu du scanner. »",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                }
+              ],
+              "explication": "Le médecin annonce les résultats au patient ; l'accord donné à l'entrée ne permet pas à l'infirmier de les lire à la famille. « Je n'ai pas le droit » respecte la règle, mais laisse la fille sans solution.",
+              "relance": "Une famille vous demande un résultat d'examen. Que faites-vous ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Elle se met à pleurer : « Je suis sûre que c'est grave. » **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis : « Mais non, ce n'est sûrement rien. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je reste avec elle, je l'écoute et je lui redis que le médecin passe à 17 h.",
+                  "points": 2,
+                  "repere": "c7_apaise"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui apporte un verre d'eau, puis je retourne à mes soins.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui conseille de ne rien dire à son père, pour ne pas l'inquiéter.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                }
+              ],
+              "explication": "Elle a besoin d'être écoutée et de savoir quand elle aura une réponse : l'heure de passage du médecin est un fait qui aide. Dire que ce n'est rien est une information que vous n'avez pas, et qui peut être fausse.",
+              "relance": "Comment réagissez-vous face à une famille très inquiète, quand vous ne pouvez pas répondre à sa question ?"
+            },
+            {
+              "id": "q4",
+              "texte": "À 16 h 30, un homme appelle le service. Il dit être le frère du patient et **demande des nouvelles**. **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Il va un peu mieux depuis ce matin, mais je ne peux pas vous en dire plus. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Rappelez après 17 h : le médecin aura vu votre frère et vous donnera les résultats. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je ne donne pas de nouvelles par téléphone. Je dirai au patient que vous avez appelé. »",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je ne donne pas de nouvelles par téléphone. »",
+                  "points": 1,
+                  "repere": "c7_regle"
+                }
+              ],
+              "explication": "Le patient a refusé les nouvelles par téléphone : on ne donne rien, même une information qui semble rassurante. Dire au patient que son frère a appelé lui laisse le choix de le rappeler.",
+              "relance": "Que répondez-vous à un appel qui demande des nouvelles d'un patient ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 17 h 30, le médecin a reçu le patient et sa fille. Que **faites-vous ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien de plus : le médecin s'est occupé de l'annonce des résultats.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je passe voir le patient et sa fille pour savoir s'ils ont encore des questions.",
+                  "points": 1,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande au médecin ce qu'il a annoncé, puis je passe voir le patient et sa fille.",
+                  "points": 2,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande à la fille de me répéter ce que le médecin a dit.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Pour répondre sans contredire le médecin, l'infirmier doit savoir ce qui a été annoncé ; il peut ensuite répondre aux questions sur les soins. Passer les voir sans le savoir risque de créer des contradictions.",
+              "relance": "Après une annonce faite par le médecin, quel est votre rôle auprès du patient ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand **la fille** du patient m'arrête dans le couloir, je…",
+              "justes": [
+                {
+                  "texte": "l'invite dans une pièce au calme pour l'écouter",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "lui propose de parler à l'écart, pour que personne d'autre n'entende",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "prends le temps d'écouter ce qu'elle veut savoir, dans un endroit calme",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "l'écoute dans le couloir",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui demande de revenir quand le médecin sera là",
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "texte": "lui dis qu'elle parle trop fort",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour les **résultats du scanner**, je lui dis que…",
+              "justes": [
+                {
+                  "texte": "c'est le médecin qui les donne, et que je lui demande de la voir avec son père",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "le médecin passe à 17 h et que je le préviens de sa demande",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "je ne peux pas les donner moi-même, mais que j'organise une rencontre avec le médecin",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "je n'ai pas le droit de lui répondre",
+                  "repere": "c7_regle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ce n'est rien de grave",
+                  "repere": "c7_promesse"
+                },
+                {
+                  "texte": "je peux lui lire le compte rendu, puisque son père est d'accord",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Après** la rencontre avec le médecin, je…",
+              "justes": [
+                {
+                  "texte": "demande au médecin ce qui a été annoncé, puis je vais voir le patient et sa fille",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "reste disponible pour leurs questions sur les soins, en accord avec ce que le médecin a dit",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "note dans le dossier la demande de la fille et la rencontre avec le médecin",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "passe voir le patient",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne fais rien de plus : le médecin s'en est occupé",
+                  "repere": "c7_ignore"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient le médecin à l'avance que la fille souhaite le voir, pour qu'il prévoie un moment au calme.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Vérifie dans le dossier qui est la personne de confiance et ce que le patient accepte que l'on dise.",
+              "repere": "c6_controle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« C'est le médecin qui donne les résultats. Il passe à 17 h : je lui demande de vous recevoir avec votre père. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "La fille du patient de la chambre 9 demande les horaires de visite. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Une famille vous demande des nouvelles d'un patient. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le médecin vous demande d'annoncer vous-même les résultats à la famille. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "La fille du patient de la chambre 9 demande les résultats du scanner, que le médecin n'a pas encore annoncés. Que lui répondez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La fille parle fort dans le couloir.",
+                "juste": false
+              },
+              {
+                "id": "i2",
+                "texte": "Les résultats n'ont pas encore été annoncés au patient.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Le patient a refusé les nouvelles par téléphone.",
+                "juste": false
+              },
+              {
+                "id": "i4",
+                "texte": "C'est le médecin qui annonce les résultats.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "Le scanner est prévu pour demain.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le médecin passe dans les chambres à 17 h.",
+                "juste": true
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'attends que le médecin arrive pour lui en parler.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "b",
+                "texte": "Je lui donne les résultats si le médecin est en retard.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "c",
+                "texte": "Je lui dis de demander elle-même un rendez-vous au secrétariat.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              },
+              {
+                "id": "d",
+                "texte": "Je préviens le médecin de sa demande avant 17 h.",
+                "points": 2,
+                "repere": "c7_suivi"
+              }
+            ]
+          },
+          "explication": "La réponse respecte le rôle de chacun : le médecin annonce les résultats. Elle donne aussi une suite précise à la fille : une heure et une rencontre avec le médecin."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Qui répond à ces questions ?",
+          "consigne": "Voici des questions posées au service sur le patient de la chambre 9. **Pour chacune**, choisissez **qui y répond**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Vous, l'infirmier"
+            },
+            {
+              "id": "k2",
+              "nom": "Le médecin"
+            },
+            {
+              "id": "k3",
+              "nom": "Personne : l'information n'est pas donnée"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "La fille : « Qu'est-ce que montre le scanner ? »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Les résultats d'examen sont annoncés par le médecin, au patient."
+            },
+            {
+              "id": "e2",
+              "texte": "La fille : « Mon père a-t-il bien mangé ce midi ? »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le patient accepte que sa fille soit informée : vous pouvez parler des soins et du confort."
+            },
+            {
+              "id": "e3",
+              "texte": "La fille : « Est-ce qu'il va devoir être opéré ? »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Les décisions de traitement sont expliquées par le médecin."
+            },
+            {
+              "id": "e4",
+              "texte": "La fille : « Pourquoi le patient de la chambre d'à côté tousse autant ? »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le secret protège aussi les autres patients."
+            },
+            {
+              "id": "e5",
+              "texte": "Au téléphone, un homme qui dit être le frère du patient : « Comment va-t-il ? »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le patient a refusé que l'on donne des nouvelles par téléphone."
+            },
+            {
+              "id": "e6",
+              "texte": "La fille : « Quand pourra-t-il rentrer à la maison ? »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "La date de sortie est décidée par le médecin."
+            },
+            {
+              "id": "e7",
+              "texte": "La fille : « Comment l'aider à se lever sans risque de chute ? »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est un conseil de soin : il fait partie de votre rôle."
+            },
+            {
+              "id": "e8",
+              "texte": "La fille : « À quoi sert sa perfusion ? »",
+              "accepte": [
+                "k1",
+                "k2"
+              ],
+              "explication": "Vous pouvez expliquer le soin que vous faites ; si la réponse touche aux résultats ou à la maladie, c'est le médecin."
+            }
+          ],
+          "repere_reussite": "c8_role",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue la fille inquiète qui demande les résultats, puis un appel téléphonique arrive. La personne candidate répond comme dans le service.",
+            "criteres": [
+              {
+                "texte": "Propose un endroit calme et écoute la demande",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "Ne donne pas les résultats et explique que le médecin les annonce",
+                "repere": "c8_role"
+              },
+              {
+                "texte": "Organise une rencontre avec le médecin et en donne l'heure",
+                "repere": "c7_suite"
+              },
+              {
+                "texte": "Ne donne aucune nouvelle par téléphone, comme le patient l'a demandé",
+                "repere": "c7_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de transmettre au patient le message de la personne qui appelle",
+              "repere": "c7_alternative"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Où parlez-vous** avec la fille du patient ?",
+              "justes": [
+                {
+                  "texte": "Dans une pièce au calme, à l'écart du couloir.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Dans un endroit où personne d'autre n'entend.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Je l'invite dans un bureau, pour respecter le secret.",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Dans le couloir, en parlant doucement.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis de revenir plus tard.",
+                  "repere": "c7_renvoie"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que lui répondez-vous sur les **résultats du scanner** ?",
+              "justes": [
+                {
+                  "texte": "Que c'est le médecin qui les donne, et qu'il passe à 17 h.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Que je préviens le médecin pour qu'il la voie avec son père.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Que je ne peux pas les donner, mais que j'organise une rencontre avec le médecin.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je n'ai pas le droit de répondre.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que ce n'est rien de grave.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que répondez-vous** à l'homme qui appelle pour avoir **des nouvelles** ?",
+              "justes": [
+                {
+                  "texte": "Que je ne donne pas de nouvelles par téléphone, et que je dirai au patient qu'il a appelé.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je refuse poliment et je propose de transmettre son message au patient.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Je ne donne aucune nouvelle, et je préviens le patient de son appel.",
+                  "repere": "c7_suivi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je ne donne pas de nouvelles par téléphone.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Qu'il va mieux, sans donner de détails.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient le médecin à l'avance que la fille souhaite le voir, pour qu'il prévoie un moment.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Expliquer dès l'arrivée les règles du service : qui annonce quoi, nouvelles par téléphone, personne de confiance.",
+        "Faire assister la personne à une rencontre entre un médecin et une famille, puis en reparler ensemble."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C8",
+      "texte": "**Avant** de donner un médicament à un patient, **que vérifiez-vous** ?",
+      "suite": [
+        "Pourquoi chacune de ces vérifications est-elle utile ?"
+      ],
+      "attendus": [
+        "Cite les 5 B : patient, médicament, dose, voie, moment",
+        "Compare avec la prescription en cours",
+        "Fait dire son identité au patient et vérifie son bracelet"
+      ],
+      "relance": "Et si le patient ne peut pas dire son nom ?",
+      "alternative": "Si vous sortez de formation : décrivez, étape par étape, comment vous avez donné des médicaments en stage."
+    },
+    {
+      "id": "e2",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez eu **un doute** sur un traitement à donner. **Que s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous fait ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit le doute avec des faits précis",
+        "N'a pas donné le traitement avant d'avoir vérifié",
+        "A joint le médecin, sans modifier la prescription lui-même"
+      ],
+      "relance": "Et si le médecin n'avait pas été joignable ?",
+      "alternative": "Si vous n'avez pas vécu cette situation : une prescription vous paraît anormale. Que faites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C2",
+      "texte": "En début de poste, **comment choisissez-vous l'ordre** de vos soins ?",
+      "suite": [
+        "Pouvez-vous donner un exemple ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : le risque pour le patient, puis les heures fixes",
+        "Tient compte des contraintes : à jeun, repas, examens",
+        "Termine par les patients en isolement quand rien n'est urgent"
+      ],
+      "relance": "Et si un patient s'aggrave pendant votre tour ?",
+      "alternative": "Quand plusieurs choses urgentes arrivent en même temps, en stage ou ailleurs, comment choisissez-vous ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C2",
+      "texte": "Parlez d'une journée où vous **n'avez pas pu** faire un soin à l'heure prévue. **Que s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous fait ?"
+      ],
+      "attendus": [
+        "Explique comment les priorités ont été choisies",
+        "A prévenu les personnes concernées du retard",
+        "A demandé de l'aide ou réorganisé ses soins"
+      ],
+      "relance": "Qui avez-vous prévenu ?",
+      "alternative": "Parlez d'une journée chargée (stage, études, travail) où vous avez dû changer votre programme."
+    },
+    {
+      "id": "e5",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où l'état d'un patient s'est aggravé **pendant votre poste**. **Qu'aviez-vous remarqué** ?",
+      "suite": [
+        "Qu'avez-vous fait ?",
+        "Comment avez-vous prévenu le médecin ?"
+      ],
+      "attendus": [
+        "Décrit les signes observés et ce qui avait changé",
+        "A prévenu le médecin sans attendre, avec un message clair",
+        "A tracé et transmis la suite à l'équipe"
+      ],
+      "relance": "Qu'avez-vous noté dans le dossier ?",
+      "alternative": "Si vous n'avez pas vécu cette situation : un patient respire plus vite et devient somnolent. Que faites-vous ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C3",
+      "texte": "À la relève, **que transmettez-vous** **à l'équipe suivante** sur un patient dont l'état a changé ?",
+      "suite": [],
+      "attendus": [
+        "Donne l'essentiel d'abord : ce qui a changé",
+        "Dit ce qui a été fait et le résultat",
+        "Dit ce qu'il faut surveiller et quand appeler le médecin"
+      ],
+      "relance": "Comment vérifiez-vous que votre collègue a bien compris ?",
+      "alternative": "Quand vous passez une tâche en cours à quelqu'un d'autre, quelles informations lui donnez-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C7",
+      "texte": "**La famille** d'un patient vous demande un **résultat d'examen**. Que lui répondez-vous ?",
+      "suite": [],
+      "attendus": [
+        "Ne donne pas le résultat : c'est le rôle du médecin",
+        "Propose une rencontre avec le médecin et en donne l'heure",
+        "Écoute l'inquiétude de la famille dans un lieu calme"
+      ],
+      "relance": "Et si la famille insiste ?",
+      "alternative": "Imaginez qu'un proche vous demande une information confidentielle qui ne vous appartient pas. Que lui répondez-vous ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où un **patient ou un proche** était très inquiet. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous fait ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit des faits précis",
+        "Décrit une action concrète : écoute, information dans son rôle, relais au médecin",
+        "Dit comment la situation s'est terminée"
+      ],
+      "relance": "Qu'auriez-vous pu faire d'autre ?",
+      "alternative": "Parlez d'une personne inquiète que vous avez aidée (stage, association, vie quotidienne)."
+    }
+  ],
+  "_pv": "4c8622990f"
+}

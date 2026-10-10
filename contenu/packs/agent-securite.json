@@ -1,0 +1,2601 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "agent-securite",
+  "version": "2026.10",
+  "nom": "Agent de sécurité / Agente de sécurité",
+  "secteur": "proprete-securite",
+  "alias": [
+    "agent de sécurité",
+    "agente de sécurité",
+    "agent de surveillance",
+    "agent de prévention",
+    "vigile",
+    "agent SSIAP",
+    "agent de contrôle d'accès",
+    "gardiennage"
+  ],
+  "resume": "Surveille un site, fait des rondes, contrôle les accès, alerte les secours et rend compte, dans le cadre de la loi et des consignes du site.",
+  "contexte": "Un site d'entreprise de 200 salariés (bureaux et entrepôt), surveillé jour et nuit depuis un poste de sécurité à l'entrée.",
+  "cadre": "L'exercice demande une carte professionnelle délivrée par le CNAPS.",
+  "competences": [
+    {
+      "code": "C8",
+      "titre": "Suivre la procédure d'alarme incendie et rester dans son rôle",
+      "pourquoi": "Une alarme peut être un vrai feu ou une cause sans danger : seule la procédure du site protège les personnes, et chacun reste dans son rôle.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une alarme incendie dans le bâtiment A",
+        "texte": "Mardi, 14 h 20. Vous faites votre ronde dans le bâtiment A. Le détecteur de fumée d'une zone s'est déclenché. Le poste de sécurité vous appelle par radio : « Alarme zone 3, local d'archives, 1er étage. » Vous êtes à une minute à pied. Le chef de poste est au poste de sécurité. Vous avez une radio et la consigne du site.",
+        "document": {
+          "type": "liste",
+          "titre": "Consigne du site : alarme incendie",
+          "items": [
+            "Un agent va sur place vérifier la zone (levée de doute) avant toute décision d'évacuer.",
+            "Feu ou fumée constatés : appeler les pompiers (18 ou 112), puis faire évacuer le bâtiment selon le plan.",
+            "Aucun feu : dire au poste ce que vous avez constaté et la cause probable.",
+            "Remise en service du tableau d'alarme : seulement avec l'accord du chef de poste.",
+            "Armoires électriques et systèmes de sécurité : réservés aux personnes habilitées."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le poste vous annonce par radio l'alarme de la zone 3, au 1er étage. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue ma ronde : c'est sûrement encore une fausse alerte.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je monte à la zone 3 pour vérifier.",
+                  "points": 1,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je confirme au poste que j'y vais, puis je monte vérifier la zone 3.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au poste de faire évacuer le bâtiment A avant de vérifier.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                }
+              ],
+              "explication": "La consigne demande une vérification sur place avant toute décision. Dire au poste que vous y allez lui permet de suivre. Y aller sans le dire est acceptable, mais le poste ne sait pas où vous êtes.",
+              "relance": "Que dites-vous au poste avant de vous rendre sur une alarme ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous arrivez devant le local d'archives. Que faites-vous pour **la levée de doute** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je regarde tout le local : fumée, flammes, odeur de brûlé. Je dis au poste ce que je constate.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde depuis la porte, sans entrer, et je dis au poste que c'est une fausse alerte.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je regarde tout le local, puis je dis au poste que tout va bien, sans dire ce que j'ai vu.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au poste si l'alarme s'est arrêtée : si oui, je repars.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "La levée de doute consiste à regarder tout le local, puis à dire au poste ce que vous voyez. Une alarme qui s'arrête ne prouve pas l'absence de feu. Dire seulement « tout va bien », sans les constats, ne permet pas au poste de décider.",
+              "relance": "Que regardez-vous précisément pour savoir s'il y a un feu ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Dans le local, aucune fumée, aucune flamme, aucune odeur. Un ouvrier perce le mur à trois mètres du détecteur. **Que dites-vous au poste** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Pas de fumée, pas de flamme, pas d'odeur. J'attends votre consigne.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Fausse alerte : la poussière a déclenché le détecteur, vous pouvez remettre le tableau en service.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rien à signaler.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Pas de feu. Un ouvrier perce un mur : la poussière a pu déclencher le détecteur. J'attends votre décision.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                }
+              ],
+              "explication": "Le poste a besoin des faits et de la cause probable pour décider. « Rien à signaler » ou « fausse alerte » ne lui donnent pas ces éléments, et la remise en service n'est pas votre décision.",
+              "relance": "Que doit contenir votre message au poste après une levée de doute ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le responsable des archives arrive, pressé : « **Remettez le tableau en service**, j'attends une livraison à 15 h. » Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "D'accord, la cause est connue et sans danger : je remets le tableau en service.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "La remise en service se décide avec le chef de poste. Je le préviens tout de suite.",
+                  "points": 2,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne peux pas le faire, c'est la consigne du site.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis d'aller voir le chef de poste lui-même, au poste de sécurité.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                }
+              ],
+              "explication": "La remise en service n'est pas votre décision : la consigne la réserve au chef de poste. Vous le prévenez tout de suite. Dire seulement non est correct, mais le responsable reste sans réponse.",
+              "relance": "Que faites-vous quand on vous demande une chose que la consigne réserve à un autre ?"
+            },
+            {
+              "id": "q5",
+              "texte": "L'ouvrier vous demande de **couvrir le détecteur** avec un sac pour finir de percer. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je couvre le détecteur seulement pendant qu'il perce.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le laisse couvrir le détecteur lui-même : ce n'est pas mon matériel.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je refuse, j'explique pourquoi et je préviens le chef de poste, qui décidera.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je refuse : un détecteur couvert ne détecte plus rien.",
+                  "points": 1,
+                  "repere": "c8_pourquoi"
+                }
+              ],
+              "explication": "Un détecteur couvert ne détecte plus un incendie : seule une personne habilitée met une zone hors service, sur décision du responsable. Refuser seul est juste, mais le chef de poste doit savoir que ces travaux déclenchent des alarmes.",
+              "relance": "Pourquoi ne couvre-t-on pas un détecteur incendie de sa propre initiative ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**En arrivant** devant le local d'archives, je…",
+              "justes": [
+                {
+                  "texte": "regarde tout le local : fumée, flammes, odeur de brûlé",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "vérifie le local en entier avant de dire quoi que ce soit au poste",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "inspecte le local, puis je dis au poste ce que j'ai vu",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "regarde aussi ce qui a pu déclencher le détecteur",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde depuis la porte, sans entrer dans le local",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "dis au poste que c'est une fausse alerte, sans regarder",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "attends dans le couloir que l'alarme s'arrête",
+                  "repere": "c1_abandon"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Le responsable des archives me demande de **remettre le tableau en service**. Je lui réponds…",
+              "justes": [
+                {
+                  "texte": "que seul le chef de poste peut donner l'accord, et je le préviens tout de suite",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "que la consigne du site demande l'accord du chef de poste, et je l'appelle",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "que je comprends son retard, mais que la décision revient au chef de poste",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je ne peux pas le faire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que c'est bon, je le fais puisque c'est de la poussière",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "de s'arranger lui-même avec le tableau",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "L'ouvrier me demande de **couvrir le détecteur** pour finir son travail. Je…",
+              "justes": [
+                {
+                  "texte": "refuse, car un détecteur couvert ne détecte plus un incendie",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "ne le couvre pas et je préviens le chef de poste, qui décidera",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "lui explique que seule une personne habilitée peut mettre la zone hors service",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis que ce n'est pas possible",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "couvre le détecteur le temps qu'il perce",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "le laisse faire lui-même, ce n'est pas mon matériel",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de prévenir le responsable des travaux avant chaque perçage, pour éviter de nouvelles alarmes.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Demande de noter la zone, l'heure et la cause de l'alarme dans la main courante.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je refuse : un détecteur couvert ne détecte plus un incendie. Je préviens le chef de poste, qui décidera. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le responsable des archives veut remettre le tableau d'alarme en service avant 15 h. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un ouvrier perce un mur dans le local d'archives et vous demande de couvrir le détecteur de fumée. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un ouvrier vous demande un service dans le local d'archives. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le poste vous annonce l'alarme de la zone 3. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'ouvrier veut finir de percer sans que le détecteur se déclenche.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "L'alarme a sonné à 14 h 20, en zone 3.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Un détecteur couvert ne détecte plus un incendie.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le responsable des archives attend une livraison à 15 h.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Les systèmes de sécurité sont réservés aux personnes habilitées.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le détecteur est en panne depuis la veille.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je laisse l'ouvrier décider seul si le détecteur reste couvert.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "b",
+                "texte": "Je note la demande dans la main courante en fin de service.",
+                "points": 1,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "c",
+                "texte": "Je préviens le chef de poste par radio et j'attends sa décision.",
+                "points": 2,
+                "repere": "c4_escalade"
+              },
+              {
+                "id": "d",
+                "texte": "Je reste devant le détecteur pendant les travaux, sans prévenir personne.",
+                "points": 0,
+                "repere": "c4_seul"
+              }
+            ]
+          },
+          "explication": "Un détecteur couvert ne détecte plus un incendie, et les systèmes de sécurité sont réservés aux personnes habilitées. Vous refusez, vous expliquez pourquoi et vous prévenez le chef de poste."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Votre rôle pendant une alarme incendie",
+          "consigne": "Pour **chaque action**, choisissez : je la fais moi-même, je la fais seulement avec l'accord du chef de poste, ou je ne la fais pas.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je la fais moi-même"
+            },
+            {
+              "id": "k2",
+              "nom": "Seulement avec l'accord du chef de poste"
+            },
+            {
+              "id": "k3",
+              "nom": "Je ne la fais pas"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Aller vérifier sur place la zone qui a déclenché l'alarme",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est la levée de doute : la consigne la confie à un agent."
+            },
+            {
+              "id": "e2",
+              "texte": "Appeler les pompiers (18 ou 112) quand vous voyez de la fumée",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Fumée constatée : la consigne demande d'appeler les pompiers, sans attendre."
+            },
+            {
+              "id": "e3",
+              "texte": "Dire au poste ce que vous avez constaté, même si vous ne voyez rien",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le poste a besoin de l'information pour décider, y compris quand il n'y a pas de feu."
+            },
+            {
+              "id": "e4",
+              "texte": "Remettre le tableau d'alarme en service",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "La consigne réserve la remise en service à l'accord du chef de poste."
+            },
+            {
+              "id": "e5",
+              "texte": "Ouvrir une armoire électrique pour couper le courant de la zone",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Les armoires électriques sont réservées aux personnes habilitées."
+            },
+            {
+              "id": "e6",
+              "texte": "Couvrir un détecteur pendant des travaux",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Un détecteur couvert ne détecte plus un incendie : seule une personne habilitée met une zone hors service."
+            },
+            {
+              "id": "e7",
+              "texte": "Dire que l'alarme est fausse sans avoir regardé le local",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Sans vérification sur place, on ne peut pas le savoir : la consigne demande la levée de doute."
+            },
+            {
+              "id": "e8",
+              "texte": "Laisser les salariés rentrer dans le bâtiment après une évacuation",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "Ce n'est pas à vous de décider : le chef de poste décide, avec les pompiers s'ils sont intervenus."
+            },
+            {
+              "id": "e9",
+              "texte": "Entrer dans un local rempli de fumée pour chercher le feu",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Entrer dans la fumée vous met en danger : vous donnez l'alerte et vous attendez les pompiers."
+            }
+          ],
+          "repere_reussite": "c8_role",
+          "repere_echec": "c8_hors_role",
+          "reel": {
+            "consigne": "Jeu de rôle de 15 minutes : une fiche représente le tableau d'alarme et indique une zone. La personne candidate dit ce qu'elle fait, puis répond à un responsable pressé qui demande de remettre le tableau en service.",
+            "criteres": [
+              {
+                "texte": "Annonce au poste qu'elle va vérifier, puis décrit ce qu'elle constate",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Ne conclut pas à une fausse alerte avant d'avoir regardé tout le local",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Refuse de remettre le tableau en service sans l'accord du chef de poste",
+                "repere": "c8_role"
+              },
+              {
+                "texte": "Explique pourquoi on ne couvre pas un détecteur",
+                "repere": "c8_pourquoi"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de prévenir le responsable des travaux avant les prochains perçages",
+              "repere": "c4_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** quand le poste vous annonce l'alarme de la zone 3 ?",
+              "justes": [
+                {
+                  "texte": "Je confirme au poste que j'y vais et je vérifie sur place.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je me rends à la zone 3 et je dis au poste ce que je constate.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je vais voir sans rien supposer : fumée, flammes, odeur de brûlé.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je vais voir.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends : c'est sûrement une fausse alerte.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le responsable des archives vous demande de **remettre le tableau en service**. Que répondez-vous ?",
+              "justes": [
+                {
+                  "texte": "Que le chef de poste doit donner son accord, et je le préviens.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Que la consigne réserve la remise en service au chef de poste.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je comprends son retard, et je préviens le chef de poste tout de suite.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je ne peux pas le faire.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le fais, puisque c'est seulement de la poussière.",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Si vous **voyez de la fumée** en arrivant devant le local, que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je n'entre pas dans la fumée : je préviens le poste et j'appelle les pompiers (18 ou 112).",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "J'appelle les pompiers, puis je fais évacuer selon le plan.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Je dis au poste « fumée constatée » et l'évacuation est lancée selon le plan.",
+                  "repere": "c8_savoir"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens le chef de poste.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'entre dans le local pour trouver d'où vient la fumée.",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "J'attends d'être sûr qu'il y a un feu avant de prévenir.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique que la vérification sur place permet de distinguer un vrai feu d'une cause sans danger.",
+              "repere": "c8_pourquoi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre par écrit la consigne d'alarme incendie du site et la parcourir sur place : tableau d'alarme, zones, plan d'évacuation.",
+        "Préciser avec des exemples ce qu'un agent fait seul, ce qui demande l'accord du chef de poste, et ce qui est réservé aux personnes habilitées."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Écrire la main courante et transmettre à l'équipe suivante",
+      "pourquoi": "L'équipe suivante n'a que votre main courante et vos mots : des faits précis lui permettent d'agir sans vous rappeler.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Fin de nuit : la main courante et la relève",
+        "texte": "Jeudi, 5 h 40. Votre nuit se termine à 6 h : l'équipe du matin arrive. Pendant votre ronde de 4 h, vous avez relevé trois anomalies, notées sur votre carnet (voir ci-dessous). Vous devez écrire la main courante, puis faire la transmission orale à l'agent qui prend le poste. L'agent du matin n'était pas présent pendant la nuit.",
+        "document": {
+          "type": "tableau",
+          "titre": "Votre carnet de ronde de cette nuit",
+          "colonnes": [
+            "Heure",
+            "Lieu",
+            "Ce que vous avez constaté",
+            "Ce que vous avez fait"
+          ],
+          "lignes": [
+            [
+              "4 h 05",
+              "Bâtiment B, couloir du rez-de-chaussée",
+              "Porte coupe-feu maintenue ouverte par une cale en bois",
+              "Cale retirée, porte refermée. Chef de poste prévenu à 4 h 10."
+            ],
+            [
+              "4 h 20",
+              "Bâtiment B, 1er étage, près de l'escalier",
+              "Extincteur absent : le support est vide",
+              "Chef de poste prévenu à 4 h 25. Remplacement à prévoir."
+            ],
+            [
+              "4 h 50",
+              "Entrepôt, quai 2",
+              "Odeur de brûlé près du chargeur de chariots. Pas de fumée, pas de flamme",
+              "Chef de poste prévenu à 4 h 52. Technicien d'astreinte sur place à 5 h 20 : chargeur mis hors service."
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Quelle ligne écrivez-vous** dans la main courante pour la porte coupe-feu ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Porte coupe-feu encore bloquée par un employé négligent, comme toutes les nuits. Il faudra le signaler à sa direction.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "b",
+                  "texte": "4 h 05, bâtiment B, couloir : porte coupe-feu ouverte par une cale en bois. Cale retirée, porte refermée, chef de poste prévenu.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "4 h 05, bâtiment B, rez-de-chaussée : porte coupe-feu tenue ouverte par une cale. Cale retirée, porte refermée, chef de poste prévenu à 4 h 10.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "Pendant la ronde de 4 h, une porte était ouverte dans un couloir du bâtiment B : c'est réglé, rien d'autre à dire.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Une bonne ligne donne l'heure, le lieu précis, ce que vous avez vu, ce que vous avez fait et qui vous avez prévenu. La ligne incomplète ne donne ni l'étage ni l'heure de l'appel. Un avis sur les personnes n'a pas sa place.",
+              "relance": "Que doit contenir chaque ligne de la main courante ?"
+            },
+            {
+              "id": "q2",
+              "texte": "À 4 h 50, vous sentez une odeur de brûlé à l'entrepôt. **Comment transmettez-vous l'information** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je l'écris dans la main courante avec l'heure et le lieu, pour que l'équipe du matin la lise.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens tout de suite le chef de poste par radio, puis je l'écris dans la main courante.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je préviens le chef de poste par radio, en donnant le lieu et ce que je sens, sans l'écrire.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "J'attends ma prochaine ronde pour voir si l'odeur est encore là, avant de prévenir quelqu'un.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Une odeur de brûlé peut annoncer un feu : on la signale tout de suite, de vive voix. L'écrit sert ensuite de trace pour l'équipe suivante. Prévenir sans écrire laisse l'équipe suivante sans information.",
+              "relance": "Comment transmettez-vous une information urgente ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous **ne savez pas qui** a retiré l'extincteur. Que faites-vous pour la main courante ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'écris ce que j'ai vu : le support est vide. Je n'écris pas qui l'a retiré.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'écris qu'un employé de l'entrepôt l'a pris, même si je ne l'ai pas vu.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'écris « extincteur manquant au 1er étage », sans l'heure ni l'endroit précis.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'écris que c'est très dangereux et que quelqu'un va se blesser sans extincteur.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "La main courante ne contient que des faits constatés : le support est vide, à tel endroit, à telle heure. Une supposition peut accuser quelqu'un à tort. Sans le lieu, personne ne retrouve l'extincteur manquant.",
+              "relance": "Que faites-vous d'une information dont vous n'êtes pas sûr ?"
+            },
+            {
+              "id": "q4",
+              "texte": "À 6 h, l'agent du matin arrive. Que lui dites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Tout s'est bien passé cette nuit : la main courante est à jour, vous pouvez la lire quand vous voulez.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lis la main courante en entier, ligne par ligne, dans l'ordre des événements.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je pars sans rien dire : le chef de poste a déjà été prévenu de tout cette nuit.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Un extincteur manque au 1er étage du bâtiment B. Le chargeur du quai 2 est hors service. Le reste est réglé.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "explication": "On dit d'abord ce qui reste à faire ou à surveiller : l'extincteur manquant et le chargeur hors service. Le reste se lit dans la main courante. Tout lire dans l'ordre fait perdre du temps et l'important se noie.",
+              "relance": "Que dites-vous d'abord à l'équipe suivante ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le chef de poste vous dit : « Je m'en souviendrai, **inutile de tout écrire**. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je n'écris rien : il a l'air sûr de lui et il connaît le site mieux que moi.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'écris les trois événements : l'équipe du matin lira la main courante sans lui.",
+                  "points": 2,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande de noter lui-même ce qu'il veut garder, et je n'écris rien moi-même.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'écris seulement l'extincteur manquant, qui est le point le plus important de la nuit.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "La main courante sert à toute l'équipe, pas seulement au chef de poste. Elle doit contenir les trois événements, avec leurs faits. N'écrire que le plus important laisse deux événements sans trace.",
+              "relance": "À quoi sert la main courante ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Dans la main courante, pour **chaque événement**, j'écris…",
+              "justes": [
+                {
+                  "texte": "l'heure, le lieu précis, ce que j'ai vu et ce que j'ai fait",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "qui j'ai prévenu et à quelle heure",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "seulement les faits que j'ai constatés moi-même",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "une ligne par événement, que l'agent suivant peut comprendre sans me rappeler",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ce qui s'est passé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "mon avis sur les personnes concernées",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "ce que je suppose, même sans l'avoir vu",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "À 4 h 50, je sens une odeur de brûlé à l'entrepôt. Je…",
+              "justes": [
+                {
+                  "texte": "préviens tout de suite le chef de poste par radio, puis j'écris l'événement",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "lui dis le lieu, l'odeur, et que je ne vois ni fumée ni flamme",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "préviens sans attendre la fin de ma ronde",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "l'écris dans la main courante, sans prévenir",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "attends la fin de ma ronde pour en parler",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "n'en parle pas : ce n'est qu'une odeur",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "À 6 h, à l'agent qui prend le poste, **je dis d'abord**…",
+              "justes": [
+                {
+                  "texte": "ce qui reste à faire : remplacer l'extincteur manquant au 1er étage du bâtiment B",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "que le chargeur du quai 2 est hors service",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "les points non réglés, puis je renvoie à la main courante pour le reste",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que j'ai tout écrit dans la main courante",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que tout est réglé",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "rien : il lira la main courante tout seul",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande à l'agent du matin de répéter les deux points ouverts, pour vérifier qu'il a compris.",
+              "repere": "c3_verifie"
+            },
+            {
+              "texte": "Propose un modèle de ligne pour l'équipe : heure, lieu, fait, action, personne prévenue.",
+              "repere": "c4_regle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Deux points restent ouverts : un extincteur manque au 1er étage du bâtiment B, et le chargeur du quai 2 est hors service. Le reste est réglé : tout est dans la main courante. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Il est 6 h. Trois anomalies ont eu lieu cette nuit, dont deux restent ouvertes. Que dites-vous à l'agent qui prend le poste ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Vous finissez votre nuit. Que dites-vous à l'agent qui prend le poste ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "L'agent du matin vous demande où se trouve la clé du local d'archives. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le chef de poste vous demande ce qui s'est passé à 4 h 50. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Un extincteur manque au 1er étage du bâtiment B.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le chargeur du quai 2 est hors service.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "L'agent du matin n'était pas présent pendant la nuit.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Une cale en bois maintenait la porte coupe-feu ouverte.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le chargeur sera remplacé demain matin.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "L'odeur de brûlé venait du local électrique.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je lui demande de répéter les deux points ouverts, pour vérifier qu'il a compris.",
+                "points": 2,
+                "repere": "c3_verifie"
+              },
+              {
+                "id": "b",
+                "texte": "Je pars sans attendre : tout est écrit.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "c",
+                "texte": "Je note l'heure de la transmission dans la main courante.",
+                "points": 1,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "d",
+                "texte": "Je lui laisse mon carnet de ronde sans l'expliquer.",
+                "points": 0,
+                "repere": "c3_flou"
+              }
+            ]
+          },
+          "explication": "Les deux points encore ouverts sont l'extincteur manquant et le chargeur hors service. L'agent du matin n'a pas vécu la nuit : on lui dit d'abord ce qui reste à faire, puis on vérifie qu'il a compris."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Votre brouillon de main courante",
+          "consigne": "Comparez ce brouillon à votre carnet de ronde. Cliquez sur **chaque ligne** qui contient **une erreur** ou qui n'est **pas un fait**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "4 h 05 — Bâtiment B, rez-de-chaussée : porte coupe-feu maintenue ouverte par une cale en bois. Cale retirée, porte refermée.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "4 h 15 — Chef de poste prévenu de la porte coupe-feu.",
+              "erreur": true,
+              "explication": "Votre carnet indique que le chef de poste a été prévenu à 4 h 10, pas à 4 h 15."
+            },
+            {
+              "id": "e3",
+              "texte": "4 h 20 — Bâtiment B, 1er étage, près de l'escalier : extincteur absent, le support est vide.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "4 h 25 — Chef de poste prévenu. Un employé a sûrement pris l'extincteur.",
+              "erreur": true,
+              "explication": "« Sûrement » est une supposition : personne n'a vu qui a retiré l'extincteur. Une main courante ne contient que des faits constatés."
+            },
+            {
+              "id": "e5",
+              "texte": "4 h 25 — Remplacement de l'extincteur à prévoir.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "4 h 50 — Entrepôt, quai 1 : odeur de brûlé près du chargeur de chariots.",
+              "erreur": true,
+              "explication": "Votre carnet indique le quai 2, pas le quai 1."
+            },
+            {
+              "id": "e7",
+              "texte": "4 h 52 — Chef de poste prévenu. Pas de fumée, pas de flamme.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "5 h 20 — Technicien d'astreinte sur place : chargeur mis hors service.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e9",
+              "texte": "Le technicien d'astreinte a mis trop de temps à venir.",
+              "erreur": true,
+              "explication": "« Trop de temps » est un avis. Le fait à écrire est l'heure d'arrivée du technicien : 5 h 20."
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes : la personne candidate reçoit un carnet de ronde fictif avec trois anomalies, écrit la main courante, puis fait la transmission orale à une personne qui joue l'agent suivant.",
+            "criteres": [
+              {
+                "texte": "Écrit pour chaque événement l'heure, le lieu précis, le fait et l'action",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "N'écrit que des faits constatés, sans supposition ni avis",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Relit sa main courante en la comparant à son carnet",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Dit en premier à l'agent suivant ce qui reste à faire",
+                "repere": "c3_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Fait répéter les points ouverts à l'agent suivant",
+              "repere": "c3_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment écrivez-vous** un événement dans la main courante ?",
+              "justes": [
+                {
+                  "texte": "J'écris l'heure, le lieu précis, ce que j'ai vu et ce que j'ai fait.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "J'écris aussi qui j'ai prévenu et à quelle heure.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je n'écris que des faits que j'ai constatés, sans avis.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je relis mon carnet pour que l'heure et le lieu soient justes.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'écris ce qui s'est passé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'écris ce que je pense des personnes concernées.",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "J'écris ce que je suppose, pour aider l'équipe suivante.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "À 4 h 50, vous sentez une odeur de brûlé à l'entrepôt. **Comment prévenez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je préviens tout de suite le chef de poste par radio.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Je dis le lieu, l'odeur, et que je ne vois ni fumée ni flamme.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "J'écris l'événement ensuite, avec l'heure.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je l'écris dans la main courante.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends la fin de ma ronde pour en parler.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que dites-vous** à l'agent qui prend le poste à 6 h ?",
+              "justes": [
+                {
+                  "texte": "Les points non réglés : l'extincteur manquant et le chargeur hors service.",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "Ce qui reste à faire en premier, puis je renvoie à la main courante.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Je lui demande de répéter les points ouverts.",
+                  "repere": "c3_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que j'ai tout écrit dans la main courante.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que tout est réglé.",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "Rien : il lira la main courante tout seul.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de classer les lignes de la main courante : ce qui est urgent en premier.",
+              "repere": "c3_essentiel"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un modèle de ligne de main courante (heure, lieu, fait, action, personne prévenue) avec un exemple réel du site.",
+        "Faire les premières transmissions à deux : la personne dit, un collègue répète, puis on complète ensemble."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Accueillir un visiteur sans rendez-vous et l'apaiser",
+      "pourquoi": "Un visiteur refusé qui s'énerve se calme si l'agent reste calme, dit la règle simplement et propose une solution.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un visiteur sans rendez-vous élève la voix",
+        "texte": "Lundi, 8 h 45, à l'accueil du site. Un visiteur arrive sans rendez-vous et demande à voir le responsable des achats. Il dit qu'il a fait deux heures de route et qu'il veut entrer maintenant. Il élève la voix. Deux salariés qui arrivent s'arrêtent pour regarder. Le passage vers les bureaux se fait par un portillon. Vous êtes seul à l'accueil, avec la consigne du poste.",
+        "document": {
+          "type": "liste",
+          "titre": "Consigne du poste d'accueil : les visiteurs",
+          "items": [
+            "Un visiteur est annoncé à la personne qu'il vient voir avant d'entrer.",
+            "Sans rendez-vous : il attend à l'accueil pendant qu'on prévient la personne, qui décide de le recevoir ou non.",
+            "Un visiteur reçoit un badge visiteur après avoir donné son nom et sa société.",
+            "Les agents ne fouillent pas les sacs et ne touchent pas les personnes.",
+            "Menace ou violence : prévenir le chef de poste et appeler la police (17 ou 112)."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le visiteur élève la voix : « Je veux entrer maintenant ! » Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis d'une voix forte de se calmer tout de suite ou de quitter les lieux.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande poliment d'attendre un moment à l'accueil, sans rien expliquer de plus.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le laisse entrer dans le bâtiment pour qu'il se calme, en lui demandant de rester discret.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je reste calme, je parle plus doucement et je lui dis que je préviens le responsable des achats.",
+                  "points": 2,
+                  "repere": "c7_apaise"
+                }
+              ],
+              "explication": "Rester calme et parler doucement aide la personne à se calmer. Dire que vous prévenez le responsable donne une suite concrète. Demander d'attendre sans rien expliquer ne répond pas à son inquiétude.",
+              "relance": "Comment parlez-vous à quelqu'un qui élève la voix ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Il répond : « Vous n'avez pas le droit de m'empêcher d'entrer ! » **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne peux pas vous laisser entrer tant que la personne que vous voulez voir n'est pas prévenue.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "C'est comme ça, c'est la règle pour tout le monde, et je n'y peux rien du tout.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "Les visiteurs sont annoncés avant d'entrer. J'appelle la personne maintenant, asseyez-vous ici.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                },
+                {
+                  "id": "d",
+                  "texte": "Ici, c'est une entreprise privée : c'est nous qui décidons, vous n'avez pas à discuter.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "Il faut dire la règle simplement et proposer ce que vous pouvez faire : appeler la personne. Répéter seulement le refus est correct, mais le visiteur ne sait pas ce qui va se passer.",
+              "relance": "Comment expliquez-vous une règle à quelqu'un qui la conteste ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous joignez l'assistante du responsable des achats : il est en réunion **jusqu'à 10 h**. **Que proposez-vous** au visiteur ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui promets que le responsable le recevra dès 10 h, à la sortie de sa réunion.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je transmets sa demande à l'assistante. Il peut attendre ici ou revenir après 10 h.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis de rappeler le standard plus tard dans la matinée.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis que le responsable est en réunion jusqu'à 10 h et qu'il peut attendre ici.",
+                  "points": 1,
+                  "repere": "c7_suite"
+                }
+              ],
+              "explication": "Le visiteur peut attendre ou revenir, et vous transmettez sa demande pour qu'elle ne se perde pas. Vous ne pouvez pas promettre un rendez-vous. Dire seulement l'heure de la réunion laisse sa demande sans suite.",
+              "relance": "Que pouvez-vous promettre à un visiteur sans rendez-vous ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le visiteur avance vers le portillon : « Je passe quand même ! » **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne le touche pas, je redis calmement la règle et je préviens le chef de poste.",
+                  "points": 2,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui répète calmement qu'il ne peut pas passer sans que la personne soit prévenue.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le retiens par le bras et je lui barre le passage pour l'empêcher d'avancer.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui ouvre le portillon pour éviter une dispute devant les salariés.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "Selon la consigne, vous ne touchez pas les personnes, et un visiteur n'entre pas sans être annoncé. Vous redites calmement la règle et vous prévenez le chef de poste. Répéter seulement la règle est juste, mais le chef de poste doit être informé.",
+              "relance": "Que faites-vous quand quelqu'un essaie de passer malgré votre refus ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le visiteur lève le poing : « Vous allez le regretter ! » **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je l'immobilise tout de suite avant qu'il ne puisse me frapper ou frapper un salarié.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je recule, je ne réponds pas et j'appelle le chef de poste et la police (17 ou 112).",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je recule et j'appelle le chef de poste, sans appeler la police pour l'instant.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je fais comme si je n'avais rien entendu et je continue mon travail à l'accueil.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Face à une menace, vous reculez, vous n'employez pas la force et vous alertez le chef de poste et la police, comme la consigne le demande. Prévenir seulement le chef de poste ne suffit pas quand la personne menace.",
+              "relance": "Dans quel cas appelez-vous la police ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand un visiteur élève la voix, je…",
+              "justes": [
+                {
+                  "texte": "reste calme et je parle doucement",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "baisse le ton et je le laisse dire ce qu'il veut",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "garde mes distances et je lui dis que je préviens la personne qu'il vient voir",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui demande de se calmer",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "hausse la voix pour me faire entendre",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "lui réponds sur le même ton",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour **expliquer la règle** à un visiteur sans rendez-vous, je lui dis…",
+              "justes": [
+                {
+                  "texte": "que les visiteurs sont annoncés avant d'entrer, et que j'appelle la personne tout de suite",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "que je ne peux pas le laisser entrer sans accord, mais que je transmets sa demande",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "que la règle est la même pour tous les visiteurs, et que je prévois d'appeler la personne maintenant",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que c'est la règle",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "qu'il n'avait qu'à prendre rendez-vous",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "que je ne suis pas là pour discuter",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si le visiteur me menace ou me frappe, je…",
+              "justes": [
+                {
+                  "texte": "préviens le chef de poste et la police (17 ou 112) sans attendre",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "recule, je ne le touche pas et j'appelle la police (17 ou 112)",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "note ensuite les faits dans la main courante",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens le chef de poste",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'immobilise avant qu'il ne frappe",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "ne dis rien et je continue mon travail",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'afficher à l'accueil la règle des visiteurs, pour qu'elle soit lue avant toute discussion.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Propose de remettre au visiteur un contact pour prendre rendez-vous la prochaine fois.",
+              "repere": "c7_suivi"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je comprends que ce soit long. Je transmets votre nom et votre demande à son assistante. Vous pouvez attendre ici ou revenir après 10 h. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un visiteur sans rendez-vous veut voir le responsable des achats, en réunion jusqu'à 10 h. Que lui proposez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un visiteur veut voir quelqu'un. Que lui proposez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un visiteur arrive avec un rendez-vous à 9 h. Que lui dites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un livreur demande où décharger son camion. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le visiteur n'a pas de rendez-vous.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le responsable est en réunion jusqu'à 10 h.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Un visiteur sans rendez-vous attend pendant qu'on prévient la personne.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Deux salariés se sont arrêtés pour regarder.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le visiteur a déjà reçu son badge visiteur.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable a refusé de le recevoir.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je préviens l'assistante tout de suite, puis je dis au visiteur si elle a répondu.",
+                "points": 2,
+                "repere": "c7_suivi"
+              },
+              {
+                "id": "b",
+                "texte": "J'attends qu'il revienne pour transmettre sa demande.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "c",
+                "texte": "Je note son nom dans le registre des visiteurs, sans prévenir l'assistante.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je lui dis que l'assistante le recevra à 10 h.",
+                "points": 0,
+                "repere": "c7_promesse"
+              }
+            ]
+          },
+          "explication": "La réponse tient compte de la règle (le visiteur est annoncé) et de la contrainte (réunion jusqu'à 10 h). Elle propose deux choix concrets sans rien promettre."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous dites au visiteur",
+          "consigne": "Pour **chaque phrase**, choisissez **son effet** sur le visiteur et sur la règle du poste.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Apaise et respecte la règle"
+            },
+            {
+              "id": "k2",
+              "nom": "Ne règle rien"
+            },
+            {
+              "id": "k3",
+              "nom": "Aggrave ou sort de la règle"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "« Je comprends que vous soyez pressé. J'appelle la personne tout de suite. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle reconnaît son inquiétude et donne une action concrète."
+            },
+            {
+              "id": "e2",
+              "texte": "« Calmez-vous, sinon j'appelle la police. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Il n'y a pas de menace de sa part : parler de police aggrave la tension. La police se prévient en cas de menace ou de violence."
+            },
+            {
+              "id": "e3",
+              "texte": "« Asseyez-vous ici, je vous dis dès que j'ai une réponse. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle propose une solution simple et annonce la suite."
+            },
+            {
+              "id": "e4",
+              "texte": "« C'est la règle, c'est tout. »",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "Elle rappelle la règle sans dire ce qui va se passer. Selon le ton, elle ne règle rien ou elle agace davantage."
+            },
+            {
+              "id": "e5",
+              "texte": "« Bon, allez-y, mais vite. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Laisser entrer un visiteur sans qu'il soit annoncé est contraire à la consigne."
+            },
+            {
+              "id": "e6",
+              "texte": "« Ouvrez votre sac, que je regarde ce qu'il y a dedans. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La consigne interdit aux agents de fouiller les sacs."
+            },
+            {
+              "id": "e7",
+              "texte": "« Je ne peux pas promettre une heure, mais je transmets votre demande. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle ne promet rien et assure que la demande sera transmise."
+            },
+            {
+              "id": "e8",
+              "texte": "« Je ne sais pas, voyez ça avec quelqu'un d'autre. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Elle renvoie le visiteur sans lui dire ce qui va se passer."
+            }
+          ],
+          "repere_reussite": "c7_apaise",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le visiteur sans rendez-vous qui s'énerve. La personne candidate est à l'accueil, avec la consigne du poste, un téléphone factice et un registre des visiteurs.",
+            "criteres": [
+              {
+                "texte": "Reste calme et parle doucement, même si le visiteur élève la voix",
+                "repere": "c7_apaise"
+              },
+              {
+                "texte": "Dit la règle simplement et prévient la personne que le visiteur veut voir",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Propose une solution sans rien promettre : attendre, revenir, laisser un message",
+                "repere": "c7_alternative"
+              },
+              {
+                "texte": "Ne touche pas le visiteur et prévient le chef de poste s'il veut passer",
+                "repere": "c8_role"
+              }
+            ],
+            "bonus": {
+              "texte": "Note l'événement dans la main courante avec les faits",
+              "repere": "c3_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** quand un visiteur sans rendez-vous élève la voix ?",
+              "justes": [
+                {
+                  "texte": "Je reste calme, je parle doucement et je le laisse s'expliquer.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "Je baisse le ton et je lui dis ce que je peux faire pour lui.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "Je lui demande son nom, sa société et ce qu'il veut dire à la personne.",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui demande de se calmer.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je hausse la voix pour qu'il m'écoute.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que dites-vous au visiteur quand le responsable est en réunion **jusqu'à 10 h** ?",
+              "justes": [
+                {
+                  "texte": "Que je transmets sa demande à l'assistante, et qu'il peut attendre ou revenir après 10 h.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Que je ne peux pas promettre l'heure, mais que je prévois d'appeler quelqu'un tout de suite.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Que le responsable est en réunion jusqu'à 10 h, puis ce que je peux faire pour lui.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le responsable est en réunion.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que le responsable le recevra à 10 h.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le visiteur avance vers le portillon et vous menace. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je recule, je ne le touche pas et j'appelle le chef de poste et la police (17 ou 112).",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je ne réponds pas à la menace et je préviens la police et le chef de poste.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je garde mes distances, puis je note les faits dans la main courante.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'appelle le chef de poste.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le retiens par le bras.",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "Je lui ouvre le portillon pour éviter la dispute.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de donner au visiteur un contact pour prendre rendez-vous la prochaine fois.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit la règle des visiteurs et deux ou trois phrases types pour l'expliquer calmement.",
+        "Faire un jeu de rôle avec un collègue : un visiteur qui s'énerve, puis un point sur ce qui a aidé."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Réagir à un malaise : alerter et rester auprès de la personne",
+      "pourquoi": "Lors d'un malaise, chaque minute compte : alerter vite, avec des informations exactes, et ne pas laisser la personne seule.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un visiteur fait un malaise dans le hall",
+        "texte": "Mercredi, 15 h 10. Vous êtes à l'accueil du site. Dans le hall, un visiteur assis sur un banc se penche en avant. Il est très pâle et il transpire. Il répond à peine quand vous lui parlez. Deux salariés sont près de vous. Le site compte plusieurs bâtiments. Le chef de poste est dans un autre bâtiment, joignable par radio. Vous avez un téléphone et la consigne du site.",
+        "document": {
+          "type": "liste",
+          "titre": "Consigne du site : malaise d'une personne",
+          "items": [
+            "Appeler les secours : 15 (SAMU), 18 (pompiers) ou 112.",
+            "Puis prévenir le chef de poste et un secouriste salarié du site.",
+            "Les agents ne donnent ni médicament, ni boisson, ni nourriture.",
+            "Faire accueillir les secours à l'entrée du site et les guider.",
+            "Noter l'événement dans la main courante."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le visiteur répond à peine quand vous lui parlez. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je pense qu'il est fatigué : je le laisse se reposer et je repasse dans dix minutes.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'appelle les secours (15, 18 ou 112) sans attendre, et je reste près de lui.",
+                  "points": 2,
+                  "repere": "c1_aide"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'appelle un secouriste du site et je reste près de lui.",
+                  "points": 1,
+                  "repere": "c4_aide"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui donne un verre d'eau avec du sucre pour qu'il se sente mieux.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Le visiteur répond à peine : il faut alerter les secours tout de suite et rester auprès de lui. Appeler seulement un secouriste du site est utile, mais ne remplace pas l'appel aux secours.",
+              "relance": "Qui appelez-vous en premier quand une personne répond à peine ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Les secours décrochent. Que leur dites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "C'est sûrement une crise cardiaque : envoyez vite une ambulance, c'est très grave.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Une personne fait un malaise sur le site de l'entreprise, venez vite.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "L'adresse du site, l'endroit exact, puis ce que je vois : très pâle, répond à peine.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je donne l'adresse du site et je raccroche pour retourner auprès de la personne.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Les secours ont besoin du lieu exact et de ce que vous voyez, sans supposition. Sans le lieu, ils arrivent plus tard. Raccrocher trop tôt vous prive de leurs consignes.",
+              "relance": "Quelles informations donnez-vous aux secours au téléphone ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Un salarié apporte un verre d'eau et veut **faire boire** le visiteur. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'accepte : un verre d'eau ne peut pas faire de mal à quelqu'un qui est pâle.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande plutôt s'il a un médicament à donner au visiteur pour le soulager.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je refuse le verre d'eau, sans rien lui demander d'autre et sans lui expliquer pourquoi.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je refuse : on ne fait pas boire. Je lui demande d'attendre les secours à l'entrée.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "La consigne interdit de donner à boire ou un médicament : seuls les secours savent ce qui convient. Refuser sans rien proposer est correct, mais le salarié peut aider en guidant les secours.",
+              "relance": "Que répondez-vous à un collègue qui veut aider en donnant à boire ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Les secours sont en route. Que faites-vous pour qu'ils **arrivent vite** auprès du visiteur ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'envoie un salarié les attendre à l'entrée du site pour les guider jusqu'au hall.",
+                  "points": 2,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse le visiteur seul pour aller les attendre moi-même à l'entrée.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'ouvre le portail dès que les secours arrivent, sans autre action de ma part.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne fais rien de plus : les secours connaissent déjà le site et trouveront le hall.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Un salarié posté à l'entrée guide les secours jusqu'au hall, pendant que vous restez auprès du visiteur. Ouvrir le portail aide, mais le site compte plusieurs bâtiments et les secours peuvent chercher le hall.",
+              "relance": "Comment aidez-vous les secours à trouver rapidement la personne ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Les secours ont emmené le visiteur. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien de plus : le visiteur est parti avec les secours, l'événement est terminé.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens le chef de poste, puis j'écris l'heure, le lieu, ce que j'ai vu et les appels passés.",
+                  "points": 2,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'écris « malaise d'un visiteur dans le hall » dans la main courante, sans autre détail.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je raconte aux salariés présents ce que je crois savoir de l'état de santé du visiteur.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Le chef de poste doit savoir ce qui s'est passé, et la main courante garde les faits : heure, lieu, ce que vous avez vu, qui vous avez appelé. Une ligne trop courte ne permet pas de répondre aux questions qui suivront.",
+              "relance": "Que contient votre ligne de main courante après un malaise ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand je vois un visiteur très pâle qui répond à peine, je…",
+              "justes": [
+                {
+                  "texte": "appelle les secours (15, 18 ou 112) sans attendre",
+                  "repere": "c1_aide"
+                },
+                {
+                  "texte": "reste près de lui et j'appelle les secours",
+                  "repere": "c1_aide"
+                },
+                {
+                  "texte": "fais appeler les secours, puis je préviens le chef de poste et un secouriste du site",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens un secouriste du site",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le laisse se reposer et je repasse plus tard",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "lui donne à boire ou un cachet",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "**Aux secours**, au téléphone, je dis…",
+              "justes": [
+                {
+                  "texte": "l'adresse du site et l'endroit exact où se trouve la personne",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "ce que je vois : la personne est très pâle et répond à peine",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "mon nom et un numéro pour me rappeler, et je reste en ligne tant qu'ils ne m'ont pas dit de raccrocher",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "qu'une personne fait un malaise",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ce que je pense de la cause du malaise",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "que tout est sous contrôle et qu'ils peuvent venir sans se presser",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**En attendant** les secours, je…",
+              "justes": [
+                {
+                  "texte": "reste auprès de la personne et je lui parle calmement",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "fais accueillir les secours à l'entrée par un salarié",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "suis les consignes que les secours me donnent au téléphone",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "attends les secours dans le hall",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui donne à boire ou un médicament proposé par un collègue",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "laisse la personne seule pour faire autre chose",
+                  "repere": "c1_abandon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande à un collègue de rester à côté de la personne pour qu'elle ne soit jamais seule.",
+              "repere": "c4_aide"
+            },
+            {
+              "texte": "Note l'heure de l'appel et l'heure d'arrivée des secours dans la main courante.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« J'appelle les secours (15, 18 ou 112), je reste près de la personne et je fais attendre les secours à l'entrée pour les guider. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un visiteur est très pâle et répond à peine dans le hall. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un visiteur ne se sent pas bien. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un visiteur demande où se trouve une salle de réunion. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "L'alarme incendie sonne dans le hall. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le visiteur est très pâle et il transpire.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Il répond à peine quand on lui parle.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Le site compte plusieurs bâtiments : les secours doivent trouver le hall.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Il est 15 h 10, un mercredi.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le chef de poste est dans un autre bâtiment.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le visiteur a déjà pris un médicament.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je lui donne un verre d'eau pour qu'il se sente mieux.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "b",
+                "texte": "Je préviens le chef de poste et un secouriste du site.",
+                "points": 2,
+                "repere": "c4_informe"
+              },
+              {
+                "id": "c",
+                "texte": "Je retourne à l'accueil : les secours savent quoi faire.",
+                "points": 0,
+                "repere": "c1_abandon"
+              },
+              {
+                "id": "d",
+                "texte": "Je préviens le chef de poste, sans appeler de secouriste du site.",
+                "points": 1,
+                "repere": "c4_informe"
+              }
+            ]
+          },
+          "explication": "Le visiteur est pâle, transpire et répond à peine : c'est une urgence. On appelle les secours, on reste auprès de la personne et on les fait guider jusqu'au hall, car le site compte plusieurs bâtiments."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Vos actions pendant le malaise",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de 15 h 10 **jusqu'à la fin** de l'événement.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Vous approcher de la personne et lui parler"
+            },
+            {
+              "id": "e2",
+              "texte": "Appeler les secours (15, 18 ou 112)"
+            },
+            {
+              "id": "e3",
+              "texte": "Suivre les consignes données au téléphone par les secours"
+            },
+            {
+              "id": "e4",
+              "texte": "Faire attendre les secours à l'entrée du site"
+            },
+            {
+              "id": "e5",
+              "texte": "Prévenir le chef de poste"
+            },
+            {
+              "id": "e6",
+              "texte": "Écrire l'événement dans la main courante"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On appelle avant de pouvoir suivre leurs consignes."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "On appelle les secours avant de les faire attendre à l'entrée."
+            },
+            {
+              "avant": "e2",
+              "apres": "e5",
+              "explication": "La consigne dit : secours d'abord, puis le chef de poste."
+            },
+            {
+              "avant": "e1",
+              "apres": "e3",
+              "explication": "Il faut être auprès de la personne pour suivre les consignes des secours."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "On écrit quand la personne est prise en charge, pas pendant que les secours donnent leurs consignes."
+            },
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "On écrit une fois les secours accueillis."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "On prévient le chef de poste avant d'écrire."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Mise en situation de 10 minutes : une personne joue le visiteur assis et très pâle, une autre joue les secours au téléphone. La personne candidate dispose d'un téléphone factice et de la consigne du site.",
+            "criteres": [
+              {
+                "texte": "Appelle les secours sans attendre et reste auprès de la personne",
+                "repere": "c1_aide"
+              },
+              {
+                "texte": "Donne aux secours le lieu exact et ce qu'elle voit, sans supposer la cause",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Refuse de donner à boire ou un médicament",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Fait guider les secours et prévient le chef de poste",
+                "repere": "c4_informe"
+              }
+            ],
+            "bonus": {
+              "texte": "Écrit ensuite une ligne de main courante avec les faits",
+              "repere": "c3_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** quand un visiteur très pâle répond à peine dans le hall ?",
+              "justes": [
+                {
+                  "texte": "J'appelle les secours (15, 18 ou 112) et je reste près de lui.",
+                  "repere": "c1_aide"
+                },
+                {
+                  "texte": "Je fais appeler les secours tout de suite, puis je préviens le chef de poste.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Je ne le laisse pas seul et je fais prévenir un secouriste du site.",
+                  "repere": "c4_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens un secouriste du site.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le laisse se reposer et je repasse plus tard.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que dites-vous** aux secours au téléphone ?",
+              "justes": [
+                {
+                  "texte": "L'adresse du site et l'endroit exact où se trouve la personne.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Ce que je vois : très pâle, répond à peine.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Mon nom et un numéro pour me rappeler, et je reste en ligne jusqu'à ce qu'ils me disent de raccrocher.",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Qu'une personne fait un malaise.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que c'est sûrement une crise cardiaque.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Un collègue veut **donner à boire** à la personne. Que lui dites-vous ?",
+              "justes": [
+                {
+                  "texte": "Qu'on ne donne ni boisson ni médicament : seuls les secours savent ce qui convient.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Que la consigne l'interdit, et je lui propose d'attendre les secours à l'entrée.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Merci de vouloir aider : je lui demande de guider les secours jusqu'au hall.",
+                  "repere": "c4_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Non.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "D'accord, un peu d'eau ne peut pas faire de mal.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note l'heure de l'appel et l'heure d'arrivée des secours dans la main courante.",
+              "repere": "c3_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer dès le premier jour les numéros d'urgence, le téléphone du poste et la liste des secouristes du site.",
+        "Faire répéter à voix haute les informations à donner aux secours : adresse, lieu exact, ce que l'on voit."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C8",
+      "texte": "**Que faites-vous** quand l'alarme incendie se déclenche sur votre site ?",
+      "suite": [
+        "Que faites-vous si vous ne voyez ni fumée ni flamme ?"
+      ],
+      "attendus": [
+        "Va vérifier sur place avant de décider",
+        "Prévient le poste ou le chef de poste",
+        "Appelle les pompiers si feu ou fumée, selon la procédure du site"
+      ],
+      "relance": "Qui décide de remettre le système en service ?",
+      "alternative": "Si vous n'avez jamais travaillé dans la sécurité : que faites-vous quand le détecteur de fumée de votre immeuble sonne ?"
+    },
+    {
+      "id": "e2",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez dû **suivre une consigne** alors qu'on vous demandait de **ne pas la suivre**. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous répondu ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit la consigne et la demande concrètement",
+        "Reste poli et explique la raison de la consigne",
+        "Prévient la bonne personne ou propose une solution autorisée"
+      ],
+      "relance": "Qu'est-ce qui vous a aidé à tenir la consigne ?",
+      "alternative": "Parlez d'une règle (travail, stage, association) que vous avez dû faire respecter à une personne pressée."
+    },
+    {
+      "id": "e3",
+      "competence": "C3",
+      "texte": "Pendant une ronde, vous trouvez une **porte coupe-feu bloquée** et un **extincteur absent**. Que faites-vous ?",
+      "suite": [
+        "Que notez-vous dans la main courante ?"
+      ],
+      "attendus": [
+        "Prévient le chef de poste ou la personne désignée",
+        "Note l'heure, le lieu et ce qu'il a vu, sans supposition",
+        "Dit ce qu'il fait si le problème n'est pas réglé en fin de service"
+      ],
+      "relance": "À qui signalez-vous chaque anomalie ?",
+      "alternative": "Si vous n'avez jamais fait de ronde : vous découvrez dans un lieu public une issue de secours bloquée. À qui le signalez-vous ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez **passé le relais** à quelqu'un pour une tâche en cours. **Que lui avez-vous dit** ?",
+      "suite": [
+        "Qu'avez-vous laissé par écrit ?",
+        "Comment avez-vous vérifié qu'il avait compris ?"
+      ],
+      "attendus": [
+        "Dit d'abord ce qui reste à faire",
+        "Donne des faits précis : lieu, heure, personne prévenue",
+        "Vérifie que la personne a compris"
+      ],
+      "relance": "Qu'est-ce que vous diriez autrement aujourd'hui ?",
+      "alternative": "Si vous n'avez jamais passé le relais au travail : parlez d'une activité (association, études, bénévolat) où vous avez transmis une tâche à quelqu'un."
+    },
+    {
+      "id": "e5",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où une personne s'est énervée **contre vous au travail**. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous dit ou fait ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit des faits précis",
+        "Dit comment il est resté calme et ce qu'il a dit",
+        "Dit comment la situation s'est terminée"
+      ],
+      "relance": "Qu'est-ce qui a aidé la personne à se calmer ?",
+      "alternative": "Si vous n'avez pas travaillé à l'accueil : parlez d'une personne énervée que vous avez calmée (association, bénévolat, vie quotidienne)."
+    },
+    {
+      "id": "e6",
+      "competence": "C7",
+      "texte": "Une personne veut entrer dans un lieu à l'**accès réservé** et elle insiste. **Que lui dites-vous** ?",
+      "suite": [
+        "Et si elle essaie de passer quand même ?"
+      ],
+      "attendus": [
+        "Explique la règle simplement",
+        "Propose une solution autorisée",
+        "Ne touche pas la personne et prévient le responsable"
+      ],
+      "relance": "Dans quel cas appelez-vous la police ?",
+      "alternative": "Imaginez qu'une personne insiste pour entrer dans une salle déjà complète lors d'un événement (association, école). Que lui dites-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C1",
+      "texte": "Une personne fait un malaise devant vous. **Que faites-vous** ?",
+      "suite": [
+        "Que dites-vous aux secours ?"
+      ],
+      "attendus": [
+        "Alerte les secours sans attendre",
+        "Reste auprès de la personne et suit les consignes des secours",
+        "Donne des faits : lieu, état de la personne, sans supposer la cause"
+      ],
+      "relance": "Que faites-vous si un collègue veut donner à boire ?",
+      "alternative": "Si vous n'avez jamais travaillé dans la sécurité : que faites-vous si une personne se sent mal près de vous, dans la rue ou dans un magasin ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où un **problème imprévu** est arrivé pendant votre travail. **Comment l'avez-vous traité** ?",
+      "suite": [
+        "Qui avez-vous prévenu ?",
+        "Comment avez-vous vérifié que c'était réglé ?"
+      ],
+      "attendus": [
+        "Décrit les faits avant de décrire ses actions",
+        "Décrit des étapes logiques et dit qui il a prévenu",
+        "Dit comment il a vérifié que le problème était réglé"
+      ],
+      "relance": "Qu'est-ce que vous referiez de la même façon ?",
+      "alternative": "Parlez d'un imprévu rencontré dans une autre activité (études, association, déplacement) et de ce que vous avez fait."
+    }
+  ],
+  "_pv": "086051cdd4"
+}

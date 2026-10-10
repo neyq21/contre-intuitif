@@ -1,0 +1,2583 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "assistant-administratif",
+  "version": "2026.10",
+  "nom": "Assistant administratif / Assistante administrative",
+  "secteur": "bureau",
+  "alias": [
+    "assistant administratif",
+    "assistante administrative",
+    "secrétaire",
+    "agent administratif",
+    "assistant de direction",
+    "assistant d'agence",
+    "employé de bureau",
+    "assistant polyvalent"
+  ],
+  "resume": "Gère le courrier, les e-mails, l'agenda et les appels, tient les dossiers et les tableaux du service, et soutient l'équipe au quotidien.",
+  "contexte": "Une PME de 40 salariés, au service administratif de trois personnes.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C2",
+      "titre": "Organiser sa matinée et choisir quoi traiter en premier",
+      "pourquoi": "Au service administratif, plusieurs demandes arrivent en même temps : l'ordre choisi décide de ce qui part à l'heure et de qui attend.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Lundi, 8 h 45 : cinq demandes",
+        "texte": "Lundi, 8 h 45. Au service administratif, vous êtes la seule personne présente : vos deux collègues arrivent à 10 h 30. Cinq demandes vous attendent (voir la liste). Dans l'entreprise, une salle de réunion va au premier service qui l'a réservée.",
+        "document": {
+          "type": "liste",
+          "titre": "Les cinq demandes de 8 h 45",
+          "items": [
+            "La directrice reçoit un client à 9 h 30. La salle Vega doit être prête : chaises, eau, écran allumé (environ 10 minutes).",
+            "Le cabinet comptable attend le fichier des notes de frais avant 10 h (environ 30 minutes de travail). Après 10 h, les 12 remboursements sont payés le mois suivant.",
+            "La responsable commerciale vous écrit : « Pouvez-vous préparer la réunion de jeudi ? »",
+            "Dans l'agenda partagé, la salle Orion est réservée deux fois jeudi à 14 h. Le service commercial (6 personnes) l'a réservée en premier. Le service technique (4 personnes) l'a réservée ensuite. La salle Atlas (8 places) est libre à cette heure.",
+            "Le courrier du week-end est à ouvrir et à trier. Il n'a pas de date limite."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par **quelle demande commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le courrier du week-end, parce qu'il est arrivé en premier.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "La salle Vega : le client arrive à 9 h 30, et la salle ne demande que 10 minutes.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le fichier du cabinet comptable, parce que douze remboursements en dépendent.",
+                  "points": 1,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Un peu de chaque demande, pour que personne n'attende.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                }
+              ],
+              "explication": "Le client arrive à 9 h 30 : c'est l'heure limite la plus proche, et la salle ne prend que 10 minutes. Le fichier, qui part avant 10 h, passe juste après : commencer par lui risque de laisser la salle prête trop tard.",
+              "relance": "Comment choisissez-vous l'ordre quand plusieurs demandes arrivent en même temps ?"
+            },
+            {
+              "id": "q2",
+              "texte": "La responsable commerciale vous a demandé de préparer la **réunion de jeudi**, **sans autre précision**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je prépare ce qui me semble utile : la salle, les invitations et les documents.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde l'agenda de jeudi pour trouver de quelle réunion il s'agit.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je laisse cette demande de côté jusqu'à ce qu'elle me relance.",
+                  "points": 0,
+                  "repere": "c5_attend"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui demande quelle réunion, ce qu'il faut préparer et pour quand.",
+                  "points": 2,
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "explication": "Le message ne dit ni quelle réunion, ni ce qu'il faut préparer, ni pour quand : une question courte évite un travail inutile. L'agenda aide à trouver la réunion, mais ne dit pas ce qu'elle attend.",
+              "relance": "Que faites-vous quand une demande n'est pas claire ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La salle Orion est **réservée deux fois** jeudi à 14 h. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je supprime la réservation du service technique, sans le prévenir : l'autre service a réservé avant.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens les deux services qu'il y a un problème et je leur demande de s'arranger entre eux.",
+                  "points": 1,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je propose la salle Atlas au service technique, qui a réservé en second, et je préviens les deux services.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je garde les deux réservations pour l'instant : les services verront bien le problème jeudi.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                }
+              ],
+              "explication": "La salle va au premier service, le commercial : on propose la salle Atlas au service technique et on prévient les deux. Les laisser s'arranger ne règle rien.",
+              "relance": "Que faites-vous quand deux personnes demandent la même salle au même moment ?"
+            },
+            {
+              "id": "q4",
+              "texte": "À **9 h 40**, le fichier est parti. La directrice vous demande de réserver un billet de train **avant 11 h**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je réserve le billet tout de suite : 11 h est l'heure limite la plus proche.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je termine d'abord ce que j'ai commencé, puis je réserve le billet avant 11 h.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le fais à la fin, comme les demandes arrivées avant la sienne.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui réponds que ma liste est pleine et que je n'ai pas le temps.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Avec 11 h, cette demande a l'heure limite la plus proche de toute votre liste : elle passe en premier. Finir d'abord ce qui est en cours est possible, mais seulement si c'est très court.",
+              "relance": "Que faites-vous quand une nouvelle demande urgente arrive en plein travail ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 10 h 30, **vos deux collègues** arrivent. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends que mes collègues me demandent s'ils peuvent m'aider sur ma liste.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je leur dis ce qui reste, avec les heures limites, et je leur propose de prendre le courrier.",
+                  "points": 2,
+                  "repere": "c2_regroupe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je continue ma liste en suivant les heures limites, sans rien confier à mes collègues.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je recommence ma liste dans l'ordre où les demandes sont arrivées, sans leur en parler.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                }
+              ],
+              "explication": "Vos collègues peuvent prendre le courrier, qui n'a pas de date limite : vous gagnez du temps pour les demandes qui en ont une. Tout garder pour vous fonctionne, mais le travail n'est pas partagé.",
+              "relance": "Comment répartissez-vous le travail quand des collègues arrivent ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **décider de l'ordre** de mes demandes, je…",
+              "justes": [
+                {
+                  "texte": "regarde l'heure limite de chaque demande",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "commence par ce qui est attendu le plus tôt : le client de 9 h 30",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "compare l'heure limite et le temps que demande chaque tâche",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "regarde ce qui arrive aux autres si c'est en retard, par exemple les douze remboursements",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "choisis ce qui me semble le plus important",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "suis l'ordre dans lequel les demandes sont arrivées",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "commence plusieurs demandes en même temps",
+                  "repere": "c2_dispersion"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour la demande « préparer la **réunion de jeudi** », je…",
+              "justes": [
+                {
+                  "texte": "demande à la responsable commerciale quelle réunion, ce qu'elle attend et pour quand",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "lui écris un message court pour préciser la demande, puis je continue ma liste",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "regarde l'agenda de jeudi, puis je lui demande de confirmer ce qu'il faut préparer",
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde l'agenda de jeudi",
+                  "repere": "c1_faits"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "prépare ce que je pense qu'elle veut",
+                  "repere": "c5_devine"
+                },
+                {
+                  "texte": "attends qu'elle me relance",
+                  "repere": "c5_attend"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour la salle Orion **réservée deux fois**, je…",
+              "justes": [
+                {
+                  "texte": "vérifie quel service a réservé en premier, puis je propose la salle Atlas à l'autre",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "propose la salle Atlas au service technique et je préviens les deux services",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "applique la règle du premier qui a réservé et je confirme la nouvelle salle par écrit",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens les deux services qu'il y a un problème",
+                  "repere": "c4_informe"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "supprime une réservation sans prévenir",
+                  "repere": "c4_seul"
+                },
+                {
+                  "texte": "laisse les deux réservations : ils s'arrangeront",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Écrit sa liste avec l'heure limite de chaque demande.",
+              "repere": "c2_critere"
+            },
+            {
+              "texte": "Prévoit un moment, après 10 h 30, pour reprendre ce qui reste avec ses collègues.",
+              "repere": "c2_regroupe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« La salle Vega d'abord, car le client arrive à 9 h 30. Le fichier du cabinet comptable ensuite, car il part avant 10 h. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Plusieurs demandes arrivent en même temps. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Le cabinet comptable vous relance : il attend le fichier. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Vous avez cinq demandes à 8 h 45, avec des heures limites différentes. Dans quel ordre les traitez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Un collègue vous demande de l'aide pour trier le courrier. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le client arrive à 9 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La responsable commerciale a fait une demande peu claire.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le fichier doit partir avant 10 h.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Vos deux collègues arrivent à 10 h 30.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le courrier est arrivé en dernier.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Après 10 h, les 12 remboursements seraient payés le mois suivant.",
+                "juste": true
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je trie le courrier du week-end, car il est arrivé avant les autres demandes.",
+                "points": 0,
+                "repere": "c2_arrivee"
+              },
+              {
+                "id": "b",
+                "texte": "Je demande à la responsable commerciale ce qu'elle attend pour jeudi.",
+                "points": 2,
+                "repere": "c5_clarifie"
+              },
+              {
+                "id": "c",
+                "texte": "Je prépare la réunion de jeudi comme la dernière fois.",
+                "points": 0,
+                "repere": "c5_devine"
+              },
+              {
+                "id": "d",
+                "texte": "Je règle la double réservation de la salle Orion.",
+                "points": 1,
+                "repere": "c2_critere"
+              }
+            ]
+          },
+          "explication": "La réponse suit les heures limites : 9 h 30 pour la salle, puis le fichier avant 10 h. Ensuite, on pose tôt la question à la responsable commerciale, car sa réponse peut tarder."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre matinée, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de 8 h 45 à 10 h 30.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Préparer la salle Vega pour le client de 9 h 30"
+            },
+            {
+              "id": "e2",
+              "texte": "Envoyer le fichier des notes de frais au cabinet comptable"
+            },
+            {
+              "id": "e3",
+              "texte": "Demander à la responsable commerciale ce qu'elle attend pour jeudi"
+            },
+            {
+              "id": "e4",
+              "texte": "Proposer la salle Atlas au service technique et prévenir les deux services"
+            },
+            {
+              "id": "e5",
+              "texte": "Ouvrir et trier le courrier du week-end"
+            },
+            {
+              "id": "e6",
+              "texte": "Préparer la réunion de jeudi, une fois la réponse reçue"
+            },
+            {
+              "id": "e7",
+              "texte": "Noter la salle Atlas dans l'agenda partagé, à la place d'Orion"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e4",
+              "explication": "La salle Vega sert à 9 h 30 aujourd'hui ; la double réservation concerne jeudi."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "Le fichier part avant 10 h aujourd'hui ; la double réservation concerne jeudi."
+            },
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "Le client arrive à 9 h 30 ; le courrier n'a pas de date limite."
+            },
+            {
+              "avant": "e2",
+              "apres": "e5",
+              "explication": "Le fichier part avant 10 h ; le courrier n'a pas de date limite."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "La double réservation a une date (jeudi) ; le courrier n'en a pas."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "La question prend une minute : on la pose tôt, avant le courrier."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "On prépare la réunion seulement après avoir su ce qui est attendu."
+            },
+            {
+              "avant": "e4",
+              "apres": "e7",
+              "explication": "On change l'agenda une fois la nouvelle salle proposée aux deux services."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes : la personne reçoit les cinq demandes sur des fiches, avec leurs heures limites. Une personne joue la responsable commerciale et répond aux questions. La personne choisit l'ordre et le dit à voix haute.",
+            "criteres": [
+              {
+                "texte": "Choisit l'ordre d'après les heures limites et les conséquences",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Traite d'abord la salle de 9 h 30 et le fichier de 10 h",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Pose une question pour préciser la demande peu claire, au lieu de la deviner",
+                "repere": "c5_clarifie"
+              },
+              {
+                "texte": "Prévient les services concernés par la double réservation",
+                "repere": "c2_previent"
+              }
+            ],
+            "bonus": {
+              "texte": "Note ce qui reste à faire, avec l'heure prévue pour chaque demande",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Par **quelle demande commencez-vous** ?",
+              "justes": [
+                {
+                  "texte": "La salle Vega, car le client arrive à 9 h 30.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "La salle, puis le fichier : ce sont les heures limites les plus proches.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Ce qui est attendu le plus tôt, c'est-à-dire la salle pour 9 h 30.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le fichier du cabinet comptable, car douze remboursements en dépendent.",
+                  "repere": "c2_risque"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Le courrier, car il est arrivé en premier.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous de la demande « préparer la **réunion de jeudi** » ?",
+              "justes": [
+                {
+                  "texte": "Je demande à la responsable commerciale ce qu'elle attend, et pour quand.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je lui pose la question tout de suite par message, puis je continue ma liste.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je regarde l'agenda de jeudi et je lui demande de confirmer ce qu'il faut préparer.",
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde l'agenda de jeudi.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je prépare ce que je pense utile.",
+                  "repere": "c5_devine"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous de la salle Orion, **réservée deux fois** jeudi à 14 h ?",
+              "justes": [
+                {
+                  "texte": "Je vois qui a réservé en premier et je propose la salle Atlas à l'autre service.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je propose la salle Atlas au service technique et je préviens les deux services.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "J'applique la règle du premier qui a réservé et je confirme par écrit.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens les deux services qu'il y a un problème.",
+                  "repere": "c4_informe"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je supprime une des réservations sans prévenir.",
+                  "repere": "c4_seul"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de noter dans l'agenda partagé la salle de remplacement et de prévenir les deux services par écrit.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Prévoit un moment, après 10 h 30, pour reprendre ce qui reste avec ses collègues.",
+              "repere": "c2_regroupe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner dès le premier lundi la liste des heures limites fixes du service : envoi au cabinet comptable, courrier, réunions de la semaine.",
+        "Convenir de qui décide quand deux demandes se contredisent, et comment lui poser la question rapidement."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Contrôler un tableau et respecter la règle de classement",
+      "pourquoi": "Un tableau faux ou un dossier mal rangé a des conséquences : une pièce oubliée, ou des informations personnelles visibles de tout le service.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Le tableau des dossiers du personnel",
+        "texte": "Jeudi, 14 h. Depuis ce mois-ci, une nouvelle règle s'applique : les dossiers du personnel sont rangés uniquement dans l'armoire du responsable RH, fermée à clé. Vous avez la clé de l'armoire pour y ranger les dossiers. Avant, une partie était dans le classeur du service. Un dossier est « complet » quand il contient les trois pièces : contrat signé, RIB et fiche de poste signée. Seul le responsable RH décide qui peut consulter un dossier. Vous contrôlez le tableau de suivi ci-dessous avant de l'envoyer au responsable RH, à 16 h.",
+        "document": {
+          "type": "tableau",
+          "titre": "Tableau de suivi des dossiers (extrait)",
+          "colonnes": [
+            "Dossier",
+            "Pièces reçues",
+            "Statut",
+            "Rangé dans"
+          ],
+          "lignes": [
+            [
+              "21",
+              "contrat, RIB, fiche de poste",
+              "complet",
+              "armoire RH"
+            ],
+            [
+              "22",
+              "contrat, RIB",
+              "complet",
+              "armoire RH"
+            ],
+            [
+              "23",
+              "contrat",
+              "incomplet",
+              "armoire RH"
+            ],
+            [
+              "24",
+              "contrat, RIB, fiche de poste",
+              "complet",
+              "classeur du service"
+            ],
+            [
+              "25",
+              "contrat, RIB, fiche de poste",
+              "complet",
+              "armoire RH"
+            ],
+            [
+              "26",
+              "aucune",
+              "incomplet",
+              "armoire RH"
+            ],
+            [
+              "27",
+              "contrat, RIB, fiche de poste",
+              "incomplet",
+              "armoire RH"
+            ],
+            [
+              "28",
+              "contrat, RIB",
+              "incomplet",
+              "armoire RH"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Que contrôlez-vous** dans le tableau avant de l'envoyer ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Chaque ligne : les pièces reçues, le statut et le lieu de rangement doivent être cohérents.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le compare au tableau du mois dernier : s'il lui ressemble beaucoup, il est bon.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Seulement la colonne « statut », car c'est celle que le responsable RH lit en premier.",
+                  "points": 1,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : la personne qui l'a rempli l'a déjà relu.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Un tableau est juste quand chaque ligne est cohérente : le statut correspond aux pièces et le rangement suit la règle. Contrôler seulement le statut laisse passer les erreurs de rangement.",
+              "relance": "Comment contrôlez-vous un tableau rempli par quelqu'un d'autre ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le dossier 22 est marqué « **complet** », mais la fiche de poste signée **n'est pas reçue**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'envoie le tableau tel quel et je préviens le responsable RH qu'il peut contenir des erreurs.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je mets « incomplet » dans le tableau, sans rien noter d'autre.",
+                  "points": 1,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je mets « incomplet », je note la pièce manquante et je préviens le responsable RH.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse « complet » : quelqu'un a sûrement vu la fiche de poste.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Le statut doit refléter les pièces reçues : on le corrige, on note la pièce manquante et on prévient celui qui doit la réclamer. Corriger sans rien dire laisse la pièce manquante sans suivi.",
+              "relance": "Que faites-vous quand vous trouvez une erreur dans le travail d'un collègue ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le dossier 24 est rangé dans le **classeur du service**, comme avant. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le laisse dans le classeur : il y est depuis longtemps.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je fais une copie pour le classeur et je range l'original dans l'armoire RH.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le range dans l'armoire RH et je corrige le tableau, sans en parler.",
+                  "points": 1,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le range dans l'armoire RH, je corrige le tableau et je préviens le responsable RH.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                }
+              ],
+              "explication": "Le dossier est resté visible de tout le service : on le range dans l'armoire RH et on prévient le responsable RH. Une copie dans le classeur garderait le problème.",
+              "relance": "Que faites-vous quand une règle vient de changer et que l'ancienne habitude était plus pratique ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Un collègue **d'un autre service** veut **consulter** le dossier d'un salarié. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui donne le dossier et je reste à côté de lui pendant qu'il le lit, pour surveiller.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que seul le responsable RH décide qui peut consulter un dossier, et je lui transmets la demande.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui montre seulement la page qui l'intéresse.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que ce n'est pas possible, sans rien proposer.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Seul le responsable RH décide qui peut consulter un dossier : on explique la règle et on transmet la demande. Refuser sans rien proposer respecte la règle, mais laisse le collègue sans suite.",
+              "relance": "Que faites-vous quand quelqu'un vous demande un document que vous n'avez pas le droit de donner ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La nouvelle règle **ne dit rien** sur les dossiers des **salariés partis**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande au responsable RH où les ranger, avant d'y toucher.",
+                  "points": 2,
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je les range dans l'armoire RH, par prudence, et j'en parle ensuite.",
+                  "points": 1,
+                  "repere": "c5_devine"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je les laisse dans le classeur : la règle ne les concerne pas.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je les mets au broyeur : ils ne servent plus.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Quand une règle ne couvre pas un cas, on demande avant d'agir. Ranger en lieu fermé est prudent, mais on ne sait pas si c'est la bonne place, et détruire est irréversible.",
+              "relance": "Que faites-vous quand une consigne ne dit rien sur un cas précis ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Avant d'envoyer** le tableau, je vérifie…",
+              "justes": [
+                {
+                  "texte": "que chaque statut correspond aux pièces reçues",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que chaque dossier est rangé dans l'armoire RH, comme la nouvelle règle le demande",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "ligne par ligne : les pièces, le statut et le rangement",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le tableau est bien rempli",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : la personne qui l'a rempli l'a déjà vérifié",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "seulement la mise en page",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Quand je trouve **une ligne fausse**, je…",
+              "justes": [
+                {
+                  "texte": "corrige la ligne, je note ce que j'ai changé et je préviens le responsable RH",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "mets le statut à jour et je signale la pièce manquante",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "garde une trace de la correction, avec la date",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "corrige la ligne",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "corrige sans rien dire, pour éviter une discussion",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "laisse la ligne : ce n'est pas mon tableau",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour une règle de rangement qui **vient de changer**, je…",
+              "justes": [
+                {
+                  "texte": "relis la règle écrite avant de ranger un dossier",
+                  "repere": "c5_source"
+                },
+                {
+                  "texte": "demande au responsable RH quand un cas n'est pas prévu",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "range tous les dossiers selon la nouvelle règle, même si l'ancienne façon était plus pratique",
+                  "repere": "c5_applique"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "essaie de me souvenir de la nouvelle règle",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "continue à ranger comme avant, c'est plus rapide",
+                  "repere": "c5_habitude"
+                },
+                {
+                  "texte": "devine ce qui est permis",
+                  "repere": "c5_devine"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de coller la règle de rangement sur l'armoire RH.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Propose que le statut se calcule seul à partir des pièces reçues.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je mets le dossier 22 en incomplet, je note que la fiche de poste manque et je préviens le responsable RH. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Une ligne du tableau vous semble fausse. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Le responsable RH vous demande où en sont les dossiers. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Un dossier est rangé dans le classeur du service. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Dans le tableau, le dossier 22 est « complet », mais la fiche de poste signée manque. Que faites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Un dossier est complet avec les trois pièces.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le dossier 22 est marqué « complet ».",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Le dossier 22 n'a pas sa fiche de poste signée.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le dossier 24 est rangé dans le classeur du service.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le tableau doit être envoyé à 16 h.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Il manque aussi le RIB du dossier 22.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je continue le contrôle des autres lignes, puis j'envoie le tableau avant 16 h.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "b",
+                "texte": "J'envoie le tableau tout de suite, pour respecter l'heure limite de 16 h.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              },
+              {
+                "id": "c",
+                "texte": "Je vérifie seulement les lignes qui me semblent suspectes.",
+                "points": 1,
+                "repere": "c6_laisse"
+              },
+              {
+                "id": "d",
+                "texte": "Je m'arrête là : j'ai trouvé une erreur, donc je peux envoyer le tableau tout de suite.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              }
+            ]
+          },
+          "explication": "Le statut « complet » demande les trois pièces. Il manque la fiche de poste du dossier 22 : on corrige, on note ce qui manque et on prévient le responsable RH."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le tableau de suivi, ligne par ligne",
+          "consigne": "Voici le tableau de suivi. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Dossier 21 — pièces : contrat, RIB, fiche de poste — statut : complet — rangé : armoire RH",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Dossier 22 — pièces : contrat, RIB — statut : complet — rangé : armoire RH",
+              "erreur": true,
+              "explication": "Il manque la fiche de poste signée : le statut devrait être « incomplet »."
+            },
+            {
+              "id": "e3",
+              "texte": "Dossier 23 — pièces : contrat — statut : incomplet — rangé : armoire RH",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Dossier 24 — pièces : contrat, RIB, fiche de poste — statut : complet — rangé : classeur du service",
+              "erreur": true,
+              "explication": "Ce dossier est dans le classeur du service. La règle demande l'armoire RH, fermée à clé."
+            },
+            {
+              "id": "e5",
+              "texte": "Dossier 25 — pièces : contrat, RIB, fiche de poste — statut : complet — rangé : armoire RH",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Dossier 26 — pièces : aucune — statut : incomplet — rangé : armoire RH",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Dossier 27 — pièces : contrat, RIB, fiche de poste — statut : incomplet — rangé : armoire RH",
+              "erreur": true,
+              "explication": "Les trois pièces sont reçues : le statut devrait être « complet »."
+            },
+            {
+              "id": "e8",
+              "texte": "Dossier 28 — pièces : contrat, RIB — statut : incomplet — rangé : armoire RH",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Contrôle de 15 minutes sur un tableau imprimé de 8 dossiers fictifs, avec la règle de rangement. La personne entoure les lignes fausses, dit ce qu'elle fait de chacune et ce qu'elle note.",
+            "criteres": [
+              {
+                "texte": "Relit chaque ligne : pièces, statut et lieu de rangement",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère les lignes dont le statut ne correspond pas aux pièces",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Repère le dossier rangé hors de l'armoire RH et applique la règle",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Dit qui elle prévient et ce qu'elle note de ses corrections",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose un moyen d'éviter que les erreurs reviennent",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que contrôlez-vous** avant d'envoyer le tableau ?",
+              "justes": [
+                {
+                  "texte": "Chaque ligne : les pièces, le statut et le rangement.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que chaque statut « complet » correspond bien aux trois pièces.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que chaque dossier est rangé dans l'armoire RH.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le tableau est bien rempli.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : la personne qui l'a rempli l'a vérifié.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous du dossier 22, marqué « **complet** » alors que la **fiche de poste manque** ?",
+              "justes": [
+                {
+                  "texte": "Je mets « incomplet », je note la pièce manquante et je préviens le responsable RH.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je corrige le statut et je signale la pièce à réclamer.",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "Je garde une trace de la correction, avec la date.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je mets « incomplet ».",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le laisse : quelqu'un a sûrement vu la fiche de poste.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous du dossier 24, rangé dans le **classeur du service** ?",
+              "justes": [
+                {
+                  "texte": "Je le range dans l'armoire RH, je corrige le tableau et je préviens le responsable RH.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je le range tout de suite dans l'armoire fermée à clé, et je le signale.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "J'applique la nouvelle règle, même si le classeur était plus pratique.",
+                  "repere": "c5_applique"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le range dans l'armoire RH.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le laisse dans le classeur : c'est comme avant.",
+                  "repere": "c5_habitude"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de coller la règle de rangement sur l'armoire et sur le classeur.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Propose que le statut se calcule seul à partir des pièces reçues.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer dès le premier jour où est l'armoire RH, qui a la clé et quelles règles d'accès s'appliquent aux dossiers.",
+        "Donner une liste de contrôle courte pour relire un tableau avant envoi : pièces, statut, rangement, copie gardée."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Écrire un e-mail clair et le vérifier avant l'envoi",
+      "pourquoi": "Un e-mail avec une mauvaise date, un mauvais destinataire ou une pièce jointe oubliée fait perdre du temps et de la crédibilité à l'entreprise.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Confirmer un rendez-vous à un client",
+        "texte": "Mardi, 11 h. La directrice reçoit la société Verdier jeudi 19 novembre à 10 h, en salle Vega, au 2e étage. Le rendez-vous dure une heure. Le client doit apporter son bon de commande signé. Vous lui écrivez pour confirmer, avec le devis n° 148 en pièce jointe. Une autre cliente, la société Verdon, porte un nom proche. Voici votre brouillon.",
+        "document": {
+          "type": "message",
+          "titre": "Votre brouillon, avant l'envoi",
+          "de": "Vous",
+          "texte": "À : société Verdon, service achats\nObjet : Rendez-vous\nPièce jointe : devis-146.pdf\nBonjour,\nJe vous confirme notre rendez-vous de mercredi 19 novembre dans nos locaux. Merci de nous apporter les documents.\nCordialement"
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**L'objet** du brouillon est « Rendez-vous ». **Que mettez-vous** à la place ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Confirmation de rendez-vous",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Urgent : message important",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Suite à notre échange de la semaine dernière à propos de votre commande et de notre offre",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rendez-vous jeudi 19 novembre à 10 h",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "explication": "L'objet doit dire l'essentiel : de quoi il s'agit, le jour et l'heure. « Confirmation de rendez-vous » est juste, mais le client doit ouvrir le message pour connaître la date.",
+              "relance": "Que doit contenir l'objet d'un e-mail ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le brouillon est adressé à la **société Verdon**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je remplace par la société Verdier et je vérifie l'adresse dans la fiche client.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le laisse : les deux sociétés sont clientes, le message sera transmis.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'écris aux deux sociétés, pour que la bonne reçoive le message.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je remplace par la société Verdier, sans vérifier l'adresse.",
+                  "points": 1,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Le rendez-vous est avec la société Verdier : écrire à la société Verdon enverrait des informations au mauvais client. On corrige le destinataire et on contrôle l'adresse dans la fiche client.",
+              "relance": "Comment vous assurez-vous qu'un message part au bon destinataire ?"
+            },
+            {
+              "id": "q3",
+              "texte": "**Que faut-il corriger** dans la phrase « Je vous confirme notre rendez-vous de mercredi 19 novembre dans nos locaux » ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'ajoute l'ordre du jour détaillé et tout l'historique du dossier, pour que le message soit complet.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le jour, l'heure et le lieu : « jeudi 19 novembre à 10 h, en salle Vega, au 2e étage ».",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "Seulement le jour : je remplace « mercredi » par « jeudi 19 novembre ».",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : le client connaît déjà nos locaux, il saura où venir.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Le mot « mercredi » est faux : le rendez-vous est jeudi 19 novembre, et le client doit aussi connaître l'heure et la salle. Corriger seulement le jour laisse l'heure et le lieu inconnus.",
+              "relance": "Quelles informations donnez-vous toujours pour confirmer un rendez-vous ?"
+            },
+            {
+              "id": "q4",
+              "texte": "La **pièce jointe** du brouillon s'appelle « **devis-146.pdf** ». Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je renomme le fichier « devis-146.pdf » en « devis-148.pdf », sans changer son contenu.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je remplace le fichier par « devis-148.pdf », sans l'ouvrir.",
+                  "points": 1,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je remplace par « devis-148.pdf » et je l'ouvre pour vérifier le client et le numéro.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le laisse : le client demandera le bon devis s'il se trompe.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Le devis à joindre est le n° 148, et renommer un fichier ne change pas son contenu. On remplace le fichier, puis on l'ouvre pour vérifier le nom du client et le numéro avant d'envoyer.",
+              "relance": "Comment vérifiez-vous qu'une pièce jointe est la bonne ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le client **n'a pas répondu** mercredi à midi. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends jeudi : s'il ne vient pas, je le saurai et je préviendrai la directrice.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui renvoie le même e-mail, sans autre message, et j'attends sa réponse.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "J'annule le rendez-vous sans le dire au client : sans réponse, il ne viendra pas.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui téléphone pour vérifier qu'il a reçu le message et qu'il vient jeudi.",
+                  "points": 2,
+                  "repere": "c3_verifie"
+                }
+              ],
+              "explication": "Sans réponse, on ne sait pas si le message est lu : un appel court le vérifie et laisse le temps de réagir. Renvoyer le même e-mail peut aider, mais ne garantit pas qu'il sera lu.",
+              "relance": "Comment savez-vous qu'une personne a bien reçu votre message ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **l'objet** de l'e-mail, j'écris…",
+              "justes": [
+                {
+                  "texte": "« Rendez-vous jeudi 19 novembre à 10 h »",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "le jour et l'heure du rendez-vous, pour que le client les voie sans ouvrir le message",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "un objet qui dit tout de suite de quoi il s'agit : le rendez-vous de jeudi à 10 h",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "« Confirmation de rendez-vous »",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "« Important »",
+                  "repere": "c3_flou"
+                },
+                {
+                  "texte": "« Suite à notre échange »",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "**Avant d'envoyer** l'e-mail, je vérifie…",
+              "justes": [
+                {
+                  "texte": "que le destinataire est la société Verdier et pas Verdon",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que le jour, l'heure et la salle sont justes",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que la pièce jointe est le devis n° 148, en l'ouvrant",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "l'orthographe",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : j'ai déjà relu le brouillon en l'écrivant",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "seulement que le texte est poli",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si le client **ne répond pas** avant jeudi, je…",
+              "justes": [
+                {
+                  "texte": "l'appelle pour vérifier qu'il a bien reçu le message et qu'il vient",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "lui téléphone mercredi pour confirmer le rendez-vous",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "préviens la directrice que le client n'a pas confirmé",
+                  "repere": "c4_informe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui renvoie le même e-mail",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "attends jeudi pour voir s'il vient",
+                  "repere": "c2_reactif"
+                },
+                {
+                  "texte": "annule le rendez-vous sans prévenir la directrice",
+                  "repere": "c4_seul"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose un modèle d'e-mail de confirmation avec le jour, l'heure, le lieu et les documents à apporter.",
+              "repere": "c3_complet"
+            },
+            {
+              "texte": "Garde l'e-mail envoyé dans le dossier du client.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je remplace Verdon par Verdier, je corrige le jour en jeudi et je joins le devis n° 148 avant d'envoyer. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Votre brouillon contient des erreurs. Que faites-vous avant d'envoyer ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Votre brouillon est adressé à la société Verdon, indique mercredi et joint le devis n° 146. Que faites-vous avant d'envoyer ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "La directrice vous demande si le client a confirmé. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le client vous demande l'adresse de l'entreprise. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le client est la société Verdier, pas Verdon.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le rendez-vous est jeudi 19 novembre, pas mercredi.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Le devis à joindre est le n° 148.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client doit apporter son bon de commande signé.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le rendez-vous dure deux heures.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le rendez-vous a lieu en salle Orion.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'envoie le message aussi à la société Verdon, au cas où.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              },
+              {
+                "id": "b",
+                "texte": "Je relis seulement le destinataire et la pièce jointe, puis j'envoie.",
+                "points": 1,
+                "repere": "c6_laisse"
+              },
+              {
+                "id": "c",
+                "texte": "Je relis le message en entier : destinataire, jour, heure, lieu et pièce jointe, puis je l'envoie.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "d",
+                "texte": "Je demande à la directrice de l'envoyer à ma place, sans le relire.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              }
+            ]
+          },
+          "explication": "Le brouillon contient trois erreurs : le destinataire, le jour et la pièce jointe. On les corrige avant d'envoyer : un message déjà parti ne se rattrape pas."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Les phrases de votre e-mail",
+          "consigne": "Pour **chaque phrase**, choisissez si elle est claire et exacte, floue ou incomplète, ou inexacte.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Claire et exacte"
+            },
+            {
+              "id": "k2",
+              "nom": "Floue ou incomplète"
+            },
+            {
+              "id": "k3",
+              "nom": "Inexacte"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Objet : Rendez-vous",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Il manque le jour et l'heure."
+            },
+            {
+              "id": "e2",
+              "texte": "Objet : Rendez-vous jeudi 19 novembre à 10 h",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Il donne l'essentiel dès l'objet."
+            },
+            {
+              "id": "e3",
+              "texte": "Je vous confirme notre rendez-vous de mercredi 19 novembre.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le rendez-vous est jeudi 19 novembre, pas mercredi."
+            },
+            {
+              "id": "e4",
+              "texte": "Le rendez-vous a lieu jeudi 19 novembre à 10 h, en salle Vega, au 2e étage.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le jour, l'heure et le lieu sont donnés, et ils sont justes."
+            },
+            {
+              "id": "e5",
+              "texte": "Merci de nous apporter les documents.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "On ne sait pas lesquels : le client doit apporter son bon de commande signé."
+            },
+            {
+              "id": "e6",
+              "texte": "Merci d'apporter votre bon de commande signé.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle dit précisément ce qu'il faut apporter."
+            },
+            {
+              "id": "e7",
+              "texte": "Vous trouverez le devis n° 146 en pièce jointe.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le devis à joindre est le n° 148."
+            },
+            {
+              "id": "e8",
+              "texte": "Le rendez-vous dure une heure.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La durée est juste."
+            },
+            {
+              "id": "e9",
+              "texte": "Merci de venir avec ce qu'il faut.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Elle ne dit pas ce qu'il faut apporter."
+            }
+          ],
+          "repere_reussite": "c3_complet",
+          "repere_echec": "c3_flou",
+          "reel": {
+            "consigne": "Rédaction de 15 minutes : la personne reçoit la fiche du rendez-vous (jour, heure, salle, documents) et un brouillon contenant des erreurs. Elle écrit l'e-mail définitif et le relit avant de « l'envoyer » à l'évaluateur.",
+            "criteres": [
+              {
+                "texte": "Écrit un objet qui donne le jour et l'heure du rendez-vous",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Donne le jour, l'heure, le lieu et ce qu'il faut apporter",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Repère le mauvais destinataire, le mauvais jour et la mauvaise pièce jointe",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Relit le message en le comparant à la fiche avant l'envoi",
+                "repere": "c6_controle"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de téléphoner au client s'il ne répond pas",
+              "repere": "c3_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que dites-vous dans la **première phrase** de l'e-mail ?",
+              "justes": [
+                {
+                  "texte": "Que je confirme le rendez-vous de jeudi 19 novembre à 10 h.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Je confirme notre rendez-vous de jeudi 19 novembre à 10 h, en salle Vega.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "L'essentiel d'abord : le rendez-vous est confirmé, avec sa date et son heure.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Bonjour, je vous écris au sujet de notre rendez-vous.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Une longue présentation de l'entreprise et de l'historique du dossier.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que vérifiez-vous** avant d'envoyer l'e-mail ?",
+              "justes": [
+                {
+                  "texte": "Que le destinataire est la société Verdier et pas Verdon.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que le jour, l'heure et la salle sont justes.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que la pièce jointe est le devis n° 148, en l'ouvrant.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "L'orthographe.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je l'ai relu en l'écrivant.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous si le client **ne répond pas** avant jeudi ?",
+              "justes": [
+                {
+                  "texte": "Je l'appelle pour vérifier qu'il a reçu le message et qu'il vient.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "Je lui téléphone mercredi pour confirmer le rendez-vous.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "Je préviens la directrice que le client n'a pas confirmé.",
+                  "repere": "c4_informe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui renvoie l'e-mail.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends jeudi pour voir s'il vient.",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Garde l'e-mail envoyé dans le dossier du client.",
+              "repere": "c3_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un modèle d'e-mail de confirmation (objet, jour, heure, lieu, documents à apporter) et dire où garder les messages envoyés.",
+        "Faire relire les premiers e-mails destinés à des clients par une collègue : destinataire, date, pièce jointe, puis en parler deux minutes."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Accueillir au téléphone et répondre aux demandes",
+      "pourquoi": "Le téléphone est souvent le premier contact avec l'entreprise : un appel bien reçu et un message complet évitent les rappels et les erreurs.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un appel pour le responsable RH",
+        "texte": "Mercredi, 10 h 20. Le téléphone du service sonne. Un appelant demande le responsable RH, absent aujourd'hui et de retour demain. Il travaille pour une autre entreprise et veut savoir si un ancien salarié y a travaillé, et jusqu'à quelle date. Dans l'entreprise, seul le responsable RH donne des informations sur un salarié ou un ancien salarié. Personne ne donne de numéro de portable. Le responsable RH rappelle les appelants le lendemain avant midi.",
+        "document": null
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "L'appelant demande le responsable RH, qui est **absent aujourd'hui**. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis que le responsable RH est absent, et je lui conseille de rappeler demain.",
+                  "points": 1,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis que je ne sais pas où est le responsable RH, et je lui conseille de rappeler plus tard.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que le responsable RH est absent, et je lui propose de prendre un message.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui donne le numéro de portable du responsable RH, pour qu'il puisse l'appeler aujourd'hui.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "Prendre un message permet au responsable RH de rappeler, sans donner de numéro de portable. Lui dire de rappeler demain est correct, mais personne ne suit sa demande.",
+              "relance": "Que proposez-vous quand la personne demandée est absente ?"
+            },
+            {
+              "id": "q2",
+              "texte": "L'appelant demande si un **ancien salarié** a travaillé ici, et jusqu'à quelle date. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je cherche dans le dossier du salarié et je lui donne les dates de présence.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis que je ne peux pas répondre, sans rien proposer d'autre.",
+                  "points": 1,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je confirme qu'il a travaillé ici, mais je ne donne pas sa date de départ.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'explique que seul le responsable RH peut répondre, et je lui transmets la demande.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                }
+              ],
+              "explication": "Seul le responsable RH donne des informations sur un salarié : on explique la règle et on transmet la demande. Refuser sans rien proposer laisse l'appelant sans suite, et confirmer qu'il a travaillé ici est déjà une information.",
+              "relance": "Que répondez-vous quand on vous demande une information que vous n'avez pas le droit de donner ?"
+            },
+            {
+              "id": "q3",
+              "texte": "L'appelant dit qu'il a besoin d'une **réponse aujourd'hui**. Que lui dites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que le responsable RH le rappellera aujourd'hui, dès que possible.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que le responsable RH le rappellera demain avant midi, après avoir lu son message.",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que le responsable RH le rappellera très vite.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que je vais demander à une collègue de lui donner l'information à la place.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "Le vrai délai est demain avant midi : on le dit tel quel, sans promettre un rappel aujourd'hui, qui ne pourrait pas être tenu. « Très vite » ne donne aucun délai.",
+              "relance": "Que dites-vous à quelqu'un de pressé quand vous ne pouvez pas aller plus vite ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Que notez-vous sur **l'appelant et sa demande**, dans le message pour le responsable RH ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Son nom, son entreprise, son numéro, l'objet de la demande et l'heure de l'appel.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Seulement l'objet de la demande : le responsable RH retrouvera l'appelant.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Son nom et son numéro de téléphone.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Toute la conversation, mot pour mot, sur deux pages.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                }
+              ],
+              "explication": "Le responsable RH doit pouvoir rappeler sans poser de question : nom, entreprise, numéro et objet, avec l'heure de l'appel. Le nom et le numéro seuls ne disent pas de quoi il s'agit.",
+              "relance": "Que doit contenir un message pour qu'un collègue puisse agir sans vous rappeler ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Avant de raccrocher**, que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis de rappeler demain matin pour savoir si le message a été lu, puis je raccroche.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je raccroche dès qu'il a fini de parler, pour libérer la ligne pour les autres appels.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je relis son nom et son numéro, et je lui confirme le rappel de demain avant midi.",
+                  "points": 2,
+                  "repere": "c3_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le remercie et je raccroche, car il a tout dit clairement et sans hésiter.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Relire le nom et le numéro évite une erreur qui rendrait le rappel impossible, et annoncer la suite et le délai rassure l'appelant. Raccrocher sans relire laisse un risque d'erreur.",
+              "relance": "Comment vérifiez-vous qu'un numéro noté au téléphone est le bon ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "À l'appelant qui demande **le responsable RH**, je dis…",
+              "justes": [
+                {
+                  "texte": "que le responsable RH est absent aujourd'hui, et je propose de prendre un message",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "que je peux noter sa demande, pour que le responsable RH la lise à son retour",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "que le responsable RH est de retour demain et rappellera avant midi",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le responsable RH est absent aujourd'hui",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que je ne sais pas où est le responsable RH, et je lui conseille de rappeler plus tard",
+                  "repere": "c7_ignore"
+                },
+                {
+                  "texte": "le numéro de portable du responsable RH, pour qu'il puisse l'appeler aujourd'hui",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Quand l'appelant demande des **informations** sur un **ancien salarié**, je…",
+              "justes": [
+                {
+                  "texte": "explique que seul le responsable RH donne ces informations",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "propose de transmettre la demande au responsable RH",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "dis que je note sa demande et que le responsable RH le rappellera demain avant midi",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dis que je ne peux pas répondre",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "regarde dans le dossier du salarié pour l'aider",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "confirme qu'il a travaillé ici, mais je ne donne pas les dates",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour que le responsable RH ait **le message** à son retour, je…",
+              "justes": [
+                {
+                  "texte": "lui envoie un e-mail avec le nom, l'entreprise, le numéro et la demande",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "écris le message complet et je le lui transmets par écrit",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "vérifie demain qu'il l'a bien lu",
+                  "repere": "c7_suivi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis le message à l'oral demain",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "garde le message en tête",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "note le numéro sur un papier que je garde dans mon bureau",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose une fiche de message avec des cases : nom, entreprise, numéro, objet, heure.",
+              "repere": "c5_ameliore"
+            },
+            {
+              "texte": "Demande l'adresse e-mail de l'appelant, pour que le responsable RH puisse aussi répondre par écrit.",
+              "repere": "c7_alternative"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Le responsable RH est absent aujourd'hui. Je note votre demande, et il vous rappellera demain avant midi. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un appelant demande des informations sur un ancien salarié. Le responsable RH est absent aujourd'hui. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un appelant demande le responsable RH. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un appelant vous demande le numéro de portable du responsable RH. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le responsable RH est de retour et vous demande s'il y a eu des appels. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le responsable RH est absent aujourd'hui.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Seul le responsable RH donne des informations sur un salarié.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Le responsable RH rappelle les appelants le lendemain avant midi.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "L'appelant travaille pour une autre entreprise.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "L'appelant a déjà laissé son numéro.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable RH a demandé à ne pas être dérangé.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je lui dis de rappeler demain, car le responsable RH sera là.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              },
+              {
+                "id": "b",
+                "texte": "Je note seulement son numéro de téléphone, il suffira au responsable RH.",
+                "points": 1,
+                "repere": "c3_flou"
+              },
+              {
+                "id": "c",
+                "texte": "Je raccroche : il rappellera de lui-même si c'est important pour lui.",
+                "points": 0,
+                "repere": "c7_ignore"
+              },
+              {
+                "id": "d",
+                "texte": "Je lui demande son nom, son entreprise et son numéro, et je les note.",
+                "points": 2,
+                "repere": "c3_complet"
+              }
+            ]
+          },
+          "explication": "Seul le responsable RH donne ces informations, et il rappelle le lendemain avant midi. On prend donc la demande et les coordonnées de l'appelant, au lieu de répondre à sa place."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre appel, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, du début de l'appel à l'envoi du message.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Dire à l'appelant que le responsable RH est absent aujourd'hui"
+            },
+            {
+              "id": "e2",
+              "texte": "Proposer de prendre un message"
+            },
+            {
+              "id": "e3",
+              "texte": "Demander et noter le nom, l'entreprise et le numéro de l'appelant"
+            },
+            {
+              "id": "e4",
+              "texte": "Noter l'objet de la demande"
+            },
+            {
+              "id": "e5",
+              "texte": "Relire le message à l'appelant"
+            },
+            {
+              "id": "e6",
+              "texte": "Annoncer que le responsable RH rappellera demain avant midi"
+            },
+            {
+              "id": "e7",
+              "texte": "Envoyer le message par e-mail au responsable RH"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "On annonce l'absence avant de proposer un message."
+            },
+            {
+              "avant": "e1",
+              "apres": "e6",
+              "explication": "On annonce l'absence avant d'annoncer le rappel de demain."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "On ne peut relire que ce qui est déjà noté."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On ne peut relire que ce qui est déjà noté."
+            },
+            {
+              "avant": "e2",
+              "apres": "e5",
+              "explication": "On propose de prendre un message avant de pouvoir le relire."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "L'e-mail part après l'appel, pas pendant."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "On envoie le message une fois qu'il est vérifié avec l'appelant."
+            }
+          ],
+          "repere_reussite": "c7_suivi",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue l'appelant, qui demande le responsable RH puis des informations sur un ancien salarié. La personne candidate répond, remplit une fiche de message vierge, puis écrit l'e-mail de transmission.",
+            "criteres": [
+              {
+                "texte": "Annonce l'absence et propose de prendre un message",
+                "repere": "c7_alternative"
+              },
+              {
+                "texte": "Refuse de donner des informations sur un salarié, en expliquant la règle simplement",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Note un message complet : nom, entreprise, numéro et objet",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Relit le message et annonce le rappel de demain avant midi",
+                "repere": "c7_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Transmet le message par écrit sans qu'on le lui demande",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que répondez-vous à l'appelant qui demande **le responsable RH** ?",
+              "justes": [
+                {
+                  "texte": "Que le responsable RH est absent aujourd'hui, et je propose de prendre un message.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Que le responsable RH n'est pas là, et je demande si je peux noter sa demande.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Que le responsable RH est de retour demain et rappellera avant midi.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le responsable RH est absent aujourd'hui.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui donne le numéro de portable du responsable RH.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que répondez-vous si l'appelant demande des **informations** sur un **ancien salarié** ?",
+              "justes": [
+                {
+                  "texte": "Que seul le responsable RH donne ces informations, et je transmets la demande.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "J'explique la règle simplement et je propose un rappel de la part du responsable RH.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je note sa demande et je dis que le responsable RH rappellera demain avant midi.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je ne peux pas répondre.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je cherche dans le dossier du salarié pour l'aider.",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous du message **après l'appel** ?",
+              "justes": [
+                {
+                  "texte": "Je l'envoie par e-mail au responsable RH, avec le nom, l'entreprise, le numéro et la demande.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Je l'écris en entier et je le lui transmets par écrit, pour qu'il le voie à son retour.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Je vérifie demain que le responsable RH l'a lu.",
+                  "repere": "c7_suivi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le lui dirai à l'oral demain.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le garde en tête.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose une fiche de message avec des cases à remplir.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner une fiche de message téléphonique avec les cases à remplir, et la liste des informations qu'on ne donne pas par téléphone.",
+        "Faire accompagner les premiers appels par une collègue, puis en parler deux minutes : ce qui était clair pour l'appelant, ce qui manquait."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où **plusieurs demandes** sont arrivées en même temps. Comment avez-vous choisi **par laquelle commencer** ?",
+      "suite": [
+        "Qu'avez-vous dit aux personnes qui ont dû attendre ?"
+      ],
+      "attendus": [
+        "Décrit les demandes avec leurs heures limites",
+        "Donne un critère clair : heure limite, conséquences",
+        "Dit comment il a prévenu les personnes qui attendaient"
+      ],
+      "relance": "Qu'est-ce qui pouvait attendre, dans cette liste ?",
+      "alternative": "Si vous n'avez jamais travaillé dans un bureau : parlez d'une fois où plusieurs choses urgentes sont arrivées ensemble (études, association, vie quotidienne)."
+    },
+    {
+      "id": "e2",
+      "competence": "C2",
+      "texte": "Deux collègues ont réservé la **même salle** au **même moment**. Que faites-vous ?",
+      "suite": [
+        "Que faites-vous si les deux refusent de changer ?"
+      ],
+      "attendus": [
+        "Vérifie les faits : qui a réservé le premier, combien de personnes",
+        "Propose une solution : autre salle ou autre horaire",
+        "Prévient les deux personnes et met l'agenda à jour"
+      ],
+      "relance": "Que faites-vous si aucune autre salle n'est libre ?",
+      "alternative": "Imaginez que deux personnes veulent la même salle ou le même créneau pour une activité (association, sport, études). Comment réglez-vous cela ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C6",
+      "texte": "**Comment contrôlez-vous** un tableau avant de l'envoyer à quelqu'un ?",
+      "suite": [
+        "Que faites-vous quand vous trouvez une erreur ?"
+      ],
+      "attendus": [
+        "Cite des contrôles concrets : totaux, doublons, cases vides, dates",
+        "Compare avec une source quand il y en a une",
+        "Corrige, garde une trace et prévient la personne concernée"
+      ],
+      "relance": "Que faites-vous si vous avez un doute sur un chiffre ?",
+      "alternative": "Quand vous relisez un document important (dossier, devis, démarche) avant de le rendre, que vérifiez-vous ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C6",
+      "texte": "Parlez **d'une erreur** que vous avez faite dans un document ou un dossier. **Comment l'avez-vous découverte** ?",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur sans la minimiser",
+        "Dit qui il a prévenu et comment elle a été corrigée",
+        "Dit ce qui a changé pour qu'elle ne revienne pas"
+      ],
+      "relance": "Qui avez-vous prévenu ?",
+      "alternative": "Parlez d'une erreur faite dans un devoir, un dossier ou une démarche (études, association, vie quotidienne) et de ce que vous avez fait ensuite."
+    },
+    {
+      "id": "e5",
+      "competence": "C3",
+      "texte": "Parlez d'un e-mail ou d'un courrier important que vous avez écrit. **Qu'avez-vous vérifié** avant de l'envoyer ?",
+      "suite": [
+        "Comment avez-vous su que le message était compris ?"
+      ],
+      "attendus": [
+        "Cite des vérifications concrètes : destinataire, date, pièce jointe",
+        "Dit ce qu'il a mis en premier dans le message",
+        "Dit comment il a vérifié que le message était compris"
+      ],
+      "relance": "Qu'est-ce que la personne devait faire après avoir lu votre message ?",
+      "alternative": "Parlez d'un message (lettre, e-mail, annonce) écrit pour un groupe ou une administration, et de la façon dont vous l'avez vérifié."
+    },
+    {
+      "id": "e6",
+      "competence": "C3",
+      "texte": "Vous prenez un **message téléphonique** pour un collègue absent. **Que notez-vous** ?",
+      "suite": [
+        "Comment lui transmettez-vous le message ?"
+      ],
+      "attendus": [
+        "Cite le nom, l'entreprise, le numéro et l'objet",
+        "Relit ou fait confirmer le numéro avec l'appelant",
+        "Dit comment le message arrive à son collègue, par écrit"
+      ],
+      "relance": "Comment vous assurez-vous que votre collègue le lira ?",
+      "alternative": "Imaginez que vous preniez un message pour un voisin ou un proche absent. Que notez-vous pour qu'il puisse rappeler ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où vous avez **aidé une personne** qui avait une demande difficile. Que **s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous fait pour répondre à sa demande ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit la demande et ce qui la rendait difficile",
+        "Décrit une action concrète pour répondre à la personne",
+        "Dit comment la demande a été suivie jusqu'au bout"
+      ],
+      "relance": "Qu'auriez-vous pu faire d'autre ?",
+      "alternative": "Parlez d'une personne que vous avez aidée à obtenir une information ou un document (association, travail occasionnel, vie quotidienne)."
+    },
+    {
+      "id": "e8",
+      "competence": "C7",
+      "texte": "Une personne vous demande une information que vous **n'avez pas le droit** de donner. Que lui **répondez-vous** ?",
+      "suite": [],
+      "attendus": [
+        "Explique la règle simplement, sans accuser la personne",
+        "Propose une solution autorisée : transmettre, faire rappeler, écrire",
+        "Annonce la suite et le délai"
+      ],
+      "relance": "Et si la personne insiste ?",
+      "alternative": "Imaginez qu'un inconnu vous demande l'adresse d'une personne que vous connaissez. Que lui répondez-vous ?"
+    }
+  ],
+  "_pv": "7806a5d183"
+}

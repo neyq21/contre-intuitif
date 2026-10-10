@@ -1,0 +1,2603 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "controleur-qualite",
+  "version": "2026.10",
+  "nom": "Contrôleur qualité / Contrôleuse qualité",
+  "secteur": "industrie",
+  "alias": [
+    "contrôleur qualité",
+    "contrôleuse qualité",
+    "technicien qualité",
+    "technicienne qualité",
+    "agent de contrôle",
+    "inspecteur qualité",
+    "technicien de laboratoire de contrôle",
+    "métrologie"
+  ],
+  "resume": "Contrôle les pièces fabriquées avec le plan de contrôle, mesure, compare aux tolérances, bloque ce qui n'est pas conforme et le signale.",
+  "contexte": "Une usine de pièces mécaniques d'environ 120 personnes, avec un laboratoire de contrôle et deux équipes de production, le matin et l'après-midi.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C6",
+      "titre": "Contrôler un lot et garder une trace",
+      "pourquoi": "Un lot contrôlé sans méthode laisse partir des pièces douteuses ; une trace claire permet de retrouver quoi, quand et avec quoi.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Contrôler un lot d'axes selon le plan",
+        "texte": "Mardi, 9 h 30. La production vient de terminer le lot 2410-07 : 400 axes AX-12, rangés dans plusieurs bacs. Vous devez le contrôler avec le plan de contrôle de l'usine (voir le tableau). Ce plan est en vigueur depuis lundi et remplace l'ancien, qui demandait 5 axes par lot. Pour chaque cote, une valeur égale à une limite de la tolérance est conforme. Vos instruments sont le micromètre M3 et le pied à coulisse PC1.",
+        "document": {
+          "type": "tableau",
+          "titre": "Plan de contrôle de l'axe AX-12 (indice C, en vigueur depuis lundi)",
+          "colonnes": [
+            "Point à contrôler",
+            "Ce que demande le plan"
+          ],
+          "lignes": [
+            [
+              "Prélèvement",
+              "8 axes pris au hasard, à des endroits différents du lot"
+            ],
+            [
+              "Diamètre",
+              "12,00 mm ± 0,05 (de 11,95 à 12,05), mesuré au micromètre M3"
+            ],
+            [
+              "Longueur",
+              "60,00 mm ± 0,10 (de 59,90 à 60,10), mesurée au pied à coulisse PC1"
+            ],
+            [
+              "Avant de mesurer",
+              "Étiquette d'étalonnage à jour et zéro vérifié"
+            ],
+            [
+              "Enregistrement",
+              "Valeur mesurée de chaque axe (pas seulement « OK »), numéro du lot, instruments, date, signature"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le lot 2410-07 est à contrôler. **Combien d'axes** mesurez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "5 axes, comme avant : les derniers lots étaient conformes.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "b",
+                  "texte": "8 axes, comme le demande le plan en vigueur depuis lundi.",
+                  "points": 2,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à mon responsable si le nouveau plan s'applique déjà à ce lot.",
+                  "points": 1,
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "3 axes seulement : s'ils sont tous bons, je m'arrête là.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Le plan en vigueur fait foi : il demande 8 axes. Demander au responsable est possible, mais le plan est déjà écrit, daté et indicé.",
+              "relance": "Comment savez-vous quelle version du plan de contrôle est en vigueur ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Comment choisissez-vous** les 8 axes à mesurer ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je les prends à des endroits différents du lot : plusieurs bacs, dessus et dessous.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je prends les 8 derniers axes sortis de la machine : ils sont sur le dessus du dernier bac.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je prends les 8 axes dans un seul bac, choisi au hasard.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je choisis les 8 axes qui me semblent les mieux finis.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Le plan demande des axes pris à des endroits différents, pour que l'échantillon représente tout le lot. Un seul bac, même au hasard, ne montre qu'une partie du lot.",
+              "relance": "Pourquoi ne pas prendre seulement les derniers axes sortis de la machine ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous êtes à votre poste. Que faites-vous **avant de mesurer** le premier axe ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je mesure tout de suite : ce sont les instruments que j'utilise tous les jours.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde si les axes ont l'air bien finis, puis je mesure.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je vérifie le zéro du micromètre.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je vérifie l'étiquette d'étalonnage et le zéro des deux instruments.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                }
+              ],
+              "explication": "Le plan demande une étiquette d'étalonnage à jour et un zéro vérifié, pour chaque instrument. Vérifier seulement le zéro laisse passer un instrument dont l'étalonnage est périmé.",
+              "relance": "Comment savez-vous qu'un instrument de mesure est fiable ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le micromètre indique **12,05 mm** sur un axe. **Que notez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "12,05 mm, non conforme : c'est trop près de la limite.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Conforme », sans la valeur : elle est dans la tolérance.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "12,05 mm, conforme : une valeur égale à la limite est conforme.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "12,0 mm, conforme : j'arrondis pour que ce soit plus simple.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                }
+              ],
+              "explication": "Le plan dit qu'une valeur égale à une limite est conforme, et il demande la valeur mesurée. Noter seulement « conforme » est juste sur le fond, mais on ne peut plus relire la mesure.",
+              "relance": "Pourquoi note-t-on la valeur mesurée et pas seulement « conforme » ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Les 8 axes sont conformes. Que faites-vous pour **terminer le contrôle** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je préviens la production à l'oral que le lot est bon, sans rien noter de plus.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je complète la feuille, je la signe et je préviens la production que le lot est conforme.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je signe la feuille et je laisse le lot où il est.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je range la feuille sans la signer : toutes les valeurs sont dans la tolérance.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "La feuille datée et signée prouve que le contrôle a eu lieu, par qui et avec quels instruments. Prévenir la production lui permet de passer le lot à l'étape suivante.",
+              "relance": "Comment quelqu'un peut-il retrouver, plus tard, ce que vous avez contrôlé aujourd'hui ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **choisir les axes** à mesurer, je…",
+              "justes": [
+                {
+                  "texte": "prends 8 axes à des endroits différents du lot, dans plusieurs bacs",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "tire les axes au hasard, dessus et dessous, comme le demande le plan",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "suis le plan en vigueur : 8 axes, pas les 5 de l'ancien plan",
+                  "repere": "c5_applique"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "prends les axes d'un seul bac",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "prends les premiers axes que je trouve sur le dessus",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "garde mes 5 axes habituels",
+                  "repere": "c5_habitude"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "**Avant de mesurer**, je vérifie…",
+              "justes": [
+                {
+                  "texte": "l'étiquette d'étalonnage et le zéro du micromètre",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que les deux instruments, M3 et PC1, sont étalonnés et à zéro",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que mes instruments sont à jour, comme le demande le plan",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le micromètre n'est pas abîmé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : j'utilise ces instruments tous les jours",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Sur la feuille de contrôle, **je note**…",
+              "justes": [
+                {
+                  "texte": "la valeur mesurée de chaque axe, pas seulement « OK »",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "le numéro du lot, les instruments utilisés, la date et ma signature",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "chaque mesure au moment où je la fais, pas de mémoire à la fin",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "si le lot est bon ou pas",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "« OK » quand c'est bon, pour gagner du temps",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "des valeurs arrondies à 12,00 quand elles sont proches",
+                  "repere": "c6_cache"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Signale à son responsable une valeur proche d'une limite, même si elle est conforme.",
+              "repere": "c6_anomalie"
+            },
+            {
+              "texte": "Propose d'afficher le plan indice C au poste de contrôle et de retirer l'ancien.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Huit axes, comme le demande le plan en vigueur depuis lundi. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un axe mesure 12,07 mm. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Combien d'axes mesurez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le plan a changé lundi : il demande 8 axes au lieu de 5. Combien d'axes mesurez-vous pour le lot 2410-07 ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Quel instrument utilisez-vous pour mesurer le diamètre ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le plan en vigueur depuis lundi demande 8 axes par lot.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le lot 2410-07 compte 400 axes.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "L'ancien plan demandait 5 axes par lot.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le lot est contrôlé mardi, après l'entrée en vigueur du nouveau plan.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "Le diamètre doit être compris entre 11,95 et 12,05 mm.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le micromètre M3 sert à mesurer le diamètre.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je prends 8 axes au hasard, à des endroits différents du lot.",
+                "points": 2,
+                "repere": "c6_regle"
+              },
+              {
+                "id": "b",
+                "texte": "Je demande à l'opérateur de la machine de me donner 8 bons axes.",
+                "points": 0,
+                "repere": "c6_laisse"
+              },
+              {
+                "id": "c",
+                "texte": "Je prends 8 axes dans le bac le plus proche.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je prends les 8 premiers axes sortis de la machine ce matin.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              }
+            ]
+          },
+          "explication": "Le plan en vigueur depuis lundi demande 8 axes : l'ancien nombre, 5, n'est plus valable. Le contrôle a lieu mardi, c'est donc le nouveau plan qui s'applique."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La feuille de contrôle du lot 2410-07",
+          "consigne": "Voici la feuille remplie par un collègue pour ce lot. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Lot 2410-07, axes AX-12, plan de contrôle indice C",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Instruments : micromètre M3 et pied à coulisse PC1, étiquettes à jour, zéros vérifiés",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Axe 1 : diamètre 12,01 mm ; longueur 60,02 mm ; conforme",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Axe 2 : diamètre 11,96 mm ; longueur 59,95 mm ; conforme",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Axe 3 : diamètre 12,06 mm ; longueur 60,04 mm ; conforme",
+              "erreur": true,
+              "explication": "Le diamètre dépasse la limite haute de 12,05 mm : cet axe n'est pas conforme."
+            },
+            {
+              "id": "e6",
+              "texte": "Axe 4 : diamètre 12,05 mm ; longueur 60,10 mm ; conforme",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Axe 5 : diamètre OK ; longueur OK ; conforme",
+              "erreur": true,
+              "explication": "Le plan demande la valeur mesurée de chaque axe, pas seulement « OK »."
+            },
+            {
+              "id": "e8",
+              "texte": "Axe 6 : diamètre 12,00 mm ; longueur 60,13 mm ; conforme",
+              "erreur": true,
+              "explication": "La longueur dépasse la limite haute de 60,10 mm : cet axe n'est pas conforme."
+            },
+            {
+              "id": "e9",
+              "texte": "Axes 7 et 8 : non mesurés, mêmes résultats que les axes précédents",
+              "erreur": true,
+              "explication": "Le plan demande de mesurer 8 axes : on ne recopie pas des résultats."
+            },
+            {
+              "id": "e10",
+              "texte": "Contrôle fait mardi à 10 h 15, signé par le contrôleur",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Au laboratoire (20 minutes) : la personne contrôle un petit lot de pièces fictives. Elle a un plan écrit (8 pièces, 2 cotes), un micromètre et un pied à coulisse. Elle remplit la feuille de contrôle.",
+            "criteres": [
+              {
+                "texte": "Applique le plan en vigueur : nombre de pièces, cotes, instruments",
+                "repere": "c5_applique"
+              },
+              {
+                "texte": "Vérifie l'étiquette d'étalonnage et le zéro avant de mesurer",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Note la valeur mesurée de chaque pièce, sans arrondir",
+                "repere": "c6_trace"
+              },
+              {
+                "texte": "Compare chaque valeur à la tolérance, y compris aux limites",
+                "repere": "c8_precision"
+              }
+            ],
+            "bonus": {
+              "texte": "Signale une valeur proche d'une limite",
+              "repere": "c6_anomalie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment choisissez-vous** les axes à mesurer ?",
+              "justes": [
+                {
+                  "texte": "Je prends 8 axes à des endroits différents du lot, comme le plan le demande.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je tire les axes au hasard dans plusieurs bacs, dessus et dessous.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "J'applique le plan de la semaine : 8 axes, pas 5.",
+                  "repere": "c5_applique"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je prends les axes dans un seul bac.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je prends ceux du dessus : c'est plus rapide.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que vérifiez-vous **avant de commencer** à mesurer ?",
+              "justes": [
+                {
+                  "texte": "L'étiquette d'étalonnage et le zéro de chaque instrument.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que le micromètre et le pied à coulisse sont étalonnés et bien à zéro.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je vérifie les instruments avant le premier axe, pas après.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde si l'instrument est propre.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : ce sont mes instruments habituels.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que notez-vous** sur la feuille de contrôle, et **pourquoi** ?",
+              "justes": [
+                {
+                  "texte": "La valeur de chaque axe, pour pouvoir relire la mesure plus tard.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Le lot, les instruments, la date et ma signature, pour retrouver le contrôle.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Les valeurs exactes, sans arrondir, pour voir si un axe est proche d'une limite.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Seulement si le lot est conforme ou non.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Seulement « OK », pour gagner du temps.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique qu'une valeur proche d'une limite peut annoncer un problème de fabrication.",
+              "repere": "c6_anomalie"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre le plan de contrôle en vigueur avec son indice et sa date, et retirer les anciennes versions du poste.",
+        "Faire un premier contrôle avec un contrôleur expérimenté : choix des axes, vérification des instruments, remplissage de la feuille."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Vérifier une mesure inattendue et chercher la cause",
+      "pourquoi": "Devant une mesure inattendue, vérifier avant de conclure évite de bloquer des lots bons ou de laisser passer des pièces mauvaises.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Une mesure qui ne ressemble pas aux autres",
+        "texte": "Mercredi, 14 h. Vous contrôlez le lot 2410-09 d'axes AX-12 : le diamètre doit être compris entre 11,95 et 12,05 mm. Ce matin, les axes mesurés au micromètre M3 étaient entre 12,00 et 12,02 mm. Maintenant, un axe indique 12,09 mm. Le laboratoire a une cale étalon de 12,000 mm et un second micromètre, le M5, étalonné. La règle du laboratoire : avant de déclarer un axe non conforme, on confirme la mesure avec un second instrument étalonné. Le tableau montre vos mesures et les notes de la production.",
+        "document": {
+          "type": "tableau",
+          "titre": "Lot 2410-09, machine 3 : mesures et notes de la production",
+          "colonnes": [
+            "Heure",
+            "Axe mesuré",
+            "Diamètre au M3 (mm)",
+            "Note de la production"
+          ],
+          "lignes": [
+            [
+              "8 h 30",
+              "n° 1",
+              "12,00",
+              "Début du lot"
+            ],
+            [
+              "10 h 30",
+              "n° 90",
+              "12,01",
+              "—"
+            ],
+            [
+              "12 h 00",
+              "n° 170",
+              "12,02",
+              "—"
+            ],
+            [
+              "13 h 40",
+              "—",
+              "—",
+              "Changement de l'outil de coupe"
+            ],
+            [
+              "14 h 00",
+              "n° 215",
+              "12,09",
+              "—"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le micromètre indique 12,09 mm sur un axe, alors que les mesures de ce matin étaient entre 12,00 et 12,02 mm. Que faites-vous **avant de conclure** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je déclare l'axe non conforme tout de suite : 12,09 mm est au-dessus de la limite de 12,05 mm.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je remesure l'axe une deuxième fois, avec le même micromètre, et je compare.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je mesure l'axe suivant : s'il est bon, je considère que 12,09 était une erreur.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne conclus pas encore : je remesure l'axe et je vérifie le micromètre sur la cale étalon.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "Une mesure inattendue peut venir de l'axe, de l'instrument ou du geste : remesurer et vérifier l'instrument permet de savoir d'où elle vient. Remesurer seul ne détecte pas un micromètre faux.",
+              "relance": "Quand une mesure vous surprend, que vérifiez-vous avant de conclure ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Sur la cale étalon, le micromètre M3 indique **12,000 mm**. Votre deuxième mesure de l'axe donne **12,09 mm**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le M3 est juste : je confirme la mesure de l'axe avec le micromètre M5.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je remesure une troisième fois avec le M3 et je garde la valeur la plus basse.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je règle le zéro du M3 pour retrouver les 12,02 de ce matin.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le M3 est juste : je remesure l'axe une troisième fois avec le M3.",
+                  "points": 1,
+                  "repere": "c1_verifie"
+                }
+              ],
+              "explication": "Le M3 est juste sur la cale : la valeur de l'axe est fiable, et la règle du laboratoire demande de la confirmer avec le M5. Une troisième mesure avec le M3 ne confirme rien de plus.",
+              "relance": "Pourquoi confirme-t-on avec un second instrument et pas avec le même ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le M5 indique aussi 12,09 mm. **Que cherchez-vous maintenant** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien de plus : mon travail s'arrête quand j'ai confirmé la mesure.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Depuis quand les axes sont trop gros, et ce qui a changé à ce moment-là.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "c",
+                  "texte": "Qui a fait l'erreur : je cherche le nom de la personne qui était à la machine.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "Si les axes fabriqués juste après celui-ci sont aussi à 12,09 mm.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "Un axe confirmé hors tolérance a une cause : on cherche quand cela a commencé et ce qui a changé. Mesurer les axes suivants montre l'étendue du problème, pas sa cause.",
+              "relance": "Quelles informations vous aident à trouver la cause d'une pièce hors tolérance ?"
+            },
+            {
+              "id": "q4",
+              "texte": "5 pourquoi : on redemande « pourquoi » après chaque réponse. La production répond au premier « pourquoi » : « L'outil a été changé à 13 h 40, le réglage n'a pas été corrigé. » Que **faites-vous de cette réponse** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la note comme cause sur la fiche, parce qu'elle semble logique et qu'elle vient du responsable.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je dis que l'opérateur a mal réglé la machine après le changement d'outil, et je le note.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je compare les axes d'avant et d'après 13 h 40, puis je demande pourquoi le réglage n'a pas été corrigé.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande « pourquoi le réglage n'a pas été corrigé ? », sans vérifier la réponse.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                }
+              ],
+              "explication": "Une réponse plausible reste une hypothèse : on la vérifie avec les mesures d'avant et d'après 13 h 40. Ensuite on continue avec « pourquoi » pour atteindre la cause, pas seulement la première explication.",
+              "relance": "Comment vérifiez-vous qu'une explication donnée par la production est bien la cause ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La production corrige le réglage de la machine. **Comment vérifiez-vous** que le problème est réglé ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je mesure plusieurs axes fabriqués après le réglage et je vérifie qu'ils restent dans la tolérance.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne mesure rien de plus : le régleur a dit que c'était réglé.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je mesure un seul axe après le réglage : s'il est bon, le problème est réglé.",
+                  "points": 1,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'attends la fin du lot pour voir s'il y a une réclamation.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                }
+              ],
+              "explication": "Un seul axe bon peut venir du hasard. Plusieurs axes fabriqués après le réglage, mesurés à des moments différents, montrent que la correction tient.",
+              "relance": "Comment vérifiez-vous qu'une correction tient dans la durée ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand une mesure **ne ressemble pas** aux précédentes, je…",
+              "justes": [
+                {
+                  "texte": "la refais avant de conclure",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "vérifie mon micromètre sur la cale étalon, puis je remesure",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "ne déclare rien tant que je n'ai pas confirmé la mesure",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "mesure un autre axe pour comparer",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "déclare l'axe non conforme tout de suite",
+                  "repere": "c1_precipite"
+                },
+                {
+                  "texte": "considère que c'est une erreur et j'oublie la valeur",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si le M3 indique 12,000 mm **sur la cale étalon** de 12,000 mm, je…",
+              "justes": [
+                {
+                  "texte": "conclus que l'instrument est juste et je confirme l'axe avec le M5",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "garde le M3 et je fais confirmer la mesure par un second micromètre",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "sais que le problème ne vient pas de l'instrument et je cherche ailleurs",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "remesure encore une fois avec le M3",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "règle le zéro du M3 pour retrouver 12,02",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "conclus tout de suite que la machine est mal réglée",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour **chercher la cause** d'un axe trop gros, je regarde…",
+              "justes": [
+                {
+                  "texte": "depuis quand les valeurs ont changé",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "ce qui a changé à ce moment-là : outil, matière, réglage",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "les mesures des axes fabriqués avant et après",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la dernière valeur mesurée",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "qui a fait l'erreur à la machine",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "rien : la cause, c'est le travail de la production",
+                  "repere": "c1_abandon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande ce qui a changé juste avant la première valeur anormale : outil, matière, équipe.",
+              "repere": "c1_cause"
+            },
+            {
+              "texte": "Propose de mesurer des axes après la correction pour vérifier qu'elle tient.",
+              "repere": "c1_verifie"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Le micromètre est juste et la mesure est confirmée. Je cherche ce qui a changé depuis ce matin. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le micromètre M3 indique 12,05 mm sur la cale étalon de 12,000 mm. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le M3 indique 12,09 mm et le M5 indique 12,02 mm sur le même axe. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Un axe est hors tolérance. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le M3 est juste sur la cale étalon et le M5 confirme 12,09 mm. Les axes de ce matin étaient entre 12,00 et 12,02 mm. Que faites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le M3 indique 12,000 mm sur la cale étalon de 12,000 mm.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le lot est fabriqué sur la machine 3.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le M5, étalonné, confirme la valeur de 12,09 mm.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le M3 est tombé pendant la pause.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Les axes mesurés ce matin étaient entre 12,00 et 12,02 mm.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "L'axe était sale au moment de la mesure.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je demande à l'opérateur ce qu'il a fait de mal.",
+                "points": 0,
+                "repere": "c4_personne"
+              },
+              {
+                "id": "b",
+                "texte": "Je regarde ce que la production a noté depuis ce matin, et je le rapproche de l'heure de mes mesures.",
+                "points": 2,
+                "repere": "c1_cause"
+              },
+              {
+                "id": "c",
+                "texte": "Je change moi-même l'outil de coupe de la machine.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "d",
+                "texte": "Je mesure encore des axes, sans regarder les notes de la production.",
+                "points": 1,
+                "repere": "c1_faits"
+              }
+            ]
+          },
+          "explication": "Le M3 est juste et le M5 confirme : la mesure est fiable, donc c'est la fabrication qui a changé. On cherche ce qui a changé depuis ce matin, à partir des faits notés par la production."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre démarche devant la mesure à 12,09 mm",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Remesurer l'axe avec le M3, touches propres"
+            },
+            {
+              "id": "e2",
+              "texte": "Vérifier le M3 sur la cale étalon de 12,000 mm"
+            },
+            {
+              "id": "e3",
+              "texte": "Confirmer la mesure avec le micromètre M5"
+            },
+            {
+              "id": "e4",
+              "texte": "Étiqueter l'axe « non conforme » et le mettre de côté"
+            },
+            {
+              "id": "e5",
+              "texte": "Signaler l'axe non conforme à la production et au responsable qualité"
+            },
+            {
+              "id": "e6",
+              "texte": "Rapprocher l'heure de la mesure des notes de la production"
+            },
+            {
+              "id": "e7",
+              "texte": "Mesurer de nouveaux axes après la correction de la machine"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "On remesure avant de signaler : une mesure isolée peut être fausse."
+            },
+            {
+              "avant": "e2",
+              "apres": "e5",
+              "explication": "On vérifie l'instrument avant de signaler un problème."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "Règle du laboratoire : on déclare non conforme après confirmation par un second instrument."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "On signale le problème une fois qu'il est confirmé par le M5."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "On cherche la cause d'un problème confirmé, pas d'une mesure douteuse."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "La machine est corrigée après le signalement ; on mesure ensuite."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "On corrige après avoir cherché la cause, puis on vérifie que la correction tient."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Au laboratoire (15 minutes) : la personne reçoit une série de mesures notées dont une valeur inattendue, un micromètre et une cale étalon. Elle montre et explique sa démarche pour confirmer ou non la valeur.",
+            "criteres": [
+              {
+                "texte": "Remesure avant de conclure",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Vérifie l'instrument sur la cale étalon",
+                "repere": "c8_outil"
+              },
+              {
+                "texte": "Confirme avec un second instrument avant de déclarer non conforme",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Cherche ce qui a changé au lieu d'accuser une personne",
+                "repere": "c1_cause"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de mesurer des axes après la correction",
+              "repere": "c1_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Une mesure ne ressemble pas aux précédentes. Que faites-vous **avant de conclure** ?",
+              "justes": [
+                {
+                  "texte": "Je remesure l'axe, touches propres.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je vérifie le micromètre sur la cale étalon.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je confirme avec un second micromètre étalonné avant de déclarer l'axe non conforme.",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je mesure un autre axe pour comparer.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je déclare l'axe non conforme tout de suite.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le micromètre est juste et la mesure est confirmée. **Que cherchez-vous maintenant** ?",
+              "justes": [
+                {
+                  "texte": "Depuis quand les valeurs ont changé.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Ce qui a changé à ce moment-là : outil, matière, réglage.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Si les axes fabriqués juste avant et juste après sont aussi touchés.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde seulement la dernière valeur.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Qui a fait l'erreur à la machine.",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "La machine est corrigée. **Comment savez-vous** que le problème est réglé ?",
+              "justes": [
+                {
+                  "texte": "Je mesure plusieurs axes fabriqués après le réglage.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je compare les nouvelles valeurs à celles d'avant le réglage.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je mesure encore plus tard dans le lot, pas seulement tout de suite.",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je mesure un seul axe après le réglage.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je demande au régleur : s'il dit que c'est bon, c'est bon.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de noter l'heure, la machine et le changement d'outil sur la fiche pour retrouver la cause plus vite.",
+              "repere": "c3_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer où sont les cales étalons et le second micromètre, et expliquer la règle de confirmation avant de déclarer une pièce non conforme.",
+        "Expliquer la méthode des 5 pourquoi sur un cas réel du site, en insistant sur les faits : heure, machine, ce qui a changé."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Signaler une non-conformité par écrit et à l'oral",
+      "pourquoi": "Une fiche claire et un message court permettent à la production et au responsable qualité d'agir vite, sans refaire le contrôle.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un lot d'axes trop courts à signaler",
+        "texte": "Jeudi, 16 h. Vous venez de contrôler 8 axes AX-12 du lot 2410-12 : 300 axes, rangés dans 3 bacs. Les diamètres sont conformes. La longueur doit être comprise entre 59,90 et 60,10 mm, et 3 axes sont trop courts (voir le tableau). Le pied à coulisse PC1 a été vérifié sur cale et la mesure est confirmée. La cause n'est pas connue. Règle de l'usine : un lot non conforme est bloqué en entier, avec une étiquette rouge sur chaque bac. Il est signalé par une fiche de non-conformité. Le responsable qualité décide de la suite. Le chef d'équipe qui a fabriqué le lot est à l'atelier.",
+        "document": {
+          "type": "tableau",
+          "titre": "Longueurs mesurées au PC1, lot 2410-12",
+          "colonnes": [
+            "Axe",
+            "Longueur (mm)",
+            "Résultat"
+          ],
+          "lignes": [
+            [
+              "1",
+              "60,02",
+              "conforme"
+            ],
+            [
+              "2",
+              "59,86",
+              "non conforme"
+            ],
+            [
+              "3",
+              "60,01",
+              "conforme"
+            ],
+            [
+              "4",
+              "59,98",
+              "conforme"
+            ],
+            [
+              "5",
+              "59,85",
+              "non conforme"
+            ],
+            [
+              "6",
+              "60,04",
+              "conforme"
+            ],
+            [
+              "7",
+              "59,87",
+              "non conforme"
+            ],
+            [
+              "8",
+              "60,00",
+              "conforme"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le chef d'équipe est à l'atelier, occupé. Que lui dites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui explique d'abord comment j'ai mesuré, puis je lui donne le résultat.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis que le lot 2410-12 est bloqué, sans dire pourquoi : tout sera écrit sur la fiche.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que le lot 2410-12 est bloqué parce que 3 axes sur 8 sont trop courts.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis qu'il y a un problème avec le lot et qu'il doit passer au laboratoire.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Un message court dit quel lot, quel défaut et combien. Dire seulement « bloqué » ou « un problème » oblige le chef d'équipe à venir demander les faits.",
+              "relance": "Comment annoncez-vous un problème de qualité à quelqu'un qui est très occupé ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Qu'écrivez-vous dans la case « **description du défaut** » de la fiche ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "3 axes sur 8 mesurent 59,85, 59,86 et 59,87 mm ; la limite basse est 59,90 mm.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Longueur non conforme sur 3 axes : l'opérateur a mal réglé la butée de la machine.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Des axes sont trop courts dans ce lot : à voir avec le responsable qualité.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "3 axes sur 8 sont trop courts : ils mesurent moins de 59,90 mm.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "La fiche donne des faits que le responsable qualité peut vérifier : les valeurs mesurées, la limite et le nombre d'axes. Une cause supposée n'est pas un fait : elle n'a pas sa place dans cette case.",
+              "relance": "Quelle différence faites-vous entre un fait et une cause supposée ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Qu'écrivez-vous dans la case « **quantité bloquée** » ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "3 axes : ceux que j'ai mesurés trop courts.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Environ 110 axes : 3 sur 8, c'est à peu près 37 % des 300 axes.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "300 axes.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "300 axes : tout le lot, dont 8 contrôlés et 3 non conformes.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                }
+              ],
+              "explication": "Tant que le lot n'est pas trié, les 300 axes sont bloqués : on l'écrit, avec les 8 axes contrôlés dont 3 non conformes. Estimer le nombre de mauvais axes serait inventer un chiffre.",
+              "relance": "Que savez-vous, et que ne savez-vous pas, sur les autres axes du lot ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Comment signalez-vous** le blocage du lot sur les bacs ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je préviens les opérateurs à l'oral de ne pas toucher aux bacs jusqu'à demain.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Une étiquette rouge « BLOQUÉ » sur chaque bac, avec le numéro de lot, la date et mon nom.",
+                  "points": 2,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Une étiquette rouge sur chaque bac, sans écrire d'autre information dessus.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je place les bacs dans un coin de l'atelier, sans étiquette : tout le monde les verra bien.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "L'étiquette rouge, avec le lot, la date et le nom, informe tous les postes à toute heure, même en votre absence. Un message oral se perd, et un bac sans étiquette peut être repris par erreur.",
+              "relance": "Comment quelqu'un qui n'était pas là sait-il qu'un lot est bloqué ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Que dites-vous au chef d'équipe sur **la suite du lot** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le lot reste bloqué jusqu'à la décision du responsable qualité, à qui je remets la fiche.",
+                  "points": 2,
+                  "repere": "c3_suite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne sais pas ce qui va se passer : on verra bien dans les prochains jours.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le lot sera trié demain matin par votre équipe, c'est la procédure habituelle.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le lot est bloqué et vous ne pouvez plus l'utiliser.",
+                  "points": 1,
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "explication": "Dire ce qui va se passer ensuite évite les questions et les initiatives : le lot reste bloqué, le responsable qualité décide. Annoncer un tri ou une date, c'est promettre ce que vous ne décidez pas.",
+              "relance": "Qui décide de la suite d'un lot bloqué ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Au chef d'équipe, qui est occupé, **je dis d'abord**…",
+              "justes": [
+                {
+                  "texte": "que le lot 2410-12 est bloqué et pourquoi : 3 axes sur 8 sont trop courts",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "le numéro du lot, le défaut et ce qui est bloqué, en deux phrases",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "l'essentiel : lot bloqué, 3 axes sur 8 trop courts, fiche remise au responsable qualité",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le lot a un problème de longueur",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "comment j'ai mesuré, avant de dire le résultat",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "qu'il y a un souci avec le lot",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Dans la fiche, je **décris le défaut** avec…",
+              "justes": [
+                {
+                  "texte": "les longueurs mesurées : 59,85, 59,86 et 59,87 mm",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "la limite basse de 59,90 mm et le nombre d'axes touchés sur 8",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "l'instrument utilisé et le fait qu'il a été vérifié",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le mot « trop court »",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "mon avis sur la cause : la butée de la machine",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "des mots comme « bizarre » ou « pas terrible »",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour que le lot **ne soit pas utilisé** par erreur, je…",
+              "justes": [
+                {
+                  "texte": "colle une étiquette rouge « BLOQUÉ » sur chaque bac",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "écris sur l'étiquette le numéro de lot, la date et mon nom",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "remets la fiche au responsable qualité et je préviens le chef d'équipe",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens les opérateurs à l'oral",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "laisse les bacs sans étiquette : tout le monde est au courant",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "remets les axes mesurés dans leur bac pour ne rien perdre",
+                  "repere": "c6_laisse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Précise sur la fiche que la décision sur le lot revient au responsable qualité.",
+              "repere": "c3_suite"
+            },
+            {
+              "texte": "Joint le tableau des mesures à la fiche pour qu'on puisse vérifier.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Lot 2410-12 bloqué : 3 axes sur 8 mesurent moins de 59,90 mm. Le responsable qualité décide de la suite. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le lot 2410-12 est conforme. Que dites-vous au chef d'équipe ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous avez confirmé 3 axes trop courts sur 8 dans le lot 2410-12 et vous l'avez bloqué. Le chef d'équipe est devant vous. Que lui dites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Que dites-vous au chef d'équipe à propos du lot 2410-12 ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le chef d'équipe vous demande pourquoi les axes sont trop courts. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "3 axes sur 8 sont sous la limite basse de 59,90 mm.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Les diamètres des 8 axes sont conformes.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Un lot non conforme est bloqué et le responsable qualité décide de la suite.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "L'opérateur a mal réglé la butée de la machine.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le chef d'équipe a fabriqué ce lot et doit savoir qu'il est bloqué.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le lot compte 300 axes.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je remplis la fiche avec les mesures et je la remets au responsable qualité.",
+                "points": 2,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "b",
+                "texte": "J'attends que la production me demande des explications.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "c",
+                "texte": "Je remets les 3 axes trop courts dans leur bac pour ne rien perdre.",
+                "points": 0,
+                "repere": "c6_laisse"
+              },
+              {
+                "id": "d",
+                "texte": "Je remplis la fiche, sans joindre le tableau des mesures.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "La réponse dit l'essentiel : quel lot, quel défaut, combien, et qui décide ensuite, sans cause supposée ni promesse. La fiche garde les mesures pour le responsable qualité."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La fiche de non-conformité du lot 2410-12",
+          "consigne": "Voici la fiche remplie par un collègue. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Lot : 2410-12, axes AX-12, 300 pièces",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Contrôle fait par le contrôleur qualité, jeudi à 16 h",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Défaut : longueur trop courte sur 3 axes de l'échantillon de 8",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Valeurs mesurées : 59,85 ; 59,86 ; 59,87 mm (limite basse : 59,90 mm)",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Diamètre : non conforme sur les 8 axes",
+              "erreur": true,
+              "explication": "Les diamètres des 8 axes sont conformes : seule la longueur pose problème."
+            },
+            {
+              "id": "e6",
+              "texte": "Cause : l'opérateur a mal réglé la machine",
+              "erreur": true,
+              "explication": "La cause n'est pas connue : la fiche décrit des faits, pas des suppositions."
+            },
+            {
+              "id": "e7",
+              "texte": "Quantité bloquée : 3 axes",
+              "erreur": true,
+              "explication": "Le lot est bloqué en entier : 300 axes. Seuls 8 axes ont été contrôlés, dont 3 non conformes."
+            },
+            {
+              "id": "e8",
+              "texte": "Action immédiate : lot bloqué, étiquette rouge sur les 3 bacs",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e9",
+              "texte": "Instrument : pied à coulisse PC1, vérifié sur cale, mesure confirmée",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e10",
+              "texte": "Décision : le lot peut partir après un tri par la production",
+              "erreur": true,
+              "explication": "Le responsable qualité décide de la suite du lot, pas la fiche ni le contrôleur."
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c3_faux",
+          "reel": {
+            "consigne": "Au laboratoire (15 minutes) : à partir d'un tableau de mesures fictif, la personne remplit une fiche de non-conformité. Elle annonce ensuite l'essentiel au chef d'équipe, joué par l'évaluateur.",
+            "criteres": [
+              {
+                "texte": "Donne l'essentiel au chef d'équipe en deux phrases : lot, défaut, nombre",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Écrit des faits mesurés, sans cause supposée",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Précise ce qui est bloqué et ce qui a été contrôlé",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Dit ce qui va se passer ensuite",
+                "repere": "c3_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Vérifie que le chef d'équipe a bien compris",
+              "repere": "c3_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que **dites-vous d'abord** au chef d'équipe ?",
+              "justes": [
+                {
+                  "texte": "Le lot 2410-12 est bloqué : 3 axes sur 8 sont trop courts.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "L'essentiel en deux phrases : quel lot, quel défaut, combien.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Que le lot est bloqué et que je remets la fiche au responsable qualité.",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le lot a un problème.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui explique d'abord toute ma méthode de mesure.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que mettez-vous dans la fiche pour **décrire le défaut** ?",
+              "justes": [
+                {
+                  "texte": "Les longueurs mesurées et la limite basse de 59,90 mm.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Le nombre d'axes touchés sur le nombre d'axes contrôlés.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "L'instrument utilisé et le fait qu'il a été vérifié.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que les axes sont trop courts.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "La cause : l'opérateur a mal réglé la machine.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous pour que le lot **ne soit pas utilisé** par erreur ?",
+              "justes": [
+                {
+                  "texte": "Une étiquette rouge « BLOQUÉ » sur chaque bac.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Le numéro du lot, la date et mon nom sur l'étiquette.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Je préviens le chef d'équipe et je remets la fiche au responsable qualité.",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens les opérateurs à l'oral.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je laisse les bacs en place, sans étiquette.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Joint le tableau des mesures à la fiche.",
+              "repere": "c3_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un exemple de fiche de non-conformité bien remplie : faits mesurés, quantité, action immédiate, sans cause supposée.",
+        "Convenir avec les chefs d'équipe d'une phrase type pour annoncer un blocage : lot, défaut, nombre, suite."
+      ]
+    },
+    {
+      "code": "C4",
+      "titre": "Défendre le blocage d'un lot avec des faits, sans conflit",
+      "pourquoi": "Le contrôleur est souvent en désaccord avec une production pressée : il doit tenir sa position avec des faits, sans conflit, et passer la décision au bon niveau.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un lot bloqué, un camion qui part à 14 h",
+        "texte": "Vendredi, 11 h. Le lot 2410-14 (500 axes AX-12) est bloqué depuis 9 h. Sur 8 axes contrôlés, 2 mesurent 12,06 mm : la limite haute est 12,05 mm. Le micromètre a été vérifié et la mesure est confirmée. Le responsable de production vous dit : « C'est 0,01 de trop, le client ne verra rien. Le camion part à 14 h, je livre. » Dans l'usine, seul le responsable qualité peut décider de la suite d'un lot non conforme. Il est au bureau.",
+        "document": null
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le responsable de production dit : « C'est 0,01 de trop, le client ne verra rien. » **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Tu as raison, c'est presque dans la tolérance et le client est pressé : tu peux livrer, je ne dirai rien. »",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Deux axes sur 8 mesurent 12,06 mm, et la limite est 12,05 mm. Je ne peux pas laisser partir ce lot. »",
+                  "points": 2,
+                  "repere": "c4_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Tu ne comprends rien à la qualité : une tolérance, ça ne se discute pas, et ce n'est pas à toi d'en décider. »",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je ne peux pas laisser partir ce lot : c'est la règle de l'usine, je n'y peux rien. »",
+                  "points": 1,
+                  "repere": "c4_role"
+                }
+              ],
+              "explication": "Les faits chiffrés ramènent la discussion à ce qui est mesuré : 12,06 mm est au-dessus de 12,05 mm. Dire seulement « c'est la règle » est exact, mais ne répond pas à l'argument de la production.",
+              "relance": "Comment répondez-vous quand quelqu'un minimise un écart que vous avez mesuré ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le responsable de production insiste : le camion part à 14 h. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appelle le responsable qualité, je lui donne les faits et je lui demande sa décision.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis que, s'il livre, c'est son problème : moi, je n'ai rien signé.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis de livrer s'il prend la responsabilité par écrit.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis d'aller voir le responsable qualité lui-même : la décision lui revient.",
+                  "points": 1,
+                  "repere": "c4_role"
+                }
+              ],
+              "explication": "Seul le responsable qualité peut décider de la suite d'un lot non conforme : vous lui transmettez vous-même les faits, pour qu'il décide avec les bonnes informations. Laisser la production les résumer risque de les déformer.",
+              "relance": "Quelles informations donnez-vous au responsable qualité pour qu'il puisse décider ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le responsable de production s'énerve : « Tu bloques toute l'usine ! » **Comment réagissez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui réponds sur le même ton : c'est lui qui fabrique des axes hors tolérance depuis ce matin.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je m'éloigne sans rien dire et je le laisse se calmer.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je cède : je lui dis que je vais voir ce que je peux faire pour 14 h.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je reste calme, je redis les faits en une phrase et j'appelle le responsable qualité.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                }
+              ],
+              "explication": "Rester calme et répéter les faits évite que la discussion devienne personnelle. S'éloigner sans rien dire laisse la décision en suspens ; céder ou répondre sur le même ton aggrave le désaccord.",
+              "relance": "Que faites-vous quand un collègue s'énerve contre vous ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le responsable qualité vous demande ce que vous proposez pour **tenir l'horaire du camion**. Que proposez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Livrer les 500 axes à 14 h et faire corriger la machine après le départ du camion.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je propose de prendre 8 autres axes au hasard : si ceux-là sont bons, on laisse partir tout le lot.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Un tri : la production passe les axes, je les contrôle, et on livre seulement les axes conformes.",
+                  "points": 2,
+                  "repere": "c4_aide"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne propose rien de plus : le lot reste bloqué et la décision revient au responsable qualité.",
+                  "points": 1,
+                  "repere": "c4_role"
+                }
+              ],
+              "explication": "Le tri répond au besoin de la production sans livrer un seul axe non conforme. Garder le lot bloqué est correct mais n'aide pas à tenir l'horaire, et reprendre 8 autres axes jusqu'à obtenir un bon résultat fausse le contrôle.",
+              "relance": "Comment aidez-vous la production à tenir un délai sans livrer de pièces non conformes ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Pour que ce désaccord **ne revienne pas**, que proposez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Un contrôle en cours de lot : un écart se voit avant la fin, et il reste du temps pour réagir.",
+                  "points": 2,
+                  "repere": "c4_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Rien : les lots urgents, ça fait partie du métier.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "c",
+                  "texte": "De laisser partir plus vite les lots urgents, même s'ils sont à la limite.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je préviens la production plus tôt quand un lot est bloqué.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                }
+              ],
+              "explication": "Une règle commune agit avant le désaccord : voir un écart plus tôt laisse du temps à tout le monde. Prévenir plus tôt est utile, mais ne change pas le moment où l'écart est découvert.",
+              "relance": "Quelle règle simple éviterait ce désaccord la prochaine fois ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "À un responsable de production qui veut livrer un lot **hors tolérance**, je dis…",
+              "justes": [
+                {
+                  "texte": "les faits : 2 axes sur 8 mesurent 12,06 mm, la limite est 12,05 mm",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "que je ne peux pas laisser partir le lot, mais que j'appelle tout de suite le responsable qualité",
+                  "repere": "c4_role"
+                },
+                {
+                  "texte": "que la mesure est vérifiée et confirmée, et je lui montre les valeurs",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que c'est la règle",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que le client ne verra rien, donc que c'est bon",
+                  "repere": "c4_evite"
+                },
+                {
+                  "texte": "qu'il ne comprend rien à la qualité",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour **la décision** de livrer ou non ce lot, **je m'adresse**…",
+              "justes": [
+                {
+                  "texte": "au responsable qualité, avec les mesures et le numéro du lot",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "directement au responsable qualité, sans passer par la production",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "au responsable qualité, parce que lui seul peut décider de la suite",
+                  "repere": "c4_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "à un collègue du laboratoire, pour avoir son avis",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "à personne : je laisse partir le lot pour éviter le conflit",
+                  "repere": "c4_evite"
+                },
+                {
+                  "texte": "directement au client, pour lui dire de patienter",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour que ça ne se reproduise pas, **je propose**…",
+              "justes": [
+                {
+                  "texte": "un contrôle en cours de lot, pour voir un écart avant la fin",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "que la production prévienne le laboratoire des lots urgents",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "une heure limite pour remettre les lots au contrôle",
+                  "repere": "c4_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que chacun fasse plus attention",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "de laisser partir les lots urgents sans contrôle",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "que chacun reste de son côté",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Montre les mesures à la production pour qu'elle voie l'écart elle-même.",
+              "repere": "c4_faits"
+            },
+            {
+              "texte": "Propose un tri avec l'équipe pour aider à tenir l'horaire du camion.",
+              "repere": "c4_aide"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Deux axes sur 8 mesurent 12,06 mm. Je ne peux pas laisser partir le lot, mais j'appelle tout de suite le responsable qualité. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le responsable de production veut livrer le lot. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Le responsable de production vous demande où est rangé le lot 2410-14. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Le responsable qualité vous demande ce que vous proposez pour le lot. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le responsable de production veut livrer le lot 2410-14 à 14 h et dit : « C'est 0,01 de trop. » Deux axes sur 8 sont hors tolérance. Que lui répondez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "2 axes sur 8 mesurent plus que la limite haute de 12,05 mm.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le camion du client part à 14 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Seul le responsable qualité peut décider de la suite d'un lot non conforme.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client a déjà accepté des axes un peu trop gros.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le responsable qualité est au bureau et peut être appelé tout de suite.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le lot compte 500 axes.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je laisse partir le lot et je préviens après le départ du camion.",
+                "points": 0,
+                "repere": "c6_laisse"
+              },
+              {
+                "id": "b",
+                "texte": "J'écris un message au responsable qualité, sans le joindre, et j'attends sa réponse.",
+                "points": 1,
+                "repere": "c4_informe"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends que le responsable de production appelle lui-même le responsable qualité.",
+                "points": 0,
+                "repere": "c4_evite"
+              },
+              {
+                "id": "d",
+                "texte": "J'appelle le responsable qualité et je lui donne les faits : lot, valeurs, instrument vérifié.",
+                "points": 2,
+                "repere": "c4_escalade"
+              }
+            ]
+          },
+          "explication": "La réponse s'appuie sur la mesure, tient la règle sans accuser, et envoie la décision à la bonne personne. Le chiffre de 12,06 mm répond à « 0,01 de trop », et le responsable qualité peut décider tout de suite."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Qui fait quoi, qui décide quoi",
+          "consigne": "Pour chaque action, choisissez la personne **qui la fait** ou qui **en décide**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Le contrôleur qualité"
+            },
+            {
+              "id": "k2",
+              "nom": "Le responsable qualité"
+            },
+            {
+              "id": "k3",
+              "nom": "La production"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Dire que 2 axes sur 8 sont hors tolérance",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est un fait que vous avez mesuré : vous le dites, avec les valeurs."
+            },
+            {
+              "id": "e2",
+              "texte": "Refuser de laisser partir le lot tant qu'il n'y a pas de décision",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est votre rôle : un lot non conforme ne part pas tant que le responsable qualité n'a pas décidé."
+            },
+            {
+              "id": "e3",
+              "texte": "Autoriser la livraison d'un lot non conforme",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Seul le responsable qualité peut décider de la suite d'un lot non conforme."
+            },
+            {
+              "id": "e4",
+              "texte": "Décider de trier le lot pour livrer les axes conformes",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "La suite du lot (tri, livraison, autre) est une décision du responsable qualité."
+            },
+            {
+              "id": "e5",
+              "texte": "Régler la machine qui fabrique les axes",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La machine est sous la responsabilité de la production."
+            },
+            {
+              "id": "e6",
+              "texte": "Mesurer chaque axe pendant le tri",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Mesurer et comparer à la tolérance, c'est le travail du contrôleur."
+            },
+            {
+              "id": "e7",
+              "texte": "Sortir les axes des bacs et les présenter un par un",
+              "accepte": [
+                "k3",
+                "k1"
+              ],
+              "explication": "La production manipule les bacs. Le contrôleur peut aider, mais cela ne change pas qui décide."
+            },
+            {
+              "id": "e8",
+              "texte": "Donner les faits au responsable qualité pour qu'il décide",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Vous avez mesuré : c'est à vous de lui transmettre les faits."
+            }
+          ],
+          "repere_reussite": "c4_role",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le responsable de production pressé de livrer, une autre le responsable qualité. La personne candidate tient sa position, puis passe la décision.",
+            "criteres": [
+              {
+                "texte": "S'appuie sur les mesures, avec des chiffres",
+                "repere": "c4_faits"
+              },
+              {
+                "texte": "Reste dans son rôle : ne laisse pas partir le lot, sans accuser personne",
+                "repere": "c4_role"
+              },
+              {
+                "texte": "Passe la décision au responsable qualité, avec les faits",
+                "repere": "c4_escalade"
+              },
+              {
+                "texte": "Propose une solution possible dans les règles, comme un tri",
+                "repere": "c4_aide"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose une règle pour éviter que le désaccord revienne",
+              "repere": "c4_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que répondez-vous** au responsable de production qui veut livrer ?",
+              "justes": [
+                {
+                  "texte": "Que 2 axes sur 8 mesurent plus de 12,05 mm et que je ne peux pas laisser partir le lot.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Les valeurs : 12,06 mm pour une limite de 12,05 mm, mesure vérifiée.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Que la mesure est confirmée et que j'appelle le responsable qualité.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que c'est la règle.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que 0,01 de trop, ce n'est pas grave.",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment passez-vous** la décision au responsable qualité ?",
+              "justes": [
+                {
+                  "texte": "Je l'appelle tout de suite et je lui donne le lot, les valeurs et l'instrument vérifié.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je lui donne les faits moi-même, sans passer par la production.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je lui apporte la fiche et le tableau des mesures.",
+                  "repere": "c4_informe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui envoie un message et j'attends.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je laisse la production lui parler à ma place.",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que proposez-vous pour que ce désaccord **ne revienne pas** ?",
+              "justes": [
+                {
+                  "texte": "Un contrôle en cours de lot, pour voir un écart plus tôt.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "Que la production prévienne le laboratoire des lots urgents.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "Une heure limite pour remettre un lot au contrôle.",
+                  "repere": "c4_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que chacun fasse plus attention.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "De laisser partir les lots urgents sans contrôle.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose un tri avec la production pour livrer les axes conformes à temps.",
+              "repere": "c4_aide"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Présenter dès le début qui décide quoi en cas de lot non conforme : contrôleur, responsable qualité, production, sur une page.",
+        "Prévoir un point court avec la production sur les lots urgents, pour planifier le contrôle et éviter les décisions dans la précipitation."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez contrôlé un travail selon une **consigne écrite**. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Qu'avez-vous noté, et où ?"
+      ],
+      "attendus": [
+        "Cite la consigne ou la procédure suivie",
+        "Décrit des vérifications concrètes : mesure, comptage, relecture",
+        "Dit comment il a gardé une trace de son contrôle"
+      ],
+      "relance": "Qu'est-ce qui aurait pu vous faire sauter une étape ?",
+      "alternative": "Si vous n'avez pas travaillé en contrôle : parlez d'une vérification faite avec une liste ou une notice (études, bricolage, cuisine, association)."
+    },
+    {
+      "id": "e2",
+      "competence": "C6",
+      "texte": "Vous mesurez une pièce : la valeur est **exactement à la limite** de la tolérance. Que faites-vous ?",
+      "suite": [],
+      "attendus": [
+        "Se réfère au plan de contrôle pour décider",
+        "Note la valeur exacte, sans arrondir",
+        "Demande au responsable en cas de doute"
+      ],
+      "relance": "Et si le plan ne dit rien sur ce cas ?",
+      "alternative": "Un plan demande une planche de 80 cm, avec 1 cm de tolérance. Vous mesurez 81 cm, pile à la limite. Que faites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où un résultat **ne ressemblait pas** à ce que vous attendiez. **Que s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous vérifié en premier ?",
+        "Qu'avez-vous trouvé ?"
+      ],
+      "attendus": [
+        "Vérifie avant de conclure : refait la mesure, contrôle l'outil",
+        "Avance par étapes logiques",
+        "Dit comment il a trouvé la cause ou qui il a consulté"
+      ],
+      "relance": "Qu'avez-vous écarté, et comment ?",
+      "alternative": "Parlez d'un résultat étrange (cuisine, informatique, vélo, bricolage) et de la façon dont vous avez trouvé la cause."
+    },
+    {
+      "id": "e4",
+      "competence": "C1",
+      "texte": "Une machine fabrique des pièces de plus en plus grandes depuis ce matin. **Quelles informations cherchez-vous** pour trouver la cause ?",
+      "suite": [],
+      "attendus": [
+        "Cherche depuis quand, et à quelle heure",
+        "Cherche ce qui a changé : outil, matière, réglage",
+        "Part de mesures et de faits, pas de suppositions"
+      ],
+      "relance": "Comment savez-vous que ce que vous trouvez est bien la cause ?",
+      "alternative": "Une plante dépérit, ou une recette rate, depuis deux semaines. Quelles informations cherchez-vous pour trouver la cause ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez signalé un problème **par écrit**. **Qu'avez-vous écrit** ?",
+      "suite": [
+        "Comment avez-vous su que le message avait été compris ?"
+      ],
+      "attendus": [
+        "Écrit des faits précis : quoi, quand, combien",
+        "Adapte le message à la personne qui le lit",
+        "Dit ce qu'il attendait ensuite"
+      ],
+      "relance": "Qu'auriez-vous ajouté pour que ce soit plus clair ?",
+      "alternative": "Parlez d'un message écrit pour signaler un souci (association, école, location, voisinage) et de ce qui l'a rendu clair."
+    },
+    {
+      "id": "e6",
+      "competence": "C3",
+      "texte": "Vous devez dire à un collègue très occupé qu'un lot est bloqué. **Que lui dites-vous**, **en deux phrases** ?",
+      "suite": [],
+      "attendus": [
+        "Donne l'essentiel d'abord : quel lot, quel problème",
+        "Donne un fait ou un chiffre précis",
+        "Dit ce qui se passe ensuite"
+      ],
+      "relance": "Que ne lui dites-vous pas à ce moment-là ?",
+      "alternative": "Vous devez prévenir un collègue pressé qu'une commande est bloquée ou en retard. Que lui dites-vous, en deux phrases ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C4",
+      "texte": "Parlez d'une fois où vous n'étiez pas d'accord avec un collègue d'un **autre service**. **Sur quoi portait** le désaccord ?",
+      "suite": [
+        "Qu'avez-vous fait ?",
+        "Qu'est-ce qui a été décidé ?"
+      ],
+      "attendus": [
+        "Décrit le désaccord à partir de faits",
+        "Décrit une action concrète pour le régler",
+        "Dit ce qui a été décidé ou changé"
+      ],
+      "relance": "Avec le recul, que feriez-vous pareil ?",
+      "alternative": "Parlez d'un désaccord dans un groupe (études, sport, association) et de la façon dont il s'est réglé."
+    },
+    {
+      "id": "e8",
+      "competence": "C4",
+      "texte": "Un responsable vous demande de **laisser partir** un lot que vous **venez de bloquer**, parce qu'un client attend. Que faites-vous ?",
+      "suite": [],
+      "attendus": [
+        "Reste sur les faits mesurés, sans accuser personne",
+        "Ne laisse pas partir le lot : passe la décision à la personne qui en a le droit",
+        "Propose une solution possible dans les règles"
+      ],
+      "relance": "Et s'il insiste ou s'énerve ?",
+      "alternative": "Quelqu'un vous demande une exception à une règle que vous devez appliquer (caisse, accès, inscription). Que faites-vous ?"
+    }
+  ],
+  "_pv": "1140913028"
+}

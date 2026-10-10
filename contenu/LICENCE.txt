@@ -1,0 +1,45 @@
+LICENCE D'UTILISATION — KIT « LA MÉTHODE DES 5 PORTES » (Contre-Intuitif, v5.0, 2026)
+
+Le kit comprend l'application « Kit-5-portes-Contre-Intuitif.html », la vidéo de présentation
+« Presentation-kit-5-portes.mp4 », ses contenus (métiers, situations, questions, barèmes, guide,
+modèles d'e-mails) et, le cas échéant, les fichiers de métiers (.json) créés pour vous.
+
+1. Licence Solo : une personne utilisatrice, pour les recrutements qu'elle mène.
+2. Licence Entreprise : toutes les personnes qui recrutent pour le compte d'une même entité
+   juridique (un même numéro SIREN ou équivalent), avec diffusion possible sur l'intranet
+   de cette entité.
+
+AUTORISÉ
+- Utiliser l'application sur les ordinateurs des personnes couvertes par la licence.
+- Envoyer aux candidats les liens et les fichiers d'épreuve créés par l'application : ils sont
+  faits pour cela et ne contiennent ni les corrigés ni les barèmes. Le lien d'épreuve peut
+  aussi figurer dans vos offres d'emploi.
+- Imprimer ou enregistrer en PDF les fiches, les analyses et les documents de l'application.
+- Utiliser et adapter les questions, les grilles et les e-mails pour les recrutements menés
+  par les personnes couvertes par la licence, y compris pour le compte de vos clients si le
+  recrutement est votre métier.
+- Partager les documents adaptés avec les personnes de votre entité qui participent au
+  recrutement (licence Entreprise).
+
+INTERDIT
+- Revendre, louer ou distribuer le kit, en tout ou en partie, y compris l'application, la vidéo
+  et les fichiers de métiers.
+- Le publier en ligne, le partager au-delà de votre licence ou le remettre à vos clients.
+- Le présenter comme votre création, ou retirer les mentions de Contre-Intuitif.
+- L'utiliser pour créer un produit ou une formation concurrents sans notre accord écrit.
+
+À SAVOIR
+- Le kit est un outil d'aide. Il ne constitue ni un avis juridique, ni un outil de diagnostic,
+  ni un système d'intelligence artificielle. Les décisions de recrutement restent celles de
+  l'employeur.
+- Les données saisies dans l'application restent sur vos ordinateurs : vous en êtes le
+  responsable de traitement. Contre-Intuitif n'y a pas accès.
+- Les liens d'épreuve ouvrent une page hébergée par Contre-Intuitif. Nous la maintenons en
+  ligne avec soin, sans pouvoir garantir une disponibilité permanente : si elle était
+  indisponible, l'envoi du fichier d'épreuve reste possible depuis l'application. Cette page
+  ne reçoit ni les réponses ni l'identité des candidats.
+- Les sources citées appartiennent à leurs auteurs.
+- En cas de différence entre ce fichier et l'article 4 des conditions générales de vente,
+  l'article 4 des conditions générales de vente prévaut.
+
+© 2026 Contre-Intuitif. Tous droits réservés.

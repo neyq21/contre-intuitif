@@ -1,0 +1,2601 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "macon",
+  "version": "2026.10",
+  "nom": "Maçon / Maçonne",
+  "secteur": "btp",
+  "alias": [
+    "maçon",
+    "maçonne",
+    "ouvrier du gros œuvre",
+    "maçon coffreur",
+    "maçon bâtiment",
+    "compagnon maçon",
+    "aide maçon"
+  ],
+  "resume": "Construit les murs, dalles et ouvrages en parpaings ou en béton d'une maison, d'après un plan et les consignes du chef de chantier.",
+  "contexte": "Une entreprise de maçonnerie qui construit des maisons individuelles et réalise des extensions, avec un chef de chantier par chantier.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C8",
+      "titre": "Travailler en sécurité : échafaudage, charges et zone de levage",
+      "pourquoi": "Sur un chantier, une chute, une charge qui tombe ou un mauvais geste blessent gravement : les bons réflexes protègent toute l'équipe.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Lundi matin : échafaudage, palette et parpaings",
+        "texte": "Lundi, 7 h 30, sur le chantier d'une maison. Vous devez monter les derniers rangs du mur arrière depuis un échafaudage, monté vendredi par une entreprise spécialisée. Le chef de chantier vous a dit : « Seule cette entreprise modifie l'échafaudage. En cas de problème, vous me prévenez. » Il est dans la maison, à l'autre bout du chantier. Voici ce que vous voyez en arrivant.",
+        "document": {
+          "type": "liste",
+          "titre": "Ce que vous voyez à 7 h 30",
+          "items": [
+            "Échafaudage : la barre du haut du garde-corps manque sur le côté droit, là où vous devez travailler.",
+            "Camion-grue : une palette de parpaings est en l'air, au-dessus d'une zone marquée au sol par un ruban.",
+            "Parpaings : 40 sont à rapprocher du pied du mur. Une brouette et un diable sont disponibles.",
+            "Découpe : quelques parpaings sont à couper à la disqueuse."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Avant de monter sur l'échafaudage, **que regardez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : une entreprise spécialisée l'a monté, il est donc sûr.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "L'échelle d'accès seulement, pour monter sans glisser.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Le garde-corps, le plancher et l'accès, pour voir s'ils sont complets.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : je monte vite, pour gagner du temps sur la matinée.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Un échafaudage se contrôle à vue avant de s'en servir : garde-corps, plancher, accès. Regarder seulement l'échelle laisse passer un manque en hauteur.",
+              "relance": "Qu'est-ce qui peut vous faire tomber d'un échafaudage ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Il manque la **barre du haut** du garde-corps, là où vous **devez travailler**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne monte pas, je barre l'accès avec un ruban et je préviens le chef de chantier.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je pose une planche à la place de la barre, puis je travaille avec prudence.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je travaille de ce côté, en restant loin du bord, sans rien changer.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne monte pas et je préviens le chef de chantier.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                }
+              ],
+              "explication": "Un garde-corps incomplet peut faire tomber quelqu'un : on ne monte pas, on empêche les autres de monter et on prévient le chef. Sur ce chantier, seule l'entreprise de montage modifie l'échafaudage.",
+              "relance": "Qui peut modifier un échafaudage sur votre chantier ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Un collègue veut traverser la **zone marquée** pendant que la palette est **en l'air**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis de traverser vite : la palette est assez haute, il ne risque rien.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je m'écarte moi-même de la zone et j'attends que la palette soit posée.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le laisse faire : chacun est responsable de sa propre sécurité sur un chantier.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis d'attendre hors de la zone, tant que la palette n'est pas posée et décrochée.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Personne ne reste ni ne passe sous une charge levée : elle peut tomber ou osciller. On attend qu'elle soit posée et décrochée, et on prévient ceux qui s'approchent.",
+              "relance": "Où ne faut-il jamais se tenir quand une charge est levée ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous devez rapprocher **40 parpaings** du pied du mur. **Comment faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je les porte deux par deux, pour faire moins de trajets.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'utilise la brouette ou le diable, avec une charge que je tiens sans forcer.",
+                  "points": 2,
+                  "repere": "c8_outil"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je les porte un par un, en gardant le dos droit et les jambes pliées.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je remplis la brouette au maximum, pour faire moins de voyages et finir plus vite.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "La brouette ou le diable évitent de porter 40 fois à bout de bras. Porter un par un, le dos droit, protège le dos mais fatigue vite. Une brouette trop chargée peut basculer.",
+              "relance": "Comment protégez-vous votre dos quand vous déplacez des charges ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vous coupez des parpaings à la **disqueuse**, avec le casque, les chaussures et le gilet. **Que mettez-vous de plus** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien de plus : la coupe ne dure que quelques minutes.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Des lunettes de protection et des gants de travail.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Des lunettes, une protection des oreilles, un masque anti-poussière et des gants.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Un masque anti-poussière seulement : la poussière est le seul vrai risque.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "La disqueuse projette des éclats, fait du bruit et soulève de la poussière. On protège les yeux, les oreilles, les voies respiratoires et les mains. Lunettes et gants seuls laissent le bruit et la poussière.",
+              "relance": "Quels risques présente une disqueuse pour le corps ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Avant de monter** sur l'échafaudage, je…",
+              "justes": [
+                {
+                  "texte": "regarde le garde-corps, le plancher et l'accès",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "vérifie que rien ne manque, ne bouge et n'est cassé",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "fais le tour pour voir si quelque chose a changé depuis vendredi",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde l'échelle d'accès pour ne pas glisser",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "monte directement : une entreprise spécialisée l'a monté",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "monte vite pour gagner du temps",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Comme la barre du garde-corps **manque**, je…",
+              "justes": [
+                {
+                  "texte": "ne monte pas, j'empêche les autres de monter et je préviens le chef de chantier",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "signale le manque au chef de chantier, qui fait venir l'entreprise de montage",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "ne remets pas la barre moi-même : sur ce chantier, seule l'entreprise de montage le modifie",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ne monte pas de ce côté",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "pose une planche à la place de la barre",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "travaille de ce côté en restant loin du bord",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour rapprocher **40 parpaings** du mur, je…",
+              "justes": [
+                {
+                  "texte": "prends la brouette ou le diable et je fais plusieurs voyages",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "charge la brouette sans la surcharger, pour la tenir en équilibre",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "demande de l'aide pour les charges trop lourdes pour moi",
+                  "repere": "c4_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "les porte un par un, le dos droit",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "les porte deux par deux pour aller plus vite",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "remplis la brouette au maximum pour faire moins de voyages",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient les autres que la zone sous la palette est interdite tant qu'elle n'est pas posée.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Propose de contrôler l'échafaudage chaque matin avant d'y monter et de le noter sur la feuille du jour.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne monte pas : il manque la barre du haut du garde-corps. Je barre l'accès avec un ruban et je préviens le chef de chantier. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le chef de chantier vous demande où en est le mur. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous arrivez devant l'échafaudage : la barre du haut du garde-corps manque côté droit, là où vous travaillez. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Vous devez couper des parpaings à la disqueuse. Que faites-vous avant de commencer ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Quelque chose vous semble anormal sur l'échafaudage. Que faites-vous ?",
+                "points": 1
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Il manque la barre du haut du garde-corps.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Une palette de parpaings est en l'air.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Un garde-corps incomplet peut faire tomber quelqu'un.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Quarante parpaings sont à rapprocher du mur.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le chef de chantier a dit que seule l'entreprise de montage modifie l'échafaudage.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le chef de chantier a déjà contrôlé l'échafaudage ce matin.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je remets la barre moi-même, pour ne pas perdre de temps.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "b",
+                "texte": "J'attends l'accord du chef avant de monter, et je travaille au sol en attendant.",
+                "points": 2,
+                "repere": "c8_securite"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends sans rien faire que l'échafaudage soit remis en état.",
+                "points": 1,
+                "repere": "c2_reactif"
+              },
+              {
+                "id": "d",
+                "texte": "Je remonte dès que le chef de chantier dit qu'il va prévenir l'entreprise.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "Le garde-corps incomplet est un risque de chute : on ne monte pas, on empêche l'accès et on prévient. L'échafaudage ne se réutilise qu'avec l'accord du chef de chantier."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous faites, demandez ou refusez",
+          "consigne": "Pour **chaque action**, choisissez la **catégorie** qui convient.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je le fais"
+            },
+            {
+              "id": "k2",
+              "nom": "J'attends l'accord du chef de chantier"
+            },
+            {
+              "id": "k3",
+              "nom": "Je ne le fais pas"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Contrôler à vue le garde-corps, le plancher et l'accès avant de monter",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le contrôle à vue se fait avant de monter."
+            },
+            {
+              "id": "e2",
+              "texte": "Barrer l'accès à l'échafaudage avec un ruban",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Cela empêche les autres de monter pendant que le chef de chantier prévient l'entreprise."
+            },
+            {
+              "id": "e3",
+              "texte": "Remettre la barre du garde-corps avec une planche",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le chef de chantier a dit que seule l'entreprise de montage modifie l'échafaudage."
+            },
+            {
+              "id": "e4",
+              "texte": "Remonter sur l'échafaudage après la réparation",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le chef de chantier confirme que l'échafaudage est de nouveau utilisable."
+            },
+            {
+              "id": "e5",
+              "texte": "Passer sous la palette en l'air pour aller plus vite",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "On ne passe jamais sous une charge levée."
+            },
+            {
+              "id": "e6",
+              "texte": "Retirer le ruban qui barre l'accès",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le ruban reste tant que le chef de chantier n'a pas donné son accord."
+            },
+            {
+              "id": "e7",
+              "texte": "Déplacer les parpaings avec la brouette",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est votre travail, avec le bon outil de manutention."
+            },
+            {
+              "id": "e8",
+              "texte": "Couper un parpaing à la disqueuse sans lunettes, pour aller plus vite",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Les lunettes protègent des éclats : on ne les enlève pas."
+            },
+            {
+              "id": "e9",
+              "texte": "Demander de l'aide pour une charge trop lourde pour moi",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Demander de l'aide protège le dos et fait partie du travail."
+            }
+          ],
+          "repere_reussite": "c8_securite",
+          "repere_echec": "c8_erreur",
+          "reel": {
+            "consigne": "Simulation de 15 minutes sur un échafaudage-école ou sur un plan du chantier. Une barre de garde-corps manque, une zone de levage est marquée et 20 parpaings sont à déplacer. La personne dit et montre ce qu'elle fait avant de travailler.",
+            "criteres": [
+              {
+                "texte": "Contrôle à vue le garde-corps, le plancher et l'accès avant de monter",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Ne monte pas, barre l'accès et prévient le chef de chantier",
+                "repere": "c4_escalade"
+              },
+              {
+                "texte": "Reste hors de la zone de levage et prévient les autres",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Déplace les charges avec la brouette ou le diable, le dos protégé",
+                "repere": "c8_outil"
+              }
+            ],
+            "bonus": {
+              "texte": "Cite les protections pour couper à la disqueuse : lunettes, oreilles, masque, gants",
+              "repere": "c8_savoir"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous **avant de monter** sur l'échafaudage ?",
+              "justes": [
+                {
+                  "texte": "Je regarde le garde-corps, le plancher et l'accès.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je vérifie que rien ne manque et que tout est bien fixé.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je fais le tour pour voir si quelque chose a changé depuis vendredi.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde l'échelle d'accès.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : il a été monté par une entreprise spécialisée.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Il manque la **barre du haut** du garde-corps. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je ne monte pas, je barre l'accès et je préviens le chef de chantier.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je signale le manque au chef de chantier : l'entreprise de montage répare.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je ne touche pas à l'échafaudage et j'attends l'accord du chef.",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je ne monte pas.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je pose une planche à la place et je monte.",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous quand une palette est **en l'air** au-dessus de la **zone marquée** ?",
+              "justes": [
+                {
+                  "texte": "Je reste hors de la zone jusqu'à ce que la palette soit posée et décrochée.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je préviens les collègues de ne pas entrer dans la zone.",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "Je ne passe jamais sous une charge levée.",
+                  "repere": "c8_savoir"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je m'éloigne de la zone.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je passe vite : la palette est assez haute.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Cite les protections pour la disqueuse : lunettes, protection des oreilles, masque et gants.",
+              "repere": "c8_savoir"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire le tour du chantier le premier jour : zones de levage, qui modifie l'échafaudage, où trouver les équipements de protection.",
+        "Donner par écrit la liste des équipements selon la tâche (découpe, échafaudage) et faire un premier port de charges avec un collègue expérimenté."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Monter un mur droit et d'aplomb, au bon dosage",
+      "pourquoi": "Un mur de travers ou un mortier mal dosé se voit tard et coûte cher à refaire : la qualité se contrôle rang par rang.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un rang qui penche dans le mur de la chambre",
+        "texte": "Mercredi, 9 h 30. Avec un collègue, vous montez le mur de la chambre d'une extension, d'après le plan et la fiche du chef de chantier. Les trois premiers rangs sont posés. En contrôlant, vous constatez deux choses. Le rang 3 est plus haut d'un côté que de l'autre et dépasse le cordeau. Le mur mesure 4,32 m de long. Le mortier est encore frais. Votre collègue vient de verser dans la bétonnière 2 seaux de ciment et 8 seaux de sable.",
+        "document": {
+          "type": "tableau",
+          "titre": "Plan simple et fiche du chef de chantier",
+          "colonnes": [
+            "Information",
+            "Valeur"
+          ],
+          "lignes": [
+            [
+              "Longueur du mur",
+              "4,20 m"
+            ],
+            [
+              "Épaisseur du mur",
+              "parpaings de 20 cm"
+            ],
+            [
+              "Ouverture de la fenêtre",
+              "1,20 m de large"
+            ],
+            [
+              "Hauteur du mur",
+              "12 rangs"
+            ],
+            [
+              "Mortier, dosage du chef de chantier",
+              "1 seau de ciment pour 3 seaux de sable"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le **rang 3** penche et dépasse le cordeau. Le mortier est encore frais. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je corrige tout de suite ce rang, puis je le recontrôle au niveau et au cordeau.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je corrige tout de suite ce rang, mais je ne le recontrôle pas ensuite.",
+                  "points": 1,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je continue avec les rangs suivants : l'enduit rattrapera la différence.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je pose le rang 4 par-dessus : le poids du rang 4 remettra le rang 3 droit.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Un rang mal posé se corrige tout de suite, tant que le mortier est frais : plus tard, il faudra démolir. Sans recontrôle, on ne sait pas si l'erreur est vraiment corrigée.",
+              "relance": "Que risque-t-on si on monte les rangs suivants sur un rang de travers ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Comment vérifiez-vous** que le mur est **d'aplomb** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je pose le niveau à plat sur le dessus du mur.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je recule de quelques pas et je regarde le mur à l'œil.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je mesure la hauteur du mur avec le mètre.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je tiens le niveau à la verticale contre la face du mur.",
+                  "points": 2,
+                  "repere": "c8_outil"
+                }
+              ],
+              "explication": "L'aplomb, c'est la verticale : on le vérifie avec le niveau tenu debout contre le mur, ou avec un fil à plomb. Un niveau posé à plat contrôle l'horizontale. Regarder à l'œil aide, mais ne mesure rien.",
+              "relance": "Quelle différence faites-vous entre le niveau et l'aplomb ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le plan indique **4,20 m** de longueur et votre mur mesure **4,32 m**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue le mur : l'enduit rattrapera la différence de longueur.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens tout de suite le chef de chantier, sans avoir remesuré.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je remesure et je relis le plan, puis je préviens le chef si l'écart reste.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je décale l'ouverture de la fenêtre pour compenser la différence.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                }
+              ],
+              "explication": "On vérifie d'abord sa mesure et sa lecture du plan : l'erreur peut venir de là. Si l'écart est confirmé, le chef de chantier décide : on ne compense pas soi-même.",
+              "relance": "Que faites-vous quand ce que vous mesurez ne correspond pas au plan ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Votre collègue a versé **2 seaux** de ciment et **8 seaux** de sable. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne dis rien : le mélange sera juste un peu plus sableux.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui montre la fiche : pour 2 seaux de ciment, il faut 6 seaux de sable.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que 8 seaux de sable, c'est trop, sans donner la bonne quantité.",
+                  "points": 1,
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis d'ajouter de l'eau : le mortier sera plus facile à étaler.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "La fiche du chef de chantier demande 1 seau de ciment pour 3 seaux de sable : 2 seaux de ciment demandent donc 6 seaux de sable. On corrige avant de mélanger ; ajouter de l'eau ne change pas les proportions.",
+              "relance": "Que faites-vous quand un collègue prépare un mélange qui ne suit pas la fiche ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vous avez dû reprendre le rang 3. Que faites-vous pour **la suite du mur** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je contrôle chaque rang au niveau, à l'aplomb et au cordeau avant le suivant.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je contrôle seulement le niveau de chaque rang, avant de poser le suivant.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je fais plus attention en posant les parpaings, sans contrôler davantage.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je contrôle le mur en entier à la fin de la journée, quand tout est posé.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Contrôler chaque rang repère l'erreur tant qu'elle se corrige facilement. Le niveau seul laisse passer un mur penché ; un contrôle en fin de journée arrive trop tard.",
+              "relance": "À quel moment contrôlez-vous un mur que vous montez ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand le rang 3 **n'est pas** de niveau, je…",
+              "justes": [
+                {
+                  "texte": "le reprends tout de suite et je le recontrôle au niveau et au cordeau",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "corrige la pose avant que le mortier durcisse, puis je pose le rang suivant",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "remets le côté trop haut au niveau, puis je vérifie aussi l'aplomb",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le corrige, mais je ne le recontrôle pas",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le laisse : les rangs suivants le rattraperont",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "attends demain pour le reprendre",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si mon mur mesure **4,32 m** et que le plan indique **4,20 m**, je…",
+              "justes": [
+                {
+                  "texte": "remesure et je relis le plan avant de continuer",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "préviens le chef de chantier si l'écart est confirmé",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "ne compense pas moi-même : j'attends la décision du chef de chantier",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens le chef de chantier tout de suite",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "continue : l'enduit cachera la différence",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "décale la fenêtre pour compenser",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour le mortier, je…",
+              "justes": [
+                {
+                  "texte": "suis le dosage de la fiche : 1 seau de ciment pour 3 seaux de sable",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "compte les seaux de ciment et de sable avant de mélanger",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "préviens mon collègue si ses quantités ne suivent pas la fiche",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "demande au chef de chantier si je pense que le dosage doit changer",
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "mélange en faisant attention",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ajoute plus de ciment, parce que je pense que le mur sera plus solide",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "dose à l'œil, comme j'ai l'habitude de le faire",
+                  "repere": "c5_habitude"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de noter sur la fiche chaque contrôle fait : niveau, aplomb, cordeau.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Propose de marquer un seau de ciment et un seau de sable pour doser sans se tromper.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je corrige tout de suite le rang 3. Je le recontrôle au niveau et au cordeau avant de poser le rang 4. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le rang 3 est correct. Que faites-vous avant de poser le rang 4 ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un rang est de travers. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le rang 3 n'est pas de niveau et dépasse le cordeau, et le mortier est encore frais. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Le mortier du rang 3 a déjà durci. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le rang 3 est plus haut d'un côté que de l'autre.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le plan indique 4,20 m de longueur.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le mortier est encore frais.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le mur est fait de parpaings de 20 cm.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le rang 4 se posera sur le rang 3.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le chef de chantier a demandé de reprendre ce rang.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je pose le rang 4, puis je le contrôle de la même façon.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "b",
+                "texte": "Je pose les rangs 4 et 5, puis je les contrôle ensemble.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je pose le rang 4 sans le contrôler : le rang 3 est bon.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              },
+              {
+                "id": "d",
+                "texte": "Je contrôle le mur seulement quand il arrive à mi-hauteur.",
+                "points": 0,
+                "repere": "c6_laisse"
+              }
+            ]
+          },
+          "explication": "Le rang 3 est de travers et le mortier est frais : c'est le bon moment pour corriger. Le rang 4 repose sur le rang 3, donc on contrôle avant de continuer."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La fiche de contrôle de 9 h 45",
+          "consigne": "Voici la fiche remplie par votre collègue à 9 h 45. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Épaisseur du mur : parpaings de 20 cm, comme sur le plan",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Longueur du mur mesurée : 4,20 m, comme sur le plan",
+              "erreur": true,
+              "explication": "Le mur mesure 4,32 m, pas 4,20 m : l'écart est à signaler au chef de chantier."
+            },
+            {
+              "id": "e3",
+              "texte": "Ouverture de la fenêtre : 1,20 m de large, comme sur le plan",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Rangs 1 et 2 : de niveau, d'aplomb et dans le cordeau",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Rang 3 : conforme, rien à signaler",
+              "erreur": true,
+              "explication": "Le rang 3 est plus haut d'un côté et dépasse le cordeau : il n'est pas conforme."
+            },
+            {
+              "id": "e6",
+              "texte": "Mortier de la fiche : 1 seau de ciment pour 3 seaux de sable",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Gâchée en cours : 2 seaux de ciment pour 8 seaux de sable",
+              "erreur": true,
+              "explication": "La fiche demande 1 seau de ciment pour 3 seaux de sable : 2 seaux de ciment demandent 6 seaux de sable."
+            },
+            {
+              "id": "e8",
+              "texte": "Hauteur prévue du mur : 12 rangs, comme sur le plan",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Pose simulée de 20 minutes sur un mur-école. La personne dose le mortier selon une fiche, monte deux rangs, puis contrôle l'ensemble. L'évaluateur a posé un rang de travers à l'avance.",
+            "criteres": [
+              {
+                "texte": "Dose le mortier selon la fiche, en comptant les seaux",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Contrôle chaque rang au niveau, à l'aplomb et au cordeau",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère le rang posé de travers et le reprend avant que le mortier durcisse",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Note ses mesures et signale tout écart avec le plan",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose une façon d'éviter l'erreur : seaux repérés, contrôle noté sur la fiche",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Le **rang 3** est de travers et le mortier est frais. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je le reprends tout de suite et je le recontrôle au niveau et au cordeau.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je corrige avant que le mortier durcisse, puis je pose le rang suivant.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je remets le rang droit, puis je vérifie aussi l'aplomb du mur.",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le corrige.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le laisse : l'enduit rattrapera.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Votre mur mesure **4,32 m** et le plan indique **4,20 m**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je remesure et je relis le plan.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Si l'écart reste, je préviens le chef de chantier.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je ne compense pas moi-même : j'attends la décision du chef.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens le chef de chantier.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je continue : l'enduit cachera l'écart.",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "Je décale la fenêtre pour compenser.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Pour 2 seaux de ciment, **combien** de seaux de sable mettez-vous, **d'après la fiche** ?",
+              "justes": [
+                {
+                  "texte": "6 seaux, parce que la fiche donne 3 seaux de sable pour 1 seau de ciment.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je compte 3 seaux de sable par seau de ciment : 2 fois 3, cela fait 6.",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "6 seaux. Je compte les seaux avant de mélanger.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde la fiche.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "8 seaux : on a toujours fait comme ça.",
+                  "repere": "c5_habitude"
+                },
+                {
+                  "texte": "Je dose à l'œil.",
+                  "repere": "c5_devine"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de noter les contrôles du jour sur la fiche du chef de chantier.",
+              "repere": "c6_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre dès le premier jour le plan et la fiche de dosage, et montrer ensemble comment contrôler niveau, aplomb et cordeau sur un premier rang.",
+        "Prévoir un contrôle du chef de chantier sur les premiers rangs de chaque mur, puis l'espacer quand les contrôles de la personne sont réguliers."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Organiser sa journée de chantier avec une pluie annoncée",
+      "pourquoi": "Sur un chantier, l'ordre des tâches décide de la qualité du mur : les livraisons et la météo ne se déplacent pas.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une pluie annoncée à 14 h",
+        "texte": "Mardi, 7 h 30. Avec un collègue, vous finissez le mur d'une extension : il reste 4 rangs à monter. Les parpaings et le ciment qui restent suffisent pour 2 rangs ; le reste arrive par camion à 10 h. La pluie est annoncée à partir de 14 h. Le chef de chantier est sur un autre chantier jusqu'à 11 h ; vous pouvez l'appeler. Sa consigne écrite : « Avant la pluie, couvrir le haut des murs avec la bâche et mettre les sacs à l'abri. »",
+        "document": {
+          "type": "liste",
+          "titre": "Programme de la journée",
+          "items": [
+            "Matin : monter 4 rangs, soit environ 4 heures de travail à deux.",
+            "10 h : le camion livre parpaings et sacs de ciment, et ne peut pas attendre.",
+            "Avant 14 h : couvrir le haut du mur avec la bâche et mettre les sacs à l'abri.",
+            "Après le dernier mortier : nettoyer l'auge et les outils."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Il est 7 h 30. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je prépare le mortier et je monte les deux rangs que le stock permet.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'attends la livraison de 10 h pour commencer à monter.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je commence à monter les rangs sans regarder ce qui reste en stock.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je nettoie d'abord le chantier et les outils, pour partir proprement ce soir.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Le stock permet de monter deux rangs avant la livraison : on commence tout de suite. Attendre 10 h fait perdre deux heures ; monter sans regarder le stock risque une panne en plein rang.",
+              "relance": "Comment savez-vous ce que vous pouvez monter avant la livraison ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous êtes **deux** pour monter le mur. **Comment répartissez-vous** le travail ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Chacun monte une partie du mur et prépare son propre mortier à côté.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "b",
+                  "texte": "L'un monte les rangs, l'autre prépare le mortier et apporte les parpaings.",
+                  "points": 2,
+                  "repere": "c2_regroupe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je fais tout moi-même, mon collègue attend que je lui demande quelque chose.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "d",
+                  "texte": "Chacun commence la tâche qu'il veut, dans l'ordre qui lui vient en tête.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                }
+              ],
+              "explication": "Le maçon qui pose sans s'arrêter va plus vite quand l'autre prépare le mortier et apporte les parpaings. Chacun pour soi multiplie les trajets et le matériel.",
+              "relance": "Comment répartissez-vous le travail quand vous êtes deux sur un mur ?"
+            },
+            {
+              "id": "q3",
+              "texte": "À **10 h**, le camion arrive et **ne peut pas attendre**. Vous êtes au milieu d'un rang. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je finis tous mes rangs d'abord : le camion attendra.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je finis mon rang en cours, puis je vais réceptionner la livraison.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à mon collègue de réceptionner le camion pendant que je finis mon rang.",
+                  "points": 2,
+                  "repere": "c2_regroupe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne m'en occupe pas : la livraison, c'est l'affaire du chef de chantier.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                }
+              ],
+              "explication": "Il faut que quelqu'un soit là à 10 h. À deux, l'un finit le rang pendant que l'autre réceptionne. Finir seul son rang d'abord risque de manquer le camion.",
+              "relance": "Que faites-vous quand une livraison arrive à heure fixe pendant que vous travaillez ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Il est 12 h. Il reste **un rang** à monter, et la pluie arrive à **14 h**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je monte le dernier rang très vite, sans contrôler, pour finir avant la pluie.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je finis le rang en le contrôlant, puis je couvre le mur et je range les sacs avant 14 h.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne monte pas le dernier rang : je couvre le mur et je range les sacs tout de suite.",
+                  "points": 1,
+                  "repere": "c2_risque"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je continue à monter sans m'occuper de la pluie : elle n'est pas encore là.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Il reste deux heures avant la pluie. C'est assez pour finir le rang avec contrôle, puis protéger le mur et les sacs comme le demande le chef. Monter le dernier rang sans contrôle fait gagner peu de temps et risque un mur à refaire.",
+              "relance": "Que faites-vous quand une pluie est annoncée et que le travail n'est pas fini ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 11 h 30, vous voyez que le mur **ne sera pas fini** avant la pluie. Le chef de chantier est **joignable**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne dis rien et je continue à monter, même si la pluie arrive à 14 h.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse le mur découvert à 14 h : le chef de chantier verra demain.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui envoie un message court : « On est en retard sur le mur. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je l'appelle avec les faits : rangs restants, pluie à 14 h, ma proposition.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                }
+              ],
+              "explication": "Le chef de chantier décide s'il faut du renfort ou un autre plan. Il a besoin des faits (rangs restants, heure de la pluie) et d'une proposition. « On est en retard » ne lui permet pas d'agir.",
+              "relance": "Que dites-vous au chef de chantier quand vous prenez du retard ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Au début** de la matinée, je…",
+              "justes": [
+                {
+                  "texte": "prépare le mortier et je monte les deux rangs que le stock permet",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "lis la consigne du chef de chantier et je regarde ce qui reste en stock",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "prévois d'être libre à 10 h pour recevoir le camion",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "commence à monter tout de suite",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "attends la livraison pour commencer",
+                  "repere": "c2_reactif"
+                },
+                {
+                  "texte": "couvre le mur avant de l'avoir monté",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour la pluie annoncée à **14 h**, je…",
+              "justes": [
+                {
+                  "texte": "couvre le haut du mur avec la bâche avant 14 h",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "mets les sacs à l'abri avant la pluie, comme le demande le chef",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "prévois ce temps de protection dans ma matinée",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde la météo de temps en temps",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "attends que la pluie commence pour couvrir",
+                  "repere": "c2_reactif"
+                },
+                {
+                  "texte": "laisse les sacs sur la palette : ils sont emballés",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si je vois que le mur **ne sera pas fini** avant la pluie, je…",
+              "justes": [
+                {
+                  "texte": "préviens le chef de chantier avec les faits : rangs restants et heure de la pluie",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "couvre quand même le mur à l'heure prévue et je note ce qui reste à faire",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "demande au chef s'il peut envoyer quelqu'un en renfort",
+                  "repere": "c4_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "monte plus vite",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne dis rien et je finis sous la pluie",
+                  "repere": "c2_silence"
+                },
+                {
+                  "texte": "laisse le mur découvert : on verra demain",
+                  "repere": "c2_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prépare la bâche et les lests avant de monter le dernier rang.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Demande au chef de chantier quelles consignes s'appliquent en cas de gel.",
+              "repere": "c5_clarifie"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je monte les rangs le matin. Avant 14 h, je couvre le haut du mur avec la bâche et je mets les sacs à l'abri. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "La pluie est annoncée à 14 h et il reste 4 rangs à monter. Comment organisez-vous la journée ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Le camion de livraison arrive à 10 h. Comment organisez-vous la matinée ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "La météo est mauvaise cet après-midi. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le chef de chantier appelle pour savoir où en est le mur. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La pluie est annoncée à partir de 14 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le camion de livraison arrive à 10 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le chef demande de couvrir le haut des murs et de mettre les sacs à l'abri avant la pluie.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le chef de chantier est sur un autre chantier jusqu'à 11 h.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Les 4 rangs représentent environ 4 heures de travail à deux.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Il reste du ciment pour les quatre rangs.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je nettoie l'auge et les outils, puis je pars sans rien dire.",
+                "points": 1,
+                "repere": "c2_silence"
+              },
+              {
+                "id": "b",
+                "texte": "J'attends que la pluie commence pour voir si la bâche tient.",
+                "points": 0,
+                "repere": "c2_reactif"
+              },
+              {
+                "id": "c",
+                "texte": "Je nettoie l'auge et les outils, puis je préviens le chef de chantier que le mur est protégé.",
+                "points": 2,
+                "repere": "c2_previent"
+              },
+              {
+                "id": "d",
+                "texte": "Je laisse l'auge et les outils sales jusqu'à demain.",
+                "points": 0,
+                "repere": "c2_oubli"
+              }
+            ]
+          },
+          "explication": "Avec une pluie annoncée à 14 h, tout ce que demande la consigne se fait avant. Les rangs se montent le matin, la protection vient juste après, puis on prévient le chef."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre matinée, dans l'ordre",
+          "consigne": "Remettez ces étapes dans **l'ordre** où vous les faites, de **7 h 30** à la pluie de **14 h**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Préparer le mortier de la première gâchée"
+            },
+            {
+              "id": "e2",
+              "texte": "Monter les deux premiers rangs, avec ce qui reste en stock"
+            },
+            {
+              "id": "e3",
+              "texte": "Recevoir la livraison de 10 h et mettre les sacs à l'abri"
+            },
+            {
+              "id": "e4",
+              "texte": "Monter les deux derniers rangs, avec ce qui a été livré"
+            },
+            {
+              "id": "e5",
+              "texte": "Couvrir le haut du mur avec la bâche"
+            },
+            {
+              "id": "e6",
+              "texte": "Nettoyer l'auge et les outils"
+            },
+            {
+              "id": "e7",
+              "texte": "Prévenir le chef de chantier que le mur est monté et protégé"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "Le mortier doit être prêt avant de poser les parpaings."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "On monte de bas en haut : les rangs du dessous d'abord."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "Les parpaings et le ciment des deux derniers rangs arrivent avec la livraison."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On couvre le haut du mur quand les rangs sont montés."
+            },
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "On nettoie l'auge après le dernier mortier, avant qu'il durcisse dedans."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "On annonce que le mur est protégé une fois qu'il l'est."
+            },
+            {
+              "avant": "e3",
+              "apres": "e7",
+              "explication": "Les sacs sont à l'abri avant de dire que tout est protégé."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Simulation de 15 minutes : une feuille donne le programme de la journée, une livraison à heure fixe et une pluie annoncée. La personne choisit son ordre, l'explique et dit qui elle prévient.",
+            "criteres": [
+              {
+                "texte": "Prévoit d'être disponible à l'heure de la livraison",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Fait avant la pluie ce que la consigne demande : bâche et sacs à l'abri",
+                "repere": "c2_risque"
+              },
+              {
+                "texte": "Choisit un ordre logique : mortier, rangs du bas vers le haut, nettoyage",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Dit qu'elle préviendra le chef de chantier de l'avancement",
+                "repere": "c2_previent"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévoit à l'avance la bâche et les lests avant le dernier rang",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous **en premier**, à 7 h 30 ?",
+              "justes": [
+                {
+                  "texte": "Je prépare le mortier et je monte les deux rangs que le stock permet.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je regarde la consigne et ce qui reste en stock, puis je commence à monter.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je répartis le travail avec mon collègue : l'un monte, l'autre prépare.",
+                  "repere": "c2_regroupe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je commence à monter.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends la livraison de 10 h.",
+                  "repere": "c2_reactif"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Comment **prévoyez-vous** la livraison de **10 h** ?",
+              "justes": [
+                {
+                  "texte": "Je finis mon rang avant 10 h et mon collègue reçoit le camion.",
+                  "repere": "c2_regroupe"
+                },
+                {
+                  "texte": "Je prévois d'être libre à 10 h pour compter la livraison.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je mets les sacs à l'abri dès qu'ils sont déchargés.",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je vais au camion à 10 h.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je continue à monter : le camion attendra.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous **avant** la pluie de **14 h** ?",
+              "justes": [
+                {
+                  "texte": "Je couvre le haut du mur avec la bâche, bien fixée.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Je mets les sacs à l'abri, comme le demande le chef.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Je préviens le chef si le mur ne sera pas fini à temps.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde la météo.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends que la pluie commence.",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande au chef de chantier quelles consignes s'appliquent en cas de gel.",
+              "repere": "c5_clarifie"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner chaque matin une fiche du jour courte : tâches, livraisons à heure fixe, consigne météo.",
+        "Convenir d'un point téléphonique avec le chef de chantier quand il n'est pas sur place, et dire qui reçoit les livraisons."
+      ]
+    },
+    {
+      "code": "C4",
+      "titre": "Se coordonner avec les autres métiers et le chef de chantier",
+      "pourquoi": "Plusieurs métiers se suivent sur le même ouvrage : une information qui arrive trop tard coûte une demi-journée ou une reprise.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Le béton arrive à 11 h, l'évacuation n'est pas posée",
+        "texte": "Jeudi, 9 h. Le béton du dallage d'une extension est livré à 11 h : c'est le chef de chantier qui l'a commandé. Avant le béton, le plombier doit poser l'évacuation de la salle d'eau sous le dallage. Il vient d'arriver et vous dit qu'il ne sera pas prêt avant 12 h 30. L'électricien a déjà passé ses gaines hier. Le chef de chantier est en rendez-vous jusqu'à midi ; vous pouvez l'appeler. De votre côté, vous finissez le coffrage.",
+        "document": {
+          "type": "tableau",
+          "titre": "Planning de la semaine, affiché au bureau de chantier",
+          "colonnes": [
+            "Quand",
+            "Qui",
+            "Quoi",
+            "Où en est-on ?"
+          ],
+          "lignes": [
+            [
+              "Mercredi",
+              "Électricien",
+              "Gaines sous le dallage",
+              "Fait"
+            ],
+            [
+              "Jeudi, 8 h",
+              "Plombier",
+              "Évacuation de la salle d'eau",
+              "Pas commencée"
+            ],
+            [
+              "Jeudi, 9 h",
+              "Maçon (vous)",
+              "Coffrage du dallage",
+              "En cours"
+            ],
+            [
+              "Jeudi, 11 h",
+              "Fournisseur de béton",
+              "Livraison du béton, commandée par le chef de chantier",
+              "Prévue"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le plombier ne sera pas prêt avant **12 h 30**. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je décale moi-même la livraison en appelant directement le fournisseur de béton.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'appelle le chef de chantier : béton à 11 h, évacuation pas posée avant 12 h 30.",
+                  "points": 2,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je dis au plombier de se dépêcher, parce que le béton arrive à 11 h.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je préviens le chef de chantier que le plombier est en retard ce matin.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Le chef de chantier a commandé le béton : c'est à lui de décider. Il lui faut des faits précis (heure du béton, heure de fin du plombier) ; « le plombier est en retard » ne lui permet pas de choisir.",
+              "relance": "Qui décide de changer l'heure d'une livraison de béton sur votre chantier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le chef de chantier décale le béton à **13 h 30**. Que dites-vous **au plombier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : le chef de chantier le préviendra sûrement lui-même.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que le béton est décalé, mais je ne précise pas la nouvelle heure.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que le béton est décalé à 13 h 30 et que je vérifierai l'évacuation avant.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "Qu'il a retardé le chantier et que le chef de chantier en a été informé.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Le plombier doit connaître la nouvelle heure et ce qui l'attend : une vérification avant le béton. Sans l'heure, il ne peut pas s'organiser ; un reproche ne règle rien.",
+              "relance": "Que dites-vous à un collègue d'un autre métier quand le planning change ?"
+            },
+            {
+              "id": "q3",
+              "texte": "À **12 h 40**, l'évacuation est posée, mais elle vous semble décalée par rapport **au plan**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la déplace moi-même avant la livraison du béton, pour gagner du temps.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'appelle le chef de chantier pour lui décrire l'écart, sans en parler au plombier.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je dis au plombier qu'il a mal travaillé et qu'il doit tout refaire.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je montre le plan au plombier et nous comparons ensemble avant de couler.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                }
+              ],
+              "explication": "Le plan est la référence commune : le comparer ensemble règle l'écart sur des faits, sans accuser. Le maçon ne déplace pas un réseau qui n'est pas le sien, et le béton ne se coule qu'une fois l'écart réglé.",
+              "relance": "Comment réglez-vous un désaccord avec un autre métier sur la position d'un élément ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Que proposez-vous** pour que chaque métier sache **quand** les autres interviennent ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je propose au chef d'afficher chaque soir le planning à jour du lendemain.",
+                  "points": 2,
+                  "repere": "c4_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je demande au plombier son heure d'arrivée la prochaine fois qu'il intervient.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Chacun s'organise : je ne m'occupe que de mon propre travail.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'envoie un message à tout le monde, sans en parler au chef de chantier.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                }
+              ],
+              "explication": "Un planning affiché et à jour, tenu par le chef de chantier, donne à tous la même information. Demander son heure à un seul métier règle un cas, pas le problème.",
+              "relance": "Quelle règle simple avez-vous déjà mise en place avec d'autres métiers ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 12 h 45, l'électricien arrive et veut **ajouter une gaine** sous le dallage. Le béton est à **13 h 30**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis non : ce n'était pas prévu, et il aurait dû venir hier matin.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le laisse poser sa gaine sans prévenir le chef de chantier de ce changement.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui donne l'heure du béton, je demande son temps et je préviens le chef.",
+                  "points": 2,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis d'appeler lui-même le chef de chantier pour parler de la gaine.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                }
+              ],
+              "explication": "Une gaine de dernière minute peut être possible, mais le maçon ne décide pas seul. On donne l'heure du béton, on demande le temps nécessaire, et le chef de chantier tranche.",
+              "relance": "Que faites-vous quand un autre métier demande un changement juste avant votre intervention ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Au **plombier** qui ne sera pas prêt avant **12 h 30**, je dis…",
+              "justes": [
+                {
+                  "texte": "que je préviens le chef de chantier et que je reviens avec sa décision",
+                  "repere": "c4_role"
+                },
+                {
+                  "texte": "de me confirmer son heure de fin : je la transmets au chef de chantier",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "que le béton est prévu à 11 h et que je cherche une solution avec le chef",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je vais voir ce qu'on peut faire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "de se dépêcher, sinon tout est bloqué",
+                  "repere": "c4_impose"
+                },
+                {
+                  "texte": "que je coulerai à 11 h, qu'il soit prêt ou non",
+                  "repere": "c4_impose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Au chef de chantier, j'annonce…",
+              "justes": [
+                {
+                  "texte": "que le béton arrive à 11 h et que l'évacuation ne sera pas posée avant 12 h 30",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "les faits, puis je demande s'il décale la livraison",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "ce que dit le plombier, l'heure du béton et ce qui reste à faire",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le plombier a du retard",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que le plombier travaille mal",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "rien : je m'arrange seul avec le plombier",
+                  "repere": "c4_seul"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Pour éviter** que ça recommence, je…",
+              "justes": [
+                {
+                  "texte": "propose au chef de chantier d'afficher chaque soir le planning du lendemain",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "propose de confirmer par téléphone, la veille d'un coulage, l'heure de chaque métier",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "propose de vérifier évacuations et gaines avec chaque métier avant chaque coulage",
+                  "repere": "c4_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ferai plus attention",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne dis rien : ce n'est pas à moi d'en parler",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose au chef de chantier une liste à cocher avant chaque coulage : évacuations, gaines, coffrage.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Demande au plombier et à l'électricien leurs heures de passage de la semaine.",
+              "repere": "c4_informe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Le béton arrive à 11 h et l'évacuation ne sera pas posée avant 12 h 30. Pouvez-vous décaler la livraison ? »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le plombier vous demande à quelle heure arrive le béton. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un retard bloque le chantier. Que dites-vous au chef de chantier ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "L'électricien a fini ses gaines. Que dites-vous au chef de chantier ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le plombier ne sera pas prêt avant 12 h 30 et le béton arrive à 11 h. Que dites-vous au chef de chantier ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le béton est livré à 11 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "L'électricien a déjà passé ses gaines.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "L'évacuation doit être posée avant le béton.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Vous finissez le coffrage du dallage.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le plombier ne sera pas prêt avant 12 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le plombier est arrivé avec trois heures de retard.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'attends que le plombier vienne me dire quand il a fini.",
+                "points": 0,
+                "repere": "c2_reactif"
+              },
+              {
+                "id": "b",
+                "texte": "Je préviens le plombier de la nouvelle heure et je finis mon coffrage.",
+                "points": 2,
+                "repere": "c4_informe"
+              },
+              {
+                "id": "c",
+                "texte": "Je finis mon coffrage et je préviens le plombier plus tard.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "J'appelle moi-même le fournisseur pour décaler encore le béton.",
+                "points": 0,
+                "repere": "c4_seul"
+              }
+            ]
+          },
+          "explication": "Le chef de chantier a commandé le béton : c'est à lui de décider du report. On lui donne les faits (heure du béton, heure de fin du plombier) et on lui demande de trancher."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous dites et ce que vous faites",
+          "consigne": "Pour chaque phrase ou action, choisissez son **effet sur la situation**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Aide à se coordonner"
+            },
+            {
+              "id": "k2",
+              "nom": "Ne règle rien"
+            },
+            {
+              "id": "k3",
+              "nom": "Aggrave la situation"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Au chef de chantier : « Le béton arrive à 11 h et l'évacuation n'est pas posée avant 12 h 30. Que décidez-vous ? »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle donne les faits et laisse le chef de chantier décider."
+            },
+            {
+              "id": "e2",
+              "texte": "Au plombier : « Dépêchez-vous, vous bloquez tout le chantier. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Elle accuse et met la pression."
+            },
+            {
+              "id": "e3",
+              "texte": "Au plombier : « À quelle heure aurez-vous fini ? Je la transmets au chef de chantier. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle recueille un fait utile et le fait remonter."
+            },
+            {
+              "id": "e4",
+              "texte": "Au plombier : « Je coule à 11 h, vous percerez le dallage après. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Elle impose une solution qui abîme l'ouvrage et le travail du plombier."
+            },
+            {
+              "id": "e5",
+              "texte": "Au plombier : « On verra bien. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Rien n'est décidé ni transmis."
+            },
+            {
+              "id": "e6",
+              "texte": "Ne pas prévenir le chef de chantier et gérer le problème seul",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "Sans le chef, personne ne décide : selon la suite, le problème reste entier ou s'aggrave."
+            },
+            {
+              "id": "e7",
+              "texte": "Au plombier : « Je vous préviens dès que le chef de chantier a décidé de la nouvelle heure du béton. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle tient le plombier informé de la suite."
+            },
+            {
+              "id": "e8",
+              "texte": "Au plombier : « C'est à cause de vous si on perd la journée. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Elle met la personne en cause, pas les faits."
+            },
+            {
+              "id": "e9",
+              "texte": "Au plombier : « Je finis mon coffrage et on en reparle plus tard. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le problème d'horaire reste entier : personne n'a prévenu le chef de chantier."
+            }
+          ],
+          "repere_reussite": "c4_faits",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes. Une personne joue le plombier qui ne sera pas prêt, une autre le chef de chantier au téléphone. La personne candidate informe le chef, puis annonce sa décision au plombier.",
+            "criteres": [
+              {
+                "texte": "Donne au chef de chantier les faits : heure du béton, heure de fin du plombier",
+                "repere": "c4_informe"
+              },
+              {
+                "texte": "Laisse le chef de chantier décider du report du béton",
+                "repere": "c4_role"
+              },
+              {
+                "texte": "S'adresse au plombier sans l'accuser ni le presser",
+                "repere": "c4_faits"
+              },
+              {
+                "texte": "Annonce au plombier la nouvelle heure du béton et la vérification prévue",
+                "repere": "c4_informe"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose une règle pour éviter que cela recommence : un planning mis à jour chaque soir",
+              "repere": "c4_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que dites-vous au **chef de chantier** ?",
+              "justes": [
+                {
+                  "texte": "Que le béton arrive à 11 h et que l'évacuation ne sera pas posée avant 12 h 30.",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "Je donne les faits, puis je lui demande s'il décale la livraison.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je lui donne l'heure du plombier et l'heure du béton : il décide.",
+                  "repere": "c4_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le plombier est en retard.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je coulerai quand même à 11 h.",
+                  "repere": "c4_impose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que dites-vous au **plombier** ?",
+              "justes": [
+                {
+                  "texte": "Que je préviens le chef de chantier et que je lui dirai la nouvelle heure du béton.",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "Merci de me dire quand vous aurez fini : je vérifierai avec le plan.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Que le béton passe à 13 h 30 si le chef le décide, et que je vérifierai avant de couler.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le chef de chantier va décider.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que c'est lui qui bloque le chantier.",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que proposez-vous pour que cela **ne se reproduise pas** ?",
+              "justes": [
+                {
+                  "texte": "Un planning affiché chaque soir pour le lendemain.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "Une vérification des évacuations et des gaines avant chaque coulage.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "Un appel de confirmation la veille avec chaque métier.",
+                  "repere": "c4_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Faire plus attention.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : chacun gère son travail.",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose une liste à cocher avant chaque coulage, remplie avec le plombier et l'électricien.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Présenter dès le premier jour les autres métiers du chantier, leurs créneaux et le numéro du chef de chantier.",
+        "Afficher un planning à jour chaque soir et expliquer qui décide quoi : changer une livraison, modifier un réseau, reporter un coulage."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez travaillé **en hauteur** ou près d'une **charge levée**. Que s'était-il passé ?",
+      "suite": [
+        "Quels équipements ou gestes de sécurité avez-vous utilisés ?",
+        "Qu'est-ce qui aurait pu mal se passer ?"
+      ],
+      "attendus": [
+        "Décrit une situation précise (échafaudage, charge, outil)",
+        "Cite des équipements ou des gestes concrets",
+        "Explique ce que ces précautions évitent"
+      ],
+      "relance": "Qu'auriez-vous fait si un équipement avait manqué ?",
+      "alternative": "Si vous n'avez jamais travaillé sur un chantier : parlez d'une fois où vous avez travaillé en hauteur ou porté une charge lourde (bricolage, déménagement, association)."
+    },
+    {
+      "id": "e2",
+      "competence": "C8",
+      "texte": "Sur un échafaudage, vous voyez qu'il manque une **barre du garde-corps**. Que faites-vous ?",
+      "suite": [],
+      "attendus": [
+        "Ne monte pas, ou descend, et empêche l'accès",
+        "Prévient le chef de chantier ou l'entreprise de montage",
+        "Ne modifie pas l'échafaudage sans y être autorisé"
+      ],
+      "relance": "Et si le chef de chantier n'est pas joignable ?",
+      "alternative": "Vous allez monter sur un escabeau et vous voyez qu'un pied est cassé. Que faites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez dû **refaire** un travail mal fait. **Comment l'avez-vous découvert** ?",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur sans la minimiser",
+        "Dit comment elle a été repérée et corrigée",
+        "Dit ce qui a changé pour la repérer plus tôt"
+      ],
+      "relance": "Qui avez-vous prévenu ?",
+      "alternative": "Parlez d'un travail manuel (bricolage, jardinage, couture) où vous avez dû recommencer, et de ce que vous avez changé ensuite."
+    },
+    {
+      "id": "e4",
+      "competence": "C6",
+      "texte": "Le chef de chantier vous donne un **dosage** pour le mortier. Comment vous **assurez-vous de le respecter** ?",
+      "suite": [],
+      "attendus": [
+        "Mesure avec des seaux ou des pelles comptés",
+        "Compte les quantités avant de mélanger",
+        "Demande au chef de chantier en cas de doute"
+      ],
+      "relance": "Que faites-vous si vous pensez que le dosage n'est pas adapté ?",
+      "alternative": "Quand vous suivez une recette ou une notice avec des quantités précises, comment vous assurez-vous de les respecter ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C2",
+      "texte": "Parlez d'une journée de travail où **la météo** a changé **votre organisation**. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous fait en premier ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit les contraintes (météo, livraison, horaire)",
+        "Explique l'ordre choisi et pourquoi",
+        "Dit qui il a prévenu"
+      ],
+      "relance": "Qu'auriez-vous pu préparer plus tôt ?",
+      "alternative": "Parlez d'une journée (travail, jardin, déménagement) où la météo ou un horaire fixe a changé votre organisation."
+    },
+    {
+      "id": "e6",
+      "competence": "C2",
+      "texte": "Il reste du travail à finir et de la **pluie est annoncée l'après-midi**. Comment **choisissez-vous l'ordre** de vos tâches ?",
+      "suite": [
+        "Que faites-vous si vous prenez du retard ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : échéance, protection avant la pluie",
+        "Prévoit la protection de l'ouvrage et du matériel",
+        "Prévient le chef de chantier si le délai ne sera pas tenu"
+      ],
+      "relance": "Que préparez-vous avant la pluie ?",
+      "alternative": "Quand vous avez plusieurs tâches à finir avant un horaire fixe, comment choisissez-vous l'ordre ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C4",
+      "texte": "Parlez d'une fois où vous avez dû **vous coordonner** avec un autre métier ou une autre équipe. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous dit ?",
+        "Qu'est-ce qui a été décidé ?"
+      ],
+      "attendus": [
+        "Décrit les faits : qui, quoi, quand",
+        "Dit comment il a informé les autres",
+        "Dit ce qui a été décidé"
+      ],
+      "relance": "Qui a pris la décision finale ?",
+      "alternative": "Parlez d'une fois où vous avez coordonné votre travail avec d'autres personnes (équipe sportive, association, travaux chez un proche)."
+    },
+    {
+      "id": "e8",
+      "competence": "C4",
+      "texte": "Un autre métier **n'a pas fini** son travail avant votre intervention. Que faites-vous ?",
+      "suite": [],
+      "attendus": [
+        "Cherche d'abord les faits : heure de fin, ce qui reste",
+        "Prévient le chef de chantier",
+        "Ne passe pas en force et ne met pas la personne en cause"
+      ],
+      "relance": "Que proposez-vous pour que cela n'arrive plus ?",
+      "alternative": "Quelqu'un doit finir sa part avant que vous commenciez la vôtre (projet, association, travaux). Il n'a pas fini. Que faites-vous ?"
+    }
+  ],
+  "_pv": "5a9d6cb525"
+}

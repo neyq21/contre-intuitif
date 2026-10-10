@@ -1,0 +1,2595 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "communication",
+  "version": "2026.10",
+  "nom": "Chargé de communication / Chargée de communication",
+  "secteur": "communication-management",
+  "alias": [
+    "chargé de communication",
+    "chargée de communication",
+    "community manager",
+    "responsable communication junior",
+    "chargé de communication digitale",
+    "rédacteur web",
+    "social media manager"
+  ],
+  "resume": "Rédige, vérifie et publie les messages d'une structure (site, réseaux sociaux, lettre) et répond au public, y compris comme community manager.",
+  "contexte": "Le service communication d'une mairie de 15 000 habitants : un site internet, une page sur les réseaux sociaux et une lettre d'information. Vous travaillez avec une responsable de la communication.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C2",
+      "titre": "Planifier les publications de la semaine selon les échéances",
+      "pourquoi": "Plusieurs services demandent une publication en même temps. Une erreur en ligne trompe le public, et un message trop tardif ne sert plus à rien.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Cinq demandes un lundi matin",
+        "texte": "Lundi, 9 h. Voici les demandes reçues pour la page de la mairie, dans l'ordre où elles sont arrivées. L'horaire officiel de la déchetterie est 10 h (fiche du service Propreté). Vous traitez les demandes l'une après l'autre ; chacune vous prend à peu près le même temps. Vous pouvez corriger tout de suite une erreur de fait sur la page, puis prévenir la responsable de la communication.",
+        "document": {
+          "type": "tableau",
+          "titre": "Demandes reçues",
+          "colonnes": [
+            "Reçue",
+            "De la part de",
+            "Demande",
+            "Date à respecter"
+          ],
+          "lignes": [
+            [
+              "Jeudi dernier",
+              "Service des sports",
+              "Présenter les activités de la nouvelle saison",
+              "Aucune date"
+            ],
+            [
+              "Vendredi dernier",
+              "Associations",
+              "Annoncer la collecte de jouets",
+              "Samedi, de 10 h à 16 h"
+            ],
+            [
+              "Vendredi dernier",
+              "Service Culture",
+              "Annoncer l'ouverture de la billetterie",
+              "Vendredi, à 9 h"
+            ],
+            [
+              "Lundi, 8 h 15",
+              "Voirie",
+              "Prévenir de la fermeture de la rue du Marché",
+              "Fermée dès mercredi, 7 h"
+            ],
+            [
+              "Lundi, 8 h 50",
+              "Un habitant",
+              "Signale que la page indique la déchetterie ouverte dès 8 h. Il s'est déplacé pour rien.",
+              "Tout de suite : l'erreur est en ligne"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par quelle demande **commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Les activités de la nouvelle saison : c'est la demande la plus ancienne.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "La fermeture de la rue du Marché : c'est la date la plus proche parmi les messages à publier.",
+                  "points": 1,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "c",
+                  "texte": "L'horaire de la déchetterie : un habitant s'est déjà déplacé pour rien, d'autres peuvent le faire.",
+                  "points": 2,
+                  "repere": "c2_risque"
+                },
+                {
+                  "id": "d",
+                  "texte": "Un peu de chaque demande, pour montrer aux services que tout avance.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                }
+              ],
+              "explication": "Une erreur en ligne trompe des habitants en ce moment : on la corrige avant de préparer un nouveau message. La rue du Marché vient juste après, car sa date est la plus proche.",
+              "relance": "Entre une erreur déjà publiée et un message à préparer, qu'est-ce qui passe en premier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "L'horaire est corrigé. **Quelle demande** préparez-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La fermeture de la rue du Marché, qui commence mercredi à 7 h.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "b",
+                  "texte": "L'ouverture de la billetterie, vendredi à 9 h : sa date est proche aussi.",
+                  "points": 1,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "c",
+                  "texte": "La collecte de jouets : sa demande est arrivée avant celle de la voirie.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "d",
+                  "texte": "Les activités de la saison : je les écris vite, et ce sera fait.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "La date la plus proche passe d'abord : la rue est fermée dès mercredi à 7 h. La billetterie suit le même critère, mais sa date est plus lointaine.",
+              "relance": "Comment choisissez-vous entre deux demandes qui ont chacune une date ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Les activités de la nouvelle saison **n'ont pas de date**. **Que faites-vous** de cette demande ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la traite en premier : c'est la plus ancienne demande du lundi.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la mets de côté, sans rien répondre au service pour le moment.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je la traite après les demandes datées, quand j'ai du temps.",
+                  "points": 1,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "d",
+                  "texte": "Après les demandes datées, avec un jour de publication donné au service.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                }
+              ],
+              "explication": "Une demande sans date attend les demandes datées. Le service doit pourtant savoir quand elle sera publiée : un jour donné évite les relances.",
+              "relance": "Que dites-vous à un service dont la demande passe après les autres ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le service Culture demande de publier son message **aujourd'hui**. **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Oui : je publie son message tout de suite et je repousse la rue du Marché.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis quel jour je publie son message et pourquoi il ne passe pas aujourd'hui.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne réponds pas : il verra la publication quand elle sera en ligne.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis que je verrai ce que je peux faire cette semaine.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Un service qui insiste a besoin d'une réponse claire : le jour prévu et la raison. Changer l'ordre sans critère fait perdre du temps sur la rue du Marché.",
+              "relance": "Comment répondez-vous à un service qui demande à passer en premier ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vendredi, **toutes** les demandes sont **publiées**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends les prochaines demandes des services, sans rien préparer.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je note les dates que je connais déjà pour la semaine suivante.",
+                  "points": 1,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande leurs dates aux services et je remplis le planning.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je commence plusieurs messages sans date, pour prendre de l'avance.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                }
+              ],
+              "explication": "Demander les dates à l'avance permet de remplir le planning avant les demandes urgentes. Noter les dates déjà connues est un bon début, mais le planning reste incomplet.",
+              "relance": "Que préparez-vous quand il n'y a pas de demande urgente ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour choisir la **première demande**, je regarde…",
+              "justes": [
+                {
+                  "texte": "ce qui est déjà faux en ligne, avant tout nouveau message",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "l'erreur sur la déchetterie, parce que d'autres habitants peuvent se déplacer pour rien",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "d'abord l'erreur en ligne, puis les dates : mercredi, vendredi, samedi",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la date la plus proche",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'ordre dans lequel les demandes sont arrivées",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "la demande qui est la plus rapide à écrire",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Au service dont la demande **n'a pas de date**, je dis…",
+              "justes": [
+                {
+                  "texte": "que son message sera publié après les messages datés, et je lui donne un jour prévu",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "que sa demande est notée et que je la programme la semaine prochaine",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "que les messages avec une date passent d'abord, et je lui propose un jour",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je le publierai dès que possible",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : il verra quand ce sera publié",
+                  "repere": "c2_silence"
+                },
+                {
+                  "texte": "que son message passe en premier, puisqu'il est arrivé en premier",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand **toutes** les demandes de la semaine sont **publiées**, je…",
+              "justes": [
+                {
+                  "texte": "prépare le planning de la semaine suivante avec les dates connues",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "demande aux services leurs dates de la semaine suivante",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "note dans le planning les événements déjà annoncés pour le mois",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde ce qu'il reste à faire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "attends les prochaines demandes",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient la responsable de la communication qu'une erreur était en ligne et qu'elle est corrigée.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Propose un modèle de demande où chaque service indique la date à respecter.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Regroupe deux messages proches dans une seule publication quand ils visent le même public.",
+              "repere": "c2_regroupe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je corrige d'abord l'horaire de la déchetterie, car des habitants peuvent se déplacer pour rien. Ensuite, je prépare le message sur la rue du Marché, fermée dès mercredi à 7 h. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Plusieurs services demandent une publication cette semaine. Par quoi commencez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Un habitant vous demande l'horaire de la déchetterie. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Une erreur d'horaire est en ligne, et la voirie demande un message pour une fermeture dès mercredi à 7 h. Par quoi commencez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "La responsable vous demande le planning de la semaine. Que lui montrez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'horaire annoncé pour la déchetterie est faux.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La billetterie ouvre vendredi à 9 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Un habitant s'est déjà déplacé pour rien à cause de cette erreur.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le service des sports a envoyé sa demande le premier.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La rue du Marché est fermée dès mercredi à 7 h.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La collecte de jouets dure de 10 h à 16 h.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je prépare les activités de la saison, arrivées en premier.",
+                "points": 0,
+                "repere": "c2_arrivee"
+              },
+              {
+                "id": "b",
+                "texte": "Je prépare la billetterie, puis la collecte, puis les activités sans date.",
+                "points": 2,
+                "repere": "c2_critere"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends que les services me relancent.",
+                "points": 0,
+                "repere": "c2_reactif"
+              },
+              {
+                "id": "d",
+                "texte": "Je prépare la billetterie, puis la collecte.",
+                "points": 1,
+                "repere": "c2_oubli"
+              }
+            ]
+          },
+          "explication": "La réponse applique deux critères : ce qui trompe déjà le public passe d'abord, puis les échéances, de la plus proche à la plus lointaine."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "L'ordre de vos cinq demandes",
+          "consigne": "Remettez ces **cinq demandes dans l'ordre** où vous les traitez.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Annoncer la collecte de jouets (samedi, de 10 h à 16 h)"
+            },
+            {
+              "id": "e2",
+              "texte": "Présenter les activités de la nouvelle saison (sans date)"
+            },
+            {
+              "id": "e3",
+              "texte": "Corriger l'horaire de la déchetterie, déjà en ligne"
+            },
+            {
+              "id": "e4",
+              "texte": "Annoncer l'ouverture de la billetterie (vendredi, 9 h)"
+            },
+            {
+              "id": "e5",
+              "texte": "Prévenir de la fermeture de la rue du Marché (mercredi, 7 h)"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "L'erreur est en ligne et trompe déjà les habitants : on la corrige avant un message à publier dans deux jours."
+            },
+            {
+              "avant": "e5",
+              "apres": "e4",
+              "explication": "Mercredi à 7 h arrive avant vendredi à 9 h."
+            },
+            {
+              "avant": "e4",
+              "apres": "e1",
+              "explication": "Vendredi à 9 h arrive avant la collecte de samedi."
+            },
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "Une demande avec une date passe avant une demande sans date."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "L'erreur en ligne se corrige avant l'annonce de vendredi."
+            },
+            {
+              "avant": "e5",
+              "apres": "e1",
+              "explication": "La rue fermée mercredi passe avant la collecte de samedi."
+            },
+            {
+              "avant": "e4",
+              "apres": "e2",
+              "explication": "L'ouverture de vendredi passe avant la présentation sans date."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Atelier de 15 minutes : les cinq demandes sont posées sur des cartes, avec leurs dates. La personne les classe dans l'ordre de traitement et explique son choix à voix haute, comme à un collègue.",
+            "criteres": [
+              {
+                "texte": "Traite d'abord l'erreur déjà en ligne",
+                "repere": "c2_risque"
+              },
+              {
+                "texte": "Classe les demandes datées de la date la plus proche à la plus lointaine",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Place la demande sans date après les demandes datées",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Dit au service sans date quand son message sera publié",
+                "repere": "c2_previent"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévoit déjà la semaine suivante",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Par quelle demande **commencez-vous**, et **pourquoi** ?",
+              "justes": [
+                {
+                  "texte": "Par l'horaire erroné de la déchetterie, parce que des habitants sont trompés en ce moment.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Je corrige l'erreur en ligne avant d'écrire un nouveau message.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "L'erreur d'abord, car elle peut faire déplacer d'autres habitants pour rien.",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Celle dont la date est la plus proche.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Celle qui est arrivée en premier.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Dans **quel ordre** traitez-vous ensuite les demandes **datées** ?",
+              "justes": [
+                {
+                  "texte": "De la date la plus proche à la plus lointaine : rue du Marché, billetterie, collecte.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Mercredi, puis vendredi, puis samedi.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Par échéance : ce qui doit être publié en premier est traité en premier.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je fais au mieux.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Dans l'ordre où elles sont arrivées.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que **dites-vous** au service dont la demande n'a **pas de date** ?",
+              "justes": [
+                {
+                  "texte": "Que son message sera publié après les messages datés, avec un jour prévu.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Que je le programme la semaine prochaine, et je confirme le jour.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Que sa demande est notée et que les messages datés passent avant.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je m'en occupe dès que possible.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : il verra quand ce sera publié.",
+                  "repere": "c2_silence"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prépare dès maintenant le planning de la semaine suivante.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit la règle de priorité du service : erreur en ligne d'abord, puis échéances, puis demandes sans date.",
+        "Montrer le planning de publication partagé et le circuit de validation : qui valide quoi, et à quel moment."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Rédiger un message clair pour un public précis",
+      "pourquoi": "Un message que le public ne comprend pas à la première lecture n'est pas lu : l'essentiel et l'action attendue doivent venir en premier.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Les inscriptions au centre de loisirs",
+        "texte": "Lundi, 10 h. Le service Éducation vous envoie sa note sur les inscriptions au centre de loisirs des vacances de la Toussaint. Vous écrivez la publication pour la page de la mairie. Elle s'adresse aux parents, qui la liront sur leur téléphone. Le service veut que les parents s'inscrivent avant la date limite.",
+        "document": {
+          "type": "message",
+          "titre": "Note reçue du service Éducation",
+          "de": "Service Éducation",
+          "texte": "Dans le cadre du dispositif d'accueil de loisirs de la Toussaint, la phase d'inscription sur le portail famille est ouverte jusqu'au vendredi 16 octobre inclus. Elle concerne les enfants de 3 à 11 ans. Le tarif dépend du quotient familial (grille sur le site de la mairie). Il y a 80 places par semaine, attribuées dans l'ordre des inscriptions. Aucune inscription ne sera possible après le 16 octobre. Le centre est ouvert du lundi 19 au vendredi 30 octobre. Le portail a été mis à jour par le prestataire le 2 octobre."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Quelle phrase écrivez-vous **en premier** dans la publication ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Dans le cadre du dispositif d'accueil de la Toussaint, la phase d'inscription est ouverte. »",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Parents, inscrivez vos enfants au centre de loisirs de la Toussaint jusqu'au vendredi 16 octobre. »",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Le centre de loisirs de la Toussaint ouvrira du lundi 19 au vendredi 30 octobre. »",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Bonne nouvelle : le centre de loisirs revient pour les vacances ! »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Un parent lit d'abord la première phrase : elle doit dire ce qu'il doit faire et jusqu'à quand. Les dates d'ouverture du centre sont utiles, mais sans action ni date limite, le parent ne sait pas quoi faire.",
+              "relance": "Que doit comprendre un parent en lisant seulement la première phrase ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Quelles informations** de la note mettez-vous dans la publication ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Toute la note du service, pour ne rien oublier.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "La date limite et l'adresse du portail : le reste est sur le site.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "La date d'ouverture du centre : c'est ce qui intéresse les parents.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Ce qu'il faut faire, la date limite, les âges et l'endroit où s'inscrire.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                }
+              ],
+              "explication": "Le parent doit savoir quoi faire, jusqu'à quand, pour quels enfants et où. Sans les âges, il ne sait pas si cela le concerne ; le détail des tarifs reste sur le site.",
+              "relance": "Comment choisissez-vous ce qui reste dans un message et ce qui reste dans le lien ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Les parents liront **sur leur téléphone**. **Comment présentez-vous** les dates et le lien ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "En quelques lignes courtes : pour qui, jusqu'à quand, où s'inscrire.",
+                  "points": 2,
+                  "repere": "c3_adapte"
+                },
+                {
+                  "id": "b",
+                  "texte": "Dans un seul long paragraphe, comme dans la note du service.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "c",
+                  "texte": "Sous forme de liste de huit informations, dans l'ordre de la note.",
+                  "points": 1,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "d",
+                  "texte": "Tout en majuscules, pour que les parents voient bien le message.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Sur un petit écran, des lignes courtes se lisent vite. Une liste de huit informations garde tout, mais le parent doit chercher ce qui compte.",
+              "relance": "Qu'est-ce qui rend un message facile à lire sur un téléphone ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Quelle **dernière phrase** choisissez-vous pour la publication ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Pour plus d'informations, n'hésitez pas à consulter notre site internet. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Merci de votre attention, et nous vous souhaitons de belles vacances ! »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Inscrivez-vous sur le portail famille jusqu'au vendredi 16 octobre : [lien]. »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Les inscriptions sont ouvertes, dépêchez-vous de vous inscrire ! »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Une bonne dernière phrase dit quoi faire, où et jusqu'à quand, avec le lien. « Dépêchez-vous » pousse à agir, mais le parent ne sait ni où ni jusqu'à quand.",
+              "relance": "Que doit contenir la phrase qui demande au lecteur d'agir ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vendredi, le service demande si la publication **a fonctionné**. **Que regardez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le nombre de « j'aime » : plus il y en a, mieux le message a marché.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Les clics sur le lien, comparés aux inscriptions reçues par le service.",
+                  "points": 2,
+                  "repere": "c3_verifie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le nombre de personnes qui ont vu la publication.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Le nombre d'abonnés de la page : s'il monte, le message a marché.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Le but était l'inscription : on compare les clics sur le lien aux inscriptions reçues. Le nombre de personnes touchées dit seulement combien ont vu la publication, pas combien ont agi.",
+              "relance": "Quel chiffre montre que les parents ont fait ce que le message demandait ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "La **première phrase** de ma publication dit…",
+              "justes": [
+                {
+                  "texte": "ce que les parents doivent faire et jusqu'à quelle date",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "d'inscrire les enfants au centre de loisirs jusqu'au vendredi 16 octobre",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "l'action demandée aux parents, avec la date limite, avant le reste",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que les inscriptions sont ouvertes",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que le dispositif d'accueil de la Toussaint entre dans sa phase d'inscription",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "bonjour à toutes et à tous, en espérant que vous allez bien",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Dans la note du service, je **laisse de côté**…",
+              "justes": [
+                {
+                  "texte": "la mise à jour du portail par le prestataire, qui n'aide pas les parents à s'inscrire",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "les formules officielles, difficiles à lire sur un téléphone",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "le détail de la grille des tarifs, et je mets un lien vers le site",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "les phrases trop longues",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : je recopie toute la note",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "la date limite, car elle est déjà sur le portail",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour savoir si mon message **a fonctionné**, je regarde…",
+              "justes": [
+                {
+                  "texte": "les clics sur le lien et le nombre d'inscriptions reçues par le service",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "si les parents s'inscrivent après la publication",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "les questions des parents en commentaire : elles montrent ce qui n'est pas clair",
+                  "repere": "c3_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le nombre de personnes qui ont vu la publication",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le nombre de « j'aime », sans rien d'autre",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de republier un rappel quelques jours avant la date limite.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Indique que les places sont limitées (80 par semaine) pour inciter à s'inscrire vite.",
+              "repere": "c3_complet"
+            },
+            {
+              "texte": "Note les questions des parents pour écrire plus clairement la fois suivante.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Parents, inscrivez vos enfants de 3 à 11 ans au centre de loisirs de la Toussaint jusqu'au vendredi 16 octobre, sur le portail famille. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Comment présentez-vous le tarif du centre de loisirs aux parents ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Quelle première phrase écrivez-vous pour dire aux parents ce qu'ils doivent faire, pour qui, jusqu'à quand et où ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Que répondez-vous à un parent qui demande si le centre sera ouvert en novembre ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Quelle première phrase écrivez-vous pour la publication du service Éducation ?",
+                "points": 1
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Les parents peuvent s'inscrire jusqu'au vendredi 16 octobre.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le tarif dépend du quotient familial.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Les enfants concernés ont de 3 à 11 ans.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le portail a été mis à jour le 2 octobre.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "L'inscription se fait sur le portail famille.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le centre ouvre le lundi 19 octobre.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je recopie la note du service en entier, sans la changer.",
+                "points": 0,
+                "repere": "c3_jargon"
+              },
+              {
+                "id": "b",
+                "texte": "J'ajoute les dates du centre, le lien du portail et un lien vers la grille des tarifs, en lignes courtes.",
+                "points": 2,
+                "repere": "c3_complet"
+              },
+              {
+                "id": "c",
+                "texte": "J'ajoute les dates du centre, sans le lien du portail.",
+                "points": 1,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "d",
+                "texte": "Je termine ici : les parents trouveront le reste.",
+                "points": 0,
+                "repere": "c3_oubli"
+              }
+            ]
+          },
+          "explication": "La phrase dit d'abord ce que les parents doivent faire, puis la date limite, l'âge des enfants et l'endroit. Les parents ont alors l'essentiel dès la première ligne."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Trier la note du service",
+          "consigne": "Pour **chaque** information de la note, choisissez **où elle va**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Dans la publication"
+            },
+            {
+              "id": "k2",
+              "nom": "Sur le site, avec un lien"
+            },
+            {
+              "id": "k3",
+              "nom": "Pas pour les parents"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Inscriptions possibles jusqu'au vendredi 16 octobre inclus.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est la date limite : les parents doivent la voir tout de suite."
+            },
+            {
+              "id": "e2",
+              "texte": "L'inscription se fait sur le portail famille.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Les parents doivent savoir où s'inscrire."
+            },
+            {
+              "id": "e3",
+              "texte": "Les enfants de 3 à 11 ans sont concernés.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Chaque parent doit voir si cela concerne son enfant."
+            },
+            {
+              "id": "e4",
+              "texte": "Le tarif dépend du quotient familial (grille sur le site).",
+              "accepte": [
+                "k2",
+                "k1"
+              ],
+              "explication": "On peut le citer en une phrase, mais la grille est longue : un lien suffit."
+            },
+            {
+              "id": "e5",
+              "texte": "80 places par semaine, attribuées dans l'ordre des inscriptions.",
+              "accepte": [
+                "k1",
+                "k2"
+              ],
+              "explication": "Dire que les places sont limitées pousse à s'inscrire vite ; le détail peut rester sur le site."
+            },
+            {
+              "id": "e6",
+              "texte": "Le centre est ouvert du lundi 19 au vendredi 30 octobre.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Les parents veulent savoir quand le centre est ouvert."
+            },
+            {
+              "id": "e7",
+              "texte": "Le portail a été mis à jour par le prestataire le 2 octobre.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est une information interne : elle n'aide pas les parents à s'inscrire."
+            },
+            {
+              "id": "e8",
+              "texte": "« Dans le cadre du dispositif d'accueil de loisirs de la Toussaint… »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est une formule officielle : elle n'apprend rien aux parents."
+            }
+          ],
+          "repere_reussite": "c3_adapte",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Exercice de 20 minutes : la personne reçoit la note du service et écrit la publication pour la page, destinée à des parents qui lisent sur téléphone. La publication est relue ensemble.",
+            "criteres": [
+              {
+                "texte": "Écrit d'abord ce que les parents doivent faire, avec la date limite",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Garde les informations utiles aux parents et laisse de côté les détails internes",
+                "repere": "c3_adapte"
+              },
+              {
+                "texte": "Donne l'endroit où s'inscrire et les âges concernés",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Dit ce qui se passe après la date limite : plus d'inscription possible",
+                "repere": "c3_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de comparer les clics sur le lien aux inscriptions reçues",
+              "repere": "c3_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que dites-vous dans la **première phrase** de la publication ?",
+              "justes": [
+                {
+                  "texte": "Ce que les parents doivent faire : inscrire leurs enfants jusqu'au vendredi 16 octobre.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "L'action et la date limite, avant tout le reste.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Inscrivez vos enfants au centre de loisirs jusqu'au 16 octobre, sur le portail famille.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que les inscriptions sont ouvertes.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Une formule officielle : « Dans le cadre du dispositif… »",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Quelles informations de la note **laissez-vous de côté**, et **pourquoi** ?",
+              "justes": [
+                {
+                  "texte": "La mise à jour du portail : cela n'aide pas les parents à s'inscrire.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "Les formules officielles, qui sont difficiles à lire sur un téléphone.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "Le détail des tarifs : je mets un lien vers la grille sur le site.",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Ce qui est trop long.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je recopie toute la note.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment** savez-vous que la publication **a fonctionné** ?",
+              "justes": [
+                {
+                  "texte": "Je compare les clics sur le lien aux inscriptions reçues par le service.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "Je demande au service combien d'inscriptions sont arrivées depuis la publication.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "Je lis les questions des parents : elles montrent ce qui n'est pas clair.",
+                  "repere": "c3_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde combien de personnes ont vu la publication.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je compte les « j'aime » et je m'arrête là.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose un rappel quelques jours avant la date limite.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un modèle de publication en quatre lignes : ce qu'il faut faire, la date limite, où, pour qui.",
+        "Montrer où lire les chiffres de la page et comment les comparer aux résultats du service, par exemple les inscriptions reçues."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Vérifier un message avant de le publier : faits, images, accessibilité",
+      "pourquoi": "Une publication est vue par des milliers de personnes : une date fausse ou une photo non autorisée est difficile à rattraper.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un message à vérifier avant 8 h",
+        "texte": "Mercredi 7 octobre, 16 h. Le service des sports vous envoie son message sur la Fête du sport. Vous le publiez demain à 8 h sur la page de la mairie, avec une photo et une vidéo. Vous le comparez à la fiche officielle (voir le tableau). Règles du service : une personne reconnaissable n'est publiée qu'avec son autorisation signée, celle des parents pour un enfant. Chaque image a un texte alternatif : une description lue aux personnes qui ne voient pas l'image. Chaque vidéo a des sous-titres. Le chef du service des sports vous écrit : « Mettez le 22 octobre : les retardataires auront une semaine de plus. »",
+        "document": {
+          "type": "tableau",
+          "titre": "Fiche officielle de l'événement",
+          "colonnes": [
+            "Information",
+            "Fiche officielle"
+          ],
+          "lignes": [
+            [
+              "Événement",
+              "Fête du sport de la ville"
+            ],
+            [
+              "Jour et heures",
+              "Samedi 24 octobre, de 10 h à 17 h"
+            ],
+            [
+              "Lieu",
+              "Gymnase municipal"
+            ],
+            [
+              "Inscription",
+              "Gratuite et obligatoire, jusqu'au jeudi 15 octobre"
+            ],
+            [
+              "Remarque",
+              "La liste des inscrits part chez le prestataire le 16 octobre"
+            ],
+            [
+              "Lien d'inscription",
+              "ville-exemple.fr/fete-du-sport"
+            ],
+            [
+              "Photo jointe",
+              "Trois personnes jouent au badminton. Autorisations signées : les deux adultes. Pas celle des parents de l'enfant."
+            ],
+            [
+              "Vidéo jointe",
+              "30 secondes, un adulte parle (autorisation signée). Sans sous-titres."
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Avec quoi** comparez-vous le message du service avant de publier ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Avec mes souvenirs de la Fête du sport de l'an dernier.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Avec la fiche officielle : dates, lieu, inscription et lien.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Avec le message lui-même, que je relis deux fois.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne compare pas : le service connaît mieux son événement que moi.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "La fiche officielle est la source : elle donne la date, le lieu et le lien exacts. Une relecture seule ne montre pas une date qui diffère de la fiche.",
+              "relance": "Quelle est votre source quand vous vérifiez une date ou un lieu ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le message contient le lien d'inscription. **Comment le vérifiez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je regarde que le lien ressemble à ceux des autres publications.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je compare le texte du lien à celui de la fiche, sans l'ouvrir.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "J'ouvre le lien et je vérifie qu'il mène à la page d'inscription de cette année.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne le vérifie pas : un lien copié dans un message fonctionne toujours.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Seul le fait d'ouvrir le lien prouve qu'il mène à la bonne page. Comparer le texte du lien à la fiche est utile, mais la page peut avoir changé.",
+              "relance": "Comment vérifiez-vous qu'un lien fonctionne avant de publier ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La fiche indique des autorisations pour **deux des trois personnes** de la photo. **Que faites-vous** de la photo ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la publie : elle date de l'an dernier, donc l'événement est déjà passé.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la publie en cachant seulement le nom de l'enfant dans la légende.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je publie le message sans la photo, en expliquant au service pourquoi.",
+                  "points": 1,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne la publie pas et je demande au service une photo avec les autorisations de tous.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                }
+              ],
+              "explication": "L'enfant est reconnaissable et ses parents n'ont rien signé : on ne publie pas la photo. Publier sans photo est acceptable ; demander une photo en règle permet de garder l'image.",
+              "relance": "Que faites-vous quand une personne sur une photo n'a pas donné son autorisation ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Que prévoyez-vous** pour que la photo et la vidéo soient **accessibles** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Une photo nette et une vidéo avec un son de bonne qualité.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "b",
+                  "texte": "Un texte alternatif qui décrit la photo, et des sous-titres sur la vidéo.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Des sous-titres sur la vidéo, sans rien pour la photo.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien pour l'instant : je les ajouterai si un lecteur me le demande.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Le texte alternatif décrit la photo aux personnes qui ne la voient pas ; les sous-titres rendent la vidéo compréhensible sans le son. Les deux sont demandés par la règle du service.",
+              "relance": "Que prévoyez-vous pour qu'une vidéo soit comprise sans le son ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le chef du service écrit : « Mettez le **22 octobre**. » **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "D'accord, je mets le 22 octobre : c'est son événement, c'est son choix.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Non, vous vous trompez : relisez vos propres documents.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "c",
+                  "texte": "La fiche dit le 15 octobre : je publie cette date. Pour la changer, corrigez la fiche et écrivez-le-moi.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je publie le 15 octobre et je préviens ma responsable de la communication, sans répondre au chef du service.",
+                  "points": 1,
+                  "repere": "c4_evite"
+                }
+              ],
+              "explication": "On répond avec les faits : la fiche officielle fait foi, et une autre date demande une correction écrite de la fiche. Se taire ne règle pas le désaccord.",
+              "relance": "Comment répondez-vous à un service qui demande de publier une information que vous ne pouvez pas vérifier ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Avant de publier, je compare le message à la fiche officielle : **je vérifie**…",
+              "justes": [
+                {
+                  "texte": "les dates, les heures, le lieu et le lien d'inscription",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "chaque information, ligne par ligne, et j'ouvre le lien",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que le jour et la date correspondent, et que le lien mène à la bonne page",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le texte est bien écrit",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien, le service a déjà tout vérifié",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour la **photo** et la **vidéo**, je…",
+              "justes": [
+                {
+                  "texte": "vérifie que chaque personne reconnaissable a signé son autorisation",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "n'utilise pas la photo tant que les parents de l'enfant n'ont pas signé",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "ajoute un texte alternatif à la photo et des sous-titres à la vidéo",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "mets un texte alternatif à la photo",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "publie la photo : elle date de l'an dernier",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "ajoute les sous-titres plus tard",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si le chef du service insiste pour mettre le **22 octobre**, je…",
+              "justes": [
+                {
+                  "texte": "lui montre la fiche officielle et je publie la date du 15 octobre",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "lui explique que la date doit d'abord être corrigée dans la fiche, par écrit",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "préviens ma responsable de la communication, avec la fiche et son message",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui réponds que je vais voir",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "publie le 22 octobre pour éviter un conflit",
+                  "repere": "c4_evite"
+                },
+                {
+                  "texte": "lui dis que son service ne sait pas lire sa propre fiche",
+                  "repere": "c4_personne"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de joindre la fiche officielle à chaque demande de publication.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Fait relire la publication par une collègue avant de la publier.",
+              "repere": "c6_controle"
+            },
+            {
+              "texte": "Garde une trace écrite de l'échange avec le service sur la date.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« La date limite est le 15 octobre, d'après la fiche officielle. Je publie cette date. Pour la changer, la fiche doit être corrigée et confirmée par écrit. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le chef du service des sports demande de publier le 22 octobre, mais la fiche indique le 15. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Le chef du service des sports n'est pas d'accord avec votre publication. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un habitant demande jusqu'à quand il peut s'inscrire à la Fête du sport. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le service des sports vous demande de publier une photo de l'an dernier. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La fiche officielle indique le jeudi 15 octobre.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La vidéo n'a pas de sous-titres.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le chef du service demande de publier le 22 octobre.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La publication est prévue demain à 8 h.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La liste des inscrits part chez le prestataire le 16 octobre.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "L'enfant de la photo n'a pas d'autorisation.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je publie le 22 octobre pour éviter un conflit.",
+                "points": 0,
+                "repere": "c4_evite"
+              },
+              {
+                "id": "b",
+                "texte": "Je publie le 15 octobre sans le dire au chef du service.",
+                "points": 0,
+                "repere": "c4_seul"
+              },
+              {
+                "id": "c",
+                "texte": "Si le chef du service insiste, je préviens ma responsable et je lui montre la fiche.",
+                "points": 2,
+                "repere": "c4_escalade"
+              },
+              {
+                "id": "d",
+                "texte": "J'attends la réponse du chef du service, quitte à publier plus tard.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "La fiche officielle fait foi : on ne publie pas une date qu'elle ne confirme pas. Si le service veut une autre date, elle doit d'abord être corrigée et confirmée par écrit."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le brouillon de la publication",
+          "consigne": "Voici le brouillon, à comparer à la fiche et aux règles du service. Cliquez sur **chaque ligne** qui contient **une erreur ou un oubli**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Fête du sport de la ville",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Samedi 24 octobre, de 10 h à 17 h, au gymnase municipal",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Inscription gratuite et obligatoire jusqu'au jeudi 22 octobre",
+              "erreur": true,
+              "explication": "La fiche indique le jeudi 15 octobre."
+            },
+            {
+              "id": "e4",
+              "texte": "S'inscrire : ville-exemple.fr/fete-du-sport",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Venez nombreux avec tout les membres de votre famille !",
+              "erreur": true,
+              "explication": "Faute d'orthographe : on écrit « tous les membres »."
+            },
+            {
+              "id": "e6",
+              "texte": "Photo jointe : trois personnes jouent au badminton, dont un enfant",
+              "erreur": true,
+              "explication": "Les parents de l'enfant n'ont pas signé d'autorisation : la photo ne peut pas être publiée telle quelle."
+            },
+            {
+              "id": "e7",
+              "texte": "Texte alternatif de la photo : « Trois personnes jouent au badminton dans le gymnase. »",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "Vidéo de 30 secondes, sans sous-titres",
+              "erreur": true,
+              "explication": "La règle du service demande des sous-titres sur chaque vidéo."
+            },
+            {
+              "id": "e9",
+              "texte": "Publication prévue : jeudi 8 octobre, à 8 h",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Exercice de 20 minutes : la personne reçoit le message du service, la fiche officielle, une photo et une vidéo. Elle relit, note ses vérifications et dit ce qu'elle publie ou non, et pourquoi.",
+            "criteres": [
+              {
+                "texte": "Compare chaque information du message à la fiche officielle",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère la date qui diffère de la fiche",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Ne publie pas la photo sans l'autorisation des parents de l'enfant",
+                "repere": "c6_bloque"
+              },
+              {
+                "texte": "Prévoit un texte alternatif et des sous-titres",
+                "repere": "c6_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Garde une trace de l'échange avec le service sur la date",
+              "repere": "c6_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que vérifiez-vous** dans le message du service avant de publier ?",
+              "justes": [
+                {
+                  "texte": "Je compare les dates, l'heure, le lieu et le lien avec la fiche officielle.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je vérifie chaque information, ligne par ligne, et j'ouvre le lien.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je relis l'orthographe, puis je fais relire par une collègue.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je relis le texte.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le service a déjà vérifié.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous de la **photo** et de la **vidéo** ?",
+              "justes": [
+                {
+                  "texte": "Je n'utilise pas la photo sans l'autorisation des parents de l'enfant.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Je demande une autre photo avec des autorisations signées.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "J'ajoute un texte alternatif à la photo et des sous-titres à la vidéo.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'ajoute des sous-titres à la vidéo.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je publie tout : la photo date de l'an dernier.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que répondez-vous** au chef du service qui demande le **22 octobre** ?",
+              "justes": [
+                {
+                  "texte": "La fiche indique le 15 octobre : je publie cette date.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Si le service veut une autre date, il corrige la fiche et me le confirme par écrit.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "S'il insiste, je préviens ma responsable avec la fiche.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je vais voir ce que je peux faire.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "D'accord, je mets le 22 octobre.",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Garde une trace écrite de l'échange avec le service.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Propose de joindre la fiche officielle à chaque demande de publication.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner la liste de relecture du service : dates, lien, orthographe, autorisations, texte alternatif, sous-titres.",
+        "Dire par écrit qui décide en cas de désaccord avec un service, et à qui s'adresser quand le service insiste."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Répondre à un commentaire négatif sur la page de la mairie",
+      "pourquoi": "Chaque réponse est lue par tous les abonnés. Des faits donnés calmement apaisent ; une réponse agressive ou une suppression sans règle aggrave la situation.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Des commentaires après une collecte manquée",
+        "texte": "Mardi, 9 h 10. Hier soir, la collecte des déchets du quartier Nord n'a pas eu lieu : le camion est tombé en panne. Le service Propreté vous écrit que la collecte sera faite demain matin, avant 12 h. Il précise que c'est la première collecte annulée dans ce quartier depuis le début de l'année. Votre publication de 8 h, qui annonçait la panne, a déjà reçu sept commentaires (voir la liste). Charte de la page : les insultes, les informations personnelles et la publicité sont masquées. Il faut d'abord faire une capture d'écran, puis prévenir la responsable de la communication. Les critiques restent visibles et reçoivent une réponse.",
+        "document": {
+          "type": "liste",
+          "titre": "Les commentaires sous votre publication",
+          "items": [
+            "Commentaire 1 : « Encore une collecte ratée ! Qu'est-ce qu'on paie comme taxes ? »",
+            "Commentaire 2 : « C'est la troisième fois ce mois-ci. »",
+            "Commentaire 3 : « [Nom d'un agent] est un incapable. Voici son numéro : [numéro]. »",
+            "Commentaire 4 : « Ma rue est pleine de sacs depuis hier soir, c'est une honte. »",
+            "Commentaire 5 : « Merci pour l'information, on sait au moins à quoi s'en tenir. »",
+            "Commentaire 6 : « Achetez vos sacs poubelle moins chers sur [site] ! »",
+            "Commentaire 7 : « À quelle heure passe le camion demain ? »"
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Quels faits** utilisez-vous dans vos réponses ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Tout ce que je sais du quartier, y compris ce que disent les commentaires.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Seulement ceux que le service a confirmés : la panne et la collecte demain avant 12 h.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "La date de la collecte, sans parler de la panne, pour ne pas donner d'excuses.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Une promesse : « Cela ne se reproduira plus. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                }
+              ],
+              "explication": "Une réponse solide s'appuie sur les faits confirmés par le service. Donner seulement la date est utile, mais l'habitant veut aussi savoir ce qui s'est passé.",
+              "relance": "D'où viennent les informations que vous donnez aux habitants ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Comment répondez-vous** au **commentaire 1** : « Encore une collecte ratée ! Qu'est-ce qu'on paie comme taxes ? »",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je supprime ce commentaire, parce qu'il est agressif et critique la mairie.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Vous exagérez : une seule collecte manquée, ce n'est pas si grave que cela.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "c",
+                  "texte": "Merci pour votre message : nous le transmettons au service Propreté dès aujourd'hui, pour suite à donner.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Nous comprenons votre mécontentement. Le camion est tombé en panne hier ; la collecte sera faite demain avant 12 h.",
+                  "points": 2,
+                  "repere": "c7_apaise"
+                }
+              ],
+              "explication": "Cette critique ne contient ni insulte ni information personnelle : elle reste visible. On répond avec les faits confirmés. Transmettre au service est correct, mais ne donne aucun fait à l'habitant.",
+              "relance": "Que répondez-vous à un habitant qui critique la mairie sans insulter personne ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le **commentaire 3** insulte un agent et donne son numéro de téléphone. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je fais une capture d'écran, je masque le commentaire et je préviens la responsable.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le laisse visible : chacun a le droit de donner son avis sur la mairie.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le masque tout de suite, sans capture d'écran ni message à la responsable.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je réponds à son auteur sur le même ton, pour défendre l'agent attaqué.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "La charte demande de masquer les insultes et les informations personnelles, après une capture d'écran, et de prévenir la responsable. Masquer sans trace ne permet pas d'expliquer ensuite ce choix.",
+              "relance": "Que gardez-vous quand vous masquez un commentaire, et pourquoi ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le commentaire 2 dit : « C'est la **troisième fois** ce mois-ci. » **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Vous avez raison, c'est la troisième fois ce mois-ci : le service est défaillant, et nous en sommes conscients.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne réponds pas : on ne discute pas des chiffres sur les réseaux sociaux, car cela prend trop de temps.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "Selon le service, c'est la première annulation dans le quartier cette année. D'autres oublis ? Écrivez-nous les dates en message privé.",
+                  "points": 2,
+                  "repere": "c7_apaise"
+                },
+                {
+                  "id": "d",
+                  "texte": "Selon le service, c'est la première annulation dans le quartier depuis le début de l'année.",
+                  "points": 1,
+                  "repere": "c7_apaise"
+                }
+              ],
+              "explication": "On corrige avec le fait confirmé par le service, sans accuser la personne. Inviter l'habitant à donner les dates permet de vérifier. Donner le fait seul est juste, mais ferme la discussion.",
+              "relance": "Que faites-vous quand un commentaire contient un chiffre que vous ne pouvez pas confirmer ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À **11 h**, **60 commentaires** sont arrivés, plusieurs très violents. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je désactive les commentaires, sans prévenir personne.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens ma responsable maintenant, avec les captures et les faits confirmés.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je continue seule à répondre et à masquer, et je préviens ma responsable ce soir.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne fais rien : cela se calmera avec la collecte de demain.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Quand les commentaires deviennent nombreux et violents, la décision dépasse votre rôle : la responsable doit le savoir tout de suite. Prévenir le soir retarde sa décision.",
+              "relance": "À partir de quand prévenez-vous votre responsable d'un problème sur la page ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "À un habitant qui critique la collecte manquée, **je réponds**…",
+              "justes": [
+                {
+                  "texte": "que la collecte n'a pas eu lieu à cause d'une panne de camion et qu'elle sera faite demain avant 12 h",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "avec la cause et la date du rattrapage, sans promesse supplémentaire",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "que je comprends son mécontentement, puis les faits confirmés par le service",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je transmets sa remarque au service",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que cela ne se reproduira plus",
+                  "repere": "c7_promesse"
+                },
+                {
+                  "texte": "que ce n'est pas grave, une seule collecte manquée",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Un commentaire contient une insulte et le numéro de téléphone d'un agent : je…",
+              "justes": [
+                {
+                  "texte": "fais une capture d'écran, je masque le commentaire et je préviens la responsable",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "applique la charte de la page : masquer, garder une trace, prévenir",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "masque le commentaire parce qu'il donne une information personnelle",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le signale à un collègue",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le laisse visible : ce n'est pas mon rôle de le masquer",
+                  "repere": "c7_ignore"
+                },
+                {
+                  "texte": "réponds à son auteur en l'insultant à mon tour",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si les commentaires deviennent très nombreux et très violents, je…",
+              "justes": [
+                {
+                  "texte": "préviens ma responsable tout de suite, avec les captures et les faits",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "propose une publication commune avec les faits confirmés par le service",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "demande qui décide de la suite, par exemple de fermer les commentaires",
+                  "repere": "c4_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "continue seule à répondre",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ferme les commentaires sans prévenir personne",
+                  "repere": "c4_seul"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Garde la liste des commentaires masqués et la raison de chaque choix, pour la responsable.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Écrit sous la publication quand la collecte est faite.",
+              "repere": "c7_suivi"
+            },
+            {
+              "texte": "Revient lire les commentaires en fin de journée pour répondre aux nouvelles questions.",
+              "repere": "c7_suivi"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Nous comprenons votre mécontentement. La collecte n'a pas eu lieu hier à cause d'une panne de camion. Elle sera faite demain matin, avant 12 h. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un habitant critique la collecte annulée hier à cause d'une panne de camion, rattrapée demain avant 12 h. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un habitant est mécontent d'une publication de la mairie. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un habitant insulte un agent dans un commentaire. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un habitant demande quand sa rue sera refaite. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La collecte a été annulée à cause d'une panne de camion.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "C'est la première collecte annulée depuis le début de l'année.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La collecte sera rattrapée demain avant 12 h.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Un commentaire donne le numéro d'un agent.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Ce commentaire critique, mais ne contient ni insulte ni information personnelle.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La publication de 8 h a reçu sept commentaires.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je n'y reviens pas : la réponse est donnée.",
+                "points": 0,
+                "repere": "c7_ignore"
+              },
+              {
+                "id": "b",
+                "texte": "Demain, une fois la collecte faite, je l'écris sous la publication.",
+                "points": 2,
+                "repere": "c7_suivi"
+              },
+              {
+                "id": "c",
+                "texte": "Je relis les commentaires demain, sans rien publier.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je masque le commentaire : il est négatif.",
+                "points": 0,
+                "repere": "c7_hors_regle"
+              }
+            ]
+          },
+          "explication": "La réponse donne les faits confirmés : la cause et la date, sans promesse de plus. Le commentaire critique mais respecte la charte : il reste visible."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Trier les commentaires",
+          "consigne": "Pour **chaque commentaire**, choisissez ce que vous faites, **selon la charte** de la page.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je réponds avec les faits"
+            },
+            {
+              "id": "k2",
+              "nom": "Je masque, avec capture, et je préviens"
+            },
+            {
+              "id": "k3",
+              "nom": "Je laisse sans réponse"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Commentaire 1 : « Encore une collecte ratée ! Qu'est-ce qu'on paie comme taxes ? »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est une critique, pas une insulte : elle reste visible et reçoit les faits confirmés."
+            },
+            {
+              "id": "e2",
+              "texte": "Commentaire 2 : « C'est la troisième fois ce mois-ci. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le service indique une seule annulation dans le quartier depuis le début de l'année : on répond avec ce fait."
+            },
+            {
+              "id": "e3",
+              "texte": "Commentaire 3 : « [Nom d'un agent] est un incapable. Voici son numéro : [numéro]. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Insulte et information personnelle : la charte demande de masquer, après capture, et de prévenir."
+            },
+            {
+              "id": "e4",
+              "texte": "Commentaire 4 : « Ma rue est pleine de sacs depuis hier soir, c'est une honte. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est une critique : on répond avec la cause et la date du rattrapage."
+            },
+            {
+              "id": "e5",
+              "texte": "Commentaire 5 : « Merci pour l'information, on sait au moins à quoi s'en tenir. »",
+              "accepte": [
+                "k3",
+                "k1"
+              ],
+              "explication": "Un remerciement n'appelle pas de réponse obligatoire ; un court merci est possible."
+            },
+            {
+              "id": "e6",
+              "texte": "Commentaire 6 : « Achetez vos sacs poubelle moins chers sur [site] ! »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "C'est de la publicité : la charte demande de la masquer."
+            },
+            {
+              "id": "e7",
+              "texte": "Commentaire 7 : « À quelle heure passe le camion demain ? »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est une question : on répond avec ce que le service a confirmé, demain avant 12 h."
+            }
+          ],
+          "repere_reussite": "c7_regle",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Exercice de 20 minutes : les sept commentaires sont imprimés. La personne les trie selon la charte, écrit deux réponses et explique ce qu'elle fait des commentaires masqués.",
+            "criteres": [
+              {
+                "texte": "Répond aux critiques avec les faits confirmés par le service",
+                "repere": "c7_apaise"
+              },
+              {
+                "texte": "Masque seulement ce que la charte interdit : insulte, information personnelle, publicité",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Fait une capture d'écran avant de masquer",
+                "repere": "c6_trace"
+              },
+              {
+                "texte": "Prévient la responsable des commentaires masqués",
+                "repere": "c4_escalade"
+              }
+            ],
+            "bonus": {
+              "texte": "Annonce sous la publication quand la collecte est faite",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que répondez-vous** à l'habitant qui critique la collecte manquée ?",
+              "justes": [
+                {
+                  "texte": "Je comprends son mécontentement, puis je donne la cause et la date du rattrapage.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "La collecte n'a pas eu lieu à cause d'une panne de camion ; elle sera faite demain avant 12 h.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "Je donne seulement les faits que le service a confirmés.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que je transmets sa remarque.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que cela ne se reproduira plus.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que faites-vous** du commentaire qui insulte un agent et donne son numéro ?",
+              "justes": [
+                {
+                  "texte": "Je fais une capture d'écran, je le masque selon la charte et je préviens la responsable.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je le masque parce qu'il donne une information personnelle.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je garde une trace et je ne réponds pas à l'insulte.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le signale à un collègue.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le laisse visible.",
+                  "repere": "c7_ignore"
+                },
+                {
+                  "texte": "Je réponds sur le même ton.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que faites-vous** si les commentaires deviennent très nombreux et très violents ?",
+              "justes": [
+                {
+                  "texte": "Je préviens ma responsable tout de suite, avec les captures et les faits.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je propose une publication commune avec les faits confirmés.",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "Je demande qui décide de la suite, par exemple de fermer les commentaires.",
+                  "repere": "c4_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je continue seule à répondre.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je ferme les commentaires sans prévenir personne.",
+                  "repere": "c4_seul"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Écrit sous la publication quand la collecte est faite.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner la charte de modération par écrit : ce qui est masqué, ce qui reste visible, et qui prévenir.",
+        "Préparer avec la personne quelques réponses courtes types et la liste des contacts en cas de crise : responsable, service concerné."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où plusieurs demandes sont arrivées **en même temps**. Comment avez-vous **choisi l'ordre** ?",
+      "suite": [
+        "Qu'avez-vous dit aux personnes qui attendaient ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : urgence, date limite, impact",
+        "Cite des demandes précises et leurs dates",
+        "Dit ce qui a été annoncé à ceux qui attendaient"
+      ],
+      "relance": "Qu'est-ce qui est passé en dernier, et pourquoi ?",
+      "alternative": "Si vous n'avez jamais travaillé en communication : parlez d'une période chargée (études, association, bénévolat) où vous avez dû choisir quoi faire en premier."
+    },
+    {
+      "id": "e2",
+      "competence": "C2",
+      "texte": "Un service demande de publier son message **aujourd'hui**, mais d'autres messages ont **une date plus proche**. Que faites-vous ?",
+      "suite": [],
+      "attendus": [
+        "Compare les dates limites des demandes",
+        "Répond au service avec un jour de publication et la raison",
+        "Applique le même critère à tous les services"
+      ],
+      "relance": "Et si le service insiste ?",
+      "alternative": "Deux personnes vous demandent un service le même jour, pour des dates différentes. Comment décidez-vous, et que leur dites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C3",
+      "texte": "Parlez d'un texte que vous avez écrit pour **un public précis** : clients, habitants, adhérents. **Comment l'avez-vous adapté** ?",
+      "suite": [
+        "Quelle était la première phrase ?",
+        "Comment avez-vous su que le message était compris ?"
+      ],
+      "attendus": [
+        "Décrit le public et ce qu'il devait faire",
+        "Met l'essentiel et l'action en premier",
+        "Dit comment le résultat a été vérifié : clics, réponses, retours"
+      ],
+      "relance": "Qu'avez-vous laissé de côté, et pourquoi ?",
+      "alternative": "Si vous n'avez jamais rédigé pour le travail : parlez d'un message ou d'une affiche écrit pour un groupe (études, association)."
+    },
+    {
+      "id": "e4",
+      "competence": "C3",
+      "texte": "Un service vous envoie une note de deux pages, pleine de **termes techniques**. Comment la transformez-vous en message **pour le public** ?",
+      "suite": [],
+      "attendus": [
+        "Cherche d'abord ce que le public doit faire, et avant quand",
+        "Retire les détails internes et le jargon",
+        "Vérifie que le message est compris, par exemple en le faisant relire"
+      ],
+      "relance": "Quelle serait votre première phrase ?",
+      "alternative": "Imaginez que vous deviez expliquer un règlement long à des personnes qui lisent sur leur téléphone. Que gardez-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C6",
+      "texte": "Avant de publier un message, **quelles vérifications** faites-vous ?",
+      "suite": [
+        "Dans quel ordre les faites-vous ?"
+      ],
+      "attendus": [
+        "Compare dates, lieux, chiffres et liens à la source officielle",
+        "Vérifie les autorisations des personnes photographiées",
+        "Vérifie l'accessibilité : texte alternatif, sous-titres"
+      ],
+      "relance": "Que faites-vous si vous n'avez pas la source officielle ?",
+      "alternative": "Quand vous envoyez un document important (dossier, candidature, affiche), que vérifiez-vous avant de l'envoyer ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C6",
+      "texte": "Parlez d'une **erreur** que vous avez faite dans un document ou un message publié. **Comment l'avez-vous découverte** ?",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur sans la minimiser",
+        "Dit comment elle a été corrigée et qui a été prévenu",
+        "Dit ce qui a changé pour éviter qu'elle revienne"
+      ],
+      "relance": "Qui avez-vous prévenu, et quand ?",
+      "alternative": "Parlez d'une erreur dans un travail écrit (études, association, courrier) et de ce que vous avez fait ensuite."
+    },
+    {
+      "id": "e7",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où vous avez répondu à une **critique** ou à une **réclamation** du public. **Que s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous répondu ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit la critique et les faits",
+        "Répond avec des faits, sans monter le ton",
+        "Dit ce qui s'est passé ensuite"
+      ],
+      "relance": "Qu'avez-vous vérifié avant de répondre ?",
+      "alternative": "Si vous n'avez jamais répondu au public : parlez d'une réclamation ou d'une critique que vous avez traitée (association, vente, vie quotidienne)."
+    },
+    {
+      "id": "e8",
+      "competence": "C7",
+      "texte": "Un commentaire insulte un agent de la mairie sur la page. **Que faites-vous** ?",
+      "suite": [
+        "Et si dix commentaires du même genre arrivent ?"
+      ],
+      "attendus": [
+        "S'appuie sur la charte ou les règles de la page",
+        "Garde une trace avant de masquer",
+        "Prévient la responsable quand la situation prend de l'ampleur"
+      ],
+      "relance": "Quelle règle suivez-vous pour masquer ou supprimer un commentaire ?",
+      "alternative": "Imaginez que, dans un groupe en ligne que vous animez, un message en insulte un autre. Que faites-vous ?"
+    }
+  ],
+  "_pv": "8a6648d728"
+}

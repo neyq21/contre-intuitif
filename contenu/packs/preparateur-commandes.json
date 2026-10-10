@@ -1,0 +1,2599 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "preparateur-commandes",
+  "version": "2026.10",
+  "nom": "Préparateur de commandes / Préparatrice de commandes",
+  "secteur": "logistique",
+  "alias": [
+    "préparateur de commandes",
+    "préparatrice de commandes",
+    "magasinier",
+    "magasinière",
+    "manutentionnaire",
+    "opérateur logistique",
+    "opératrice logistique",
+    "agent logistique",
+    "picking",
+    "préparation de commandes"
+  ],
+  "resume": "Prélève les articles en entrepôt selon les bons de commande, les contrôle et les emballe, pour qu'ils partent à l'heure avec le bon transporteur.",
+  "contexte": "Un entrepôt de distribution ouvert de 6 h à 21 h, qui expédie vers des magasins et des particuliers, avec des départs de camions à heure fixe.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C2",
+      "titre": "Organiser ses préparations selon les heures de départ",
+      "pourquoi": "Une commande prête après son heure limite part le lendemain : l'ordre des préparations décide si le client est livré à temps.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Cinq commandes, cinq heures limites",
+        "texte": "Mardi, 10 h 30. Votre chef d'équipe vous confie cinq commandes et vous laisse choisir l'ordre. Chaque commande doit être prête, fermée et étiquetée, au quai de son transporteur avant son heure limite : sinon, elle part le lendemain. Vous préparez seul, une commande à la fois. Le temps de préparation comprend le dépôt au quai.",
+        "document": {
+          "type": "tableau",
+          "titre": "Vos commandes à 10 h 30",
+          "colonnes": [
+            "Commande",
+            "Destination",
+            "Transporteur (quai)",
+            "Heure limite au quai",
+            "Temps de préparation"
+          ],
+          "lignes": [
+            [
+              "512",
+              "Magasin de Reims",
+              "Camion Nord (quai 2)",
+              "11 h 40",
+              "30 minutes"
+            ],
+            [
+              "514",
+              "Particulier",
+              "Messagerie colis (quai 5)",
+              "13 h 30",
+              "10 minutes"
+            ],
+            [
+              "517",
+              "Magasin de Metz",
+              "Camion Est (quai 3)",
+              "11 h 00",
+              "25 minutes"
+            ],
+            [
+              "519",
+              "Particulier",
+              "Express (quai 6)",
+              "11 h 10",
+              "10 minutes"
+            ],
+            [
+              "523",
+              "Magasin d'Épinal",
+              "Camion Sud (quai 4)",
+              "12 h 30",
+              "15 minutes"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par quelle commande **commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La 519 : une livraison express passe toujours en premier.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "La 512 : c'est le plus petit numéro, donc la plus ancienne.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "c",
+                  "texte": "La 517 : son heure limite, 11 h 00, est la plus proche.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "d",
+                  "texte": "La 517 : c'est une commande de magasin, plus grosse.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "La 517 doit être au quai à 11 h 00 et demande 25 minutes : il faut la commencer tout de suite. « Les magasins d'abord » donne ici le bon départ, mais ce critère ferait passer la 512 avant la 519, qui raterait son heure limite.",
+              "relance": "Comment choisissez-vous la commande à préparer en premier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "La 517 est au quai à **10 h 55**. Quelle commande préparez-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La 519 : son heure limite, 11 h 10, est la suivante.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "b",
+                  "texte": "La 512 : elle est longue, autant la commencer tôt.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "La 514 : elle est courte, elle sera vite finie.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au chef d'équipe laquelle il veut ensuite.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Après la 517, l'heure limite la plus proche est celle de la 519 : 11 h 10. Demander au chef d'équipe n'est pas une faute, mais le tableau donne déjà la réponse.",
+              "relance": "Quand plusieurs commandes attendent, qu'est-ce qui décide laquelle passe d'abord ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La 519 est emballée et étiquetée. **Où la déposez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Au quai 5 : c'est le quai des colis pour les particuliers.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "b",
+                  "texte": "Au quai 6, après avoir vérifié que l'étiquette est celle de l'express.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Au quai le plus proche : le chauffeur de l'express la trouvera.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Au quai 6, avec les autres colis qui partent en express.",
+                  "points": 1,
+                  "repere": "c6_regle"
+                }
+              ],
+              "explication": "Chaque transporteur charge à son quai : la 519 part avec l'express, au quai 6. Vérifier l'étiquette au moment du dépôt évite qu'un colis parte avec le mauvais transporteur.",
+              "relance": "Comment savez-vous à quel quai déposer une commande ?"
+            },
+            {
+              "id": "q4",
+              "texte": "À **11 h 05**, votre chef d'équipe vous demande d'aider **15 minutes** à décharger un camion. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'y vais tout de suite : c'est mon chef d'équipe qui me le demande.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je refuse : mes commandes sont plus importantes que le déchargement.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui propose de venir après mes cinq commandes, vers 12 h 00.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis que la 512 serait en retard, et je lui demande quoi faire d'abord.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "explication": "Le chef d'équipe décide, mais il doit savoir ce que coûte son choix : la 512 partirait le lendemain. Proposer de venir à 12 h 00 tient les heures limites, mais le chef d'équipe ne sait pas pourquoi il doit attendre.",
+              "relance": "Si on vous confie une nouvelle tâche pendant une commande urgente, que répondez-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 11 h 15, vous voyez que la 512 ne sera pas prête avant **11 h 50**. Son heure limite est **11 h 40**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue sans rien dire : le camion partira peut-être en retard.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens tout de suite le chef d'équipe : la 512 sera prête à 11 h 50.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à un collègue libre de venir m'aider à la finir.",
+                  "points": 1,
+                  "repere": "c4_aide"
+                },
+                {
+                  "id": "d",
+                  "texte": "À 11 h 40, je dépose au quai ce qui est prêt, sans le reste.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Prévenu tout de suite, le chef d'équipe a le temps d'agir : envoyer de l'aide ou voir avec le transporteur. Appeler un collègue peut sauver l'heure limite, mais le chef d'équipe doit savoir qu'elle est en danger.",
+              "relance": "À quel moment prévenez-vous qu'une commande risque de rater son heure limite ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Je **commence** par la commande…",
+              "justes": [
+                {
+                  "texte": "517, parce que son heure limite est la plus proche",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "517 : elle doit être au quai à 11 h 00 et demande 25 minutes",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "qui doit être au quai la première, la 517",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la plus urgente",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "519, parce qu'un express passe toujours avant",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "512, la première de la liste",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour choisir **l'ordre** des commandes **suivantes**, je regarde…",
+              "justes": [
+                {
+                  "texte": "les heures limites au quai, de la plus proche à la plus lointaine",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "l'heure limite et le temps de préparation de chaque commande",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "si chaque commande sera prête avant son heure limite",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "les commandes les plus urgentes",
+                  "repere": null
+                },
+                {
+                  "texte": "le temps de préparation de chaque commande",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "les plus courtes d'abord, pour avancer vite",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "l'ordre des numéros de commande",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si je vois qu'une commande ne sera **pas prête à temps**, je…",
+              "justes": [
+                {
+                  "texte": "préviens tout de suite mon chef d'équipe",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "dis au chef d'équipe à quelle heure elle sera prête",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "demande de l'aide au chef d'équipe avant l'heure limite",
+                  "repere": "c4_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "me dépêche pour la finir",
+                  "repere": null
+                },
+                {
+                  "texte": "demande à un collègue de m'aider",
+                  "repere": "c4_aide"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "dépose au quai ce qui est prêt, sans le dire",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "continue sans rien dire",
+                  "repere": "c2_silence"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Signale au chef d'équipe, dès 10 h 30, que trois commandes n'ont que cinq minutes de marge.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Note l'heure de fin prévue de chaque commande, pour voir un retard tout de suite.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je fais d'abord la 517, puis la 519. La 512 passe après : sinon, la 519 ne serait pas au quai à 11 h 10. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Quelle commande est la plus longue à préparer ce matin ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous avez plusieurs commandes avec des heures limites différentes. Dans quel ordre les préparez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "À 10 h 30, la 517 doit être au quai à 11 h 00, la 519 à 11 h 10 et la 512 à 11 h 40. Dans quel ordre les préparez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Quel transporteur part le premier ce matin ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La 517 doit être au quai à 11 h 00.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La 514 part avec la messagerie colis.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La 519 doit être au quai à 11 h 10.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La 512 demande 30 minutes de préparation.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "La 519 est la commande la plus lourde.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le chef d'équipe a fixé l'ordre des commandes.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je prépare la 514 juste après la 519, puisqu'elle est courte.",
+                "points": 0,
+                "repere": "c2_oubli"
+              },
+              {
+                "id": "b",
+                "texte": "Je fais une pause : les deux commandes les plus urgentes sont prêtes.",
+                "points": 0,
+                "repere": "c2_oubli"
+              },
+              {
+                "id": "c",
+                "texte": "Je demande au chef d'équipe quelle commande faire ensuite.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je prépare la 512, puis la 523 et la 514.",
+                "points": 2,
+                "repere": "c2_critere"
+              }
+            ]
+          },
+          "explication": "La réponse suit les heures limites : 11 h 00, puis 11 h 10, puis 11 h 40. Avec ses 30 minutes de préparation, la 512 faite avant la 519 mettrait la 519 en retard."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Vos cinq préparations, dans l'ordre",
+          "consigne": "Remettez ces préparations **dans l'ordre** où vous les faites, à partir de **10 h 30**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Préparer la 514 (particulier) : limite 13 h 30, 10 minutes"
+            },
+            {
+              "id": "e2",
+              "texte": "Préparer la 519 (express) : limite 11 h 10, 10 minutes"
+            },
+            {
+              "id": "e3",
+              "texte": "Préparer la 523 (Épinal) : limite 12 h 30, 15 minutes"
+            },
+            {
+              "id": "e4",
+              "texte": "Préparer la 517 (Metz) : limite 11 h 00, 25 minutes"
+            },
+            {
+              "id": "e5",
+              "texte": "Préparer la 512 (Reims) : limite 11 h 40, 30 minutes"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e4",
+              "apres": "e2",
+              "explication": "Si la 519 passe avant, la 517 n'est prête qu'à 11 h 05 : trop tard pour 11 h 00."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "Si la 512 passe avant, la 517 n'est prête qu'à 11 h 25 : trop tard pour 11 h 00."
+            },
+            {
+              "avant": "e2",
+              "apres": "e5",
+              "explication": "Si la 512 passe avant, la 519 n'est prête qu'à 11 h 35 : trop tard pour 11 h 10."
+            },
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "Même juste après la 517, la 514 ferait finir la 519 à 11 h 15 : trop tard pour 11 h 10."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "Même juste après la 517, la 523 ferait finir la 519 à 11 h 20 : trop tard pour 11 h 10."
+            },
+            {
+              "avant": "e5",
+              "apres": "e1",
+              "explication": "Si la 514 passe avant, la 512 n'est prête qu'à 11 h 45 : trop tard pour 11 h 40."
+            },
+            {
+              "avant": "e5",
+              "apres": "e3",
+              "explication": "Si la 523 passe avant, la 512 n'est prête qu'à 11 h 50 : trop tard pour 11 h 40."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": "c2_oubli",
+          "reel": {
+            "consigne": "Sur table (15 minutes) : la personne reçoit cinq bons de commande fictifs, avec transporteur, quai, heure limite et temps de préparation. Elle annonce son ordre et son critère, puis réagit à un imprévu donné par le recruteur : une demande d'aide ou un retard.",
+            "criteres": [
+              {
+                "texte": "Classe les commandes par heure limite au quai",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Vérifie que chaque commande sera prête avant son heure limite",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Face à l'imprévu, prévient le chef d'équipe en disant quelle commande serait en retard",
+                "repere": "c2_previent"
+              },
+              {
+                "texte": "Indique pour chaque commande le quai de son transporteur",
+                "repere": "c6_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Repère dès le départ que les marges sont faibles et le signale",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Par quelle commande **commencez-vous** ?",
+              "justes": [
+                {
+                  "texte": "La 517 : son heure limite est la plus proche.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "La 517, parce qu'elle doit être au quai à 11 h 00 et prend 25 minutes.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Celle qui doit être au quai la première : la 517.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "La plus urgente.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "La 514, parce qu'elle est rapide.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Dans **quel ordre** faites-vous les quatre autres commandes ?",
+              "justes": [
+                {
+                  "texte": "La 519, puis la 512, puis la 523 et la 514.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Par heure limite : la 519, la 512, puis la 514 et la 523, dans un ordre ou l'autre.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "La 519 puis la 512, en vérifiant que chacune sera prête avant son heure limite.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Les plus urgentes d'abord.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "La 512 d'abord, parce qu'elle est longue.",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "Dans l'ordre des numéros.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous si une commande **risque de rater** son heure limite ?",
+              "justes": [
+                {
+                  "texte": "Je préviens tout de suite le chef d'équipe.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je dis au chef d'équipe à quelle heure elle sera prête.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je demande de l'aide au chef d'équipe, avant l'heure limite.",
+                  "repere": "c4_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je me dépêche.",
+                  "repere": null
+                },
+                {
+                  "texte": "Je demande à un collègue de m'aider.",
+                  "repere": "c4_aide"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je dépose ce qui est prêt et je complète plus tard.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note l'heure de fin prévue de chaque commande, pour voir un retard tout de suite.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Afficher au poste la liste des transporteurs, avec leur quai et leurs heures limites.",
+        "Les premières semaines, faire le point chaque matin sur l'ordre des commandes et sur qui prévenir en cas de retard."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Contrôler une commande avant l'expédition",
+      "pourquoi": "Une erreur de référence, de quantité ou d'emballage part chez le client : elle coûte un retour, un nouvel envoi et sa confiance.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Le contrôle du colis de la commande 845",
+        "texte": "Vendredi, 12 h 30. Vous contrôlez la commande 845 avant de fermer le colis. Elle part chez un particulier, en un seul colis, avec la messagerie colis, à 13 h 30. Depuis lundi, une nouvelle consigne d'emballage s'applique : chaque article en verre est emballé seul dans du papier bulle, et le colis porte l'étiquette « Fragile ». En sortant le vase du carton, vous voyez qu'il est fêlé.",
+        "document": {
+          "type": "tableau",
+          "titre": "Bon de préparation de la commande 845",
+          "colonnes": [
+            "Référence",
+            "Article",
+            "Quantité"
+          ],
+          "lignes": [
+            [
+              "21 415",
+              "Carafe en verre, 1 litre",
+              "1"
+            ],
+            [
+              "21 470",
+              "Vase en verre, 30 cm",
+              "1"
+            ],
+            [
+              "30 221",
+              "Nappe grise, 150 × 250 cm",
+              "1"
+            ],
+            [
+              "18 090",
+              "Serviettes en coton, paquet de 4",
+              "2"
+            ],
+            [
+              "52 112",
+              "Dessous-de-plat en liège",
+              "3"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Comment contrôlez-vous** le contenu du carton ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je compare chaque article au bon : référence, quantité et état.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je compte le nombre d'articles et je le compare au bon.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne contrôle pas : chaque article a été scanné au prélèvement.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je soupèse le carton : s'il a le bon poids, tout y est.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Pour chaque ligne du bon, on vérifie trois points : la bonne référence, la bonne quantité, un article en bon état. Compter les articles ne repère ni une mauvaise référence ni un article abîmé.",
+              "relance": "Que regardez-vous pour chaque article quand vous contrôlez un colis ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Dans le carton, vous trouvez une nappe bleue, réf. 30 220. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la laisse, et j'ajoute un mot pour prévenir le client du changement.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la laisse : c'est la même nappe, seule la couleur change.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je la mets de côté et je signale qu'il manque la nappe grise.",
+                  "points": 1,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je la remplace par la nappe grise, réf. 30 221, celle du bon.",
+                  "points": 2,
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "explication": "La référence ne correspond pas au bon : le client recevrait un article qu'il n'a pas commandé. Mettre la nappe de côté évite l'erreur, mais la commande partirait incomplète alors qu'il reste une heure pour la corriger.",
+              "relance": "Quand un article ne correspond pas au bon, que faites-vous ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le vase est fêlé. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je l'emballe dans plus de papier bulle, pour que la fêlure ne grandisse pas.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le mets de côté comme article abîmé, je le signale et j'en prends un autre.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le remplace par un vase en bon état, sans rien signaler.",
+                  "points": 1,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le laisse : en cas de casse, le transporteur rembourse.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Un article abîmé ne part pas : on le met de côté, on le signale selon la procédure et on en prélève un autre. Le remplacer sans le signaler fausse le stock : le système comptera un vase de plus que la réalité.",
+              "relance": "Que faites-vous d'un article abîmé que vous trouvez dans une commande ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**La carafe** est dans le carton, sans papier bulle, entre la nappe et les serviettes. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la laisse : la nappe et les serviettes la protègent assez.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la cale avec du papier kraft, comme on le faisait avant lundi.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je l'emballe seule dans du papier bulle et je colle l'étiquette « Fragile ».",
+                  "points": 2,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je l'emballe seule dans du papier bulle, puis je ferme le colis.",
+                  "points": 1,
+                  "repere": "c5_applique"
+                }
+              ],
+              "explication": "Depuis lundi, chaque article en verre est emballé seul dans du papier bulle, et le colis porte l'étiquette « Fragile ». Emballer la carafe sans coller l'étiquette n'applique que la moitié de la consigne.",
+              "relance": "Comment vous assurez-vous d'appliquer une consigne qui vient de changer ?"
+            },
+            {
+              "id": "q5",
+              "texte": "L'imprimante sort **l'étiquette** du colis : « Express, commande 845 ». **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne la colle pas, et je signale l'erreur au chef d'équipe.",
+                  "points": 2,
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la colle : l'express livre plus vite, le client sera content.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je barre « Express » et j'écris « Messagerie colis » à la main.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne la colle pas, et je relance l'impression.",
+                  "points": 1,
+                  "repere": "c1_symptome"
+                }
+              ],
+              "explication": "Le colis doit partir avec la messagerie colis : l'étiquette express est fausse. Relancer l'impression ne suffit pas si l'erreur vient de la commande dans le système : il faut la signaler pour la faire corriger.",
+              "relance": "Que vérifiez-vous sur une étiquette avant de la coller ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **contrôler** le colis, je…",
+              "justes": [
+                {
+                  "texte": "compare chaque article au bon : référence, quantité, état",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "reprends le bon ligne par ligne et je coche ce qui est dans le carton",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "scanne chaque article et je compte les quantités",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "compte les articles",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ferme le carton : tout a été scanné au prélèvement",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour le vase **fêlé**, je…",
+              "justes": [
+                {
+                  "texte": "le mets de côté et j'en prends un autre à son emplacement",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "le retire du colis et je le signale selon la procédure",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "le signale comme article abîmé, puis je le remplace",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le remplace par un autre",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le laisse partir : la fêlure se voit à peine",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "le remplace sans rien dire",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant de fermer** le colis, je vérifie aussi…",
+              "justes": [
+                {
+                  "texte": "que les articles en verre sont emballés seuls dans du papier bulle",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "que l'étiquette « Fragile » est collée",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "que l'étiquette indique la messagerie colis et la commande 845",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le carton est bien rempli",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien de plus : l'étiquette sort du système",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Vérifie aussi l'état des autres vases rangés au même emplacement.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Propose une check-list au poste d'emballage, avec la nouvelle consigne.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je retire le vase fêlé et je le mets de côté comme article abîmé. Je vais en prendre un autre à son emplacement. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Pendant le contrôle de la commande 845, vous voyez que le vase en verre est fêlé. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un article du colis pose problème. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le client demande un vase plus grand. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Comment emballez-vous un vase en verre ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le vase est fêlé.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La nappe commandée est grise.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le bon de préparation demande un vase.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Un article abîmé ne doit pas partir chez le client.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "Le client a refusé le vase.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le colis part avec l'express.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je jette le vase fêlé à la poubelle, sans le signaler.",
+                "points": 0,
+                "repere": "c6_cache"
+              },
+              {
+                "id": "b",
+                "texte": "Je pose le nouveau vase dans le carton, contre la carafe.",
+                "points": 0,
+                "repere": "c5_habitude"
+              },
+              {
+                "id": "c",
+                "texte": "Je vérifie le nouveau vase, puis je l'emballe seul dans du papier bulle.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "d",
+                "texte": "J'emballe le nouveau vase seul dans du papier bulle.",
+                "points": 1,
+                "repere": "c5_applique"
+              }
+            ]
+          },
+          "explication": "La réponse traite un article abîmé : il ne part pas et il est remplacé. Ensuite, le nouveau vase est vérifié, puis emballé seul dans du papier bulle, comme le veut la nouvelle consigne."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le colis de la commande 845, avant fermeture",
+          "consigne": "Vous avez remplacé le vase fêlé. Voici ce que vous voyez dans le carton et sur l'étiquette. Cliquez sur **chaque ligne qui contient une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Carafe en verre, réf. 21 415 : 1, calée entre la nappe et les serviettes, sans papier bulle",
+              "erreur": true,
+              "explication": "Depuis lundi, chaque article en verre est emballé seul dans du papier bulle."
+            },
+            {
+              "id": "e2",
+              "texte": "Vase en verre, réf. 21 470 : 1, le nouveau, emballé seul dans du papier bulle",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Nappe bleue, réf. 30 220 : 1",
+              "erreur": true,
+              "explication": "Le bon demande la nappe grise, réf. 30 221."
+            },
+            {
+              "id": "e4",
+              "texte": "Serviettes en coton, paquet de 4, réf. 18 090 : 2 paquets",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Dessous-de-plat en liège, réf. 52 112 : 2",
+              "erreur": true,
+              "explication": "Le bon en demande 3."
+            },
+            {
+              "id": "e6",
+              "texte": "Étiquette « Fragile » collée sur le dessus du colis",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Étiquette du transporteur : messagerie colis, commande 845",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "Étiquette du transporteur : colis 1 sur 1",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Au poste d'emballage (15 minutes) : un carton préparé avec cinq articles de démonstration, son bon de préparation et une consigne d'emballage écrite. Le carton contient deux erreurs et un article abîmé. La personne contrôle, corrige et prépare le colis.",
+            "criteres": [
+              {
+                "texte": "Compare chaque article au bon : référence, quantité, état",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Met de côté l'article abîmé et le signale",
+                "repere": "c6_bloque"
+              },
+              {
+                "texte": "Corrige les deux erreurs ou les signale",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Applique la consigne d'emballage écrite",
+                "repere": "c5_applique"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose un contrôle pour que ces erreurs ne reviennent pas",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment contrôlez-vous** le colis de la commande 845 ?",
+              "justes": [
+                {
+                  "texte": "Je compare chaque article au bon : référence, quantité, état.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je reprends le bon ligne par ligne et je coche ce qui est dans le carton.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je vérifie chaque article, puis l'emballage du verre et l'étiquette.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je compte les articles.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je ne contrôle pas : tout a été scanné.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que faites-vous** du vase fêlé ?",
+              "justes": [
+                {
+                  "texte": "Je le mets de côté et j'en prends un autre.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Je le signale selon la procédure et je le remplace.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je le retire du colis et je préviens le chef d'équipe.",
+                  "repere": "c6_bloque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le remplace.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le laisse, la fêlure est petite.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que **vérifiez-vous juste avant** de fermer le colis ?",
+              "justes": [
+                {
+                  "texte": "Que les articles en verre sont emballés seuls dans du papier bulle.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Que l'étiquette « Fragile » est collée.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Que l'étiquette indique la messagerie colis et la commande 845.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que tout est dans le carton.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : l'étiquette sort du système.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose une check-list au poste d'emballage, avec la nouvelle consigne.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Afficher la consigne d'emballage au poste, avec la photo d'un colis bien fait.",
+        "Faire contrôler les premiers colis par un collègue expérimenté, avec une check-list courte."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Manipuler les charges et circuler en sécurité",
+      "pourquoi": "Les charges lourdes et les engins qui circulent font partie du quotidien : les bons gestes protègent la personne et ses collègues.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Des cartons lourds dans l'allée C",
+        "texte": "Lundi, 7 h 15, allée C. Pour la commande 702, vous chargez cinq cartons sur une palette, avec un transpalette manuel (voir la liste). Un chariot élévateur range des palettes au bout de l'allée. Vous n'avez pas d'autorisation de conduite pour le chariot élévateur.",
+        "document": {
+          "type": "liste",
+          "titre": "Ce que vous trouvez dans l'allée C",
+          "items": [
+            "4 cartons de 18 kg, rangés au sol.",
+            "1 carton de 6 kg, rangé au niveau 3 du rack, hors de portée de main.",
+            "Un film plastique qui traîne au milieu de l'allée.",
+            "Un chariot élévateur, conduit par un cariste, qui range des palettes au bout de l'allée.",
+            "Votre transpalette manuel, avec une palette vide."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Comment soulevez-vous** un carton de **18 kg** posé au sol ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je me penche en avant, jambes tendues : c'est plus rapide.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je plie les jambes, je garde le dos droit et le carton contre moi.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à un collègue de le porter avec moi.",
+                  "points": 1,
+                  "repere": "c4_aide"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le soulève en tournant le buste, pour le poser vite sur la palette.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Jambes pliées, dos droit, charge près du corps : ce sont les gestes de base qui protègent le dos. Demander de l'aide n'est pas une faute, mais il faut aussi connaître le bon geste.",
+              "relance": "Comment soulevez-vous une charge posée au sol ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Comment placez-vous** les cinq cartons sur la palette ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Les cartons de 18 kg en bas, à plat, sans dépasser du bord ; celui de 6 kg dessus.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le carton de 6 kg en bas, pour qu'il ne soit pas écrasé par les autres.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Les quatre cartons de 18 kg en pile haute, l'un sur l'autre, au centre.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Les cartons de 18 kg en bas, et celui de 6 kg posé au-dessus.",
+                  "points": 1,
+                  "repere": "c8_savoir"
+                }
+              ],
+              "explication": "Les charges lourdes en bas, à plat et sans dépasser du bord rendent la palette stable pendant le trajet. Poser les lourds en bas est juste, mais un carton qui dépasse du bord peut tomber.",
+              "relance": "Comment chargez-vous une palette pour qu'elle reste stable ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Un film plastique traîne au milieu de l'allée. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le laisse : il ne gêne pas mon passage avec le transpalette.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je roule dessus avec le transpalette : il est fin.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le signale au chef d'équipe et je continue ma commande.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le ramasse et je le jette dans le bac prévu.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Un film plastique au sol peut faire glisser quelqu'un ou se prendre dans les roues : on l'enlève tout de suite, c'est rapide. Le signaler sans l'enlever laisse le risque en place.",
+              "relance": "Que faites-vous quand vous voyez quelque chose de dangereux dans une allée ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Pour rejoindre le quai, vous devez passer au bout de l'allée, où le **chariot élévateur manœuvre**. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je passe vite derrière lui pendant qu'il est occupé à ranger sa palette.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je passe devant lui en faisant un signe de la main au cariste.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je m'arrête à distance et j'attends que le cariste me voie et me fasse signe.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'attends à distance qu'il ait fini sa manœuvre, puis je passe.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Un cariste qui manœuvre ne voit pas tout autour de lui : on reste à distance et on passe quand il vous a vu et vous fait signe. Attendre à distance est prudent, mais le cariste doit savoir que vous êtes là.",
+              "relance": "Comment passez-vous près d'un engin qui manœuvre ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Comment **récupérez-vous** le carton rangé au **niveau 3** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je monte sur le rack : le carton ne pèse que 6 kg.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je demande au cariste de le descendre, et je charge le reste en attendant.",
+                  "points": 2,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je prends le chariot élévateur : je sais m'en servir, je l'ai déjà conduit.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je signale au chef d'équipe que je ne peux pas l'atteindre, et j'attends.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Sans autorisation de conduite, on fait descendre le carton par une personne autorisée, comme le cariste, et on ne monte jamais sur un rack. Prévenir le chef d'équipe est sûr, mais attendre sans rien faire retarde la commande.",
+              "relance": "Que faites-vous quand un article est hors de portée de main ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **soulever** un carton de **18 kg** posé au sol, je…",
+              "justes": [
+                {
+                  "texte": "plie les jambes et je garde le dos droit",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "rapproche le carton de moi avant de me relever",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "me mets face au carton, pieds écartés, et je pousse sur les jambes",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "tourne avec les pieds, pas avec le buste",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "fais attention à mon dos",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "me penche en avant, jambes tendues",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour le carton rangé au **niveau 3**, je…",
+              "justes": [
+                {
+                  "texte": "demande au cariste de le descendre",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "fais appel au cariste, car je n'ai pas d'autorisation de conduite",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "préviens le chef d'équipe pour qu'un cariste le descende",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "attends que quelqu'un le descende",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "monte sur le rack, il est léger",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "prends le chariot élévateur moi-même",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Dans l'allée, pour **circuler en sécurité**, je…",
+              "justes": [
+                {
+                  "texte": "ramasse le film plastique qui traîne au sol",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "reste à distance du chariot élévateur",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "attends que le cariste m'ait vu avant de passer près de lui",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "fais attention autour de moi",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "passe vite derrière le chariot élévateur",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique pourquoi on garde la charge près du corps : le dos force moins.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Signale que l'article du niveau 3 serait mieux rangé à portée de main.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne monte pas sur le rack et je ne prends pas le chariot élévateur. Je demande au cariste de descendre le carton. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Comment rangez-vous un carton au niveau 3 d'un rack ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un carton de la commande 702 est au niveau 3, et vous n'avez pas d'autorisation de conduite. Comment le récupérez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un article est difficile à atteindre. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Comment chargez-vous la palette de la commande 702 ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le carton est au niveau 3, hors de portée de main.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Les quatre autres cartons pèsent 18 kg.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Vous n'avez pas d'autorisation de conduite.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le cariste est en pause.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "On ne monte jamais sur un rack.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le carton du niveau 3 est très lourd.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "En attendant, je charge les quatre cartons du sol sur la palette.",
+                "points": 2,
+                "repere": "c2_regroupe"
+              },
+              {
+                "id": "b",
+                "texte": "Je me place sous les fourches pour guider le cariste.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends à distance, sans rien faire d'autre, que le carton soit descendu.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je monte sur le chariot élévateur avec le cariste pour attraper le carton.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "Le carton est hors de portée et vous n'avez pas d'autorisation de conduite : le cariste le descend. En attendant, on avance le reste de la commande, loin de la zone où il manœuvre."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Dans l'allée : qui peut le faire ?",
+          "consigne": "Pour chaque action, choisissez : vous la faites **vous-même**, vous la demandez à une **personne autorisée**, ou elle est interdite pour **tout le monde**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je le fais moi-même"
+            },
+            {
+              "id": "k2",
+              "nom": "Je le demande à une personne autorisée"
+            },
+            {
+              "id": "k3",
+              "nom": "Interdit pour tout le monde"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Soulever un carton de 18 kg, jambes pliées et dos droit",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est le bon geste, et il fait partie de votre travail."
+            },
+            {
+              "id": "e2",
+              "texte": "Descendre un carton rangé au niveau 3 du rack",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Il est hors de portée : le cariste, qui a l'autorisation de conduite, le descend."
+            },
+            {
+              "id": "e3",
+              "texte": "Monter sur le rack pour attraper un carton léger",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "On ne monte jamais sur un rack, même pour un carton léger : on peut tomber."
+            },
+            {
+              "id": "e4",
+              "texte": "Ramasser un film plastique tombé au milieu de l'allée",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est rapide et sans risque : on enlève le danger tout de suite."
+            },
+            {
+              "id": "e5",
+              "texte": "Déplacer une palette avec le chariot élévateur",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Conduire un chariot élévateur demande une autorisation de conduite."
+            },
+            {
+              "id": "e6",
+              "texte": "Passer derrière un chariot élévateur qui recule",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le cariste ne vous voit pas : personne ne passe derrière un engin qui recule."
+            },
+            {
+              "id": "e7",
+              "texte": "Réparer un montant de rack abîmé par un choc",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Vous le signalez tout de suite : seule une personne chargée de l'entretien le répare."
+            },
+            {
+              "id": "e8",
+              "texte": "Mettre ses chaussures de sécurité avant d'entrer dans l'entrepôt",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est une protection de base, que chacun met lui-même."
+            },
+            {
+              "id": "e9",
+              "texte": "Se faire tirer, debout sur un transpalette",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Un transpalette transporte des charges, jamais des personnes."
+            }
+          ],
+          "repere_reussite": "c8_securite",
+          "repere_echec": "c8_erreur",
+          "reel": {
+            "consigne": "Dans une allée réelle ou reconstituée, sans engin en circulation (15 minutes) : la personne charge quatre cartons du poids habituel du poste sur une palette. Puis elle dit ce qu'elle fait pour un carton placé en hauteur et pour un film plastique posé au sol.",
+            "criteres": [
+              {
+                "texte": "Soulève jambes pliées, dos droit, charge près du corps",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Pose les cartons lourds en bas, à plat, sans dépasser",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Enlève le film plastique du sol",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Fait appel au cariste pour le carton en hauteur, sans monter sur le rack",
+                "repere": "c8_role"
+              }
+            ],
+            "bonus": {
+              "texte": "Explique pourquoi chaque geste protège",
+              "repere": "c8_pourquoi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment soulevez-vous** un carton de **18 kg** posé au sol ?",
+              "justes": [
+                {
+                  "texte": "Jambes pliées, dos droit, le carton contre moi.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je me mets face au carton et je pousse sur les jambes.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je garde la charge près du corps et je ne tourne pas le buste.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Doucement, en faisant attention.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Penché en avant, jambes tendues.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Comment **récupérez-vous** le carton rangé au **niveau 3** ?",
+              "justes": [
+                {
+                  "texte": "Je demande au cariste de le descendre.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je préviens le chef d'équipe pour qu'un cariste le descende.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je fais appel au cariste, car je n'ai pas d'autorisation de conduite.",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'attends que quelqu'un le descende.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je monte sur le rack.",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "Je prends le chariot élévateur.",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous pour **circuler en sécurité** dans l'allée C ?",
+              "justes": [
+                {
+                  "texte": "Je ramasse le film plastique qui traîne au sol.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je reste à distance du chariot élévateur.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "J'attends que le cariste m'ait vu avant de passer.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je fais attention.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je passe vite derrière le chariot élévateur.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique pourquoi on garde la charge près du corps : le dos force moins.",
+              "repere": "c8_pourquoi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Prévoir dès la première semaine une formation aux gestes et postures, au poste, avec un tuteur.",
+        "Montrer le plan de circulation, les zones des engins et qui appeler pour un article rangé en hauteur."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Réagir à un écart de stock à un emplacement",
+      "pourquoi": "Un article absent de son emplacement arrive souvent : bien réagir évite une commande incomplète, un mauvais article et un stock faux.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Il manque des boîtes à l'emplacement",
+        "texte": "Jeudi, 9 h 10. Vous préparez la commande 630 pour le magasin de Nancy : elle doit être au quai à 10 h 30. Le scanner vous envoie prendre 6 boîtes de vis à l'emplacement B-12-01 (voir l'écran). Dans le bac, vous ne trouvez que 2 boîtes. Juste à côté, en B-12-02, sont rangées des vis réf. 40 514, plus longues.",
+        "document": {
+          "type": "liste",
+          "titre": "L'écran de votre scanner",
+          "items": [
+            "Commande 630, magasin de Nancy : ligne 3 sur 7",
+            "Emplacement : B-12-01",
+            "Article : vis à bois 4 × 40 mm, boîte de 200, réf. 40 512",
+            "Quantité à prendre : 6 boîtes",
+            "Stock affiché à cet emplacement : 8 boîtes",
+            "Deux boutons : « Valider la ligne » et « Signaler une anomalie »"
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Avant de signaler un manque, que **vérifiez-vous d'abord** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : le stock affiché par le scanner est forcément faux.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Si une vis de taille proche peut remplacer celle qui manque.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que des boîtes ne sont pas tombées derrière ou sous le bac.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que je suis au bon emplacement et que les 2 boîtes sont la réf. 40 512.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "Avant de déclarer un manque, on vérifie les faits de base : le bon emplacement et la bonne référence. Chercher des boîtes tombées est utile, mais ne dit pas si vous êtes au bon endroit.",
+              "relance": "Quand ce que vous trouvez ne correspond pas au scanner, que vérifiez-vous en premier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous êtes au bon emplacement, et les 2 boîtes sont bien la réf. 40 512. **Que faites-vous** des vis **40 514** rangées à côté ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je complète avec 4 boîtes de 40 514 : ce sont presque les mêmes vis.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je n'y touche pas : je ne prépare que la référence demandée.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande au chef d'équipe si je peux compléter avec des 40 514.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je prends 4 boîtes de 40 514 et je note le changement sur le bon.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "Une autre référence est un autre article : le magasin recevrait des vis qu'il n'a pas commandées. Demander au chef d'équipe évite d'agir seul, mais la règle de base reste de ne préparer que la référence demandée.",
+              "relance": "Que faites-vous quand l'article demandé manque et qu'un article proche est disponible ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Que **faites-vous** pour les **4 boîtes** qui manquent ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je prends les 2 boîtes, je signale l'anomalie et je préviens le chef d'équipe.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je prends les 2 boîtes et je passe à la ligne suivante, sans rien dire.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je laisse la ligne de côté et j'attends que le chef d'équipe passe.",
+                  "points": 0,
+                  "repere": "c5_attend"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je prends les 2 boîtes et je signale l'anomalie sur le scanner.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                }
+              ],
+              "explication": "Le signalement sur le scanner garde une trace du manque, et le chef d'équipe peut agir avant 10 h 30 : faire descendre la réserve ou prévenir le magasin. Le scanner seul garde la trace, mais rien ne dit que quelqu'un la verra à temps.",
+              "relance": "Quand il manque un article dans une commande, qui prévenez-vous ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Que dites-vous** au chef d'équipe ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Il manque des vis à l'emplacement, il faudrait recompter le stock. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Commande 630, B-12-01 : 8 boîtes de 40 512 au scanner, 2 dans le bac. »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Quelqu'un a mal rangé les vis 40 512 : le stock du scanner est faux. »",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Il manque 4 boîtes de vis réf. 40 512 pour finir la commande 630. »",
+                  "points": 1,
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "explication": "Avec la commande, l'emplacement, la référence, le stock affiché et le stock trouvé, le chef d'équipe peut faire recompter et compléter la commande. Le nombre de boîtes manquantes suffit pour la commande, pas pour corriger le stock.",
+              "relance": "Quelles informations donnez-vous quand vous signalez un écart de stock ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le chef d'équipe répond : « Le cariste descendra la palette de réserve **vers 9 h 40**. » Il est **9 h 20**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends devant l'emplacement que la palette arrive.",
+                  "points": 1,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je vais chercher la palette avec le chariot élévateur, sans attendre le cariste.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je prépare les autres lignes de la commande 630 en attendant.",
+                  "points": 2,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ferme la commande avec 2 boîtes, pour tenir l'heure limite.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "La commande a d'autres lignes : les préparer en attendant fait gagner du temps pour tenir 10 h 30. Attendre devant l'emplacement perd ce temps, et le chariot élévateur reste réservé à une personne qui a l'autorisation de conduite.",
+              "relance": "Quand une partie de votre travail est bloquée, que faites-vous en attendant ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Avant de signaler** le manque, je vérifie…",
+              "justes": [
+                {
+                  "texte": "que je suis bien à l'emplacement B-12-01",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "que les 2 boîtes sont bien la réf. 40 512",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "l'étiquette de l'emplacement, avec le scanner",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "qu'aucune boîte n'est tombée derrière le bac",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le scanner",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien, je prends ce qu'il y a",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour les **4 boîtes** qui manquent, je…",
+              "justes": [
+                {
+                  "texte": "signale l'anomalie sur le scanner et je préviens le chef d'équipe",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "préviens le chef d'équipe, car la commande part à 10 h 30",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "déclare le manque sur le scanner, sans changer de référence",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "signale le manque",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "complète avec des vis réf. 40 514",
+                  "repere": "c7_impose"
+                },
+                {
+                  "texte": "passe à la ligne suivante sans rien dire",
+                  "repere": "c1_abandon"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Au chef d'équipe, je dis…",
+              "justes": [
+                {
+                  "texte": "l'emplacement, la référence, 8 boîtes au scanner et 2 dans le bac",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "qu'il manque 4 boîtes de 40 512 pour la commande 630, qui part à 10 h 30",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "ce que j'ai vérifié, et l'écart entre le scanner et le bac",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "qu'il manque des vis",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que quelqu'un a mal rangé les vis",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de faire recompter l'emplacement B-12-01 pour trouver la cause de l'écart.",
+              "repere": "c1_cause"
+            },
+            {
+              "texte": "Pense aux autres commandes du jour qui attendent la même référence.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« En B-12-01, le scanner indique 8 boîtes de 40 512, mais il n'y en a que 2. J'ai pris les 2 et signalé l'anomalie. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le magasin de Nancy demande quand il sera livré. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Combien de boîtes de vis faut-il pour la commande 630 ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Un emplacement ne correspond pas au scanner. Que dites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Pour la commande 630, vous trouvez 2 boîtes de 40 512 en B-12-01 au lieu des 8 affichées. Que dites-vous au chef d'équipe ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le scanner indique 8 boîtes à l'emplacement.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La commande 630 compte 7 lignes.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Il n'y a que 2 boîtes dans le bac.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Les 2 boîtes trouvées sont bien la réf. 40 512.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "Les vis 40 514 peuvent remplacer les 40 512.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le chef d'équipe a déjà recompté l'emplacement.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je complète la ligne avec des boîtes de 40 514.",
+                "points": 0,
+                "repere": "c7_impose"
+              },
+              {
+                "id": "b",
+                "texte": "Je prépare les autres lignes de la commande en attendant sa réponse.",
+                "points": 2,
+                "repere": "c1_etapes"
+              },
+              {
+                "id": "c",
+                "texte": "Je ferme la commande avec 2 boîtes au lieu de 6.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              },
+              {
+                "id": "d",
+                "texte": "J'attends sa réponse devant l'emplacement.",
+                "points": 1,
+                "repere": "c2_reactif"
+              }
+            ]
+          },
+          "explication": "La réponse donne l'écart précis entre le scanner et le bac, et ce qui a déjà été fait. Ensuite, on avance la commande sans changer de référence, en attendant la décision du chef d'équipe."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "La ligne 3 de la commande 630, dans l'ordre",
+          "consigne": "Le chef d'équipe fera descendre la palette de réserve **par le cariste**. Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Signaler l'anomalie sur le scanner"
+            },
+            {
+              "id": "e2",
+              "texte": "Vérifier la référence des boîtes du bac"
+            },
+            {
+              "id": "e3",
+              "texte": "Préparer les autres lignes de la commande 630"
+            },
+            {
+              "id": "e4",
+              "texte": "Scanner l'étiquette de l'emplacement B-12-01"
+            },
+            {
+              "id": "e5",
+              "texte": "Prévenir le chef d'équipe de l'écart"
+            },
+            {
+              "id": "e6",
+              "texte": "Prendre les 2 boîtes de 40 512"
+            },
+            {
+              "id": "e7",
+              "texte": "Prendre les 4 boîtes manquantes, une fois la réserve descendue par le cariste"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "On ne prend rien avant d'être sûr d'être au bon emplacement."
+            },
+            {
+              "avant": "e2",
+              "apres": "e6",
+              "explication": "On ne prend les boîtes qu'après avoir vérifié leur référence."
+            },
+            {
+              "avant": "e4",
+              "apres": "e1",
+              "explication": "On vérifie l'emplacement avant de signaler : l'écart vient peut-être d'une erreur d'emplacement."
+            },
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "On vérifie la référence avant de signaler : les boîtes du bac sont peut-être un autre article."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "Le chef d'équipe a besoin de faits vérifiés : on contrôle d'abord l'emplacement."
+            },
+            {
+              "avant": "e2",
+              "apres": "e5",
+              "explication": "Le chef d'équipe a besoin de faits vérifiés : on contrôle d'abord la référence."
+            },
+            {
+              "avant": "e5",
+              "apres": "e3",
+              "explication": "On prévient le chef d'équipe tout de suite : il lui faut du temps pour agir avant 10 h 30."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "La réserve est descendue parce que le chef d'équipe a été prévenu."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_precipite",
+          "reel": {
+            "consigne": "Sur un rayonnage d'essai (15 minutes) : un bac contient moins d'articles que le stock affiché sur une fiche, et un article qui lui ressemble est rangé à côté. La personne fait la ligne de préparation et dit ce qu'elle fait, à l'oral ou par écrit.",
+            "criteres": [
+              {
+                "texte": "Vérifie l'emplacement et la référence avant de prendre",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Ne remplace pas par l'article voisin",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Signale l'écart avec l'emplacement, la référence et les quantités",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Avance le reste de la commande en attendant",
+                "repere": "c1_etapes"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de faire recompter l'emplacement pour trouver la cause de l'écart",
+              "repere": "c1_cause"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que **vérifiez-vous avant** de signaler le manque ?",
+              "justes": [
+                {
+                  "texte": "Que je suis bien à l'emplacement B-12-01.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Que les 2 boîtes sont bien la réf. 40 512.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Qu'aucune boîte n'est tombée derrière le bac.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde le scanner.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je prends ce qu'il y a.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que **faites-vous** pour les **4 boîtes** qui manquent ?",
+              "justes": [
+                {
+                  "texte": "Je signale l'anomalie sur le scanner et je préviens le chef d'équipe.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je préviens le chef d'équipe, car la commande part à 10 h 30.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je déclare le manque, sans changer de référence.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le signale.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je complète avec des vis réf. 40 514.",
+                  "repere": "c7_impose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que dites-vous** au chef d'équipe ?",
+              "justes": [
+                {
+                  "texte": "L'emplacement, la référence, 8 boîtes au scanner et 2 dans le bac.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Qu'il manque 4 boîtes de 40 512 pour la 630, qui part à 10 h 30.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Ce que j'ai vérifié et ce que j'ai pris.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Qu'il manque des vis.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que quelqu'un a mal rangé les vis.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de faire recompter l'emplacement pour trouver la cause de l'écart.",
+              "repere": "c1_cause"
+            },
+            {
+              "texte": "Pense aux autres commandes du jour qui attendent la même référence.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer sur le scanner comment signaler une anomalie, et qui prévenir selon l'heure de départ.",
+        "Donner par écrit la règle de l'entrepôt : ce qu'on a le droit de faire quand un article manque."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où vous deviez finir **plusieurs tâches** avant une **heure précise**.",
+      "suite": [
+        "Comment avez-vous choisi l'ordre ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit des tâches et des heures précises",
+        "Donne un critère clair, comme l'heure limite la plus proche",
+        "Dit ce qu'il a fait quand une heure était en danger"
+      ],
+      "relance": "Qu'auriez-vous fait si une tâche urgente était arrivée en plus ?",
+      "alternative": "Si vous n'avez jamais travaillé en entrepôt : parlez d'une journée où plusieurs choses devaient être prêtes à l'heure (études, association, vie quotidienne)."
+    },
+    {
+      "id": "e2",
+      "competence": "C2",
+      "texte": "Une commande ne sera **pas prête** avant le départ de son camion. **Que faites-vous** ?",
+      "suite": [],
+      "attendus": [
+        "Prévient le chef d'équipe tout de suite, pas au dernier moment",
+        "Donne l'heure à laquelle la commande sera prête",
+        "Ne dépose pas une commande incomplète sans le dire"
+      ],
+      "relance": "À quel moment prévenez-vous ?",
+      "alternative": "Imaginez que vous allez arriver en retard à un rendez-vous important. Que faites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C6",
+      "texte": "**Comment contrôlez-vous** une commande avant de fermer le colis ?",
+      "suite": [
+        "Que faites-vous si un article ne correspond pas au bon ?"
+      ],
+      "attendus": [
+        "Compare chaque article au bon : référence, quantité, état",
+        "Met de côté ce qui n'est pas conforme et le signale",
+        "Vérifie aussi l'emballage et l'étiquette"
+      ],
+      "relance": "Et si le départ du camion approche ?",
+      "alternative": "Quand vous préparez un colis ou un dossier à envoyer, comment vérifiez-vous que rien ne manque ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C6",
+      "texte": "Parlez **d'une erreur** que vous avez **trouvée** dans votre travail ou dans celui d'un collègue.",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur avec des faits précis",
+        "Dit comment elle a été corrigée et signalée",
+        "Dit ce qui a changé pour qu'elle ne revienne pas"
+      ],
+      "relance": "Qui avez-vous prévenu ?",
+      "alternative": "Parlez d'une erreur repérée dans une activité (études, association, bricolage) et de ce que vous avez fait ensuite."
+    },
+    {
+      "id": "e5",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez dû **déplacer** une charge **lourde ou encombrante**.",
+      "suite": [
+        "Comment vous y êtes-vous pris ?"
+      ],
+      "attendus": [
+        "Cite une aide : transpalette, chariot, ou un collègue pour porter à deux",
+        "Décrit le geste : jambes pliées, dos droit, charge près du corps",
+        "Dit ce qu'il a vérifié avant : le trajet, les obstacles"
+      ],
+      "relance": "Et si la charge avait été rangée en hauteur ?",
+      "alternative": "Si vous n'avez jamais travaillé en entrepôt : parlez d'un objet lourd que vous avez déplacé (association, sport, bricolage) et de votre façon de faire."
+    },
+    {
+      "id": "e6",
+      "competence": "C8",
+      "texte": "Dans une allée, vous voyez un danger : une palette qui dépasse, ou un objet au sol. **Que faites-vous** ?",
+      "suite": [],
+      "attendus": [
+        "Enlève le danger s'il peut le faire sans risque",
+        "Sinon, protège la zone et prévient le chef d'équipe",
+        "Ne fait pas ce qui demande une autorisation qu'il n'a pas"
+      ],
+      "relance": "Et si vous ne pouvez pas l'enlever vous-même ?",
+      "alternative": "Imaginez qu'un objet traîne au milieu d'un escalier très fréquenté. Que faites-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où il **manquait** quelque chose dont vous aviez besoin pour **finir un travail**.",
+      "suite": [
+        "Qu'avez-vous vérifié ?",
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit le problème avec des faits précis",
+        "Dit ce qu'il a vérifié avant d'agir",
+        "Dit qui il a prévenu et comment le travail a été fini"
+      ],
+      "relance": "Qu'est-ce qui expliquait ce manque ?",
+      "alternative": "Si vous n'avez jamais travaillé en entrepôt : parlez d'une fois où il manquait quelque chose pour finir une tâche (études, association, bricolage)."
+    },
+    {
+      "id": "e8",
+      "competence": "C1",
+      "texte": "Le scanner vous envoie prendre un article, mais **l'emplacement est vide**. Que faites-vous ?",
+      "suite": [],
+      "attendus": [
+        "Vérifie l'emplacement et la référence",
+        "Signale l'écart avec des faits précis, sans changer d'article",
+        "Continue le reste de la commande en attendant"
+      ],
+      "relance": "Et si un article qui ressemble est rangé juste à côté ?",
+      "alternative": "Imaginez qu'on vous demande d'acheter un produit précis, et qu'il n'y en a plus en rayon. Que faites-vous ?"
+    }
+  ],
+  "_pv": "49d540fe4d"
+}

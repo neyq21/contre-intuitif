@@ -1,0 +1,2585 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "chauffeur-livreur",
+  "version": "2026.10",
+  "nom": "Chauffeur-livreur / Chauffeuse-livreuse",
+  "secteur": "logistique",
+  "alias": [
+    "chauffeur livreur",
+    "chauffeuse livreuse",
+    "livreur",
+    "livreuse",
+    "conducteur livreur",
+    "conductrice livreuse",
+    "livreur de colis",
+    "chauffeur VL",
+    "chauffeur poids lourd",
+    "conducteur routier"
+  ],
+  "resume": "Prépare sa tournée, vérifie et charge son utilitaire, livre commerces et particuliers en sécurité, et fait signer les bons de livraison.",
+  "contexte": "Une entreprise de livraison de 25 chauffeurs, qui fait des tournées en utilitaire léger auprès de commerces et de particuliers, du lundi au samedi.",
+  "cadre": "La conduite demande le permis adapté au véhicule (B pour un utilitaire léger, C pour un poids lourd, avec les formations obligatoires des conducteurs professionnels).",
+  "competences": [
+    {
+      "code": "C2",
+      "titre": "Organiser sa tournée et charger dans le bon ordre",
+      "pourquoi": "L'ordre des arrêts décide si les créneaux promis et les horaires d'accès sont tenus, et un chargement dans cet ordre fait gagner du temps à chaque arrêt.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Six livraisons à mettre dans l'ordre",
+        "texte": "Mardi, 6 h 45, au dépôt : vous préparez votre tournée du matin, six livraisons (voir le tableau). Vous choisissez l'ordre des arrêts et vous chargez l'utilitaire, pour partir à 7 h 30. Rue des Halles, qui est piétonne, les véhicules de livraison sont autorisés de 6 h à 10 h 30 seulement. En cas de retard, vous prévenez vous-même le client, depuis le terminal.",
+        "document": {
+          "type": "tableau",
+          "titre": "Vos livraisons du mardi matin",
+          "colonnes": [
+            "Client",
+            "Adresse",
+            "Horaires à respecter",
+            "Colis"
+          ],
+          "lignes": [
+            [
+              "Supérette",
+              "2 place de la Gare",
+              "Livraison de 7 h 30 à 8 h 30",
+              "5 cartons"
+            ],
+            [
+              "Particulier",
+              "7 allée des Pins",
+              "Rendez-vous de 9 h à 10 h",
+              "1 colis"
+            ],
+            [
+              "Boulangerie",
+              "4 rue des Halles (piétonne)",
+              "Ouverte dès 6 h 30",
+              "3 cartons"
+            ],
+            [
+              "Fleuriste",
+              "12 rue des Halles (piétonne)",
+              "Ouvre à 9 h 30",
+              "2 cartons"
+            ],
+            [
+              "Magasin de sport",
+              "Zone commerciale Nord",
+              "Réception de 10 h 30 à 12 h",
+              "6 cartons"
+            ],
+            [
+              "Particulier",
+              "25 rue Victor-Hugo",
+              "Créneau de 11 h à 12 h",
+              "1 colis"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Pour fixer l'ordre de vos arrêts, que regardez-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "L'ordre du tableau, tel qu'il est écrit, sans le changer.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "Les horaires imposés : rendez-vous, créneaux, ouvertures, rue piétonne.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "c",
+                  "texte": "Les adresses, pour faire le trajet le plus court possible sur la carte.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Les clients qui ont le plus de colis, pour vider vite l'utilitaire.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Un rendez-vous manqué ou une rue fermée fait échouer la livraison : ces horaires fixent l'ordre. Le trajet le plus court compte ensuite, à l'intérieur de ces horaires.",
+              "relance": "Quand vous préparez une tournée, qu'est-ce qui décide de l'ordre des arrêts ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Quand** pouvez-vous livrer **le fleuriste** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Dès 7 h 30, en passant livrer la boulangerie dans la même rue.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Après 9 h 30, quand le magasin est ouvert.",
+                  "points": 1,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Vers 11 h 30, en fin de tournée : un fleuriste est ouvert toute la matinée.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Entre 9 h 30 et 10 h 30 : après l'ouverture, avant la fermeture de la rue.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "explication": "Deux horaires comptent : l'ouverture du fleuriste à 9 h 30, et la fermeture de la rue aux véhicules à 10 h 30. « Après 9 h 30 » oublie la fermeture de la rue.",
+              "relance": "Quand deux horaires s'appliquent au même arrêt, comment en tenez-vous compte ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Votre ordre est prêt. **Comment chargez-vous** l'utilitaire ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Dans l'ordre inverse des arrêts : le premier arrêt près des portes.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "b",
+                  "texte": "Dans l'ordre des arrêts : le premier arrêt au fond, chargé en premier.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Par client, en piles séparées, là où il reste de la place.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Par taille : les cartons ensemble, les petits colis ensemble.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Le premier colis à sortir doit être près des portes : à chaque arrêt, vous ne déplacez rien. Séparer les clients aide, mais sans l'ordre des arrêts, il faut chercher et déplacer des cartons.",
+              "relance": "Comment rangez-vous votre véhicule pour trouver vite les colis à chaque arrêt ?"
+            },
+            {
+              "id": "q4",
+              "texte": "À 8 h 10, à la supérette, le client de la rue Victor-Hugo vous appelle. Il demande à être **livré à 9 h**, plutôt qu'entre **11 h et 12 h**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'accepte tout de suite : c'est plus simple pour lui et il sera content.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je refuse : ma tournée est déjà prête.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je regarde si 9 h est possible avec mes autres horaires, puis je réponds.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'accepte, et je décale le rendez-vous de l'allée des Pins à plus tard.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "À 9 h, vous avez déjà le rendez-vous de l'allée des Pins : on vérifie avant de promettre. Refuser protège la tournée, mais sans chercher si le changement était possible.",
+              "relance": "Un client demande à changer d'horaire : comment décidez-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 11 h 20, la réception du magasin de sport vous fait attendre. Vous arriverez rue Victor-Hugo vers 12 h 15, **après le créneau du client**. Que faites-vous **d'abord** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appelle le client pour le prévenir et lui proposer une autre heure.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je repars dès que possible et je roule plus vite pour rattraper le retard.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je préviens mon responsable, qui verra avec le client.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : le client verra bien que j'ai du retard.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                }
+              ],
+              "explication": "La règle de l'entreprise : en cas de retard, vous prévenez vous-même le client. Prévenir le responsable est utile, mais le client risque d'attendre sans nouvelles.",
+              "relance": "Vous allez rater le créneau d'un client : qui prévenez-vous en premier ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour fixer l'ordre de mes arrêts, je regarde **d'abord**…",
+              "justes": [
+                {
+                  "texte": "les horaires à respecter : rendez-vous, créneaux, ouvertures, rue piétonne",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "le rendez-vous de 9 h, les créneaux et l'heure de fermeture de la rue piétonne",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "l'heure limite de chaque client, puis les adresses pour limiter les trajets",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "les adresses, pour faire le moins de kilomètres",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'ordre du tableau",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "les clients qui ont le plus de colis",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "**Le fleuriste**, je le livre…",
+              "justes": [
+                {
+                  "texte": "entre 9 h 30 et 10 h 30, après son ouverture et avant la fermeture de la rue",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "après 9 h 30 et avant 10 h 30, à cause de la rue piétonne",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "entre 9 h 30 et 10 h 30, avec la boulangerie si elle n'est pas encore livrée",
+                  "repere": "c2_regroupe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "après 9 h 30",
+                  "repere": "c2_oubli"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "dès 7 h 30, avec la boulangerie",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "en fin de matinée",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Les colis de mon premier arrêt, **je les charge**…",
+              "justes": [
+                {
+                  "texte": "en dernier, près des portes",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "près des portes, parce qu'ils sortent en premier",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "en dernier : je charge dans l'ordre inverse de la tournée",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "à part, pour bien les reconnaître",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "en premier, au fond du compartiment",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "là où il reste de la place",
+                  "repere": "c2_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévoit, avant de partir, quoi faire si un arrêt prend du retard : qui prévenir, quel arrêt décaler.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Vérifie avant de partir que l'ordre des colis dans l'utilitaire suit l'ordre des arrêts.",
+              "repere": "c6_controle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je passe rue des Halles entre 9 h 30 et 10 h 30 : je livre le fleuriste, et la boulangerie au même passage. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Comment entrez-vous dans une rue piétonne avec un utilitaire ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le fleuriste ouvre à 9 h 30, la rue piétonne ferme aux véhicules à 10 h 30, et la boulangerie est dans la même rue. Quand y passez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Quand livrez-vous les commerces de la rue piétonne ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "La boulangerie demande à être livrée avant 7 h. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le fleuriste ouvre à 9 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le rendez-vous de l'allée des Pins est de 9 h à 10 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La rue des Halles est fermée aux véhicules après 10 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La boulangerie ferme à 10 h 30.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La boulangerie et le fleuriste sont dans la même rue.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le fleuriste a demandé à être livré en dernier.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je charge les cartons de la rue des Halles en premier, au fond.",
+                "points": 0,
+                "repere": "c8_erreur"
+              },
+              {
+                "id": "b",
+                "texte": "Je fixe le reste de la tournée, puis je charge dans l'ordre inverse des arrêts.",
+                "points": 2,
+                "repere": "c2_anticipe"
+              },
+              {
+                "id": "c",
+                "texte": "Je pars sans fixer le reste : j'aviserai sur la route.",
+                "points": 0,
+                "repere": "c2_reactif"
+              },
+              {
+                "id": "d",
+                "texte": "Je mets ensemble les cartons de la rue des Halles, sans regarder le reste.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "Le fleuriste n'ouvre qu'à 9 h 30 et la rue ferme aux véhicules à 10 h 30 : il reste un seul créneau. La boulangerie est dans la même rue : un seul passage suffit pour les deux."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Vos six arrêts du mardi matin, dans l'ordre",
+          "consigne": "Remettez ces arrêts **dans l'ordre** où vous les faites, à partir de **7 h 30**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Magasin de sport, zone commerciale Nord : réception de 10 h 30 à 12 h"
+            },
+            {
+              "id": "e2",
+              "texte": "Fleuriste, rue des Halles (livraisons autorisées jusqu'à 10 h 30) : ouvre à 9 h 30"
+            },
+            {
+              "id": "e3",
+              "texte": "Particulier, rue Victor-Hugo : créneau de 11 h à 12 h"
+            },
+            {
+              "id": "e4",
+              "texte": "Supérette, place de la Gare : livraison de 7 h 30 à 8 h 30"
+            },
+            {
+              "id": "e5",
+              "texte": "Boulangerie, rue des Halles (livraisons autorisées jusqu'à 10 h 30) : ouverte dès 6 h 30"
+            },
+            {
+              "id": "e6",
+              "texte": "Particulier, allée des Pins : rendez-vous de 9 h à 10 h"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "La supérette est livrée avant 8 h 30 ; le rendez-vous de l'allée des Pins commence à 9 h."
+            },
+            {
+              "avant": "e4",
+              "apres": "e2",
+              "explication": "La supérette est livrée avant 8 h 30 ; le fleuriste n'ouvre qu'à 9 h 30."
+            },
+            {
+              "avant": "e6",
+              "apres": "e1",
+              "explication": "Le rendez-vous de l'allée des Pins finit à 10 h ; le magasin de sport reçoit à partir de 10 h 30."
+            },
+            {
+              "avant": "e6",
+              "apres": "e3",
+              "explication": "Le rendez-vous de l'allée des Pins finit à 10 h ; le créneau de la rue Victor-Hugo commence à 11 h."
+            },
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "Le fleuriste est livré avant 10 h 30, quand la rue ferme aux véhicules ; le magasin reçoit à partir de 10 h 30."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "Le fleuriste est livré avant 10 h 30 ; le créneau de la rue Victor-Hugo commence à 11 h."
+            },
+            {
+              "avant": "e5",
+              "apres": "e1",
+              "explication": "La boulangerie est dans la rue piétonne : livrée avant 10 h 30, donc avant le magasin, qui reçoit à partir de 10 h 30."
+            },
+            {
+              "avant": "e5",
+              "apres": "e3",
+              "explication": "La boulangerie est livrée avant 10 h 30 ; le créneau de la rue Victor-Hugo commence à 11 h."
+            }
+          ],
+          "repere_reussite": "c2_contraintes",
+          "repere_echec": "c2_oubli",
+          "reel": {
+            "consigne": "Sur table (15 minutes) : la personne reçoit six bons de livraison fictifs (adresses, horaires, nombre de colis) et un plan simple de la ville. Elle annonce l'ordre de ses arrêts et l'ordre de chargement, puis réagit à un imprévu : un retard ou un client qui change d'horaire.",
+            "criteres": [
+              {
+                "texte": "Place d'abord les horaires imposés : rendez-vous, créneaux, accès à la rue piétonne",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Dit à voix haute ou par écrit le critère qui fixe son ordre",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Charge dans l'ordre inverse des arrêts",
+                "repere": "c2_anticipe"
+              },
+              {
+                "texte": "Face à l'imprévu, prévient le client concerné avant l'heure prévue",
+                "repere": "c2_previent"
+              }
+            ],
+            "bonus": {
+              "texte": "Regroupe les arrêts proches quand les horaires le permettent",
+              "repere": "c2_regroupe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment choisissez-vous** l'ordre de vos six arrêts ?",
+              "justes": [
+                {
+                  "texte": "Je place d'abord les horaires imposés : rendez-vous, créneaux, rue piétonne.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je classe les arrêts par heure limite, puis je regarde les trajets.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Les horaires les plus tôt d'abord : supérette, rendez-vous de 9 h, rue piétonne avant 10 h 30.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je fais le trajet le plus court.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je suis l'ordre du tableau.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment chargez-vous** l'utilitaire ?",
+              "justes": [
+                {
+                  "texte": "Dans l'ordre inverse des arrêts : le premier arrêt près des portes.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Le dernier arrêt au fond, le premier près des portes.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Arrêt par arrêt, en commençant par le dernier, pour ne rien déplacer pendant la tournée.",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je sépare bien les colis de chaque client.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je mets tout là où il y a de la place.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "La réception du magasin de sport vous fait attendre : vous allez rater **le créneau de la rue Victor-Hugo**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "J'appelle le client tout de suite, pour le prévenir et lui proposer une heure.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je préviens le client, puis mon responsable.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je regarde si l'ordre des derniers arrêts peut changer, et je préviens le client.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens mon responsable.",
+                  "repere": "c4_informe"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je roule plus vite ensuite.",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "Rien : j'arriverai quand je pourrai.",
+                  "repere": "c2_silence"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Regroupe la boulangerie et le fleuriste quand les horaires le permettent.",
+              "repere": "c2_regroupe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire les premières tournées en binôme avec un chauffeur qui connaît le secteur : rues piétonnes, horaires des commerces, accès.",
+        "Donner par écrit la règle de l'entreprise : qui prévenir, et comment, quand un créneau ne pourra pas être tenu."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Vérifier son véhicule, arrimer et conduire en sécurité",
+      "pourquoi": "Un défaut non signalé, une charge mal arrimée ou un appel au volant peuvent causer un accident : ces gestes protègent le chauffeur et les autres usagers.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Avant le départ, puis sur la route",
+        "texte": "Lundi, 7 h, au dépôt : votre tournée va de 8 h à 14 h environ. Avant de partir, vous faites le tour de l'utilitaire 12 et vous notez ce que vous voyez sur la fiche de contrôle (voir le tableau). Dans le compartiment, deux cartons de 25 kg pour votre dernier arrêt sont posés debout près des portes ; des sangles sont fixées aux parois. Règle de l'entreprise : on ne téléphone jamais en conduisant, même pour un appel court.",
+        "document": {
+          "type": "tableau",
+          "titre": "Votre fiche de contrôle avant départ",
+          "colonnes": [
+            "Point contrôlé",
+            "Constat ou consigne"
+          ],
+          "lignes": [
+            [
+              "Pneus",
+              "Avant droit nettement moins gonflé que les trois autres"
+            ],
+            [
+              "Feux",
+              "Feu stop gauche éteint quand on freine ; les autres feux marchent"
+            ],
+            [
+              "Tableau de bord",
+              "Aucun voyant allumé après le démarrage"
+            ],
+            [
+              "Lave-glace",
+              "Réservoir presque vide ; bidons de liquide au dépôt"
+            ],
+            [
+              "Rétroviseurs",
+              "En bon état ; le droit est à régler pour vous"
+            ],
+            [
+              "Carrosserie",
+              "Rayure sur la portière gauche, déjà notée sur la fiche"
+            ],
+            [
+              "Équipements",
+              "Gilet et triangle dans la cabine"
+            ],
+            [
+              "En cas de défaut",
+              "Le signaler au responsable avant de partir : il décide si le véhicule part"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le pneu avant droit est nettement **moins gonflé** que les autres. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je pars : je le regonflerai à une station-service sur la route.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le regonfle moi-même au dépôt, sans prévenir le responsable.",
+                  "points": 1,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le signale au responsable et j'attends sa décision.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je pars : un pneu un peu dégonflé tient bien toute une matinée.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Un pneu nettement dégonflé peut cacher une crevaison lente et rend le véhicule moins sûr : la fiche dit que le responsable décide. Le regonfler aide, mais sans le signaler, personne n'en cherche la cause.",
+              "relance": "Au tour du véhicule, vous trouvez un défaut : que faites-vous avant de partir ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Où** rangez-vous les deux cartons de **25 kg** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Au sol, contre la cloison côté cabine, et je les sangle.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Sur les colis légers, près des portes, pour les sortir plus facilement.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Au sol, contre la cloison côté cabine, loin des portes.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Au milieu du compartiment, sans sangle : ils sont lourds, ils ne bougeront pas.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Les charges lourdes vont en bas, contre la cloison, et sont sanglées. Sans sangle, un carton peut glisser ou basculer au freinage, même s'il est lourd.",
+              "relance": "Comment rangez-vous une charge lourde dans votre véhicule ?"
+            },
+            {
+              "id": "q3",
+              "texte": "8 h 20, le pneu a été vérifié et **vous roulez** vers votre premier client. Votre téléphone sonne : c'est **un client de la tournée**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je décroche juste pour lui dire que je le rappelle dans un moment.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse sonner et je le rappelle une fois garé en sécurité.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je mets le haut-parleur, je pose le téléphone sur le siège et je réponds.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse sonner : s'il a vraiment besoin de moi, il rappellera plus tard.",
+                  "points": 1,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Même un appel court détourne l'attention de la route : la règle est de ne jamais téléphoner en conduisant. Ne pas rappeler respecte la sécurité, mais laisse le client sans réponse.",
+              "relance": "Votre téléphone sonne pendant que vous conduisez : que faites-vous ?"
+            },
+            {
+              "id": "q4",
+              "texte": "À 9 h, devant votre premier client, l'aire de livraison **est occupée** par une voiture. **Où vous garez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Sur le passage piéton, juste le temps de décharger.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Sur la piste cyclable, avec les feux de détresse allumés.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Nulle part : je tourne dans le quartier jusqu'à ce que l'aire se libère.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Sur une place autorisée un peu plus loin, et je finis à pied.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Un utilitaire sur un passage piéton ou une piste cyclable oblige piétons et cyclistes à faire un écart : c'est dangereux, même deux minutes, feux de détresse ou non. Tourner en attendant est sûr, mais fait perdre du temps sans garantie.",
+              "relance": "La place de livraison est prise : où vous garez-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "13 h 30, sur la route du retour au dépôt, après plusieurs heures de tournée, vous bâillez souvent et vos yeux piquent. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'ouvre la fenêtre et je monte le son de la radio, pour rester bien éveillé.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je finis vite la route, puis je me repose une fois au dépôt.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je m'arrête en sécurité pour me reposer, et je préviens mon responsable.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je m'arrête en sécurité pour faire une pause, sans prévenir personne.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Bâiller souvent et avoir les yeux qui piquent sont des signes de fatigue : le seul moyen sûr est de s'arrêter pour se reposer. Prévenir le responsable lui permet de savoir où vous êtes et d'organiser la suite.",
+              "relance": "Quels signes de fatigue doivent faire arrêter un conducteur ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Le pneu avant droit est nettement moins gonflé. **Avant de partir**, je…",
+              "justes": [
+                {
+                  "texte": "le signale au responsable et j'attends sa décision",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "préviens le responsable et je ne pars pas tant que le pneu n'est pas vérifié",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "le signale, et je prends un autre véhicule si le responsable le décide",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le regonfle moi-même",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "pars quand même : il tiendra la matinée",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Les deux cartons de **25 kg**, je les range…",
+              "justes": [
+                {
+                  "texte": "au sol, contre la cloison, et je les sangle",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "en bas, contre la cloison côté cabine, attachés avec les sangles",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "au fond, puisqu'ils sont pour mon dernier arrêt, et je les sangle",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "au sol, au fond du compartiment",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "sans sangle : ils sont trop lourds pour bouger",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "sur les colis légers, près des portes",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Mon téléphone sonne pendant que **je conduis**. Je…",
+              "justes": [
+                {
+                  "texte": "laisse sonner, et je rappelle une fois garé dans un endroit autorisé",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "ne décroche pas, et je rappelle à mon prochain arrêt",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "continue à conduire sans répondre, puis je m'arrête pour rappeler",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "laisse sonner",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "décroche juste pour dire que je rappelle",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "mets le haut-parleur et je réponds",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique pourquoi une charge non sanglée est dangereuse au freinage.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Note les défauts sur la fiche, pour que le chauffeur suivant soit informé.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne pars pas avec ce pneu. Je préviens tout de suite le responsable : c'est lui qui décide. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Comment vérifiez-vous la pression des pneus ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Au tour du véhicule, vous trouvez un défaut. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client vous demande pourquoi vous êtes en retard. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Au tour du véhicule, un pneu est nettement moins gonflé que les autres. Que faites-vous avant de partir ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le pneu avant droit est nettement moins gonflé que les autres.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Deux cartons de 25 kg sont posés près des portes.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Un pneu dégonflé rend le véhicule moins sûr.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le pneu a été changé la semaine dernière.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "En cas de défaut, c'est le responsable qui décide si le véhicule part.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le premier client attend sa livraison avant 8 h.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je suis sa décision et, s'il me donne un autre véhicule, j'en fais aussi le tour.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "b",
+                "texte": "Je pars si le responsable ne m'a pas répondu dans cinq minutes.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "c",
+                "texte": "Je regonfle le pneu et je pars sans attendre sa réponse.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              },
+              {
+                "id": "d",
+                "texte": "J'attends sa décision, sans rien préparer d'autre.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "Le pneu est nettement dégonflé, et un pneu dégonflé rend le véhicule moins sûr. La fiche le dit : c'est le responsable qui décide si le véhicule part."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Le tour du véhicule : que faites-vous ?",
+          "consigne": "Au tour d'un utilitaire, vous pouvez trouver ces points. **Pour chacun**, choisissez ce que vous faites **avant de partir**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Rien à faire : je peux partir"
+            },
+            {
+              "id": "k2",
+              "nom": "Je m'en occupe moi-même avant de partir"
+            },
+            {
+              "id": "k3",
+              "nom": "Je le signale et j'attends la décision"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Un pneu nettement moins gonflé que les autres",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Il peut cacher une crevaison lente et rend le véhicule moins sûr : le responsable décide."
+            },
+            {
+              "id": "e2",
+              "texte": "Un feu stop qui ne s'allume pas quand on freine",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Les conducteurs derrière vous voient moins bien que vous freinez : c'est un défaut de sécurité."
+            },
+            {
+              "id": "e3",
+              "texte": "Le réservoir de lave-glace presque vide, avec du liquide au dépôt",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le compléter prend une minute et fait partie de la préparation du véhicule."
+            },
+            {
+              "id": "e4",
+              "texte": "Un rétroviseur mal réglé pour vous",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Vous le réglez avant de rouler : vous devez bien voir sur les côtés."
+            },
+            {
+              "id": "e5",
+              "texte": "Une rayure déjà notée sur la fiche du véhicule",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle est déjà connue et ne gêne pas la conduite."
+            },
+            {
+              "id": "e6",
+              "texte": "Le gilet et le triangle rangés dans la cabine",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Ils sont à leur place : rien à faire."
+            },
+            {
+              "id": "e7",
+              "texte": "Deux cartons de 25 kg posés debout près des portes, sans sangle",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Vous les rangez au sol, contre la cloison, et vous les sanglez avant de partir."
+            },
+            {
+              "id": "e8",
+              "texte": "Le voyant rouge d'huile moteur allumé après le démarrage",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Ce voyant signale un problème grave du moteur : on ne roule pas, on prévient le responsable."
+            }
+          ],
+          "repere_reussite": "c8_securite",
+          "repere_echec": "c8_erreur",
+          "reel": {
+            "consigne": "Au dépôt, sur un utilitaire de l'entreprise à l'arrêt (20 minutes) : deux défauts sont préparés à l'avance (par exemple un pneu dégonflé, une ampoule de feu stop retirée). La personne fait le tour du véhicule avec la fiche de contrôle, puis range et sangle deux cartons lourds de démonstration.",
+            "criteres": [
+              {
+                "texte": "Contrôle chaque point de la fiche : pneus, feux, niveaux, équipements",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Signale les deux défauts au responsable avant de partir",
+                "repere": "c8_role"
+              },
+              {
+                "texte": "Range les cartons lourds au sol, contre la cloison",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Sangle les cartons sans laisser de jeu",
+                "repere": "c8_outil"
+              }
+            ],
+            "bonus": {
+              "texte": "Explique pourquoi chaque défaut trouvé doit être signalé",
+              "repere": "c8_pourquoi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous des défauts** trouvés au tour du véhicule ?",
+              "justes": [
+                {
+                  "texte": "Je les signale au responsable avant de partir, et j'attends sa décision.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je ne pars pas tant que le pneu et le feu stop ne sont pas vérifiés.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je préviens le responsable, et je complète moi-même le lave-glace.",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regonfle le pneu moi-même.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je pars, et je les signalerai au retour.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment** rangez-vous les deux cartons de **25 kg** ?",
+              "justes": [
+                {
+                  "texte": "Au sol, contre la cloison, et je les sangle.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "En bas, au fond, bien attachés avec les sangles.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Au fond, puisqu'ils sont pour le dernier arrêt, et sanglés.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Au fond du compartiment.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Sans sangle : ils sont trop lourds pour bouger.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Votre téléphone sonne **pendant que vous conduisez**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je laisse sonner, et je rappelle une fois garé.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je ne décroche pas ; je rappelle à mon prochain arrêt.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je m'arrête dans un endroit autorisé avant de rappeler.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je laisse sonner.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je décroche vite, juste pour dire que je rappelle.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique pourquoi on ne décroche pas, même pour un appel court.",
+              "repere": "c8_pourquoi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire le tour du véhicule avec la personne le premier jour, la fiche de contrôle en main, et dire à qui signaler un défaut.",
+        "Montrer comment sangler une charge dans les véhicules de l'entreprise, et donner par écrit la règle : pas de téléphone en conduisant."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Contrôler sa livraison et le bon de livraison",
+      "pourquoi": "Le bon de livraison signé prouve ce qui a été livré, et dans quel état : sans note précise, un colis abîmé ou manquant devient difficile à régler.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un carton abîmé à la quincaillerie",
+        "texte": "Jeudi, 9 h 40, vous livrez la quincaillerie du 8 rue de la République. D'après le bon de livraison, vous devez remettre 6 cartons. En les déchargeant, vous voyez qu'un carton est écrasé sur un coin et mouillé. Le responsable du magasin est pressé : il veut signer tout de suite, sans compter les cartons. La procédure de l'entreprise est dans la liste.",
+        "document": {
+          "type": "liste",
+          "titre": "Procédure de livraison (extrait)",
+          "items": [
+            "Comptez les colis avec le client avant qu'il signe.",
+            "Colis abîmé : le client écrit sur le bon une réserve précise (quel colis, quel dommage).",
+            "Prenez une photo du colis abîmé avec le terminal.",
+            "Le client peut refuser un colis abîmé : notez-le sur le bon et ramenez le colis au dépôt.",
+            "Le client écrit son nom et l'heure, puis il signe.",
+            "Un exemplaire du bon reste au client, l'autre revient avec vous."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le responsable veut signer tout de suite, **sans compter**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le laisse signer : il est pressé, et c'est son magasin.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je compte seul les cartons pendant qu'il remplit et signe le bon.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je refuse de livrer tant qu'il n'a pas ouvert tous les cartons.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui propose de compter ensemble les 6 cartons : c'est rapide.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                }
+              ],
+              "explication": "Compter ensemble prend une minute et évite un désaccord plus tard sur le nombre de cartons. Compter seul est utile, mais le client signe sans avoir vérifié.",
+              "relance": "Comment vérifiez-vous qu'une livraison est complète avant la signature ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Que faites-vous** pour le carton écrasé et mouillé ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le lui montre, pour qu'il écrive une réserve avant de signer.",
+                  "points": 2,
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le mets sous les autres cartons, pour éviter une discussion.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je prends une photo avec le terminal, sans en parler au responsable.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le laisse avec les autres : il verra bien le dommage en l'ouvrant.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Le dommage doit être vu et écrit sur le bon au moment de la livraison. La photo est utile, mais sans réserve, le bon signé dit que tout est arrivé en bon état.",
+              "relance": "Vous voyez un colis abîmé au déchargement : que faites-vous avant la signature ?"
+            },
+            {
+              "id": "q3",
+              "texte": "**Quelle réserve** **le responsable** doit-il écrire sur le bon ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Sous réserve de déballage et de vérification du contenu. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "« 1 carton abîmé. »",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "« 1 carton sur 6 écrasé sur un coin et mouillé. »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Livraison reçue complète et conforme à la commande. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Une réserve précise dit quel colis et quel dommage. « Sous réserve de déballage » ne parle pas du carton écrasé, et « 1 carton abîmé » ne dit pas quel dommage.",
+              "relance": "Comment écrit-on une réserve utile sur un bon de livraison ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Autre cas** : le responsable **refuse** le carton abîmé. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'insiste pour qu'il le garde : sinon, je dois le ramener au dépôt.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je reprends le carton, sans rien écrire sur le bon.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je reprends le carton, et je préviendrai le dépôt à mon retour.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je note le refus sur le bon et je reprends le carton.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                }
+              ],
+              "explication": "La procédure permet au client de refuser un colis abîmé : le refus est noté sur le bon et le colis revient au dépôt. Prévenir au retour aide, mais sans note sur le bon, le refus n'est pas prouvé.",
+              "relance": "Un client refuse un colis : que faites-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Avant de repartir**, que vérifiez-vous sur le bon ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : c'est au client de bien remplir son bon, pas à moi.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le nombre de cartons, la réserve, le nom, l'heure, la signature.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "La signature : c'est elle qui prouve la livraison.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le relirai au dépôt, avec tous les autres bons de la journée de travail.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Une fois parti, vous ne pouvez plus faire corriger le bon : on le relit devant le client. La signature seule ne prouve ni le nombre de cartons, ni le dommage.",
+              "relance": "Avant de quitter un client, que relisez-vous sur le bon de livraison ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Le responsable veut signer **sans compter**. Je…",
+              "justes": [
+                {
+                  "texte": "lui propose de compter les 6 cartons ensemble, puis il signe",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "lui explique que la procédure demande de compter avec lui",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "compte les cartons avec lui, un par un, avant la signature",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "compte les cartons seul pendant qu'il signe",
+                  "repere": "c6_controle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le laisse signer : il est pressé",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour le carton écrasé et mouillé, je…",
+              "justes": [
+                {
+                  "texte": "le montre au responsable et je lui demande d'écrire une réserve précise",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "fais écrire sur le bon : « 1 carton sur 6 écrasé et mouillé »",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "prends une photo avec le terminal et je fais écrire la réserve sur le bon",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "propose au responsable de le garder avec une réserve, ou de le refuser",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "prends une photo avec le terminal",
+                  "repere": "c6_trace"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le cache sous les autres cartons",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "fais écrire « sous réserve de déballage »",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant de repartir**, sur le bon, je vérifie…",
+              "justes": [
+                {
+                  "texte": "le nombre de cartons, la réserve, le nom, l'heure et la signature",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que tout ce que demande la procédure est rempli",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "que le bon décrit ce qui s'est passé : 6 cartons, dont 1 abîmé",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la signature",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : c'est au client de bien remplir",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose au responsable d'ouvrir le carton abîmé devant lui pour vérifier le contenu.",
+              "repere": "c6_controle"
+            },
+            {
+              "texte": "Signale au dépôt le carton mouillé, pour chercher où il a pris l'eau.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Écrivez sur le bon : 1 carton sur 6 écrasé sur un coin et mouillé. Je prends aussi une photo. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client vous demande ce qu'est une réserve. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un des 6 cartons est écrasé et mouillé, et le responsable va signer le bon. Que lui dites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un colis est abîmé à la livraison. Que dites-vous au client ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le responsable refuse de signer le bon. Que lui dites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Un des 6 cartons est écrasé sur un coin et mouillé.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le responsable du magasin est pressé.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La procédure demande une réserve précise : quel colis, quel dommage.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le carton abîmé contient des outils fragiles.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La procédure demande une photo du colis abîmé.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable a déjà refusé une livraison.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je relis le bon : nombre de cartons, réserve, nom, heure et signature.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "b",
+                "texte": "Je repars tout de suite : la photo suffit.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "c",
+                "texte": "Je vérifie seulement que le bon est signé, puis je repars.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je lui propose d'effacer la réserve s'il garde le carton.",
+                "points": 0,
+                "repere": "c6_cache"
+              }
+            ]
+          },
+          "explication": "Le carton est abîmé : la procédure demande une réserve précise et une photo. Ensuite, on relit le bon avant de partir, car on ne pourra plus le faire corriger."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le bon de livraison de la quincaillerie",
+          "consigne": "Le responsable a gardé les 6 cartons, puis il a rempli et signé le bon. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Client : quincaillerie, 8 rue de la République",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Date et heure : jeudi, 9 h 40",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Nombre de cartons livrés : 5",
+              "erreur": true,
+              "explication": "Vous avez remis 6 cartons, et le responsable les a tous gardés."
+            },
+            {
+              "id": "e4",
+              "texte": "Réserve : « sous réserve de déballage »",
+              "erreur": true,
+              "explication": "La réserve doit être précise : 1 carton sur 6 écrasé sur un coin et mouillé."
+            },
+            {
+              "id": "e5",
+              "texte": "Photo du carton abîmé prise avec le terminal : oui",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Nom de la personne qui signe : non rempli",
+              "erreur": true,
+              "explication": "La procédure demande au client d'écrire son nom avant de signer."
+            },
+            {
+              "id": "e7",
+              "texte": "Signature du client : présente",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "Exemplaire du client : laissé au magasin",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Livraison simulée (15 minutes) : six cartons de démonstration, dont un abîmé, un bon de livraison vierge et la procédure écrite. Une personne joue le client pressé. La personne candidate livre, fait remplir le bon, puis le relit avant de partir.",
+            "criteres": [
+              {
+                "texte": "Compte les cartons avec le client avant la signature",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Montre le carton abîmé et fait écrire une réserve précise",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Prend une photo du carton abîmé",
+                "repere": "c6_trace"
+              },
+              {
+                "texte": "Relit le bon avant de partir : cartons, réserve, nom, heure, signature",
+                "repere": "c6_controle"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de signaler au dépôt le carton mouillé, pour en trouver la cause",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Le responsable veut signer **sans compter**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je lui propose de compter les 6 cartons ensemble avant de signer.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je lui explique que la procédure demande de compter avec lui.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je compte avec lui, carton par carton : ça prend une minute.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je compte les cartons seul.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le laisse signer, il est pressé.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que faites-vous** pour le carton écrasé et mouillé ?",
+              "justes": [
+                {
+                  "texte": "Je le montre au responsable et je fais écrire une réserve précise sur le bon.",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "Je fais écrire « 1 carton sur 6 écrasé et mouillé », et je prends une photo.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je lui propose de le garder avec une réserve, ou de le refuser.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je prends une photo.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le mets sous les autres cartons.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que vérifiez-vous sur le bon **avant de repartir** ?",
+              "justes": [
+                {
+                  "texte": "Le nombre de cartons, la réserve, le nom, l'heure et la signature.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que tout ce que demande la procédure est rempli.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Que le bon décrit bien ce qui s'est passé : 6 cartons, dont 1 abîmé.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "La signature.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : c'est le client qui l'a rempli.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'ouvrir le carton abîmé devant le client pour vérifier le contenu.",
+              "repere": "c6_controle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer un bon de livraison bien rempli, avec une réserve précise, et la marche à suivre sur le terminal.",
+        "Les premières semaines, relire avec la personne les bons de la journée, en fin de tournée."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Livrer un particulier et répondre à ses demandes",
+      "pourquoi": "Le chauffeur est souvent la seule personne de l'entreprise que le client rencontre : une absence ou un contretemps bien géré garde sa confiance.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Personne ne répond à l'interphone",
+        "texte": "Samedi, 14 h 10, vous livrez un colis chez un particulier, au 15 rue des Lilas, 3e étage. Le client a choisi le créneau de 14 h à 16 h. Vous sonnez deux fois à l'interphone : personne ne répond. Un voisin qui sort de l'immeuble vous propose de prendre le colis. La procédure de l'entreprise est dans la liste.",
+        "document": {
+          "type": "liste",
+          "titre": "Procédure « client absent » (extrait)",
+          "items": [
+            "Le client ne répond pas à l'interphone : appelez-le avec le terminal.",
+            "Au téléphone, le client peut demander que le colis soit remis à un voisin : notez le nom et l'adresse du voisin sur le terminal.",
+            "Sans réponse du client : remplissez un avis de passage (date, heure, où retirer le colis) et déposez-le dans sa boîte aux lettres.",
+            "Ne laissez jamais un colis devant une porte ou dans un hall.",
+            "Enregistrez « client absent » sur le terminal et ramenez le colis au dépôt, à l'étagère des retours.",
+            "Le client peut ensuite choisir une nouvelle date de livraison, ou retirer son colis au dépôt."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Personne ne répond à l'interphone. Que faites-vous **d'abord** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appelle le client avec le terminal.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse le colis devant sa porte, au 3e étage.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je dépose tout de suite un avis de passage.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je donne le colis au voisin, puisqu'il le propose.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                }
+              ],
+              "explication": "L'appel permet de savoir si le client est là, ou ce qu'il préfère. L'avis de passage vient ensuite, seulement si le client ne répond pas.",
+              "relance": "Quand un client ne répond pas, que faites-vous avant de repartir ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Le voisin insiste** : « Donnez-le-moi, je le lui remettrai ce soir. » **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je refuse, sans lui donner de raison.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'accepte : il habite l'immeuble et il a l'air de bien connaître le client.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le remercie : il me faut d'abord l'accord du client.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui laisse le colis s'il me montre une pièce d'identité.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "La procédure demande l'accord du client pour remettre un colis à un voisin. Refuser respecte la règle ; expliquer pourquoi évite de vexer le voisin.",
+              "relance": "Comment refusez-vous une demande sans vexer la personne ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client **ne répond pas** au téléphone. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je laisse le colis dans le hall de l'immeuble : il sera à l'abri et visible.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je remplis l'avis de passage, je le dépose, et j'enregistre l'absence.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'enregistre « client absent » sur le terminal, et je repars.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je dépose un avis de passage sans le remplir, pour gagner du temps.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "L'avis de passage dit au client que vous êtes venu et où retirer son colis. Sans avis, il ne le sait pas ; un avis vide ne l'aide pas.",
+              "relance": "Comment le client sait-il que vous êtes passé et où trouver son colis ?"
+            },
+            {
+              "id": "q4",
+              "texte": "À 16 h 30, le client de la rue des Lilas vous rappelle, mécontent : « J'étais chez moi, mon interphone est en panne ! » **Vous êtes garé**. **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Votre interphone en panne, ce n'est pas de ma faute : il fallait le faire réparer. »",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je suis vraiment désolé pour ce contretemps. »",
+                  "points": 1,
+                  "repere": "c7_apaise"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je termine ma tournée, et je repasse chez vous tout de suite après. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Désolé. Vous pouvez choisir une nouvelle date, ou retirer le colis au dépôt. »",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                }
+              ],
+              "explication": "Le client était chez lui : on reconnaît le contretemps sans discuter la faute, et on donne les solutions prévues. S'excuser apaise, mais ne lui dit pas comment recevoir son colis.",
+              "relance": "Un client vous reproche une livraison ratée : que lui dites-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "17 h 30, **fin de tournée**. **Que faites-vous** du colis de la rue des Lilas ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le garde dans l'utilitaire pour le livrer lundi, puisque j'y repasse.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le dépose chez le client après ma journée : c'est sur mon chemin.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le range à l'étagère des retours, et je vérifie qu'il est enregistré.",
+                  "points": 2,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le pose au dépôt, sur une étagère libre, avec d'autres colis.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Le colis doit revenir au dépôt, enregistré, pour que le client puisse le retirer ou être livré. Posé ailleurs, il risque de se perdre.",
+              "relance": "Que faites-vous des colis non livrés à la fin de votre tournée ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Personne ne répond à l'interphone. **D'abord**, je…",
+              "justes": [
+                {
+                  "texte": "appelle le client avec le terminal",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "appelle le client pour savoir s'il est là, ou ce qu'il préfère",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "vérifie le nom sur l'interphone, puis j'appelle le client",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dépose un avis de passage",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "laisse le colis devant sa porte",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "donne le colis au voisin",
+                  "repere": "c7_impose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "**Au voisin** qui propose de prendre le colis, je réponds…",
+              "justes": [
+                {
+                  "texte": "« Merci, mais il me faut l'accord du client. Je l'appelle. »",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "que je ne peux pas le lui laisser sans l'accord du client",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "que j'appelle d'abord le client, et que je le lui laisse si le client est d'accord",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "« Non, désolé. »",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "« D'accord, tenez. »",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Le client me rappelle, mécontent : il était chez lui. Je lui dis…",
+              "justes": [
+                {
+                  "texte": "que je suis désolé, et qu'il peut choisir une nouvelle date ou retirer son colis au dépôt",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "ce que j'ai fait, puis comment il peut recevoir son colis",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "que je comprends, et je lui explique les solutions prévues",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je suis désolé",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que c'est à lui de réparer son interphone",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "que je repasse tout de suite",
+                  "repere": "c7_promesse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note sur le terminal que l'interphone est en panne, pour la prochaine livraison.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Écrit sur l'avis de passage comment choisir une nouvelle date.",
+              "repere": "c7_suite"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Merci, mais je ne peux pas vous le laisser sans l'accord du client. Je l'appelle tout de suite. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un voisin vous propose de prendre le colis d'un client qui ne répond pas à l'interphone. Que lui dites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un client vous demande de laisser son colis chez un voisin. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Quelqu'un vous propose son aide pendant une livraison. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Un voisin se plaint du bruit de votre utilitaire. Que lui dites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le client ne répond pas à l'interphone.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le créneau choisi est de 14 h à 16 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Un voisin propose de prendre le colis.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le voisin est un ami du client.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Il faut l'accord du client pour remettre le colis à un voisin.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le colis est trop lourd pour le voisin.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je laisse le colis au voisin si le client ne répond pas.",
+                "points": 0,
+                "repere": "c7_hors_regle"
+              },
+              {
+                "id": "b",
+                "texte": "Je dépose un avis de passage, sans appeler.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "J'appelle le client pour lui demander ce qu'il préfère.",
+                "points": 2,
+                "repere": "c7_besoin"
+              },
+              {
+                "id": "d",
+                "texte": "Je repars sans rien laisser au client.",
+                "points": 0,
+                "repere": "c3_oubli"
+              }
+            ]
+          },
+          "explication": "La procédure demande l'accord du client avant de remettre un colis à un voisin. L'étape suivante : appeler le client pour connaître son choix."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Le client ne répond pas : vos actions dans l'ordre",
+          "consigne": "Le client ne répondra ni à l'interphone, ni au téléphone. Remettez ces actions **dans l'ordre** où vous les faites, de **votre arrivée** à **la fin de la tournée**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Remplir l'avis de passage : date, heure, où retirer le colis"
+            },
+            {
+              "id": "e2",
+              "texte": "Appeler le client avec le terminal"
+            },
+            {
+              "id": "e3",
+              "texte": "Déposer l'avis de passage dans la boîte aux lettres du client"
+            },
+            {
+              "id": "e4",
+              "texte": "Enregistrer « client absent » sur le terminal"
+            },
+            {
+              "id": "e5",
+              "texte": "Remettre le colis à l'étagère des retours du dépôt"
+            },
+            {
+              "id": "e6",
+              "texte": "Sonner à l'interphone du client"
+            },
+            {
+              "id": "e7",
+              "texte": "Vérifier le nom et l'adresse sur l'étiquette du colis"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e7",
+              "apres": "e6",
+              "explication": "On vérifie le nom et l'adresse avant de sonner, pour sonner chez la bonne personne."
+            },
+            {
+              "avant": "e6",
+              "apres": "e2",
+              "explication": "On sonne d'abord : la procédure demande d'appeler quand le client ne répond pas à l'interphone."
+            },
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "On appelle avant de remplir l'avis : le client peut répondre et choisir une autre solution."
+            },
+            {
+              "avant": "e1",
+              "apres": "e3",
+              "explication": "L'avis est rempli avant d'être déposé : un avis vide n'aide pas le client."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "On n'enregistre l'absence qu'après avoir essayé de joindre le client."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "L'avis est déposé sur place ; le colis ne revient au dépôt qu'en fin de tournée."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "L'absence est enregistrée sur place ; le colis revient au dépôt en fin de tournée."
+            }
+          ],
+          "repere_reussite": "c7_regle",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes, avec la procédure écrite, des avis de passage vierges et un colis de démonstration. Un recruteur joue le voisin qui insiste, puis le client qui rappelle, mécontent. La personne candidate gère la livraison comme sur le terrain.",
+            "criteres": [
+              {
+                "texte": "Appelle le client avant de remplir un avis de passage",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "Refuse de laisser le colis au voisin sans l'accord du client, en expliquant pourquoi",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Remplit un avis complet : date, heure, où retirer le colis",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Au client mécontent, propose les solutions prévues : nouvelle date ou retrait au dépôt",
+                "repere": "c7_alternative"
+              }
+            ],
+            "bonus": {
+              "texte": "Note pour la prochaine livraison que l'interphone est en panne",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Personne ne répond à l'interphone. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "J'appelle le client avec le terminal.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "J'appelle le client pour savoir s'il est là, ou ce qu'il préfère.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Je vérifie le nom sur l'interphone, puis j'appelle le client.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je dépose un avis de passage.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je laisse le colis devant la porte.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que répondez-vous** **au voisin** qui propose de prendre le colis ?",
+              "justes": [
+                {
+                  "texte": "Que j'ai besoin de l'accord du client, et que je l'appelle.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Merci, mais je ne peux pas sans l'accord du client.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Si le client est d'accord au téléphone, je lui laisse le colis et je note son nom et son adresse.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Non, désolé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "D'accord, je vous le laisse.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le client vous rappelle, mécontent : il était chez lui. **Que lui dites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je m'excuse, et je lui donne les solutions : nouvelle date ou retrait au dépôt.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Je lui explique ce que j'ai fait, puis comment récupérer son colis.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Je comprends son agacement, et je lui propose une nouvelle date de livraison.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je m'excuse.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que c'est sa faute : son interphone ne marche pas.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note que l'interphone est en panne, pour la prochaine livraison.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre la procédure « client absent » par écrit, et montrer sur le terminal comment appeler un client et enregistrer une absence.",
+        "Dire qui peut décider d'une nouvelle livraison, et quoi répondre à un client mécontent en attendant."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C2",
+      "texte": "Parlez d'une journée de travail où vous aviez **plusieurs horaires à tenir**.",
+      "suite": [
+        "Comment avez-vous choisi l'ordre ?",
+        "Qu'avez-vous fait quand un imprévu est arrivé ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : rendez-vous, heure limite, trajet",
+        "Tient compte de tous les horaires imposés",
+        "Dit qui il a prévenu quand un horaire était menacé"
+      ],
+      "relance": "Qu'auriez-vous fait avec une heure de retard ?",
+      "alternative": "Si vous n'avez jamais fait de tournée : parlez d'une journée avec plusieurs rendez-vous ou démarches à heure fixe."
+    },
+    {
+      "id": "e2",
+      "competence": "C2",
+      "texte": "Vous allez arriver **en retard** chez un client qui a **un rendez-vous**. Que faites-vous ?",
+      "suite": [],
+      "attendus": [
+        "Prévient le client avant l'heure, une fois garé",
+        "Propose une nouvelle heure ou une autre solution",
+        "Revoit l'ordre de la suite de la tournée si besoin"
+      ],
+      "relance": "Et si deux clients risquent d'attendre en même temps ?",
+      "alternative": "Imaginez que vous allez être en retard à un rendez-vous important. Que faites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C8",
+      "texte": "**Avant** de prendre un véhicule pour la journée, **que vérifiez-vous** ?",
+      "suite": [
+        "Que faites-vous si vous trouvez un défaut ?"
+      ],
+      "attendus": [
+        "Cite des points concrets : pneus, feux, niveaux, rétroviseurs",
+        "Signale un défaut avant de partir",
+        "Ne part pas avec un défaut de sécurité sans l'accord du responsable"
+      ],
+      "relance": "Pouvez-vous donner un exemple de défaut que vous avez déjà trouvé ?",
+      "alternative": "Si vous n'avez jamais conduit pour le travail : avant un long trajet en voiture, que vérifiez-vous ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C8",
+      "texte": "Devant un client, l'aire de livraison **est occupée**. **Où** vous garez-vous ?",
+      "suite": [],
+      "attendus": [
+        "Cherche une place autorisée, même un peu plus loin",
+        "Ne bloque ni le passage des piétons, ni celui des cyclistes",
+        "Finit à pied ou avec un diable si la place est loin"
+      ],
+      "relance": "Et si vous êtes très en retard ?",
+      "alternative": "Imaginez que vous devez déposer un objet lourd devant un immeuble, sans place libre devant. Que faites-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C6",
+      "texte": "**Comment vérifiez-vous** qu'une livraison est complète **avant** de faire signer le client ?",
+      "suite": [],
+      "attendus": [
+        "Compte les colis avec le client",
+        "Compare avec le bon de livraison",
+        "Fait écrire tout dommage avant la signature"
+      ],
+      "relance": "Et si le client est pressé ?",
+      "alternative": "Quand vous recevez ou remettez une commande, comment vérifiez-vous qu'il ne manque rien ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez **trouvé une erreur** dans une commande ou dans un document.",
+      "suite": [
+        "Qu'avez-vous fait ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur avec des faits précis",
+        "Dit comment elle a été corrigée",
+        "Dit qui a été prévenu et ce qui a changé ensuite"
+      ],
+      "relance": "Qu'est-ce qui aurait pu éviter cette erreur ?",
+      "alternative": "Parlez d'une erreur trouvée dans une activité (études, association, achat en ligne) et de ce que vous avez fait."
+    },
+    {
+      "id": "e7",
+      "competence": "C7",
+      "texte": "**Parlez d'une fois** où un client était mécontent d'une livraison ou d'un service. **Que s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous fait ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit des faits précis",
+        "Décrit une solution concrète proposée au client",
+        "Dit comment la situation s'est terminée"
+      ],
+      "relance": "Qu'auriez-vous pu faire d'autre ?",
+      "alternative": "Si vous n'avez jamais travaillé avec des clients : parlez d'une personne mécontente que vous avez aidée (travail, association, vie quotidienne)."
+    },
+    {
+      "id": "e8",
+      "competence": "C7",
+      "texte": "Un client vous demande de laisser son colis **devant sa porte**, ce que **la procédure interdit**. Que lui répondez-vous ?",
+      "suite": [],
+      "attendus": [
+        "Explique la règle simplement et poliment",
+        "Propose une solution permise : voisin choisi par le client, autre date, retrait au dépôt",
+        "Vérifie que le client a compris la suite"
+      ],
+      "relance": "Et s'il insiste ?",
+      "alternative": "Imaginez qu'une personne vous demande un service que votre règlement interdit. Que lui répondez-vous ?"
+    }
+  ],
+  "_pv": "5241a74123"
+}

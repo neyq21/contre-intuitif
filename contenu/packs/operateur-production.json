@@ -1,0 +1,2638 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "operateur-production",
+  "version": "2026.10",
+  "nom": "Opérateur de production / Opératrice de production",
+  "secteur": "industrie",
+  "alias": [
+    "opérateur de production",
+    "opératrice de production",
+    "agent de production",
+    "conducteur de ligne",
+    "opérateur sur machine",
+    "ouvrier de production",
+    "agent de fabrication"
+  ],
+  "resume": "Conduit une ligne de production, contrôle la qualité à son poste, respecte la sécurité machine et transmet à l'équipe suivante.",
+  "contexte": "Une usine agroalimentaire de plats cuisinés en barquettes, avec une ligne de conditionnement et deux équipes qui alternent : le matin de 5 h à 13 h, l'après-midi de 13 h à 21 h.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C6",
+      "titre": "Contrôler sa production et traiter un produit non conforme",
+      "pourquoi": "Une barquette mal marquée ou mal scellée ne doit pas quitter l'usine : le contrôle à votre poste est la première protection du client.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un contrôle de 10 h qui ne passe pas",
+        "texte": "Mercredi, 10 h 00, poste du matin. Vous êtes à la sortie de l'operculeuse, la machine qui soude le film sur la barquette. La ligne fabrique des lasagnes en barquettes de 400 g. La fiche de poste demande un autocontrôle toutes les 30 minutes (voir le tableau). Le contrôle de 9 h 30 était conforme. Vous prélevez 3 barquettes : elles pèsent 398 g, 401 g et 396 g, et le film est bien soudé. Le lot imprimé, « L2841 », est le bon. La date imprimée est « 19/10 », mais l'ordre de fabrication (le document de la production du jour) indique « 17/10 ». La ligne tourne : les barquettes partent à la mise en carton, puis sur palette. Un bac « non conforme » est à côté de la ligne.",
+        "document": {
+          "type": "tableau",
+          "titre": "Fiche de poste : autocontrôle à la sortie de l'operculeuse",
+          "colonnes": [
+            "À vérifier",
+            "Ce que dit la fiche",
+            "Fréquence"
+          ],
+          "lignes": [
+            [
+              "Poids net",
+              "Entre 390 g et 410 g, pour chaque barquette",
+              "Toutes les 30 minutes, sur 3 barquettes"
+            ],
+            [
+              "Scellage du film",
+              "Film soudé sur tout le tour, sans pli",
+              "Toutes les 30 minutes, sur 3 barquettes"
+            ],
+            [
+              "Date et lot imprimés",
+              "Identiques à l'ordre de fabrication, bien lisibles",
+              "Toutes les 30 minutes, sur 3 barquettes"
+            ],
+            [
+              "Résultat",
+              "À noter sur la fiche de suivi, avec l'heure",
+              "À chaque contrôle"
+            ],
+            [
+              "En cas d'écart",
+              "Le chef d'équipe décide de la suite et de la reprise de la production",
+              "Dès que l'écart est constaté"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Les 3 barquettes pèsent 398 g, 401 g et 396 g. Que dit la **fiche de poste** pour **le poids** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le poids est conforme : chaque barquette est entre 390 g et 410 g.",
+                  "points": 2,
+                  "repere": "c8_precision"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le poids n'est pas conforme : aucune barquette ne pèse exactement 400 g.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le poids est conforme : je regarde seulement le poids moyen des trois barquettes.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le poids n'est pas conforme : 401 g dépasse la cible de 400 g.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "La fiche donne une limite pour chaque barquette, de 390 g à 410 g : les trois poids sont conformes. La moyenne seule peut cacher une barquette hors limite.",
+              "relance": "Comment lisez-vous un poids par rapport à ce que demande la fiche ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Quel est le **résultat** de ce contrôle de **10 h** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Conforme : le poids et le scellage sont corrects.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Non conforme : la date imprimée, 19/10, est différente de celle de l'ordre de fabrication, 17/10.",
+                  "points": 2,
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Conforme : deux jours d'écart sur la date ne changent pas le produit.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "d",
+                  "texte": "Non conforme : la date me semble fausse.",
+                  "points": 1,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Un seul critère hors fiche suffit pour que le contrôle soit non conforme. Il faut comparer la date imprimée à l'ordre de fabrication, pas seulement l'estimer.",
+              "relance": "Que décidez-vous quand un seul critère de la fiche n'est pas respecté ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le contrôle est non conforme et la ligne tourne toujours. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue la production et je préviens le chef d'équipe à la fin de mon poste.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je corrige la date à la main sur les barquettes qui sortent.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'arrête la ligne pour ne plus produire de barquettes avec la mauvaise date.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je prélève 3 autres barquettes pour vérifier si l'erreur se répète.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                }
+              ],
+              "explication": "Tant que la ligne tourne, elle fabrique d'autres barquettes avec la mauvaise date : on arrête d'abord. Vérifier encore est possible, mais la production continue pendant ce temps.",
+              "relance": "Que faites-vous quand un contrôle montre un écart par rapport à la fiche ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Quelles barquettes** mettez-vous de côté ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Seulement celles encore sur la ligne, pas celles déjà en carton.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Toute la production depuis le début de mon poste, à 5 h.",
+                  "points": 1,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "c",
+                  "texte": "Seulement les 3 barquettes que j'ai prélevées, car les autres sont sûrement bonnes.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Tout ce qui est sorti depuis le dernier contrôle conforme, à 9 h 30.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                }
+              ],
+              "explication": "Le contrôle de 9 h 30 était conforme : l'écart est apparu après. On isole tout ce qui est sorti depuis, y compris dans les cartons. Remonter jusqu'à 5 h est prudent, mais trop large.",
+              "relance": "Comment décidez-vous jusqu'où remonter pour mettre de côté la production ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Comment annoncez-vous** l'écart à votre chef d'équipe ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Tout de suite, avec l'heure, le lot, la date fausse et ce que j'ai isolé.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "b",
+                  "texte": "Tout de suite, en disant seulement : « Il y a un problème sur la ligne. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "À la fin de mon poste, avec tous les détails.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne le préviens pas : je corrige la date sur l'imprimante et je relance la ligne.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                }
+              ],
+              "explication": "Le chef d'équipe décide de la suite : il a besoin de l'heure, du lot, de l'écart et de ce qui est isolé. « Un problème sur la ligne » le prévient, mais il devra tout redemander.",
+              "relance": "Que dites-vous à votre chef d'équipe quand vous trouvez un défaut ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand je vois que la **date imprimée** est fausse, je…",
+              "justes": [
+                {
+                  "texte": "arrête la ligne tout de suite",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "bloque la ligne et je ne la relance pas avant la décision du chef d'équipe",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "compare la date avec l'ordre de fabrication, puis j'arrête la ligne",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "stoppe la production et je préviens mon chef d'équipe",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "vérifie sur d'autres barquettes si l'erreur se répète",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "continue la production et je préviens à la fin du poste",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "corrige la date à la main sur les barquettes",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour les barquettes sorties depuis **9 h 30**, je…",
+              "justes": [
+                {
+                  "texte": "les mets de côté dans le bac « non conforme », avec une étiquette",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "isole celles de la ligne, celles en carton et celles de la palette",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "retire tout ce qui est sorti depuis le dernier contrôle conforme",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "bloque la palette et j'écris le motif sur l'étiquette",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "mets de côté les barquettes qui sont encore sur la ligne",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "laisse les cartons sur la palette, ils sont déjà fermés",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "garde les 3 barquettes prélevées et je remets le reste en carton",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Sur la fiche de suivi, j'écris…",
+              "justes": [
+                {
+                  "texte": "l'heure, le lot, la date fausse et le nombre de cartons isolés",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "ce que j'ai constaté, à quelle heure, et ce que j'ai mis de côté",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "l'heure du dernier contrôle conforme et celle de l'arrêt de la ligne",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "le motif de l'arrêt et le nom de la personne prévenue",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "« problème de date sur la ligne »",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : le chef d'équipe est au courant",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "rien : le problème est réglé, donc inutile de l'écrire",
+                  "repere": "c6_cache"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de vérifier la date imprimée au démarrage de chaque nouveau lot.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Laisse le chef d'équipe décider de ce que deviennent les barquettes isolées.",
+              "repere": "c4_role"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« La ligne est arrêtée. La date imprimée est 19/10 au lieu de 17/10, sur le lot L2841. J'ai isolé tout ce qui est sorti depuis le contrôle de 9 h 30. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le contrôle de 10 h est conforme. Que notez-vous sur la fiche de suivi ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous trouvez un défaut sur la ligne. Que dites-vous au chef d'équipe ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "À 10 h, la date imprimée est 19/10 au lieu de 17/10, et le dernier contrôle conforme était à 9 h 30. Que dites-vous au chef d'équipe ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Le chef d'équipe vous demande si la ligne peut repartir. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La date imprimée est 19/10 au lieu de 17/10.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Les trois barquettes pèsent entre 390 g et 410 g.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le dernier contrôle conforme était à 9 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le film est mal soudé sur une des barquettes.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La ligne tournait encore et fabriquait des barquettes.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le lot imprimé est faux.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je relance la ligne tout de suite : j'ai prévenu le chef d'équipe.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              },
+              {
+                "id": "b",
+                "texte": "J'attends la décision du chef d'équipe sur les barquettes isolées et je note l'écart sur la fiche.",
+                "points": 2,
+                "repere": "c6_trace"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends la décision du chef d'équipe, sans rien noter pour l'instant.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je note l'écart sur la fiche, puis je remets les barquettes isolées en production.",
+                "points": 0,
+                "repere": "c6_laisse"
+              }
+            ]
+          },
+          "explication": "La réponse donne au chef d'équipe l'écart, le lot et la zone isolée, depuis le dernier contrôle conforme. La décision sur les barquettes isolées lui revient."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre réaction au contrôle de 10 h",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e5",
+              "texte": "Prévenir le chef d'équipe"
+            },
+            {
+              "id": "e1",
+              "texte": "Prélever 3 barquettes à la sortie de l'operculeuse"
+            },
+            {
+              "id": "e7",
+              "texte": "Relancer la ligne après l'accord du chef d'équipe"
+            },
+            {
+              "id": "e3",
+              "texte": "Arrêter la ligne"
+            },
+            {
+              "id": "e6",
+              "texte": "Noter l'écart sur la fiche de suivi"
+            },
+            {
+              "id": "e2",
+              "texte": "Comparer la date et le lot avec l'ordre de fabrication"
+            },
+            {
+              "id": "e4",
+              "texte": "Mettre de côté ce qui est sorti depuis 9 h 30"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "On prélève des barquettes avant de pouvoir les comparer."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On arrête la ligne parce que l'écart a été constaté."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On arrête d'abord : sinon de nouvelles barquettes non conformes s'ajoutent à celles que l'on trie."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "On arrête d'abord la production non conforme, puis on prévient le chef d'équipe."
+            },
+            {
+              "avant": "e2",
+              "apres": "e6",
+              "explication": "On ne peut noter l'écart qu'après l'avoir constaté en comparant."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "On ne relance pas la ligne sans l'accord du chef d'équipe."
+            },
+            {
+              "avant": "e4",
+              "apres": "e7",
+              "explication": "Le produit non conforme est isolé avant la relance, sinon il repartirait en carton."
+            }
+          ],
+          "repere_reussite": "c6_bloque",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes sur une ligne de conditionnement réelle ou simulée : la personne contrôle 3 barquettes avec la fiche de poste, découvre un écart de date préparé à l'avance, puis traite le produit non conforme.",
+            "criteres": [
+              {
+                "texte": "Compare la date et le lot avec l'ordre de fabrication",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Arrête la ligne dès que l'écart est constaté",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Isole le produit sorti depuis le dernier contrôle conforme et l'étiquette",
+                "repere": "c6_bloque"
+              },
+              {
+                "texte": "Prévient le chef d'équipe avec l'heure, le lot et l'écart",
+                "repere": "c4_escalade"
+              }
+            ],
+            "bonus": {
+              "texte": "Note l'écart sur la fiche de suivi, avec les quantités isolées",
+              "repere": "c6_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous quand vous constatez que la **date imprimée** est fausse ?",
+              "justes": [
+                {
+                  "texte": "J'arrête la ligne tout de suite.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je bloque la ligne et je ne la relance pas avant la décision du chef d'équipe.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je compare avec l'ordre de fabrication, puis j'arrête la ligne.",
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je prélève d'autres barquettes pour confirmer.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je continue et je préviens à la fin du poste.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Quelles barquettes** mettez-vous de côté ?",
+              "justes": [
+                {
+                  "texte": "Toutes celles produites depuis le dernier contrôle conforme, à 9 h 30.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Celles de la ligne, celles en carton et celles de la palette, depuis 9 h 30.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Tout ce qui est sorti depuis le dernier bon contrôle, et je mets une étiquette.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Toute la production depuis le début de mon poste.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Seulement les 3 barquettes prélevées.",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "Rien : je corrige la date et je continue.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que dites-vous** à votre chef d'équipe ?",
+              "justes": [
+                {
+                  "texte": "La ligne est arrêtée : la date imprimée est 19/10 au lieu de 17/10.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Le lot, l'heure du contrôle et ce que j'ai mis de côté.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Le dernier contrôle conforme était à 9 h 30 : j'ai isolé tout ce qui est sorti depuis.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Qu'il y a un problème sur la ligne.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je corrige moi-même.",
+                  "repere": "c6_cache"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de vérifier la date imprimée à chaque démarrage de lot.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Note sur la fiche l'heure de l'arrêt et le nombre de cartons isolés.",
+              "repere": "c6_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire un premier autocontrôle ensemble avec la fiche de poste, et montrer où se trouvent le bac « non conforme » et les étiquettes.",
+        "Préciser par écrit qui décide du sort du produit isolé, et qui prévenir quand le chef d'équipe n'est pas disponible."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Respecter la sécurité de la machine, même quand on est pressé",
+      "pourquoi": "Une protection neutralisée ou une intervention hors de son rôle peut blesser gravement : la règle vaut aussi quand la ligne prend du retard.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Des barquettes coincées à l'entrée de la machine",
+        "texte": "Jeudi, 7 h 20, poste du matin. Vous conduisez l'operculeuse, la machine qui soude le film sur les barquettes. Des barquettes se coincent à l'entrée de la machine : le convoyeur les pousse, mais elles ne passent plus. Un collègue vous dit : « Mets un aimant sur le capteur de la porte. La machine ne s'arrêtera plus quand tu l'ouvres : on ira plus vite. » Le chef d'équipe est à l'autre bout de la ligne. La consigne de sécurité affichée sur la machine est dans la liste.",
+        "document": {
+          "type": "liste",
+          "titre": "Consigne de sécurité affichée sur l'operculeuse",
+          "items": [
+            "Bourrage : appuyer sur le bouton d'arrêt et attendre l'arrêt complet de la machine.",
+            "Machine arrêtée, l'opérateur peut ouvrir la porte à capteur et retirer les barquettes coincées à l'entrée.",
+            "Bourrage dans la zone de soudure, ou carter à démonter : appeler le régleur. L'opérateur n'y touche pas.",
+            "Arrêt d'urgence (bouton rouge) : si la machine ne s'arrête pas avec le bouton d'arrêt, ou si une personne est en danger.",
+            "Ne jamais neutraliser un capteur ou une protection. Ne jamais mettre la main dans la machine en marche."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Les barquettes se coincent à l'entrée et la machine tourne. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appuie sur le bouton d'arrêt et j'attends l'arrêt complet de la machine.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'appuie sur le bouton d'arrêt, puis j'appelle le régleur et j'attends qu'il dégage.",
+                  "points": 1,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je pousse les barquettes à la main, vite, pendant que la machine tourne.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je baisse la vitesse de la machine pour que les barquettes passent.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Le bouton d'arrêt, puis l'attente de l'arrêt complet, sont la première étape de la consigne. Appeler le régleur est prudent, mais la consigne autorise l'opérateur à dégager un bourrage à l'entrée.",
+              "relance": "Que faites-vous en premier quand une machine se bloque ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Votre collègue vous propose de poser un **aimant sur le capteur** de la porte. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je refuse, sans rien ajouter.",
+                  "points": 1,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "b",
+                  "texte": "D'accord pour cette fois : je retirerai l'aimant dès que les barquettes seront dégagées.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Non : on ne neutralise jamais une protection. Je dégage les barquettes machine arrêtée.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le laisse poser l'aimant, mais je reste à distance de la machine.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Le capteur de la porte coupe la machine quand on l'ouvre : l'aimant le trompe et laisse les mains exposées. Refuser seulement est un bon réflexe, mais ne dit pas comment dégager sans danger.",
+              "relance": "Que répondez-vous à un collègue qui vous propose un raccourci dangereux ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous ouvrez la porte, machine arrêtée : le bourrage est en fait dans la **zone de soudure**, derrière un **carter**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je démonte le carter, la machine étant arrêtée, pour dégager le bourrage.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse la machine arrêtée et j'appelle le régleur.",
+                  "points": 2,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je laisse la machine arrêtée et je préviens le chef d'équipe, qui appellera le régleur.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je dégage avec un tournevis, en passant par la fente du carter.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "La consigne réserve la zone de soudure et le démontage des carters au régleur. Prévenir le chef d'équipe est possible, mais la consigne dit d'appeler directement le régleur.",
+              "relance": "Quelles interventions sur une machine ne sont pas pour un opérateur ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous appuyez sur le bouton d'arrêt, mais le convoyeur d'entrée **continue de tourner**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je retire les barquettes à la main : le convoyeur tourne lentement.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens le chef d'équipe par radio et j'attends qu'il arrive.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'appuie encore sur le bouton d'arrêt, puis sur l'arrêt d'urgence si rien ne change.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'appuie tout de suite sur l'arrêt d'urgence, puis je préviens le régleur.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "La consigne prévoit l'arrêt d'urgence quand la machine ne s'arrête pas avec le bouton d'arrêt. Appuyer encore sur le bouton d'arrêt fait perdre quelques secondes pendant que la machine tourne.",
+              "relance": "Dans quel cas utilisez-vous l'arrêt d'urgence ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le bourrage s'est produit **trois fois** depuis le début du poste. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je signale au régleur que le bourrage revient, avec l'heure de chaque arrêt.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je dégage à chaque fois sans rien dire : cela fait partie du travail.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je règle moi-même la position des guides à l'entrée de la machine.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je note chaque bourrage sur la fiche de suivi et je continue.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                }
+              ],
+              "explication": "Un bourrage qui revient a une cause que le régleur peut chercher : il faut lui dire quand et combien de fois. Le noter sur la fiche est utile, mais ne suffit pas à le prévenir.",
+              "relance": "Que faites-vous quand le même incident se répète plusieurs fois ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand mon collègue me propose un **aimant sur le capteur** de la porte, je…",
+              "justes": [
+                {
+                  "texte": "refuse : on ne neutralise jamais une protection",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "lui explique que le capteur protège nos mains, et je dégage machine arrêtée",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "dis non et je dégage les barquettes avec la machine arrêtée",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "refuse, et je préviens le chef d'équipe si mon collègue insiste",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "refuse, sans expliquer pourquoi",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "accepte, juste pour cette fois",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "le laisse faire, mais je ne regarde pas",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si la machine **ne s'arrête pas** avec le bouton d'arrêt, je…",
+              "justes": [
+                {
+                  "texte": "appuie sur l'arrêt d'urgence",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "appuie tout de suite sur le bouton rouge d'arrêt d'urgence, puis je préviens le régleur",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "m'écarte de la machine et j'appuie sur l'arrêt d'urgence",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "stoppe tout avec l'arrêt d'urgence et je n'ouvre rien avant l'arrêt complet",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "rappuie plusieurs fois sur le bouton d'arrêt",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "attends qu'elle s'arrête toute seule",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "retire les barquettes à la main pendant qu'elle ralentit",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si le bourrage est dans la **zone de soudure**, derrière un **carter**, je…",
+              "justes": [
+                {
+                  "texte": "n'y touche pas et j'appelle le régleur",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "laisse la machine arrêtée et je préviens le régleur",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "préviens le régleur, car le démontage d'un carter est réservé aux personnes habilitées",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "préviens le régleur ou le chef d'équipe et j'attends son intervention",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "attends que la barre de soudure refroidisse",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "démonte le carter moi-même, la machine étant arrêtée",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "passe un outil par la fente pour dégager",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique pourquoi le capteur de la porte protège : la machine s'arrête quand on l'ouvre.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Propose de signaler le bourrage répété au régleur pour en chercher la cause.",
+              "repere": "c1_cause"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Non, je ne mets pas d'aimant : on ne neutralise jamais une protection. J'arrête la machine, j'attends l'arrêt complet, puis j'ouvre la porte et je retire les barquettes. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Des barquettes sont coincées à l'entrée de la machine. Un collègue vous propose de poser un aimant sur le capteur de la porte. Que répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un collègue vous donne un conseil pour aller plus vite. Que répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "La machine ne s'arrête pas avec le bouton d'arrêt. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le chef d'équipe vous demande de dégager le bourrage plus vite. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le capteur de la porte arrête la machine quand on l'ouvre.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le chef d'équipe est à l'autre bout de la ligne.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Les barquettes sont coincées à l'entrée de la machine.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le bourrage est dans la zone de soudure.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La consigne interdit de neutraliser une protection.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le régleur est absent aujourd'hui.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je referme la porte, je relance la machine et je regarde si les barquettes passent.",
+                "points": 2,
+                "repere": "c8_securite"
+              },
+              {
+                "id": "b",
+                "texte": "Je referme la porte et je relance la machine, puis je repars sans regarder l'entrée.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je demande à mon collègue de relancer la machine pendant que je regarde l'entrée, porte ouverte.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "d",
+                "texte": "Je relance la machine avant de refermer la porte, pour gagner du temps.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "La réponse respecte la consigne : arrêt, attente de l'arrêt complet, porte ouverte, dégagement. La protection reste en place, car le capteur de la porte garde les mains hors de la machine en marche."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Qui fait quoi face à un bourrage ?",
+          "consigne": "Pour **chaque action**, choisissez : vous la faites, elle est réservée au régleur, ou elle est interdite. Aidez-vous de la **consigne affichée**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je le fais : c'est dans mon rôle"
+            },
+            {
+              "id": "k2",
+              "nom": "Réservé au régleur ou à une personne habilitée"
+            },
+            {
+              "id": "k3",
+              "nom": "Interdit dans tous les cas"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e4",
+              "texte": "Poser un aimant sur le capteur de la porte",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La consigne interdit de neutraliser un capteur ou une protection."
+            },
+            {
+              "id": "e1",
+              "texte": "Appuyer sur le bouton d'arrêt de la machine",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La consigne demande d'arrêter la machine en cas de bourrage."
+            },
+            {
+              "id": "e6",
+              "texte": "Changer un capteur de porte qui ne détecte plus la fermeture",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Réparer ou remplacer un capteur demande une personne habilitée."
+            },
+            {
+              "id": "e8",
+              "texte": "Appeler le régleur pour un bourrage dans la zone de soudure",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Prévenir la bonne personne fait partie du rôle de l'opérateur."
+            },
+            {
+              "id": "e2",
+              "texte": "Retirer une barquette coincée à l'entrée, machine arrêtée et porte ouverte",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La consigne l'autorise à l'opérateur, pour l'entrée de la machine."
+            },
+            {
+              "id": "e5",
+              "texte": "Passer la main dans la machine pendant qu'elle tourne",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La consigne interdit de mettre la main dans la machine en marche."
+            },
+            {
+              "id": "e7",
+              "texte": "Appuyer sur l'arrêt d'urgence quand la machine ne s'arrête pas",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La consigne le prévoit dans ce cas."
+            },
+            {
+              "id": "e3",
+              "texte": "Démonter un carter pour atteindre la zone de soudure",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "La consigne réserve le démontage d'un carter au régleur."
+            }
+          ],
+          "repere_reussite": "c8_role",
+          "repere_echec": "c8_confusion",
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes sur une machine à l'arrêt ou une maquette : la personne montre ce qu'elle fait lors d'un bourrage à l'entrée, d'un arrêt qui ne répond pas et d'un bourrage dans une zone protégée.",
+            "criteres": [
+              {
+                "texte": "Arrête la machine et attend l'arrêt complet avant d'ouvrir",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Refuse de neutraliser un capteur ou une protection, et explique pourquoi",
+                "repere": "c8_pourquoi"
+              },
+              {
+                "texte": "Utilise l'arrêt d'urgence quand l'arrêt normal ne répond pas",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Laisse au régleur ce qui demande de démonter un carter",
+                "repere": "c8_role"
+              }
+            ],
+            "bonus": {
+              "texte": "Signale un bourrage qui se répète au régleur, avec les heures",
+              "repere": "c4_escalade"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que répondez-vous à un collègue qui propose de poser un **aimant sur le capteur** de la porte ?",
+              "justes": [
+                {
+                  "texte": "Non : on ne neutralise jamais une protection.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Non, le capteur protège nos mains : je dégage machine arrêtée.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "Je refuse et je dégage les barquettes avec la machine arrêtée.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je refuse, sans rien ajouter.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "D'accord, juste pour cette fois.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous si la machine **ne s'arrête pas** avec le bouton d'arrêt ?",
+              "justes": [
+                {
+                  "texte": "J'appuie sur l'arrêt d'urgence.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "J'appuie sur l'arrêt d'urgence, puis je préviens le régleur.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "J'arrête tout avec le bouton rouge et je n'ouvre rien avant l'arrêt complet.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'appuie encore sur le bouton d'arrêt.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends qu'elle s'arrête toute seule.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous si le bourrage est dans la **zone de soudure**, derrière un **carter** ?",
+              "justes": [
+                {
+                  "texte": "Je laisse la machine arrêtée et j'appelle le régleur.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je n'y touche pas : le démontage d'un carter est réservé au régleur.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "Je préviens le régleur ou le chef d'équipe et j'attends son intervention.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'attends que la barre de soudure refroidisse, puis je regarde.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je démonte le carter moi-même, machine arrêtée.",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de signaler au régleur que le bourrage revient, avec les heures.",
+              "repere": "c4_escalade"
+            },
+            {
+              "texte": "Explique qu'un capteur de porte coupe la machine quand on l'ouvre, et que l'aimant supprime cette protection.",
+              "repere": "c8_pourquoi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire lire la consigne de sécurité sur la machine, et montrer le bouton d'arrêt, l'arrêt d'urgence et le capteur de la porte.",
+        "Dire clairement ce que l'opérateur fait lui-même et ce qui revient au régleur, avec le nom de la personne à appeler sur chaque ligne."
+      ]
+    },
+    {
+      "code": "C5",
+      "titre": "Appliquer une nouvelle consigne au changement de série",
+      "pourquoi": "À chaque changement de série, les limites, le film et les contrôles changent : appliquer l'ancienne habitude fabrique des produits non conformes.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un changement de série à 11 h 15",
+        "texte": "Vendredi, 11 h 15, poste du matin. La ligne passe des lasagnes bolognaise aux lasagnes aux légumes. Le chef d'équipe vous remet la fiche de série (voir le tableau) et vous dit : « Plusieurs points changent par rapport à ce matin. » Sur la machine, une ancienne affichette indique encore « contrôle toutes les 30 minutes ». Un collègue de votre équipe vous dit : « On a toujours fait comme ça, ne change rien. »",
+        "document": {
+          "type": "tableau",
+          "titre": "Fiche de série : changement de 11 h 15",
+          "colonnes": [
+            "Point",
+            "Série qui se termine",
+            "Nouvelle série"
+          ],
+          "lignes": [
+            [
+              "Produit",
+              "Lasagnes bolognaise, 400 g",
+              "Lasagnes aux légumes, 350 g"
+            ],
+            [
+              "Poids net accepté",
+              "390 g à 410 g",
+              "340 g à 360 g"
+            ],
+            [
+              "Film à poser",
+              "Rouleau « bolognaise »",
+              "Rouleau « légumes »"
+            ],
+            [
+              "Lot à imprimer",
+              "L2846",
+              "L2852"
+            ],
+            [
+              "Contrôle de la ligne",
+              "Toutes les 30 minutes",
+              "Toutes les 20 minutes"
+            ],
+            [
+              "Avant le démarrage",
+              "Sans objet",
+              "Retirer de la ligne toutes les barquettes et le film de l'ancienne série"
+            ],
+            [
+              "Premières barquettes",
+              "Contrôle par l'opérateur",
+              "Contrôle par l'opérateur, puis validation du chef d'équipe avant la mise en carton"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "L'affichette dit un contrôle toutes les **30 minutes**, la fiche de série toutes les **20 minutes**. **Quelle consigne** appliquez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Celle de l'affichette, car elle est collée sur la machine.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "b",
+                  "texte": "Celle de la fiche de série : un contrôle toutes les 20 minutes.",
+                  "points": 2,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande d'abord au chef d'équipe laquelle est la bonne, puis je contrôle.",
+                  "points": 1,
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Un contrôle toutes les 25 minutes, entre les deux.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                }
+              ],
+              "explication": "La fiche de série remise par le chef d'équipe est la consigne de cette série : toutes les 20 minutes. L'affichette est l'ancienne. Demander confirmation est possible, mais la fiche répond déjà à la question.",
+              "relance": "Quand deux consignes se contredisent, comment savez-vous laquelle suivre ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Quelle plage de **poids** contrôlez-vous pour la **nouvelle série** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "De 390 g à 410 g, comme ce matin.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "b",
+                  "texte": "Autour de 350 g : les barquettes doivent peser à peu près 350 g.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "De 340 g à 410 g, pour couvrir les deux séries.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                },
+                {
+                  "id": "d",
+                  "texte": "De 340 g à 360 g, comme l'indique la fiche de série.",
+                  "points": 2,
+                  "repere": "c5_applique"
+                }
+              ],
+              "explication": "La fiche donne une plage, de 340 g à 360 g : ce sont les limites à contrôler. « Autour de 350 g » est proche, mais ne permet pas de décider pour une barquette à 338 g ou à 362 g.",
+              "relance": "Où trouvez-vous les limites à contrôler quand le produit change ?"
+            },
+            {
+              "id": "q3",
+              "texte": "**Avant de lancer** la nouvelle série, que faites-vous de la ligne ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je laisse les barquettes bolognaise qui restent : elles seront mises en carton avec le reste.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lance la nouvelle série et je retire les barquettes bolognaise qui sortent en premier.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je retire toutes les barquettes et le film de l'ancienne série, comme la fiche le demande.",
+                  "points": 2,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je retire toutes les barquettes de l'ancienne série, et je m'occupe du film plus tard.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "La fiche demande de retirer de la ligne, avant le démarrage, toutes les barquettes et le film de l'ancienne série : sinon ils peuvent se mélanger à la nouvelle série. Remettre le film à plus tard risque de le faire oublier.",
+              "relance": "Que faites-vous de l'ancienne série quand vous changez de produit ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Les premières barquettes de la nouvelle série sortent. Que faites-vous **avant la mise en carton** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je les contrôle, puis je les montre au chef d'équipe pour validation.",
+                  "points": 2,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je les contrôle avec la fiche de série et je les mets en carton.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je les mets en carton : le chef d'équipe passera plus tard.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je les montre au chef d'équipe, sans les contrôler moi-même.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "La fiche demande deux étapes : votre contrôle, puis la validation du chef d'équipe avant la mise en carton. Une seule des deux étapes ne suffit pas.",
+              "relance": "Qui doit valider les premières barquettes d'une nouvelle série ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Votre collègue vous dit : « On a toujours fait comme ça, **ne change rien**. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je fais comme mon collègue : l'ancienne méthode marche depuis longtemps.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'applique la fiche et je préviens le chef d'équipe que l'ancienne affichette est encore là.",
+                  "points": 2,
+                  "repere": "c5_ameliore"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'applique la fiche de série, mais je laisse l'ancienne affichette en place sans rien dire.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "J'attends que le chef d'équipe revienne avant d'appliquer la nouvelle fiche.",
+                  "points": 0,
+                  "repere": "c5_attend"
+                }
+              ],
+              "explication": "La fiche remplace l'ancienne consigne. Prévenir le chef d'équipe permet de retirer l'affichette et d'éviter que le prochain opérateur se trompe. Appliquer la fiche sans rien dire règle seulement votre poste.",
+              "relance": "Que faites-vous quand un collègue vous conseille de garder l'ancienne façon de faire ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour le contrôle de la **nouvelle série**, j'applique…",
+              "justes": [
+                {
+                  "texte": "la fiche de série remise par le chef d'équipe",
+                  "repere": "c5_source"
+                },
+                {
+                  "texte": "la fréquence de la fiche : un contrôle toutes les 20 minutes",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "la nouvelle plage de poids, de 340 g à 360 g",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "la fiche de série, pas l'ancienne affichette",
+                  "repere": "c5_source"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "un contrôle plus souvent que ce matin",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'affichette, parce qu'elle est collée sur la machine",
+                  "repere": "c5_habitude"
+                },
+                {
+                  "texte": "ce qui me semble le plus logique",
+                  "repere": "c5_devine"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "**Avant** de lancer les premières barquettes, je…",
+              "justes": [
+                {
+                  "texte": "retire de la ligne les barquettes et le film de l'ancienne série",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "vide toute la ligne, mise en carton comprise, puis je pose le film « légumes »",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "vérifie le film posé et le lot à imprimer avec la fiche",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "relis la fiche de série ligne par ligne",
+                  "repere": "c5_source"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "pose le nouveau film",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lance la série et je retire les barquettes bolognaise au fur et à mesure",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "laisse les barquettes bolognaise restantes sur la ligne",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si mon collègue me dit de **ne rien changer**, je…",
+              "justes": [
+                {
+                  "texte": "lui montre la fiche de série et j'applique la nouvelle consigne",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "dis au chef d'équipe que l'ancienne affichette est encore sur la machine",
+                  "repere": "c5_ameliore"
+                },
+                {
+                  "texte": "applique la fiche et je demande qu'on retire l'affichette",
+                  "repere": "c5_ameliore"
+                },
+                {
+                  "texte": "demande au chef d'équipe si j'ai un doute sur un point de la fiche",
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "applique la fiche, sans rien dire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "fais comme lui, c'est plus simple",
+                  "repere": "c5_habitude"
+                },
+                {
+                  "texte": "attends sans rien faire que quelqu'un décide",
+                  "repere": "c5_attend"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de remplacer l'ancienne affichette par la nouvelle consigne.",
+              "repere": "c5_ameliore"
+            },
+            {
+              "texte": "Fait la liste de ce qui change entre les deux séries avant de démarrer.",
+              "repere": "c5_applique"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je suis la fiche de série : un contrôle toutes les 20 minutes. L'affichette de 30 minutes est l'ancienne. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le chef d'équipe vous demande si la ligne est prête à démarrer. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le chef d'équipe vous remet une fiche de série. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un contrôle montre une barquette hors des limites de poids. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "L'affichette indique un contrôle toutes les 30 minutes, la fiche de série toutes les 20 minutes, et un collègue dit de ne rien changer. Que faites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La fiche de série demande un contrôle toutes les 20 minutes.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La série précédente était des lasagnes bolognaise.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "L'affichette sur la machine indique encore 30 minutes.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le chef d'équipe n'a pas encore remis de fiche.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le chef d'équipe a remis la fiche de la nouvelle série.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le régleur a demandé de garder l'ancien contrôle.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'attends 30 minutes avant le premier contrôle, comme ce matin.",
+                "points": 0,
+                "repere": "c5_habitude"
+              },
+              {
+                "id": "b",
+                "texte": "Je continue de suivre la fiche et je ne dis rien de l'affichette.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je préviens le chef d'équipe que l'ancienne affichette est encore sur la machine.",
+                "points": 2,
+                "repere": "c5_ameliore"
+              },
+              {
+                "id": "d",
+                "texte": "Je mets les premières barquettes en carton sans les montrer au chef d'équipe.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              }
+            ]
+          },
+          "explication": "La fiche de série remise par le chef d'équipe est la consigne à suivre : la réponse l'applique et laisse l'ancienne affichette de côté. Il reste à prévenir le chef d'équipe, pour que la bonne consigne soit affichée."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La liste de démarrage de la nouvelle série",
+          "consigne": "Voici la liste de démarrage préparée par un collègue. Comparez-la avec la **fiche de série** et cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Produit : lasagnes aux légumes, 350 g",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Poids net accepté : de 340 g à 360 g",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Film à poser : rouleau « bolognaise »",
+              "erreur": true,
+              "explication": "La fiche demande le rouleau « légumes » pour la nouvelle série."
+            },
+            {
+              "id": "e4",
+              "texte": "Lot à imprimer : L2852",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Contrôle de la ligne : toutes les 30 minutes",
+              "erreur": true,
+              "explication": "La fiche demande un contrôle toutes les 20 minutes."
+            },
+            {
+              "id": "e6",
+              "texte": "Ligne vidée de toutes les barquettes et du film bolognaise",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Premières barquettes : mises en carton après mon contrôle",
+              "erreur": true,
+              "explication": "La fiche demande aussi la validation du chef d'équipe avant la mise en carton."
+            },
+            {
+              "id": "e8",
+              "texte": "Premier contrôle : fait par l'opérateur",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c5_applique",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes : la personne reçoit la fiche d'une nouvelle série et un poste encore préparé pour l'ancienne. Elle prépare le démarrage de la nouvelle série.",
+            "criteres": [
+              {
+                "texte": "Lit la fiche de série en entier avant d'agir",
+                "repere": "c5_source"
+              },
+              {
+                "texte": "Remplace le film et le lot, et retire les produits de l'ancienne série",
+                "repere": "c5_applique"
+              },
+              {
+                "texte": "Applique la nouvelle fréquence de contrôle et la nouvelle plage de poids",
+                "repere": "c5_applique"
+              },
+              {
+                "texte": "Pose une question quand un point de la fiche n'est pas clair",
+                "repere": "c5_clarifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Signale qu'une ancienne consigne est encore affichée",
+              "repere": "c5_ameliore"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Quelle consigne** appliquez-vous pour **le contrôle** : la fiche de série ou l'affichette ?",
+              "justes": [
+                {
+                  "texte": "La fiche de série remise par le chef d'équipe.",
+                  "repere": "c5_source"
+                },
+                {
+                  "texte": "La fiche de série : un contrôle toutes les 20 minutes.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "La fiche, car c'est la consigne de la nouvelle série ; l'affichette est l'ancienne.",
+                  "repere": "c5_applique"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Les deux, pour être sûr.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "L'affichette, parce qu'elle est sur la machine.",
+                  "repere": "c5_habitude"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous de la ligne **avant de lancer** la nouvelle série ?",
+              "justes": [
+                {
+                  "texte": "Je retire toutes les barquettes bolognaise et l'ancien film.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Je vide la ligne de l'ancienne série, comme la fiche le demande.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Je vide la ligne, je pose le film « légumes » et je vérifie le lot.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je pose le nouveau film.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lance la série et je retire les anciennes barquettes au fur et à mesure.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que dites-vous à votre collègue qui veut **tout laisser comme avant** ?",
+              "justes": [
+                {
+                  "texte": "Je lui montre la fiche de série et j'applique la nouvelle consigne.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Je lui explique que la fiche remplace l'ancienne consigne.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Je préviens le chef d'équipe que l'affichette est encore sur la machine.",
+                  "repere": "c5_ameliore"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Rien : j'applique la fiche de mon côté.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "D'accord, on fait comme avant.",
+                  "repere": "c5_habitude"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de remplacer l'ancienne affichette par la nouvelle consigne.",
+              "repere": "c5_ameliore"
+            },
+            {
+              "texte": "Propose de noter ce qui change sur la fiche de la ligne, pour l'équipe suivante.",
+              "repere": "c3_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre la fiche de série en main propre et la lire ensemble : ce qui change, ce qui reste pareil.",
+        "Retirer les anciennes affichettes dès qu'une consigne change, et dire à qui poser une question quand un point n'est pas clair."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Transmettre clairement le poste à l'équipe suivante",
+      "pourquoi": "À la relève, ce que vous oubliez de dire devient un problème pour l'équipe suivante : produit isolé, film presque fini, contrôle à faire.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "La relève de 13 h",
+        "texte": "Lundi, 12 h 40. Votre poste du matin se termine à 13 h. La personne de l'équipe de l'après-midi prend la ligne à 13 h. La liste donne ce qui s'est passé pendant votre poste. La fiche de poste demande d'écrire la fiche de relève et de laisser le poste propre et rangé avant de partir.",
+        "document": {
+          "type": "liste",
+          "titre": "Votre poste du matin, en bref",
+          "items": [
+            "Lot en cours : L2863, lasagnes bolognaise, barquettes de 400 g.",
+            "9 h 10 : bourrage à l'entrée de l'operculeuse, la machine qui soude le film. Ligne arrêtée 15 minutes, puis relancée.",
+            "11 h 30 : film mal soudé constaté à l'autocontrôle. Ligne arrêtée. 2 bacs de barquettes mis de côté dans la zone « non conforme ».",
+            "Le chef d'équipe n'a pas encore décidé de ce que deviennent ces 2 bacs.",
+            "12 h 30 : dernier autocontrôle (un contrôle toutes les 30 minutes), conforme.",
+            "Le rouleau de film en place est presque fini : il reste environ 20 minutes de production.",
+            "Votre poste n'est pas encore nettoyé ni rangé."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "La personne de l'après-midi arrive. Que lui dites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Il reste environ 20 minutes de film, et 2 bacs sont isolés en attendant le chef d'équipe.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le lot en cours est le L2863, puis tout ce qui s'est passé depuis 5 h, dans l'ordre.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "La matinée s'est bien passée, il y a eu deux petits soucis.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : tout est sur la fiche de relève, elle la lira.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Ce qui demande une action dans les prochaines minutes passe en premier : le film bientôt fini et les bacs isolés. Tout raconter dans l'ordre donne les faits, mais l'urgent arrive en dernier.",
+              "relance": "Quelle information donnez-vous en premier à la personne qui prend votre poste ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Que notez-vous** sur la fiche de relève à propos des **2 bacs** « non conformes » ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : le chef d'équipe connaît déjà l'histoire de ces bacs et c'est lui qui décidera.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "« 2 bacs mis de côté, à surveiller. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le motif, l'heure (11 h 30), le lot L2863 et la décision attendue du chef d'équipe.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que les 2 bacs sont à jeter, puisque le film était mal soudé.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Une bonne note dit quoi, quand, quel lot et quelle suite. « 2 bacs mis de côté » ne dit ni pourquoi ni qui décide. Écrire « à jeter » serait faux : rien n'est décidé.",
+              "relance": "Que doit contenir une note de relève sur un produit mis de côté ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La personne de l'après-midi hoche la tête pendant que vous expliquez. **Comment savez-vous** qu'elle a compris ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Elle hoche la tête : c'est qu'elle a compris.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande de me redire les deux points importants.",
+                  "points": 2,
+                  "repere": "c3_verifie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande si elle a des questions.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne vérifie pas : c'est à elle de dire si elle n'a pas compris.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Un hochement de tête ne prouve pas la compréhension. Demander de redire les points importants le vérifie. Demander « des questions ? » est utile, mais une personne peut répondre non sans avoir tout compris.",
+              "relance": "Comment vérifiez-vous qu'une personne a compris ce que vous lui transmettez ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Il est 12 h 45 et votre poste **n'est pas nettoyé ni rangé**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le laisse tel quel : l'équipe de l'après-midi le rangera à sa façon.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le range, mais je laisse le nettoyage à l'équipe suivante.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le nettoie après la relève, une fois que la personne a commencé.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le nettoie et je le range avant 13 h, comme la fiche de poste le demande.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                }
+              ],
+              "explication": "La fiche de poste demande un poste propre et rangé avant la relève : l'équipe suivante démarre sans perdre de temps. Laisser le nettoyage à l'équipe suivante reporte le travail sur elle.",
+              "relance": "Dans quel état laissez-vous votre poste à l'équipe suivante ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La personne de l'après-midi demande **ce que deviennent** les **2 bacs** isolés. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Qu'ils sont à jeter, car le film était mal soudé.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que le chef d'équipe n'a pas encore décidé : ils restent isolés jusqu'à sa décision.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que le chef d'équipe n'a pas encore décidé, et qu'elle doit lui demander la suite.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Qu'ils peuvent repartir en production après un nouveau contrôle.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "L'information exacte est : pas de décision, produit isolé jusqu'à ce que le chef d'équipe décide. Renvoyer vers le chef d'équipe est exact, mais ne dit pas de laisser les bacs isolés.",
+              "relance": "Que faites-vous du produit isolé tant qu'aucune décision n'est prise ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "À la personne qui prend la ligne, je **dis d'abord**…",
+              "justes": [
+                {
+                  "texte": "qu'il reste environ 20 minutes de film et que 2 bacs sont isolés",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "ce qui est urgent : le film bientôt fini et les bacs en attente de décision",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "les deux points à surveiller en premier, puis le reste de la matinée",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "ce qu'elle doit faire dans les prochaines minutes",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le numéro du lot en cours",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que tout s'est bien passé",
+                  "repere": "c3_flou"
+                },
+                {
+                  "texte": "rien : elle lira la fiche",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Sur la fiche de relève, pour les **2 bacs**, j'écris…",
+              "justes": [
+                {
+                  "texte": "le motif, l'heure, le lot et le fait qu'ils attendent la décision du chef d'équipe",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "film mal soudé à 11 h 30, lot L2863, 2 bacs en attente de décision",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "où ils sont, pourquoi ils sont là et qui doit décider",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "que personne n'a encore décidé de leur sort",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "« 2 bacs mis de côté »",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "qu'ils sont à jeter",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "rien : le chef d'équipe est au courant",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Avant de partir, je **vérifie** que la personne **a compris** en…",
+              "justes": [
+                {
+                  "texte": "lui demandant de redire les points importants",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "lui montrant les bacs isolés et le rouleau de film",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "relisant la fiche avec elle et en répondant à ses questions",
+                  "repere": "c3_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui demandant si elle a des questions",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "partant dès que j'ai fini de parler",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "considérant qu'elle a compris si elle hoche la tête",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Écrit sur la fiche l'heure du prochain autocontrôle et ce qu'il reste de film.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Montre à la personne où se trouve le rouleau de film neuf.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Il reste environ 20 minutes de film. Deux bacs sont isolés depuis 11 h 30 : film mal soudé. Le chef d'équipe n'a pas encore décidé de leur sort. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "La personne de l'après-midi vous demande quel est le lot en cours. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Il est 13 h. Le rouleau de film est presque fini et deux bacs sont isolés en attendant le chef d'équipe. Que dites-vous à la personne qui prend la ligne ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Le chef d'équipe vous demande si le dernier autocontrôle était conforme. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Il est 13 h. Que dites-vous à la personne qui prend la ligne ?",
+                "points": 1
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le rouleau de film est presque fini.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le lot en cours est le L2863.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Deux bacs sont isolés depuis 11 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La ligne a été arrêtée 15 minutes à 9 h 10.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le chef d'équipe n'a pas encore décidé du sort des bacs.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le dernier autocontrôle n'était pas conforme.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je pars : j'ai tout dit.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "b",
+                "texte": "Je lui montre le rouleau et les bacs, puis je lui demande de redire les deux points.",
+                "points": 2,
+                "repere": "c3_verifie"
+              },
+              {
+                "id": "c",
+                "texte": "Je lui demande si elle a des questions.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je pars en pause et je la laisse lire la fiche.",
+                "points": 0,
+                "repere": "c3_oubli"
+              }
+            ]
+          },
+          "explication": "La réponse donne d'abord ce qui demande une action : le film bientôt fini et les bacs isolés, avec l'heure et l'état de la décision. Le reste de la matinée est sur la fiche de relève."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le brouillon de la fiche de relève",
+          "consigne": "Voici le brouillon de fiche de relève écrit par un collègue de votre équipe. Comparez-le avec la **liste de votre poste** et cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Lot en cours : L2863, lasagnes bolognaise, 400 g",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "9 h 10 : bourrage à l'entrée de l'operculeuse, ligne arrêtée 15 minutes",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "11 h 30 : film mal soudé, ligne arrêtée, 3 bacs mis de côté",
+              "erreur": true,
+              "explication": "La liste indique 2 bacs mis de côté, pas 3."
+            },
+            {
+              "id": "e4",
+              "texte": "Les bacs mis de côté attendent la décision du chef d'équipe",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Dernier autocontrôle : 12 h 00, conforme",
+              "erreur": true,
+              "explication": "Le dernier autocontrôle date de 12 h 30."
+            },
+            {
+              "id": "e6",
+              "texte": "Rouleau de film : neuf, posé ce matin",
+              "erreur": true,
+              "explication": "Le rouleau est presque fini : il reste environ 20 minutes de production."
+            },
+            {
+              "id": "e7",
+              "texte": "Prochain autocontrôle : 13 h 00",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "Équipe de l'après-midi : prend la ligne à 13 h",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c3_trace",
+          "repere_echec": "c3_faux",
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes : la personne reçoit la liste des événements d'un poste (arrêts, produit isolé, film presque fini), écrit une fiche de relève, puis transmet à voix haute à une personne qui joue l'équipe suivante.",
+            "criteres": [
+              {
+                "texte": "Écrit des faits exacts : heures, lot, quantités",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Dit d'abord ce qui demande une action : le film, le produit isolé",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Note le produit isolé avec le motif et l'état de la décision",
+                "repere": "c3_trace"
+              },
+              {
+                "texte": "Vérifie que l'autre personne a compris",
+                "repere": "c3_verifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Laisse le poste propre et rangé avant la relève",
+              "repere": "c6_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que dites-vous **en premier** à la personne qui prend la ligne ?",
+              "justes": [
+                {
+                  "texte": "Qu'il reste environ 20 minutes de film et que 2 bacs sont isolés.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Ce qui est urgent : le film bientôt fini et les bacs en attente de décision.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Les deux points à surveiller, puis le reste de la matinée.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le numéro du lot en cours.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que tout s'est bien passé.",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que notez-vous** sur la fiche de relève à propos des **2 bacs** isolés ?",
+              "justes": [
+                {
+                  "texte": "Le motif, l'heure, le lot et le fait qu'ils attendent la décision du chef d'équipe.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Film mal soudé à 11 h 30, lot L2863, 2 bacs en attente de décision.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Où ils sont, pourquoi ils sont là et qui doit décider.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Deux bacs mis de côté.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Qu'ils sont à jeter.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment vérifiez-vous** que la personne a compris ?",
+              "justes": [
+                {
+                  "texte": "Je lui demande de redire les points importants.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "Je lui montre les bacs et le rouleau, et elle me dit ce qu'elle va faire.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "Je relis la fiche avec elle et je réponds à ses questions.",
+                  "repere": "c3_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui demande si elle a des questions.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je pars dès que j'ai fini de parler.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Laisse le poste propre et rangé avant la relève, comme la fiche de poste le demande.",
+              "repere": "c6_regle"
+            },
+            {
+              "texte": "Indique l'heure du prochain autocontrôle.",
+              "repere": "c3_suite"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer un exemple de fiche de relève bien remplie, et prévoir quelques minutes de présence commune avec la personne qui part.",
+        "Convenir de ce qu'on dit à voix haute en premier (l'urgent), puis le reste, et demander de redire les points importants."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez trouvé **un défaut** sur un produit **avant qu'il ne parte**. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous fait du produit ?",
+        "Qui avez-vous prévenu, et comment ?"
+      ],
+      "attendus": [
+        "Décrit un défaut précis et comment il a été repéré",
+        "Dit ce qui a été arrêté ou mis de côté",
+        "Dit qui a été prévenu et ce qui a été noté"
+      ],
+      "relance": "Comment avez-vous décidé de ce qu'il fallait mettre de côté ?",
+      "alternative": "Si vous n'avez jamais travaillé en production : parlez d'un défaut repéré dans un travail (atelier, cuisine, bricolage, association) et de ce que vous avez fait."
+    },
+    {
+      "id": "e2",
+      "competence": "C6",
+      "texte": "Vous contrôlez 3 produits avec la **fiche de poste**. Un des trois est **hors des limites**. Que faites-vous ?",
+      "suite": [
+        "Que faites-vous de la production déjà sortie ?"
+      ],
+      "attendus": [
+        "Arrête ou bloque la production concernée",
+        "Met de côté ce qui est sorti depuis le dernier bon contrôle",
+        "Prévient le responsable et note l'écart, avec l'heure et le lot"
+      ],
+      "relance": "Que dites-vous au chef d'équipe, en deux phrases ?",
+      "alternative": "Vous contrôlez des objets avec une liste de critères (par exemple des gâteaux pour un événement). L'un d'eux ne correspond pas. Que faites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez respecté une **règle de sécurité** alors que vous **étiez pressé**. Que s'était-il passé ?",
+      "suite": [
+        "Que vous disait-on à ce moment-là ?",
+        "Qu'avez-vous répondu ?"
+      ],
+      "attendus": [
+        "Cite une règle précise (arrêt, protection, équipement)",
+        "Dit ce qu'il a fait malgré la pression",
+        "Explique pourquoi cette règle compte"
+      ],
+      "relance": "Qu'est-ce qui aurait pu arriver si vous aviez fait autrement ?",
+      "alternative": "Si vous n'avez jamais travaillé sur une machine : parlez d'une règle de sécurité respectée (bricolage, cuisine, route, sport) alors que c'était plus long."
+    },
+    {
+      "id": "e4",
+      "competence": "C8",
+      "texte": "Une machine se bloque en pleine production. Que faites-vous **en premier** ?",
+      "suite": [
+        "Que faites-vous si le blocage demande de démonter une protection ?",
+        "Qui appelez-vous, et que lui dites-vous ?"
+      ],
+      "attendus": [
+        "Arrête la machine et attend l'arrêt complet",
+        "Ne neutralise aucune protection et ne met pas la main dans la machine en marche",
+        "Appelle la personne habilitée quand c'est hors de son rôle"
+      ],
+      "relance": "Dans quel cas utilisez-vous l'arrêt d'urgence ?",
+      "alternative": "Un appareil que vous utilisez se bloque (robot de cuisine, imprimante, perceuse). Que faites-vous en premier ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C5",
+      "texte": "Parlez d'une fois où une consigne ou une méthode **a changé** à votre poste. **Comment l'avez-vous appliquée** ?",
+      "suite": [
+        "Comment avez-vous su ce qui changeait ?",
+        "Qu'est-ce qui a été difficile ?"
+      ],
+      "attendus": [
+        "Décrit précisément ce qui a changé",
+        "Dit où il a trouvé l'information (fiche, responsable, collègue)",
+        "Dit comment il a vérifié qu'il appliquait la nouvelle façon"
+      ],
+      "relance": "Qu'avez-vous fait quand l'ancienne habitude revenait ?",
+      "alternative": "Si vous n'avez jamais eu de changement de consigne au travail : parlez d'une nouvelle règle ou d'un nouvel outil appris (études, association, vie quotidienne)."
+    },
+    {
+      "id": "e6",
+      "competence": "C5",
+      "texte": "Une nouvelle fiche **dit autre chose** que l'affichette collée sur votre machine. Que faites-vous ?",
+      "suite": [
+        "Que dites-vous à un collègue qui préfère l'ancienne façon de faire ?"
+      ],
+      "attendus": [
+        "Suit la consigne la plus récente, donnée par le responsable",
+        "Prévient le responsable que l'ancienne consigne est encore affichée",
+        "Pose une question si un point n'est pas clair"
+      ],
+      "relance": "Comment savez-vous quelle consigne est la plus récente ?",
+      "alternative": "Deux modes d'emploi se contredisent (par exemple un appareil neuf et son ancienne notice). Que faites-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez **passé votre poste** ou une tâche à quelqu'un d'autre. **Qu'avez-vous transmis** ?",
+      "suite": [
+        "Qu'avez-vous dit en premier ?",
+        "Comment avez-vous vérifié que la personne avait compris ?"
+      ],
+      "attendus": [
+        "Dit d'abord ce qui est urgent ou important",
+        "Donne des faits précis : heures, quantités, noms",
+        "Vérifie que l'autre a compris ou laisse une trace écrite"
+      ],
+      "relance": "Avez-vous écrit quelque chose ? Quoi ?",
+      "alternative": "Si vous n'avez jamais passé un poste : parlez d'une tâche passée à quelqu'un (association, stage, vie quotidienne) et de ce que vous lui avez expliqué."
+    },
+    {
+      "id": "e8",
+      "competence": "C3",
+      "texte": "Vous finissez votre poste dans **dix minutes** et du produit est isolé en attendant une décision. Que mettez-vous sur la **fiche de relève** ?",
+      "suite": [
+        "Que dites-vous à l'oral à la personne qui vous remplace ?"
+      ],
+      "attendus": [
+        "Écrit le motif, l'heure, le lot et la quantité",
+        "Écrit que la décision n'est pas prise et qui doit la prendre",
+        "Dit d'abord à l'oral ce qui est urgent"
+      ],
+      "relance": "Que faites-vous de votre poste avant de partir ?",
+      "alternative": "Vous laissez une tâche inachevée à quelqu'un qui arrive après vous (par exemple une salle à finir de ranger). Que lui écrivez-vous, et que lui dites-vous ?"
+    }
+  ],
+  "_pv": "324219cddf"
+}

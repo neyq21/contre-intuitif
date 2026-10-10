@@ -1,0 +1,2620 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "gestionnaire-paie",
+  "version": "2026.10",
+  "nom": "Gestionnaire de paie",
+  "secteur": "bureau",
+  "alias": [
+    "gestionnaire de paie",
+    "gestionnaire paie",
+    "technicien de paie",
+    "assistant paie",
+    "chargé de paie",
+    "responsable paie junior",
+    "paie et administration du personnel"
+  ],
+  "resume": "Prépare et contrôle la paie du mois, tient le calendrier avec les managers et répond aux questions des salariés sur leur bulletin.",
+  "contexte": "Le service RH d'une entreprise de 150 salariés, où la paie est préparée chaque mois en interne par une petite équipe.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C6",
+      "titre": "Contrôler les bulletins avant de les valider",
+      "pourquoi": "Un bulletin faux est payé le jour du virement : le contrôle est la dernière occasion de corriger avant que l'argent parte.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Des bulletins qui ne ressemblent pas à ceux du mois dernier",
+        "texte": "Vendredi 23, 14 h. Vous contrôlez les bulletins du mois avant la validation de lundi. Votre méthode : comparer le brut de ce mois avec celui du mois dernier, puis avec les éléments reçus (voir le tableau). Un écart que les éléments reçus n'expliquent pas doit être vérifié avant la validation. Vous avez saisi vous-même les éléments du mois.",
+        "document": {
+          "type": "tableau",
+          "titre": "Éléments reçus et validés ce mois-ci",
+          "colonnes": [
+            "N° du salarié",
+            "Élément reçu",
+            "Détail"
+          ],
+          "lignes": [
+            [
+              "014",
+              "Absence non rémunérée",
+              "3 jours"
+            ],
+            [
+              "027",
+              "Heures supplémentaires",
+              "6 heures"
+            ],
+            [
+              "038",
+              "Prime exceptionnelle",
+              "300 €"
+            ],
+            [
+              "052",
+              "Entrée dans l'entreprise",
+              "le 16 du mois"
+            ],
+            [
+              "054",
+              "Prime exceptionnelle",
+              "1 350 €"
+            ],
+            [
+              "063",
+              "Sortie de l'entreprise",
+              "le 10 du mois"
+            ],
+            [
+              "Tous les autres",
+              "Aucun élément reçu",
+              "—"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Par quoi** commencez-vous votre contrôle des bulletins ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je regarde le total de la paie : s'il me semble normal, mon contrôle est terminé.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je contrôle seulement les bulletins des deux salariés entrés ou sortis ce mois-ci.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je compare chaque bulletin avec celui du mois dernier et avec les éléments reçus.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je relis les bulletins un par un, dans l'ordre des numéros, sans rien comparer.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Comparer avec le mois dernier fait apparaître les écarts ; comparer avec les éléments reçus dit s'ils sont expliqués. Ne contrôler que les entrées et sorties laisse passer les erreurs ailleurs.",
+              "relance": "Comment trouvez-vous une erreur dans un bulletin qui a l'air normal ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Les éléments reçus donnent 3 jours d'**absence non rémunérée** au salarié N° 014. Pourtant, son **brut est le même** que le mois dernier. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je cherche pourquoi l'absence n'est pas sur son bulletin, je la corrige et je recalcule.",
+                  "points": 2,
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse le bulletin tel quel : l'écart se verra le mois prochain.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je retire trois jours de salaire à la main sur le bulletin, pour aller plus vite.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande à son manager de confirmer que l'absence a bien eu lieu.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "L'absence est déjà reçue et validée : on cherche pourquoi elle n'est pas sur le bulletin, on la corrige dans la saisie et on recalcule. Redemander au manager est possible, mais l'information est déjà là.",
+              "relance": "Que faites-vous quand un élément reçu n'apparaît pas sur le bulletin ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le salarié N° 045 a un brut de 3 650 €, contre 2 300 € le mois dernier, **sans aucun élément reçu**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je remets 2 300 € à la main, comme le mois dernier.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je valide : son manager a sûrement décidé une augmentation.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à son manager s'il a décidé une augmentation.",
+                  "points": 1,
+                  "repere": "c1_aide"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je cherche d'où vient la différence dans les lignes de son bulletin et dans ma saisie.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                }
+              ],
+              "explication": "Un écart sans élément reçu a une cause : on la cherche d'abord dans les lignes du bulletin et dans la saisie. Demander au manager ne remplace pas cette recherche, et remettre l'ancien montant à la main cache l'écart sans le comprendre.",
+              "relance": "Comment cherchez-vous la cause d'un écart que rien n'explique ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous trouvez la cause. Vous avez saisi sur le **N° 045** la prime de 1 350 € validée pour le **N° 054**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je corrige les deux bulletins et je recalcule.",
+                  "points": 1,
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je corrige les deux bulletins, je recalcule et je note l'erreur et sa correction.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je corrige les deux bulletins et je ne le dis à personne, pour ne pas être mal vu.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse tel quel et je corrigerai le mois prochain.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Les deux bulletins sont faux : l'un paie trop, l'autre pas assez. On corrige les deux, on recalcule et on note l'erreur, pour la retrouver et éviter qu'elle revienne.",
+              "relance": "Que faites-vous quand vous découvrez une erreur dans votre propre saisie ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le responsable RH propose de valider la paie **dès ce soir**, pour prendre de l'avance. Il reste **12 bulletins non contrôlés**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis que 12 bulletins ne sont pas contrôlés : je finis lundi matin et il valide ensuite.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le laisse valider les bulletins déjà contrôlés et je mets les 12 autres de côté.",
+                  "points": 1,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le laisse valider tout ce soir : les erreurs éventuelles seront corrigées le mois prochain.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je contrôle les 12 bulletins en regardant seulement le net à payer.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Valider sans contrôler fait partir les erreurs avec les salaires. Annoncer ce qui reste à contrôler et valider après tient le calendrier ; laisser valider le contrôlé est acceptable, mais il faut dire quand le reste sera prêt.",
+              "relance": "Que répondez-vous quand on veut valider la paie avant la fin de votre contrôle ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour contrôler les bulletins du mois, **je compare**…",
+              "justes": [
+                {
+                  "texte": "chaque bulletin avec celui du mois dernier, puis les écarts avec les éléments reçus",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "le brut de ce mois avec celui du mois dernier et je cherche les écarts non expliqués",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "les bulletins avec la liste des éléments reçus : absences, heures, primes, entrées et sorties",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le total de la paie avec celui du mois dernier",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : le logiciel calcule, donc les bulletins sont justes",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "seulement les bulletins des salariés qui m'ont écrit",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Quand un écart **n'est pas expliqué** par un élément reçu, je…",
+              "justes": [
+                {
+                  "texte": "cherche la cause dans les lignes du bulletin et dans ce que j'ai saisi",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "vérifie ma saisie, je corrige à la source et je recalcule le bulletin",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "ne valide pas ce bulletin avant d'avoir compris l'écart",
+                  "repere": "c6_bloque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "demande au manager si tout est normal",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "remets à la main le montant du mois dernier",
+                  "repere": "c1_symptome"
+                },
+                {
+                  "texte": "valide : c'est sûrement une augmentation",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand je trouve une erreur venant de **ma propre saisie**, je…",
+              "justes": [
+                {
+                  "texte": "la corrige, je recalcule les bulletins touchés et je note ce qui s'est passé",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "préviens le responsable RH et je lui dis ce que j'ai corrigé",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "cherche si la même erreur existe sur d'autres bulletins",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "propose une vérification supplémentaire des primes le mois suivant",
+                  "repere": "c6_recidive"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la corrige tout de suite",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la corrige sans le dire à personne",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "attends que quelqu'un la remarque",
+                  "repere": "c6_laisse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de faire relire par un collègue les primes d'un montant important avant le calcul.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Propose de tenir une liste de contrôle écrite, avec les écarts trouvés chaque mois.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« J'ai trouvé l'erreur : la prime du N° 054 était saisie sur le N° 045. J'ai corrigé les deux bulletins, je les ai recalculés et j'ai noté la correction. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un salarié se plaint que son bulletin est faux. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le responsable RH demande si votre contrôle a révélé un problème. Une prime était saisie sur le mauvais salarié. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Le responsable RH vous demande où en est le contrôle des bulletins. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Un manager demande si la prime de son équipe sera payée le 28. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La prime de 1 350 € est validée pour le N° 054.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le N° 063 est sorti de l'entreprise le 10 du mois.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le brut du N° 045 monte de 1 350 € sans élément reçu.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le N° 045 a reçu une augmentation de salaire ce mois-ci.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le brut du N° 054 n'a pas changé : sa prime est absente.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le logiciel s'est trompé dans le calcul de tous les bulletins.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je valide les deux bulletins sans les regarder une seconde fois.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "b",
+                "texte": "Je vérifie que le N° 045 est revenu à son brut habituel et que le N° 054 a sa prime.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "c",
+                "texte": "Je note la correction dans le journal de contrôle, sans revérifier les deux bulletins.",
+                "points": 1,
+                "repere": "c6_trace"
+              },
+              {
+                "id": "d",
+                "texte": "Je ne préviens personne : c'est réglé, je passe au bulletin suivant.",
+                "points": 0,
+                "repere": "c6_cache"
+              }
+            ]
+          },
+          "explication": "La réponse dit l'erreur (une prime sur le mauvais salarié), la correction des deux bulletins et la trace. Les faits qui l'expliquent : la prime validée pour le N° 054, la hausse du N° 045 et le brut inchangé du N° 054."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Les bulletins calculés, ligne par ligne",
+          "consigne": "Comparez chaque ligne avec le tableau des éléments reçus. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "N° 014 — brut ce mois : 2 400 € (mois dernier : 2 400 €)",
+              "erreur": true,
+              "explication": "Trois jours d'absence non rémunérée sont reçus pour ce salarié : son brut ne devrait pas être identique à celui du mois dernier."
+            },
+            {
+              "id": "e2",
+              "texte": "N° 027 — brut ce mois : 2 560 € (mois dernier : 2 410 €)",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "N° 038 — brut ce mois : 2 950 € (mois dernier : 2 650 €)",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "N° 045 — brut ce mois : 3 650 € (mois dernier : 2 300 €)",
+              "erreur": true,
+              "explication": "Aucun élément n'est reçu pour ce salarié, mais son brut monte de 1 350 €. C'est le montant de la prime validée pour le N° 054."
+            },
+            {
+              "id": "e5",
+              "texte": "N° 052 — premier bulletin, brut ce mois : 1 150 € (salaire mensuel du contrat : 2 300 €)",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "N° 054 — brut ce mois : 2 800 € (mois dernier : 2 800 €)",
+              "erreur": true,
+              "explication": "Une prime exceptionnelle de 1 350 € est validée pour ce salarié : elle doit apparaître dans son brut."
+            },
+            {
+              "id": "e7",
+              "texte": "N° 063 — brut ce mois : 780 € (mois dernier : 2 340 €)",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "N° 071 — brut ce mois : 2 120 € (mois dernier : 2 120 €)",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e9",
+              "texte": "N° 088 — brut ce mois : 1 980 € (mois dernier : 1 980 €)",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Contrôle sur pièces (20 minutes) : la personne reçoit dix bulletins fictifs, ceux du mois dernier et la liste des éléments reçus. Elle repère les écarts non expliqués et note comment elle les corrigerait.",
+            "criteres": [
+              {
+                "texte": "Compare chaque bulletin avec le mois dernier et avec les éléments reçus",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère les écarts qu'aucun élément ne justifie",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Cherche la cause d'un écart avant de le corriger",
+                "repere": "c1_cause"
+              },
+              {
+                "texte": "Note chaque écart trouvé et sa correction",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose une vérification pour que la même erreur ne revienne pas",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment contrôlez-vous** les bulletins du mois avant de les valider ?",
+              "justes": [
+                {
+                  "texte": "Je compare chaque bulletin avec celui du mois dernier et avec les éléments reçus.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je cherche tous les écarts que les éléments reçus n'expliquent pas.",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "Je suis une liste de contrôle et je note les écarts trouvés.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde le total de la paie.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je ne contrôle pas : le logiciel calcule tout seul.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le brut d'un salarié passe de 2 300 € à 3 650 €, **sans élément reçu**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je cherche la cause dans les lignes du bulletin et dans ma saisie.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Je ne valide pas ce bulletin tant que l'écart n'est pas compris.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Je regarde si une prime validée n'a pas été saisie sur le mauvais salarié.",
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je demande à son manager si tout est normal.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je remets à la main le brut du mois dernier.",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Vous découvrez que l'erreur vient de **votre propre saisie**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je corrige, je recalcule et je note ce qui s'est passé.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je préviens le responsable RH de l'erreur et de la correction.",
+                  "repere": "c4_informe"
+                },
+                {
+                  "texte": "Je cherche si la même erreur existe sur d'autres bulletins.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je la corrige vite.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je corrige sans rien dire à personne.",
+                  "repere": "c6_cache"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de faire relire les primes importantes par un collègue avant le calcul.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner dès la première paie une liste de contrôle écrite : comparaison avec le mois dernier, éléments reçus, écarts à noter.",
+        "Faire relire ses premiers contrôles par un collègue expérimenté, puis lui montrer comment se déroule la validation."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Tenir le calendrier de paie avec les éléments en retard",
+      "pourquoi": "Les salaires sont dus à une date fixe : chaque retard de collecte réduit le temps de contrôle et fait partir la paie avec des erreurs.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Trois managers en retard, clôture demain à midi",
+        "texte": "Lundi 19, 9 h. Le calendrier de la paie est fixe. Clôture des éléments : mardi 20 à 12 h. Premier calcul : jeudi 22. Contrôle : vendredi 23. Validation : lundi 26. Fichier de virement à la banque : mardi 27. Virement des salaires : mercredi 28. Déclaration mensuelle : début du mois suivant. Il manque encore des éléments de trois services (voir le tableau). Selon la règle de l'entreprise, un élément reçu après la clôture est traité le mois suivant, sauf accord du responsable RH. Votre collègue de la paie est en congé cette semaine.",
+        "document": {
+          "type": "tableau",
+          "titre": "Où en est la collecte ce lundi à 9 h",
+          "colonnes": [
+            "Service",
+            "Salariés",
+            "Éléments reçus",
+            "Ce qui manque"
+          ],
+          "lignes": [
+            [
+              "Administration",
+              "25",
+              "Tous reçus",
+              "Rien"
+            ],
+            [
+              "Direction et RH",
+              "15",
+              "Tous reçus",
+              "Rien"
+            ],
+            [
+              "Ventes",
+              "35",
+              "Absences",
+              "Heures supplémentaires"
+            ],
+            [
+              "Atelier",
+              "45",
+              "Rien reçu",
+              "Absences, heures supplémentaires, une sortie"
+            ],
+            [
+              "Logistique",
+              "30",
+              "Heures supplémentaires",
+              "Absences"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Que faites-vous **en premier** ce lundi matin ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends demain midi : les managers vont sûrement tout envoyer à temps.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je liste ce qui manque par service, puis j'écris aux trois managers avec l'heure limite.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'écris aux trois managers pour leur demander d'envoyer leurs éléments rapidement.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je saisis « aucune absence, aucune heure » pour ces services, pour avancer.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Savoir précisément ce qui manque permet d'écrire des messages utiles, avec l'heure limite. Un message vague ne dit pas quoi envoyer, et saisir « rien » revient à deviner.",
+              "relance": "Comment savez-vous exactement ce qui manque avant la clôture ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Que contient** votre message aux trois managers ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Un rappel : « C'est encore en retard ce mois-ci, ce n'est pas la première fois. »",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "b",
+                  "texte": "Un rappel de la clôture de demain à 12 h, sans préciser ce qui manque.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rien d'écrit : je leur demanderai leurs éléments après la clôture.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "d",
+                  "texte": "Ce qui manque pour leur service, l'heure limite de demain 12 h et ce qui se passe après.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                }
+              ],
+              "explication": "Le manager a besoin de trois informations : quoi envoyer, avant quelle heure, et la conséquence d'un retard. Un simple rappel de date laisse le travail de recherche au manager.",
+              "relance": "Que mettez-vous dans un message pour qu'on puisse y répondre sans vous rappeler ?"
+            },
+            {
+              "id": "q3",
+              "texte": "À 17 h, le manager de la Logistique répond : « Je ne pourrai envoyer **les absences que jeudi**. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui rappelle la clôture de demain à 12 h et je demande les absences déjà connues avant.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'accepte sa date et je préviens le responsable RH que les absences de la Logistique seront en retard.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'accepte : je décalerai le premier calcul de toute l'entreprise pour l'attendre.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je saisis zéro absence pour son équipe et je corrigerai quand il enverra sa liste.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "La clôture est la même pour tous : on la rappelle et on demande au moins ce qui est connu. Prévenir le responsable RH est utile, mais cela accepte le retard sans essayer de l'éviter.",
+              "relance": "Que faites-vous quand un manager vous propose une date après la clôture ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Mardi 20, à 12 h, **la clôture est passée** et le manager de l'Atelier n'a toujours **rien envoyé**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je saisis ce que j'imagine : pas d'absence et pas d'heures supplémentaires.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je reporte la clôture à jeudi pour toute la paie, sans en parler à personne.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'envoie au responsable RH la liste de ce qui manque et je lui demande s'il accorde un délai.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'applique la règle de l'entreprise : les éléments de l'Atelier seront traités le mois suivant.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "explication": "Quarante-cinq salariés sont concernés : le responsable RH doit le savoir pour décider d'un délai ou non. Appliquer la règle seule est acceptable, mais il ne peut pas agir s'il n'est pas prévenu.",
+              "relance": "Quand faites-vous remonter un retard au responsable RH ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Après la paie, **que proposez-vous** pour que les éléments arrivent **à temps** le mois prochain ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Un rappel général envoyé à tous les managers le jour même de la clôture.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "b",
+                  "texte": "Un rappel écrit à chaque manager trois jours avant la clôture, avec ce qu'on attend.",
+                  "points": 2,
+                  "repere": "c4_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que les managers fassent plus attention aux dates de clôture, tous les mois.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que les éléments en retard soient refusés pour tous les salariés, sans exception.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                }
+              ],
+              "explication": "Un rappel écrit quelques jours avant, avec la liste attendue, évite le retard au lieu de le subir. Un rappel le jour même arrive trop tard pour que le manager prépare ses éléments.",
+              "relance": "Quelle règle simple mettriez-vous en place pour que ce retard ne revienne pas ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour savoir **ce qui manque** avant la clôture, je…",
+              "justes": [
+                {
+                  "texte": "liste, service par service, les éléments reçus et ceux qui manquent",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "tiens un tableau de suivi que je mets à jour à chaque envoi",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "regarde pour chaque service s'il manque les absences, les heures ou les entrées et sorties",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde qui ne m'a pas encore répondu",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "suppose que les services silencieux n'ont rien à signaler",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "attends que les managers m'écrivent",
+                  "repere": "c2_reactif"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Aux managers en retard, **j'écris**…",
+              "justes": [
+                {
+                  "texte": "ce qui manque pour leur service, l'heure limite de demain 12 h et ce qui se passe après",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "que leurs éléments doivent arriver avant demain midi, sinon ils seront traités le mois suivant",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "la liste précise des absences et des heures que j'attends, avec la date limite",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "un message court et poli, avec la date limite dès la première ligne",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "un rappel de la date de clôture",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que c'est encore en retard et que ça ne peut plus durer",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "rien : ils connaissent la date",
+                  "repere": "c2_silence"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si un manager **n'a rien envoyé** à la clôture, je…",
+              "justes": [
+                {
+                  "texte": "préviens le responsable RH avec la liste de ce qui manque",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "applique la règle de l'entreprise : ses éléments seront traités le mois suivant, sauf accord du responsable RH",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "informe le manager de ce que cela change pour ses salariés",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "relance encore une fois par message",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "saisis ce que j'imagine à sa place",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "décale tout le calendrier pour l'attendre",
+                  "repere": "c4_seul"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose un rappel écrit à chaque manager quelques jours avant la clôture, dès le mois suivant.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Prévoit chaque mois un créneau de réserve avant le contrôle, pour absorber un retard.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Il me manque les absences de votre équipe. Merci de me les envoyer avant demain 12 h : après, elles seront traitées le mois suivant. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le responsable RH demande où en est la collecte des éléments. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un manager est en retard pour la paie. Que lui écrivez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un manager demande pourquoi son équipe n'a pas été payée comme prévu. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le manager de la Logistique n'a pas envoyé les absences de son équipe, et la clôture est demain à 12 h. Que lui écrivez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La clôture des éléments est demain à 12 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le virement des salaires est le 28.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Les absences de la Logistique n'ont pas été reçues.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le responsable RH a accordé un délai à la Logistique.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Un élément reçu après la clôture est traité le mois suivant.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "L'équipe de la Logistique compte 45 salariés.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je saisis zéro absence pour son équipe, en attendant sa réponse.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "b",
+                "texte": "Je prévois de vérifier demain à 12 h si les absences sont arrivées.",
+                "points": 2,
+                "repere": "c2_anticipe"
+              },
+              {
+                "id": "c",
+                "texte": "Je saisis les éléments des autres services et je verrai sa réponse demain.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je dis aux autres managers que la Logistique est en retard.",
+                "points": 0,
+                "repere": "c4_personne"
+              }
+            ]
+          },
+          "explication": "La réponse donne ce qui manque, l'heure limite et la conséquence, sans reproche. Les faits qui l'expliquent : la clôture est demain à 12 h, les absences de la Logistique manquent, et un élément en retard est traité le mois suivant."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre semaine de paie, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de ce lundi 19 jusqu'au **début du mois suivant**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Lister ce qui manque et écrire aux managers concernés, avec l'heure limite"
+            },
+            {
+              "id": "e2",
+              "texte": "Prévenir le responsable RH si un manager n'a rien envoyé à la clôture"
+            },
+            {
+              "id": "e3",
+              "texte": "Saisir les éléments reçus dans le logiciel de paie"
+            },
+            {
+              "id": "e4",
+              "texte": "Lancer le premier calcul des bulletins"
+            },
+            {
+              "id": "e5",
+              "texte": "Contrôler les bulletins calculés"
+            },
+            {
+              "id": "e6",
+              "texte": "Envoyer le fichier de virement à la banque"
+            },
+            {
+              "id": "e7",
+              "texte": "Préparer la déclaration mensuelle à partir de la paie contrôlée"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "On relance les managers avant de faire remonter le retard au responsable RH."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "Le responsable RH peut accorder un délai : on le prévient avant de calculer sans les éléments manquants."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "Les éléments sont saisis avant le calcul des bulletins."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On contrôle des bulletins déjà calculés."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "Le fichier de virement part après le contrôle des bulletins."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "La déclaration reprend les montants des bulletins : on la prépare une fois les bulletins contrôlés."
+            },
+            {
+              "avant": "e1",
+              "apres": "e4",
+              "explication": "On connaît ce qui manque, et on a relancé, avant de lancer le calcul."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Simulation de 20 minutes : la personne reçoit le calendrier de la paie, la liste des éléments manquants de trois services et la réponse d'un manager en retard. Elle organise sa semaine et écrit la relance.",
+            "criteres": [
+              {
+                "texte": "Part des dates fixes du calendrier pour ordonner les tâches",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Liste précisément ce qui manque avant de relancer",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Écrit une relance avec ce qui manque et l'heure limite",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Prévient le responsable RH quand un manager ne répond pas",
+                "repere": "c4_escalade"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévoit une marge dans la semaine pour absorber un retard",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment savez-vous** ce qui manque avant la clôture ?",
+              "justes": [
+                {
+                  "texte": "Je liste, service par service, les éléments reçus et ceux qui manquent.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je tiens un tableau de suivi que je mets à jour à chaque envoi.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Je vérifie pour chaque service les absences, les heures supplémentaires, les entrées et les sorties.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde qui ne m'a pas encore répondu.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends que les managers me disent s'ils ont oublié quelque chose.",
+                  "repere": "c2_reactif"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que dites-vous** à un manager qui n'a pas envoyé ses éléments ?",
+              "justes": [
+                {
+                  "texte": "Ce qui manque pour son équipe, l'heure limite et ce qui se passe après.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Que ses éléments doivent arriver avant la clôture, sinon ils seront traités le mois suivant.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je lui propose d'envoyer au moins ce qu'il a déjà, avant l'heure limite.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui rappelle la date de clôture.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que c'est encore lui qui est en retard.",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "À la clôture, un manager n'a **toujours rien envoyé**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je préviens le responsable RH avec la liste de ce qui manque.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "J'applique la règle de l'entreprise : ses éléments sont traités le mois suivant, sauf accord du responsable RH.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "J'informe le manager de ce que cela change pour ses salariés.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je relance encore une fois.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je saisis ce que j'imagine à sa place.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose un rappel écrit aux managers quelques jours avant la clôture.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre le calendrier de paie du mois avec les dates de clôture, de contrôle et de virement, et dire qui prévenir en cas de retard.",
+        "Présenter la règle des éléments reçus après la clôture et ce qu'on répond à un manager qui demande un délai."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Répondre à un salarié sur son bulletin, en confidentialité",
+      "pourquoi": "Un salarié qui conteste son bulletin parle de son argent : il attend une réponse claire, et chacun doit être sûr que ses données restent privées.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un salarié dit que ses heures supplémentaires manquent",
+        "texte": "Jeudi 29, 10 h 30. Le salarié N° 214, de la Logistique, vient à votre bureau, ouvert sur le couloir où d'autres salariés passent. Il dit à voix haute : « Mes 6 heures supplémentaires ne sont pas sur mon bulletin. » Il ajoute : « Mon collègue du même poste les a eues. Combien a-t-il touché ? » Son bulletin du mois ne contient aucune heure supplémentaire. Selon la règle de l'entreprise, une erreur de paie est corrigée par un virement complémentaire, validé par le responsable RH.",
+        "document": {
+          "type": "message",
+          "titre": "E-mail de son manager, reçu le 18 (la clôture des éléments était le 20)",
+          "de": "Manager de la Logistique",
+          "texte": "Bonjour, voici les heures supplémentaires de mon équipe, semaine du 12. Je les ai validées. Salarié N° 214 : 6 heures. Cordialement."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le salarié parle à voix haute et d'autres salariés passent dans le couloir. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande de tout m'écrire par e-mail et de repartir à son poste.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je continue ici, mais en parlant plus bas.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui propose une salle fermée, pour parler de son bulletin au calme.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je continue ici : un bulletin n'a rien de secret.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "Le bulletin contient des données personnelles : on en parle là où personne d'autre n'entend. Parler plus bas dans un couloir protège un peu, mais pas assez.",
+              "relance": "Où parlez-vous du salaire d'une personne, et pourquoi ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous êtes dans une salle fermée avec le salarié. Que faites-vous **d'abord** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je l'écoute, puis je lui demande quelles heures et quelle semaine sont concernées.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui explique que son manager a dû envoyer ses heures trop tard.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que je vérifie et que je le recontacte, sans lui poser de question.",
+                  "points": 1,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis de demander à son manager, qui a validé ses heures.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                }
+              ],
+              "explication": "Écouter et faire préciser les heures et la semaine permet de vérifier la bonne pièce. Annoncer un rappel sans rien demander est acceptable, mais on risque de chercher au mauvais endroit.",
+              "relance": "Que demandez-vous à un salarié qui dit que son bulletin est faux ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Avant de lui répondre, **que vérifiez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Son bulletin du mois, pour voir s'il manque des heures supplémentaires.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le bulletin de son collègue, pour comparer les deux situations.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rien : je le crois sur parole et je prépare directement la correction.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Son bulletin, le relevé d'heures de son manager et la date d'envoi de l'e-mail.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "Il faut les pièces de ce salarié : son bulletin, le relevé du manager et sa date, pour savoir si les heures ont été reçues à temps. Le bulletin seul ne dit pas d'où vient le manque, et celui du collègue n'a pas à être ouvert.",
+              "relance": "Quelles pièces regardez-vous avant de dire à un salarié si son bulletin est juste ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous constatez que le relevé est **arrivé le 18** et que les 6 heures **n'ont pas été saisies**. Que lui dites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Votre manager a dû envoyer son relevé trop tard : ce sera dans la prochaine paie.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "C'est un oubli de ma part. Je prépare le virement complémentaire ; dès qu'il est validé, je vous écris.",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Ce n'est pas grave, ça arrive : on verra ça avec la paie du mois prochain.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "C'est un oubli de ma part, je prépare le virement complémentaire pour le payer vite.",
+                  "points": 1,
+                  "repere": "c7_apaise"
+                }
+              ],
+              "explication": "L'oubli vient du service paie : on le dit simplement, on annonce la correction prévue et la façon dont le salarié sera prévenu. Sans validation ni message de suite, il ne sait pas quand il sera payé.",
+              "relance": "Que dites-vous à un salarié quand l'erreur vient de vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Il demande à nouveau combien **son collègue** a touché. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne donne pas les informations d'un autre salarié, mais je peux détailler le vôtre.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                },
+                {
+                  "id": "b",
+                  "texte": "À peu près la même chose que vous, à quelques dizaines d'euros près.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne peux pas vous donner cette information : elle concerne un autre salarié.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Cela ne vous regarde pas : les salaires des autres sont confidentiels.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "On refuse sans détour de donner les informations d'un autre salarié, puis on propose ce qu'on peut faire : détailler son propre bulletin. Un refus seul laisse le salarié sans piste.",
+              "relance": "Comment refusez-vous une information confidentielle sans fâcher la personne ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Avant de répondre au salarié, **je vérifie**…",
+              "justes": [
+                {
+                  "texte": "son bulletin, le relevé d'heures de son manager et la date d'envoi",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "si le relevé est arrivé avant la clôture, puis si les heures ont été saisies",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "dans mes fichiers ce qui a été reçu et ce qui a été saisi pour lui",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "son bulletin",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le bulletin de son collègue, pour comparer",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "rien : je le crois sur parole",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Quand je constate que l'oubli vient de moi, **je lui dis**…",
+              "justes": [
+                {
+                  "texte": "que c'est un oubli de ma part et que je prépare le virement complémentaire",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "que le responsable RH doit valider la correction et que je lui écris dès que c'est fait",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "ce que j'ai vu : le relevé est arrivé le 18, avant la clôture, et les heures n'ont pas été saisies",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je vais corriger",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que son manager a dû envoyer le relevé trop tard",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "que ce n'est pas grave et qu'on verra le mois prochain",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "S'il me demande ce que gagne **son collègue**, je…",
+              "justes": [
+                {
+                  "texte": "lui dis que je ne donne pas les informations d'un autre salarié, mais que je peux détailler son bulletin",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "lui explique que c'est confidentiel et que je peux lui expliquer chaque ligne du sien",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "lui rappelle que les informations de paie d'une personne ne sont données qu'à elle",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis que je ne peux pas le dire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis qu'il touche à peu près la même chose que lui",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "lui dis que cela ne le regarde pas",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose une salle fermée dès le début, pour que personne n'entende parler de son bulletin.",
+              "repere": "c7_regle"
+            },
+            {
+              "texte": "Note l'échange et la correction dans son dossier, puis vérifie que le virement est bien parti.",
+              "repere": "c7_suivi"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« C'est un oubli de ma part. Je prépare le virement complémentaire. Dès que le responsable RH l'a validé, je vous écris. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un salarié demande combien gagne son collègue. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un salarié dit que son bulletin est faux. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un salarié demande pourquoi son bulletin est plus bas que le mois dernier. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Son manager a envoyé les 6 heures supplémentaires d'un salarié le 18, avant la clôture. Elles n'ont pas été saisies. Que lui dites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le manager a envoyé le relevé le 18, avant la clôture du 20.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le salarié a demandé combien son collègue a touché.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Les 6 heures supplémentaires ne sont pas sur le bulletin.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le manager n'a jamais validé ces heures.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Une erreur de paie est corrigée par un virement complémentaire, validé par le responsable RH.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Ces heures ont déjà été payées le mois dernier.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je fais partir le virement complémentaire sans attendre la validation.",
+                "points": 0,
+                "repere": "c7_hors_regle"
+              },
+              {
+                "id": "b",
+                "texte": "J'envoie la demande de virement complémentaire au responsable RH, avec le relevé du manager.",
+                "points": 2,
+                "repere": "c7_suivi"
+              },
+              {
+                "id": "c",
+                "texte": "J'envoie la demande au responsable RH, sans préciser les heures ni le montant.",
+                "points": 1,
+                "repere": "c3_flou"
+              },
+              {
+                "id": "d",
+                "texte": "J'attends le mois prochain pour corriger avec la paie suivante.",
+                "points": 0,
+                "repere": "c7_ignore"
+              }
+            ]
+          },
+          "explication": "La réponse reconnaît l'oubli, annonce la correction prévue par la règle et la validation du responsable RH, puis dit comment le salarié sera prévenu. Les faits : le relevé du 18, les heures absentes du bulletin et la règle du virement complémentaire."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous pouvez dire au salarié",
+          "consigne": "Pour chaque information, choisissez si vous pouvez la donner **au salarié N° 214**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je peux la lui donner"
+            },
+            {
+              "id": "k2",
+              "nom": "Je ne peux pas la lui donner"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Le détail, ligne par ligne, de son propre bulletin",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Ce sont ses propres données : il peut les connaître et les comprendre."
+            },
+            {
+              "id": "e2",
+              "texte": "Le nombre d'heures supplémentaires de son collègue",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "C'est une information sur un autre salarié : elle est confidentielle."
+            },
+            {
+              "id": "e3",
+              "texte": "Le fait que le relevé de son manager est arrivé le 18 et n'a pas été saisi",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Cela explique son propre bulletin : on le lui dit simplement."
+            },
+            {
+              "id": "e4",
+              "texte": "Le salaire de base de son manager",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le salaire d'une autre personne ne se donne pas, même à un salarié de son équipe."
+            },
+            {
+              "id": "e5",
+              "texte": "La règle de l'entreprise sur la correction d'une erreur de paie",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est une règle de l'entreprise : elle explique ce qui va se passer pour lui."
+            },
+            {
+              "id": "e6",
+              "texte": "Le fait que son collègue a eu ses heures sur son bulletin, oui ou non",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Même un oui ou un non renseigne sur un autre salarié."
+            },
+            {
+              "id": "e7",
+              "texte": "Le montant de ses 6 heures, une fois calculé pour son virement complémentaire",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Ce montant le concerne lui seul : on peut le lui donner."
+            },
+            {
+              "id": "e8",
+              "texte": "Le nom des autres salariés dont les heures ont été saisies à temps",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Cette liste renseigne sur d'autres salariés : on ne la donne pas."
+            }
+          ],
+          "repere_reussite": "c7_regle",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le salarié qui conteste son bulletin et demande ce que gagne un collègue. La personne candidate l'accueille, vérifie les pièces fournies, explique et annonce la suite.",
+            "criteres": [
+              {
+                "texte": "Propose un endroit où l'échange reste confidentiel",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Écoute et fait préciser ce que le salarié conteste",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "Reconnaît l'erreur et annonce la correction avec sa validation",
+                "repere": "c7_suite"
+              },
+              {
+                "texte": "Refuse les informations d'un autre salarié et propose de détailler son propre bulletin",
+                "repere": "c7_alternative"
+              }
+            ],
+            "bonus": {
+              "texte": "Note l'échange et vérifie que le virement complémentaire est parti",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Un salarié vous parle de son bulletin à voix haute, à votre bureau ouvert sur le couloir. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je lui propose une salle fermée pour parler de son bulletin au calme.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je l'écoute, puis je lui demande de préciser ce qu'il conteste.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "J'attends d'être dans un endroit fermé pour regarder son bulletin avec lui.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je continue sur place, en parlant plus bas.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui réponds sur place, devant tout le monde.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le relevé de son manager est arrivé **à temps** mais n'a **pas été saisi**. Que lui dites-vous ?",
+              "justes": [
+                {
+                  "texte": "C'est un oubli de ma part : ses heures n'ont pas été saisies, et je prépare la correction.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "Je prépare un virement complémentaire ; dès que le responsable RH l'a validé, je lui écris.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Je lui explique ce que j'ai vu : le relevé est arrivé le 18, avant la clôture.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je vais corriger.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que son manager a dû envoyer le relevé trop tard.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Il vous demande combien **son collègue** a touché. Que répondez-vous ?",
+              "justes": [
+                {
+                  "texte": "Je ne donne pas les informations d'un autre salarié, mais je peux détailler son bulletin.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "C'est confidentiel : chaque salarié reçoit seulement ses propres informations de paie.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je lui propose de revoir avec lui chaque ligne de son bulletin.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je ne peux pas vous le dire.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "À peu près la même chose que lui.",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "Cela ne vous regarde pas.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note l'échange et la correction dans son dossier, puis vérifie que le virement est bien parti.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit la règle de confidentialité : qui peut recevoir quelles informations de paie, et qui répond aux autres demandes.",
+        "Montrer comment une erreur de paie est corrigée : qui valide, quel délai annoncer au salarié, comment garder une trace de l'échange."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Appliquer une nouvelle règle de paie dans le logiciel",
+      "pourquoi": "Une règle mal comprise ou mal paramétrée se répète sur tous les bulletins concernés, mois après mois, jusqu'à ce qu'on la corrige.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Une nouvelle prime à mettre dans le logiciel",
+        "texte": "Lundi 12, 9 h. Le responsable RH vous transmet la note de la direction ci-dessous. Vous devez créer cette prime dans le logiciel de paie avant le calcul des bulletins de ce mois. La Logistique compte 30 salariés, dont 4 à temps partiel. Le logiciel permet de calculer d'abord un seul bulletin pour le tester. Les règles de la prime sont celles de la note : ce n'est pas à vous de les décider.",
+        "document": {
+          "type": "message",
+          "titre": "Note de la direction aux ressources humaines",
+          "de": "Direction",
+          "texte": "À partir de la paie de ce mois, les salariés de la Logistique à temps plein reçoivent une prime de 80 € par mois. Les salariés à temps partiel la reçoivent au prorata de leur temps de travail. Elle apparaît sur le bulletin sous le nom « Prime logistique »."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Avant de créer** la prime dans le logiciel, que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je note le montant de 80 € et la date de début, puis je crée la prime.",
+                  "points": 1,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je relève dans la note qui est concerné, le montant, le prorata et la date de début.",
+                  "points": 2,
+                  "repere": "c5_applique"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je crée la prime pour toute l'entreprise : on verra ensuite qui est concerné.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au responsable RH de créer la prime à ma place.",
+                  "points": 0,
+                  "repere": "c5_attend"
+                }
+              ],
+              "explication": "La note donne quatre informations : qui, combien, comment pour les temps partiels, et à partir de quand. Les relever toutes évite un paramétrage faux ; retenir seulement le montant oublie les temps partiels.",
+              "relance": "Que cherchez-vous dans une note avant de paramétrer quelque chose ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Un salarié de la Logistique travaille **à 50 %** du temps de travail. **Quelle prime** lui appliquez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "80 €, comme les salariés à temps plein.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "50 €, puisqu'il est à 50 %.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "c",
+                  "texte": "40 €, soit la moitié de 80 €.",
+                  "points": 2,
+                  "repere": "c8_precision"
+                },
+                {
+                  "id": "d",
+                  "texte": "À peu près 40 € : le logiciel affichera le montant exact.",
+                  "points": 1,
+                  "repere": "c8_savoir"
+                }
+              ],
+              "explication": "La note prévoit le prorata du temps de travail : la moitié de 80 € fait 40 €. Compter 50 € confond pourcentage et montant, et « à peu près » laisse au logiciel un calcul qu'on peut faire soi-même.",
+              "relance": "Comment calculez-vous une prime au prorata du temps de travail ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La note **ne dit rien** pour un salarié entré **le 15** du mois. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande au responsable RH quelle règle appliquer, et je note sa réponse.",
+                  "points": 2,
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui verse la prime entière : c'est plus simple et plus juste.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne lui mets pas de prime pour l'instant, en attendant la règle.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui verse la moitié de la prime, car il a travaillé la moitié du mois.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                }
+              ],
+              "explication": "La note ne couvre pas ce cas : c'est au responsable RH de décider, pas à vous. Ne rien verser évite une erreur sans régler la question ; choisir un montant revient à inventer une règle.",
+              "relance": "Que faites-vous quand une règle ne dit rien sur le cas que vous traitez ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Avant de lancer le calcul de tous les bulletins de la Logistique, **comment vérifiez-vous votre paramétrage** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne teste pas : le logiciel applique la note tout seul.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je teste un seul bulletin, à temps plein, et je vérifie que la prime fait 80 €.",
+                  "points": 1,
+                  "repere": "c8_outil"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lance tout et je regarde seulement le total de la prime pour la Logistique.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je teste un bulletin à temps plein et un à temps partiel, puis je compare avec mon calcul.",
+                  "points": 2,
+                  "repere": "c8_outil"
+                }
+              ],
+              "explication": "Deux tests couvrent les deux cas de la note : temps plein et temps partiel. Comparer avec son propre calcul montre si le paramétrage est juste ; un seul test laisse le prorata sans vérification.",
+              "relance": "Comment vous assurez-vous qu'un paramétrage donne le bon résultat sur tous les cas ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Sur le bulletin test du salarié à **50 %**, le logiciel affiche **80 €** de prime. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je corrigerai à la main le bulletin de chaque salarié à temps partiel.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je corrige le paramétrage du prorata, je refais le test et je vérifie que la prime fait 40 €.",
+                  "points": 2,
+                  "repere": "c8_precision"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je préviens le responsable RH que le test affiche 80 €, sans corriger le paramétrage.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je supprime la prime pour les temps partiels, pour éviter une erreur.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Le test révèle une erreur de paramétrage : on la corrige à la source, on refait le test et on vérifie le résultat attendu. Corriger bulletin par bulletin multiplie le travail et les risques.",
+              "relance": "Que faites-vous quand un test ne donne pas le résultat attendu ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Dans la note, avant de paramétrer, **je relève**…",
+              "justes": [
+                {
+                  "texte": "qui est concerné, le montant, le prorata des temps partiels et la date de début",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "ce que la note dit et ce qu'elle ne dit pas, par exemple pour les entrées et les sorties",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "le nom de la prime sur le bulletin et la paie à partir de laquelle elle s'applique",
+                  "repere": "c5_applique"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le montant de la prime",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "seulement ce qui me paraît important : le reste, je le devine",
+                  "repere": "c5_devine"
+                },
+                {
+                  "texte": "rien : je crée la prime comme l'an dernier",
+                  "repere": "c5_habitude"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour un salarié à **50 %** du temps de travail, **la prime** est de…",
+              "justes": [
+                {
+                  "texte": "40 €, la moitié de 80 €, comme la note le prévoit",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "40 € : 80 € multipliés par 50 %",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "40 €, et je le vérifie sur un bulletin test avant de tout calculer",
+                  "repere": "c8_outil"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la moitié de la prime, environ",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "80 €, comme pour les temps pleins",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "50 €, parce qu'il est à 50 %",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour un salarié entré **le 15** du mois, dont la note **ne parle pas**, je…",
+              "justes": [
+                {
+                  "texte": "demande au responsable RH quelle règle appliquer",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "pose la question avant de lancer le calcul, en donnant la date d'entrée du salarié",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "applique la règle donnée par le responsable et j'en garde la réponse écrite",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ne lui mets pas de prime en attendant",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "calcule la moitié de la prime parce qu'il a travaillé la moitié du mois",
+                  "repere": "c5_devine"
+                },
+                {
+                  "texte": "lui verse la prime entière sans rien demander",
+                  "repere": "c5_devine"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de garder la note, la réponse du responsable et le test, pour pouvoir expliquer le paramétrage plus tard.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Propose de vérifier la prime de tous les temps partiels après le calcul.",
+              "repere": "c6_controle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je lui applique 40 €. La note prévoit 80 € à temps plein, et le prorata du temps de travail pour un temps partiel. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un salarié de la Logistique est entré le 15 du mois. Quelle prime lui appliquez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un salarié du service Ventes demande s'il a droit à la prime. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Un salarié de la Logistique est à temps partiel. Quelle prime lui appliquez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Un salarié de la Logistique travaille à 50 % du temps de travail. Quelle prime lui appliquez-vous, d'après la note ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La prime est de 80 € par mois pour un salarié à temps plein.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La Logistique compte 30 salariés.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Pour un temps partiel, la prime est versée au prorata du temps de travail.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La prime n'est versée qu'une seule fois, ce mois-ci.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le salarié travaille à 50 % du temps de travail.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le salarié est entré dans l'entreprise le 15 du mois.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je saisis 40 € à la main sur son bulletin.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              },
+              {
+                "id": "b",
+                "texte": "Je crée la prime à 40 € pour tous les salariés de la Logistique.",
+                "points": 0,
+                "repere": "c8_erreur"
+              },
+              {
+                "id": "c",
+                "texte": "Je vérifie que le bulletin test de ce salarié affiche bien 40 €.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "d",
+                "texte": "Je lance le calcul de tous les bulletins, puis je regarde les primes.",
+                "points": 1,
+                "repere": "c8_outil"
+              }
+            ]
+          },
+          "explication": "La réponse applique la note : 80 € à temps plein, prorata pour un temps partiel, donc 40 € à 50 %. Les faits : le montant de 80 €, le prorata des temps partiels et le temps de travail du salarié."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "La prime logistique de chaque salarié",
+          "consigne": "Pour chaque salarié, choisissez la prime à appliquer d'après **la note**, ou la **question à poser**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "80 €"
+            },
+            {
+              "id": "k2",
+              "nom": "40 €"
+            },
+            {
+              "id": "k3",
+              "nom": "Pas de prime"
+            },
+            {
+              "id": "k4",
+              "nom": "Je demande au responsable RH"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Logistique, temps plein, présent tout le mois",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est le cas de base de la note : 80 € à temps plein."
+            },
+            {
+              "id": "e2",
+              "texte": "Logistique, temps partiel à 50 %, présent tout le mois",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "La note prévoit le prorata du temps de travail : la moitié de 80 €."
+            },
+            {
+              "id": "e3",
+              "texte": "Ventes, temps plein, présent tout le mois",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La note ne concerne que la Logistique."
+            },
+            {
+              "id": "e4",
+              "texte": "Logistique, temps plein, entré le 15 du mois",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "La note ne dit rien des entrées en cours de mois : ce n'est pas à vous de choisir."
+            },
+            {
+              "id": "e5",
+              "texte": "Logistique, temps plein, parti le 8 du mois",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "La note ne dit rien des sorties en cours de mois : il faut poser la question."
+            },
+            {
+              "id": "e6",
+              "texte": "Logistique, temps plein, trois jours d'absence non rémunérée",
+              "accepte": [
+                "k4",
+                "k1"
+              ],
+              "explication": "La note ne parle pas des absences : demander est le plus sûr. Appliquer 80 € à la lettre reste défendable, le salarié étant à temps plein."
+            },
+            {
+              "id": "e7",
+              "texte": "Administration, temps partiel à 50 %",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Il n'est pas dans la Logistique : le prorata ne s'applique pas, il n'y a pas de prime."
+            },
+            {
+              "id": "e8",
+              "texte": "Logistique, temps partiel à 50 %, entré le 20 du mois",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "Le temps partiel est couvert par la note, mais pas l'entrée en cours de mois : il faut demander."
+            }
+          ],
+          "repere_reussite": "c8_savoir",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Exercice de 20 minutes : la personne reçoit la note, huit fiches de salariés fictifs (service, temps de travail, entrée ou sortie, absences) et un tableau à remplir. Elle indique la prime de chacun ou la question à poser.",
+            "criteres": [
+              {
+                "texte": "Relève dans la note qui est concerné, le montant et le prorata",
+                "repere": "c5_applique"
+              },
+              {
+                "texte": "Calcule correctement la prime des temps partiels",
+                "repere": "c8_precision"
+              },
+              {
+                "texte": "Repère les cas que la note ne couvre pas",
+                "repere": "c5_clarifie"
+              },
+              {
+                "texte": "Pose la question au responsable RH au lieu de deviner",
+                "repere": "c8_role"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de tester un temps plein et un temps partiel avant le calcul",
+              "repere": "c8_outil"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que relevez-vous** dans la note avant de créer la prime ?",
+              "justes": [
+                {
+                  "texte": "Qui est concerné, le montant, le prorata des temps partiels et la date de début.",
+                  "repere": "c5_applique"
+                },
+                {
+                  "texte": "Ce que la note ne dit pas, comme les entrées et les sorties en cours de mois.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Le nom de la prime sur le bulletin et la paie à partir de laquelle elle s'applique.",
+                  "repere": "c5_applique"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le montant de la prime.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je crée la prime comme l'an dernier.",
+                  "repere": "c5_habitude"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Quelle prime** appliquez-vous à un salarié de la Logistique **à 50 %** du temps de travail ?",
+              "justes": [
+                {
+                  "texte": "40 €, la moitié de 80 €.",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "80 € multipliés par 50 %, soit 40 €.",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "40 €, comme la note le prévoit pour un temps partiel.",
+                  "repere": "c8_savoir"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "La moitié de la prime.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "80 €, comme à temps plein.",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "50 €, parce qu'il est à 50 %.",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "La note **ne dit rien** pour un salarié entré **le 15** du mois. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je demande au responsable RH quelle règle appliquer.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je pose la question avant de lancer le calcul de tous les bulletins.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "J'applique la règle donnée et j'en garde la réponse par écrit.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je ne lui verse pas de prime en attendant.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je calcule la moitié de la prime et je continue.",
+                  "repere": "c5_devine"
+                },
+                {
+                  "texte": "Je lui verse la prime entière sans demander.",
+                  "repere": "c5_devine"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de tester un temps plein et un temps partiel avant de lancer le calcul de tous les bulletins.",
+              "repere": "c8_outil"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner la procédure pour une règle nouvelle : qui transmet la note, qui valide le paramétrage, où garder les tests.",
+        "Faire tester un premier paramétrage avec un collègue, puis montrer comment poser une question au responsable RH."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez **trouvé une erreur** en contrôlant un document de chiffres. **Comment l'avez-vous repérée** ?",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit une méthode de contrôle précise : comparaison, total, source",
+        "Dit comment l'erreur a été corrigée",
+        "Dit qui a été prévenu et ce qui a changé ensuite"
+      ],
+      "relance": "Comment saviez-vous que c'était bien une erreur ?",
+      "alternative": "Si vous n'avez jamais travaillé en paie : parlez d'une erreur de chiffres trouvée ailleurs (budget d'association, facture, notes de frais, études)."
+    },
+    {
+      "id": "e2",
+      "competence": "C6",
+      "texte": "Un bulletin affiche un brut deux fois plus élevé que le mois dernier, **sans aucun élément reçu**. Que faites-vous ?",
+      "suite": [
+        "Qui prévenez-vous ?"
+      ],
+      "attendus": [
+        "Ne valide pas et cherche la cause dans les données saisies",
+        "Compare avec les éléments reçus avant de corriger",
+        "Corrige à la source et garde une trace"
+      ],
+      "relance": "Et si la cause vient d'une information envoyée par un manager ?",
+      "alternative": "Dans un tableau que vous préparez (budget, caisse), un total est très différent du mois précédent. Que faites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C2",
+      "texte": "**Comment organisez-vous** votre semaine quand une **échéance fixe**, comme un virement de salaires, approche ?",
+      "suite": [
+        "Pouvez-vous donner un exemple ?"
+      ],
+      "attendus": [
+        "Part de la date limite et remonte les étapes",
+        "Prévoit une marge pour les imprévus",
+        "Prévient les personnes dont il dépend"
+      ],
+      "relance": "Et si une personne dont vous dépendez est en retard ?",
+      "alternative": "Pensez à une échéance fixe (examen, événement, déménagement) : comment avez-vous organisé les dernières semaines ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où vous avez dû **relancer quelqu'un** qui **n'envoyait pas une information** dont vous aviez besoin. Que s'est-il passé ?",
+      "suite": [
+        "Qu'avez-vous écrit ou dit ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Donne la date limite et ce qui manque précisément",
+        "Relance par écrit ou garde une trace",
+        "Fait remonter au bon niveau si rien ne vient"
+      ],
+      "relance": "Que feriez-vous différemment aujourd'hui ?",
+      "alternative": "Parlez d'une fois où vous avez attendu une information d'une autre personne (association, études, voyage) et de ce que vous avez fait."
+    },
+    {
+      "id": "e5",
+      "competence": "C7",
+      "texte": "Un salarié vous dit que son bulletin est faux. Que faites-vous, **étape par étape** ?",
+      "suite": [
+        "Et si vous trouvez que le bulletin est juste ?"
+      ],
+      "attendus": [
+        "Écoute et fait préciser ce qui est contesté",
+        "Vérifie avec les documents avant de répondre",
+        "Explique avec des faits et annonce la suite"
+      ],
+      "relance": "Que lui dites-vous exactement ?",
+      "alternative": "Quelqu'un vous dit qu'une facture ou un relevé que vous avez préparé est faux. Que faites-vous ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C7",
+      "texte": "Un salarié vous demande combien gagne **un de ses collègues**. Que répondez-vous ?",
+      "suite": [],
+      "attendus": [
+        "Refuse de donner l'information d'un autre salarié",
+        "Explique la raison simplement",
+        "Propose ce qu'il peut faire : détailler son propre bulletin"
+      ],
+      "relance": "Et si la demande vient de son manager ?",
+      "alternative": "Parlez d'une information confidentielle qu'on vous a confiée (association, travail, études) : comment l'avez-vous protégée ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C8",
+      "texte": "**Expliquez simplement** à un salarié **la différence** entre son salaire brut et son net à payer.",
+      "suite": [
+        "Pourquoi le net est-il plus bas que le brut ?"
+      ],
+      "attendus": [
+        "Dit que le brut est le salaire avant retenues",
+        "Dit que des cotisations sont retenues pour arriver au net",
+        "Utilise des mots simples, sans jargon"
+      ],
+      "relance": "Que répondez-vous s'il vous demande le détail d'une ligne du bulletin ?",
+      "alternative": "Expliquez à quelqu'un qui n'y connaît rien la différence entre un prix hors taxes et un prix toutes taxes comprises."
+    },
+    {
+      "id": "e8",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez dû appliquer une **règle nouvelle** dans un logiciel ou un tableur. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Comment avez-vous vérifié que c'était juste ?"
+      ],
+      "attendus": [
+        "Décrit ce que disait la règle et les cas concernés",
+        "Dit comment il a testé avant de l'appliquer à tout le monde",
+        "Dit ce qu'il a fait quand la règle ne couvrait pas un cas"
+      ],
+      "relance": "Qui décidait quand la règle ne disait rien ?",
+      "alternative": "Quand on vous donne une consigne nouvelle dans un outil (tableur, caisse, application), comment vous assurez-vous de l'appliquer correctement ?"
+    }
+  ],
+  "_pv": "6ba2222d50"
+}

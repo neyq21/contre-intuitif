@@ -1,0 +1,2508 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "developpeur",
+  "version": "2026.10",
+  "nom": "Développeur / Développeuse",
+  "secteur": "numerique",
+  "alias": [
+    "développeur",
+    "développeuse",
+    "développeur web",
+    "développeur logiciel",
+    "ingénieur logiciel",
+    "programmeur",
+    "développeur back-end",
+    "développeur front-end",
+    "développeur full stack"
+  ],
+  "resume": "Écrit, corrige et livre les fonctions d'une application web, en lien avec l'équipe et avec les personnes qui l'utilisent.",
+  "contexte": "Une petite équipe de cinq personnes développe une application web de prise de rendez-vous pour des clients professionnels.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C1",
+      "titre": "Trouver la cause d'un bug et le corriger",
+      "pourquoi": "Un bug corrigé sans en connaître la cause revient souvent : reproduire, isoler, tester et vérifier le règlent pour de bon.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un créneau de 11 h refusé à tort",
+        "texte": "Mardi, 9 h 30. Le support vous transmet un signalement : un professionnel a un rendez-vous de 10 h à 11 h. Un utilisateur essaie de réserver de 11 h à 12 h et l'application répond « Créneau indisponible ». Le support a vérifié : 11 h 15 est accepté, seul 11 h est refusé. Un rendez-vous qui finit à 11 h ne doit pas bloquer un rendez-vous qui commence à 11 h. La fonction qui compare deux rendez-vous est ci-dessous.",
+        "document": {
+          "type": "message",
+          "titre": "Extrait du code : vérification des chevauchements",
+          "de": "agenda.js",
+          "texte": "seChevauchent(a, b) renvoie vrai si :\na.debut <= b.fin ET b.debut <= a.fin\nLégende : a et b sont deux rendez-vous, avec une heure de début et une heure de fin.\nLe signe <= veut dire « inférieur ou égal ». Le signe < veut dire « strictement inférieur ».\nExemple du signalement : a va de 10 h à 11 h, b va de 11 h à 12 h."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par quoi **commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je change une comparaison dans le code et je regarde si le refus disparaît.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je reproduis le refus : une réservation de 10 h à 11 h, puis une de 11 h à 12 h.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je réponds au support que l'utilisateur s'est trompé de créneau.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lis la fonction pour y chercher l'erreur.",
+                  "points": 1,
+                  "repere": "c1_cause"
+                }
+              ],
+              "explication": "Reproduire confirme que le bug existe et donne le cas exact à corriger. Lire le code est un bon réflexe, mais sans cas précis on cherche à l'aveugle.",
+              "relance": "Comment vérifiez-vous qu'un bug signalé existe vraiment ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le support indique que 11 h 15 est accepté et que **seul 11 h** est refusé. Que vous **apprend ce détail** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le refus apparaît quand un rendez-vous commence à l'heure où l'autre finit.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le problème dépend de l'heure de début demandée, mais je ne sais pas encore pourquoi.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Le problème vient du navigateur ou de l'appareil de l'utilisateur.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le problème est trop rare : je ne m'en occupe pas maintenant.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                }
+              ],
+              "explication": "11 h 15 accepté et 11 h refusé montrent que le refus a lieu exactement à la limite entre deux rendez-vous. Dire « ça dépend de l'heure » est juste, mais ne dit pas où chercher.",
+              "relance": "Comment réduisez-vous le nombre d'endroits où chercher la cause d'un bug ?"
+            },
+            {
+              "id": "q3",
+              "texte": "En lisant la fonction, quelle est **la cause** du refus ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La fonction ne regarde que l'heure de début des deux rendez-vous, pas leur heure de fin.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "La fonction se trompe, mais je ne vois pas encore quelle ligne en est la cause.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "La fonction ne reconnaît pas les rendez-vous qui durent exactement une heure, comme celui de 10 h.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "La comparaison « inférieur ou égal » compte comme chevauchement deux rendez-vous qui se touchent à 11 h.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                }
+              ],
+              "explication": "Avec « inférieur ou égal », 11 h compte pour les deux rendez-vous : la fonction répond qu'ils se chevauchent. Savoir quelle fonction est en cause ne suffit pas : il faut trouver la ligne et la raison.",
+              "relance": "Comment passez-vous de « cette fonction pose problème » à « cette ligne pose problème » ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Quel test écrivez-vous **avant de corriger** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Un test : les rendez-vous de 10 h à 11 h et de 11 h à 12 h ne se chevauchent pas, comme dans le signalement.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "b",
+                  "texte": "Un test : les rendez-vous de 10 h à 11 h et de 10 h 30 à 11 h 30 se chevauchent, car c'est le rôle de la fonction.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Deux tests : des rendez-vous qui se touchent à 11 h ne se chevauchent pas, des rendez-vous qui se recouvrent se chevauchent.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Aucun test : la correction ne change qu'un signe, elle est trop simple pour se tromper.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Le premier test reproduit le bug et échoue avant la correction. Le second garantit qu'un vrai chevauchement est toujours refusé. Un seul des deux laisse une partie du risque.",
+              "relance": "Que doit vérifier un test écrit pour un bug corrigé ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La correction est faite. **Comment vérifiez-vous** qu'elle fonctionne ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je préviens le support que c'est corrigé : j'ai relu ma modification et elle me semble juste.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lance le nouveau test et tous les tests existants, puis je réessaie la réservation de 11 h à 12 h.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lance seulement le nouveau test : il passe.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je vérifie que l'application démarre sans message d'erreur.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Le nouveau test prouve que le bug est corrigé, les tests existants montrent que rien d'autre n'est cassé, et l'essai dans l'application confirme le cas signalé. Le nouveau test seul ne couvre pas le reste.",
+              "relance": "Que contrôlez-vous avant de dire qu'un bug est corrigé ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour savoir si le refus est **un vrai bug**, je…",
+              "justes": [
+                {
+                  "texte": "reproduis le cas : une réservation de 10 h à 11 h, puis une de 11 h à 12 h",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "refais exactement la manipulation de l'utilisateur avant de toucher au code",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "essaie le même cas sur la version de test de l'application",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde le code de l'agenda",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "dis au support que c'est sûrement une erreur de l'utilisateur",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "modifie le code au hasard pour voir ce qui change",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour trouver **la cause**, je…",
+              "justes": [
+                {
+                  "texte": "compare le cas refusé (11 h) avec le cas accepté (11 h 15)",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "lis la fonction qui compare les horaires, avec l'exemple 10 h à 11 h et 11 h à 12 h",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "cherche pourquoi deux rendez-vous qui se touchent sont comptés comme un chevauchement",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lis tout le fichier de l'agenda",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "désactive la vérification des chevauchements pour que tout passe",
+                  "repere": "c1_symptome"
+                },
+                {
+                  "texte": "suppose que le problème vient du navigateur de l'utilisateur",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Après** avoir corrigé, je…",
+              "justes": [
+                {
+                  "texte": "lance le nouveau test et tous les tests existants",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "réessaie le cas signalé dans l'application",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "vérifie qu'un vrai chevauchement est toujours refusé",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "relance seulement le nouveau test",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "dis au support que c'est réglé sans rien relancer",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Garde le test dans le projet pour que le bug ne revienne pas.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Écrit dans le ticket la cause et la correction, pour que le support puisse répondre à la personne qui a signalé le bug.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« La fonction compte comme chevauchement deux rendez-vous qui se touchent à 11 h. Je vais corriger la comparaison. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un utilisateur demande comment annuler un rendez-vous. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un rendez-vous finit à 11 h et l'application refuse un rendez-vous qui commence à 11 h. Que répondez-vous au support ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un collègue demande pourquoi la page de réservation est lente. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le support vous demande où vous en êtes sur un bug. Que répondez-vous ?",
+                "points": 1
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Un rendez-vous finit à 11 h et un autre commence à 11 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le signalement arrive mardi à 9 h 30.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La fonction utilise « inférieur ou égal » pour comparer les heures.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "L'utilisateur réserve depuis son téléphone.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Un créneau qui commence à 11 h 15 est accepté.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le support a transmis le signalement.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je change la comparaison à d'autres endroits du code, par précaution.",
+                "points": 0,
+                "repere": "c1_precipite"
+              },
+              {
+                "id": "b",
+                "texte": "J'écris un test qui échoue à cause du bug, puis je corrige la comparaison.",
+                "points": 2,
+                "repere": "c1_etapes"
+              },
+              {
+                "id": "c",
+                "texte": "Je préviens le support que c'est corrigé, avant de modifier le code.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "d",
+                "texte": "Je corrige la comparaison, puis j'écris un test.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "La réponse relie un cas précis (11 h refusé, 11 h 15 accepté) à une cause trouvée dans la fonction. La suite logique : un test qui reproduit le bug, puis la correction."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Corriger le bug du créneau de 11 h, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Relancer tous les tests existants : aucun ne casse"
+            },
+            {
+              "id": "e2",
+              "texte": "Écrire un test qui échoue à cause du bug"
+            },
+            {
+              "id": "e3",
+              "texte": "Corriger la comparaison"
+            },
+            {
+              "id": "e4",
+              "texte": "Reproduire le refus : une réservation de 10 h à 11 h, puis une de 11 h à 12 h"
+            },
+            {
+              "id": "e5",
+              "texte": "Réessayer le cas signalé dans l'application : 11 h est accepté"
+            },
+            {
+              "id": "e6",
+              "texte": "Repérer la comparaison fautive dans la fonction"
+            },
+            {
+              "id": "e7",
+              "texte": "Relancer le nouveau test : il passe"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e4",
+              "apres": "e3",
+              "explication": "On ne corrige pas un bug qu'on n'a pas reproduit."
+            },
+            {
+              "avant": "e6",
+              "apres": "e3",
+              "explication": "On corrige la cause trouvée, pas au hasard."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "Le test doit échouer avant la correction : cela prouve qu'il détecte le bug."
+            },
+            {
+              "avant": "e3",
+              "apres": "e7",
+              "explication": "Le test ne peut passer qu'une fois le code corrigé."
+            },
+            {
+              "avant": "e3",
+              "apres": "e1",
+              "explication": "Les tests existants se lancent sur le code corrigé, pour voir si la correction casse autre chose."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "On réessaie le cas signalé sur le code corrigé."
+            },
+            {
+              "avant": "e2",
+              "apres": "e7",
+              "explication": "Le test doit exister avant d'être relancé."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_precipite",
+          "reel": {
+            "consigne": "En 20 minutes, sur un petit projet d'exercice qui contient ce bug : la personne reproduit le refus, trouve la cause, écrit un test, corrige, puis vérifie. Elle dit à voix haute ce qu'elle fait.",
+            "criteres": [
+              {
+                "texte": "Reproduit le bug avec un cas précis avant de modifier le code",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Trouve la cause dans la fonction, sans modifier le code au hasard",
+                "repere": "c1_cause"
+              },
+              {
+                "texte": "Écrit un test qui échoue avant la correction, puis qui passe",
+                "repere": "c1_etapes"
+              },
+              {
+                "texte": "Relance tous les tests et réessaie le cas initial",
+                "repere": "c1_verifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Garde le test dans le projet et note la cause dans le ticket",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment savez-vous** que le refus signalé est un vrai bug ?",
+              "justes": [
+                {
+                  "texte": "Je reproduis le cas : une réservation de 10 h à 11 h, puis une de 11 h à 12 h.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je refais la manipulation de l'utilisateur et je constate le refus moi-même.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "J'essaie aussi 11 h 15 pour comparer avec le cas accepté.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde dans le code.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je pense que l'utilisateur s'est trompé.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment trouvez-vous** la cause du refus ?",
+              "justes": [
+                {
+                  "texte": "Je compare le cas refusé (11 h) au cas accepté (11 h 15).",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Je lis la fonction qui compare les horaires, avec l'exemple du signalement.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Je cherche pourquoi deux rendez-vous qui se touchent sont comptés comme un chevauchement.",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lis le fichier de l'agenda.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je retire la vérification pour que ça marche.",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment vérifiez-vous** votre correction ?",
+              "justes": [
+                {
+                  "texte": "Je lance le nouveau test et les tests existants.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je réessaie le cas signalé dans l'application.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je vérifie qu'un vrai chevauchement est toujours refusé.",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je relance le nouveau test.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je dis que c'est réglé sans relancer.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Garde le test dans le projet pour éviter que le bug revienne.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer comment lancer les tests du projet et comment reproduire un bug avec les données de test.",
+        "Faire relire les premiers correctifs : cause trouvée, test ajouté, vérification faite."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Vérifier une modification avant de la livrer",
+      "pourquoi": "Une modification livrée sans contrôle peut bloquer des utilisateurs ou exposer des données : les tests, la relecture et quelques règles de sécurité l'évitent.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un nouveau champ à livrer demain à 9 h",
+        "texte": "Jeudi, 16 h. Vous avez ajouté un champ « commentaire » au formulaire de réservation. Le professionnel le lit dans l'e-mail qu'il reçoit à chaque réservation. Les réservations déjà enregistrées n'ont pas de commentaire. Le navigateur refuse un commentaire de plus de 200 caractères, mais le serveur enregistre le texte reçu sans le vérifier. Pour vos essais, vous avez écrit la clé d'envoi des e-mails dans le fichier du code ; rien n'est encore envoyé au dépôt commun. Vous avez lancé les 12 tests : celui de l'e-mail échoue. La mise en ligne est prévue demain à 9 h. Le responsable commercial voudrait montrer le champ à un client ce soir.",
+        "document": {
+          "type": "liste",
+          "titre": "Règles de l'équipe pour livrer (depuis lundi)",
+          "items": [
+            "Tous les tests passent avant la mise en ligne.",
+            "Chaque nouvelle fonction a au moins un test.",
+            "Un collègue relit la modification avant la mise en ligne.",
+            "Aucune clé secrète ni aucun mot de passe dans le code : ils restent dans la configuration du serveur.",
+            "Le serveur vérifie toutes les données reçues, même si le navigateur les a déjà vérifiées."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le test de l'e-mail échoue. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je désactive ce test pour livrer à l'heure, puis je le répare la semaine prochaine.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je relance les tests pour voir si l'échec revient.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je cherche pourquoi il échoue : mon nouveau champ a peut-être changé l'e-mail.",
+                  "points": 2,
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le supprime : il ne concerne pas le formulaire que j'ai modifié.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Un test qui échoue après votre modification peut révéler une erreur que vous avez créée : ici, dans l'e-mail. On cherche la cause avant de livrer. Relancer sans chercher ne dit pas pourquoi il échoue.",
+              "relance": "Que faites-vous quand un test qui passait avant se met à échouer ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Que faites-vous** de **la clé** d'envoi des e-mails écrite dans le code ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la laisse dans le code : seuls les membres de l'équipe peuvent le lire.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la copie dans le ticket de la modification pour que l'équipe la retrouve.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je la retire du code, sans rien mettre à la place.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je la retire du code et je la mets dans la configuration du serveur.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Une clé écrite dans le code ou dans un ticket peut être lue par toute personne qui y a accès, et rester dans l'historique. Elle doit rester dans la configuration du serveur. La retirer sans la remettre ailleurs ferait tomber l'envoi des e-mails.",
+              "relance": "Où garde-t-on un mot de passe ou une clé d'accès ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le navigateur refuse déjà un commentaire de plus de **200 caractères**. Que faites-vous **pour le serveur** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je vérifie aussi la longueur dans le serveur et j'ajoute un test.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Rien : le navigateur empêche déjà d'envoyer un commentaire trop long.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je vérifie la longueur dans le serveur.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je baisse la limite du navigateur à 100 caractères.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "Le navigateur ne protège pas le serveur : une demande peut être envoyée sans passer par le formulaire. Le serveur doit donc tout vérifier lui-même, et un test garde cette règle en place.",
+              "relance": "Pourquoi une vérification faite dans le navigateur ne suffit-elle pas ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Qu'est-ce que votre modification peut **toucher**, **à part** le formulaire ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien d'autre : j'ai seulement ajouté un champ au formulaire, le reste n'a pas changé.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Les réservations sans commentaire, dont les anciennes, et l'e-mail envoyé au professionnel.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "L'e-mail envoyé au professionnel, quand la réservation contient un commentaire.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Seulement la page du formulaire : mon collègue relira le reste.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Un nouveau champ est vide pour toutes les réservations déjà enregistrées : l'enregistrement et l'e-mail doivent encore fonctionner sans commentaire. Tester seulement le cas avec commentaire laisse ce risque.",
+              "relance": "Que vérifiez-vous quand vous ajoutez un champ à une fonction qui existe déjà ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le responsable commercial vous demande de livrer **ce soir**, **avant la relecture**. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "D'accord : je livre ce soir, et mon collègue relira la modification demain matin.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Non : la règle de l'équipe demande une relecture avant la mise en ligne, je ne peux pas.",
+                  "points": 1,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "La règle de l'équipe impose une relecture : je propose une mise en ligne demain à 9 h.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je livre ce soir, car c'est le responsable commercial qui décide des priorités.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "La règle demande une relecture avant la mise en ligne : on la respecte et on propose une solution, ici la date prévue. Refuser sans alternative laisse le responsable sans réponse. Livrer d'abord expose les utilisateurs à une erreur.",
+              "relance": "Que faites-vous quand on vous demande de sauter une étape de contrôle ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Le **test de l'e-mail** échoue après ma modification. Je…",
+              "justes": [
+                {
+                  "texte": "cherche pourquoi il échoue avant de livrer, car mon champ a peut-être changé l'e-mail",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "regarde le message d'erreur du test et j'essaie une réservation sans commentaire",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "corrige mon code si l'e-mail est cassé, puis je relance tous les tests",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "relance les tests pour voir si l'échec revient",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "désactive le test pour livrer à l'heure",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "supprime le test : il ne concerne pas mon formulaire",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour la clé d'envoi des e-mails écrite **dans le code**, je…",
+              "justes": [
+                {
+                  "texte": "la retire du code et je la mets dans la configuration du serveur",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "ne la laisse ni dans le code ni dans un ticket, et je la range dans la configuration",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "vérifie qu'elle n'apparaît plus dans mes modifications avant de les envoyer",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la retire du code",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la laisse : seule l'équipe lit le code",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "la copie dans le ticket pour la retrouver",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Le navigateur limite le commentaire à **200 caractères**. Pour le **serveur**, je…",
+              "justes": [
+                {
+                  "texte": "vérifie aussi la longueur côté serveur, car une demande peut arriver sans passer par le formulaire",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "fais refuser par le serveur tout commentaire trop long, et j'ajoute un test",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "contrôle côté serveur toutes les données reçues, même déjà vérifiées par le navigateur",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "vérifie que le champ marche dans le formulaire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne fais rien : le navigateur s'en occupe",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "baisse la limite du navigateur à 100 caractères",
+                  "repere": "c8_confusion"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Teste aussi une réservation sans commentaire, y compris une ancienne réservation.",
+              "repere": "c6_controle"
+            },
+            {
+              "texte": "Propose de montrer le champ au client après la relecture, avec la mise en ligne de demain à 9 h.",
+              "repere": "c6_regle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je retire la clé du code et je la mets dans la configuration du serveur. Ensuite, je demande la relecture. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un test échoue et la mise en ligne est demain à 9 h. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Votre modification est presque finie. Que faites-vous avant la relecture ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le navigateur refuse un commentaire de plus de 200 caractères. Que faites-vous pour le serveur ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Pour vos essais, vous avez écrit la clé d'envoi des e-mails dans le fichier du code. Que faites-vous avant la relecture ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La clé d'envoi des e-mails est écrite dans le fichier du code.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Un test sur 12 échoue.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Les règles de l'équipe demandent de garder les clés dans la configuration du serveur.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le professionnel a demandé de changer le champ.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Un collègue doit relire la modification avant la mise en ligne.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable commercial veut montrer le champ ce soir.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je note la clé dans le ticket pour que mon collègue puisse tester.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "b",
+                "texte": "Je vérifie que la clé n'apparaît plus dans mes modifications, puis je demande la relecture.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "c",
+                "texte": "Je demande la relecture sans autre vérification.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je livre sans attendre la relecture : la clé est retirée.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              }
+            ]
+          },
+          "explication": "La règle de l'équipe interdit les clés dans le code : on les place dans la configuration du serveur. La relecture reste prévue avant la mise en ligne."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La description de votre modification",
+          "consigne": "Voici la description de votre modification avant la relecture. Cliquez sur **chaque ligne** qui **ne respecte pas** les règles de l'équipe.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Nouveau champ « commentaire » ajouté au formulaire de réservation.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Test de l'e-mail : il échoue, il est désactivé pour livrer à l'heure.",
+              "erreur": true,
+              "explication": "Les règles demandent que tous les tests passent avant la mise en ligne. Un test qui échoue se comprend et se corrige, il ne se désactive pas."
+            },
+            {
+              "id": "e3",
+              "texte": "Le commentaire s'affiche dans l'e-mail envoyé au professionnel.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Navigateur : un commentaire de plus de 200 caractères est refusé. Serveur : le texte reçu est enregistré sans vérification.",
+              "erreur": true,
+              "explication": "Les règles demandent que le serveur vérifie toutes les données reçues. La vérification du navigateur seule ne protège pas le serveur."
+            },
+            {
+              "id": "e5",
+              "texte": "Test ajouté : un commentaire de 150 caractères est enregistré avec la réservation.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Le fichier du code contient la clé d'envoi des e-mails.",
+              "erreur": true,
+              "explication": "Les règles interdisent les clés secrètes dans le code : elles restent dans la configuration du serveur."
+            },
+            {
+              "id": "e7",
+              "texte": "Relecture demandée à un collègue avant la mise en ligne de demain à 9 h.",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "En 15 minutes, la personne relit la description d'une modification fictive (un champ ajouté, un test en échec, une clé dans le code) avec la liste des règles de l'équipe, et note chaque écart.",
+            "criteres": [
+              {
+                "texte": "Repère la clé écrite dans le code",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Repère la vérification absente côté serveur",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Repère le test en échec désactivé",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Cite la règle de l'équipe qui correspond à chaque écart",
+                "repere": "c6_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de relancer tous les tests et de demander la relecture avant la mise en ligne",
+              "repere": "c6_controle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** du test de l'e-mail qui échoue ?",
+              "justes": [
+                {
+                  "texte": "Je cherche pourquoi il échoue : mon champ a peut-être changé l'e-mail.",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "Je regarde le message du test et j'essaie une réservation sans commentaire.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je corrige mon code si l'e-mail est cassé, puis je relance tous les tests.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je relance les tests pour voir si l'échec revient.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le désactive pour livrer à l'heure.",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que faites-vous** de la clé d'envoi des e-mails ?",
+              "justes": [
+                {
+                  "texte": "Je la retire du code et je la mets dans la configuration du serveur.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je ne la laisse ni dans le code ni dans un ticket.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je vérifie qu'elle n'apparaît plus dans mes modifications avant de les envoyer.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je la retire du code.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je la laisse : seule l'équipe lit le code.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous pour la **longueur** du commentaire, **côté serveur** ?",
+              "justes": [
+                {
+                  "texte": "Je fais vérifier la longueur par le serveur, car une demande peut ne pas passer par le formulaire.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "Je contrôle côté serveur toutes les données reçues.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "J'ajoute un test : un commentaire trop long est refusé.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je vérifie que le champ marche dans le formulaire.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le navigateur vérifie déjà.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Teste aussi une réservation sans commentaire, y compris une ancienne réservation.",
+              "repere": "c6_controle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner dès le premier jour les règles de livraison, et montrer où sont rangés les clés et les mots de passe de l'équipe.",
+        "Relire ensemble les premières modifications avec une liste courte : tests, clés secrètes, données vérifiées par le serveur."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Expliquer un retard à une personne non technique",
+      "pourquoi": "Un responsable qui comprend la situation peut prévenir son client à temps ; un message flou ou plein de termes techniques le laisse sans réponse.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Une fonction promise pour vendredi, prête lundi",
+        "texte": "Mercredi, 11 h. Le responsable commercial a promis à un client professionnel la fonction « rappels par SMS » pour vendredi. Mardi, des utilisateurs ne pouvaient plus confirmer leur rendez-vous : le responsable technique vous a demandé de régler ce bug en premier, et cela a pris votre mardi et votre mercredi matin. Il reste à tester les envois, pour qu'aucun utilisateur ne reçoive le même SMS deux fois. Vous estimez que la fonction sera prête lundi. Le responsable commercial doit rappeler son client cet après-midi.",
+        "document": {
+          "type": "message",
+          "titre": "Message reçu à 10 h 45",
+          "de": "Responsable commercial",
+          "texte": "Bonjour, où en est la fonction « rappels par SMS » ? Je dois rappeler le client cet après-midi et il me demande une date précise."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Par quoi commencez-vous** votre réponse au responsable commercial ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Par le détail de ce que vous avez fait mardi et mercredi.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Par la nouvelle date : « La fonction sera prête lundi, au lieu de vendredi. »",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "c",
+                  "texte": "Par une excuse : « Je suis désolé, j'ai pris du retard. »",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Par : « Ça avance bien, ne vous inquiétez pas. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Le responsable doit rappeler un client : il lui faut d'abord la date. Le détail du travail de mardi ne l'aide pas à ce moment-là, et une excuse seule ne lui donne pas l'information attendue.",
+              "relance": "Que dites-vous en premier à quelqu'un qui attend une information précise ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Comment expliquez-vous** la raison du retard ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Mardi, des utilisateurs ne pouvaient plus confirmer leur rendez-vous : j'ai dû régler cela en premier.",
+                  "points": 2,
+                  "repere": "c3_adapte"
+                },
+                {
+                  "id": "b",
+                  "texte": "Un bug en production dans le module de confirmation a demandé un correctif et un déploiement.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "c",
+                  "texte": "La fonction est plus compliquée que prévu.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'ai eu un problème technique, et il a pris du temps.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "La vraie raison, dite avec des mots du quotidien, permet au responsable de la répéter au client : des utilisateurs bloqués passaient avant. Une raison vague ou inexacte ne l'aide pas, et du jargon ne lui parle pas.",
+              "relance": "Comment expliquez-vous un problème technique à quelqu'un qui n'est pas développeur ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le responsable commercial propose de livrer quand même **vendredi**, **sans finir les tests**. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Oui, si vous voulez : on corrigera les erreurs après la mise en ligne.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "b",
+                  "texte": "Les tests unitaires du service d'envoi couvrent les cas limites : on ne peut pas s'en passer.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "c",
+                  "texte": "Non, je préfère attendre la fin des tests.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Non : sans les tests, des utilisateurs pourraient recevoir deux fois le même SMS. Je préfère livrer lundi.",
+                  "points": 2,
+                  "repere": "c3_adapte"
+                }
+              ],
+              "explication": "La bonne réponse dit la conséquence pour les utilisateurs avec des mots qu'il peut répéter : deux SMS identiques. Un « non » seul ne lui donne rien à dire à son client, et le jargon ne lui parle pas.",
+              "relance": "Comment expliquez-vous pourquoi une étape de vérification est nécessaire ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Que lui dites-vous sur **la suite**, pour qu'il puisse **rappeler** son client ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que la date est certaine : il peut la promettre au client sans risque.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Qu'il peut me poser ses questions à tout moment dans la semaine.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Que je le préviens lundi dès que c'est en ligne, et tout de suite si la date change.",
+                  "points": 2,
+                  "repere": "c3_suite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que je lui écrirai quand j'aurai un moment, sans préciser quand.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Le responsable doit savoir ce qui va se passer ensuite : quand il sera prévenu, et qu'il le sera si la date change. Annoncer une date certaine alors que c'est une estimation peut le mettre en difficulté devant son client.",
+              "relance": "Comment dites-vous à quelqu'un que vous donnez une estimation, pas une certitude ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Après votre échange** à l'oral, que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : nous nous sommes tout dit à l'oral.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui envoie un court message écrit : la nouvelle date, la raison et la suite.",
+                  "points": 2,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je note la date dans mon carnet : il pourra me la redemander.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je mets dans le ticket un long message avec tous les détails techniques du bug.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                }
+              ],
+              "explication": "Un court message écrit donne au responsable ce qu'il peut transmettre au client : date, raison, suite. Un carnet personnel ne lui sert pas, et un message technique ne lui parle pas.",
+              "relance": "Quand laissez-vous une trace écrite après un échange à l'oral ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Pour commencer** ma réponse au responsable commercial, je lui dis…",
+              "justes": [
+                {
+                  "texte": "que la fonction sera prête lundi, et non vendredi",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "la nouvelle date d'abord : lundi, au lieu de vendredi",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "que la fonction aura du retard et qu'elle sera prête lundi",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je suis désolé pour le retard",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "tout ce que j'ai fait mardi et mercredi, dans l'ordre",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "que ça avance bien, sans parler de la date",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour expliquer la **raison du retard**, je dis que…",
+              "justes": [
+                {
+                  "texte": "mardi, des utilisateurs ne pouvaient plus confirmer leur rendez-vous et j'ai dû régler cela en premier",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "des utilisateurs étaient bloqués : le responsable technique m'a demandé de les débloquer d'abord",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "j'ai corrigé en priorité un problème qui empêchait des utilisateurs de confirmer leur rendez-vous",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "j'ai eu un problème technique",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la fonction était plus compliquée que prévu",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "un bug en production a bloqué le module de confirmation",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour dire **la suite**, je précise que…",
+              "justes": [
+                {
+                  "texte": "je le préviens lundi dès que la fonction est en ligne, et tout de suite si la date change",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "la date de lundi est une estimation, et je lui écris si elle change",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "je lui envoie un court message avec la date, la raison et la suite",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "il peut me poser des questions",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la date est certaine : il peut la promettre au client",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "je ne dis rien de plus : tout est clair",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande au responsable de redire ce qu'il dira au client, pour vérifier que le message est clair.",
+              "repere": "c3_verifie"
+            },
+            {
+              "texte": "Propose une phrase simple que le responsable peut répéter telle quelle au client.",
+              "repere": "c3_adapte"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« La fonction sera prête lundi, au lieu de vendredi. Mardi, des utilisateurs ne pouvaient plus confirmer leur rendez-vous : je les ai débloqués en premier. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client demande quand les rappels par SMS seront disponibles. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le responsable commercial doit rappeler son client cet après-midi et demande où en est la fonction. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Le responsable commercial vous demande combien coûtera la fonction. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un collègue vous demande où en est la fonction. Que lui répondez-vous ?",
+                "points": 1
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La fonction était promise pour vendredi.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le responsable commercial a écrit à 10 h 45.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Mardi, des utilisateurs ne pouvaient plus confirmer leur rendez-vous.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client veut aussi des rappels par e-mail.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Vous estimez que la fonction sera prête lundi.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Les rappels par SMS sont déjà en ligne pour d'autres clients.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je lui demande s'il a des questions.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "b",
+                "texte": "Je retourne au code sans rien ajouter : il a compris.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "c",
+                "texte": "Je lui envoie la liste des changements de code de la semaine.",
+                "points": 0,
+                "repere": "c3_jargon"
+              },
+              {
+                "id": "d",
+                "texte": "Je lui envoie un court message écrit avec la date, la raison et la suite.",
+                "points": 2,
+                "repere": "c3_trace"
+              }
+            ]
+          },
+          "explication": "La réponse donne la date en premier, puis une raison compréhensible : des utilisateurs bloqués passaient avant. Elle permet au responsable de rappeler son client."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous pouvez dire au responsable commercial",
+          "consigne": "Pour **chaque phrase**, choisissez la catégorie qui convient quand on parle à **un responsable commercial**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Claire et utile pour lui"
+            },
+            {
+              "id": "k2",
+              "nom": "Trop technique pour lui"
+            },
+            {
+              "id": "k3",
+              "nom": "Floue ou inexacte"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "« J'ai corrigé un bug dans le module de confirmation et déployé un correctif en production. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Ces termes ne lui parlent pas. On dit plutôt : des utilisateurs ne pouvaient plus confirmer leur rendez-vous."
+            },
+            {
+              "id": "e2",
+              "texte": "« La fonction sera prête lundi, au lieu de vendredi. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle donne l'essentiel : la nouvelle date."
+            },
+            {
+              "id": "e3",
+              "texte": "« Ça avance, on verra bien. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Elle ne donne aucune date et aucune information utile."
+            },
+            {
+              "id": "e4",
+              "texte": "« Il reste à tester les envois, pour qu'aucun utilisateur ne reçoive deux fois le même SMS. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle dit ce qui reste à faire et pourquoi, avec des mots qu'il comprend."
+            },
+            {
+              "id": "e5",
+              "texte": "« Les tests unitaires du service d'envoi ne couvrent pas encore les cas limites. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "C'est du vocabulaire de développeur : il ne peut pas le répéter à son client."
+            },
+            {
+              "id": "e6",
+              "texte": "« Mardi, des utilisateurs ne pouvaient plus confirmer leur rendez-vous : je les ai débloqués en premier. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle explique la raison avec des mots du quotidien."
+            },
+            {
+              "id": "e7",
+              "texte": "« Ce sera prêt lundi, c'est garanti à cent pour cent. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Lundi est une estimation : la présenter comme une certitude est inexact."
+            },
+            {
+              "id": "e8",
+              "texte": "« Je vous écris la date et la raison dans un message, pour que vous puissiez les répéter au client. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle annonce une trace écrite utile pour son appel."
+            }
+          ],
+          "repere_reussite": "c3_adapte",
+          "repere_echec": "c3_jargon",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le responsable commercial, qui doit rappeler son client. La personne candidate lui explique le retard, puis lui envoie un court message écrit.",
+            "criteres": [
+              {
+                "texte": "Donne la nouvelle date en premier",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Explique la raison avec des mots simples, sans jargon",
+                "repere": "c3_adapte"
+              },
+              {
+                "texte": "Dit ce qui va se passer ensuite",
+                "repere": "c3_suite"
+              },
+              {
+                "texte": "Laisse un court message écrit avec la date, la raison et la suite",
+                "repere": "c3_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Vérifie que le responsable a compris en lui demandant de redire ce qu'il dira au client",
+              "repere": "c3_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que dites-vous **en premier** au responsable commercial ?",
+              "justes": [
+                {
+                  "texte": "La nouvelle date : la fonction sera prête lundi, au lieu de vendredi.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Que la fonction aura du retard, et qu'elle sera prête lundi.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Je commence par la date, parce qu'il doit rappeler son client.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je m'excuse pour le retard.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui raconte d'abord tout ce que j'ai fait cette semaine.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment expliquez-vous** la raison du retard ?",
+              "justes": [
+                {
+                  "texte": "Mardi, des utilisateurs ne pouvaient plus confirmer leur rendez-vous : j'ai dû régler cela en premier.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "Je dis que le responsable technique m'a demandé de débloquer d'abord ces utilisateurs.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "J'explique avec des mots simples : des utilisateurs étaient bloqués, ils passaient avant.",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je dis que j'ai eu un problème technique.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je dis que la fonction est plus compliquée que prévu.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que dites-vous sur **la suite** ?",
+              "justes": [
+                {
+                  "texte": "Je le préviens lundi dès que la fonction est en ligne.",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "Je précise que lundi est une estimation, et que je le préviens si la date change.",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "Je lui envoie un court message écrit avec la date, la raison et la suite.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis qu'il peut me poser des questions.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis que la date est certaine.",
+                  "repere": "c3_faux"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande au responsable de redire ce qu'il dira au client, pour vérifier que le message est clair.",
+              "repere": "c3_verifie"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer comment annoncer un retard : la date d'abord, la raison en une phrase, puis la suite. Donner un modèle de message court.",
+        "Prévoir un point régulier avec le responsable commercial pour annoncer tôt les changements de date."
+      ]
+    },
+    {
+      "code": "C4",
+      "titre": "Régler un désaccord en relecture de code, à partir des faits",
+      "pourquoi": "Une relecture utile repose sur des faits qu'on peut vérifier : un désaccord réglé avec eux évite les discussions sans fin et les tensions dans l'équipe.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "« Ça ne marche pas » : la relecture d'un collègue",
+        "texte": "Vendredi, 10 h. Votre collègue relit votre modification « annuler un rendez-vous » et vous laisse le commentaire ci-dessous. De votre côté, l'annulation fonctionne : hier, vous l'avez testée avec un rendez-vous de demain. Selon la spécification, un rendez-vous déjà commencé ne peut pas être annulé. Le rendez-vous de 9 h est déjà commencé. La spécification ne dit pas ce qui doit s'afficher quand l'annulation est refusée : c'est le responsable produit qui décide.",
+        "document": {
+          "type": "message",
+          "titre": "Commentaire de relecture",
+          "de": "Votre collègue (relecteur)",
+          "texte": "Ça ne marche pas : j'ai cliqué sur « Annuler » pour le rendez-vous de 9 h et rien ne s'est passé. À corriger avant la mise en ligne."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Que faites-vous **en premier** après avoir lu le commentaire de votre collègue ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui réponds : « Chez moi, ça marche. Ton essai doit être faux. »",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je corrige tout de suite ce qu'il demande, sans refaire son essai.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je refais son essai avec le rendez-vous de 9 h et je lui réponds avec le résultat.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui réponds que j'ai testé hier avec un rendez-vous de demain et que ça marche.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Refaire l'essai de votre collègue avec le même rendez-vous donne un fait commun aux deux. Donner seulement votre résultat n'explique pas l'écart, et corriger sans vérifier ne règle pas le désaccord.",
+              "relance": "Comment vérifiez-vous un problème qu'un collègue vous signale et que vous ne voyez pas ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous refaites son essai : le résultat est **le même** que le sien. **Que répondez-vous** à votre collègue ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le refus est voulu : un rendez-vous commencé ne s'annule pas. Mais tu as raison : rien ne l'explique à l'écran.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Tu as raison, l'annulation ne marche pas. Je la reprends depuis le début.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le refus est voulu : un rendez-vous commencé ne s'annule pas. Tu n'avais pas besoin de signaler cela.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le refus est voulu : un rendez-vous commencé ne s'annule pas.",
+                  "points": 1,
+                  "repere": "c4_faits"
+                }
+              ],
+              "explication": "La meilleure réponse s'appuie sur la spécification et reconnaît ce qui est juste dans le commentaire : le silence à l'écran. Rappeler la règle seule est exact, mais laisse le défaut sans réponse.",
+              "relance": "Comment répondez-vous à un commentaire qui est en partie juste et en partie faux ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Que faites-vous pour **décider ce qui s'affiche** quand l'annulation est refusée ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je choisis moi-même le message qui me semble le mieux : c'est un petit détail.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne change rien : la spécification ne demande pas de message, donc il n'y en a pas.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande au responsable produit de choisir, sans lui présenter les options.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au responsable produit de choisir, en lui présentant les deux options.",
+                  "points": 2,
+                  "repere": "c4_role"
+                }
+              ],
+              "explication": "Quand la spécification ne tranche pas, la décision revient à la personne qui en est responsable. Lui présenter des options l'aide à répondre vite. Choisir seul ou ne rien faire laisse l'écart sans décision.",
+              "relance": "Qui décide quand la spécification ne dit rien ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Que faites-vous pour qu'un malentendu de ce genre **ne se reproduise pas** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ferai plus attention aux commentaires de mes collègues la prochaine fois.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je propose à l'équipe d'indiquer dans chaque relecture comment tester : étapes et données.",
+                  "points": 2,
+                  "repere": "c4_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à mon collègue de toujours tester de la même façon que moi.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'écris, dans mes demandes de relecture, ce que j'ai testé et avec quelles données.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                }
+              ],
+              "explication": "Une règle commune évite que le problème revienne : tout le monde indique comment tester, avec quelles données. Écrire seulement ce que vous avez testé aide, mais ne règle pas la question pour toute l'équipe.",
+              "relance": "Quelle règle simple a déjà aidé une équipe à éviter un malentendu ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vous avez corrigé le défaut signalé. **Que faites-vous ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je livre directement : c'est corrigé, donc il n'a pas besoin de relire.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui réponds dans la relecture que c'est corrigé, sans autre précision.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui réponds : ce que j'ai changé, comment le tester, et je lui demande de relire.",
+                  "points": 2,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne réponds pas à son commentaire : la correction parle d'elle-même.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                }
+              ],
+              "explication": "Répondre dans la relecture ferme la discussion : le collègue sait ce qui a changé et comment vérifier, et il peut relire. Dire seulement « corrigé » l'oblige à chercher. Livrer sans le prévenir casse la coordination.",
+              "relance": "Que faites-vous quand un collègue vous a signalé un défaut que vous avez corrigé ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour savoir qui **a raison**, je…",
+              "justes": [
+                {
+                  "texte": "refais son essai avec le rendez-vous de 9 h et je compare avec le mien",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "vérifie ce que dit la spécification pour un rendez-vous déjà commencé",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "lui demande les étapes exactes qu'il a suivies, puis je les refais",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "relis mon code",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis que chez moi ça marche, donc que son essai est faux",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "corrige ce qu'il demande sans refaire son essai",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Après avoir **refait son essai**, je réponds à mon collègue que…",
+              "justes": [
+                {
+                  "texte": "le refus est voulu par la spécification, mais qu'il a raison : rien ne s'affiche",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "nous n'avons pas testé le même rendez-vous, et que l'écart de résultat vient de là",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "le comportement est prévu pour un rendez-vous commencé, mais l'absence de message est un défaut",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le refus est voulu par la spécification",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "son essai est faux",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "il a raison et que tout est à refaire",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour décider **ce qui s'affiche** quand l'annulation est refusée, je…",
+              "justes": [
+                {
+                  "texte": "demande au responsable produit de choisir, en lui présentant les options",
+                  "repere": "c4_role"
+                },
+                {
+                  "texte": "lui présente un message ou un bouton grisé, et il décide",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "propose deux options au responsable produit et j'attends sa réponse",
+                  "repere": "c4_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "en parle avec mon collègue",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "choisis moi-même : c'est un détail",
+                  "repere": "c4_impose"
+                },
+                {
+                  "texte": "ne change rien : la spécification n'en parle pas",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'indiquer dans chaque demande de relecture comment tester : étapes et données utilisées.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Ajoute un test pour le rendez-vous déjà commencé, pour que ce comportement reste connu de l'équipe.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Le refus est voulu pour un rendez-vous déjà commencé, mais tu as raison : rien ne s'affiche à l'écran. Je corrige ce point. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un utilisateur demande pourquoi il ne peut pas annuler son rendez-vous. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un collègue vous signale un problème dans votre modification. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Votre collègue écrit que l'annulation ne marche pas pour le rendez-vous de 9 h, déjà commencé. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Votre collègue vous demande de relire sa modification. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Selon la spécification, un rendez-vous déjà commencé ne peut pas être annulé.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Vous avez testé l'annulation hier.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le rendez-vous de 9 h est déjà commencé.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le responsable produit a déjà choisi le message à afficher.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Votre collègue a constaté qu'il ne se passe rien à l'écran.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "L'annulation échoue pour tous les rendez-vous.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je supprime la règle du rendez-vous commencé, pour que le bouton marche.",
+                "points": 0,
+                "repere": "c4_impose"
+              },
+              {
+                "id": "b",
+                "texte": "Je note le point dans la relecture, sans demander ce qui doit s'afficher.",
+                "points": 1,
+                "repere": "c4_informe"
+              },
+              {
+                "id": "c",
+                "texte": "Je ne change rien : le refus est voulu.",
+                "points": 0,
+                "repere": "c4_evite"
+              },
+              {
+                "id": "d",
+                "texte": "Je demande au responsable produit ce qui doit s'afficher, puis je corrige.",
+                "points": 2,
+                "repere": "c4_role"
+              }
+            ]
+          },
+          "explication": "La réponse part de la règle de la spécification et reconnaît ce qui est juste dans le commentaire. Pour savoir quoi afficher, la décision revient au responsable produit."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Répondre à la relecture, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de **la lecture** du commentaire à la **nouvelle relecture**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Corriger l'affichage et ajouter un test"
+            },
+            {
+              "id": "e2",
+              "texte": "Lire le commentaire et noter le rendez-vous que votre collègue a utilisé"
+            },
+            {
+              "id": "e3",
+              "texte": "Répondre à votre collègue avec le résultat de l'essai et la règle de la spécification"
+            },
+            {
+              "id": "e4",
+              "texte": "Relire ce que dit la spécification pour un rendez-vous déjà commencé"
+            },
+            {
+              "id": "e5",
+              "texte": "Demander une nouvelle relecture"
+            },
+            {
+              "id": "e6",
+              "texte": "Refaire son essai avec le rendez-vous de 9 h"
+            },
+            {
+              "id": "e7",
+              "texte": "Demander au responsable produit ce qui doit s'afficher"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e2",
+              "apres": "e6",
+              "explication": "On sait quel rendez-vous il a utilisé avant de refaire son essai."
+            },
+            {
+              "avant": "e6",
+              "apres": "e3",
+              "explication": "On répond avec le résultat de l'essai."
+            },
+            {
+              "avant": "e4",
+              "apres": "e3",
+              "explication": "On répond aussi avec la règle de la spécification."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "On connaît le comportement exact avant d'interroger le responsable produit."
+            },
+            {
+              "avant": "e6",
+              "apres": "e1",
+              "explication": "On refait l'essai avant de corriger."
+            },
+            {
+              "avant": "e7",
+              "apres": "e1",
+              "explication": "On corrige selon la décision du responsable produit."
+            },
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "On demande une nouvelle relecture une fois la correction faite."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "On répond au collègue avant de lui redemander une relecture."
+            }
+          ],
+          "repere_reussite": "c4_faits",
+          "repere_echec": "c4_evite",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le collègue qui écrit « ça ne marche pas ». La personne candidate règle le désaccord avec un essai et la spécification, puis rédige sa réponse dans la relecture.",
+            "criteres": [
+              {
+                "texte": "Refait l'essai de son collègue avec les mêmes données avant de répondre",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Répond avec le résultat de l'essai et la règle de la spécification",
+                "repere": "c4_faits"
+              },
+              {
+                "texte": "Demande au responsable produit de décider ce qui s'affiche",
+                "repere": "c4_escalade"
+              },
+              {
+                "texte": "Écrit ce qui a changé et comment le tester, sans mettre le collègue en cause",
+                "repere": "c4_informe"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose une règle d'équipe pour éviter ce malentendu",
+              "repere": "c4_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous pour savoir **qui a raison** ?",
+              "justes": [
+                {
+                  "texte": "Je refais son essai avec le rendez-vous de 9 h et je compare avec le mien.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Je regarde ce que dit la spécification pour un rendez-vous déjà commencé.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Je lui demande les étapes exactes qu'il a suivies, puis je les refais.",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je relis mon code.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis que chez moi ça marche, donc que son essai est faux.",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Vous avez refait son essai : le résultat est **le même** que le sien. **Que répondez-vous** à votre collègue ?",
+              "justes": [
+                {
+                  "texte": "Que le refus est voulu par la spécification, mais qu'il a raison : rien ne s'affiche.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Que nous n'avons pas testé le même rendez-vous, et que l'écart vient de là.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Que le comportement est prévu, mais que l'absence de message est un défaut.",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le refus est voulu par la spécification.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que son essai est faux.",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment décidez-vous** de ce qui **s'affiche** quand l'annulation est refusée ?",
+              "justes": [
+                {
+                  "texte": "Je demande au responsable produit de choisir, en lui présentant deux options.",
+                  "repere": "c4_role"
+                },
+                {
+                  "texte": "Je lui propose un message ou un bouton grisé, et il décide.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je laisse la décision au responsable produit, car la spécification ne tranche pas.",
+                  "repere": "c4_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'en parle avec mon collègue.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je choisis moi-même : c'est un détail.",
+                  "repere": "c4_impose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'indiquer dans chaque demande de relecture comment tester : étapes et données utilisées.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Expliquer comment se déroule une relecture dans l'équipe : qui relit, sous quel délai, comment on répond aux commentaires.",
+        "Proposer un modèle de demande de relecture : ce qui change, comment le tester, avec quelles données."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où vous avez dû trouver **la cause** d'un bug. **Que s'était-il passé** ?",
+      "suite": [
+        "Comment avez-vous reproduit le problème ?",
+        "Comment avez-vous vérifié que c'était corrigé ?"
+      ],
+      "attendus": [
+        "Décrit le problème avec des faits précis",
+        "Décrit comment il a isolé la cause : essais, comparaison, lecture ciblée",
+        "Dit comment il a vérifié la correction : test, nouvel essai"
+      ],
+      "relance": "Qu'avez-vous essayé qui n'a pas marché ?",
+      "alternative": "Si vous n'avez pas travaillé sur une application : parlez d'une panne ou d'une erreur que vous avez cherchée puis réglée (outil, formulaire, tableur, appareil)."
+    },
+    {
+      "id": "e2",
+      "competence": "C1",
+      "texte": "Un utilisateur écrit : « Votre application plante. » Il **n'ajoute rien**. Que faites-vous **en premier** ?",
+      "suite": [
+        "Quelles informations lui demandez-vous ?"
+      ],
+      "attendus": [
+        "Cherche à reproduire le problème avant de modifier quoi que ce soit",
+        "Demande des informations précises : étapes, données, message d'erreur",
+        "Cherche la cause avant de corriger"
+      ],
+      "relance": "Et si vous n'arrivez pas à reproduire le problème ?",
+      "alternative": "Quelqu'un vous dit qu'un appareil ou un outil « ne marche pas », sans détail. Que faites-vous pour comprendre le problème ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C6",
+      "texte": "Votre modification est terminée et la mise en ligne est demain. **Que vérifiez-vous** **avant de livrer** ?",
+      "suite": [
+        "Qui relit votre travail ?"
+      ],
+      "attendus": [
+        "Cite des contrôles concrets : tests, relecture, cas particuliers",
+        "Pense à l'effet sur le reste de l'application : autres écrans, données existantes",
+        "Pense aux règles de sécurité de base : clés secrètes, vérification par le serveur"
+      ],
+      "relance": "Que faites-vous si un test échoue la veille de la mise en ligne ?",
+      "alternative": "Avant de rendre un travail important (rapport, fichier, installation), que vérifiez-vous, et comment ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C6",
+      "texte": "Parlez d'une erreur que vous avez faite dans un **travail technique**. **Comment l'avez-vous découverte** ?",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur sans la minimiser",
+        "Dit qui il a prévenu et comment elle a été corrigée",
+        "Dit ce qui a changé pour éviter qu'elle revienne : test, règle, relecture"
+      ],
+      "relance": "Qui avez-vous prévenu ?",
+      "alternative": "Parlez d'une erreur faite dans une activité (études, association, bricolage) et de ce que vous avez fait ensuite."
+    },
+    {
+      "id": "e5",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez expliqué un sujet technique à quelqu'un qui **n'est pas spécialiste**. **Comment avez-vous fait** ?",
+      "suite": [
+        "Comment avez-vous vérifié que la personne avait compris ?"
+      ],
+      "attendus": [
+        "Décrit un message adapté à la personne : mots simples, exemple",
+        "Donne l'essentiel avant les détails",
+        "Vérifie que la personne a compris : reformulation, question"
+      ],
+      "relance": "Qu'avez-vous évité de dire ?",
+      "alternative": "Parlez d'une fois où vous avez expliqué quelque chose de compliqué (un outil, une règle, une démarche) à quelqu'un qui ne le connaissait pas."
+    },
+    {
+      "id": "e6",
+      "competence": "C3",
+      "texte": "Un bug empêche des utilisateurs de réserver. Vous le traitez en premier : la demande urgente du **responsable commercial** sera donc en retard. **Que lui dites-vous** ?",
+      "suite": [
+        "Pourquoi traitez-vous le bug en premier ?"
+      ],
+      "attendus": [
+        "Dit d'abord ce qui est retardé et la nouvelle date estimée",
+        "Explique la raison avec des mots simples : des utilisateurs sont bloqués",
+        "Dit comment il le tiendra au courant si la date change"
+      ],
+      "relance": "Dans quel ordre traitez-vous ce bug, la demande urgente et un nettoyage du code ?",
+      "alternative": "Un imprévu urgent vous empêche de finir un travail promis à quelqu'un. Que lui dites-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C4",
+      "texte": "Parlez d'une fois où un collègue a **relu votre travail** et n'était pas d'accord avec vous. **Sur quoi portait** le désaccord ?",
+      "suite": [
+        "Qu'avez-vous fait pour le régler ?",
+        "Qu'est-ce qui a été décidé ?"
+      ],
+      "attendus": [
+        "Décrit le désaccord à partir de faits précis",
+        "Décrit une vérification faite ensemble : essai, mesure, document",
+        "Dit ce qui a été décidé ou changé"
+      ],
+      "relance": "Quel fait a permis de trancher ?",
+      "alternative": "Parlez d'un désaccord dans un groupe (études, sport, association, projet) et de la façon dont vous l'avez réglé."
+    },
+    {
+      "id": "e8",
+      "competence": "C4",
+      "texte": "L'équipe adopte une nouvelle règle de travail : toute modification est relue par un collègue avant la mise en ligne. **Comment l'appliquez-vous** **dès cette semaine** ?",
+      "suite": [
+        "Que faites-vous si vous ne comprenez pas le but de la règle ?"
+      ],
+      "attendus": [
+        "Applique la règle dès la première modification, sans attendre",
+        "Pose une question pour comprendre la règle ou son but",
+        "Propose une amélioration à l'équipe plutôt que de contourner la règle"
+      ],
+      "relance": "Et si la règle vous fait perdre du temps ?",
+      "alternative": "Une nouvelle règle est décidée dans un groupe (association, équipe sportive, travail). Comment l'appliquez-vous dès le début ?"
+    }
+  ],
+  "_pv": "4af41b7d45"
+}

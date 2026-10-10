@@ -1,0 +1,2605 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "support-informatique",
+  "version": "2026.10",
+  "nom": "Technicien / Technicienne support informatique",
+  "secteur": "numerique",
+  "alias": [
+    "technicien support",
+    "technicienne support",
+    "support informatique",
+    "helpdesk",
+    "technicien de proximité",
+    "technicien informatique",
+    "assistance utilisateurs",
+    "support niveau 1"
+  ],
+  "resume": "Dépanne les collègues d'une entreprise : cherche la cause du problème, le règle ou le transmet au niveau 2, et suit chaque demande dans l'outil de tickets.",
+  "contexte": "Le service informatique interne d'une entreprise de 300 salariés, qui reçoit les demandes des collègues dans un outil de tickets.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C1",
+      "titre": "Trouver la cause d'un problème, une piste à la fois",
+      "pourquoi": "Un utilisateur dit « ça ne marche plus ». Chercher la vraie cause, une piste à la fois, évite de perdre du temps et de casser autre chose.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une imprimante qui n'imprime plus",
+        "texte": "Lundi, 9 h 20. Une collègue du service achats ouvre un ticket : « L'imprimante ne marche plus. » Hier, elle imprimait normalement. Si vous ne trouvez pas la cause, vous transmettez le ticket au niveau 2, c'est-à-dire aux techniciens spécialisés. Voici ce que vous savez déjà.",
+        "document": {
+          "type": "liste",
+          "titre": "Ce que vous savez à 9 h 20",
+          "items": [
+            "L'imprimante du couloir est partagée par tout l'étage.",
+            "Un collègue de l'étage a imprimé il y a dix minutes sur cette imprimante, sans problème.",
+            "La collègue ouvre ses fichiers, va sur internet et envoie ses e-mails sans problème.",
+            "Elle a cliqué deux fois sur « Imprimer ». Rien n'est sorti, et aucun message d'erreur ne s'affiche.",
+            "Vous n'avez pas encore vu le problème vous-même."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous arrivez au bureau de la collègue. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je réinstalle l'imprimante sur son ordinateur, pour repartir de zéro.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande de redémarrer son ordinateur, puis de réessayer d'imprimer.",
+                  "points": 1,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'essaie d'imprimer une page moi-même depuis son ordinateur, pour voir ce qui se passe.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis que l'imprimante fonctionne, puisqu'un collègue vient d'imprimer.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Reproduire le problème vous montre ce qui se passe vraiment, au lieu de le deviner. Redémarrer peut tout régler, mais vous ne saurez pas pourquoi.",
+              "relance": "Pourquoi essayez-vous de reproduire le problème avant de changer quelque chose ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Quelle **question précise** posez-vous à la collègue ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Avez-vous bien branché l'imprimante et vérifié qu'elle est allumée ? »",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Avez-vous changé quelque chose sur votre ordinateur depuis hier ? »",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Depuis quand l'imprimante ne marche-t-elle plus pour vous ? »",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Pourquoi avez-vous cliqué deux fois sur Imprimer, au lieu d'attendre ? »",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "Savoir ce qui a changé depuis hier peut mener droit à la cause. « Depuis quand » est utile, mais vous le savez déjà. Un collègue vient d'imprimer : l'imprimante est bien branchée.",
+              "relance": "Quelles questions posez-vous à un utilisateur qui dit « ça ne marche plus » ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Un collègue de l'étage a imprimé sans problème il y a **dix minutes**. **Qu'en tirez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "L'imprimante marche : je cherche ce qui est différent sur l'ordinateur de la collègue.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "b",
+                  "texte": "L'imprimante marche : je le note dans le ticket et je demande à la collègue de réessayer.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le problème est passager : il disparaîtra tout seul.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                },
+                {
+                  "id": "d",
+                  "texte": "La collègue se trompe : je clos le ticket.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Si un collègue imprime, l'imprimante fonctionne : la cause est plutôt du côté de l'ordinateur de la collègue. Réessayer est possible, mais cela ne fait pas avancer la recherche.",
+              "relance": "Que vous apprend le fait qu'un collègue puisse imprimer ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous voulez tester plusieurs pistes sur son ordinateur. **Comment procédez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je change plusieurs réglages d'un coup, pour gagner du temps.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je change une seule chose à la fois, mais je ne note pas mes essais.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je réinstalle tout l'ordinateur dès le départ, pour partir d'une base propre.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je change une seule chose, puis j'essaie d'imprimer avant d'en changer une autre.",
+                  "points": 2,
+                  "repere": "c1_etapes"
+                }
+              ],
+              "explication": "Avec un seul changement à la fois, vous savez ce qui a réglé le problème. Noter chaque essai évite de refaire les mêmes tests plus tard.",
+              "relance": "Pourquoi change-t-on une seule chose à la fois ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Aucun essai ne règle le problème. **Que mettez-vous** dans le ticket transmis au **niveau 2** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« L'imprimante ne marche pas, merci de regarder. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le nom de la collègue, l'imprimante concernée et ce qu'elle a écrit dans le ticket.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "La personne touchée, ce que j'ai constaté, mes essais et le résultat de chacun.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien de plus : le niveau 2 refera lui-même tous les tests.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Le niveau 2 gagne du temps s'il sait qui est touché, ce que vous avez vu et ce qui a déjà été testé. Sans cela, il recommence depuis le début.",
+              "relance": "Qu'est-ce que le niveau 2 doit savoir pour ne pas refaire vos tests ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **reproduire le problème**, je…",
+              "justes": [
+                {
+                  "texte": "vais au bureau de la collègue et j'essaie d'imprimer moi-même une page",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "lui demande de refaire devant moi ce qu'elle fait, et je regarde l'écran",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "essaie d'imprimer depuis son ordinateur, avec son accord, avant de rien changer",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui demande de réessayer d'imprimer",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis que l'imprimante marche, puisqu'un collègue imprime",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "redémarre l'imprimante du couloir sans prévenir",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour **trouver la cause**, je teste…",
+              "justes": [
+                {
+                  "texte": "une seule piste à la fois, et j'essaie d'imprimer après chaque essai",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "d'abord ce qui est simple et sans risque, comme la liste des documents en attente d'impression",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "ce qui est différent entre son ordinateur et celui d'un collègue qui imprime",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la première piste qui me vient à l'esprit",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "tout en même temps : redémarrage, réinstallation, nettoyage",
+                  "repere": "c1_precipite"
+                },
+                {
+                  "texte": "rien : j'attends que ça remarche tout seul",
+                  "repere": "c1_abandon"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si mes essais **ne règlent rien**, je…",
+              "justes": [
+                {
+                  "texte": "transmets le ticket au niveau 2, en notant tout ce que j'ai testé",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "note dans le ticket ce que j'ai vu, mes essais et leur résultat, puis je transmets",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "préviens la collègue que le niveau 2 reprend sa demande",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "transmets le ticket au niveau 2 avec un message court",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "laisse le ticket ouvert sans rien noter",
+                  "repere": "c1_abandon"
+                },
+                {
+                  "texte": "dis à la collègue de contacter elle-même le niveau 2",
+                  "repere": "c7_renvoie"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande si d'autres personnes de l'étage ont le même problème, pour mesurer l'impact.",
+              "repere": "c1_faits"
+            },
+            {
+              "texte": "Propose de revenir voir la collègue une fois réglé, pour vérifier qu'elle imprime bien.",
+              "repere": "c1_verifie"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je vais d'abord essayer d'imprimer depuis votre ordinateur, pour voir le problème moi-même. Je ne change rien avant. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Une collègue dit que son imprimante ne marche plus, mais un collègue imprime sans problème. Que lui dites-vous avant d'agir ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Une collègue vous signale un problème d'impression. Que lui dites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Une collègue vous demande une nouvelle imprimante pour son bureau. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Une collègue vous demande comment imprimer en couleur. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Un collègue a imprimé sans problème sur la même imprimante.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La collègue travaille au service achats.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Aucun message d'erreur ne s'affiche.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "L'imprimante du couloir a été remplacée hier.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Vous n'avez pas encore vu le problème vous-même.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le ticket indique un message d'erreur à l'écran.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je réinstalle l'imprimante sans faire l'essai.",
+                "points": 0,
+                "repere": "c1_precipite"
+              },
+              {
+                "id": "b",
+                "texte": "Je fais l'essai et je note dans le ticket ce que je vois.",
+                "points": 2,
+                "repere": "c1_etapes"
+              },
+              {
+                "id": "c",
+                "texte": "Je clos le ticket : l'imprimante marche pour un collègue, donc le problème ne vient pas de nous.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "d",
+                "texte": "Je fais l'essai, sans rien noter dans le ticket.",
+                "points": 1,
+                "repere": "c1_faits"
+              }
+            ]
+          },
+          "explication": "Un collègue imprime et aucun message d'erreur ne s'affiche : le plus sûr est de voir le problème soi-même sur son ordinateur. Ensuite, on note ce qu'on a vu dans le ticket."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre démarche, de la première question à la transmission",
+          "consigne": "Votre premier essai **ne règle rien**. Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Poser une question précise à la collègue sur ce qu'elle voit"
+            },
+            {
+              "id": "e2",
+              "texte": "Essayer d'imprimer depuis son ordinateur pour reproduire le problème"
+            },
+            {
+              "id": "e3",
+              "texte": "Tester une seule piste, par exemple la liste des documents en attente d'impression"
+            },
+            {
+              "id": "e4",
+              "texte": "Réessayer d'imprimer pour voir si c'est réglé"
+            },
+            {
+              "id": "e5",
+              "texte": "Noter dans le ticket les essais faits et leur résultat"
+            },
+            {
+              "id": "e6",
+              "texte": "Transmettre le ticket au niveau 2"
+            },
+            {
+              "id": "e7",
+              "texte": "Dire à la collègue ce qui va se passer ensuite"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e3",
+              "explication": "On pose ses questions avant de tester une piste : les réponses peuvent orienter l'essai."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On voit le problème avant de tester une piste, pour savoir si l'essai change quelque chose."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On réessaie après avoir changé quelque chose, pas avant."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On note le résultat de l'essai une fois qu'on le connaît."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "Le niveau 2 lit le ticket : il doit être complet avant la transmission."
+            },
+            {
+              "avant": "e4",
+              "apres": "e7",
+              "explication": "On annonce la suite à la collègue quand on sait que l'essai n'a rien réglé."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_precipite",
+          "reel": {
+            "consigne": "Sur un ordinateur de test où l'impression a été bloquée à l'avance pour une raison simple, la personne cherche la cause en 15 minutes, en disant à voix haute ce qu'elle teste. Elle rédige ensuite le ticket pour le niveau 2.",
+            "criteres": [
+              {
+                "texte": "Pose une question précise avant de toucher à l'ordinateur",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Teste une seule piste à la fois et réessaie après chaque essai",
+                "repere": "c1_etapes"
+              },
+              {
+                "texte": "Cherche ce qui diffère entre un ordinateur qui marche et celui qui ne marche pas",
+                "repere": "c1_cause"
+              },
+              {
+                "texte": "Rédige un ticket complet pour le niveau 2 : constat, essais, résultats",
+                "repere": "c3_complet"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de vérifier avec la collègue que l'impression marche avant de clore le ticket",
+              "repere": "c1_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment reproduisez-vous** le problème de la collègue ?",
+              "justes": [
+                {
+                  "texte": "Je vais à son bureau et j'essaie d'imprimer moi-même une page.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je lui demande de refaire devant moi ce qu'elle fait quand ça ne marche pas.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "J'essaie d'imprimer depuis son ordinateur, avec son accord, avant de rien changer.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui demande de réessayer.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je dis que ça marche, puisqu'un collègue imprime.",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "Je redémarre l'imprimante du couloir.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment testez-vous** les pistes une par une ?",
+              "justes": [
+                {
+                  "texte": "Je change une seule chose, puis j'essaie d'imprimer avant d'en changer une autre.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Je commence par ce qui est simple et sans risque, comme la liste des documents en attente d'impression.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Je compare l'ordinateur de la collègue avec celui d'un collègue qui imprime.",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je teste la piste qui me semble la plus probable.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je change plusieurs réglages d'un coup pour gagner du temps.",
+                  "repere": "c1_precipite"
+                },
+                {
+                  "texte": "Je réinstalle tout l'ordinateur.",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que transmettez-vous** au **niveau 2** quand vos essais ne règlent rien ?",
+              "justes": [
+                {
+                  "texte": "Qui est touché, ce que j'ai vu et ce que j'ai déjà testé.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Chaque essai et son résultat, pour qu'il ne les refasse pas.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Un collègue imprime normalement sur la même imprimante.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "L'heure du début du problème et le nom de la collègue.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que l'imprimante ne marche pas pour la collègue.",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : il refera ses propres tests.",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "« Imprimante en panne, merci. »",
+                  "repere": "c3_flou"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note la cause et la solution dans le ticket, pour retrouver la réponse si le problème revient.",
+              "repere": "c6_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner une fiche courte des étapes d'un dépannage : questionner, reproduire, tester une seule piste, noter.",
+        "Faire lire trois bons tickets transmis au niveau 2, pour voir quelles informations on y met."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Aider un utilisateur pressé ou agacé, en mots simples",
+      "pourquoi": "Un utilisateur en difficulté veut une réponse claire et un délai. Des mots simples et un suivi jusqu'au bout le rassurent et évitent qu'il rappelle.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un message qui ne part pas, un client à 11 h",
+        "texte": "Jeudi, 10 h 10. Un collègue du service commercial vous appelle, agacé : « Mon message ne part pas, et mon client attend mon offre avant 11 h ! Chez vous, ça ne marche jamais. » Il vous lit le message d'erreur (voir ci-dessous). Dans l'entreprise, les offres partent toujours de la messagerie de l'entreprise. Les gros fichiers s'envoient par un lien vers l'espace de partage, l'endroit où l'on dépose les fichiers communs. Montrer au collègue comment faire prend environ cinq minutes.",
+        "document": {
+          "type": "message",
+          "titre": "Message d'erreur lu par le collègue",
+          "de": "Messagerie (message automatique)",
+          "texte": "Votre message n'a pas pu être envoyé : la pièce jointe est trop volumineuse."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le collègue est agacé et vous dit : « Chez vous, ça ne marche jamais. » **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Je suis vraiment désolé pour ce désagrément, je comprends votre agacement. »",
+                  "points": 1,
+                  "repere": "c7_apaise"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je vois que c'est urgent, avant 11 h. Je regarde ça tout de suite avec vous. »",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Ce n'est pas vrai : la messagerie marche très bien en général, c'est rare. »",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je ne peux rien faire sans ticket. Envoyez-moi d'abord votre demande par écrit. »",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Un utilisateur agacé veut d'abord savoir qu'on a compris son urgence et qu'on agit. S'excuser sans agir est poli, mais cela ne l'aide pas à envoyer son offre.",
+              "relance": "Que dites-vous à quelqu'un qui est en colère contre le service informatique ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le message d'erreur indique que la pièce jointe est trop volumineuse. **Comment l'expliquez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Le serveur SMTP rejette votre message : la pièce jointe dépasse la limite de taille autorisée. »",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Votre fichier est trop gros pour la messagerie. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Votre fichier est trop gros pour la messagerie. On l'envoie par un lien, ça prend cinq minutes. »",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Vous n'auriez pas dû joindre un fichier aussi gros. »",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "Une phrase simple donne la cause (fichier trop gros) et la solution (un lien). La cause seule laisse le collègue sans issue. Le vocabulaire technique ou le reproche ne l'aident pas.",
+              "relance": "Comment expliquez-vous une panne à quelqu'un qui n'est pas du métier ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Il vous demande **combien de temps** cela va prendre. L'envoi par un lien prend environ **cinq minutes**. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Deux minutes, c'est promis. Et ne vous inquiétez pas : votre client aura bien l'offre avant 11 h. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Ça dépend, je ne peux pas vous dire. »",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Environ cinq minutes. »",
+                  "points": 1,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Environ cinq minutes. Si ça prend plus de temps, je vous préviens tout de suite. »",
+                  "points": 2,
+                  "repere": "c7_suite"
+                }
+              ],
+              "explication": "Un délai réaliste rassure. S'engager à prévenir en cas de retard montre que vous suivez la demande. Promettre l'impossible aggrave la situation si cela échoue.",
+              "relance": "Comment donnez-vous un délai quand vous n'êtes pas sûr de le tenir ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le collègue propose d'envoyer le fichier depuis sa **messagerie personnelle**, « pour aller plus vite ». **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Les offres partent de la messagerie de l'entreprise. Avec un lien, ce sera aussi rapide. »",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                },
+                {
+                  "id": "b",
+                  "texte": "« D'accord, si c'est plus rapide pour vous, envoyez-le depuis votre messagerie personnelle. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Non, désolé : l'entreprise n'autorise pas l'envoi des offres depuis une messagerie personnelle. »",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Non, c'est interdit. Vous faites comme je vous dis, avec un lien. »",
+                  "points": 0,
+                  "repere": "c7_impose"
+                }
+              ],
+              "explication": "Vous respectez la règle de l'entreprise et vous proposez une solution aussi rapide. Refuser sans alternative laisse le collègue bloqué. Accepter fait sortir l'offre de la messagerie de l'entreprise.",
+              "relance": "Que faites-vous quand un utilisateur demande quelque chose que la règle interdit ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le message est parti. Que faites-vous **avant de clore** le ticket ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je clos le ticket tout de suite : le problème est réglé.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je demande au collègue de confirmer que le message est bien parti et que le lien s'ouvre.",
+                  "points": 2,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je regarde moi-même dans sa boîte d'envoi que le message est parti, puis je clos le ticket.",
+                  "points": 1,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse le ticket ouvert, sans rien dire au collègue.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Seul le collègue peut confirmer que tout fonctionne pour lui. Vérifier vous-même la boîte d'envoi ne montre pas si le lien s'ouvre.",
+              "relance": "Comment savez-vous qu'un problème est vraiment réglé pour l'utilisateur ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Au collègue agacé, je dis **d'abord**…",
+              "justes": [
+                {
+                  "texte": "que je comprends l'urgence et que je regarde son problème tout de suite",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "que je vois que son offre doit partir avant 11 h, et que je m'en occupe maintenant",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "que je suis là pour l'aider à envoyer son offre à temps",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je suis désolé pour la gêne",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que la messagerie marche très bien d'habitude",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "qu'il doit d'abord m'envoyer sa demande par écrit",
+                  "repere": "c7_ignore"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour lui **expliquer le problème**, je dis que…",
+              "justes": [
+                {
+                  "texte": "son fichier est trop gros pour la messagerie, et qu'on va l'envoyer par un lien",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "la messagerie refuse les fichiers trop gros, et que je lui montre comment faire autrement",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "ça vient de la taille du fichier, pas de lui, et qu'on règle ça en cinq minutes",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "son fichier est trop gros",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le serveur SMTP rejette le message à cause de la limite de taille des pièces jointes",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "il n'aurait pas dû joindre un fichier aussi gros",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant de clore** le ticket, je…",
+              "justes": [
+                {
+                  "texte": "demande au collègue de confirmer que son message est parti et que le lien s'ouvre",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "vérifie avec lui que son problème est réglé",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "note dans le ticket la cause et la solution, puis je clos après sa confirmation",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde moi-même que le message est parti",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "clos le ticket dès que le message est parti, sans le prévenir",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "laisse le ticket ouvert et je n'en parle plus",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Montre au collègue comment envoyer un gros fichier par un lien, pour qu'il le refasse seul la prochaine fois.",
+              "repere": "c7_suivi"
+            },
+            {
+              "texte": "Propose de lui envoyer les étapes par écrit, pour qu'il les retrouve.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je vois que c'est urgent. Votre fichier est trop gros pour la messagerie : on l'envoie par un lien, ça prend environ cinq minutes. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un collègue pressé dit que son message ne part pas. Le message d'erreur indique une pièce jointe trop volumineuse. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un collègue pressé dit que son message ne part pas. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un collègue demande comment créer une nouvelle adresse e-mail. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un collègue vous demande pourquoi la messagerie est lente aujourd'hui. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le message d'erreur indique que la pièce jointe est trop volumineuse.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le collègue travaille au service commercial.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le client attend l'offre avant 11 h.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La messagerie est en panne pour toute l'entreprise.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "L'envoi par un lien prend environ cinq minutes.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le collègue a oublié son mot de passe.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je lui dis de se débrouiller avec le lien et je clos le ticket.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              },
+              {
+                "id": "b",
+                "texte": "Je lui montre comment envoyer le fichier par un lien, étape par étape.",
+                "points": 2,
+                "repere": "c7_alternative"
+              },
+              {
+                "id": "c",
+                "texte": "Je lui envoie les étapes par e-mail, et je passe au ticket suivant pour ne pas perdre de temps.",
+                "points": 1,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "d",
+                "texte": "J'attends qu'il me rappelle s'il n'y arrive pas.",
+                "points": 0,
+                "repere": "c7_ignore"
+              }
+            ]
+          },
+          "explication": "Le collègue a besoin d'un message simple : la cause (fichier trop gros), la solution (un lien) et le temps nécessaire (environ cinq minutes). C'est ce qui l'aide à tenir son échéance de 11 h."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous dites au collègue pressé",
+          "consigne": "Pour **chaque phrase**, choisissez son **effet** sur le collègue.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "L'aide à avancer"
+            },
+            {
+              "id": "k2",
+              "nom": "Ne l'aide pas"
+            },
+            {
+              "id": "k3",
+              "nom": "L'agace davantage"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "« Je vois que c'est urgent. On envoie votre offre par un lien, j'en ai pour cinq minutes. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle montre que vous avez compris l'urgence, donne la solution et le temps nécessaire."
+            },
+            {
+              "id": "e2",
+              "texte": "« Je suis désolé pour ce désagrément. » (puis vous attendez, sans rien proposer)",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "L'excuse est polie, mais l'offre n'avance pas."
+            },
+            {
+              "id": "e3",
+              "texte": "« Vous n'auriez pas dû joindre un fichier aussi gros. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est un reproche : le collègue n'a pas fait d'erreur grave, la messagerie a une limite."
+            },
+            {
+              "id": "e4",
+              "texte": "« C'est une limite de taille du serveur d'envoi. »",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "L'explication est exacte, mais technique : le collègue ne sait toujours pas quoi faire, et cela peut l'agacer davantage."
+            },
+            {
+              "id": "e5",
+              "texte": "« Calmez-vous, je fais ce que je peux. »",
+              "accepte": [
+                "k3",
+                "k2"
+              ],
+              "explication": "Dire à quelqu'un de se calmer l'agace le plus souvent. Dans tous les cas, cela ne l'aide pas à envoyer son offre."
+            },
+            {
+              "id": "e6",
+              "texte": "« Si ça prend plus de cinq minutes, je vous préviens tout de suite. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le délai est clair, et le collègue sait qu'il sera tenu au courant."
+            },
+            {
+              "id": "e7",
+              "texte": "« Je vous montre comment faire, pour que vous puissiez le refaire seul. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Il avance tout de suite et saura faire la prochaine fois."
+            },
+            {
+              "id": "e8",
+              "texte": "« Essayez avec le lien et rappelez-moi si ça ne marche pas. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le collègue reste seul face au problème, alors que son échéance est proche."
+            }
+          ],
+          "repere_reussite": "c7_apaise",
+          "repere_echec": "c7_aggrave",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le collègue pressé et agacé, avec le message d'erreur sous les yeux. La personne candidate l'aide à envoyer son offre.",
+            "criteres": [
+              {
+                "texte": "Montre qu'elle a compris l'urgence avant de chercher la cause",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "Explique la cause en mots simples, sans jargon ni reproche",
+                "repere": "c3_adapte"
+              },
+              {
+                "texte": "Donne un délai réaliste et propose une solution autorisée",
+                "repere": "c7_suite"
+              },
+              {
+                "texte": "Vérifie avec le collègue que c'est résolu avant de clore",
+                "repere": "c7_suivi"
+              }
+            ],
+            "bonus": {
+              "texte": "Montre au collègue comment éviter le problème la prochaine fois",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que dites-vous** au collègue agacé, **au début** de l'appel ?",
+              "justes": [
+                {
+                  "texte": "Que je comprends l'urgence et que je m'en occupe tout de suite.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Que je vois que l'offre doit partir avant 11 h, et que je regarde son problème maintenant.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Que je vais l'aider à envoyer son offre à temps.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je suis désolé pour la gêne.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que la messagerie marche très bien d'habitude.",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "Qu'il doit d'abord se calmer.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment expliquez-vous** le problème au collègue, en **mots simples** ?",
+              "justes": [
+                {
+                  "texte": "Son fichier est trop gros pour la messagerie, donc on l'envoie par un lien.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "La messagerie refuse les fichiers trop gros : je lui montre comment faire autrement.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Ça vient de la taille du fichier, pas de lui, et ça se règle en cinq minutes.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Son fichier est trop gros.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Le serveur d'envoi rejette le message à cause de la limite de taille.",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "Il aurait dû faire attention à la taille du fichier.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous **avant de clore** le ticket ?",
+              "justes": [
+                {
+                  "texte": "Je demande au collègue de confirmer que son message est parti et que le lien s'ouvre.",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "Je vérifie avec lui que son problème est réglé, puis je note la cause et la solution.",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "Je lui demande si tout fonctionne pour lui, et je clos seulement après sa réponse.",
+                  "repere": "c7_suivi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde dans sa boîte d'envoi que le message est parti.",
+                  "repere": null
+                },
+                {
+                  "texte": "Je note la cause et la solution dans le ticket.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je clos dès que le message part.",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "Je laisse le ticket ouvert sans rien dire.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Lui montre comment envoyer un gros fichier par un lien, pour qu'il le refasse seul.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner des phrases types pour répondre à un utilisateur agacé : reconnaître l'urgence, donner la cause en mots simples, annoncer un délai.",
+        "Faire accompagner la personne, pendant ses premiers appels, par un collègue expérimenté, puis en parler ensemble."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Choisir quel ticket traiter en premier, selon l'impact",
+      "pourquoi": "Quand plusieurs demandes arrivent en même temps, traiter d'abord ce qui bloque le plus de monde évite de faire perdre des heures de travail à toute l'entreprise.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Cinq tickets en attente, un seul technicien",
+        "texte": "Lundi, 8 h 45. Vous êtes seul au support ce matin. Cinq tickets attendent dans l'outil (voir le tableau, classé par heure d'arrivée) et vous ne pouvez en traiter qu'un à la fois. Chaque utilisateur attend de vos nouvelles.",
+        "document": {
+          "type": "tableau",
+          "titre": "Les tickets de 8 h 45",
+          "colonnes": [
+            "Ticket",
+            "Reçu à",
+            "Demande",
+            "Personnes touchées",
+            "Échéance"
+          ],
+          "lignes": [
+            [
+              "T1",
+              "8 h 05",
+              "Marketing : la souris sans fil ne marche plus",
+              "1 personne, qui peut utiliser le pavé tactile de son portable",
+              "Aucune"
+            ],
+            [
+              "T2",
+              "8 h 15",
+              "Logistique : demande d'installation d'un logiciel de plus",
+              "1 personne",
+              "Aucune"
+            ],
+            [
+              "T3",
+              "8 h 20",
+              "Ressources humaines : préparer le poste (ordinateur et accès) d'un nouvel arrivant",
+              "1 personne, qui arrive demain",
+              "Demain, 9 h"
+            ],
+            [
+              "T4",
+              "8 h 30",
+              "Salle de réunion 2 : l'écran ne s'allume pas",
+              "Une réunion avec un client",
+              "Aujourd'hui, 14 h"
+            ],
+            [
+              "T5",
+              "8 h 40",
+              "Comptabilité : le dossier partagé du service (les fichiers communs) ne s'ouvre plus",
+              "9 personnes, bloquées depuis 8 h 30",
+              "Paiements à envoyer avant midi"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Il est 8 h 45. **Quel ticket** traitez-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "T1, la souris du marketing : c'est le ticket arrivé en premier ce matin, il faut respecter l'ordre.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "T4, l'écran de la salle de réunion : un client sera présent à 14 h.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "c",
+                  "texte": "T5, la comptabilité : neuf personnes sont bloquées, avec une échéance à midi.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "d",
+                  "texte": "T3, le poste du nouvel arrivant : il doit être prêt demain à 9 h, et sa préparation peut prendre du temps.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Neuf personnes sont bloquées depuis 8 h 30, avec des paiements à envoyer avant midi : c'est l'impact le plus grand. Le ticket arrivé en premier n'est pas forcément le plus urgent.",
+              "relance": "Qu'est-ce qui rend un ticket plus urgent qu'un autre ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Pendant que vous traitez T5, la personne **du marketing** rappelle : sa souris ne marche toujours pas. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'explique qu'un service est bloqué, je donne une heure approximative et je rappelle le pavé tactile.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne réponds pas au téléphone, pour rester concentré sur le problème de la comptabilité jusqu'à sa résolution.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que je m'occuperai de son ticket plus tard, mais sans lui donner d'heure précise.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'arrête la comptabilité et je m'occupe de sa souris : son ticket est arrivé plus tôt.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                }
+              ],
+              "explication": "La personne du marketing peut travailler avec le pavé tactile : elle peut attendre. Mais elle doit savoir pourquoi et à quelle heure vous passerez. Sans réponse, elle rappellera.",
+              "relance": "Que dites-vous à un utilisateur dont le ticket doit attendre ?"
+            },
+            {
+              "id": "q3",
+              "texte": "T5 est réglé et vérifié. **Quel ticket** traitez-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "T1, la souris du marketing : c'est le ticket arrivé en premier.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "T4, l'écran de la salle de réunion, avant la réunion client de 14 h.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "c",
+                  "texte": "T3, le poste du nouvel arrivant, qui doit être prêt demain à 9 h.",
+                  "points": 1,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "d",
+                  "texte": "T2, le logiciel de la logistique : la demande est rapide à traiter, donc je la règle d'abord.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "La réunion de 14 h a lieu aujourd'hui : elle passe avant le poste de demain. Le poste du nouvel arrivant est une vraie échéance, mais plus tardive.",
+              "relance": "Après un ticket urgent, comment choisissez-vous le suivant ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Un responsable de service vous appelle : il veut que son ordinateur lent passe **avant les autres** tickets. **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« D'accord, je m'en occupe tout de suite, puisque vous êtes responsable de service. Je passe avant les autres. »",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je note votre demande et je m'en occupe dès que possible, sans doute dans la journée. »",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Ouvrez un autre ticket et attendez votre tour, comme tout le monde. »",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je traite d'abord ce qui bloque le plus de monde. Je note votre demande et je vous donne une heure. »",
+                  "points": 2,
+                  "repere": "c2_critere"
+                }
+              ],
+              "explication": "Un critère valable pour tous (personnes bloquées, échéances) est plus juste qu'un choix selon la fonction. Donner une heure rassure le responsable ; « dès que possible » ne dit rien.",
+              "relance": "Que répondez-vous à quelqu'un qui demande de passer avant les autres ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le poste du nouvel arrivant doit être prêt **demain à 9 h**. Que faites-vous pour être prêt ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends demain matin : je préparerai son poste quand il arrivera.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je prépare son poste demain à 8 h, avant son arrivée.",
+                  "points": 1,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je réserve un créneau cet après-midi, et je vérifie que le matériel est disponible.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je commence à le préparer maintenant, en laissant la comptabilité en attente.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Un créneau réservé aujourd'hui laisse de la marge si du matériel manque. Préparer le matin même est possible, mais sans aucune marge en cas de problème.",
+              "relance": "Comment préparez-vous une demande qui a une échéance demain ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Je traite **en premier** le ticket…",
+              "justes": [
+                {
+                  "texte": "de la comptabilité, parce que neuf personnes sont bloquées",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "qui bloque le plus de monde, c'est-à-dire la comptabilité",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "de la comptabilité : un service entier ne peut plus travailler et a une échéance à midi",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "de la salle de réunion, à cause du client à 14 h",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "arrivé le premier, celui de la souris du marketing",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "le plus facile, pour vider la liste plus vite",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Aux utilisateurs dont **le ticket attend**, je…",
+              "justes": [
+                {
+                  "texte": "dis pourquoi il attend et à quelle heure je compte m'en occuper",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "écris dans leur ticket une heure approximative de passage",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "rappelle la solution de secours qu'ils peuvent utiliser en attendant",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dis que je m'en occupe plus tard",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne réponds pas à leurs appels",
+                  "repere": "c2_silence"
+                },
+                {
+                  "texte": "laisse leur ticket sans nouvelles jusqu'à ce que je sois libre",
+                  "repere": "c2_silence"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour **être prêt** pour le nouvel arrivant de **demain**, je…",
+              "justes": [
+                {
+                  "texte": "réserve un créneau aujourd'hui pour préparer son poste",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "vérifie dès aujourd'hui que le matériel est disponible",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "note l'échéance de demain 9 h dans ma liste de tâches",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "prépare son poste demain matin tôt",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "attends demain pour m'en occuper",
+                  "repere": "c2_reactif"
+                },
+                {
+                  "texte": "prépare son poste tout de suite et laisse la comptabilité attendre",
+                  "repere": "c2_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient le responsable du service qu'il est seul ce matin avec cinq tickets, pour demander de l'aide.",
+              "repere": "c4_aide"
+            },
+            {
+              "texte": "Demande à la comptabilité de confirmer que le dossier s'ouvre avant de passer au ticket suivant.",
+              "repere": "c1_verifie"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Neuf personnes de la comptabilité sont bloquées : je commence par elles. Ensuite, je traite la salle de réunion avant 14 h. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Il est 8 h 45 et cinq tickets attendent. Un service entier est bloqué et une réunion client a lieu à 14 h. Par quoi commencez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Plusieurs tickets attendent. Par quoi commencez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un collègue vous demande combien de temps prend l'installation d'un logiciel. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le responsable demande combien de tickets ont été traités cette semaine. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Neuf personnes de la comptabilité sont bloquées.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La souris du marketing est le ticket arrivé en premier.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Les paiements doivent partir avant midi.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le nouvel arrivant commence aujourd'hui.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Une réunion avec un client a lieu à 14 h.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le logiciel demandé par la logistique est urgent.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je passe à la souris du marketing : son ticket est arrivé en premier.",
+                "points": 0,
+                "repere": "c2_arrivee"
+              },
+              {
+                "id": "b",
+                "texte": "Je préviens les autres utilisateurs de l'heure à laquelle je passerai chez eux.",
+                "points": 2,
+                "repere": "c2_previent"
+              },
+              {
+                "id": "c",
+                "texte": "Je traite le ticket suivant, sans prévenir personne.",
+                "points": 1,
+                "repere": "c2_silence"
+              },
+              {
+                "id": "d",
+                "texte": "Je commence plusieurs tickets en même temps pour aller plus vite.",
+                "points": 0,
+                "repere": "c2_dispersion"
+              }
+            ]
+          },
+          "explication": "Neuf personnes bloquées avec une échéance à midi pèsent plus qu'une personne seule. La réunion de 14 h passe ensuite : son échéance est plus proche que celle du poste de demain."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Les cinq tickets de 8 h 45, dans l'ordre de traitement",
+          "consigne": "Remettez ces tickets **dans l'ordre** où vous les traitez **ce matin**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "T1 — Marketing : souris sans fil en panne (le pavé tactile fonctionne)"
+            },
+            {
+              "id": "e2",
+              "texte": "T2 — Logistique : demande d'un logiciel de plus (pas d'échéance)"
+            },
+            {
+              "id": "e3",
+              "texte": "T3 — Ressources humaines : poste du nouvel arrivant (prêt demain, 9 h)"
+            },
+            {
+              "id": "e4",
+              "texte": "T4 — Salle de réunion 2 : écran éteint (réunion client à 14 h)"
+            },
+            {
+              "id": "e5",
+              "texte": "T5 — Comptabilité : dossier partagé inaccessible (9 personnes bloquées)"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e5",
+              "apres": "e4",
+              "explication": "Un service entier bloqué maintenant passe avant une réunion qui a lieu à 14 h."
+            },
+            {
+              "avant": "e5",
+              "apres": "e3",
+              "explication": "Neuf personnes bloquées passent avant la préparation d'un poste pour demain."
+            },
+            {
+              "avant": "e5",
+              "apres": "e1",
+              "explication": "Neuf personnes bloquées passent avant une personne qui a une solution de secours."
+            },
+            {
+              "avant": "e5",
+              "apres": "e2",
+              "explication": "Un service bloqué passe avant une demande sans échéance."
+            },
+            {
+              "avant": "e4",
+              "apres": "e3",
+              "explication": "L'échéance d'aujourd'hui passe avant celle de demain."
+            },
+            {
+              "avant": "e4",
+              "apres": "e1",
+              "explication": "Une réunion client le jour même passe avant une panne qui a une solution de secours."
+            },
+            {
+              "avant": "e3",
+              "apres": "e1",
+              "explication": "Une échéance demain passe avant une demande sans échéance, qui a une solution de secours."
+            },
+            {
+              "avant": "e3",
+              "apres": "e2",
+              "explication": "Une échéance demain passe avant une demande sans échéance."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": "c2_arrivee",
+          "reel": {
+            "consigne": "Exercice de 15 minutes : cinq tickets fictifs sont présentés sur des cartes, avec l'heure d'arrivée, le nombre de personnes touchées et l'échéance. La personne les classe et explique son critère à voix haute.",
+            "criteres": [
+              {
+                "texte": "Place en premier le ticket qui bloque le plus de personnes",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Tient compte des échéances : aujourd'hui avant demain",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Prévoit de prévenir les utilisateurs dont le ticket attend",
+                "repere": "c2_previent"
+              },
+              {
+                "texte": "Explique son critère de choix à voix haute",
+                "repere": "c2_critere"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévoit un créneau pour préparer à l'avance la demande de demain",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Par quel ticket **commencez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Par la comptabilité : neuf personnes sont bloquées, avec une échéance à midi.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Par le ticket qui bloque le plus de monde, donc la comptabilité.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Par la comptabilité : un service entier ne peut plus travailler.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Par la réunion de 14 h, à cause du client.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Par la souris, car c'est le premier ticket arrivé.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que dites-vous** aux utilisateurs dont le ticket **doit attendre** ?",
+              "justes": [
+                {
+                  "texte": "Je leur dis pourquoi il attend et à quelle heure je compte passer.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "J'écris une heure approximative dans leur ticket.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je rappelle la solution de secours, comme le pavé tactile.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je leur dis que je m'en occuperai plus tard.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : ils verront bien quand j'arriverai.",
+                  "repere": "c2_silence"
+                },
+                {
+                  "texte": "Je ne réponds pas à leurs appels.",
+                  "repere": "c2_silence"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Quelqu'un vous demande de **passer avant les autres**. Que répondez-vous ?",
+              "justes": [
+                {
+                  "texte": "J'explique que je traite d'abord ce qui bloque le plus de monde, puis je donne une heure.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je note sa demande dans son ticket et je lui donne une heure de passage.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je lui demande combien de personnes sont bloquées et s'il a une échéance.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que je note sa demande.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'accepte, parce que c'est un responsable.",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "Je lui dis d'attendre son tour, sans rien expliquer.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de demander de l'aide au responsable informatique si trop de tickets urgents arrivent.",
+              "repere": "c4_aide"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Afficher le critère de priorité du service : nombre de personnes bloquées, échéance, solution de secours.",
+        "Faire trier avec un collègue expérimenté les tickets d'une vraie matinée, puis comparer les choix."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Réagir à un faux message et protéger les mots de passe",
+      "pourquoi": "Un faux message qui vole un mot de passe (l'hameçonnage) peut donner à un inconnu l'accès au compte d'un collègue. Réagir vite et bien limite les dégâts.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un e-mail suspect, une personne a cliqué",
+        "texte": "Mercredi, à 14 h 10, un collègue du service achats ouvre un ticket : à 13 h 50, il a reçu l'e-mail ci-dessous et il n'a pas cliqué sur le lien. Deux autres personnes du service ont reçu le même message. À 14 h 25, l'une d'elles vous appelle : elle a cliqué sur le lien à 14 h et a tapé son mot de passe. Dans l'entreprise, le niveau 2 (les techniciens spécialisés) gère la sécurité : lui seul retire un message des boîtes ou bloque un expéditeur. Les adresses de l'entreprise finissent toutes par @entreprise.example.",
+        "document": {
+          "type": "message",
+          "titre": "L'e-mail reçu à 13 h 50",
+          "de": "Support Informatique <assistance@comptes-securises.example>",
+          "texte": "Bonjour, votre mot de passe expire aujourd'hui. Pour le conserver, cliquez sur le lien « Conserver mon mot de passe » et tapez votre mot de passe actuel dans l'heure. Sans cette action, votre compte sera bloqué. Le support informatique"
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le collègue qui a ouvert le ticket n'a pas cliqué sur le lien. **Que lui dites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Merci de l'avoir signalé. Ne cliquez pas, ne répondez pas et gardez le message tel quel. »",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Cliquez sur le lien, pour que je voie la page qui s'ouvre et que je vous dise si elle est sûre. »",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Supprimez le message de votre boîte tout de suite, c'est la solution la plus sûre. »",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Ce message n'est qu'une publicité de plus : vous pouvez simplement l'ignorer. »",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Ne pas cliquer ni répondre protège le collègue. Le message gardé tel quel permet au niveau 2 de le vérifier. Supprimer protège aussi, mais fait perdre cette preuve.",
+              "relance": "Que dites-vous à un collègue qui vous signale un message suspect ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Que regardez-vous en premier** pour savoir si ce message est faux ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Si le nom « Support Informatique » est bien écrit comme expéditeur, au-dessus du message.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "b",
+                  "texte": "Si l'adresse de l'expéditeur est bien une adresse de l'entreprise.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "c",
+                  "texte": "Si le message demande d'agir très vite, dans l'heure.",
+                  "points": 1,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "d",
+                  "texte": "Si le message est arrivé à une heure inhabituelle.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "L'adresse de l'expéditeur se vérifie : elle doit être celle de l'entreprise, alors qu'un nom affiché peut être inventé. Le ton pressé est un signe fréquent, mais un vrai message peut aussi être urgent.",
+              "relance": "Comment savez-vous qu'un message vient vraiment du service informatique ?"
+            },
+            {
+              "id": "q3",
+              "texte": "L'une des deux personnes vous appelle : elle a cliqué sur le lien et tapé son mot de passe. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis que ce n'est sûrement pas grave et qu'elle peut continuer à travailler.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande de changer son mot de passe tout de suite et je note l'incident dans le ticket.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande de changer son mot de passe tout de suite et je préviens le niveau 2 par téléphone.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je bloque moi-même l'expéditeur sur le serveur de messagerie, sans en parler au niveau 2, pour agir vite.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                }
+              ],
+              "explication": "Un mot de passe tapé sur un faux site doit être changé tout de suite. Le niveau 2 doit aussi être prévenu, car d'autres comptes peuvent être touchés. Noter l'incident sans prévenir est utile, mais trop lent.",
+              "relance": "Que faites-vous quand un utilisateur a tapé son mot de passe sur un faux site ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Cette personne vous dit : « Je vous donne mon **mot de passe**, pour que vous regardiez mon compte. » **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« D'accord, donnez-le-moi. Je regarde votre compte tout de suite, et vous le changerez ensuite vous-même. »",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Non, je ne peux pas prendre votre mot de passe. C'est la règle, désolé. »",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Écrivez-le dans le ticket, le niveau 2 pourra regarder votre compte. »",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Non, personne ne doit connaître votre mot de passe, pas même moi. Changez-le vous-même. »",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Un mot de passe ne se donne à personne, pas même au support, et ne s'écrit nulle part. L'utilisateur le change lui-même. Refuser sans expliquer est correct, mais ne dit pas quoi faire.",
+              "relance": "Un utilisateur vous propose son mot de passe : que répondez-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vous transmettez le dossier au niveau 2. **Que lui donnez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Une copie du message, les personnes qui l'ont reçu, et qui a cliqué, avec l'heure.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Une copie du message et le nom du collègue qui l'a signalé.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Un e-mail louche, merci de regarder. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : le niveau 2 verra le message dans les boîtes de messagerie.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Le niveau 2 doit retrouver les personnes touchées et savoir qui a cliqué, et à quelle heure. Une copie du message seule ne suffit pas pour agir vite.",
+              "relance": "Que doit savoir le niveau 2 pour réagir vite à un faux message ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Au collègue **qui a signalé** le message, je dis de…",
+              "justes": [
+                {
+                  "texte": "ne pas cliquer sur le lien et de ne pas répondre",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "garder le message tel quel, pour que le niveau 2 puisse le voir",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "me prévenir si d'autres collègues ont reçu le même message",
+                  "repere": "c4_informe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "supprimer le message",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "cliquer sur le lien pour que je voie la page",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "ne pas s'inquiéter, c'est de la publicité",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "À la personne **qui a tapé** son mot de passe, je dis de…",
+              "justes": [
+                {
+                  "texte": "le changer tout de suite, elle-même, pendant que je préviens le niveau 2",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "le changer immédiatement, et de ne le donner à personne, pas même au support",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "ne rien saisir d'autre sur ce site et de changer son mot de passe tout de suite",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "me donner l'heure exacte du clic, pour que je la note dans le ticket",
+                  "repere": "c3_complet"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "m'envoyer son mot de passe pour que je vérifie son compte",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "ne rien faire : le faux site n'a rien pu voir",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Je transmets au **niveau 2**…",
+              "justes": [
+                {
+                  "texte": "une copie du message et la liste des trois destinataires",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "qui a cliqué, à quelle heure, et ce que la personne a fait ensuite",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "le ticket avec toutes les heures : réception, clic et appel",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "une copie du message",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "seulement « e-mail louche »",
+                  "repere": "c3_flou"
+                },
+                {
+                  "texte": "rien, je retire moi-même le message des boîtes",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande à la personne si elle utilise le même mot de passe ailleurs, pour le faire changer aussi.",
+              "repere": "c8_savoir"
+            },
+            {
+              "texte": "Propose de rappeler aux collègues du service de signaler un message suspect au lieu de cliquer.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Non, personne ne doit connaître votre mot de passe, pas même moi. Changez-le vous-même tout de suite, et je préviens le niveau 2. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Une personne a tapé son mot de passe sur un faux site. Elle vous propose de vous le donner, pour que vous regardiez son compte. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Une personne vous propose son mot de passe. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Une personne a oublié son mot de passe et vous appelle. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Une personne vous demande si un message reçu est dangereux. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La personne a cliqué sur le lien à 14 h et a tapé son mot de passe.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le message a été reçu à 13 h 50.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La personne propose de donner son mot de passe au support.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le collègue du service achats a cliqué sur le lien.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le niveau 2 gère la sécurité : lui seul peut agir sur les messages.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le niveau 2 a déjà bloqué l'expéditeur.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je supprime le message de toutes les boîtes du service.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "b",
+                "texte": "Je note l'heure du clic dans le ticket, puis je préviens le niveau 2 avec une copie du message.",
+                "points": 2,
+                "repere": "c4_escalade"
+              },
+              {
+                "id": "c",
+                "texte": "Je note l'incident dans le ticket et j'attends que le niveau 2 le voie.",
+                "points": 1,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "d",
+                "texte": "Je clos le ticket : la personne a changé son mot de passe.",
+                "points": 0,
+                "repere": "c1_suppose"
+              }
+            ]
+          },
+          "explication": "Un mot de passe tapé sur un faux site doit être changé tout de suite, par la personne elle-même. Le niveau 2 gère la sécurité : il doit être prévenu, car d'autres comptes peuvent être touchés."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Votre fiche pour le niveau 2 : repérez les erreurs",
+          "consigne": "Voici la fiche que vous avez rédigée dans le ticket. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Signalé par un collègue du service achats, à 14 h 10.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "E-mail reçu à 13 h 50, envoyé par une adresse qui n'est pas celle de l'entreprise.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Le collègue qui a signalé le message a cliqué sur le lien.",
+              "erreur": true,
+              "explication": "Il a signalé le message sans cliquer sur le lien."
+            },
+            {
+              "id": "e4",
+              "texte": "Deux autres personnes du service ont reçu le même message.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "L'une d'elles a cliqué sur le lien à 14 h et a tapé son mot de passe.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Mot de passe de cette personne : noté ici, pour que le niveau 2 puisse tester son compte.",
+              "erreur": true,
+              "explication": "Un mot de passe ne s'écrit nulle part, pas même dans un ticket."
+            },
+            {
+              "id": "e7",
+              "texte": "Copie du message jointe au ticket, message gardé tel quel.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "Message retiré des boîtes du service par mes soins.",
+              "erreur": true,
+              "explication": "Seul le niveau 2 retire un message des boîtes ou bloque un expéditeur."
+            },
+            {
+              "id": "e9",
+              "texte": "Statut : résolu, rien d'autre à faire.",
+              "erreur": true,
+              "explication": "Une personne a tapé son mot de passe : le niveau 2 doit encore agir, le ticket reste ouvert."
+            }
+          ],
+          "repere_reussite": "c8_securite",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Exercice de 15 minutes : la personne reçoit un e-mail suspect fictif, puis l'appel d'un collègue qui a cliqué. Elle dit ce qu'elle lui répond, puis rédige la fiche pour le niveau 2.",
+            "criteres": [
+              {
+                "texte": "Dit de ne pas cliquer ni répondre, et de garder le message",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Refuse le mot de passe et fait changer le mot de passe par la personne elle-même",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Reste dans son rôle : ne retire pas le message et prévient le niveau 2",
+                "repere": "c8_role"
+              },
+              {
+                "texte": "Rédige une fiche complète : message, destinataires, heures, actions",
+                "repere": "c3_complet"
+              }
+            ],
+            "bonus": {
+              "texte": "Explique pourquoi on ne donne jamais son mot de passe, même au support",
+              "repere": "c8_pourquoi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que dites-vous** au collègue qui **vous signale** le message suspect ?",
+              "justes": [
+                {
+                  "texte": "De ne pas cliquer sur le lien, de ne pas répondre et de garder le message.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Merci de l'avoir signalé : je transmets le message au niveau 2.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "De me dire s'il a déjà cliqué sur quelque chose.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "De supprimer le message.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "De cliquer pour que je voie la page.",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "Que ce n'est sûrement rien.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Une personne a tapé son mot de passe sur le faux site. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je lui demande de changer son mot de passe tout de suite, elle-même.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je préviens le niveau 2 par téléphone, en donnant l'heure du clic.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je lui demande à quelle heure elle a cliqué et ce qu'elle a fait ensuite.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je note l'incident dans le ticket.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui demande son mot de passe pour regarder son compte.",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "Je lui dis que ce n'est pas grave.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que mettez-vous** dans le ticket pour le **niveau 2** ?",
+              "justes": [
+                {
+                  "texte": "Une copie du message, avec l'adresse de l'expéditeur.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Les trois personnes qui l'ont reçu, et celle qui a cliqué avec l'heure.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Ce que j'ai déjà fait : conseils donnés, changement du mot de passe demandé.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le message est suspect.",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Le mot de passe de la personne, pour aller plus vite.",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "Rien : le niveau 2 le saura par les boîtes.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de rappeler aux collègues du service de signaler les messages suspects au lieu de cliquer.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Afficher une fiche simple : que faire face à un message suspect, qui prévenir, et ce qu'on ne demande jamais (un mot de passe).",
+        "Montrer trois exemples de faux messages reçus par l'entreprise, rendus anonymes, et commenter ensemble les signes qui les trahissent."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où vous avez **cherché la cause** d'une panne. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous essayé, dans quel ordre ?",
+        "Comment avez-vous su que le problème était réglé ?"
+      ],
+      "attendus": [
+        "Décrit des faits précis, pas seulement « ça ne marchait pas »",
+        "Décrit des essais faits un par un, dans un ordre logique",
+        "Dit comment il a vérifié que c'était réglé"
+      ],
+      "relance": "Qu'est-ce qui vous a mis sur la bonne piste ?",
+      "alternative": "Si vous n'avez jamais travaillé au support : parlez d'une panne que vous avez réparée ou cherché à réparer (appareil, ordinateur, objet du quotidien)."
+    },
+    {
+      "id": "e2",
+      "competence": "C1",
+      "texte": "Un utilisateur vous dit : « Mon ordinateur ne marche plus. » Que faites-vous pour **comprendre le problème** ?",
+      "suite": [
+        "Que lui demandez-vous précisément ?"
+      ],
+      "attendus": [
+        "Pose des questions précises : quoi, depuis quand, qu'est-ce qui a changé",
+        "Cherche à reproduire le problème et teste une seule piste à la fois",
+        "Note ses essais dans le ticket"
+      ],
+      "relance": "Que faites-vous si un collègue qui a le même ordinateur n'a aucun problème ?",
+      "alternative": "Un ami vous dit : « Mon téléphone ne marche plus. » Que faites-vous pour comprendre ce qui se passe ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où vous avez **aidé une personne** pressée ou énervée. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous dit en premier ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit une situation précise",
+        "Reconnaît l'urgence ou le problème de la personne avant d'expliquer",
+        "Dit comment la personne a été aidée et si elle était satisfaite"
+      ],
+      "relance": "Qu'avez-vous dit pour que la personne comprenne ce qui se passait ?",
+      "alternative": "Si vous n'avez jamais travaillé au support : parlez d'une personne énervée ou pressée que vous avez aidée (travail, association, vie quotidienne)."
+    },
+    {
+      "id": "e4",
+      "competence": "C7",
+      "texte": "Comment expliquez-vous une panne à quelqu'un qui **ne connaît pas l'informatique** ?",
+      "suite": [
+        "Pouvez-vous donner un exemple de phrase ?"
+      ],
+      "attendus": [
+        "Utilise des mots simples, sans jargon",
+        "Dit la cause, la solution et le délai",
+        "Vérifie que la personne a compris"
+      ],
+      "relance": "Que faites-vous si la personne n'a pas le temps d'écouter ?",
+      "alternative": "Comment expliquez-vous le fonctionnement d'un objet du quotidien à quelqu'un qui n'est pas à l'aise avec la technique ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où vous aviez beaucoup de demandes **en même temps**. Comment avez-vous **choisi l'ordre** ?",
+      "suite": [
+        "Qu'avez-vous dit aux personnes qui ont dû attendre ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : nombre de personnes touchées, échéance",
+        "Prévient les personnes qui attendent",
+        "Donne un exemple réel et précis"
+      ],
+      "relance": "Quelle demande avez-vous traitée en dernier ?",
+      "alternative": "Parlez d'une période chargée (études, travail, association) où tout arrivait en même temps. Comment avez-vous choisi l'ordre ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C2",
+      "texte": "Un responsable vous demande de traiter son problème **avant ceux des autres**. Que lui répondez-vous ?",
+      "suite": [],
+      "attendus": [
+        "Explique son critère : les personnes bloquées, les échéances",
+        "Reste poli et donne une heure de passage",
+        "Note la demande dans le ticket"
+      ],
+      "relance": "Que faites-vous s'il insiste ?",
+      "alternative": "Une personne vous demande de passer avant les autres dans une file d'attente ou une tâche partagée. Que lui répondez-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C8",
+      "texte": "Un utilisateur vous dit : « Voici mon mot de passe, **connectez-vous à ma place**. » Que répondez-vous ?",
+      "suite": [
+        "Que lui proposez-vous à la place ?"
+      ],
+      "attendus": [
+        "Refuse de prendre le mot de passe",
+        "Explique pourquoi un mot de passe ne se partage pas",
+        "Propose une solution autorisée : le changer lui-même, selon la procédure"
+      ],
+      "relance": "Que faites-vous si la personne insiste, parce qu'elle est pressée ?",
+      "alternative": "Un collègue vous propose son badge et son code secret pour que vous fassiez une opération à sa place. Que lui répondez-vous ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez reçu un **message ou un appel** qui vous a paru suspect. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous fait ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit les signes qui l'ont alerté : adresse, demande pressante, mot de passe demandé",
+        "Dit ce qu'il a fait pour se protéger : ne pas cliquer, ne rien donner",
+        "A prévenu la bonne personne, ou sait qui prévenir"
+      ],
+      "relance": "Qu'auriez-vous fait si le message avait demandé un mot de passe ?",
+      "alternative": "Si vous n'avez jamais travaillé au support : parlez d'un faux message (e-mail, SMS, appel) que vous avez reçu, et de ce que vous avez fait."
+    }
+  ],
+  "_pv": "2ce40eec44"
+}

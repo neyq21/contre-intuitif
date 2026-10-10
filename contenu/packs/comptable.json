@@ -1,0 +1,2660 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "comptable",
+  "version": "2026.10",
+  "nom": "Comptable / Assistant comptable / Assistante comptable",
+  "secteur": "bureau",
+  "alias": [
+    "comptable",
+    "assistant comptable",
+    "assistante comptable",
+    "aide-comptable",
+    "comptable fournisseurs",
+    "comptable clients",
+    "collaborateur comptable",
+    "collaboratrice comptable",
+    "gestionnaire comptable",
+    "employé comptable"
+  ],
+  "resume": "Enregistre les opérations, contrôle les factures, rapproche la banque et prépare la clôture de chaque mois, en lien avec les autres services.",
+  "contexte": "Le service comptable d'une PME de 60 salariés qui vend du matériel de bureau à des entreprises : trois personnes, une clôture à chaque fin de mois.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C6",
+      "titre": "Contrôler une facture fournisseur avant de la payer",
+      "pourquoi": "Une facture payée à tort ou une erreur de chiffre coûte de l'argent à l'entreprise et fait perdre confiance dans les comptes.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une facture du fournisseur de papier",
+        "texte": "Mercredi, 10 h. Vous préparez les paiements de la semaine. La facture du fournisseur de papier est arrivée ce matin : 1 015,00 € HT, plus 203,00 € de TVA à 20 %, soit 1 218,00 € TTC. Le bon de commande n° 2417, passé par le service des achats, prévoit 920,00 € HT, frais de port compris (tableau ci-dessous). Le paiement est prévu dans 30 jours.",
+        "document": {
+          "type": "tableau",
+          "titre": "Bon de commande n° 2417",
+          "colonnes": [
+            "Article",
+            "Quantité",
+            "Prix unitaire HT"
+          ],
+          "lignes": [
+            [
+              "Papier A4, carton de 5 ramettes",
+              "20",
+              "30,00 €"
+            ],
+            [
+              "Papier A3, carton de 5 ramettes",
+              "5",
+              "40,00 €"
+            ],
+            [
+              "Enveloppes, boîte de 500",
+              "10",
+              "12,00 €"
+            ],
+            [
+              "Total HT, frais de port compris",
+              "",
+              "920,00 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Les montants HT ne sont pas les mêmes : 1 015,00 € sur la facture, 920,00 € sur le bon de commande. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je règle la facture à l'échéance : le fournisseur sait ce qu'il a livré et ce qu'il facture.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je compare la facture au bon de commande, ligne par ligne, pour trouver d'où vient l'écart.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande au fournisseur de m'expliquer la différence avant de regarder les lignes.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je corrige moi-même le montant dans le logiciel, pour qu'il soit égal à celui du bon de commande.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                }
+              ],
+              "explication": "Comparer ligne par ligne montre d'où vient l'écart et donne des faits à présenter au fournisseur. Lui demander d'abord de s'expliquer est possible, mais sans comparaison vous ne pouvez pas vérifier sa réponse.",
+              "relance": "Comment cherchez-vous la cause d'un écart entre deux documents ?"
+            },
+            {
+              "id": "q2",
+              "texte": "La comparaison montre trois lignes qui ne correspondent pas au bon de commande. **Que faites-vous de la facture** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la paie quand même : l'écart est faible par rapport au montant total de la facture.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la mets de côté, sans la payer, et j'attends que quelqu'un me la réclame.",
+                  "points": 1,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je la paie en entier et je demande un avoir au fournisseur plus tard, s'il est d'accord.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je la bloque pour le paiement, je préviens les achats et je demande une facture corrigée.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                }
+              ],
+              "explication": "Une facture qui ne correspond pas au bon de commande n'est pas payée en l'état : on la bloque, on prévient ceux qui ont commandé et on demande une correction. Attendre sans rien dire laisse le problème ouvert.",
+              "relance": "Que faites-vous d'une facture dont vous n'êtes pas sûr ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le fournisseur envoie une facture corrigée : 920,00 € HT, TVA à 20 % de 194,00 €, soit 1 114,00 € TTC. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'enregistre la facture : la TVA est calculée par le fournisseur, pas par moi.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je vérifie que le total HT est celui du bon de commande, puis je demande au fournisseur si la TVA est juste.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je calcule 20 % de 920,00 € : cela fait 184,00 €, pas 194,00 €. Je demande une nouvelle correction.",
+                  "points": 2,
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je vois que le total TTC est plus bas que sur la première facture et j'enregistre.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "La TVA se vérifie vite : 20 % de 920,00 € font 184,00 €, et la facture indique 194,00 €. Ne contrôler que le total HT laisse passer l'erreur.",
+              "relance": "Comment vérifiez-vous la TVA d'une facture ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous avez appelé le fournisseur : il accepte de corriger sa facture. **Comment gardez-vous une trace** de cet échange ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'écris dans le dossier de la facture la date, la personne jointe et la correction promise.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne note rien : l'appel était clair et le fournisseur a promis de corriger.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je note la date de l'appel sur un papier posé près de mon écran.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je préviens un collègue de vive voix, sans rien écrire dans le dossier.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Une trace écrite dans le dossier de la facture permet à chacun de retrouver ce qui a été promis. Un papier près de l'écran ou un mot à un collègue peuvent se perdre.",
+              "relance": "Où gardez-vous la trace d'un échange avec un fournisseur ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Ce fournisseur facture souvent un prix plus élevé que le bon de commande. **Que proposez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : les prix sont décidés par le service des achats, ce n'est pas mon rôle.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je donne aux achats les trois dernières factures avec les écarts, pour qu'ils mettent les prix à jour.",
+                  "points": 2,
+                  "repere": "c6_recidive"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je serai plus attentif aux factures de ce fournisseur à chaque contrôle.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je propose à la direction de changer de fournisseur dès maintenant.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                }
+              ],
+              "explication": "Des exemples précis permettent aux achats de corriger les prix avant la prochaine commande. Être plus attentif vous aide, mais le problème peut revenir.",
+              "relance": "Quand le même écart revient, que proposez-vous ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Pour trouver pourquoi** la facture est plus élevée que le bon de commande, je…",
+              "justes": [
+                {
+                  "texte": "compare chaque ligne de la facture avec le bon de commande : quantité, prix unitaire et frais",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "vérifie les quantités et les prix un par un, puis je recalcule le total",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "pointe les lignes une par une avec le bon de commande et je note chaque différence",
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde le total de la facture, puis je demande au fournisseur d'où vient la différence",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "paie la facture, parce que le fournisseur a sûrement raison",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "change le montant dans le logiciel pour qu'il soit égal au bon de commande",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Tant que la différence n'est **pas expliquée**, je…",
+              "justes": [
+                {
+                  "texte": "bloque la facture pour le paiement et je préviens le service des achats",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "demande une facture corrigée au fournisseur, en précisant les lignes en cause",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "mets la facture en attente dans le logiciel et j'écris pourquoi dans son dossier",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "laisse la facture de côté et j'attends",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "paie la facture à l'échéance, et on verra plus tard",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "corrige les montants moi-même, sans le dire à personne",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Sur la facture corrigée (920,00 € HT, TVA de 194,00 €), je **vérifie la TVA** en…",
+              "justes": [
+                {
+                  "texte": "calculant 20 % de 920,00 € : cela fait 184,00 €",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "refaisant le calcul moi-même, puis je signale que 194,00 € est faux",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "comparant la TVA affichée à 20 % du montant HT, et je demande une nouvelle correction",
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "vérifiant que le total TTC est bien égal au HT plus la TVA",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "faisant confiance au logiciel du fournisseur",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "laissant passer : 10,00 € de différence, ce n'est pas grave",
+                  "repere": "c6_laisse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de comparer les prochaines factures de ce fournisseur avec les prix du bon de commande, avant chaque paiement.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Écrit dans le dossier ce qui a été vérifié, avec la date et les montants.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Propose une règle simple : aucune facture n'est payée si elle diffère du bon de commande sans l'accord des achats.",
+              "repere": "c6_regle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne paie pas cette facture pour l'instant. Je préviens les achats et je demande au fournisseur une facture corrigée. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le fournisseur de papier demande à être payé plus tôt. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Une facture ne correspond pas au bon de commande. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Vous devez enregistrer la facture d'un fournisseur. Comment faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "La facture du fournisseur de papier fait 1 015,00 € HT, le bon de commande 920,00 € HT. Que faites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La facture est de 1 015,00 € HT, le bon de commande de 920,00 € HT.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La TVA de la facture est de 20 %.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le paiement n'est prévu que dans 30 jours.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le fournisseur de papier a déjà été payé pour cette commande.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le bon de commande, passé par les achats, fixe les prix et les quantités prévus.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le service des achats a accepté une hausse de prix.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je paie l'ancienne facture pour que le fournisseur ne s'impatiente pas.",
+                "points": 0,
+                "repere": "c6_laisse"
+              },
+              {
+                "id": "b",
+                "texte": "Quand la facture corrigée arrive, je la compare de nouveau au bon de commande avant de l'enregistrer.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "c",
+                "texte": "Quand la facture corrigée arrive, je l'enregistre sans la relire : le fournisseur l'a déjà corrigée.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "d",
+                "texte": "Quand la facture corrigée arrive, je vérifie seulement que le total HT est bon.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "La facture est plus élevée que le bon de commande : on ne la paie pas en l'état et on le dit à ceux qui ont commandé. La facture corrigée se contrôle ensuite comme la première, car elle peut contenir une autre erreur."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La facture du fournisseur de papier",
+          "consigne": "Comparez les lignes d'article et de frais au bon de commande. Cliquez sur **chaque ligne qui ne correspond pas**. Les lignes de total **sont bien calculées** à partir des lignes ci-dessus.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Facture du 8 mars, avec le numéro du bon de commande : 2417",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Papier A4 : 20 cartons à 30,00 € = 600,00 € HT",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Papier A3 : 6 cartons à 40,00 € = 240,00 € HT",
+              "erreur": true,
+              "explication": "Le bon de commande prévoit 5 cartons de papier A3, pas 6 : la ligne devrait faire 200,00 € HT."
+            },
+            {
+              "id": "e4",
+              "texte": "Enveloppes : 10 boîtes à 15,00 € = 150,00 € HT",
+              "erreur": true,
+              "explication": "Le bon de commande fixe le prix à 12,00 € la boîte : la ligne devrait faire 120,00 € HT."
+            },
+            {
+              "id": "e5",
+              "texte": "Frais de port : 25,00 € HT",
+              "erreur": true,
+              "explication": "Le bon de commande précise que les frais de port sont compris : ils ne se facturent pas en plus."
+            },
+            {
+              "id": "e6",
+              "texte": "Paiement : virement à 30 jours",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Total HT : 1 015,00 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "TVA à 20 % : 203,00 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e9",
+              "texte": "Total TTC : 1 218,00 €",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Contrôle simulé (15 minutes) : la personne reçoit un bon de commande et une facture de 5 lignes qui comporte 2 ou 3 différences. Elle les repère, décide quoi faire de la facture et rédige un court message au fournisseur.",
+            "criteres": [
+              {
+                "texte": "Compare chaque ligne au bon de commande : quantité, prix, frais",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère et écrit chaque différence avec les montants",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Bloque la facture : elle n'est pas payée en l'état",
+                "repere": "c6_bloque"
+              },
+              {
+                "texte": "Écrit au fournisseur ou aux achats avec des faits précis",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose un moyen d'éviter que l'écart revienne",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Le total de la facture est plus élevé que celui du bon de commande. **Comment cherchez-vous pourquoi** ?",
+              "justes": [
+                {
+                  "texte": "Je compare chaque ligne de la facture au bon de commande : quantités, prix, frais.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je pointe les lignes une par une et je note chaque différence.",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "Je recalcule le montant de chaque ligne, puis le total.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde le total et je demande au fournisseur d'où vient la différence.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je paie : le fournisseur a sûrement raison.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous de la facture tant que la différence **n'est pas expliquée** ?",
+              "justes": [
+                {
+                  "texte": "Je la bloque pour le paiement et je préviens le service des achats.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Je demande une facture corrigée au fournisseur, en précisant les lignes en cause.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je la mets en attente dans le logiciel et j'écris pourquoi dans son dossier.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je la laisse de côté en attendant.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je la paie à l'échéance, on verra après.",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "Je corrige les montants moi-même pour qu'ils soient égaux à ceux du bon de commande.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le fournisseur envoie une facture corrigée : 920,00 € HT et 194,00 € de TVA à 20 %. **Que contrôlez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je recalcule la TVA : 20 % de 920,00 € font 184,00 €, donc 194,00 € est faux.",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "Je vérifie que le HT est celui du bon de commande, puis que la TVA vaut 20 % du HT.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je demande une nouvelle facture, car la TVA est trop élevée de 10,00 €.",
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je vérifie que le total HT est bon.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'enregistre : la TVA est l'affaire du fournisseur.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'écrire la vérification dans le dossier de la facture : date et éléments comparés.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Propose de contrôler les prochaines factures de ce fournisseur avec les prix du dernier bon de commande.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner la procédure écrite de contrôle d'une facture : quoi comparer, quand bloquer un paiement, qui prévenir.",
+        "Faire relire les premiers contrôles par un collègue, avec une liste courte : quantités, prix, frais, TVA, coordonnées bancaires."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Enregistrer un achat ou une vente : charge, immobilisation, TVA",
+      "pourquoi": "Un achat enregistré au mauvais endroit fausse le résultat de l'entreprise et la TVA à déclarer : les bases du métier doivent être sûres.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Cinq factures de la semaine à enregistrer",
+        "texte": "Vendredi, 14 h. Vous enregistrez les factures de la semaine (tableau ci-dessous). Règle de l'entreprise : un bien durable, utilisé plus d'un an et dont le prix dépasse 500 € HT, est enregistré en immobilisation. Les autres achats sont enregistrés en charge. L'entreprise est soumise à la TVA, et toutes ces factures portent une TVA à 20 %.",
+        "document": {
+          "type": "tableau",
+          "titre": "Factures de la semaine",
+          "colonnes": [
+            "Facture",
+            "Montant HT",
+            "TVA à 20 %"
+          ],
+          "lignes": [
+            [
+              "Achat : un ordinateur portable pour la comptabilité, prévu pour 4 ans",
+              "1 200,00 €",
+              "240,00 €"
+            ],
+            [
+              "Achat : fournitures de bureau (stylos, papier)",
+              "180,00 €",
+              "36,00 €"
+            ],
+            [
+              "Achat : un fauteuil de bureau",
+              "350,00 €",
+              "70,00 €"
+            ],
+            [
+              "Achat : contrat de nettoyage des bureaux, mois de mars",
+              "640,00 €",
+              "128,00 €"
+            ],
+            [
+              "Vente : matériel de bureau livré à un client",
+              "2 000,00 €",
+              "400,00 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Comment enregistrez-vous** la facture de l'ordinateur portable (1 200,00 € HT) ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "En charge, car l'entreprise le paie en une seule fois cette semaine.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "En immobilisation, parce que c'est un ordinateur et que l'entreprise le garde.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "En immobilisation : c'est un bien durable, prévu pour 4 ans, et son prix dépasse 500 € HT.",
+                  "points": 2,
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "id": "d",
+                  "texte": "En charge : un ordinateur sera remplacé un jour, donc ce n'est pas un bien durable.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "Un ordinateur prévu pour 4 ans est un bien durable, et son prix dépasse 500 € HT : c'est une immobilisation. Dire seulement « c'est un ordinateur » ne montre pas que vous appliquez la règle de l'entreprise.",
+              "relance": "Comment décidez-vous si un achat est une charge ou une immobilisation ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Comment enregistrez-vous** la facture du fauteuil de bureau (350,00 € HT) ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "En charge : c'est un bien durable, mais son prix ne dépasse pas 500 € HT.",
+                  "points": 2,
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "id": "b",
+                  "texte": "En immobilisation : un fauteuil sert plusieurs années, donc c'est toujours une immobilisation.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "En charge, parce qu'un meuble n'est jamais une immobilisation.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "d",
+                  "texte": "En charge, parce que c'est une petite dépense pour l'entreprise.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Le fauteuil est durable, mais la règle de l'entreprise demande aussi un prix supérieur à 500 € HT : à 350,00 €, c'est une charge. Les deux conditions doivent être réunies.",
+              "relance": "Un bien durable de faible prix : charge ou immobilisation, selon la règle de l'entreprise ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La facture du contrat de nettoyage fait 640,00 € HT, soit plus de 500 €. **Comment l'enregistrez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "En immobilisation : son montant dépasse 500 € HT, donc la règle s'applique.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "b",
+                  "texte": "En immobilisation : le contrat dure plusieurs mois, donc c'est un bien durable.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "En charge, parce que c'est un contrat et non un objet que l'on achète.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "En charge : c'est un service rendu en mars, pas un bien durable.",
+                  "points": 2,
+                  "repere": "c8_pourquoi"
+                }
+              ],
+              "explication": "Le nettoyage est un service rendu pendant le mois : ce n'est pas un bien durable, donc c'est une charge, même au-dessus de 500 € HT. Le montant seul ne suffit pas.",
+              "relance": "Un achat de plus de 500 € HT est-il toujours une immobilisation ?"
+            },
+            {
+              "id": "q4",
+              "texte": "La facture de vente au client indique 400,00 € de TVA. **Comment appelle-t-on cette TVA** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "De la TVA déductible : le client la paie et l'entreprise peut la récupérer.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "b",
+                  "texte": "De la TVA collectée : le client la paie à l'entreprise, qui la reverse ensuite à l'État.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "c",
+                  "texte": "Du chiffre d'affaires de l'entreprise : il faut l'ajouter au montant HT de la vente.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "d",
+                  "texte": "De la TVA due à l'État : elle sera reversée avec la prochaine déclaration de TVA.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "La TVA facturée à un client sur une vente est de la TVA collectée : l'entreprise l'encaisse pour l'État. Dire « TVA due à l'État » est juste, mais ne donne pas son nom exact : la TVA collectée.",
+              "relance": "Quelle est la différence entre la TVA collectée et la TVA déductible ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La facture de l'ordinateur indique 240,00 € de TVA. **Comment cette TVA est-elle traitée** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "En TVA déductible : l'entreprise l'a payée sur un achat et la déduira de la TVA collectée.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "b",
+                  "texte": "Elle s'ajoute au prix : l'ordinateur est enregistré pour 1 440,00 € en immobilisation.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Dans un compte de TVA, à part : elle ne fait pas partie du prix de l'ordinateur.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "En TVA collectée : c'est de la TVA que l'entreprise doit reverser à l'État.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "La TVA payée sur un achat est de la TVA déductible : elle ne fait pas partie du prix de l'ordinateur et vient en déduction de la TVA collectée. Dire seulement « en TVA » ne distingue pas les deux.",
+              "relance": "Que devient la TVA payée sur un achat ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour savoir si un achat est une **charge** ou une **immobilisation**, je regarde si…",
+              "justes": [
+                {
+                  "texte": "c'est un bien durable, utilisé plus d'un an, et si son prix dépasse 500 € HT",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "le bien servira plusieurs années et si son prix HT dépasse le seuil de la règle de l'entreprise",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "l'objet dure plus d'un an, puis je compare son prix HT aux 500 € de la règle",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "c'est un objet que l'entreprise garde",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le montant est élevé, sans me demander si le bien est durable",
+                  "repere": "c8_confusion"
+                },
+                {
+                  "texte": "l'achat est payé en une seule fois",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Le fauteuil à 350,00 € HT est enregistré en charge **parce que**…",
+              "justes": [
+                {
+                  "texte": "même s'il est durable, son prix ne dépasse pas 500 € HT",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "la règle de l'entreprise demande plus de 500 € HT pour une immobilisation",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "les deux conditions de la règle ne sont pas réunies : bien durable et plus de 500 € HT",
+                  "repere": "c8_savoir"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "son prix est faible",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "c'est un meuble, et un meuble est toujours une charge",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "c'est plus simple à enregistrer",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Sur la facture de vente, les 400,00 € de TVA sont de la **TVA collectée**, ce qui **signifie que**…",
+              "justes": [
+                {
+                  "texte": "le client la paie, et l'entreprise la reverse à l'État",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "l'entreprise l'encaisse pour l'État : ce n'est pas son chiffre d'affaires",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "elle ne fait pas partie du montant HT de la vente, elle s'y ajoute",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "c'est de la TVA sur une vente",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'entreprise peut la garder, c'est un gain",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "l'entreprise la récupère en la déduisant",
+                  "repere": "c8_confusion"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Distingue la TVA des achats (déductible, récupérée) et la TVA des ventes (collectée, reversée).",
+              "repere": "c8_savoir"
+            },
+            {
+              "texte": "Explique qu'une immobilisation est répartie sur plusieurs années, par des amortissements.",
+              "repere": "c8_pourquoi"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je l'enregistre en charge : c'est un bien durable, mais son prix de 350,00 € HT ne dépasse pas 500 €. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "La facture d'un fauteuil de bureau de 350,00 € HT est arrivée. Comment l'enregistrez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Comment enregistrez-vous la facture du contrat de nettoyage, à 640,00 € HT ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Un bien durable arrive en facture. Comment l'enregistrez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Quelle TVA la facture du fauteuil de bureau indique-t-elle ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le fauteuil coûte 350,00 € HT.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La TVA du fauteuil est de 70,00 €.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La règle fixe à 500 € HT le prix à dépasser pour une immobilisation.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le fauteuil est payé à crédit sur plusieurs mois.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Un fauteuil de bureau est un bien durable, utilisé plus d'un an.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le fauteuil est livré avec l'ordinateur, sur la même facture.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'enregistre les 70,00 € de TVA dans un compte de TVA, à part du prix du fauteuil.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "b",
+                "texte": "J'enregistre la TVA du fauteuil en TVA collectée.",
+                "points": 0,
+                "repere": "c8_confusion"
+              },
+              {
+                "id": "c",
+                "texte": "J'enregistre les 70,00 € de TVA en TVA déductible.",
+                "points": 2,
+                "repere": "c8_savoir"
+              },
+              {
+                "id": "d",
+                "texte": "Je range le fauteuil en immobilisation pour être prudent.",
+                "points": 0,
+                "repere": "c8_erreur"
+              }
+            ]
+          },
+          "explication": "Un fauteuil est un bien durable, mais son prix de 350,00 € HT ne dépasse pas les 500 € de la règle : c'est une charge. La TVA de 70,00 € est ensuite de la TVA déductible."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Où enregistrer chaque opération ?",
+          "consigne": "Pour **chaque opération**, choisissez **où elle est enregistrée**. Rappel de la règle : immobilisation si le bien est durable, utilisé plus d'un an et à plus de 500 € HT.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Charge, avec TVA déductible"
+            },
+            {
+              "id": "k2",
+              "nom": "Immobilisation, avec TVA déductible"
+            },
+            {
+              "id": "k3",
+              "nom": "Vente, avec TVA collectée"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Achat d'un ordinateur portable : 1 200,00 € HT",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Bien durable et prix supérieur à 500 € HT : une immobilisation."
+            },
+            {
+              "id": "e2",
+              "texte": "Achat de fournitures de bureau : 180,00 € HT",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Des fournitures sont consommées vite : une charge."
+            },
+            {
+              "id": "e3",
+              "texte": "Achat d'un fauteuil de bureau : 350,00 € HT",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Durable, mais le prix ne dépasse pas 500 € HT : une charge."
+            },
+            {
+              "id": "e4",
+              "texte": "Contrat de nettoyage du mois : 640,00 € HT",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Un service, pas un bien durable : une charge, même au-dessus de 500 € HT."
+            },
+            {
+              "id": "e5",
+              "texte": "Facture envoyée à un client pour du matériel de bureau : 2 000,00 € HT",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est une vente : la TVA facturée au client est de la TVA collectée."
+            },
+            {
+              "id": "e6",
+              "texte": "Achat d'un transpalette électrique pour l'entrepôt : 3 000,00 € HT",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Bien durable, utilisé plus d'un an, au-dessus de 500 € HT : une immobilisation."
+            },
+            {
+              "id": "e7",
+              "texte": "Facture d'un transporteur pour l'envoi d'un colis à un client : 90,00 € HT",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Un service de transport : une charge."
+            },
+            {
+              "id": "e8",
+              "texte": "Facture envoyée à un client pour un lot de cartouches d'encre : 600,00 € HT",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est une vente, même si le montant dépasse 500 € HT : la règle ne concerne que les achats de biens durables."
+            }
+          ],
+          "repere_reussite": "c8_savoir",
+          "repere_echec": "c8_confusion",
+          "reel": {
+            "consigne": "Classement simulé (15 minutes) : la personne reçoit huit factures anonymisées et la règle de l'entreprise. Elle classe chaque facture en charge, immobilisation ou vente, puis explique deux de ses choix.",
+            "criteres": [
+              {
+                "texte": "Applique les deux conditions de la règle : bien durable et prix supérieur à 500 € HT",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Classe un service (nettoyage, transport) en charge, même au-dessus de 500 € HT",
+                "repere": "c8_precision"
+              },
+              {
+                "texte": "Place la TVA des achats en TVA déductible et celle des ventes en TVA collectée",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Explique un choix avec des mots simples",
+                "repere": "c8_pourquoi"
+              }
+            ],
+            "bonus": {
+              "texte": "Signale un cas limite et demande la règle de l'entreprise plutôt que de deviner",
+              "repere": "c5_clarifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment décidez-vous** si l'ordinateur portable est une charge ou une immobilisation ?",
+              "justes": [
+                {
+                  "texte": "C'est un bien durable, prévu pour 4 ans, et son prix dépasse 500 € HT : c'est une immobilisation.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "J'applique la règle de l'entreprise : bien durable, plus d'un an, plus de 500 € HT. Donc immobilisation.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Il coûte 1 200,00 € HT, donc plus que le seuil de 500 €, et il dure plusieurs années.",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "C'est une immobilisation, parce que c'est un ordinateur.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "C'est une charge, car il est payé en une seule fois.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Pourquoi** le contrat de nettoyage de 640,00 € HT est-il une charge ?",
+              "justes": [
+                {
+                  "texte": "C'est un service rendu pendant le mois, pas un bien durable.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "Le montant dépasse 500 € HT, mais il faut aussi un bien durable : ici, il n'y en a pas.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Le nettoyage est consommé en mars : il ne sert pas plusieurs années.",
+                  "repere": "c8_pourquoi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Parce que c'est un contrat.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "C'est une immobilisation, parce que le montant dépasse 500 € HT.",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Quelle différence** faites-vous entre la TVA **collectée** et la TVA **déductible** ?",
+              "justes": [
+                {
+                  "texte": "La TVA collectée est celle des ventes : le client la paie, et l'entreprise la reverse à l'État.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "La TVA déductible est celle des achats : l'entreprise l'a payée à son fournisseur et la déduit.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "La collectée vient de nos factures de vente, la déductible de nos factures d'achat.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Au final, l'entreprise reverse la TVA collectée moins la TVA déductible.",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Ce sont deux sortes de TVA : une sur les ventes, une sur les achats.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "La TVA déductible est celle qu'on doit payer à l'État.",
+                  "repere": "c8_confusion"
+                },
+                {
+                  "texte": "La TVA collectée est un gain pour l'entreprise.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique qu'une immobilisation est répartie sur plusieurs années, par des amortissements.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Donne un achat limite et dit qu'il faut vérifier la règle de l'entreprise avant de décider.",
+              "repere": "c5_source"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Remettre un mémo d'une page : charge ou immobilisation selon la règle de l'entreprise, avec cinq exemples d'achats réels.",
+        "Montrer sur de vraies factures où se placent la TVA déductible et la TVA collectée dans le logiciel."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Trouver la cause d'un écart au rapprochement bancaire",
+      "pourquoi": "Un écart entre la banque et la comptabilité a toujours une cause : la trouver vite évite de laisser des comptes faux à la clôture.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un écart de 1 012 € au rapprochement bancaire",
+        "texte": "Début avril, 9 h. Vous faites le rapprochement bancaire de mars. Le solde du relevé de la banque est de 20 882,00 €. Le solde du compte banque en comptabilité est de 19 870,00 €. L'écart est de 1 012,00 €. Vous avez déjà pointé toutes les opérations identiques : il reste les quatre lignes du tableau. La clôture du mois est jeudi.",
+        "document": {
+          "type": "tableau",
+          "titre": "Lignes restantes après pointage",
+          "colonnes": [
+            "Opération",
+            "Relevé de la banque",
+            "Comptabilité"
+          ],
+          "lignes": [
+            [
+              "Frais de tenue de compte, 29 mars",
+              "−18,00 €",
+              "—"
+            ],
+            [
+              "Chèque n° 4412 à un fournisseur, émis le 28 mars",
+              "—",
+              "−300,00 €"
+            ],
+            [
+              "Virement du client, facture n° 1180 (montant de la facture : 1 540,00 €)",
+              "+1 540,00 €",
+              "+1 450,00 €"
+            ],
+            [
+              "Paiement du fournisseur, facture n° 2305 (déjà pointé une fois)",
+              "—",
+              "−640,00 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le relevé montre 18,00 € de frais de tenue de compte, absents de la comptabilité. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande à la banque de rembourser ces frais, car je ne les attendais pas.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je compare avec les frais des mois précédents, puis je les enregistre en frais bancaires.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je les ignore : 18,00 € est un petit montant par rapport à l'écart total.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je les enregistre tout de suite en frais bancaires, à la date du relevé.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Ces frais figurent sur le relevé : la banque les a prélevés, la comptabilité doit les suivre. Les comparer avec les mois précédents permet de voir s'ils sont habituels avant de les enregistrer.",
+              "relance": "Une opération est sur le relevé mais pas en comptabilité : que vérifiez-vous ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le chèque n° 4412 de 300,00 € est en comptabilité, mais **pas sur le relevé**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le supprime de la comptabilité, puisque la banque ne l'a pas encore payé au 31 mars.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le laisse en comptabilité sans rien noter : je le retrouverai en pointant le mois prochain.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le laisse et je le note « chèque émis, non débité » : je le pointerai quand la banque le paiera.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'écris au fournisseur que son chèque est perdu, puisque la banque ne l'a pas payé.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                }
+              ],
+              "explication": "Un chèque émis fin mars n'est pas encore passé en banque : c'est un simple décalage de date. Il reste en comptabilité et se pointe le mois suivant. Ne rien noter risque de le faire oublier.",
+              "relance": "Une opération est en comptabilité mais pas sur le relevé : que faites-vous ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le virement du client est de 1 540,00 € sur le relevé et de 1 450,00 € en comptabilité. La facture n° 1180 est de 1 540,00 €. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je corrige l'écriture à 1 540,00 € : le relevé et la facture indiquent le même montant.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse 1 450,00 € et je demande au client de verser 90,00 € de plus.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je corrige l'écriture à 1 540,00 €, le montant du relevé, sans regarder la facture.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse 1 450,00 € : c'est le montant que j'ai saisi, donc c'est le bon.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Le relevé et la facture donnent le même montant, 1 540,00 € : l'erreur vient de la saisie et se corrige. Se fier au seul relevé peut suffire, mais la facture confirme que le paiement est complet.",
+              "relance": "Deux montants diffèrent pour la même opération : comment trouvez-vous le bon ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le paiement du fournisseur (facture n° 2305, 640,00 €) est deux fois en comptabilité et une fois sur le relevé. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande au fournisseur de me rembourser 640,00 €, car il a sûrement été payé deux fois.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'annule la deuxième écriture, car le relevé ne montre qu'un seul paiement.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je laisse les deux écritures : la deuxième sera sûrement pointée le mois prochain.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je vérifie que les deux écritures concernent la même facture, puis j'annule la deuxième et je le note.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                }
+              ],
+              "explication": "Le relevé ne montre qu'un paiement : l'une des deux écritures est en trop. On vérifie qu'elles sont identiques (même facture, même montant), puis on annule la deuxième en le notant.",
+              "relance": "Comment vous assurez-vous qu'une écriture est bien un doublon ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vous avez corrigé le doublon, la saisie et les frais. **Que vérifiez-vous pour finir** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que l'écart est de 0 € ; sinon j'ajoute une écriture pour le faire disparaître.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que je n'ai oublié aucune ligne du tableau, puis je rends le rapprochement.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Que l'écart restant est de 300,00 € : c'est le montant du chèque n° 4412, en attente.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : j'ai corrigé toutes les lignes, donc le rapprochement est terminé.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Après les corrections, l'écart restant doit être expliqué : ici 300,00 €, le chèque en attente. Une écriture ajoutée pour faire disparaître un écart cache un problème au lieu de le résoudre.",
+              "relance": "Comment savez-vous que votre rapprochement est terminé ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour chercher la cause de l'écart de 1 012,00 €, je **commence par**…",
+              "justes": [
+                {
+                  "texte": "lister les lignes qui n'ont pas de correspondance, et je les examine une par une",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "regarder les opérations restantes du tableau et chercher d'où vient chacune",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "relever les lignes non pointées et comparer leurs montants avec le relevé et les pièces",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "chercher un montant égal à 1 012,00 €",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ajouter 1 012,00 € en comptabilité pour égaliser les soldes",
+                  "repere": "c1_symptome"
+                },
+                {
+                  "texte": "demander à la banque de corriger son relevé",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Le chèque de 300,00 € n'est **pas sur le relevé**, donc je…",
+              "justes": [
+                {
+                  "texte": "le laisse en comptabilité et je le note comme chèque en attente",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "comprends que c'est un décalage de date et je le pointerai quand la banque l'aura payé",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "ne corrige rien, mais je garde la trace pour le rapprochement du mois suivant",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le laisse en comptabilité",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le supprime de la comptabilité",
+                  "repere": "c1_symptome"
+                },
+                {
+                  "texte": "écris au fournisseur pour dire que son chèque est perdu",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour la ligne du fournisseur saisie deux fois, je…",
+              "justes": [
+                {
+                  "texte": "vérifie que les deux écritures sont identiques, puis j'annule la deuxième",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "compare avec le relevé, qui ne montre qu'un paiement, avant d'annuler une écriture",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "annule la deuxième écriture et j'écris pourquoi dans le journal",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "supprime une des deux écritures",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "laisse les deux : c'est le même montant",
+                  "repere": "c1_abandon"
+                },
+                {
+                  "texte": "demande un remboursement au fournisseur",
+                  "repere": "c1_precipite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Vérifie à la fin que l'écart restant (300,00 €) est bien celui du chèque en attente.",
+              "repere": "c1_verifie"
+            },
+            {
+              "texte": "Classe chaque ligne par cause : doublon, frais, décalage de date, erreur de saisie.",
+              "repere": "c1_cause"
+            },
+            {
+              "texte": "Propose de pointer le relevé plus souvent dans le mois, pour voir les écarts plus tôt.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« L'écart de 1 012,00 € vient de quatre lignes : un chèque en attente, un paiement saisi deux fois, une erreur de saisie et des frais de banque non enregistrés. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le rapprochement bancaire de mars montre un écart de 1 012,00 €. D'où vient-il ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un rapprochement bancaire présente un écart. D'où vient cet écart ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Votre responsable demande combien de lignes restent à pointer. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un client a payé sa facture en retard. Pourquoi le solde a-t-il changé ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le chèque n° 4412 de 300,00 € n'a pas encore été débité par la banque.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le relevé de la banque contient une erreur de 1 012,00 €.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le paiement du fournisseur est saisi deux fois, pour 640,00 €.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La banque a refusé le chèque n° 4412.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le virement du client est saisi à 1 450,00 € au lieu de 1 540,00 €.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La clôture du mois est prévue jeudi.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'ajoute une écriture de 1 012,00 € pour que les soldes soient égaux.",
+                "points": 0,
+                "repere": "c1_symptome"
+              },
+              {
+                "id": "b",
+                "texte": "Je corrige le doublon et la saisie, et je laisse les frais pour plus tard.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je demande à la banque de corriger son relevé.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "d",
+                "texte": "Je corrige le doublon, la saisie et les frais, et je laisse le chèque en attente.",
+                "points": 2,
+                "repere": "c1_etapes"
+              }
+            ]
+          },
+          "explication": "L'écart vient de quatre causes vérifiables ligne par ligne : un décalage de date (le chèque), un doublon, une erreur de saisie et des frais non enregistrés. Seul le chèque ne demande aucune correction."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre recherche de l'écart, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites pour un rapprochement bancaire, du **pointage** jusqu'au **message au responsable**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Pointer les opérations identiques sur le relevé et en comptabilité"
+            },
+            {
+              "id": "e2",
+              "texte": "Lister les lignes qui restent sans correspondance"
+            },
+            {
+              "id": "e3",
+              "texte": "Chercher la cause de chaque ligne restante"
+            },
+            {
+              "id": "e4",
+              "texte": "Corriger en comptabilité le doublon, la saisie et les frais"
+            },
+            {
+              "id": "e5",
+              "texte": "Noter le chèque en attente, sans le corriger"
+            },
+            {
+              "id": "e6",
+              "texte": "Recalculer l'écart et vérifier qu'il est égal au chèque en attente"
+            },
+            {
+              "id": "e7",
+              "texte": "Informer le responsable comptable du résultat"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "Les lignes restantes ne se voient qu'après avoir pointé celles qui sont identiques."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On liste les lignes avant de chercher la cause de chacune."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On trouve la cause avant de corriger, sinon on risque de corriger à tort."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "Il faut avoir compris que c'est un décalage de date avant de noter le chèque comme simplement en attente."
+            },
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "L'écart se recalcule après les corrections."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "On informe le responsable une fois le résultat vérifié."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "Le chèque en attente est noté avant d'informer le responsable, pour que le résultat soit complet."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_precipite",
+          "reel": {
+            "consigne": "Rapprochement simulé (20 minutes) : la personne reçoit un relevé de 15 lignes, l'extrait du compte banque et un écart de quelques centaines d'euros dû à trois causes cachées. Elle cherche l'écart et propose les corrections.",
+            "criteres": [
+              {
+                "texte": "Liste les lignes sans correspondance avant de chercher",
+                "repere": "c1_etapes"
+              },
+              {
+                "texte": "Vérifie chaque ligne avec les pièces (relevé, facture) avant de corriger",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Distingue ce qui se corrige (erreur) de ce qui attend (décalage de date)",
+                "repere": "c1_cause"
+              },
+              {
+                "texte": "Vérifie que l'écart restant est entièrement expliqué",
+                "repere": "c1_verifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévient le responsable pour un écart non trouvé, au lieu de le laisser",
+              "repere": "c1_aide"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Par quoi commencez-vous** pour chercher la cause de l'écart de 1 012,00 € ?",
+              "justes": [
+                {
+                  "texte": "Je liste les lignes du relevé et de la comptabilité qui n'ont pas de correspondance.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Je regarde les lignes restantes une par une et je cherche d'où vient chacune.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Je compare les montants des lignes restantes avec le relevé et les factures.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je cherche un montant égal à 1 012,00 €.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'ajoute une écriture de 1 012,00 € pour égaliser les soldes.",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que faites-vous du chèque** de 300,00 €, qui n'est pas encore sur le relevé ?",
+              "justes": [
+                {
+                  "texte": "Je le laisse en comptabilité et je le note comme chèque en attente.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "C'est un décalage de date : je le pointerai quand la banque l'aura payé.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Je ne corrige rien et je garde la trace pour le rapprochement du mois suivant.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le laisse en comptabilité.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le supprime de la comptabilité.",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment savez-vous** que votre rapprochement est terminé ?",
+              "justes": [
+                {
+                  "texte": "L'écart restant est entièrement expliqué : ici, il est égal au chèque en attente de 300,00 €.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je recalcule l'écart après mes corrections et je le compare avec ce qui reste en attente.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Chaque ligne du tableau est corrigée ou notée en attente, avec sa cause.",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'ai regardé toutes les lignes.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je force l'écart à zéro avec une écriture d'ajustement.",
+                  "repere": "c1_symptome"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Dit qu'il faut prévenir le responsable comptable si un écart reste inexpliqué avant la clôture.",
+              "repere": "c1_aide"
+            },
+            {
+              "texte": "Classe les écarts par cause pour reconnaître plus vite les prochains.",
+              "repere": "c1_cause"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer un rapprochement complet, de l'écart à zéro, avec les quatre causes les plus fréquentes : décalage de date, doublon, frais, erreur de saisie.",
+        "Dire jusqu'à quand chercher seul et quand demander de l'aide au responsable comptable pendant la clôture."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Expliquer un écart de chiffres à un responsable non comptable",
+      "pourquoi": "Les responsables de service ne sont pas comptables : un chiffre mal expliqué crée des doutes et peut mener à de mauvaises décisions.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Un budget de transport qui semble dépassé",
+        "texte": "Vendredi, 11 h. La clôture de mars est terminée. Le responsable de l'entrepôt, qui n'est pas comptable, vous écrit : « Mes frais de transport de mars sont à 3 100 €, pour un budget de 2 800 €. Pourquoi ? » Vous constatez que 600 € viennent d'une facture de février, arrivée le 12 mars, après la clôture de février : elle a donc été enregistrée en mars. Le responsable présente son budget à la direction lundi.",
+        "document": {
+          "type": "tableau",
+          "titre": "Frais de transport, mars",
+          "colonnes": [
+            "Ligne",
+            "Montant"
+          ],
+          "lignes": [
+            [
+              "Budget du mois",
+              "2 800 €"
+            ],
+            [
+              "Frais de transport enregistrés en mars",
+              "3 100 €"
+            ],
+            [
+              "dont une facture de février, arrivée le 12 mars",
+              "600 €"
+            ],
+            [
+              "Frais de transport de mars, sans cette facture",
+              "2 500 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le responsable demande pourquoi ses frais de transport sont à 3 100 €. **Par quoi commencez-vous** votre réponse ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Par la procédure : « Les factures sont enregistrées à leur date de réception, après la clôture du mois. »",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Par le chiffre : « Le montant de 3 100 € est exact, je l'ai vérifié plusieurs fois. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Par une question : « Avez-vous demandé tous ces transports en mars ? »",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "Par l'essentiel : « 600 € de ce montant sont une facture de février, arrivée le 12 mars. »",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "explication": "Le responsable veut savoir pourquoi le chiffre est élevé : on commence par la raison principale, en une phrase. Confirmer que le montant est exact ne répond pas à sa question.",
+              "relance": "Par quoi commencez-vous quand quelqu'un vous demande pourquoi un chiffre a changé ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Quelle phrase choisissez-vous pour **expliquer la cause** de la différence ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Une facture de transport de février est arrivée le 12 mars. Elle ne concerne pas vos transports de mars. »",
+                  "points": 2,
+                  "repere": "c3_adapte"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Il y a un décalage : la facture est arrivée après la clôture de février. »",
+                  "points": 1,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "c",
+                  "texte": "« C'est un problème de rattachement à la bonne période : la facture n'était pas dans les charges à payer de février. »",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "d",
+                  "texte": "« La comptabilité a fait une erreur : la facture a été enregistrée au mauvais moment. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Le responsable n'a pas besoin des termes comptables : il lui faut le fait (une facture de février arrivée en mars) et ce que cela change. « Décalage » et « clôture » parlent à certains, pas à tous.",
+              "relance": "Quels mots du métier évitez-vous avec quelqu'un qui n'est pas comptable ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le responsable demande s'il a **dépassé son budget**. Que lui répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Oui : le total enregistré dépasse votre budget, vous avez donc dépensé 300 € de plus que prévu. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Le montant enregistré en mars est au-dessus de votre budget de 300 €, c'est un fait. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Non : sans la facture de février, vos transports de mars sont à 2 500 €, sous votre budget de 2 800 €. »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Cela dépend de la façon de compter les factures : c'est assez compliqué à expliquer. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "La bonne réponse dit non et le prouve avec deux chiffres : 2 500 € pour mars seul, contre un budget de 2 800 €. Dire que le montant enregistré dépasse le budget est vrai, mais laisse croire à un dépassement.",
+              "relance": "Quels chiffres donnez-vous pour prouver votre réponse ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le responsable demande s'il **doit faire quelque chose**. Que lui dites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Non, vous n'avez rien à faire pour l'instant. »",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "b",
+                  "texte": "« Rien pour le moment. Si une autre facture de février arrive en retard, je vous préviens tout de suite. »",
+                  "points": 2,
+                  "repere": "c3_suite"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Attendez le mois prochain : on verra si la différence disparaît d'elle-même. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Oui : vérifiez vous-même toutes les factures de transport de mars avant lundi. »",
+                  "points": 0,
+                  "repere": "c4_impose"
+                }
+              ],
+              "explication": "Le responsable présente son budget lundi : il a besoin de savoir ce qu'il doit faire (ici rien) et ce que vous ferez si la situation change. « Rien » seul ne dit pas ce qui va se passer ensuite.",
+              "relance": "Comment dites-vous à quelqu'un ce qui va se passer ensuite ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Après l'échange, comment **gardez-vous une trace** de l'explication ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne note rien : l'explication était claire à l'oral et il a compris.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je note l'explication pour moi, dans mon dossier du mois de mars.",
+                  "points": 1,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui envoie le détail de toutes les écritures de transport du mois.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'envoie au responsable un court message : les deux montants, la facture de février et ce que cela change.",
+                  "points": 2,
+                  "repere": "c3_trace"
+                }
+              ],
+              "explication": "Un court message écrit donne au responsable de quoi présenter son budget lundi, et laisse une trace pour tous. Une note pour vous seule ne l'aide pas, et un détail complet est trop long à lire.",
+              "relance": "Que laissez-vous par écrit après avoir expliqué un chiffre ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour répondre au responsable de l'entrepôt, je **commence par** lui dire que…",
+              "justes": [
+                {
+                  "texte": "600 € de ses frais de mars sont une facture de février arrivée le 12 mars",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "la différence vient d'une seule facture de février, arrivée en retard",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "sans cette facture de février, ses transports de mars sont à 2 500 €",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le montant enregistré est exact",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "les factures sont rattachées à la période de réception, après la clôture",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "c'est à lui de vérifier ses commandes de transport",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour qu'il comprenne **l'effet** sur **son budget**, je lui dis que…",
+              "justes": [
+                {
+                  "texte": "ses transports de mars sont à 2 500 €, sous son budget de 2 800 €",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "il n'a pas dépassé son budget de mars : la facture de février n'est pas une dépense de mars",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "les 600 € sont une dépense de février, pas de mars",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le total enregistré est au-dessus du budget de 300 €",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "il a dépensé 300 € de plus que prévu",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "c'est trop compliqué à expliquer",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Une fois l'échange terminé, je…",
+              "justes": [
+                {
+                  "texte": "lui envoie un court message avec les deux montants et la date de la facture",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "écris ce que j'ai expliqué : le chiffre, la cause et ce que cela change pour lui",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "lui dis que je le préviens si une autre facture de février arrive en retard",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "note l'explication pour moi",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne note rien : tout a été dit à l'oral",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "lui envoie toutes les écritures du mois",
+                  "repere": "c3_jargon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Vérifie que le responsable a compris, en lui demandant de redire l'essentiel avec ses mots.",
+              "repere": "c3_verifie"
+            },
+            {
+              "texte": "Propose d'ajouter une note « facture reçue après la clôture » dans le rapport mensuel.",
+              "repere": "c4_regle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Cette facture de transport date de février, mais elle est arrivée le 12 mars. Sans elle, vos frais de mars sont à 2 500 €, sous votre budget. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un responsable demande pourquoi sa facture de transport a augmenté. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le responsable de l'entrepôt voit 3 100 € de frais de transport pour un budget de 2 800 €. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un responsable s'inquiète de son budget. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le responsable de l'entrepôt demande la date de la clôture de mars. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Une facture de transport de 600 € date de février.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le transporteur a augmenté ses prix en mars.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Cette facture est arrivée le 12 mars, après la clôture de février.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le responsable présente son budget à la direction lundi.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Sans cette facture, les frais de mars sont à 2 500 €, sous le budget de 2 800 €.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable a commandé plus de transports en mars.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je lui envoie toutes les écritures de transport du mois.",
+                "points": 0,
+                "repere": "c3_jargon"
+              },
+              {
+                "id": "b",
+                "texte": "Je lui redis la même chose par téléphone.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je lui envoie un court message avec les deux montants et la date de la facture.",
+                "points": 2,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "d",
+                "texte": "Je ne dis rien de plus : je pense qu'il a compris.",
+                "points": 0,
+                "repere": "c3_oubli"
+              }
+            ]
+          },
+          "explication": "La réponse donne la cause en une phrase, puis ce que cela change pour le responsable : ses transports de mars sont sous le budget. Il n'a pas besoin du vocabulaire de la clôture."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Vos phrases au responsable de l'entrepôt",
+          "consigne": "Pour chaque phrase, choisissez son **effet** sur le responsable, qui **n'est pas comptable**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Claire et utile"
+            },
+            {
+              "id": "k2",
+              "nom": "Trop technique"
+            },
+            {
+              "id": "k3",
+              "nom": "Floue ou trompeuse"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "« Une facture de transport de février, de 600 €, est arrivée le 12 mars. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Un fait précis, dit avec des mots simples."
+            },
+            {
+              "id": "e2",
+              "texte": "« Sans cette facture, vos transports de mars sont à 2 500 €, sous votre budget. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle dit ce que cela change pour lui."
+            },
+            {
+              "id": "e3",
+              "texte": "« Cette facture n'avait pas été comptée en charges à payer à la clôture de février. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Des termes comptables qu'il n'a pas à connaître."
+            },
+            {
+              "id": "e4",
+              "texte": "« La charge est rattachée à la période de réception de la pièce. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Du vocabulaire de comptable : il ne saura pas quoi en faire."
+            },
+            {
+              "id": "e5",
+              "texte": "« Vous avez dépassé votre budget de 300 €. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Trompeuse : le dépassement apparent vient d'une facture de février."
+            },
+            {
+              "id": "e6",
+              "texte": "« Ne vous inquiétez pas, c'est comme ça en comptabilité. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Floue : elle n'explique rien et ne répond pas à sa question."
+            },
+            {
+              "id": "e7",
+              "texte": "« Je vous envoie un message avec les deux montants et la date de la facture. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle annonce une trace écrite concrète."
+            },
+            {
+              "id": "e8",
+              "texte": "« Je vous préviens si une autre facture de février arrive en retard. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle dit ce qui va se passer ensuite."
+            }
+          ],
+          "repere_reussite": "c3_adapte",
+          "repere_echec": "c3_flou",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le responsable de l'entrepôt, inquiet pour son budget. La personne candidate explique l'écart à partir du tableau, puis écrit un message de trois lignes.",
+            "criteres": [
+              {
+                "texte": "Donne la cause en une phrase, avant les détails",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Utilise des mots simples, sans vocabulaire comptable",
+                "repere": "c3_adapte"
+              },
+              {
+                "texte": "Dit ce que cela change pour le budget du responsable",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Dit ce qui va se passer ensuite et laisse un message écrit",
+                "repere": "c3_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Vérifie que le responsable a compris en lui demandant de reformuler",
+              "repere": "c3_verifie"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que répondez-vous** au responsable qui demande **pourquoi** ses frais de transport sont à 3 100 € ?",
+              "justes": [
+                {
+                  "texte": "600 € sont une facture de février arrivée le 12 mars, après la clôture de février.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "La différence vient d'une seule facture de février, arrivée en retard.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Une facture de transport de février est comptée en mars, parce qu'elle est arrivée tard.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le montant de 3 100 € est exact.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "C'est un problème de rattachement à la bonne période : elle n'était pas dans les charges à payer de février.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le responsable demande s'il a **dépassé son budget**. Que lui répondez-vous ?",
+              "justes": [
+                {
+                  "texte": "Non : sans la facture de février, ses transports de mars sont à 2 500 €, sous son budget de 2 800 €.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Non, la facture de 600 € est une dépense de février, pas de mars.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "Pour mars seul, il est en dessous de son budget, de 300 €.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le total enregistré est au-dessus du budget.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Oui, il a dépensé 300 € de plus que prévu.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que lui dites-vous pour **la suite**, avant sa présentation de **lundi** ?",
+              "justes": [
+                {
+                  "texte": "Je lui envoie un message avec les deux montants et la date de la facture.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Je lui dis qu'il n'a rien à faire, et que je le préviens si une autre facture arrive en retard.",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "Je lui demande s'il a besoin d'un détail pour sa présentation, et je le prépare.",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que tout est en ordre.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : il a compris à l'oral.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Vérifie que le responsable a compris, en lui demandant de redire l'essentiel avec ses mots.",
+              "repere": "c3_verifie"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un modèle de message pour expliquer un écart : le fait, ce que cela change pour le responsable, la suite.",
+        "Faire relire ses premiers messages aux responsables de service par le responsable comptable, avec un retour sur les mots trop techniques."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez **trouvé une erreur** dans un document de chiffres : facture, tableau, relevé ou compte rendu. **Comment l'avez-vous repérée** ?",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit le document et l'erreur avec des faits précis",
+        "Explique sa méthode de contrôle : comparer, recalculer, pointer",
+        "Dit qui a été prévenu et comment l'erreur a été corrigée"
+      ],
+      "relance": "Quels documents avez-vous comparés pour la trouver ?",
+      "alternative": "Si vous n'avez jamais travaillé en comptabilité : parlez d'une erreur trouvée dans un budget d'association, une note de frais ou un devis, et de la façon dont vous l'avez trouvée."
+    },
+    {
+      "id": "e2",
+      "competence": "C6",
+      "texte": "**Avant d'envoyer** à votre responsable un tableau de chiffres, **que contrôlez-vous** ?",
+      "suite": [
+        "Comment vérifiez-vous les totaux ?"
+      ],
+      "attendus": [
+        "Recalcule les totaux et vérifie que les chiffres viennent bien de la source",
+        "Vérifie la période, les unités et les intitulés des colonnes",
+        "Compare avec le mois précédent pour repérer un chiffre étonnant"
+      ],
+      "relance": "Et si un chiffre vous semble étonnant ?",
+      "alternative": "Quand vous préparez un tableau à transmettre (budget d'association, planning, liste de participants), que contrôlez-vous avant de l'envoyer ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C8",
+      "texte": "**Expliquez la différence** entre une charge et une immobilisation, avec un exemple d'achat **pour chacune**.",
+      "suite": [
+        "Comment traitez-vous un bien durable de faible prix ?"
+      ],
+      "attendus": [
+        "Distingue le bien durable (immobilisation) de ce qui est consommé ou rendu dans l'année (charge)",
+        "Donne deux exemples justes, par exemple un ordinateur et des fournitures",
+        "Dit que la règle de l'entreprise compte pour les petits montants"
+      ],
+      "relance": "Et pour un service, comme un contrat de nettoyage ?",
+      "alternative": "Si vous n'avez jamais fait de comptabilité : expliquez la différence entre un objet que l'on garde plusieurs années et un produit que l'on consomme vite, avec un exemple de chaque."
+    },
+    {
+      "id": "e4",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez **dû apprendre** un nouveau logiciel ou une nouvelle règle de travail. **Comment avez-vous vérifié** que vous l'appliquiez bien ?",
+      "suite": [
+        "Quelle source avez-vous utilisée : notice, collègue, essai ?"
+      ],
+      "attendus": [
+        "Cite une source fiable : procédure, notice ou collègue référent",
+        "Teste sur un cas simple ou compare avec l'ancienne façon de faire",
+        "Vérifie ses premiers résultats et demande un retour"
+      ],
+      "relance": "Comment avez-vous su que vous aviez bien compris la règle ?",
+      "alternative": "Parlez d'un outil ou d'une règle nouveaux que vous avez appris (études, association, bénévolat) et de la façon dont vous avez vérifié votre travail."
+    },
+    {
+      "id": "e5",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où deux chiffres qui devaient être égaux ne l'étaient pas. **Comment avez-vous cherché la cause** ?",
+      "suite": [
+        "Qu'avez-vous trouvé ?",
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit les chiffres et l'écart avec précision",
+        "Cherche par étapes : lister, comparer, vérifier chaque ligne",
+        "Dit ce qui a été trouvé et corrigé, ou à qui l'écart a été signalé"
+      ],
+      "relance": "À quel moment avez-vous demandé de l'aide ?",
+      "alternative": "Parlez d'un compte dont le total ne correspondait pas (caisse d'association, budget d'un voyage, inventaire) et de la façon dont vous avez cherché la cause."
+    },
+    {
+      "id": "e6",
+      "competence": "C1",
+      "texte": "Votre rapprochement bancaire présente un écart que vous **ne trouvez pas**, et la clôture est **dans deux jours**. Que faites-vous ?",
+      "suite": [
+        "À quel moment prévenez-vous votre responsable ?"
+      ],
+      "attendus": [
+        "Liste les lignes restantes et cherche leur cause une par une",
+        "Cherche d'abord les causes courantes : doublon, frais, décalage de date, saisie",
+        "Prévient son responsable à temps si l'écart reste inexpliqué"
+      ],
+      "relance": "Et si un écart reste inexpliqué la veille de la clôture ?",
+      "alternative": "Le total d'un compte ne correspond pas et vous devez le rendre dans deux jours (caisse d'association, budget d'un événement). Que faites-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez expliqué un chiffre ou une règle à une personne qui **n'était pas du métier**. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Comment avez-vous vérifié qu'elle avait compris ?"
+      ],
+      "attendus": [
+        "Part de la question de la personne et donne l'essentiel d'abord",
+        "Utilise des mots simples et un exemple concret",
+        "Vérifie la compréhension et laisse un écrit si besoin"
+      ],
+      "relance": "Quels mots avez-vous remplacés par des mots plus simples ?",
+      "alternative": "Parlez d'une fois où vous avez expliqué un calcul, un budget ou une règle à quelqu'un qui ne connaissait pas le sujet (études, association, bénévolat)."
+    },
+    {
+      "id": "e8",
+      "competence": "C3",
+      "texte": "Vous découvrez qu'un chiffre envoyé hier à votre responsable était faux. **Comment le prévenez-vous** ?",
+      "suite": [
+        "Que lui dites-vous exactement ?"
+      ],
+      "attendus": [
+        "Prévient vite, sans attendre qu'il le découvre",
+        "Dit quel chiffre est faux, la bonne valeur et ce que cela change",
+        "Envoie le document corrigé et laisse une trace écrite"
+      ],
+      "relance": "Que dites-vous si le chiffre a déjà été utilisé par quelqu'un ?",
+      "alternative": "Vous vous apercevez qu'une information envoyée hier à un groupe (association, projet d'études) était fausse. Comment prévenez-vous les personnes ?"
+    }
+  ],
+  "_pv": "f3379f3815"
+}

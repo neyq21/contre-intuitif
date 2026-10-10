@@ -1,0 +1,2635 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "manager",
+  "version": "2026.10",
+  "nom": "Manager d'équipe / Responsable d'équipe",
+  "secteur": "communication-management",
+  "alias": [
+    "manager",
+    "responsable d'équipe",
+    "chef d'équipe",
+    "manager de proximité",
+    "team leader",
+    "superviseur",
+    "encadrant",
+    "chef de service"
+  ],
+  "resume": "Organise le travail d'une équipe, informe et accompagne chacun, règle les désaccords et fait le lien avec la hiérarchie.",
+  "contexte": "Un service client de 8 personnes (appels, e-mails et chat), ouvert du lundi au vendredi, de 8 h à 18 h.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C4",
+      "titre": "Régler un désaccord entre deux personnes de l'équipe",
+      "pourquoi": "Un désaccord que l'on ne traite pas s'installe et gêne toute l'équipe ; traité à partir des faits, il se règle vite.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Deux conseillers qui ne se parlent plus",
+        "texte": "Mercredi, 9 h. Votre service client compte 8 personnes. Le conseiller du matin et la conseillère de l'après-midi se passent des dossiers clients en cours. Chacun laisse dans le dossier une « note de passage » : où en est le dossier, ce qui reste à faire, la date de rappel. Aucune règle écrite ne dit comment l'écrire. Depuis lundi, ils ne se parlent plus. Chacun vous a dit : « L'autre fait mal le passage de relais. » Le tableau liste les 6 dossiers passés lundi et mardi.",
+        "document": {
+          "type": "tableau",
+          "titre": "Les 6 dossiers passés lundi et mardi",
+          "colonnes": [
+            "Dossier",
+            "Laissé par",
+            "Note de passage"
+          ],
+          "lignes": [
+            [
+              "Dossier 1 (lundi)",
+              "Conseiller du matin",
+              "Complète"
+            ],
+            [
+              "Dossier 2 (lundi)",
+              "Conseiller du matin",
+              "Aucune note"
+            ],
+            [
+              "Dossier 3 (lundi)",
+              "Conseillère de l'après-midi",
+              "Complète"
+            ],
+            [
+              "Dossier 4 (mardi)",
+              "Conseiller du matin",
+              "Aucune note"
+            ],
+            [
+              "Dossier 5 (mardi)",
+              "Conseillère de l'après-midi",
+              "Sans la date de rappel"
+            ],
+            [
+              "Dossier 6 (mardi)",
+              "Conseiller du matin",
+              "Complète"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Chacun vous dit que l'autre fait mal le passage de relais. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je les réunis tout de suite pour qu'ils s'expliquent devant moi.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je reçois chacun séparément et je lui demande des exemples précis.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'attends quelques jours : ils finiront par se reparler.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je reçois chacun séparément et je l'écoute, sans demander d'exemples.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Écouter chacun seul permet d'obtenir des faits, sans la pression de l'autre. Écouter sans demander d'exemples donne un ressenti, mais rien à vérifier.",
+              "relance": "Comment obtenez-vous des faits quand deux personnes s'accusent l'une l'autre ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le conseiller du matin vous dit : « Elle ne laisse jamais de note. » **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Pouvez-vous me citer les dossiers où il manquait une note ? »",
+                  "points": 2,
+                  "repere": "c4_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Elle en laisse : j'ai vérifié les dossiers, vous vous trompez. »",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je comprends que ce soit agaçant pour vous. »",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "« Vous avez raison, elle est souvent brouillonne. »",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Demander des dossiers précis transforme un reproche général (« jamais ») en faits vérifiables. Dire « je comprends » aide, mais ne permet pas de vérifier ce qui s'est passé.",
+              "relance": "Que répondez-vous à une personne qui dit « jamais » ou « toujours » ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous avez le tableau. **Que dites-vous** au conseiller du matin sur **ses propres dossiers** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Vous faites mal le passage de relais, il faut que cela change. »",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Il manque des notes dans certains dossiers, il faudrait y faire attention. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Sur vos 4 dossiers de lundi et mardi, 2 n'ont pas de note. Que s'est-il passé ? »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Votre collègue laisse de meilleures notes que vous : prenez-en exemple. »",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Un retour utile donne le nombre et l'objet : 2 dossiers sur 4, sans note. La personne peut alors s'expliquer. « Il manque des notes » est vrai, mais trop vague pour agir.",
+              "relance": "Quand vous donnez un retour sur un travail, quels éléments précis donnez-vous ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous réunissez les deux conseillers. **Que proposez-vous** pour que le problème **ne revienne pas** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que chacun fasse plus attention à ses notes de passage dans les dossiers.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je rédige seul un modèle de note de passage et je leur demande de l'appliquer.",
+                  "points": 1,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que celui qui a laissé le plus de dossiers sans note s'excuse auprès de l'autre.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "Nous écrivons ensemble un modèle de note : état du dossier, reste à faire, date de rappel.",
+                  "points": 2,
+                  "repere": "c4_regle"
+                }
+              ],
+              "explication": "Une règle écrite avec les deux personnes est mieux comprise et mieux appliquée. Une règle écrite seul par le manager est utile, mais les deux n'y ont pas contribué.",
+              "relance": "Comment faites-vous pour qu'un problème entre deux personnes ne revienne pas ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Une semaine plus tard, que faites-vous pour **suivre cette règle** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je regarde les nouvelles notes de la semaine et je dis à chacun ce que je constate.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne vérifie rien : la règle est écrite, donc elle est appliquée par tout le monde.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à chacun, en passant dans le couloir, si cela va mieux entre eux.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je note qui oublie la note de passage et j'en parle à toute l'équipe en réunion.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Regarder les nouvelles notes montre si la règle est appliquée, et on le dit à chacun avec des faits. Demander « ça va mieux ? » donne un avis, pas un contrôle.",
+              "relance": "Comment savez-vous qu'une règle décidée en équipe est vraiment appliquée ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand je reçois **chacun séparément**, je…",
+              "justes": [
+                {
+                  "texte": "l'écoute, puis je lui demande des exemples précis de dossiers",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "lui demande de décrire ce qui s'est passé, dossier par dossier",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "lui dis que j'écoute aussi l'autre personne avant de décider quoi que ce soit",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "l'écoute attentivement",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui donne raison pour qu'il se calme",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "les réunis tout de suite pour qu'ils s'expliquent",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Sur **ses propres dossiers**, je lui dis…",
+              "justes": [
+                {
+                  "texte": "combien de dossiers n'ont pas de note, avec leurs numéros",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "ce que le tableau montre pour lui, puis je lui demande ce qui s'est passé",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "que 2 de ses 4 dossiers n'ont pas de note, sans parler de sa collègue",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "qu'il manque des notes",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "qu'il fait mal le passage de relais",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "qu'il fait moins bien que sa collègue",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour que le problème **ne revienne pas**, je…",
+              "justes": [
+                {
+                  "texte": "propose d'écrire avec eux un modèle de note en trois lignes",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "fixe un point dans une semaine pour regarder les notes ensemble",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "rédige avec eux une règle : état du dossier, reste à faire, date de rappel",
+                  "repere": "c4_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "leur demande de faire plus attention",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "attends que ça passe",
+                  "repere": "c4_evite"
+                },
+                {
+                  "texte": "demande à celui qui a le plus tort de s'excuser",
+                  "repere": "c4_personne"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Fixe, dès la réunion, la date d'un point pour regarder les notes ensemble.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Propose d'appliquer le même modèle de note à toute l'équipe, pas seulement aux deux personnes.",
+              "repere": "c4_regle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Sur vos 4 dossiers de lundi et mardi, 2 n'ont pas de note de passage. Que s'est-il passé ? »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le tableau montre que 2 des 4 dossiers du conseiller du matin n'ont pas de note. Que lui dites-vous ?",
+                "points": 2,
+                "repere": null
+              },
+              {
+                "id": "b",
+                "texte": "Le conseiller du matin se plaint de sa collègue. Que lui dites-vous ?",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Le conseiller du matin demande à changer d'horaire. Que lui répondez-vous ?",
+                "points": 0,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "La conseillère de l'après-midi laisse toujours des notes complètes. Que lui dites-vous ?",
+                "points": 0,
+                "repere": null
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le conseiller du matin a laissé 4 dossiers lundi et mardi.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Sur ces 4 dossiers, 2 n'ont pas de note de passage.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Le tableau montre quels dossiers n'ont pas de note.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le conseiller du matin arrive en retard chaque jour.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La conseillère de l'après-midi a laissé 2 dossiers.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le conseiller du matin a déjà reçu un avertissement.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'écoute sa réponse, puis je fais la même chose avec sa collègue, sur ses propres dossiers.",
+                "points": 2,
+                "repere": "c4_faits"
+              },
+              {
+                "id": "b",
+                "texte": "J'écoute sa réponse, puis je reçois sa collègue, sans lui donner de chiffres sur ses dossiers.",
+                "points": 1,
+                "repere": "c3_flou"
+              },
+              {
+                "id": "c",
+                "texte": "Je répète à sa collègue tout ce qu'il m'a dit sur elle.",
+                "points": 0,
+                "repere": "c4_personne"
+              },
+              {
+                "id": "d",
+                "texte": "Je considère qu'il a compris et je ne fais rien d'autre.",
+                "points": 0,
+                "repere": "c4_evite"
+              }
+            ]
+          },
+          "explication": "La réponse part d'un fait vérifié dans le tableau : 2 dossiers sur 4 sans note. Elle laisse ensuite la personne s'expliquer, au lieu de la juger."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre démarche, de mercredi à la semaine suivante",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Recevoir le conseiller du matin et l'écouter"
+            },
+            {
+              "id": "e2",
+              "texte": "Recevoir la conseillère de l'après-midi et l'écouter"
+            },
+            {
+              "id": "e3",
+              "texte": "Regarder dans le tableau les 6 dossiers et leurs notes"
+            },
+            {
+              "id": "e4",
+              "texte": "Réunir les deux et leur présenter les faits"
+            },
+            {
+              "id": "e5",
+              "texte": "Écrire avec eux un modèle de note de passage"
+            },
+            {
+              "id": "e6",
+              "texte": "Fixer avec eux la date d'un point dans une semaine"
+            },
+            {
+              "id": "e7",
+              "texte": "Faire le point : regarder ensemble les nouvelles notes"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e4",
+              "explication": "On écoute chacun avant de réunir les deux."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "On écoute chacun avant de réunir les deux."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On vérifie les faits avant de les présenter aux deux."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "Le modèle s'écrit une fois les faits partagés."
+            },
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "La date du point se fixe avec les deux personnes, une fois réunies."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "On ne peut vérifier la règle qu'une fois qu'elle existe."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "La date du point est fixée avant le point."
+            }
+          ],
+          "repere_reussite": "c4_regle",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 15 minutes : une personne joue le conseiller du matin, une autre la conseillère de l'après-midi. La personne candidate les reçoit séparément, puis ensemble, avec le tableau des 6 dossiers.",
+            "criteres": [
+              {
+                "texte": "Écoute chacun séparément et lui demande des exemples précis",
+                "repere": "c4_faits"
+              },
+              {
+                "texte": "Donne à chacun un retour chiffré sur ses propres dossiers",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Ne donne raison à personne et reste sur les faits",
+                "repere": "c4_faits"
+              },
+              {
+                "texte": "Propose une règle commune écrite, construite avec les deux",
+                "repere": "c4_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Fixe une date de point pour vérifier la règle",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous **en premier** avec les deux conseillers ?",
+              "justes": [
+                {
+                  "texte": "Je les reçois séparément et je leur demande des exemples précis.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "J'écoute chacun, sans donner raison à l'autre, et je note les faits.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Je regarde d'abord les dossiers pour avoir des faits, puis je reçois chacun.",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je les écoute chacun, sans demander d'exemples.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je les réunis tout de suite pour qu'ils s'expliquent.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que dites-vous à chacun **sur son travail** ?",
+              "justes": [
+                {
+                  "texte": "Le nombre de dossiers sans note parmi les siens, avec les numéros.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Ce que le tableau montre sur ses propres dossiers, puis je lui demande ce qui s'est passé.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Ce que j'ai constaté, sans le comparer à sa collègue.",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Qu'il manque des notes.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que c'est lui le plus en tort.",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment évitez-vous** que le problème revienne ?",
+              "justes": [
+                {
+                  "texte": "J'écris avec eux un modèle de note en trois lignes.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "Je fixe un point dans une semaine pour regarder les notes ensemble.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Je leur demande ce dont ils ont besoin pour écrire une note complète.",
+                  "repere": "c4_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je leur demande de faire plus attention.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends que ça passe.",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'utiliser le même modèle de note dans toute l'équipe.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer à la personne un exemple de règle commune écrite par l'équipe, et comment elle a été décidée.",
+        "Prévoir un point avec son responsable après chaque désaccord traité, pour parler de la démarche et des faits."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Organiser la charge de l'équipe quand le temps manque",
+      "pourquoi": "Quand le temps manque, l'ordre choisi pour le travail décide de ce que les clients reçoivent à temps.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Plus de travail que de temps cette semaine",
+        "texte": "Lundi, 8 h 30. Votre service client compte 8 personnes, dont 2 en congé toute la semaine. Les 6 personnes présentes ont 180 heures disponibles pour le travail du tableau (les appels et le chat sont comptés à part). Ce travail représente 230 heures : il en manque 50. Vous décidez de l'ordre de travail de l'équipe. La direction demande le rapport. Le service formation fixe la formation. Vous ne pouvez pas les changer seul. Votre responsable est joignable aujourd'hui.",
+        "document": {
+          "type": "tableau",
+          "titre": "Le travail à faire cette semaine",
+          "colonnes": [
+            "Travail",
+            "À terminer",
+            "Heures"
+          ],
+          "lignes": [
+            [
+              "12 réclamations clients (réponse promise aux clients)",
+              "Jeudi 17 h",
+              "50"
+            ],
+            [
+              "E-mails clients en attente depuis plus de 3 jours",
+              "Dès que possible",
+              "70"
+            ],
+            [
+              "Rapport mensuel, demandé par la direction",
+              "Vendredi 12 h",
+              "50"
+            ],
+            [
+              "Formation sur le nouveau produit, fixée par le service formation",
+              "Jeudi, de 14 h à 16 h",
+              "12"
+            ],
+            [
+              "Tri des anciens dossiers clos",
+              "Aucune date",
+              "38"
+            ],
+            [
+              "Rappels aux clients en attente d'un remboursement (promis cette semaine)",
+              "Cette semaine",
+              "10"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous classez le travail du tableau. **Quel critère** utilisez-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le traite dans l'ordre où il est arrivé.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je prends la date limite la plus proche, rien d'autre.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je regarde les dates limites et ce qui est déjà promis à des clients.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je prends le travail le plus court, pour en terminer le plus possible.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Les dates limites et les promesses faites aux clients sont des engagements : on les tient d'abord. La date la plus proche seule oublie ce qui est promis sans date précise.",
+              "relance": "Comment décidez-vous de l'ordre quand tout semble urgent ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le tri des anciens dossiers **n'a aucune date**. **Que faites-vous** de ce travail ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande à l'équipe de le finir après l'heure de départ.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le reporte à la semaine suivante et je le note dans le planning.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le reporte à la semaine suivante, sans le noter nulle part.",
+                  "points": 1,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le supprime du planning : personne ne le réclame.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Un travail sans date peut attendre : on le reporte et on le note, pour qu'il ne soit pas oublié. Reporter sans le noter risque de le perdre.",
+              "relance": "Que faites-vous d'un travail que vous décidez de reporter ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Sans le tri, il manque encore **12 heures**. La formation et le rapport **ne dépendent pas de vous**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appelle mon responsable avec les chiffres, je propose deux solutions et il choisit.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je supprime la formation, sans prévenir le service formation.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à l'équipe de travailler plus vite sur tout le travail.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je préviens mon responsable que l'équipe aura du retard, sans autre précision.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                }
+              ],
+              "explication": "Ce qui ne dépend pas de vous se décide avec votre responsable : vous apportez les faits et deux solutions, il choisit. Le prévenir sans solution est utile, mais il doit chercher seul.",
+              "relance": "Quand le travail dépasse le temps disponible, qui prévenez-vous, et avec quoi ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Votre responsable décide de déplacer la formation à la semaine suivante. **Comment informez-vous l'équipe** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je donne le plan de la semaine, sans expliquer les raisons.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens seulement les personnes concernées par la formation.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je laisse chacun choisir ce qu'il traite en premier, selon sa charge.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je dis ce qui est prioritaire, ce qui est reporté, pourquoi, et qui fait quoi.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                }
+              ],
+              "explication": "L'équipe a besoin de savoir quoi faire, ce qui est reporté et pourquoi, pour suivre le plan. Un plan donné sans explication est appliqué, mais il soulève des questions.",
+              "relance": "Que dites-vous à l'équipe quand vous changez les priorités ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Mercredi 17 h, **6 des 12 réclamations** ne sont pas encore traitées. Toutes sont promises aux clients pour **jeudi 17 h**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends jeudi matin pour voir où l'équipe en est.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens mon responsable que des réponses risquent d'arriver en retard.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je répartis ces 6 dossiers entre plusieurs personnes et je vérifie jeudi à midi.",
+                  "points": 2,
+                  "repere": "c2_regroupe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je termine ces dossiers moi-même ce soir, sans prévenir l'équipe.",
+                  "points": 0,
+                  "repere": "c4_seul"
+                }
+              ],
+              "explication": "Répartir les dossiers maintenant, avec un contrôle jeudi à midi, laisse le temps de finir. Prévenir votre responsable est utile, mais ne règle pas le retard.",
+              "relance": "Comment suivez-vous l'avancement d'un travail promis pour une date précise ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour choisir ce qui passe **en premier**, je regarde…",
+              "justes": [
+                {
+                  "texte": "les dates limites et les engagements pris envers les clients",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "ce qui est promis à des clients et ce qui a une date fixée par la direction",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "les dates, puis ce qui arrive aux clients si le travail n'est pas fait à temps",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la date limite la plus proche",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'ordre dans lequel le travail est arrivé",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "ce que l'équipe préfère faire",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour le travail qui **n'a aucune date**, je…",
+              "justes": [
+                {
+                  "texte": "le reporte à la semaine suivante et je le note dans le planning",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "le mets de côté pour la semaine prochaine et j'en informe l'équipe",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "décale ce travail et je prévois une date pour le reprendre",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le fais s'il reste du temps",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le supprime sans le dire à personne",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "le fais en premier pour m'en débarrasser",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Il manque encore 12 heures. Pour la formation et le rapport, qui **ne dépendent pas de moi**, je…",
+              "justes": [
+                {
+                  "texte": "demande à mon responsable de décider quoi déplacer ou simplifier, en lui donnant les faits",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "présente à mon responsable deux solutions et je lui demande de choisir",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "appelle mon responsable avant jeudi, avec les chiffres de la charge",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens mon responsable que l'équipe est en retard",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "supprime la formation moi-même, sans prévenir",
+                  "repere": "c4_seul"
+                },
+                {
+                  "texte": "demande à l'équipe de travailler plus vite",
+                  "repere": "c2_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévoit un point à mi-semaine pour vérifier l'avancement des réclamations promises pour jeudi.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Prévient ceux qui attendent : le service formation et les clients dont la réponse sera en retard.",
+              "repere": "c2_previent"
+            },
+            {
+              "texte": "Répartit les réclamations les plus longues entre plusieurs personnes.",
+              "repere": "c2_regroupe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Le tri des dossiers n'a aucune date : je le reporte à la semaine prochaine. Il manque encore 12 heures : j'appelle mon responsable avec les faits. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "L'équipe a 50 heures de travail de trop cette semaine, dont un tri sans date. Que faites-vous ?",
+                "points": 2,
+                "repere": null
+              },
+              {
+                "id": "b",
+                "texte": "L'équipe a trop de travail cette semaine. Que faites-vous ?",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Une personne de l'équipe demande à partir plus tôt jeudi. Que lui répondez-vous ?",
+                "points": 0,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Votre responsable vous demande quelles personnes sont absentes cette semaine. Que répondez-vous ?",
+                "points": 0,
+                "repere": null
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'équipe a 50 heures de travail de trop.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le tri des anciens dossiers n'a aucune date limite.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "La formation et le rapport ne dépendent pas de vous.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Les réclamations peuvent attendre la semaine suivante.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Deux personnes de l'équipe sont en congé cette semaine.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Les clients ont déjà reçu une réponse à leurs e-mails.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Une fois la décision prise, j'explique à l'équipe le plan, ce qui est reporté et pourquoi.",
+                "points": 2,
+                "repere": "c3_complet"
+              },
+              {
+                "id": "b",
+                "texte": "Une fois la décision prise, je donne le nouveau plan à l'équipe, sans explication.",
+                "points": 1,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "c",
+                "texte": "Je commence à répartir le travail avant la décision de mon responsable.",
+                "points": 0,
+                "repere": "c1_precipite"
+              },
+              {
+                "id": "d",
+                "texte": "J'attends vendredi pour dire à l'équipe ce qui a été reporté.",
+                "points": 0,
+                "repere": "c2_silence"
+              }
+            ]
+          },
+          "explication": "La réponse applique un critère : le tri n'a aucune date, donc il passe en dernier. Ce qui ne dépend pas de vous se décide avec votre responsable. Ensuite, on informe l'équipe."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Votre plan de la semaine, à vérifier",
+          "consigne": "Voici votre plan de la semaine. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Équipe présente : 8 personnes.",
+              "erreur": true,
+              "explication": "Deux personnes sont en congé toute la semaine : 6 personnes sont présentes."
+            },
+            {
+              "id": "e2",
+              "texte": "Temps disponible pour ce travail : 180 heures.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Réclamations clients : à terminer vendredi à 17 h.",
+              "erreur": true,
+              "explication": "La réponse est promise aux clients pour jeudi 17 h."
+            },
+            {
+              "id": "e4",
+              "texte": "E-mails clients de plus de 3 jours : à traiter dès que possible.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Rapport mensuel de la direction : à rendre vendredi 17 h.",
+              "erreur": true,
+              "explication": "Le rapport est à rendre vendredi à 12 h."
+            },
+            {
+              "id": "e6",
+              "texte": "Formation sur le nouveau produit : jeudi, de 14 h à 16 h.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Rappels aux clients en attente d'un remboursement : cette semaine.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "Tri des anciens dossiers clos : aucune date, à reporter si besoin.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e9",
+              "texte": "Temps total du travail à faire : 230 heures.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e10",
+              "texte": "Il manque 50 heures pour tout faire cette semaine.",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c2_contraintes",
+          "repere_echec": "c2_oubli",
+          "reel": {
+            "consigne": "En situation (15 minutes) : la personne reçoit le tableau du travail et un plan de semaine qui contient 3 erreurs. Elle le vérifie, puis dit à voix haute ce qu'elle reporte et ce qu'elle demande à sa hiérarchie.",
+            "criteres": [
+              {
+                "texte": "Compare chaque ligne du plan aux dates et aux heures du tableau",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Repère les dates, les heures ou les nombres qui ne sont pas les bons",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Choisit un critère clair pour classer le travail",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Dit ce qu'elle reporte et ce qu'elle demande à sa hiérarchie",
+                "repere": "c4_escalade"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose un point à mi-semaine pour vérifier l'avancement",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Comment choisissez-vous ce que l'équipe traite **en premier** ?",
+              "justes": [
+                {
+                  "texte": "Je regarde les dates limites et ce qui est promis aux clients.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je classe le travail par échéance et par effet sur les clients.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je commence par ce qui est promis pour une date précise.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je commence par la date limite la plus proche.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Dans l'ordre où le travail est arrivé.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous quand **il manque encore** du temps **après avoir reporté** ce qui peut l'être ?",
+              "justes": [
+                {
+                  "texte": "J'appelle mon responsable avec les chiffres et deux solutions.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je lui demande de décider ce qui est déplacé ou simplifié.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je lui propose de déplacer la formation ou de simplifier le rapport.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que l'équipe est en retard.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je demande à l'équipe de travailler plus vite sur tout.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment informez-vous l'équipe** de la décision ?",
+              "justes": [
+                {
+                  "texte": "Je dis ce qui est prioritaire, ce qui est reporté et pourquoi.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "J'explique qui fait quoi, et pour quand.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je le dis en réunion et je l'envoie par écrit à toute l'équipe.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je donne le nouveau plan.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je préviens seulement les personnes concernées.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de prévenir les clients dont la réponse sera en retard.",
+              "repere": "c2_previent"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit une règle de priorité simple : engagements envers les clients, dates fixées par la direction, puis le reste.",
+        "Prévoir un point chaque semaine avec son responsable sur la charge de l'équipe, avant qu'elle dépasse le temps disponible."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Annoncer un changement d'horaire clairement à l'équipe",
+      "pourquoi": "Un changement est accepté plus vite quand l'équipe sait ce qui change, pourquoi, quand, et ce qu'on attend d'elle.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un nouvel horaire pour toute l'équipe",
+        "texte": "Mardi 3 novembre, 16 h. Vous venez de recevoir le message de la direction (ci-dessous). Vous réunissez votre équipe de 8 personnes demain, mercredi 4 novembre, à 9 h, pendant 15 minutes. L'horaire est décidé : vous ne pouvez pas le changer. Vous devez composer les groupes et les envoyer à la direction pour lundi 9 novembre.",
+        "document": {
+          "type": "message",
+          "titre": "Message reçu mardi 3 novembre, 16 h",
+          "de": "Direction du service client",
+          "texte": "Depuis un mois, beaucoup d'appels arrivent entre 16 h et 18 h, et les clients attendent longtemps. À partir du lundi 16 novembre, le service sera réparti en deux groupes de 4 personnes. Un groupe travaille de 8 h à 16 h, l'autre de 10 h à 18 h. Les groupes échangent leurs horaires chaque lundi. Les RH ont validé la date. Merci d'annoncer ce changement à votre équipe et de m'envoyer la composition des groupes pour le lundi 9 novembre."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous ouvrez la réunion de 9 h. Que dites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Un rappel des résultats du service depuis un an, pour donner le contexte.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que j'ai une annonce à faire, que je donnerai après un tour de table.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que l'équipe passera en deux groupes dès le lundi 16 novembre, avec deux horaires.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que l'équipe passera en deux groupes, sans dire encore à partir de quand.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "On donne l'essentiel d'abord : ce qui change et à partir de quand. Annoncer le changement sans la date laisse l'équipe dans l'incertitude.",
+              "relance": "Que dites-vous en premier quand vous annoncez un changement à une équipe ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Un collaborateur vous demande **pourquoi** l'équipe change d'horaire. **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« C'est une décision de la direction, je n'ai pas à vous l'expliquer. »",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Beaucoup d'appels arrivent de 16 h à 18 h et les clients attendent longtemps. »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "« C'est à cause du nombre d'appels qui est trop élevé l'après-midi. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "« C'est pour que l'équipe travaille plus longtemps chaque semaine. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "La raison réelle, avec les faits du message (les heures et l'attente des clients), aide l'équipe à comprendre. « L'après-midi » est vrai, mais trop vague. Inventer une raison est une information fausse.",
+              "relance": "Comment expliquez-vous une décision que vous n'avez pas prise vous-même ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous devez composer les groupes pour **lundi 9 novembre**. **Que demandez-vous** à chacun ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "De dire à voix haute, devant toute l'équipe, quel groupe il préfère.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "De m'écrire en détail les raisons pour lesquelles un horaire lui pose problème.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "De me dire quel horaire est difficile pour lui, quand il aura le temps.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "De me dire avant vendredi 12 h quel horaire est difficile pour lui. J'en tiendrai compte.",
+                  "points": 2,
+                  "repere": "c3_suite"
+                }
+              ],
+              "explication": "Une demande claire a une date : vendredi 12 h laisse le temps de composer les groupes avant lundi. Il suffit que la personne dise quel horaire est difficile, sans avoir à se justifier. Sans date, la réponse peut arriver trop tard.",
+              "relance": "Comment demandez-vous une information à l'équipe, sans que chacun doive se justifier ?"
+            },
+            {
+              "id": "q4",
+              "texte": "La réunion **est terminée**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'envoie un récapitulatif écrit : horaires, dates, raison, et ce que j'attends de chacun.",
+                  "points": 2,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je note dans mon cahier tout ce que j'ai dit à l'équipe, sans rien lui envoyer.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne fais rien de plus : tout a été dit à l'oral, chacun s'en souviendra.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'attends que chacun vienne me voir avec ses questions, sans rien envoyer avant.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                }
+              ],
+              "explication": "Un écrit court garde la trace de ce qui a été dit et rappelle ce que chacun doit faire. Un cahier personnel aide le responsable, mais l'équipe n'a rien en main.",
+              "relance": "Qu'est-ce que vous laissez par écrit après une réunion ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vendredi **12 h**, 2 personnes sur 8 **n'ont pas répondu**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je compose les groupes sans elles : elles n'avaient qu'à répondre.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'envoie un rappel à toute l'équipe, sans regarder qui a déjà répondu.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je relance directement ces 2 personnes et je leur donne une nouvelle date limite.",
+                  "points": 2,
+                  "repere": "c3_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'attends lundi pour voir si elles répondent.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                }
+              ],
+              "explication": "Relancer les deux personnes concernées, avec une nouvelle date limite avant lundi, permet de recevoir leur réponse à temps. Un rappel à tout le monde fonctionne, mais dérange ceux qui ont déjà répondu.",
+              "relance": "Comment suivez-vous une demande que vous avez faite à l'équipe ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**J'ouvre la réunion** en disant que…",
+              "justes": [
+                {
+                  "texte": "à partir du lundi 16 novembre, l'équipe sera en deux groupes : 8 h – 16 h et 10 h – 18 h",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "l'horaire change dès le lundi 16 novembre, et je donne les deux horaires",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "deux groupes de 4 personnes se partageront les horaires 8 h – 16 h et 10 h – 18 h, à partir du 16 novembre",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "il y aura un changement d'horaire bientôt",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "je rappelle d'abord les résultats du service depuis un an",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "j'ai une annonce, mais je n'en dirai pas plus avant la fin de la réunion",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si un collaborateur dit « Cet horaire ne m'arrange pas », je…",
+              "justes": [
+                {
+                  "texte": "lui dis que l'horaire est décidé et qu'il peut me dire avant vendredi lequel est difficile pour lui",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "l'écoute sans lui demander de se justifier, et je lui demande de me dire quels jours ou horaires sont difficiles",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "note sa remarque et je lui dis que j'en tiendrai compte pour composer les groupes",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis de venir me voir plus tard",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis qu'il n'a pas le choix",
+                  "repere": "c4_impose"
+                },
+                {
+                  "texte": "lui promets de demander à la direction de changer l'horaire",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Pour vérifier** que tout le monde a compris, je…",
+              "justes": [
+                {
+                  "texte": "demande à deux personnes de redire l'horaire avec leurs mots",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "demande s'il y a des questions et je réponds à chacune",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "envoie un récapitulatif écrit après la réunion",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "demande : « C'est clair pour tout le monde ? »",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "considère que le silence veut dire que tout est compris",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prépare une feuille avec les deux horaires et les dates, et la donne à chacun.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Propose à chacun de poser ses questions en privé après la réunion.",
+              "repere": "c3_adapte"
+            },
+            {
+              "texte": "Demande une réponse à chacun, même « aucun problème », pour savoir que tous ont compris.",
+              "repere": "c3_verifie"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Dès le lundi 16 novembre, deux groupes : 8 h – 16 h et 10 h – 18 h. Beaucoup d'appels arrivent de 16 h à 18 h. Dites-moi avant vendredi 12 h quel horaire pose problème. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Vous annoncez à l'équipe le nouvel horaire en deux groupes, à partir du 16 novembre. Que dites-vous ?",
+                "points": 2,
+                "repere": null
+              },
+              {
+                "id": "b",
+                "texte": "Vous annoncez un changement à l'équipe. Que dites-vous ?",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Un collaborateur demande à échanger son groupe avec un collègue. Que répondez-vous ?",
+                "points": 0,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "La direction vous demande la composition des groupes. Que répondez-vous ?",
+                "points": 0,
+                "repere": null
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'équipe passera en deux groupes à partir du lundi 16 novembre.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Beaucoup d'appels arrivent entre 16 h et 18 h.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Vous devez envoyer la composition des groupes pour lundi 9 novembre.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "L'équipe devra faire des heures en plus chaque jour.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La réunion dure 15 minutes.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Un collaborateur a demandé ce changement.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'envoie après la réunion un récapitulatif écrit : horaires, dates, raison, et ce que j'attends.",
+                "points": 2,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "b",
+                "texte": "J'envoie les horaires par e-mail, sans la date limite pour me répondre.",
+                "points": 1,
+                "repere": "c3_flou"
+              },
+              {
+                "id": "c",
+                "texte": "Je ne fais rien de plus : tout a été dit à l'oral.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "d",
+                "texte": "J'attends que chacun vienne me voir avec ses questions.",
+                "points": 0,
+                "repere": "c2_reactif"
+              }
+            ]
+          },
+          "explication": "La réponse donne dans l'ordre ce qui change, quand, pourquoi, et ce qu'on attend de chacun, avec une date. Ensuite, un écrit garde la trace de ce qui a été dit."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Les phrases de votre annonce, par rubrique",
+          "consigne": "Pour **chaque phrase** de votre annonce, **choisissez la rubrique** à laquelle elle appartient.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Ce qui change"
+            },
+            {
+              "id": "k2",
+              "nom": "Pourquoi"
+            },
+            {
+              "id": "k3",
+              "nom": "Quand"
+            },
+            {
+              "id": "k4",
+              "nom": "Ce que j'attends de vous"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "« L'équipe sera répartie en deux groupes de 4 personnes. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est la nouvelle organisation : ce qui change."
+            },
+            {
+              "id": "e2",
+              "texte": "« Beaucoup d'appels arrivent entre 16 h et 18 h. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "C'est la raison du changement."
+            },
+            {
+              "id": "e3",
+              "texte": "« Cela commence le lundi 16 novembre. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est la date de début."
+            },
+            {
+              "id": "e4",
+              "texte": "« Un groupe travaille de 8 h à 16 h, l'autre de 10 h à 18 h. »",
+              "accepte": [
+                "k1",
+                "k3"
+              ],
+              "explication": "Ce sont les nouveaux horaires : ce qui change. Ce sont aussi des heures de travail (quand) : les deux sont acceptés."
+            },
+            {
+              "id": "e5",
+              "texte": "« Dites-moi avant vendredi 12 h quel horaire vous pose problème. »",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "C'est une demande à chacun, avec une date limite."
+            },
+            {
+              "id": "e6",
+              "texte": "« Vous saurez dans quel groupe vous êtes le lundi 9 novembre. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est une date : elle dit quand chacun saura son groupe."
+            },
+            {
+              "id": "e7",
+              "texte": "« Les clients attendent trop longtemps au téléphone à ce moment-là. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "C'est la conséquence que le changement veut corriger : la raison."
+            },
+            {
+              "id": "e8",
+              "texte": "« Les groupes échangent leurs horaires chaque lundi. »",
+              "accepte": [
+                "k1",
+                "k3"
+              ],
+              "explication": "C'est la règle de rotation (ce qui change) et le moment où elle s'applique (quand) : les deux sont acceptés."
+            }
+          ],
+          "repere_reussite": "c3_complet",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes. La personne candidate annonce le changement d'horaire à 3 ou 4 personnes qui jouent l'équipe, avec le message de la direction sous les yeux. Une personne demande : « Pourquoi ? »",
+            "criteres": [
+              {
+                "texte": "Annonce d'abord ce qui change et à partir de quand",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Donne la raison, avec les faits du message de la direction",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Dit ce qu'elle attend de chacun et pour quelle date",
+                "repere": "c3_suite"
+              },
+              {
+                "texte": "Vérifie que l'horaire est compris, en le faisant redire",
+                "repere": "c3_verifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Annonce qu'elle enverra un récapitulatif écrit",
+              "repere": "c3_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que dites-vous **en premier** à l'équipe ?",
+              "justes": [
+                {
+                  "texte": "Ce qui change et à partir de quand : deux groupes, dès le lundi 16 novembre.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Les deux horaires et la date de début.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Le changement et sa date, avant les raisons.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je dis qu'il y a un changement d'horaire.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je commence par l'histoire des résultats du service.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que répondez-vous à la question « **Pourquoi ce changement** ? »",
+              "justes": [
+                {
+                  "texte": "Beaucoup d'appels arrivent entre 16 h et 18 h et les clients attendent longtemps.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Avec deux groupes, un groupe travaille jusqu'à 18 h, quand les appels sont nombreux.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je donne la raison du message de la direction, sans en inventer une autre.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "C'est à cause du nombre d'appels l'après-midi.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "C'est une décision de la direction, je n'y peux rien.",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "C'est pour que l'équipe travaille plus longtemps.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment suivez-vous** ce qui a été dit en réunion ?",
+              "justes": [
+                {
+                  "texte": "J'envoie un récapitulatif écrit : changement, raison, dates, ce que chacun doit faire.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Je note qui doit faire quoi, pour quand, et je relance vendredi les personnes sans réponse.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "Je regarde vendredi à midi qui a répondu et je relance les autres directement.",
+                  "repere": "c3_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je note ce que chacun a dit dans mon cahier.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je compte sur la mémoire de chacun.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Relance les personnes sans réponse en privé, sans les nommer devant l'équipe.",
+              "repere": "c3_adapte"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un modèle d'annonce en quatre rubriques : ce qui change, pourquoi, quand, ce qu'on attend de chacun.",
+        "Relire avec la personne ses premières annonces et lui demander comment elle a vérifié que le message était compris."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Accueillir une nouvelle personne et écouter ses besoins",
+      "pourquoi": "Une personne accueillie, dont on connaît les besoins pour bien travailler, devient autonome plus vite et reste plus longtemps dans l'équipe.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une nouvelle conseillère arrive lundi",
+        "texte": "Lundi, 9 h. Une nouvelle conseillère rejoint votre service client de 8 personnes. Vous la recevez 30 minutes avant de la présenter à l'équipe. Le programme de sa première semaine est prêt (voir la liste). Une place est libre au fond de la salle, loin du passage. Votre entreprise a un référent handicap : il accompagne toute demande d'aménagement de poste, si la personne le souhaite.",
+        "document": {
+          "type": "liste",
+          "titre": "Programme de sa première semaine",
+          "items": [
+            "Lundi : accueil, visite des locaux, accès aux outils.",
+            "Mardi : elle écoute des appels à côté d'un collègue.",
+            "Mercredi : ses premiers appels, avec un collègue à côté.",
+            "Jeudi : ses premiers e-mails clients.",
+            "Vendredi : point de 30 minutes avec vous."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous commencez l'entretien d'accueil. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande si elle a un problème de santé dont je dois tenir compte.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande : « De quoi avez-vous besoin pour bien travailler ? »",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui présente son programme de la semaine et je demande si elle a des questions.",
+                  "points": 1,
+                  "repere": "c3_suite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui explique que tout le monde travaille de la même façon ici.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                }
+              ],
+              "explication": "Cette question ouverte laisse la personne dire ce qui l'aide, sans l'obliger à parler de sa santé. Présenter le programme est utile, mais ne lui laisse pas dire ce dont elle a besoin.",
+              "relance": "Comment apprenez-vous ce dont une personne a besoin pour bien travailler ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Elle répond : « Je travaille mieux avec des **consignes écrites** et dans un **endroit calme**. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande pourquoi elle en a besoin, pour comprendre sa situation personnelle.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je note sa demande et je lui dis que j'y réfléchirai pendant cette première semaine.",
+                  "points": 1,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui explique que toute l'équipe reçoit les mêmes consignes, données à l'oral.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui propose la place au fond de la salle et je lui envoie les consignes par écrit.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                }
+              ],
+              "explication": "On cherche ce qui est possible tout de suite : une place calme et des consignes écrites. Demander « pourquoi » invite la personne à parler de sa vie privée ou de sa santé, ce qui n'est pas votre rôle.",
+              "relance": "Que faites-vous quand une personne demande un changement pour mieux travailler ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Elle demande aussi **un casque** qui réduit le bruit. L'achat **dépend des RH**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis non, car un casque n'est pas dans le programme d'accueil de la première semaine.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis que l'achat dépend des RH et que je ne peux donc rien faire pour elle.",
+                  "points": 1,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne décide pas seul : je propose le référent handicap si elle le souhaite, et je réponds vendredi.",
+                  "points": 2,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui promets un casque pour mercredi : je trouverai une solution de mon côté.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                }
+              ],
+              "explication": "Vous ne décidez pas de l'achat : vous le dites, vous proposez le référent handicap si elle le souhaite, et vous donnez une date. « Je ne peux rien faire » laisse la personne sans suite.",
+              "relance": "Que faites-vous quand une demande dépasse ce que vous pouvez décider ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Un collègue** vous demande **pourquoi** la nouvelle a la place au fond de la salle. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« C'est moi qui attribue les places. Je ne parle pas de la situation d'un collègue. »",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "« C'est moi qui attribue les places. »",
+                  "points": 1,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Elle a demandé un endroit calme, car elle travaille mieux à l'écart du passage. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Elle est arrivée la première ce matin, donc elle a choisi cette place. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Ce que la personne vous a demandé reste entre elle et vous, sauf si elle choisit de le dire. Dire la règle protège cette confidentialité. Inventer une raison est une information fausse.",
+              "relance": "Que répondez-vous à un collègue qui vous interroge sur la situation d'une autre personne ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vendredi, point de 30 minutes. Elle a traité 20 dossiers : 18 sont complets, 2 n'ont pas la date de rappel. **Que lui dites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Tout est parfait cette semaine, il n'y a rien à changer : continuez comme ça. »",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "« 18 dossiers sur 20 sont complets. Sur 2, il manque la date. Qu'est-ce qui vous aiderait ? »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Il manque des dates de rappel dans certains de vos dossiers de cette première semaine. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Vous n'êtes pas assez rigoureuse : il faut faire plus attention à vos dossiers. »",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Un retour factuel dit ce qui va bien (18 sur 20) et ce qui manque (2 dates), puis demande ce qui aiderait. « Il manque des dates » est vrai, mais sans chiffre ni suite.",
+              "relance": "Comment donnez-vous un retour sur un travail ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Pour savoir** ce dont elle a besoin, je lui demande…",
+              "justes": [
+                {
+                  "texte": "de quoi elle a besoin pour bien travailler",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "ce qui l'aide à bien travailler, et ce qui la gêne",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "comment elle préfère recevoir ses consignes et où elle travaille le mieux",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "si tout se passe bien pour elle",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "si elle a un problème de santé dont je dois tenir compte",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "rien : elle me le dira si elle en a besoin",
+                  "repere": "c2_reactif"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Quand elle me demande des **consignes écrites** et un **endroit calme**, je…",
+              "justes": [
+                {
+                  "texte": "lui envoie les consignes par écrit et je lui propose la place au fond de la salle",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "lui dis ce que je peux faire tout de suite et ce que je dois vérifier",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "ne lui demande pas pourquoi : je cherche ce qui est possible",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis que je vais y réfléchir",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui demande la raison de sa demande",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "lui réponds que tout le monde reçoit les mêmes consignes",
+                  "repere": "c7_ignore"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour une demande que je **ne peux pas décider** seul, je…",
+              "justes": [
+                {
+                  "texte": "lui dis que le référent handicap peut l'aider, si elle le souhaite",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "lui donne une date à laquelle je lui réponds",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "ne parle de sa demande à personne sans son accord",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis que je vais voir ce que je peux faire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui promets qu'elle l'aura mercredi",
+                  "repere": "c7_promesse"
+                },
+                {
+                  "texte": "préviens le référent handicap sans lui demander son avis",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose un point en fin de semaine pour voir si les mesures mises en place l'aident.",
+              "repere": "c7_suivi"
+            },
+            {
+              "texte": "Demande à la personne ce qu'elle accepte que l'équipe sache.",
+              "repere": "c7_regle"
+            },
+            {
+              "texte": "Garde une trace de ce qui a été convenu, sans y mettre d'information personnelle.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne peux pas décider seul de l'achat d'un casque. Si vous le souhaitez, le référent handicap peut étudier votre demande avec vous. Je vous réponds d'ici vendredi. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Une nouvelle conseillère demande un casque qui réduit le bruit. L'achat dépend des RH. Que lui répondez-vous ?",
+                "points": 2,
+                "repere": null
+              },
+              {
+                "id": "b",
+                "texte": "Une nouvelle conseillère vous fait une demande de matériel. Que lui répondez-vous ?",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Une nouvelle conseillère demande où trouver les consignes écrites. Que lui répondez-vous ?",
+                "points": 0,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Un collègue demande pourquoi la nouvelle a une place à l'écart. Que lui répondez-vous ?",
+                "points": 0,
+                "repere": null
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Elle demande un casque qui réduit le bruit.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "L'achat d'un casque dépend des RH.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Votre entreprise a un référent handicap.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le casque coûte plus de 100 euros.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Une place est libre au fond de la salle.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "La nouvelle conseillère est arrivée en retard lundi.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je lui réponds vendredi, comme annoncé, même si je n'ai pas encore de décision.",
+                "points": 2,
+                "repere": "c7_suivi"
+              },
+              {
+                "id": "b",
+                "texte": "Je lui réponds quand j'aurai une décision, sans lui donner de date.",
+                "points": 1,
+                "repere": "c3_flou"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends qu'elle me relance pour reparler de sa demande.",
+                "points": 0,
+                "repere": "c2_reactif"
+              },
+              {
+                "id": "d",
+                "texte": "Je parle de sa demande à l'équipe pour savoir si quelqu'un a un casque.",
+                "points": 0,
+                "repere": "c7_hors_regle"
+              }
+            ]
+          },
+          "explication": "La réponse reconnaît la demande, dit ce qui ne dépend pas de vous, propose le référent handicap sans l'imposer, et donne une date. La personne choisit."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre accueil de la nouvelle conseillère, de lundi à vendredi",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Lui demander de quoi elle a besoin pour bien travailler"
+            },
+            {
+              "id": "e2",
+              "texte": "Lui dire ce que vous pouvez mettre en place tout de suite"
+            },
+            {
+              "id": "e3",
+              "texte": "Lui proposer, si elle le souhaite, de voir le référent handicap pour le reste"
+            },
+            {
+              "id": "e4",
+              "texte": "Lui envoyer par écrit les consignes qu'elle a demandées"
+            },
+            {
+              "id": "e5",
+              "texte": "La présenter à l'équipe, sans parler de ses demandes"
+            },
+            {
+              "id": "e6",
+              "texte": "Faire le point avec elle vendredi"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "On écoute le besoin avant de proposer une solution."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On dit d'abord ce qu'on peut faire, puis on propose une aide pour le reste."
+            },
+            {
+              "avant": "e1",
+              "apres": "e4",
+              "explication": "On ne peut envoyer ce qu'elle a demandé qu'après sa demande."
+            },
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "L'entretien a lieu avant la présentation à l'équipe : on sait alors ce qui doit rester confidentiel."
+            },
+            {
+              "avant": "e2",
+              "apres": "e5",
+              "explication": "Ce que vous mettez en place tout de suite lui est dit pendant l'entretien, avant la présentation à l'équipe."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "Le point de vendredi vient après les propositions faites en début de semaine."
+            },
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "Les consignes sont envoyées avant le point de fin de semaine."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "Le point de vendredi est la dernière étape de la semaine."
+            }
+          ],
+          "repere_reussite": "c7_suivi",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 15 minutes : une personne joue la nouvelle conseillère et répond « Je travaille mieux avec des consignes écrites et dans un endroit calme. » Une autre joue un collègue curieux. La personne candidate mène l'accueil, puis répond au collègue.",
+            "criteres": [
+              {
+                "texte": "Demande de quoi elle a besoin pour bien travailler",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "Propose des solutions concrètes dans son rôle : consignes écrites, place au calme",
+                "repere": "c7_alternative"
+              },
+              {
+                "texte": "Ne demande aucune information de santé ni aucune justification",
+                "repere": "c8_role"
+              },
+              {
+                "texte": "Garde la demande confidentielle face au collègue",
+                "repere": "c7_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose un point en fin de semaine pour vérifier que cela l'aide",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que demandez-vous** à la nouvelle conseillère pour connaître ses besoins ?",
+              "justes": [
+                {
+                  "texte": "De quoi elle a besoin pour bien travailler.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Ce qui l'aide à travailler, et ce qui la gêne.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Comment elle préfère recevoir ses consignes.",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Si tout se passe bien pour elle.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Si elle a un problème de santé dont je dois tenir compte.",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Elle demande des **consignes écrites** et un **endroit calme**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je lui envoie les consignes par écrit et je lui propose la place au fond de la salle.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Je cherche ce qui est possible, sans lui demander de se justifier.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je lui dis ce que je mets en place tout de suite et ce que je dois vérifier.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que je vais y réfléchir.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui demande pourquoi elle en a besoin.",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Un collègue** vous demande **pourquoi** elle a cette place. Que répondez-vous ?",
+              "justes": [
+                {
+                  "texte": "Que c'est moi qui attribue les places, et que je ne parle pas de la situation d'un collègue.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Que les places sont de ma responsabilité, sans donner de raison personnelle.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Que je ne parle pas des demandes personnelles, pas plus des siennes que de celles des autres.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que c'est moi qui attribue les places.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Qu'elle a demandé un endroit calme.",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "Qu'elle était arrivée la première.",
+                  "repere": "c3_faux"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose à la nouvelle conseillère un point en fin de semaine pour voir si les mesures l'aident.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire pratiquer l'entretien d'accueil en jeu de rôle avec un autre manager, avec la question « De quoi avez-vous besoin pour bien travailler ? ».",
+        "Présenter la démarche de l'entreprise pour une demande d'aménagement : qui contacter, et ce qui reste confidentiel."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C4",
+      "texte": "Parlez d'une fois où **deux personnes** de votre équipe ou de votre groupe étaient en désaccord. **Que s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous fait en premier ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit des faits précis, pas des jugements",
+        "A écouté chaque personne séparément",
+        "Dit ce qui a été décidé pour que cela ne revienne pas"
+      ],
+      "relance": "Qu'est-ce qui a changé ensuite dans la façon de travailler ?",
+      "alternative": "Si vous n'avez jamais encadré d'équipe : parlez d'un désaccord entre deux personnes d'un groupe (travail, association, sport) que vous avez aidé à régler."
+    },
+    {
+      "id": "e2",
+      "competence": "C4",
+      "texte": "Deux personnes de votre équipe s'accusent de mal faire un travail commun. Que faites-vous **en premier** ?",
+      "suite": [
+        "Que demandez-vous à chacune ?"
+      ],
+      "attendus": [
+        "Reçoit chaque personne séparément avant de les réunir",
+        "Demande des exemples précis et vérifie les faits",
+        "Propose une règle commune et un point de suivi"
+      ],
+      "relance": "Et si chacun maintient que l'autre a tort ?",
+      "alternative": "Imaginez deux amis qui préparent un événement ensemble et s'accusent de ne pas faire leur part. Que faites-vous pour les aider ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où vous aviez plus de travail que de temps. **Comment avez-vous choisi** ce qui passait **en premier** ?",
+      "suite": [
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : échéance, effet sur les autres",
+        "Dit ce qui a été reporté ou abandonné",
+        "A prévenu les personnes concernées"
+      ],
+      "relance": "Qu'avez-vous demandé à votre responsable ?",
+      "alternative": "Si vous n'avez jamais organisé le travail d'une équipe : parlez d'une période chargée (études, association, vie quotidienne) et de vos priorités."
+    },
+    {
+      "id": "e4",
+      "competence": "C2",
+      "texte": "Votre responsable vous demande un **travail de plus**, alors que l'équipe **n'a plus de temps**. Que lui répondez-vous ?",
+      "suite": [
+        "Que lui proposez-vous ?"
+      ],
+      "attendus": [
+        "Présente les faits : heures disponibles et heures à faire",
+        "Propose deux options, par exemple reporter ou simplifier",
+        "Laisse décider la personne qui décide, puis informe l'équipe"
+      ],
+      "relance": "Et si votre responsable maintient sa demande ?",
+      "alternative": "Quelqu'un vous demande un service de plus alors que votre emploi du temps est plein. Que lui répondez-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez annoncé **un changement** à un groupe. **Comment l'avez-vous annoncé** ?",
+      "suite": [
+        "Qu'avez-vous dit en premier ?",
+        "Comment avez-vous vérifié que le message était compris ?"
+      ],
+      "attendus": [
+        "Donne l'essentiel d'abord : ce qui change et quand",
+        "Explique la raison avec des faits",
+        "Dit ce qu'il attend des personnes, avec une date"
+      ],
+      "relance": "Qu'avez-vous laissé par écrit ?",
+      "alternative": "Si vous n'avez jamais annoncé de changement : parlez d'une fois où vous avez expliqué un nouveau fonctionnement à un groupe (association, sport, études)."
+    },
+    {
+      "id": "e6",
+      "competence": "C3",
+      "texte": "Après une réunion, **comment vous assurez-vous** que ce qui a été décidé **est fait** ?",
+      "suite": [
+        "Que laissez-vous par écrit ?",
+        "Que faites-vous quand un engagement n'est pas tenu ?"
+      ],
+      "attendus": [
+        "Envoie un compte rendu court : qui fait quoi, pour quand",
+        "Fixe une date de vérification",
+        "Relance directement la personne, sans la nommer devant l'équipe"
+      ],
+      "relance": "Que contient votre compte rendu ?",
+      "alternative": "Après une réunion d'un groupe (association, projet d'études), comment vous assurez-vous que chacun fait ce qu'il a promis ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C7",
+      "texte": "Parlez d'une personne que vous avez accueillie ou formée. **Qu'avez-vous mis en place** pour ses **premiers jours** ?",
+      "suite": [
+        "Qu'avez-vous demandé à cette personne ?"
+      ],
+      "attendus": [
+        "Cite des actions concrètes : programme, référent, outils",
+        "A demandé à la personne ce dont elle avait besoin",
+        "A fait un point après les premiers jours"
+      ],
+      "relance": "Qu'avez-vous changé après son retour ?",
+      "alternative": "Parlez d'une fois où vous avez aidé une personne à prendre ses marques (travail, association, sport)."
+    },
+    {
+      "id": "e8",
+      "competence": "C7",
+      "texte": "Un collaborateur vous demande **un aménagement** de son poste, **sans dire pourquoi**. Que faites-vous ?",
+      "suite": [
+        "Que lui demandez-vous ?",
+        "À qui en parlez-vous ?"
+      ],
+      "attendus": [
+        "Écoute le besoin sans demander de justification ni d'information de santé",
+        "Cherche une solution dans son rôle et dit ce qui reste à vérifier",
+        "Propose le référent handicap si la personne le souhaite ; garde la demande confidentielle"
+      ],
+      "relance": "Que dites-vous si un collègue pose une question ?",
+      "alternative": "Un membre de votre groupe (association, projet d'études) vous demande un changement pour mieux travailler, sans dire pourquoi. Que lui répondez-vous ?"
+    }
+  ],
+  "_pv": "7cd9c35c97"
+}

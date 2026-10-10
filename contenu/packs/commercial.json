@@ -1,0 +1,2586 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "commercial",
+  "version": "2026.10",
+  "nom": "Commercial / Commerciale",
+  "secteur": "commerce",
+  "alias": [
+    "commercial",
+    "commerciale",
+    "chargé d'affaires",
+    "chargée d'affaires",
+    "business developer",
+    "technico-commercial",
+    "attaché commercial",
+    "représentant",
+    "commercial terrain",
+    "commercial sédentaire"
+  ],
+  "resume": "Trouve des entreprises clientes, comprend leur besoin, propose une solution, puis suit les devis, les relances et les engagements jusqu'à la vente.",
+  "contexte": "Une PME de 40 personnes qui vend des tablettes de saisie et un logiciel de suivi des interventions à d'autres entreprises.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C7",
+      "titre": "Comprendre le besoin réel d'un prospect avant de proposer",
+      "pourquoi": "Un prospect qui demande « un devis » n'a pas toujours dit son vrai besoin : proposer trop tôt fait perdre du temps aux deux.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un devis demandé pour 10 tablettes",
+        "texte": "Mardi, 10 h. Vous avez 30 minutes de visioconférence avec le gérant d'une entreprise de nettoyage. Il vous a écrit vendredi pour demander un devis (voir son message). Vous ne savez pas encore pourquoi il veut des tablettes, qui valide l'achat, ni quel budget il a prévu. Votre entreprise vend des tablettes et un logiciel de suivi des interventions.",
+        "document": {
+          "type": "message",
+          "titre": "Message reçu vendredi",
+          "de": "Le gérant de l'entreprise de nettoyage",
+          "texte": "Bonjour, pouvez-vous m'envoyer un devis pour 10 tablettes ? Nous avons 25 salariés, répartis sur une dizaine de sites. Je compte sur une réponse rapide. Cordialement."
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le gérant vous demande un devis pour 10 tablettes. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'envoie tout de suite un devis pour 10 tablettes.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande à quoi serviront ces tablettes dans son entreprise.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande quelle somme il veut dépenser pour ce projet.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui présente le modèle de tablette que nous vendons le plus.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Un devis demandé ne dit pas à quoi sert l'achat. Comprendre l'usage permet de proposer la bonne solution. Le budget est utile, mais sans connaître le besoin, vous ne savez pas quoi chiffrer.",
+              "relance": "Que cherchez-vous à savoir avant de préparer un devis ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Il répond : « Mes équipes notent leurs heures sur papier, et la paie est en retard. » **Quelle question** posez-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Quel écran de tablette préférez-vous ?",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Combien de salariés notent leurs heures sur papier ?",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Pouvez-vous me confirmer que vous voulez bien 10 tablettes ?",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que se passe-t-il aujourd'hui entre la saisie des heures et la paie ?",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                }
+              ],
+              "explication": "La bonne question explore le problème décrit : où se crée le retard. Compter les salariés donne un chiffre utile, mais ne montre pas ce qui bloque.",
+              "relance": "Comment faites-vous parler quelqu'un de son problème avant de parler de la solution ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous avez compris le problème. Que **cherchez-vous à savoir** sur la **décision d'achat** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Qui d'autre participe à la décision, et pour quelle date elle sera prise.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Rien : c'est lui qui a demandé le devis, donc c'est lui qui décide.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "S'il accepte que je lui envoie le devis sans autre échange.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Qui d'autre participe à la décision.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Le gérant n'est pas toujours seul à décider : un associé ou un responsable financier peut valider. Savoir qui décide et pour quand évite un devis sans suite. Connaître seulement la personne laisse la date inconnue.",
+              "relance": "Comment savez-vous qui décide vraiment dans une entreprise cliente ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le gérant dit : « Je **n'ai pas de budget fixé**. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je choisis la solution la moins chère, pour être sûr qu'elle lui convienne.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande s'il a déjà acheté un outil de ce type.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande combien lui coûte le retard de paie, pour situer un budget.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'annonce un prix élevé pour voir comment il réagit.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "Sans budget fixé, on aide le client à le situer à partir de ce que le problème lui coûte. Demander ses achats passés donne un repère, mais ne relie pas le budget au problème.",
+              "relance": "Comment aidez-vous un client à estimer ce qu'il peut dépenser ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le rendez-vous se termine. **Que dites-vous** au gérant ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Je vous envoie demain le devis pour 10 tablettes, comme vous l'avez demandé. »",
+                  "points": 1,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Vous voulez que la paie soit prête à temps. Je vous envoie une proposition vendredi. »",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je vous rappelle quand j'aurai du nouveau, je ne sais pas encore quand. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Pour votre besoin, la solution est évidente : prenez les 10 tablettes demandées. »",
+                  "points": 0,
+                  "repere": "c7_impose"
+                }
+              ],
+              "explication": "Résumer le besoin vérifie que vous avez bien compris, et une date donne une suite claire. Annoncer seulement le devis demandé ignore ce que vous avez appris pendant l'échange.",
+              "relance": "Que dites-vous à un client à la fin d'un premier rendez-vous ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **comprendre pourquoi** le gérant veut des tablettes, je lui demande…",
+              "justes": [
+                {
+                  "texte": "à quoi elles serviront dans son entreprise",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "ce qui ne fonctionne pas aujourd'hui dans la saisie des heures",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "comment ses équipes notent leurs heures en ce moment",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "combien de salariés vont les utiliser",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "s'il veut le même modèle que mes autres clients",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour savoir **qui décide** de l'achat, je demande…",
+              "justes": [
+                {
+                  "texte": "qui d'autre valide l'achat avec lui",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "qui signe le bon de commande",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "à quelle date la décision sera prise, et par qui",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "qui sera mon interlocuteur pour la suite",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : il m'a écrit, donc c'est lui qui décide",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "À la **fin du rendez-vous**, je…",
+              "justes": [
+                {
+                  "texte": "résume son besoin avec mes mots pour vérifier que j'ai bien compris",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "dis ce que je lui envoie et pour quelle date",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "fixe avec lui la date du prochain échange",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dis que je le rappelle",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne dis rien sur la suite",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note le besoin, la personne qui décide, le budget et la date dans l'outil de suivi juste après le rendez-vous.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Propose une démonstration à partir des feuilles d'heures réelles du gérant.",
+              "repere": "c7_alternative"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Avant de vous faire un devis, j'aimerais comprendre à quoi serviront ces tablettes dans votre entreprise. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client trouve votre devis trop cher. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un prospect demande un devis. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un gérant demande un devis pour 10 tablettes, sans dire à quoi elles serviront. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Un client veut changer la date de livraison de ses 10 tablettes. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le gérant demande un devis pour 10 tablettes.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "L'entreprise compte 25 salariés.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Vous ne savez pas à quoi serviront les tablettes.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le gérant a déjà fixé son budget.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Un devis fait sans comprendre le besoin risque de ne pas convenir.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le rendez-vous dure 30 minutes.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'envoie le devis, puis je pose mes questions s'il le veut.",
+                "points": 0,
+                "repere": "c1_precipite"
+              },
+              {
+                "id": "b",
+                "texte": "J'écoute sa réponse, puis je prépare le devis sans autre question.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je lui propose tout de suite la solution la plus complète.",
+                "points": 0,
+                "repere": "c7_impose"
+              },
+              {
+                "id": "d",
+                "texte": "J'écoute sa réponse, je la reformule, puis je pose mes questions sur la décision et le budget.",
+                "points": 2,
+                "repere": "c7_besoin"
+              }
+            ]
+          },
+          "explication": "Le gérant demande un devis sans dire à quoi servent les tablettes. Un devis fait sans comprendre risque de ne pas convenir : il faut d'abord poser la question."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Vos questions du rendez-vous, par thème",
+          "consigne": "Pour **chaque question** que vous pourriez poser au gérant, choisissez ce qu'elle **permet de savoir**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Le besoin"
+            },
+            {
+              "id": "k2",
+              "nom": "Qui décide"
+            },
+            {
+              "id": "k3",
+              "nom": "Le budget"
+            },
+            {
+              "id": "k4",
+              "nom": "Le délai"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Comment vos équipes notent-elles leurs heures aujourd'hui ?",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle décrit la façon de faire actuelle : elle éclaire le besoin."
+            },
+            {
+              "id": "e2",
+              "texte": "Qui d'autre que vous valide un achat de ce type ?",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Elle identifie les personnes qui décident."
+            },
+            {
+              "id": "e3",
+              "texte": "Quelle somme avez-vous prévue pour ce projet ?",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Elle porte sur l'argent disponible."
+            },
+            {
+              "id": "e4",
+              "texte": "Pour quelle date voulez-vous que vos équipes soient équipées ?",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "Elle donne l'échéance du projet."
+            },
+            {
+              "id": "e5",
+              "texte": "Qu'est-ce qui vous gêne le plus dans votre façon de faire actuelle ?",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle fait dire le problème à résoudre : c'est le besoin."
+            },
+            {
+              "id": "e6",
+              "texte": "Qui signe le bon de commande ?",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Elle identifie la personne qui engage l'entreprise."
+            },
+            {
+              "id": "e7",
+              "texte": "Le projet est-il déjà financé, ou doit-il être validé ?",
+              "accepte": [
+                "k3",
+                "k2"
+              ],
+              "explication": "Le financement relève du budget ; la validation relève de la décision. Les deux sont défendables."
+            },
+            {
+              "id": "e8",
+              "texte": "Que se passe-t-il si le projet est repoussé de trois mois ?",
+              "accepte": [
+                "k4",
+                "k1"
+              ],
+              "explication": "Elle mesure l'urgence (délai) et les conséquences du problème (besoin). Les deux sont défendables."
+            }
+          ],
+          "repere_reussite": "c7_besoin",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 15 minutes : une personne joue le gérant qui demande un devis pour 10 tablettes sans dire pourquoi. La personne candidate mène le rendez-vous de découverte, puis conclut.",
+            "criteres": [
+              {
+                "texte": "Pose une question sur l'usage avant de parler du produit",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "Demande qui décide et pour quelle date",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Reformule le besoin pour vérifier qu'elle a compris",
+                "repere": "c3_verifie"
+              },
+              {
+                "texte": "Annonce la suite avec une date",
+                "repere": "c7_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Note le besoin, la prochaine étape et sa date dans l'outil de suivi",
+              "repere": "c6_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que **demandez-vous** au gérant **avant de préparer** le devis ?",
+              "justes": [
+                {
+                  "texte": "À quoi serviront les tablettes dans son entreprise.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Comment ses équipes notent leurs heures aujourd'hui.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Ce qui ne fonctionne pas et ce qu'il veut changer.",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Combien de tablettes il veut.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : j'envoie le devis pour 10 tablettes.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Comment savez-vous **qui décide** de l'achat, et **pour quand** ?",
+              "justes": [
+                {
+                  "texte": "Je demande qui valide l'achat avec lui.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je demande qui signe le bon de commande.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je demande à quelle date la décision doit être prise.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je demande à quelle date il veut les tablettes.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je suppose que le gérant décide seul.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que **dites-vous** au gérant à la **fin du rendez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je résume son besoin pour vérifier que j'ai bien compris.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "J'annonce ce que je lui envoie et pour quelle date.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Je fixe avec lui la date du prochain échange.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que je lui envoie un devis.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis que je le rappelle.",
+                  "repere": "c3_flou"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de refaire le point avec la personne qui valide l'achat.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Note le besoin et la date de la suite dans l'outil de suivi.",
+              "repere": "c6_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un guide de découverte d'une page : besoin, qui décide, budget, délai, avec des exemples de questions.",
+        "Faire assister la personne à deux rendez-vous de découverte d'un collègue, puis les débriefer ensemble."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Traiter l'objection « c'est trop cher » en cherchant à comprendre",
+      "pourquoi": "Derrière « c'est trop cher », il y a un budget, un concurrent ou une ligne du devis : la bonne réponse dépend de la cause.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un devis jugé trop cher",
+        "texte": "Jeudi, 14 h. Lundi, vous avez envoyé le devis ci-dessous à une entreprise d'électricité de 8 techniciens. Le dirigeant vous appelle : « C'est trop cher. » Il ne dit pas par rapport à quoi. Votre responsable vous autorise à accorder 5 % de remise au maximum. Au-delà, c'est lui qui décide.",
+        "document": {
+          "type": "tableau",
+          "titre": "Devis envoyé lundi",
+          "colonnes": [
+            "Ligne",
+            "Quantité",
+            "Montant HT"
+          ],
+          "lignes": [
+            [
+              "Tablettes",
+              "8",
+              "4 000 €"
+            ],
+            [
+              "Logiciel de suivi des interventions (1 an)",
+              "1",
+              "2 400 €"
+            ],
+            [
+              "Formation d'une demi-journée",
+              "1",
+              "800 €"
+            ],
+            [
+              "Total HT",
+              "",
+              "7 200 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le dirigeant dit : « C'est trop cher. » Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui propose tout de suite 5 % de remise, pour conclure rapidement.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui réponds que ce prix est celui du marché et qu'il est justifié.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande par rapport à quoi il trouve ce prix trop élevé.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui demande quel montant il avait prévu pour ce projet.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "« Trop cher » peut vouloir dire un budget plus bas, un autre devis ou une ligne jugée inutile. Demander par rapport à quoi permet de trouver la cause. Demander le montant prévu aide, mais n'explique pas ce qui le gêne.",
+              "relance": "Que peut vouloir dire « c'est trop cher » pour un client ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Il répond : « Un concurrent m'a donné **6 000 €**. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande de m'envoyer le devis du concurrent pour le lire.",
+                  "points": 1,
+                  "repere": "c1_aide"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui demande ce que comprend ce prix : matériel, logiciel, formation.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que ce concurrent est de moins bonne qualité, sans le connaître.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je baisse mon prix à 6 000 € tout de suite, pour ne pas perdre la vente.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "Deux prix ne se comparent que s'ils couvrent la même chose. Demander ce que comprend l'autre offre montre si l'écart est réel. Lire le devis aide aussi, mais la comparaison reste à faire.",
+              "relance": "Comment comparez-vous deux offres qui n'ont pas le même prix ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Il ajoute que ses techniciens apprennent seuls et **n'ont pas besoin de formation**. Que proposez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "De garder la formation, car elle fait partie de notre offre et de notre méthode.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "De retirer la formation du devis, puis d'en parler à l'oral sans rien envoyer.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "De lui offrir la formation pour qu'il signe aujourd'hui, même si ce n'est pas prévu.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "De retirer la formation, d'envoyer un devis à 6 400 € et de la garder possible plus tard.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                }
+              ],
+              "explication": "Retirer ce qui n'a pas de valeur pour lui baisse le prix sans faire de remise sur le reste. Le nouveau devis écrit rend l'accord clair. Retirer la ligne sans écrit laisse un doute sur le montant.",
+              "relance": "Que proposez-vous quand l'offre convient mais que le prix est trop élevé ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Il demande **10 % de remise** sur les 6 400 €. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je transmets sa demande à mon responsable, qui décide au-delà de 5 %, et je donne une date de réponse.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'accorde 10 % pour conclure vite, puis j'en parle à mon responsable une fois la vente signée.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que la remise ne me concerne pas et que c'est à lui d'appeler mon responsable.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'accorde les 5 % que j'ai le droit de donner et je lui dis que je ne peux rien faire de plus.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                }
+              ],
+              "explication": "Vous pouvez accorder 5 % : au-delà, la décision revient à votre responsable. Transmettre la demande et donner une date garde le client informé. Accorder 5 % puis refuser seul le reste ferme la discussion.",
+              "relance": "Quand un client demande une remise que vous n'avez pas le droit d'accorder, que faites-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Dix jours plus tard, le dirigeant vous écrit qu'il a **signé avec le concurrent**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui écris que c'est dommage et que je ne le recontacterai plus jamais, même plus tard.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le remercie, je demande ce qui a décidé son choix et je note la raison dans l'outil.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne réponds pas : la vente est perdue, donc inutile d'y passer encore du temps.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le remercie, puis je note « vente perdue » dans l'outil de suivi, sans autre précision.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                }
+              ],
+              "explication": "Une vente perdue apprend quelque chose : le prix, une ligne du devis ou une offre concurrente mieux placée. Demander la raison poliment et la noter sert aux prochains devis. Noter seulement « perdu » ne garde aucune leçon.",
+              "relance": "Que retenez-vous d'une vente perdue ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand le dirigeant dit que c'est trop cher, je lui demande **d'abord**…",
+              "justes": [
+                {
+                  "texte": "par rapport à quoi il trouve le prix trop élevé",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "ce qu'il compare : un autre devis ou un budget prévu",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "quelle ligne du devis lui paraît trop chère",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "quel montant il avait prévu",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "si je peux lui faire une remise pour conclure aujourd'hui",
+                  "repere": "c1_precipite"
+                },
+                {
+                  "texte": "pourquoi il n'a pas bien lu le devis",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Face au concurrent à **6 000 €**, je…",
+              "justes": [
+                {
+                  "texte": "compare ce que comprend chaque offre : matériel, logiciel, formation",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "demande ce qui compte le plus pour lui : le prix, la formation ou le suivi",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "retire une ligne dont il n'a pas besoin et je lui envoie le nouveau devis",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis que notre offre est meilleure",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "baisse mon prix à 6 000 € pour ne pas perdre la vente",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "dis que ce concurrent est moins sérieux",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si le dirigeant choisit **finalement le concurrent**, je…",
+              "justes": [
+                {
+                  "texte": "le remercie et je lui demande ce qui a décidé son choix",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "note la raison de la perte dans l'outil de suivi",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "garde le contact et je note une date pour reprendre des nouvelles",
+                  "repere": "c7_suivi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "note que la vente est perdue",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne lui réponds plus",
+                  "repere": "c1_abandon"
+                },
+                {
+                  "texte": "lui reproche son choix",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Signale à son responsable que la formation est souvent jugée trop chère.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Propose une version du devis sans formation dès le premier envoi.",
+              "repere": "c7_alternative"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je comprends. Par rapport à quoi trouvez-vous ce prix trop élevé : un autre devis, ou un budget que vous aviez prévu ? »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client veut payer en deux fois. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un client trouve votre prix trop élevé. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client demande une remise de 10 %. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un dirigeant dit « c'est trop cher » à propos d'un devis de 7 200 €, sans dire pourquoi. Que lui répondez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le dirigeant dit que le devis est trop cher.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le devis comprend trois lignes.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Il n'a pas dit par rapport à quoi.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Il a déjà signé avec un concurrent.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La raison peut être un budget, un concurrent ou une ligne du devis.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable autorise 5 % de remise.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je baisse le prix de 5 % tout de suite.",
+                "points": 0,
+                "repere": "c1_precipite"
+              },
+              {
+                "id": "b",
+                "texte": "J'écoute sa réponse, je compare ce que comprend l'autre offre, puis je propose une option adaptée.",
+                "points": 2,
+                "repere": "c7_alternative"
+              },
+              {
+                "id": "c",
+                "texte": "J'écoute sa réponse et je lui dis que je reviens vers lui.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je lui rappelle que notre prix est justifié.",
+                "points": 0,
+                "repere": "c7_ignore"
+              }
+            ]
+          },
+          "explication": "« Trop cher » ne dit pas ce qui gêne : un budget, un concurrent ou une ligne du devis. Poser la question avant de baisser le prix permet de répondre au vrai problème."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre échange avec le dirigeant, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de l'appel jusqu'à la **fin de la journée**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Demander par rapport à quoi le prix est trop élevé"
+            },
+            {
+              "id": "e2",
+              "texte": "Reformuler ce qui le gêne, pour vérifier que vous avez compris"
+            },
+            {
+              "id": "e3",
+              "texte": "Proposer une option adaptée, par exemple retirer une ligne inutile"
+            },
+            {
+              "id": "e4",
+              "texte": "Lui demander s'il est d'accord avec cette option"
+            },
+            {
+              "id": "e5",
+              "texte": "Envoyer le nouveau devis par écrit"
+            },
+            {
+              "id": "e6",
+              "texte": "Fixer avec lui une date de réponse"
+            },
+            {
+              "id": "e7",
+              "texte": "Noter dans l'outil de suivi le nouveau devis et la date de relance"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "On connaît sa réponse avant de la reformuler."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On vérifie qu'on a compris avant de proposer."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On demande son accord une fois l'option proposée."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "Le nouveau devis contient l'option proposée."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "La date de réponse porte sur l'option proposée."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "On note le devis une fois qu'il est envoyé."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "La date de relance est connue une fois la date de réponse fixée."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_precipite",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le dirigeant qui trouve le devis de 7 200 € trop cher. La personne candidate répond, propose une suite et termine l'appel.",
+            "criteres": [
+              {
+                "texte": "Demande par rapport à quoi le prix est trop élevé",
+                "repere": "c1_cause"
+              },
+              {
+                "texte": "Compare le contenu des deux offres avant de proposer",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Propose une option sans pression ni promesse",
+                "repere": "c7_alternative"
+              },
+              {
+                "texte": "Respecte la limite de 5 % de remise",
+                "repere": "c7_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Fixe une date de réponse et la note dans l'outil de suivi",
+              "repere": "c6_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que répondez-vous** quand le dirigeant dit « c'est trop cher » ?",
+              "justes": [
+                {
+                  "texte": "Je lui demande par rapport à quoi il trouve le prix trop élevé.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Je lui demande ce qu'il compare : un devis, un budget ou une ligne.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Je lui demande quelle ligne du devis lui paraît trop chère.",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui demande quel montant il avait prévu.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui propose tout de suite une remise.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Il parle d'un concurrent à **6 000 €**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je compare ce que comprend chaque offre.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je lui demande ce qui compte le plus pour lui.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Je lui propose de retirer une ligne dont il n'a pas besoin.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que notre offre est meilleure.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je baisse mon prix à 6 000 € pour ne pas perdre la vente.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Après une vente perdue, **que retenez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je demande la raison au client et je la note.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je note si c'est le prix, le délai ou le contenu de l'offre.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "J'en parle à mon responsable si la même raison revient souvent.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je note que la vente est perdue.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : c'est fini, je passe au suivant.",
+                  "repere": "c1_abandon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de présenter une version du devis sans formation dès le premier envoi.",
+              "repere": "c7_alternative"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit la limite de remise de chaque commercial et la personne qui décide au-delà.",
+        "Préparer avec la personne trois réponses à « c'est trop cher » qui commencent toutes par une question."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Choisir quels prospects appeler en priorité",
+      "pourquoi": "Le temps de prospection est limité : le choisir avec un critère clair fait signer plus vite et évite d'oublier un prospect.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Six prospects, trois appels ce matin",
+        "texte": "Lundi, 9 h. Vous avez deux heures de prospection au téléphone : vous pouvez joindre trois entreprises ce matin, pas plus. Voici les six dossiers de votre outil de suivi. Votre responsable fait le point vendredi soir sur les ventes de la semaine.",
+        "document": {
+          "type": "tableau",
+          "titre": "Vos six dossiers",
+          "colonnes": [
+            "Prospect",
+            "Besoin confirmé",
+            "Devis envoyé",
+            "Décision prévue",
+            "Montant possible HT"
+          ],
+          "lignes": [
+            [
+              "Entreprise de nettoyage, 12 salariés",
+              "Oui",
+              "Oui, il y a 4 jours",
+              "Mercredi",
+              "6 000 €"
+            ],
+            [
+              "Cabinet d'architectes, 8 salariés",
+              "Oui",
+              "Oui, il y a 8 jours",
+              "Vendredi",
+              "4 500 €"
+            ],
+            [
+              "Menuiserie, 5 salariés",
+              "Oui",
+              "Non",
+              "Dans 2 semaines",
+              "2 500 €"
+            ],
+            [
+              "Société de transport, 200 salariés",
+              "À vérifier",
+              "Non",
+              "Dans 3 mois",
+              "40 000 €"
+            ],
+            [
+              "Contact rencontré au salon vendredi",
+              "Non précisé",
+              "Non",
+              "Inconnue",
+              "Inconnu"
+            ],
+            [
+              "Ancien client, renouvellement du logiciel",
+              "Oui",
+              "Non",
+              "Dans 2 mois",
+              "1 800 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Lequel des six prospects appelez-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La société de transport : c'est le montant possible le plus élevé de tous.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le contact rencontré au salon vendredi : c'est le plus récent de la liste.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le cabinet d'architectes : son devis est parti il y a 8 jours et attend une réponse.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "d",
+                  "texte": "L'entreprise de nettoyage : son devis attend une réponse et la décision est mercredi.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                }
+              ],
+              "explication": "La décision de l'entreprise de nettoyage est la plus proche et son devis est déjà parti : un appel peut encore compter. Le cabinet d'architectes est aussi à appeler cette semaine, mais sa décision est vendredi.",
+              "relance": "Quel critère utilisez-vous pour choisir qui appeler en premier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Quel critère** vous aide **le mieux** à choisir les trois appels de ce matin ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "L'ordre dans lequel les prospects sont arrivés dans l'outil.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "Un besoin confirmé et la date de décision la plus proche.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le montant le plus élevé, quelle que soit la date.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "La date de décision la plus proche, même si le besoin n'est pas confirmé.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "explication": "Un besoin confirmé et une décision proche signalent une vente qui peut se conclure bientôt. La date seule ne suffit pas : sans besoin confirmé, l'appel risque de ne mener à rien.",
+              "relance": "Comment choisissez-vous qui appeler quand vous n'avez pas le temps de tous les joindre ?"
+            },
+            {
+              "id": "q3",
+              "texte": "L'entreprise de nettoyage vous répond : « Rappelez-moi **demain à 9 h**, je serai en rendez-vous aujourd'hui. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je note le rappel de demain 9 h dans l'outil, puis j'appelle le prospect suivant.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le rappelle dans dix minutes, pour être sûr de le joindre avant les autres.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'appelle le prospect suivant en comptant sur ma mémoire pour le rappel de demain 9 h.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je reporte tous mes autres appels à demain, pour le rappeler en priorité à 9 h.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Le dirigeant a fixé le moment du rappel : le respecter montre du sérieux. Le noter dans l'outil évite l'oubli, et le prospect suivant peut être appelé tout de suite. Compter sur sa mémoire expose à un oubli.",
+              "relance": "Que faites-vous quand un prospect vous demande de le rappeler à une heure précise ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous avez appelé l'entreprise de nettoyage et le cabinet d'architectes. Qui est votre **troisième appel** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "L'ancien client, car son besoin est confirmé et qu'il nous connaît déjà.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "b",
+                  "texte": "La société de transport, pour ne pas la laisser à un concurrent avant nous.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "La menuiserie : son besoin est confirmé et sa décision est la plus proche.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le contact du salon, avant qu'il oublie votre rencontre.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                }
+              ],
+              "explication": "Parmi les prospects restants, la menuiserie a un besoin confirmé et la décision la plus proche (2 semaines). L'ancien client a aussi un besoin confirmé, mais sa décision est dans 2 mois.",
+              "relance": "Comment départagez-vous deux prospects qui ont tous les deux un besoin confirmé ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Il est 11 h 30. Trois prospects **n'ont pas été appelés**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je les oublie : je n'ai pu en appeler que trois aujourd'hui, ce sera pour une autre fois.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je note pour chacun une date de rappel dans l'outil, selon sa date de décision.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je les appelle dans l'ordre de la liste, cet après-midi, l'un après l'autre.",
+                  "points": 1,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je les appelle tous d'un coup cet après-midi, en même temps que mes autres tâches.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                }
+              ],
+              "explication": "Une date de rappel liée à la date de décision évite d'oublier un prospect qui attend. Les appeler dans l'ordre de la liste les contacte, mais sans critère.",
+              "relance": "Comment vous assurez-vous de ne pas oublier les prospects que vous n'avez pas pu appeler ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour choisir mon **premier appel**, je regarde…",
+              "justes": [
+                {
+                  "texte": "la date de décision la plus proche et si le devis est déjà parti",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "quels prospects ont un besoin confirmé et une décision proche",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "quelle vente peut se conclure cette semaine",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le montant que chaque prospect peut rapporter",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le dernier prospect ajouté dans l'outil",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "le plus gros montant, sans regarder les dates",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour les prospects que je **n'appelle pas ce matin**, je…",
+              "justes": [
+                {
+                  "texte": "note une date de rappel selon leur date de décision",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "les appelle cet après-midi ou cette semaine, dans l'ordre de leur échéance",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "garde ceux dont le besoin n'est pas confirmé pour un appel de découverte plus tard",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "les appelle dans l'ordre de la liste",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "les laisse de côté sans rien noter",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "n'y pense plus tant qu'ils ne m'écrivent pas",
+                  "repere": "c2_reactif"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand un prospect me demande de le rappeler **demain à 9 h**, je…",
+              "justes": [
+                {
+                  "texte": "note le rappel dans l'outil de suivi",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "appelle le prospect suivant sans attendre",
+                  "repere": "c2_regroupe"
+                },
+                {
+                  "texte": "le rappelle demain à 9 h, pas avant",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "essaie de m'en souvenir",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le rappelle dans dix minutes malgré sa demande",
+                  "repere": "c2_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prépare pour chaque appel ce qu'il faut obtenir : une réponse, une date ou un rendez-vous.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Annonce par un court message un jour de rappel aux prospects qu'elle ne peut pas appeler.",
+              "repere": "c2_previent"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« J'appelle d'abord l'entreprise de nettoyage : son devis est parti et elle décide mercredi. Ensuite, le cabinet d'architectes, qui décide vendredi. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un prospect vous dit qu'il va choisir un concurrent. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous avez six prospects à appeler et peu de temps. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Vous ne pouvez appeler que trois prospects ce matin, et deux ont un devis en attente avec une décision cette semaine. Par lesquels commencez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Un prospect ne répond pas à votre appel. Que faites-vous ensuite ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'entreprise de nettoyage a un devis en attente de réponse.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La société de transport a le montant possible le plus élevé.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La décision de l'entreprise de nettoyage est prévue mercredi.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "L'ancien client a demandé un rendez-vous.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le cabinet d'architectes décide vendredi.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le contact du salon a été rencontré vendredi.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'appelle ensuite le contact du salon, qui est le plus récent.",
+                "points": 0,
+                "repere": "c2_arrivee"
+              },
+              {
+                "id": "b",
+                "texte": "J'appelle ensuite la menuiserie, dont le besoin est confirmé et la décision la plus proche.",
+                "points": 2,
+                "repere": "c2_critere"
+              },
+              {
+                "id": "c",
+                "texte": "J'appelle ensuite l'ancien client, dont le besoin est confirmé.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je m'arrête là et je ne note rien pour les autres prospects.",
+                "points": 0,
+                "repere": "c2_oubli"
+              }
+            ]
+          },
+          "explication": "La réponse applique un critère : devis en attente et décision la plus proche, soit mercredi puis vendredi. Les autres prospects passent ensuite, selon leur date de décision."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Vos appels de la semaine, dans l'ordre",
+          "consigne": "Remettez ces six appels dans **l'ordre** où vous les passez, **du premier au dernier**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Entreprise de nettoyage (devis envoyé, décision mercredi)"
+            },
+            {
+              "id": "e2",
+              "texte": "Cabinet d'architectes (devis envoyé, décision vendredi)"
+            },
+            {
+              "id": "e3",
+              "texte": "Menuiserie (besoin confirmé, décision dans 2 semaines)"
+            },
+            {
+              "id": "e4",
+              "texte": "Ancien client (besoin confirmé, décision dans 2 mois)"
+            },
+            {
+              "id": "e5",
+              "texte": "Société de transport (besoin à vérifier, décision dans 3 mois)"
+            },
+            {
+              "id": "e6",
+              "texte": "Contact du salon (besoin non précisé, décision inconnue)"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "La décision du nettoyage est mercredi, celle des architectes vendredi."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "Une décision vendredi passe avant une décision dans 2 semaines."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "Besoin confirmé dans les deux cas : la décision la plus proche d'abord."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "Besoin confirmé avant besoin à vérifier, et décision plus proche."
+            },
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "Besoin confirmé avant besoin non précisé."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "Besoin confirmé et décision plus proche avant besoin à vérifier."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "Besoin confirmé et décision connue avant besoin non précisé."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": "c2_arrivee",
+          "reel": {
+            "consigne": "Exercice de 15 minutes : la personne reçoit les six dossiers sur papier ou à l'écran, choisit trois prospects à appeler ce matin et explique son critère. Elle prévoit une suite pour les trois autres.",
+            "criteres": [
+              {
+                "texte": "Choisit les prospects avec un critère clair : besoin confirmé et décision proche",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Tient compte des dates de décision de la semaine",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Ne choisit pas seulement le plus gros montant ou le plus récent",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Prévoit une date de rappel pour les prospects non appelés",
+                "repere": "c2_anticipe"
+              }
+            ],
+            "bonus": {
+              "texte": "Prépare ce qu'il faut obtenir à chaque appel",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Quel prospect appelez-vous **en premier** ?",
+              "justes": [
+                {
+                  "texte": "L'entreprise de nettoyage : son devis est parti et elle décide mercredi.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Celui dont la décision est la plus proche et dont le devis attend une réponse.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Le nettoyage, puis les architectes : ce sont les décisions de cette semaine.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le cabinet d'architectes, qui décide vendredi.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "La société de transport, pour le montant.",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "Le contact du salon, parce que c'est le plus récent.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment choisissez-vous** le troisième appel ?",
+              "justes": [
+                {
+                  "texte": "Je prends la menuiserie : le besoin est confirmé et la décision est la plus proche.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je compare les dates de décision des prospects restants.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je choisis parmi ceux dont le besoin est confirmé.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je prends l'ancien client, car je le connais déjà.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je prends le premier de la liste.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous des prospects que vous **n'avez pas appelés** ?",
+              "justes": [
+                {
+                  "texte": "Je note une date de rappel pour chacun dans l'outil de suivi.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je les classe selon leur date de décision.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "J'envoie un court message au contact du salon pour garder le lien.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je les appellerai quand j'aurai le temps.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je les oublie : ce ne sont pas des priorités.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prépare pour chaque appel ce qu'il faut obtenir : une réponse, une date ou un rendez-vous.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner une règle de priorité écrite : devis en attente, besoin confirmé, date de décision.",
+        "Revoir la liste des prospects avec le responsable chaque lundi pendant le premier mois."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Tenir ses engagements et suivre chaque prospect avec fiabilité",
+      "pourquoi": "Un délai promis sans vérification ou une fiche incomplète fait perdre la confiance du client et le fil du dossier.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une installation demandée avant le 19",
+        "texte": "Mardi 6, vous sortez d'un rendez-vous chez un paysagiste de 15 salariés. Il veut équiper ses équipes avant un gros chantier. Dans votre entreprise, chaque fiche de l'outil de suivi des clients (le CRM) contient le besoin, la prochaine étape et sa date. Voici vos notes du rendez-vous.",
+        "document": {
+          "type": "liste",
+          "titre": "Vos notes du mardi 6",
+          "items": [
+            "Entreprise : paysagiste, 15 salariés.",
+            "Besoin : suivre les interventions sur les chantiers, avec 12 tablettes et le logiciel.",
+            "Décision : le gérant et son associé, vendredi 9.",
+            "Souhait du prospect : tout installé avant le lundi 19.",
+            "Budget : 9 000 € HT maximum.",
+            "Délai habituel de la logistique : 3 semaines après la commande, soit le vendredi 30 si le gérant commande vendredi 9. Aucune exception n'est confirmée.",
+            "Vous avez dit que vous enverriez le devis mercredi 7."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le gérant dit : « Je veux une **garantie** d'installation **avant le lundi 19**. » Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Oui, nous ferons le nécessaire pour être livrés avant le lundi 19, soyez rassuré. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je ne peux pas vous le garantir, ce n'est pas moi qui gère les livraisons. »",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "« Le délai habituel est de 3 semaines. Je vérifie avec la logistique et je réponds demain. »",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Normalement oui : les livraisons vont souvent plus vite que le délai annoncé. »",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Vous ne savez pas si un délai plus court est possible : seule la logistique peut le confirmer. Donner le délai habituel, vérifier et annoncer quand vous répondez est honnête et utile. « Je ne peux pas le garantir » est vrai, mais ne donne aucune suite.",
+              "relance": "Que faites-vous quand un client demande un délai que vous ne connaissez pas ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Le soir même**, **que notez-vous** dans la fiche du prospect, dans l'outil de suivi ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Rendez-vous très positif : le prospect est vraiment intéressé par nos solutions. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le besoin et le budget, sans la prochaine étape.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rien dans l'outil : mes notes sur papier suffisent.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le besoin, la décision de vendredi 9, le délai de 3 semaines, la prochaine étape et sa date.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                }
+              ],
+              "explication": "Une fiche utile contient le besoin, la prochaine étape et sa date : un collègue peut reprendre le dossier. Noter le besoin sans la prochaine étape ne dit pas ce qu'il faut faire ensuite.",
+              "relance": "Qu'écrivez-vous dans l'outil de suivi après un rendez-vous ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Mercredi 7, la logistique répond : « Non, **pas moins de 3 semaines**. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'envoie le devis sans parler du délai : le gérant le verra bien à la livraison.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'envoie le devis avec la vraie date d'installation, vendredi 30, et je lui laisse décider.",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je l'appelle pour lui dire le délai, mais je n'envoie pas le devis promis pour aujourd'hui.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "J'envoie le devis avec « avant le 19 », en espérant que la logistique y arrive.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                }
+              ],
+              "explication": "Le délai réel doit être connu avant la signature : une promesse non tenue fait perdre la confiance. Le devis envoyé mercredi tient aussi votre propre engagement. Appeler sans envoyer le devis ne le tient pas.",
+              "relance": "Comment annoncez-vous un délai que le client n'a pas envie d'entendre ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Jeudi 8, le gérant **n'a pas répondu** à votre e-mail. Sa décision est **prévue vendredi**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je l'appelle pour vérifier qu'il a le devis et je propose de répondre à ses questions.",
+                  "points": 2,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui écris que l'offre se termine ce soir et qu'il doit répondre aujourd'hui.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui renvoie le même e-mail, en ajoutant seulement une ligne pour demander une réponse.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne le relance pas : il sait où me trouver et il me répondra s'il est intéressé.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                }
+              ],
+              "explication": "Une bonne relance vérifie que le devis est arrivé et offre de l'aide avant la décision. Renvoyer le même e-mail n'apporte rien de nouveau. La pression abîme la confiance.",
+              "relance": "Comment relancez-vous un prospect qui n'a pas répondu ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vendredi 9, le gérant **signe la commande** de 12 tablettes, en connaissant le délai. Que faites-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je note la commande dans la fiche et je lui écrirai seulement à la livraison, le jour venu.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je transmets la commande à la logistique, sans rien écrire au gérant sur la suite.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je transmets la commande à la logistique, je confirme par écrit le vendredi 30 et je note cette date.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande à la logistique de livrer avant le 19, puisque c'est ce que le gérant espérait.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                }
+              ],
+              "explication": "Une commande signée est un nouvel engagement : la logistique doit la recevoir et le client doit avoir la date par écrit. Noter cette date permet de vérifier qu'elle est tenue.",
+              "relance": "Après une signature, que faites-vous pour que la livraison se passe comme annoncé ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand le gérant me demande de **garantir une date**, je…",
+              "justes": [
+                {
+                  "texte": "lui donne le délai habituel et je vérifie avec la logistique avant de répondre",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "lui dis que je confirme la date avec la logistique et que je lui réponds demain",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "ne promets que ce que la logistique a confirmé",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis que je ne peux rien garantir",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis oui, puis je verrai avec la logistique",
+                  "repere": "c7_promesse"
+                },
+                {
+                  "texte": "pense que les livraisons iront sûrement plus vite",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Dans la **fiche du prospect**, je note…",
+              "justes": [
+                {
+                  "texte": "le besoin, la décision de vendredi 9 et le budget",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "la prochaine étape avec sa date : le devis du mercredi 7",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "le délai habituel de 3 semaines, séparé du souhait du prospect",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le rendez-vous s'est bien passé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "« à rappeler », sans date",
+                  "repere": "c3_flou"
+                },
+                {
+                  "texte": "rien, je m'en souviendrai",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si le gérant **ne répond pas** à mon devis, je…",
+              "justes": [
+                {
+                  "texte": "l'appelle avant sa décision pour vérifier qu'il a reçu le devis",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "lui propose de répondre à ses questions avant vendredi",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "note la date de ma relance dans l'outil de suivi",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui renvoie le même e-mail",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis que l'offre se termine ce soir",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "attends qu'il m'appelle",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient la logistique dès mardi qu'une commande de 12 tablettes est possible vendredi.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Confirme par écrit au gérant la date d'installation prévue, avant la signature.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Le délai habituel est de 3 semaines. Je vérifie avec la logistique si un délai plus court est possible, et je vous réponds demain avec le devis. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client vous demande si son chantier peut commencer lundi. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un client demande un délai de livraison. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un gérant veut 12 tablettes installées avant le lundi 19 et vous demande de le garantir. Le délai habituel est de 3 semaines. Que répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Un client veut annuler sa commande de tablettes. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le gérant veut tout installé avant le lundi 19.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le budget du gérant est de 9 000 € maximum.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le délai habituel de la logistique est de 3 semaines.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le gérant a déjà signé avec un concurrent.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Aucune exception de délai n'est confirmée.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le gérant décide avec son associé.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je note « délai garanti avant le 19 » dans la fiche, pour rassurer l'équipe.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "b",
+                "texte": "J'appelle la logistique, puis je note sa réponse dans la fiche, avec la date de ma réponse au gérant.",
+                "points": 2,
+                "repere": "c6_trace"
+              },
+              {
+                "id": "c",
+                "texte": "J'appelle la logistique, puis je réponds au gérant sans rien noter.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "J'attends que le gérant me relance pour interroger la logistique.",
+                "points": 0,
+                "repere": "c2_reactif"
+              }
+            ]
+          },
+          "explication": "Le gérant demande une garantie alors que la logistique n'a rien confirmé. La réponse donne le délai habituel, vérifie avant de s'engager et fixe un moment pour répondre."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Votre fiche dans l'outil de suivi",
+          "consigne": "Voici la fiche que vous avez saisie mardi soir. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Entreprise : paysagiste, 15 salariés",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Besoin : suivre les interventions sur les chantiers, 12 tablettes et le logiciel",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Décision : le gérant seul",
+              "erreur": true,
+              "explication": "Le gérant décide avec son associé, d'après vos notes."
+            },
+            {
+              "id": "e4",
+              "texte": "Décision prévue : vendredi 9",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Installation avant le lundi 19 : délai confirmé",
+              "erreur": true,
+              "explication": "C'est un souhait du prospect. Le délai habituel est de 3 semaines et aucune exception n'est confirmée."
+            },
+            {
+              "id": "e6",
+              "texte": "Budget : 9 000 € HT maximum",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Prochaine étape : relancer le prospect",
+              "erreur": true,
+              "explication": "La prochaine étape n'a pas de date. Vos notes indiquent l'envoi du devis mercredi 7."
+            },
+            {
+              "id": "e8",
+              "texte": "Engagement : envoyer le devis mercredi 7",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e9",
+              "texte": "Dernier contact : rendez-vous du mardi 6",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Exercice de 15 minutes : la personne reçoit les notes du rendez-vous et une fiche vide de l'outil de suivi. Elle remplit la fiche, puis écrit l'e-mail du devis ou de relance au gérant.",
+            "criteres": [
+              {
+                "texte": "Note le besoin, la prochaine étape et sa date",
+                "repere": "c6_trace"
+              },
+              {
+                "texte": "Distingue ce qui est confirmé de ce qui est seulement souhaité",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Annonce le délai réel, sans promesse intenable",
+                "repere": "c7_suite"
+              },
+              {
+                "texte": "Relance sans pression et propose de répondre aux questions",
+                "repere": "c7_suivi"
+              }
+            ],
+            "bonus": {
+              "texte": "Note dans l'outil de suivi la date de la prochaine relance",
+              "repere": "c6_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que répondez-vous au gérant qui demande de **garantir** l'installation **avant le lundi 19** ?",
+              "justes": [
+                {
+                  "texte": "Je lui donne le délai habituel de 3 semaines et je vérifie avec la logistique.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je ne promets rien avant la réponse de la logistique, et je lui dis quand je réponds.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Je lui explique que je confirme la date avec la logistique et que je le rappelle demain.",
+                  "repere": "c7_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que je ne peux pas le garantir.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis oui, on s'arrangera ensuite.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que notez-vous** dans l'outil de suivi après le rendez-vous ?",
+              "justes": [
+                {
+                  "texte": "Le besoin, la décision de vendredi 9 et le budget.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "La prochaine étape et sa date : le devis mercredi 7.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Le délai habituel de 3 semaines, séparé du souhait du prospect.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le rendez-vous s'est bien passé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "« À rappeler », sans date.",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le gérant **n'a pas répondu** à votre devis. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je l'appelle avant sa décision pour vérifier qu'il a bien reçu le devis.",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "Je propose de répondre à ses questions avant vendredi.",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "Je note la date de ma relance dans l'outil de suivi.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je renvoie le même e-mail.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui écris que l'offre se termine ce soir.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Confirme par écrit au gérant la date d'installation prévue après sa commande.",
+              "repere": "c3_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer à qui demander un délai en logistique, et où noter la réponse dans l'outil de suivi.",
+        "Donner un modèle de fiche : besoin, décideur, prochaine étape, date, délai confirmé ou seulement souhaité."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C7",
+      "texte": "**Parlez d'une fois** où vous avez compris le vrai besoin d'un client avant de lui proposer quelque chose. **Que lui avez-vous demandé** ?",
+      "suite": [
+        "Qu'avez-vous proposé ensuite ?"
+      ],
+      "attendus": [
+        "Décrit des questions précises posées au client",
+        "Distingue ce que le client demandait de ce dont il avait besoin",
+        "Dit ce qui a été proposé et pourquoi"
+      ],
+      "relance": "Qu'avez-vous appris que le client n'avait pas dit au départ ?",
+      "alternative": "Si vous n'avez jamais vendu : parlez d'une fois où vous avez aidé quelqu'un à choisir (travail, association, vie quotidienne) en cherchant d'abord ce dont il avait besoin."
+    },
+    {
+      "id": "e2",
+      "competence": "C7",
+      "texte": "Un prospect demande un devis pour un produit précis. Que faites-vous **avant de le préparer** ?",
+      "suite": [],
+      "attendus": [
+        "Pose des questions sur l'usage avant de chiffrer",
+        "Cherche qui décide, le budget et le délai",
+        "Annonce la suite avec une date"
+      ],
+      "relance": "Et si le prospect ne veut pas répondre à vos questions ?",
+      "alternative": "Un ami vous demande d'acheter un ordinateur « pas cher » pour lui. Que lui demandez-vous avant de choisir ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C1",
+      "texte": "Un prospect vous dit : « C'est trop cher. » **Que faites-vous** ?",
+      "suite": [
+        "Et s'il cite le prix d'un concurrent ?"
+      ],
+      "attendus": [
+        "Cherche à comprendre avant de répondre : par rapport à quoi ?",
+        "Compare ce que comprennent les deux offres",
+        "Ne baisse pas le prix sous pression et respecte sa limite de remise"
+      ],
+      "relance": "Qu'est-ce qui compte le plus pour ce client, selon vous ?",
+      "alternative": "Quelqu'un trouve trop cher un service que vous proposez (association, travail, vente entre particuliers). Que lui répondez-vous ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C1",
+      "texte": "Parlez d'une vente ou d'un projet que vous **avez perdu**. **Qu'en avez-vous retenu** ?",
+      "suite": [
+        "Qu'avez-vous changé ensuite ?"
+      ],
+      "attendus": [
+        "Décrit les faits sans accuser le client",
+        "Dit comment la raison a été cherchée ou confirmée",
+        "Dit ce qui a changé ensuite"
+      ],
+      "relance": "Qui avez-vous prévenu dans l'équipe ?",
+      "alternative": "Parlez d'une candidature, d'un projet ou d'une proposition qui n'a pas abouti, et de ce que vous en avez retenu."
+    },
+    {
+      "id": "e5",
+      "competence": "C2",
+      "texte": "Vous avez dix prospects à appeler et **deux heures**. **Comment choisissez-vous** qui appeler **d'abord** ?",
+      "suite": [
+        "Que faites-vous des autres ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : besoin confirmé, date de décision",
+        "S'appuie sur un exemple concret",
+        "Prévoit une suite pour les prospects non appelés"
+      ],
+      "relance": "Et si un très gros prospect n'a pas de date de décision ?",
+      "alternative": "Vous avez dix personnes à contacter pour un événement (association, travail, vie quotidienne) et peu de temps. Par qui commencez-vous ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C2",
+      "texte": "Parlez d'une semaine très chargée. **Comment avez-vous organisé** votre temps ?",
+      "suite": [
+        "Qu'avez-vous reporté, et pourquoi ?"
+      ],
+      "attendus": [
+        "Décrit un critère de choix : échéance, impact",
+        "Dit ce qui a été reporté et comment les personnes ont été prévenues",
+        "Dit si l'organisation a fonctionné"
+      ],
+      "relance": "Comment avez-vous prévenu les personnes concernées ?",
+      "alternative": "Parlez d'une période chargée (examens, déménagement, événement) et de la façon dont vous avez choisi quoi faire en premier."
+    },
+    {
+      "id": "e7",
+      "competence": "C6",
+      "texte": "Un client veut une livraison **avant une date**, et vous **ne connaissez pas** le délai. Que faites-vous ?",
+      "suite": [
+        "Que lui dites-vous, et quand ?"
+      ],
+      "attendus": [
+        "Vérifie auprès de la logistique avant de promettre",
+        "Donne le délai réel et une date de réponse",
+        "Propose une alternative sans promesse intenable"
+      ],
+      "relance": "Et si le client dit qu'il ira chez un concurrent ?",
+      "alternative": "Quelqu'un vous demande de finir un travail pour une date, et vous ne savez pas si c'est possible. Que lui répondez-vous ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C6",
+      "texte": "Parlez de la façon dont vous suivez vos dossiers en cours : **que notez-vous après un échange** avec un client ?",
+      "suite": [
+        "Que faites-vous quand quelqu'un ne répond pas ?"
+      ],
+      "attendus": [
+        "Cite ce qui est noté : besoin, prochaine étape, date",
+        "Note tout de suite, sans compter sur sa mémoire",
+        "Décrit une relance concrète, sans pression"
+      ],
+      "relance": "Comment un collègue pourrait-il reprendre votre dossier ?",
+      "alternative": "Parlez de la façon dont vous suivez des demandes ou des rendez-vous (agenda, liste, tableau) dans votre travail, vos études ou une association."
+    }
+  ],
+  "_pv": "8b49972ef0"
+}

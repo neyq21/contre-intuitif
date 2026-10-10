@@ -1,0 +1,2656 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "animateur",
+  "version": "2026.10",
+  "nom": "Animateur / Animatrice",
+  "secteur": "education",
+  "alias": [
+    "animateur",
+    "animatrice",
+    "animateur périscolaire",
+    "animatrice périscolaire",
+    "animateur de centre de loisirs",
+    "animateur jeunesse",
+    "animateur enfance",
+    "accueil de loisirs",
+    "animateur ALSH",
+    "centre aéré"
+  ],
+  "resume": "Anime des activités pour des enfants en accueil de loisirs ou périscolaire, veille à leur sécurité et échange avec les familles et l'équipe.",
+  "contexte": "Un accueil de loisirs municipal pour des enfants de 6 à 11 ans, le mercredi et pendant les vacances.",
+  "cadre": "Selon le type d'accueil, l'encadrement demande une qualification d'animation, par exemple le BAFA.",
+  "competences": [
+    {
+      "code": "C8",
+      "titre": "Assurer la sécurité du groupe pendant une sortie",
+      "pourquoi": "En sortie, un enfant peut s'éloigner en quelques secondes : compter, rester ensemble et alerter vite protègent les enfants.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Au départ du parc, il manque un enfant",
+        "texte": "Mercredi, 16 h 10. Vous êtes au parc avec un collègue animateur et 14 enfants de 6 à 11 ans. Vous aviez compté 14 enfants au départ de l'accueil, puis à l'arrivée au parc. Il est l'heure de rentrer. Vous appelez les enfants, qui arrivent de tous côtés, et vous les comptez : vous en comptez 13. Vous avez la liste des enfants, la trousse de secours et le téléphone de l'accueil, avec le numéro du directeur.",
+        "document": {
+          "type": "liste",
+          "titre": "Règles de sortie de l'accueil",
+          "items": [
+            "On compte les enfants au départ, à l'arrivée et à chaque déplacement.",
+            "Un groupe d'enfants n'est jamais laissé sans animateur.",
+            "En cas de problème, on prévient tout de suite le directeur par téléphone.",
+            "En cas de danger immédiat ou de blessure grave, on appelle aussi les secours.",
+            "Seul le directeur prévient les familles."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous comptez 13 enfants au lieu de 14. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je cours chercher l'enfant dans le parc et je demande aux autres de m'attendre ici.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je rassemble les enfants près de moi et je les recompte calmement.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je recompte les enfants là où ils sont, à voix haute.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'attends cinq minutes : l'enfant va sûrement revenir tout seul.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Un groupe qui bouge se compte mal : on le rassemble, puis on recompte pour être sûr qu'il manque bien un enfant. Recompter sur place est juste, mais moins fiable.",
+              "relance": "Comment comptez-vous un groupe d'enfants de façon fiable ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le compte est confirmé : 13 enfants. **Comment savez-vous qui manque** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je fais l'appel avec la liste et je demande aux enfants où ils ont vu celui qui manque.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde la liste pour trouver le nom de l'enfant qui manque, sans poser de question.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande aux enfants de chercher leur camarade autour d'eux.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je devine qui manque d'après les visages que je vois, sans la liste.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "La liste donne le nom sûr de l'enfant. Les enfants disent où et quand il a été vu : le directeur en aura besoin. La liste seule est juste, mais incomplète.",
+              "relance": "Quelles informations faut-il avoir sur un enfant qui manque ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Un enfant du groupe dit : « Je sais où il est, j'y vais ! » **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Oui, mais reviens dans cinq minutes. »",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Oui, vas-y, mais prends un autre enfant avec toi pour ne pas être seul. »",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Non, tu restes avec nous. »",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Non, reste avec nous. Dis-moi où il est, je préviens le directeur. »",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Un enfant ne part jamais chercher un camarade : il peut se perdre à son tour. On garde le groupe réuni et on utilise ce qu'il sait. Dire seulement non est juste, mais l'information est perdue.",
+              "relance": "Que faites-vous quand un enfant veut aider dans une situation dangereuse ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Votre collègue reste avec les enfants. Vous appelez **le directeur**. **Que lui dites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Nous avons du retard : nous rentrerons plus tard que prévu. »",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Tout va bien. Un enfant s'est peut-être éloigné, je le cherche d'abord. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Il manque un enfant, constaté à 16 h 10. Je vous donne son nom et où on l'a vu. »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Il manque un enfant. Je vous rappelle quand je l'aurai retrouvé. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Pour décider vite, le directeur doit savoir qu'un enfant manque, qui c'est, et où et quand on l'a vu en dernier. Sans ces détails, il ne peut pas encore agir.",
+              "relance": "Que dites-vous quand vous prévenez un responsable d'un problème grave ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 16 h 25, l'enfant est retrouvé près des toilettes du parc. Il **n'est pas blessé**. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je préviens le directeur, je recompte le groupe et je note l'incident avec les heures.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens le directeur et nous rentrons à l'accueil, tous ensemble.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne dis rien : l'enfant est retrouvé, donc l'incident est clos.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je gronde l'enfant devant tout le groupe, pour qu'il ne recommence pas et que les autres comprennent.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "L'incident est clos quand le directeur est prévenu, le groupe complet et les faits écrits avec les heures. Sans trace écrite, l'équipe ne peut pas en tirer de leçon.",
+              "relance": "Que faites-vous après un incident, quand tout est rentré dans l'ordre ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand je compte **13 enfants** au lieu de **14**, je…",
+              "justes": [
+                {
+                  "texte": "rassemble les enfants près de moi et je les recompte",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "recompte le groupe au calme, puis je vérifie sur la liste qui manque",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "garde tous les enfants avec moi et je confirme le compte avant d'agir",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "recompte les enfants",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "pars chercher l'enfant en laissant les autres attendre",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "attends un peu : il va sûrement revenir",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pendant que je gère le problème, **le groupe**…",
+              "justes": [
+                {
+                  "texte": "reste réuni avec mon collègue ou avec moi, jamais seul",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "reste sous la surveillance d'un animateur à tout moment",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "ne bouge pas, et aucun enfant ne part chercher seul",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "est occupé par un jeu calme",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "peut jouer à côté, sans surveillance",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "m'aide à chercher l'enfant dans le parc",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand j'appelle **le directeur**, je lui donne…",
+              "justes": [
+                {
+                  "texte": "le nom de l'enfant, l'heure et le lieu où il a été vu pour la dernière fois",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "les faits précis : qui manque, et où et quand on l'a vu en dernier",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "le nombre d'enfants avec moi, le nom de celui qui manque et son dernier lieu connu",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le nom de l'enfant qui manque",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "une version rassurante : « tout va bien »",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "rien : j'attends de l'avoir retrouvé pour le prévenir",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note l'heure du dernier comptage complet et l'heure où l'enfant a été vu pour la dernière fois.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Demande à son collègue de rester avec les enfants pendant qu'il téléphone.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Propose de compter les enfants plus souvent pendant la sortie, par exemple avant et après le goûter.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je garde les 13 enfants avec moi. J'appelle le directeur pour lui donner le nom de l'enfant et l'endroit où on l'a vu. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un enfant dit qu'il a mal au ventre pendant la sortie au parc. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un enfant du groupe manque à l'appel. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Au moment de rentrer du parc, vous comptez 13 enfants au lieu de 14, et vous avez recompté. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Les enfants veulent rester plus longtemps au parc. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Il y a 13 enfants au lieu de 14.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La sortie a commencé à 14 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Un groupe d'enfants n'est jamais laissé sans animateur.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le directeur doit savoir qui manque et où l'enfant a été vu.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "Les enfants ont de 6 à 11 ans.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Le parc ferme à 17 h.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je préviens moi-même les parents de l'enfant pour gagner du temps.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "b",
+                "texte": "J'applique les consignes du directeur et je garde le groupe réuni avec mon collègue.",
+                "points": 2,
+                "repere": "c8_role"
+              },
+              {
+                "id": "c",
+                "texte": "Je laisse mon collègue rentrer avec une partie des enfants.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "d",
+                "texte": "J'applique les consignes du directeur sans les dire à mon collègue.",
+                "points": 1,
+                "repere": "c4_seul"
+              }
+            ]
+          },
+          "explication": "Le comptage est confirmé : il manque un enfant. On garde le groupe réuni, on prévient le directeur avec le nom de l'enfant et son dernier lieu connu. Puis on suit ses consignes."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Quand un enfant manque : que faites-vous, et quand ?",
+          "consigne": "Pour chaque action, choisissez **à quel moment** vous la faites.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Tout de suite"
+            },
+            {
+              "id": "k2",
+              "nom": "Après la consigne du directeur"
+            },
+            {
+              "id": "k3",
+              "nom": "Plus tard, quand l'enfant est retrouvé"
+            },
+            {
+              "id": "k4",
+              "nom": "Jamais"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Rassembler les enfants près de moi",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le groupe reste réuni et en sécurité avant toute autre action."
+            },
+            {
+              "id": "e2",
+              "texte": "Vérifier sur la liste quel enfant manque",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le nom sûr de l'enfant sert à alerter le directeur."
+            },
+            {
+              "id": "e3",
+              "texte": "Appeler le directeur",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La règle de l'accueil : en cas de problème, on prévient tout de suite le directeur."
+            },
+            {
+              "id": "e4",
+              "texte": "Chercher l'enfant à l'endroit que le directeur indique",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Les recherches se font sur la consigne du directeur ; un animateur reste avec le groupe."
+            },
+            {
+              "id": "e5",
+              "texte": "Écrire le déroulé de l'incident avec les heures",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "On l'écrit quand tout est réglé, pour garder une trace exacte."
+            },
+            {
+              "id": "e6",
+              "texte": "Prévenir moi-même la famille de l'enfant",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "À l'accueil, seul le directeur prévient les familles."
+            },
+            {
+              "id": "e7",
+              "texte": "Laisser les enfants seuls un moment pour chercher dans le parc",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "Un groupe d'enfants n'est jamais laissé sans animateur."
+            },
+            {
+              "id": "e8",
+              "texte": "Envoyer deux enfants chercher leur camarade",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "Aucun enfant ne part chercher : il pourrait se perdre à son tour."
+            },
+            {
+              "id": "e9",
+              "texte": "Parler calmement à l'enfant retrouvé pour comprendre ce qui s'est passé",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Une fois l'enfant retrouvé et le groupe complet, on l'écoute sans le gronder devant les autres."
+            }
+          ],
+          "repere_reussite": "c8_securite",
+          "repere_echec": "c8_erreur",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : un comptage donne 13 enfants au lieu de 14. La personne candidate dispose d'une liste fictive de 14 enfants et d'un téléphone ; un évaluateur joue le directeur.",
+            "criteres": [
+              {
+                "texte": "Rassemble le groupe et recompte avant d'agir",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Garde le groupe réuni et ne laisse aucun enfant partir seul",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Donne au directeur le nom, l'heure et le lieu de la dernière observation",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Reste dans son rôle : applique la consigne du directeur, sans prévenir la famille",
+                "repere": "c8_role"
+              }
+            ],
+            "bonus": {
+              "texte": "Note le déroulé de l'incident avec les heures",
+              "repere": "c6_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Vous comptez 13 enfants au lieu de 14. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je rassemble les enfants et je les recompte.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je recompte au calme, puis je regarde la liste pour savoir qui manque.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je garde tout le groupe près de moi avant de faire autre chose.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je recompte.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je pars chercher l'enfant tout de suite.",
+                  "repere": "c1_precipite"
+                },
+                {
+                  "texte": "J'attends un peu : il va revenir.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que faites-vous du groupe** pendant que vous gérez le problème ?",
+              "justes": [
+                {
+                  "texte": "Je ne le laisse jamais seul : mon collègue ou moi restons avec les enfants.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je garde les enfants réunis avec un animateur à tout moment.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Personne ne part chercher seul : aucun enfant ne s'éloigne, et le groupe reste surveillé.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je leur demande de rester calmes.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je demande à un enfant plus âgé de surveiller les autres.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que dites-vous** au directeur ?",
+              "justes": [
+                {
+                  "texte": "Qu'il manque un enfant, son nom, et où et quand il a été vu en dernier.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Le nom de l'enfant, l'heure du dernier comptage complet et le lieu.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Les faits précis, puis j'attends ses consignes.",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Qu'il manque un enfant.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je le préviens quand j'aurai retrouvé l'enfant.",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "Que tout va bien.",
+                  "repere": "c3_faux"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Demande à son collègue de rester avec les enfants pendant l'appel.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Propose de recompter à chaque déplacement, pas seulement au départ et à l'arrivée.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Appelle les secours sans attendre si un enfant est en danger immédiat, puis prévient le directeur.",
+              "repere": "c8_securite"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire répéter un comptage avec le groupe. Montrer où sont la liste, la trousse de secours et le numéro du directeur.",
+        "Donner par écrit la marche à suivre pour un enfant qui manque : qui reste avec le groupe, qui appelle, quoi dire."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Préparer et adapter une activité pour un groupe d'enfants",
+      "pourquoi": "Une activité préparée, avec une consigne claire et une solution de repli, évite l'attente, les disputes et l'improvisation.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un relais prévu dehors, de la pluie annoncée",
+        "texte": "Mercredi, 9 h. Vous animez l'activité de 14 h à 15 h 30 pour 16 enfants de 6 à 11 ans. Vous avez prévu un relais dans la cour : deux équipes de 8, avec des cerceaux, des plots et des balles en mousse. La météo annonce de la pluie dès 13 h. La salle polyvalente est libre de 14 h à 15 h 30. Le tableau indique le matériel du placard.",
+        "document": {
+          "type": "tableau",
+          "titre": "Matériel disponible dans le placard",
+          "colonnes": [
+            "Matériel",
+            "Quantité"
+          ],
+          "lignes": [
+            [
+              "Cerceaux",
+              "10"
+            ],
+            [
+              "Balles en mousse",
+              "6"
+            ],
+            [
+              "Plots",
+              "12"
+            ],
+            [
+              "Sifflets",
+              "2"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "La météo annonce de la pluie dès 13 h. **Que faites-vous ce matin** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je garde le relais dans la cour : la pluie ne sera peut-être pas forte cet après-midi.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je prépare une version du relais pour la salle polyvalente, libre de 14 h à 15 h 30.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'attends 14 h pour voir le temps qu'il fait, puis je déciderai.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au directeur si je dois annuler l'activité en cas de pluie.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "La pluie est annoncée et la salle est libre : on prépare dès le matin une version pour l'intérieur. Demander au directeur est possible, mais vous avez déjà les informations pour décider.",
+              "relance": "Que prévoyez-vous quand une activité dépend de la météo ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous préparez **le matériel** pour 16 enfants en deux équipes de 8. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je prends tout ce qu'il y a dans le placard : on verra sur place.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je prépare le matériel pour une seule équipe : l'autre attendra son tour.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je calcule ce qu'il faut pour 16 enfants, sans regarder ce que contient le placard.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je calcule ce qu'il faut pour chaque équipe et je vérifie que le placard en contient assez.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "explication": "On compte ce qu'il faut pour chaque équipe, puis on vérifie le stock : s'il manque quelque chose, on adapte avant l'activité. Compter les besoins sans vérifier le stock laisse un risque de manque.",
+              "relance": "Comment savez-vous que vous avez assez de matériel avant une activité ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Les enfants sont réunis autour de vous. **Comment expliquez-vous le jeu** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'explique en trois phrases courtes, je montre un tour, puis je fais redire la règle.",
+                  "points": 2,
+                  "repere": "c3_verifie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lis la fiche d'activité en entier, d'une seule traite, sans m'arrêter pour les questions.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'explique en trois phrases courtes et je montre un tour du parcours.",
+                  "points": 1,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lance le jeu tout de suite et j'explique les règles au fur et à mesure.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Des consignes courtes, montrées sur un exemple, sont comprises à tous les âges. Faire redire la règle par un enfant permet de vérifier que le message est passé.",
+              "relance": "Comment vérifiez-vous que les enfants ont compris une règle ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Dix minutes après le début, un enfant s'assoit à l'écart et dit : « Je ne veux pas jouer. » **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis de se lever : tout le monde participe.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le laisse dans son coin, sans lui parler.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je vais le voir, je l'écoute et je lui propose un autre rôle, par exemple arbitre.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis qu'il peut rester assis et qu'il rejoindra le jeu quand il voudra.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "On ne force pas l'enfant, mais on ne le laisse pas seul : on l'écoute et on lui propose un autre rôle. Respecter son choix sans rien proposer est acceptable, mais il reste à l'écart.",
+              "relance": "Que proposez-vous à un enfant qui ne veut pas participer ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 14 h 40, plusieurs enfants de 6 ans se trompent à chaque tour. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue sans rien changer : ils comprendront en regardant les autres.",
+                  "points": 0,
+                  "repere": "c5_habitude"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je m'arrête un instant, je regarde ce qui bloque et je simplifie la règle pour eux.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je redonne la même explication, plus lentement.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "J'arrête l'activité et je range : elle est trop difficile pour ce groupe.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                }
+              ],
+              "explication": "Quand des enfants se trompent à chaque tour, on cherche ce qui bloque et on adapte : trajet plus court, geste plus simple. Répéter la même explication ne change pas ce qui est trop difficile.",
+              "relance": "Comment adaptez-vous une activité à des enfants d'âges différents ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Face à **la pluie annoncée**, je prévois…",
+              "justes": [
+                {
+                  "texte": "une version du relais dans la salle polyvalente",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "un plan de repli que je prépare dès ce matin",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "de refaire le parcours à l'intérieur, avec le matériel adapté",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "de regarder à nouveau la météo plus tard",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "d'attendre 14 h pour décider",
+                  "repere": "c2_reactif"
+                },
+                {
+                  "texte": "de garder la cour quand même",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour **expliquer le jeu** aux enfants, je…",
+              "justes": [
+                {
+                  "texte": "donne trois consignes courtes et je montre un tour du parcours",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "montre un exemple, puis je demande à un enfant de redire la règle",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "dis une seule chose à la fois, avec un geste, pour que tous les âges comprennent",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lis la règle à voix haute, une fois",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lis toute la fiche d'un coup",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "lance le jeu sans rien expliquer",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si un enfant **refuse de participer**, je…",
+              "justes": [
+                {
+                  "texte": "vais le voir, je l'écoute et je lui propose un autre rôle",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "ne le force pas : je lui propose d'observer d'abord ou d'aider",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "lui demande ce qui ne va pas et je cherche avec lui une place dans le jeu",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le laisse tranquille un moment",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'oblige à jouer",
+                  "repere": "c7_impose"
+                },
+                {
+                  "texte": "l'ignore pour ne pas déranger le jeu",
+                  "repere": "c7_ignore"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prépare une variante plus simple et une variante plus difficile, pour s'adapter à tous les âges.",
+              "repere": "c5_ameliore"
+            },
+            {
+              "texte": "Prévoit une activité calme pour les enfants qui ne veulent pas courir.",
+              "repere": "c7_alternative"
+            },
+            {
+              "texte": "Range le matériel avec les enfants, puis note ce qui manque pour la prochaine séance.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je prépare une version du relais pour la salle polyvalente, libre de 14 h à 15 h 30. Je vérifie que j'ai assez de matériel pour les deux équipes. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Les enfants veulent changer d'équipe en cours de jeu. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous préparez une activité pour l'après-midi. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un enfant ne veut pas participer au relais. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "La météo annonce de la pluie à 13 h et votre relais est prévu dehors à 14 h. Que faites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La pluie est annoncée dès 13 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "L'activité dure deux heures.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le relais est prévu dans la cour.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le directeur a annulé l'activité.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La salle polyvalente est libre de 14 h à 15 h 30.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Un enfant ne veut pas jouer.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'attends 14 h pour annoncer le changement aux enfants.",
+                "points": 0,
+                "repere": "c2_reactif"
+              },
+              {
+                "id": "b",
+                "texte": "Je prépare seulement la cour, au cas où il ne pleuvrait pas.",
+                "points": 0,
+                "repere": "c2_oubli"
+              },
+              {
+                "id": "c",
+                "texte": "Je prépare la salle, sans compter le matériel disponible.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je compte le matériel pour les deux équipes et je prépare la salle avant l'arrivée des enfants.",
+                "points": 2,
+                "repere": "c2_contraintes"
+              }
+            ]
+          },
+          "explication": "La pluie est annoncée et la salle est libre. On prépare dès le matin une version pour l'intérieur, avec un matériel vérifié. Le repli se prépare avant, pas au moment où il pleut."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La fiche du relais : repérez les erreurs",
+          "consigne": "Voici la fiche que vous avez écrite. Cliquez sur **chaque ligne** qui **ne correspond pas** à la situation ou au tableau du matériel.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Public : 16 enfants de 6 à 11 ans",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Horaire : de 14 h à 16 h",
+              "erreur": true,
+              "explication": "L'activité dure de 14 h à 15 h 30, et la salle n'est libre que jusqu'à 15 h 30."
+            },
+            {
+              "id": "e3",
+              "texte": "Lieu prévu : la cour. Lieu de repli : aucun",
+              "erreur": true,
+              "explication": "La pluie est annoncée : il faut un repli. La salle polyvalente est libre de 14 h à 15 h 30."
+            },
+            {
+              "id": "e4",
+              "texte": "Équipes : deux équipes de 8 enfants",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Matériel : 12 plots pour marquer le parcours",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Matériel : 20 cerceaux",
+              "erreur": true,
+              "explication": "Le placard contient seulement 10 cerceaux."
+            },
+            {
+              "id": "e7",
+              "texte": "Matériel : 4 balles en mousse",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "Consigne : « Courez jusqu'au cerceau. Lancez la balle. Revenez et touchez la main du suivant. »",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c2_contraintes",
+          "repere_echec": "c2_oubli",
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes : la personne candidate reçoit la météo, le matériel disponible et le planning des salles. Elle écrit la fiche d'une activité de 90 minutes pour 16 enfants, avec un repli.",
+            "criteres": [
+              {
+                "texte": "Prévoit une solution de repli adaptée à la météo",
+                "repere": "c2_anticipe"
+              },
+              {
+                "texte": "Vérifie le matériel disponible pour chaque équipe",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Écrit une consigne courte, en étapes, et prévoit de la montrer",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Respecte l'horaire et la salle disponibles",
+                "repere": "c2_contraintes"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévoit une variante pour des enfants d'âges différents",
+              "repere": "c5_ameliore"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que prévoyez-vous** si la pluie arrive ?",
+              "justes": [
+                {
+                  "texte": "Une version du relais pour la salle polyvalente, préparée dès ce matin.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je prépare le repli à l'avance : salle libre, matériel compté.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je réorganise le parcours à l'intérieur, avec le matériel adapté.",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarderai la météo à 13 h.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : on verra le moment venu.",
+                  "repere": "c2_reactif"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment expliquez-vous le jeu** à des enfants de 6 à 11 ans ?",
+              "justes": [
+                {
+                  "texte": "En trois phrases courtes, avec une démonstration du parcours.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "Je montre un tour, puis je demande à un enfant de redire la règle.",
+                  "repere": "c3_verifie"
+                },
+                {
+                  "texte": "Une consigne à la fois, avec un geste, pour que tous les âges comprennent.",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lis la règle à voix haute.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lis la fiche en entier, d'une seule traite.",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "Je ne l'explique pas : on apprend en jouant.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Un enfant dit qu'il ne veut pas jouer. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je ne le force pas : je l'écoute et je lui propose un autre rôle.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Je lui demande ce qui ne va pas et je cherche une place qui lui plaît.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Je lui propose d'observer d'abord, ou d'aider à arbitrer.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le laisse tranquille.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je l'oblige à rejoindre son équipe.",
+                  "repere": "c7_impose"
+                },
+                {
+                  "texte": "Je ne m'en occupe pas.",
+                  "repere": "c7_ignore"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévoit une variante plus simple et une variante plus difficile.",
+              "repere": "c5_ameliore"
+            },
+            {
+              "texte": "Garde l'enfant dans son champ de vision pendant qu'il observe.",
+              "repere": "c8_securite"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer où sont le planning des salles, le placard à matériel et les fiches d'activité. Relire ensemble une première fiche.",
+        "Faire préparer une activité avec une version de repli, puis l'essayer avec un collègue avant de l'animer."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Gérer un conflit entre enfants et informer la famille",
+      "pourquoi": "Un enfant se sent en sécurité quand l'adulte reste calme et juste. Une famille fait confiance quand on lui dit les faits.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une dispute dans la cour, un parent à 17 h 40",
+        "texte": "Mercredi, 15 h 30, dans la cour. Pendant un jeu de ballon, deux enfants de 8 ans se disputent. L'un dit : « Il m'a poussé ! » L'autre répond : « Je n'ai pas fait exprès ! » Le premier est tombé et pleure. Le directeur soigne ensuite son genou écorché. À 17 h 40, son parent vient le chercher et vous demande ce qui s'est passé.",
+        "document": {
+          "type": "liste",
+          "titre": "Règles de l'accueil pour parler aux familles",
+          "items": [
+            "On dit les faits : ce qui s'est passé et ce qui a été fait.",
+            "On ne donne jamais le nom des autres enfants.",
+            "Le directeur reçoit les parents qui le demandent.",
+            "Tout incident est noté dans le cahier de l'accueil."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Les deux enfants crient et l'un pleure. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande à tout le monde de se taire et je confisque le ballon pour l'après-midi.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je sépare les deux enfants et je les fais asseoir chacun d'un côté, le temps qu'ils se calment.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je m'approche calmement, je sépare les enfants et je regarde si l'enfant tombé est blessé.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse les enfants régler cela entre eux : ils sont assez grands pour se débrouiller.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                }
+              ],
+              "explication": "Un enfant est tombé et pleure : on s'approche calmement, on sépare les enfants et on regarde d'abord s'il est blessé. Séparer sans vérifier laisse de côté le risque de blessure.",
+              "relance": "Que faites-vous en premier quand un enfant pleure après une chute ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Les enfants sont calmes. **Comment comprenez-vous** ce qui s'est passé ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'écoute chaque enfant à tour de rôle, sans l'interrompre, puis je reformule ce que chacun a dit.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je donne raison à l'enfant qui pleure : c'est lui qui est tombé.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je les punis tous les deux : je n'ai pas le temps de chercher qui a commencé.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande à chaque enfant ce qui s'est passé, mais je les interromps pour aller plus vite.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Écouter chacun à tour de rôle, sans interrompre, donne les faits et montre aux deux enfants qu'ils sont respectés. Interrompre fait perdre des détails et risque de braquer les enfants.",
+              "relance": "Comment faites-vous parler deux enfants qui s'opposent ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Chacun a raconté : tous deux voulaient le ballon et l'un a poussé l'autre. Que faites-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je leur dis de se serrer la main et d'oublier cette histoire, pour que le jeu reprenne vite.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'écarte l'enfant qui a poussé du jeu pour le reste de l'après-midi, sans lui parler.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je rappelle la règle : on ne pousse pas. Puis le jeu reprend.",
+                  "points": 1,
+                  "repere": "c4_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je rappelle la règle : on ne pousse pas. Puis je leur demande comment reprendre le jeu.",
+                  "points": 2,
+                  "repere": "c4_regle"
+                }
+              ],
+              "explication": "On rappelle la règle, puis on laisse les enfants proposer comment reprendre : ils respectent mieux une solution qu'ils ont choisie. Rappeler seulement la règle est juste, mais ne règle pas le désaccord sur le ballon.",
+              "relance": "Comment aidez-vous des enfants à trouver eux-mêmes une solution ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le parent voit le pansement sur le genou de son enfant et vous demande **qui l'a poussé**. **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« C'est un enfant du même âge que le vôtre. Je peux vous donner son nom, si vous voulez. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je ne donne pas le nom des autres enfants. Je vous raconte : dispute, chute, soin du genou. »",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je ne peux pas vous le dire. Voyez le directeur, c'est lui qui répond à ce genre de question. »",
+                  "points": 1,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Ce sont des choses qui arrivent entre enfants, ne vous inquiétez pas pour si peu. »",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Le parent a droit aux faits : ce qui s'est passé et ce qui a été fait. On ne donne pas le nom d'un autre enfant. Renvoyer vers le directeur sans rien dire laisse le parent sans réponse.",
+              "relance": "Que dites-vous à un parent qui veut connaître le nom d'un autre enfant ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le parent demande **ce que l'accueil fait** pour que cela ne se reproduise pas. **Que répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Je vous promets que cela n'arrivera plus jamais dans cet accueil, soyez tranquille. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Je ne sais pas. Revenez demain voir le directeur, il vous répondra sûrement. »",
+                  "points": 1,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Nous avons rappelé la règle aux enfants. Je transmets votre demande au directeur, qui peut vous recevoir. »",
+                  "points": 2,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Ces chutes arrivent souvent dans un accueil de loisirs, ne vous inquiétez pas pour cela. »",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "On dit ce qui a été fait avec les enfants, et on transmet la demande au directeur, qui reçoit les parents. Promettre que cela n'arrivera plus est impossible à tenir.",
+              "relance": "Que répondez-vous à un parent qui veut une garantie ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand deux enfants se disputent et que l'un pleure, **je commence par**…",
+              "justes": [
+                {
+                  "texte": "m'approcher calmement, séparer les enfants et regarder si l'un est blessé",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "séparer les enfants et vérifier que l'enfant tombé n'a pas mal",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "regarder si l'enfant tombé est blessé, et prévenir le directeur si c'est le cas",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "séparer les enfants",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "demander à tout le monde de se taire, sous peine de punition",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "laisser les enfants se débrouiller seuls",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour que **le jeu reprenne** dans le calme, je…",
+              "justes": [
+                {
+                  "texte": "rappelle la règle : on ne pousse pas, puis je demande aux enfants de proposer une solution",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "propose un tour de rôle pour le ballon, que les deux enfants acceptent",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "écoute chacun, je rappelle la règle et nous décidons ensemble comment rejouer",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "rappelle la règle et je relance le jeu",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "leur dis de se serrer la main sans parler du problème",
+                  "repere": "c4_evite"
+                },
+                {
+                  "texte": "punis les deux enfants pour le reste de l'après-midi",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Au parent** qui me demande ce qui s'est passé, je…",
+              "justes": [
+                {
+                  "texte": "raconte les faits : la dispute, la chute et le soin fait par le directeur",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "dis ce qui s'est passé et ce qui a été fait, sans donner le nom de l'autre enfant",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "explique les faits simplement et je propose de voir le directeur s'il le souhaite",
+                  "repere": "c7_suivi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dis qu'il y a eu une chute",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "donne le nom de l'autre enfant",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "promets que cela n'arrivera plus jamais",
+                  "repere": "c7_promesse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note l'incident dans le cahier de l'accueil, avec les heures et les faits.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Propose une règle pour le ballon : chacun son tour.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Prévient le directeur de ce qu'il a dit au parent.",
+              "repere": "c4_informe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Il est tombé après une dispute pendant un jeu de ballon, et le directeur a soigné son genou. Je ne donne pas le nom de l'autre enfant. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un parent vous demande si son enfant a bien mangé à midi. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Un parent voit un pansement sur le genou de son enfant et vous demande qui l'a poussé. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un parent vous demande pourquoi l'accueil ferme à 18 h. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un parent vous demande ce qui s'est passé aujourd'hui. Que lui répondez-vous ?",
+                "points": 1
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'enfant est tombé pendant une dispute au jeu de ballon.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Les deux enfants ont 8 ans.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le directeur a soigné son genou.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "L'autre enfant a été puni.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "On ne donne jamais le nom des autres enfants.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le jeu se déroulait dans la cour.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je ne dis rien au directeur : l'incident est réglé avec le parent.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "b",
+                "texte": "Je préviens le directeur de ce que j'ai dit au parent et je complète le cahier de l'accueil.",
+                "points": 2,
+                "repere": "c7_suivi"
+              },
+              {
+                "id": "c",
+                "texte": "Je préviens le directeur à l'oral, sans rien écrire dans le cahier.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je préviens le parent de l'autre enfant, en lui donnant le nom de l'enfant tombé.",
+                "points": 0,
+                "repere": "c7_hors_regle"
+              }
+            ]
+          },
+          "explication": "Le parent a droit aux faits : la dispute, la chute, le soin. Le nom de l'autre enfant reste confidentiel, selon la règle de l'accueil."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "De la dispute au parent, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites, de 15 h 30 à 17 h 40.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Séparer calmement les deux enfants"
+            },
+            {
+              "id": "e2",
+              "texte": "Regarder si l'enfant tombé est blessé"
+            },
+            {
+              "id": "e3",
+              "texte": "Écouter chaque enfant à tour de rôle"
+            },
+            {
+              "id": "e4",
+              "texte": "Rappeler la règle : on ne pousse pas"
+            },
+            {
+              "id": "e5",
+              "texte": "Demander aux enfants comment reprendre le jeu"
+            },
+            {
+              "id": "e6",
+              "texte": "Noter l'incident dans le cahier de l'accueil"
+            },
+            {
+              "id": "e7",
+              "texte": "Raconter les faits au parent, sans nommer l'autre enfant"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e3",
+              "explication": "On sépare les enfants avant de les écouter : deux enfants qui crient ensemble ne peuvent pas expliquer."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On vérifie d'abord qu'il n'y a pas de blessure : la sécurité passe avant la discussion."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On écoute avant de rappeler la règle : sinon on juge sans connaître les faits."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On rappelle la règle avant de chercher la solution, pour que la solution la respecte."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "On écrit des faits vérifiés : on a écouté les enfants avant de noter."
+            },
+            {
+              "avant": "e5",
+              "apres": "e7",
+              "explication": "À 17 h 40, la dispute est réglée : on peut dire au parent comment elle s'est terminée."
+            }
+          ],
+          "repere_reussite": "c4_faits",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : deux évaluateurs jouent deux enfants qui se disputent après une chute. Puis l'un d'eux joue un parent qui demande ce qui s'est passé et qui est l'autre enfant.",
+            "criteres": [
+              {
+                "texte": "Reste calme, sépare les enfants et vérifie qu'il n'y a pas de blessure",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Écoute chaque enfant à tour de rôle et reformule",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Rappelle la règle et laisse les enfants proposer une solution",
+                "repere": "c4_regle"
+              },
+              {
+                "texte": "Dit les faits au parent, sans nommer l'autre enfant et sans promettre",
+                "repere": "c7_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Prévient le directeur et note l'incident dans le cahier",
+              "repere": "c3_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Deux enfants se disputent et l'un pleure. Que faites-vous **en premier** ?",
+              "justes": [
+                {
+                  "texte": "Je m'approche calmement, je sépare les enfants et je regarde s'il y a une blessure.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je sépare les deux enfants et je vérifie que l'enfant tombé n'a pas mal.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je regarde si l'enfant est blessé, et si oui, je préviens le directeur.",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je les sépare.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je les punis tous les deux sans chercher qui a commencé.",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "Je les laisse se débrouiller.",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment aidez-vous les enfants** à reprendre le jeu dans le calme ?",
+              "justes": [
+                {
+                  "texte": "J'écoute chacun, je rappelle la règle, puis je leur demande de proposer une solution.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "Je propose un tour de rôle pour le ballon, que les deux acceptent.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "Je rappelle qu'on ne pousse pas et je les laisse choisir comment rejouer.",
+                  "repere": "c4_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je rappelle la règle.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je leur dis de se serrer la main et on n'en parle plus.",
+                  "repere": "c4_evite"
+                },
+                {
+                  "texte": "J'exclus l'enfant qui a poussé du jeu pour la journée.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que dites-vous au parent** qui demande qui a poussé son enfant ?",
+              "justes": [
+                {
+                  "texte": "Que je ne donne pas le nom des autres enfants, mais que je lui raconte les faits.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je lui explique ce qui s'est passé et ce que nous avons fait, et je lui propose de voir le directeur.",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "Que l'enfant est tombé après une dispute, qu'il a été soigné, et que c'est noté dans le cahier.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis qu'il est tombé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui donne le nom de l'autre enfant.",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "Je lui promets que cela n'arrivera plus.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient le directeur de ce qu'il a dit au parent.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Propose une règle de jeu pour le ballon, par exemple chacun son tour.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire jouer une dispute entre enfants et un échange avec un parent, puis en parler à partir des faits.",
+        "Donner par écrit les règles pour parler aux familles : dire les faits, ne pas nommer un autre enfant, renvoyer vers le directeur."
+      ]
+    },
+    {
+      "code": "C4",
+      "titre": "Travailler avec l'équipe d'animation et le directeur",
+      "pourquoi": "Dans un accueil, l'équipe partage les salles, les groupes et les consignes. Un désaccord réglé vite protège les enfants et l'ambiance.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Deux groupes pour la même salle",
+        "texte": "Mercredi, 15 h. D'après le planning affiché, la salle polyvalente est à votre groupe de 12 enfants de 15 h à 16 h. Vous arrivez : le groupe d'un collègue y est encore, pour un jeu pas fini. Il pleut, la cour est impossible. Les enfants attendent derrière vous. À l'accueil, le directeur décide du planning et des changements de salle. Les animateurs choisissent leur séance et s'organisent entre eux pour le rangement.",
+        "document": {
+          "type": "tableau",
+          "titre": "Planning de la salle polyvalente, le mercredi",
+          "colonnes": [
+            "Horaire",
+            "Groupe",
+            "Activité"
+          ],
+          "lignes": [
+            [
+              "14 h – 15 h",
+              "Groupe de votre collègue (6 à 8 ans)",
+              "Jeu d'expression"
+            ],
+            [
+              "15 h – 16 h",
+              "Votre groupe (9 à 11 ans)",
+              "Jeu de société"
+            ],
+            [
+              "16 h – 17 h",
+              "Tous les groupes",
+              "Goûter"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous arrivez à 15 h avec votre groupe. Le groupe de votre collègue est encore dans la salle. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je fais entrer mon groupe : d'après le planning, la salle est à nous à partir de 15 h.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je montre le planning à mon collègue et je lui demande combien de temps il lui faut.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je dis aux enfants, à voix haute, que mon collègue ne respecte pas le planning.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je préviens le directeur tout de suite, sans en parler d'abord à mon collègue.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Le planning est un fait que l'on montre sans accuser : le désaccord se règle sur ce document, calmement. Prévenir le directeur sans en parler d'abord à votre collègue est possible, mais cela peut se régler plus vite entre vous.",
+              "relance": "Comment réglez-vous un désaccord d'organisation avec un collègue ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Votre collègue dit qu'il lui faut encore **15 minutes**. **Que proposez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "De finir en 5 minutes, sinon je fais entrer mon groupe dans la salle sans l'attendre.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "De partager la salle pendant 15 minutes, chaque groupe d'un côté de la pièce.",
+                  "points": 1,
+                  "repere": "c4_seul"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que son groupe finisse dans 5 minutes et que nous rangions ensemble pour libérer la salle.",
+                  "points": 2,
+                  "repere": "c4_aide"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que mon groupe attende seul dans le couloir pendant que je cherche le directeur.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Une durée courte et un coup de main pour ranger règlent le problème sans conflit. Partager la salle est une idée utile, mais modifier le planning se décide avec le directeur.",
+              "relance": "Que proposez-vous à un collègue quand vous avez besoin d'un lieu qu'il occupe ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous **ne vous mettez pas d'accord** et les enfants attendent. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je fais entrer mon groupe quand même : le planning me donne raison, donc j'en ai le droit.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je cède sans rien dire : mon groupe attendra le temps qu'il faudra, je ne veux pas de conflit.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je cède la salle à mon collègue et j'en parle au directeur après le goûter, sans lui demander de décider.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "J'appelle le directeur sans quitter mon groupe, je lui dis les faits et j'applique sa décision.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                }
+              ],
+              "explication": "Le directeur décide des changements de salle. Sans accord, on lui donne les faits et on applique sa décision, sans quitter son groupe. Céder la salle puis en parler après évite le conflit, mais le directeur n'a pas pu décider.",
+              "relance": "Quand faites-vous appel au directeur pour un désaccord entre collègues ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Après cet épisode, **que proposez-vous** pour que cela ne se reproduise pas ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Un signal cinq minutes avant la fin de chaque créneau, proposé à l'équipe.",
+                  "points": 2,
+                  "repere": "c4_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que chacun fasse plus attention aux horaires.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que mon collègue fasse attention à l'heure la prochaine fois.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Que mon collègue soit prévenu qu'il doit finir à l'heure, sinon j'en parle au directeur.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Une règle simple, valable pour toute l'équipe, évite que le problème revienne. Demander à un seul collègue de faire attention ne change rien pour les autres groupes.",
+              "relance": "Quelle règle simple avez-vous déjà proposée à une équipe pour éviter un problème ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le soir, **le directeur** vous demande ce qui s'est passé à 15 h. **Que lui dites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que mon collègue ne respecte jamais le planning et qu'il faudrait le lui rappeler.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "b",
+                  "texte": "Qu'il y a eu un petit désaccord sur la salle, que nous avons réglé entre nous.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Les faits : l'horaire du planning, la décision prise et le temps d'attente de mon groupe.",
+                  "points": 2,
+                  "repere": "c4_informe"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : ce sont des histoires entre collègues, qui ne concernent pas le directeur.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                }
+              ],
+              "explication": "Le directeur a besoin des faits pour faire évoluer le planning : l'horaire prévu, la décision prise et l'attente des enfants. « Un petit désaccord » ne lui permet pas d'agir.",
+              "relance": "Que dites-vous à un responsable après un désaccord avec un collègue ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**À mon collègue** qui occupe encore la salle, je dis…",
+              "justes": [
+                {
+                  "texte": "que le planning prévoit la salle pour mon groupe à 15 h, et je lui demande combien de temps il lui faut",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "calmement ce que dit le planning, puis je lui propose une solution",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "« Le planning indique 15 h pour nous. Comment peut-on s'arranger ? »",
+                  "repere": "c4_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que j'aimerais entrer dans la salle",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que c'est lui qui se trompe, devant les enfants",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "rien : j'attends qu'il sorte",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si nous **ne sommes pas** d'accord, je…",
+              "justes": [
+                {
+                  "texte": "demande au directeur de décider, en lui donnant les faits",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "préviens le directeur par téléphone, sans quitter mon groupe, et j'applique sa décision",
+                  "repere": "c4_role"
+                },
+                {
+                  "texte": "explique au directeur le planning et la situation, puis je suis sa consigne",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "en parlerai au directeur plus tard",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "fais entrer mon groupe quand même",
+                  "repere": "c4_impose"
+                },
+                {
+                  "texte": "cède sans rien dire pour éviter le conflit",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour que cela **ne recommence pas**, je propose…",
+              "justes": [
+                {
+                  "texte": "un signal cinq minutes avant la fin de chaque créneau",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "que les groupes rangent ensemble pour libérer la salle à l'heure",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "d'en parler au directeur pour fixer une règle de passage entre les groupes",
+                  "repere": "c4_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que chacun fasse attention aux horaires",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que mon collègue arrête de dépasser son créneau",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "rien : cela arrive rarement",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose son aide pour ranger la salle avec le groupe du collègue, pour gagner du temps.",
+              "repere": "c4_aide"
+            },
+            {
+              "texte": "Informe son collègue de la décision prise avec le directeur.",
+              "repere": "c4_informe"
+            },
+            {
+              "texte": "Garde son groupe avec lui et l'occupe calmement pendant l'attente.",
+              "repere": "c8_securite"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Le planning donne la salle à mon groupe à 15 h. Combien de minutes te faut-il pour finir ? Nous pouvons ranger ensemble. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "À 15 h, la salle est à votre groupe d'après le planning, mais le groupe de votre collègue y est encore. Que lui dites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Votre collègue vous demande de l'aide pour ranger la salle. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Votre collègue veut changer de jeu pour son groupe. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Vous devez parler à votre collègue du planning. Que lui dites-vous ?",
+                "points": 1
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le planning donne la salle à votre groupe à 15 h.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Votre groupe compte 12 enfants.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le groupe de votre collègue est encore dans la salle.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le directeur est absent aujourd'hui.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Il pleut : les groupes ne peuvent pas aller dans la cour.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le goûter est à 16 h.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je fais entrer mon groupe pendant qu'il range.",
+                "points": 0,
+                "repere": "c4_impose"
+              },
+              {
+                "id": "b",
+                "texte": "Je fixe une heure de fin avec lui, j'occupe mon groupe à côté et je préviens le directeur si l'heure est dépassée.",
+                "points": 2,
+                "repere": "c4_informe"
+              },
+              {
+                "id": "c",
+                "texte": "Je laisse mon groupe dans le couloir et je vais ranger avec lui.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "d",
+                "texte": "J'occupe mon groupe à côté et j'attends, sans fixer d'heure avec lui.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "La réponse s'appuie sur le planning, qui donne la salle à votre groupe à 15 h. Elle propose de ranger ensemble, car la pluie interdit la cour. Elle règle le désaccord sans accuser personne."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Qui décide quoi dans l'accueil ?",
+          "consigne": "Pour chaque décision, choisissez **qui la prend**, d'après les **règles de l'accueil** indiquées dans la situation.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je décide seul"
+            },
+            {
+              "id": "k2",
+              "nom": "Je décide avec mon collègue"
+            },
+            {
+              "id": "k3",
+              "nom": "Le directeur décide"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Changer l'heure d'un créneau affiché au planning",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le planning est décidé par le directeur : lui seul peut le modifier."
+            },
+            {
+              "id": "e2",
+              "texte": "Choisir le jeu de société de mon groupe",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Les animateurs choisissent leur séance."
+            },
+            {
+              "id": "e3",
+              "texte": "Décider qui range les jeux après un créneau commun",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le rangement s'organise entre animateurs."
+            },
+            {
+              "id": "e4",
+              "texte": "Échanger la salle avec un autre groupe, pour aujourd'hui",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Un changement de salle se décide avec le directeur."
+            },
+            {
+              "id": "e5",
+              "texte": "Expliquer les règles du jeu à ma façon",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La façon d'animer sa séance relève de l'animateur."
+            },
+            {
+              "id": "e6",
+              "texte": "Convenir d'un signal de fin de créneau",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "Entre animateurs, on peut convenir d'un signal ; le directeur peut aussi le valider pour toute l'équipe."
+            },
+            {
+              "id": "e7",
+              "texte": "Annuler la séance d'un groupe prévue au planning",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Une séance prévue au planning ne s'annule pas sans le directeur."
+            },
+            {
+              "id": "e8",
+              "texte": "Convenir avec un collègue qu'il surveille mon groupe cinq minutes",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Entre animateurs, on s'entraide : on convient ensemble du moment."
+            }
+          ],
+          "repere_reussite": "c4_role",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : un évaluateur joue le collègue qui occupe encore la salle, un autre le directeur au téléphone. La personne candidate dispose du planning affiché.",
+            "criteres": [
+              {
+                "texte": "S'appuie sur le planning, sans accuser son collègue",
+                "repere": "c4_faits"
+              },
+              {
+                "texte": "Propose une solution concrète : durée limitée, aide au rangement",
+                "repere": "c4_aide"
+              },
+              {
+                "texte": "Fait appel au directeur si le désaccord reste, sans quitter son groupe",
+                "repere": "c4_escalade"
+              },
+              {
+                "texte": "Respecte la décision du directeur",
+                "repere": "c4_role"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose une règle d'équipe pour éviter que cela recommence",
+              "repere": "c4_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Votre collègue occupe encore la salle à 15 h. **Que lui dites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Le planning donne la salle à mon groupe à 15 h. Combien de temps te faut-il pour finir ?",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Je lui montre le planning calmement et je cherche avec lui une solution.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Je lui propose d'aider à ranger pour gagner du temps.",
+                  "repere": "c4_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui demande quand il sort.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis, devant les enfants, qu'il ne respecte pas le planning.",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "Je ne dis rien et j'attends.",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Vous **ne vous mettez pas** d'accord avec lui. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "J'appelle le directeur, je lui donne les faits et j'applique sa décision.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je demande au directeur de décider, car c'est lui qui gère le planning.",
+                  "repere": "c4_role"
+                },
+                {
+                  "texte": "Je garde mon groupe avec moi et je préviens le directeur par téléphone.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'en parle au directeur plus tard.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je fais entrer mon groupe quand même.",
+                  "repere": "c4_impose"
+                },
+                {
+                  "texte": "Je laisse mon groupe seul dans le couloir pour aller voir le directeur.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que proposez-vous à l'équipe** pour que cela ne recommence pas ?",
+              "justes": [
+                {
+                  "texte": "Un signal cinq minutes avant la fin de chaque créneau.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "Que les groupes rangent ensemble pour libérer la salle à l'heure.",
+                  "repere": "c4_regle"
+                },
+                {
+                  "texte": "D'en parler au directeur pour fixer une règle de passage entre les groupes.",
+                  "repere": "c4_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que chacun fasse attention aux horaires.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que mon collègue arrête de dépasser son créneau.",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "Rien : cela arrive peu souvent.",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose son aide pour ranger avec le groupe du collègue.",
+              "repere": "c4_aide"
+            },
+            {
+              "texte": "Informe son collègue de la décision du directeur.",
+              "repere": "c4_informe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Présenter l'équipe et le directeur, et expliquer qui décide quoi : planning, salles, séances, rangement.",
+        "Prévoir un point de dix minutes après les premiers jours pour parler des difficultés d'organisation, à partir des faits."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous aviez la responsabilité d'un groupe en déplacement. **Comment suiviez-vous chaque personne** ?",
+      "suite": [
+        "À quels moments vérifiiez-vous que tout le monde était là ?",
+        "Que faisiez-vous quand le compte n'était pas bon ?"
+      ],
+      "attendus": [
+        "Décrit un moyen concret : compter, liste, point de rassemblement",
+        "Cite les moments de comptage : départ, arrivée, chaque déplacement",
+        "Reste calme et alerte quand le compte ne tombe pas juste"
+      ],
+      "relance": "Qu'auriez-vous fait si une personne avait manqué ?",
+      "alternative": "Si vous n'avez jamais encadré d'enfants, parlez d'un déplacement en groupe (sortie, voyage, association). Comment vérifiiez-vous que tout le monde était là ?"
+    },
+    {
+      "id": "e2",
+      "competence": "C8",
+      "texte": "À 17 h, une personne que vous **ne connaissez pas** vient chercher un enfant. **Que faites-vous** ?",
+      "suite": [
+        "Elle dit que le parent l'a prévenue par téléphone. Que répondez-vous ?"
+      ],
+      "attendus": [
+        "Ne remet pas l'enfant sans vérifier la liste des personnes autorisées",
+        "Prévient le directeur et suit sa consigne",
+        "Reste poli et calme avec la personne, sans l'accuser"
+      ],
+      "relance": "Et si la personne insiste ?",
+      "alternative": "Imaginez qu'une personne inconnue vienne récupérer un colis ou un objet confié à votre garde. Que faites-vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C2",
+      "texte": "Parlez d'une activité ou d'un événement que vous avez préparé pour un groupe. **Comment l'avez-vous préparé** ?",
+      "suite": [
+        "Qu'aviez-vous prévu si cela ne se passait pas comme prévu ?"
+      ],
+      "attendus": [
+        "Cite des éléments concrets : lieu, durée, matériel, nombre de participants",
+        "Prévoit une solution de repli : météo, retard, manque de matériel",
+        "Explique comment la consigne a été donnée"
+      ],
+      "relance": "Qu'avez-vous changé au dernier moment ?",
+      "alternative": "Si vous n'avez jamais animé, parlez d'une fête ou d'une sortie organisée pour un groupe (famille, amis, association)."
+    },
+    {
+      "id": "e4",
+      "competence": "C2",
+      "texte": "Votre activité **ne marche pas** : les enfants s'ennuient après dix minutes. **Que faites-vous** ?",
+      "suite": [
+        "Comment voyez-vous qu'ils s'ennuient ?"
+      ],
+      "attendus": [
+        "Observe ce qui bloque : règle, durée, âge, matériel",
+        "Adapte l'activité : règle plus simple, variante ou nouveau rôle",
+        "Garde le groupe en sécurité, sans le laisser sans activité"
+      ],
+      "relance": "Que changeriez-vous la prochaine fois ?",
+      "alternative": "Quand une réunion, un cours ou un jeu que vous animez ne marche pas, que changez-vous en cours de route ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où un enfant **ne voulait pas participer** à une activité. Que s'est-il passé ?",
+      "suite": [
+        "Que lui avez-vous dit ?",
+        "Qu'avez-vous proposé ?"
+      ],
+      "attendus": [
+        "Respecte le refus, sans forcer",
+        "Écoute ce qui pose problème",
+        "Propose un autre rôle ou une autre façon de participer"
+      ],
+      "relance": "Comment l'enfant a-t-il réagi à votre proposition ?",
+      "alternative": "Si vous n'avez jamais animé, parlez d'une personne qui ne voulait pas participer à un jeu ou à un atelier. Que lui avez-vous proposé ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C7",
+      "texte": "**Un parent** vous demande comment s'est passée la journée de son enfant. **Que lui dites-vous** ?",
+      "suite": [
+        "Et si l'enfant s'est disputé avec un autre enfant ?"
+      ],
+      "attendus": [
+        "Donne des faits simples, sans jugement sur l'enfant",
+        "Dit un petit incident sans l'exagérer ni le cacher, sans nommer les autres enfants",
+        "Renvoie vers le directeur ce qui dépasse son rôle"
+      ],
+      "relance": "Et si le parent pose une question à laquelle vous ne pouvez pas répondre ?",
+      "alternative": "Quelqu'un vous demande comment s'est passée la journée d'une personne que vous avez accompagnée (sortie, atelier, garde). Que lui dites-vous ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C4",
+      "texte": "Parlez d'une fois où vous avez dû **vous mettre d'accord** avec un collègue sur l'organisation d'une tâche. **Comment avez-vous fait** ?",
+      "suite": [
+        "Sur quels faits vous êtes-vous appuyé ?",
+        "Qu'est-ce qui a été décidé ?"
+      ],
+      "attendus": [
+        "Décrit le désaccord à partir de faits, sans accuser",
+        "Cherche ou propose une solution commune",
+        "Fait appel au responsable quand ils ne s'accordent pas"
+      ],
+      "relance": "Avec le recul, que feriez-vous pareil ?",
+      "alternative": "Parlez d'un désaccord dans un groupe (études, sport, association) sur l'organisation d'une tâche. Comment s'est-il réglé ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C4",
+      "texte": "Dans **quels cas** prévenez-vous le directeur de l'accueil **sans attendre** ?",
+      "suite": [
+        "Que lui dites-vous en premier ?"
+      ],
+      "attendus": [
+        "Cite des cas précis : enfant blessé ou manquant, danger, conflit avec un parent",
+        "Distingue ce qui peut attendre la fin de la journée",
+        "Sait quoi lui dire : les faits et ce qui est déjà fait"
+      ],
+      "relance": "Et en cas de danger immédiat ?",
+      "alternative": "Dans quels cas prévenez-vous un responsable sans attendre (travail, stage, association) ?"
+    }
+  ],
+  "_pv": "742e890692"
+}

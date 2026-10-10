@@ -1,0 +1,2558 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "hote-caisse",
+  "version": "2026.10",
+  "nom": "Hôte de caisse / Hôtesse de caisse",
+  "secteur": "commerce",
+  "alias": [
+    "hôte de caisse",
+    "hôtesse de caisse",
+    "caissier",
+    "caissière",
+    "employé de caisse",
+    "agent d'accueil caisse",
+    "caisse automatique",
+    "caisse de supermarché",
+    "encaissement"
+  ],
+  "resume": "Accueille les clients en caisse, enregistre les articles, encaisse les paiements et tient sa caisse juste, aux caisses classiques comme automatiques.",
+  "contexte": "Un supermarché avec six caisses classiques et quatre caisses automatiques, ouvert de 8 h 30 à 20 h, un samedi.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C6",
+      "titre": "Encaisser juste : articles, prix et comptage de fin de poste",
+      "pourquoi": "Une erreur de ticket coûte au client ou au magasin, et se retrouve en écart de caisse le soir. Un contrôle simple à chaque ticket l'évite.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un ticket qui ne correspond pas au panier",
+        "texte": "Samedi, 10 h 40, caisse 4 : une cliente a sept articles (voir le tableau). Le code-barres du café est abîmé : la caisse ne le lit pas, mais ses chiffres sont lisibles. À l'écran, les pâtes sont comptées trois fois, mais elle en a deux. Les yaourts sont à 2,60 €, mais l'étiquette en rayon indique 2,20 €. Règles du magasin : on ne change pas un prix soi-même (un collègue vérifie l'étiquette), et vous pouvez annuler une ligne avant le paiement. À 14 h, vous comptez votre caisse, fond de caisse compris (la monnaie du matin). Le ticket de clôture indique le montant attendu.",
+        "document": {
+          "type": "tableau",
+          "titre": "Le panier de la cliente et les prix affichés en rayon",
+          "colonnes": [
+            "Article",
+            "Dans le panier",
+            "Prix en rayon"
+          ],
+          "lignes": [
+            [
+              "Café moulu 250 g",
+              "1",
+              "3,40 €"
+            ],
+            [
+              "Lait demi-écrémé 1 L",
+              "6",
+              "1,05 €"
+            ],
+            [
+              "Pâtes 500 g",
+              "2",
+              "1,10 €"
+            ],
+            [
+              "Yaourts nature x 8",
+              "1",
+              "2,20 €"
+            ],
+            [
+              "Pain de mie",
+              "1",
+              "1,60 €"
+            ],
+            [
+              "Beurre doux 250 g",
+              "1",
+              "2,10 €"
+            ],
+            [
+              "Sucre 1 kg",
+              "1",
+              "1,45 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le code-barres du café est abîmé : la caisse **ne le lit pas**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je tape le prix que je pense être le bon, pour ne pas retarder la file d'attente derrière moi.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je saisis les chiffres du code à la main et je vérifie que l'article affiché est le café de 250 g.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je saisis les chiffres du code à la main, puis je passe directement à l'article suivant du panier.",
+                  "points": 1,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je scanne à la place un autre article qui coûte le même prix que le café.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Un code saisi à la main peut désigner un autre article : on vérifie le nom et la taille affichés. Saisir le code sans vérifier fait gagner du temps, mais laisse passer une erreur possible.",
+              "relance": "Comment vérifiez-vous qu'un article saisi à la main est le bon ?"
+            },
+            {
+              "id": "q2",
+              "texte": "À l'écran, les pâtes apparaissent **trois fois**. Il y a **deux paquets** sur le tapis. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'annule une ligne de pâtes, sans en parler à la cliente, car l'erreur est évidente.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "b",
+                  "texte": "Je laisse les trois lignes : 1,10 € de plus, ce n'est pas très grave pour la cliente.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je rendrai 1,10 € à la cliente à la fin, sans corriger les lignes affichées à l'écran.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je compte les paquets avec la cliente, j'annule la ligne en trop et je lui montre l'écran.",
+                  "points": 2,
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "explication": "Compter avec la cliente confirme l'erreur, et lui montrer l'écran prouve qu'elle est corrigée. Annuler sans rien dire corrige le ticket, mais la cliente ne peut pas le vérifier.",
+              "relance": "Que faites-vous quand l'écran affiche plus d'articles qu'il n'y en a sur le tapis ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La caisse affiche les yaourts à **2,60 €**, mais l'étiquette en rayon indique **2,20 €**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appelle un collègue pour vérifier l'étiquette en rayon et je continue d'enregistrer les autres articles.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je corrige le prix à 2,20 € moi-même, pour que la cliente soit contente et que ça aille vite.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'appelle un collègue pour vérifier l'étiquette en rayon, puis j'attends son retour sans rien enregistrer.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je réponds à la cliente que le prix de la caisse est toujours le bon, car la caisse est à jour.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "La règle du magasin interdit de changer un prix soi-même : un collègue vérifie l'étiquette. Continuer à enregistrer le reste évite de faire attendre la file ; attendre sans rien faire est acceptable, mais fait perdre du temps.",
+              "relance": "Que faites-vous quand le prix de la caisse et celui de l'étiquette ne sont pas les mêmes ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Les erreurs sont corrigées. Que faites-vous **avant de demander** le paiement ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande le paiement tout de suite, puisque j'ai corrigé les erreurs que j'ai repérées.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde seulement le total à payer, pour m'assurer qu'il est cohérent.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je relis le ticket avec la cliente : les articles, les quantités et les prix.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse la cliente vérifier son ticket de caisse en rentrant chez elle.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Relire le ticket complet avec la cliente repère les erreurs qui restent avant qu'elle paie. Regarder seulement le total laisse passer une erreur de quantité ou de prix.",
+              "relance": "Que contrôlez-vous sur un ticket avant d'encaisser ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 14 h, vous comptez votre caisse. Il **manque 5 €** par rapport au ticket de clôture. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je complète la caisse avec 5 € de ma poche, pour qu'elle soit juste ce soir.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je recompte, je regarde mes annulations de la matinée, puis je préviens le responsable.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je préviens le responsable tout de suite, sans recompter ni regarder mes tickets de la matinée.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne dis rien : c'est un petit écart, il se rattrapera sûrement demain.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "On recompte d'abord, car une erreur de comptage est fréquente, puis on cherche la cause de l'écart avant de le signaler avec les faits. Compléter avec son argent cache le problème.",
+              "relance": "Que faites-vous quand vous trouvez un écart dont vous ne connaissez pas la cause ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand le code-barres du café **ne passe pas**, je…",
+              "justes": [
+                {
+                  "texte": "saisis les chiffres du code à la main et je vérifie le nom et la taille de l'article affiché",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "contrôle que l'article affiché est bien le café de 250 g, au bon prix",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "appelle un collègue pour vérifier le prix en rayon si je ne peux pas saisir le code",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "saisis le code à la main",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "tape un prix au hasard pour aller vite",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "scanne un autre article au même prix",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour les yaourts à **2,60 €** alors que le rayon indique **2,20 €**, je…",
+              "justes": [
+                {
+                  "texte": "demande à un collègue de vérifier l'étiquette en rayon",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "ne change pas le prix moi-même et je fais vérifier l'écart",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "préviens un collègue ou le responsable, et j'applique le prix qu'ils confirment",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dis à la cliente que je note l'écart",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "corrige le prix moi-même pour lui faire plaisir",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "lui dis que la caisse a toujours raison",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "À 14 h, s'il **manque 5 €** dans ma caisse, je…",
+              "justes": [
+                {
+                  "texte": "recompte, puis je regarde mes annulations et je préviens le responsable",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "recompte les billets et les pièces, puis je signale l'écart avec les faits",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "note l'écart par écrit, avec l'heure et le montant, et je préviens le responsable",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens le responsable",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "complète avec mon argent",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "ne dis rien, car c'est un petit écart",
+                  "repere": "c6_laisse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de signaler au responsable l'étiquette des yaourts, pour qu'elle soit vérifiée en rayon.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Compte les articles sur le tapis avant de valider une ligne en double.",
+              "repere": "c6_controle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne change pas le prix moi-même. J'appelle un collègue pour vérifier l'étiquette en rayon, et je continue d'enregistrer les autres articles. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "La caisse affiche les yaourts à 2,60 € et l'étiquette en rayon indique 2,20 €. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "La cliente trouve que son ticket est trop cher. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Il manque 5 € dans votre caisse à 14 h. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "La cliente veut payer par carte, mais le terminal affiche une erreur. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La caisse affiche 2,60 € et l'étiquette en rayon 2,20 €.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le code-barres du café est abîmé.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La règle du magasin : on ne change pas un prix soi-même.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Les pâtes apparaissent trois fois à l'écran.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Un collègue peut vérifier l'étiquette en rayon.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La cliente veut payer en espèces.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je garde 2,60 € sans attendre la réponse : le prix de la caisse passe avant l'étiquette.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "b",
+                "texte": "J'applique le prix confirmé par la vérification et je signale l'écart, pour qu'il soit corrigé.",
+                "points": 2,
+                "repere": "c6_trace"
+              },
+              {
+                "id": "c",
+                "texte": "Je corrige le prix à 2,20 € sans attendre la réponse, puis je n'en parle à personne.",
+                "points": 0,
+                "repere": "c6_cache"
+              },
+              {
+                "id": "d",
+                "texte": "J'applique le prix confirmé par la vérification, sans signaler l'écart ensuite.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "La règle du magasin interdit de changer un prix soi-même : on fait vérifier l'étiquette, et on continue le reste du ticket. Une fois le prix confirmé, on signale l'écart pour qu'il ne se reproduise pas."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le ticket à l'écran, avant le paiement",
+          "consigne": "Comparez ce ticket avec le tableau : quantités et prix en rayon. Cliquez sur **chaque ligne** qui **ne correspond pas**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Café moulu 500 g — 1 × 5,90 €",
+              "erreur": true,
+              "explication": "Le panier contient un café moulu de 250 g à 3,40 € : le code saisi à la main correspond à un autre article."
+            },
+            {
+              "id": "e2",
+              "texte": "Lait demi-écrémé 1 L — 6 × 1,05 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Pâtes 500 g — 3 × 1,10 €",
+              "erreur": true,
+              "explication": "La cliente a deux paquets de pâtes : une ligne est en trop."
+            },
+            {
+              "id": "e4",
+              "texte": "Yaourts nature x 8 — 1 × 2,60 €",
+              "erreur": true,
+              "explication": "Le prix en rayon est de 2,20 € : cet écart doit être vérifié par un collègue."
+            },
+            {
+              "id": "e5",
+              "texte": "Pain de mie — 1 × 1,60 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Beurre doux 250 g — 1 × 2,10 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Sucre 1 kg — 1 × 1,45 €",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes sur une caisse d'entraînement : sept articles, dont un code-barres abîmé, une quantité en trop à l'écran et un prix différent de l'étiquette. La personne enregistre le panier, puis contrôle le ticket.",
+            "criteres": [
+              {
+                "texte": "Compare chaque ligne du ticket avec le panier",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère la quantité en trop et la corrige avec la cliente",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Ne change pas le prix seule : elle fait vérifier l'étiquette",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Compte la caisse en fin de poste et note l'écart avec les faits",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Signale l'étiquette à vérifier pour éviter que l'écart revienne",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Le code-barres du café **ne passe pas**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je saisis le code à la main et je vérifie que l'article affiché est le bon.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je compare le nom et la taille affichés avec le paquet que la cliente a posé.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Si je ne peux pas saisir le code, j'appelle un collègue pour vérifier le prix en rayon.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je saisis le code à la main.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je tape un prix au hasard pour aller plus vite.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "La caisse affiche les yaourts à **2,60 €** et le rayon indique **2,20 €**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je fais vérifier l'étiquette en rayon par un collègue avant de valider le prix.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je ne change pas le prix moi-même : j'applique le prix confirmé après vérification.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je continue les autres articles pendant la vérification, puis je signale l'écart.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je dis à la cliente que je note l'écart.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je baisse le prix moi-même, sans prévenir personne.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "À 14 h, il **manque 5 €** dans votre caisse. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je recompte, puis je regarde mes annulations et mes tickets de la matinée.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je préviens le responsable et je lui donne les faits : le montant et ce que j'ai vérifié.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je note l'écart par écrit, avec l'heure et le montant.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens le responsable, sans chercher la cause.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je complète la caisse avec mon argent.",
+                  "repere": "c6_cache"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de relire le ticket avec la cliente avant chaque paiement.",
+              "repere": "c6_controle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire un essai accompagné sur une caisse : saisir un code à la main, annuler une ligne et relire un ticket avec un collègue.",
+        "Remettre une fiche courte de fin de poste : quoi compter, où noter un écart, qui prévenir."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Répondre à un client mécontent et suivre sa réclamation",
+      "pourquoi": "Un client mécontent qui est écouté, informé et suivi reste un client ; une réponse floue ou une promesse non tenue aggrave le conflit.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un client revient avec son ticket",
+        "texte": "Samedi, 12 h 15, caisse 2. Un client revient, ticket en main, dix minutes après avoir payé. Il dit d'une voix forte qu'on lui a fait payer deux fois la même bouteille d'huile : elle apparaît sur deux lignes (voir l'extrait). Il n'a qu'une bouteille avec lui. Règle du magasin : seul le responsable valide un remboursement ; il peut venir en trois minutes. Deux clients attendent derrière lui.",
+        "document": {
+          "type": "tableau",
+          "titre": "Extrait du ticket du client (payé à 12 h 05)",
+          "colonnes": [
+            "Article",
+            "Quantité",
+            "Prix"
+          ],
+          "lignes": [
+            [
+              "Pâtes 500 g",
+              "1",
+              "1,10 €"
+            ],
+            [
+              "Huile d'olive 1 L",
+              "1",
+              "6,50 €"
+            ],
+            [
+              "Huile d'olive 1 L",
+              "1",
+              "6,50 €"
+            ],
+            [
+              "Biscuits chocolat",
+              "1",
+              "2,30 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le client élève la voix. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande de se calmer avant que je lui réponde.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je l'écoute sans l'interrompre, puis je lui demande de me montrer son ticket.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis d'aller à l'accueil : les réclamations se font là-bas.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je m'excuse tout de suite, avant même de regarder son ticket.",
+                  "points": 1,
+                  "repere": "c7_apaise"
+                }
+              ],
+              "explication": "Écouter jusqu'au bout et regarder le ticket permet de comprendre le vrai problème. S'excuser avant de regarder apaise un peu, mais ne dit rien de ce qui va être fait.",
+              "relance": "Comment réagissez-vous quand un client vous parle fort ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le ticket montre **deux lignes** pour la bouteille d'huile. Le client n'en a qu'une. Que **lui dites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Vous avez raison : vous êtes remboursé des 6,50 € tout de suite, je vous le promets. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Vous avez peut-être pris une deuxième bouteille, regardez bien dans votre sac. »",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je vois deux lignes d'huile sur votre ticket. J'appelle le responsable, qui valide les remboursements. »",
+                  "points": 2,
+                  "repere": "c7_apaise"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je vois bien deux lignes d'huile sur votre ticket, mais je ne peux rien faire de plus pour vous. »",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Dire ce que l'on voit sur le ticket et qui décide apaise avec des faits. Promettre un remboursement est impossible, et constater l'erreur sans suite laisse le client sans réponse.",
+              "relance": "Que dites-vous quand la solution dépend d'une personne qui n'est pas là ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Que dites-vous au client pour **la suite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Le responsable arrive dans trois minutes environ. C'est lui qui valide les remboursements. »",
+                  "points": 2,
+                  "repere": "c7_suite"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Ce sera réglé tout de suite, ne vous inquiétez pas, je m'en occupe personnellement. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Je ne sais pas combien de temps cela va prendre, je suis désolé pour l'attente. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je vous rembourse moi-même à la fin de mon poste, avec l'argent de ma caisse. »",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                }
+              ],
+              "explication": "Le délai de trois minutes est connu : on le donne, avec ce qui va se passer. Dire « je ne sais pas » est honnête mais inutile, et rembourser soi-même sort de la règle du magasin.",
+              "relance": "Comment annoncez-vous un délai à un client qui attend ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le responsable **n'est pas encore arrivé**. Deux clients attendent derrière. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue à encaisser les deux autres clients, sans rien dire au client mécontent.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je fais patienter les deux autres clients pour rester avec lui jusqu'à l'arrivée du responsable.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis de revenir plus tard, quand le responsable sera libre.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui propose d'attendre sur le côté, je lui explique pourquoi, et j'encaisse les clients suivants.",
+                  "points": 2,
+                  "repere": "c7_suite"
+                }
+              ],
+              "explication": "Le client sait pourquoi il attend, et la file avance. Rester avec lui en bloquant les autres clients règle un problème en en créant un autre.",
+              "relance": "Comment servez-vous plusieurs clients quand l'un d'eux est mécontent ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le client est remboursé et reparti. Que faites-vous **de cet incident** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je note les faits (ligne en double, heure, caisse) et je les donne au responsable.",
+                  "points": 2,
+                  "repere": "c7_suivi"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je n'en parle plus : le client est remboursé, donc l'incident est clos pour tout le monde.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je dis au responsable : « Le client de 12 h 15 était très énervé aujourd'hui. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je préviens mes collègues de caisse que ce client est difficile et qu'il faut s'en méfier.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Les faits (ligne en double, heure, caisse) permettent au responsable de chercher la cause. Dire que le client était énervé ne l'aide pas à agir.",
+              "relance": "Après un incident avec un client, que transmettez-vous à votre responsable ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Au client qui élève la voix, je **commence par**…",
+              "justes": [
+                {
+                  "texte": "l'écouter jusqu'au bout, sans l'interrompre",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "lui demander de me montrer son ticket et sa bouteille",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "lui dire que je regarde son ticket avec lui",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "m'excuser pour le problème",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui demander de se calmer",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "l'envoyer à l'accueil",
+                  "repere": "c7_renvoie"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour **le remboursement**, je lui dis que…",
+              "justes": [
+                {
+                  "texte": "le responsable doit le valider et qu'il arrive dans environ trois minutes",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "je vois deux lignes d'huile sur son ticket et que je préviens le responsable",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "le remboursement sera fait dès que le responsable l'aura validé",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "je m'en occupe",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ce sera réglé tout de suite",
+                  "repere": "c7_promesse"
+                },
+                {
+                  "texte": "je le rembourse moi-même",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Pendant que** le client attend le responsable, je…",
+              "justes": [
+                {
+                  "texte": "lui propose de patienter sur le côté et j'encaisse les clients qui attendent",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "dis aux clients suivants que je m'occupe d'eux maintenant",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "lui dis dès que le responsable est arrivé",
+                  "repere": "c7_suivi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "reste avec lui jusqu'à l'arrivée du responsable",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "fais comme si je ne le voyais pas",
+                  "repere": "c7_ignore"
+                },
+                {
+                  "texte": "lui dis de revenir plus tard",
+                  "repere": "c7_renvoie"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note les faits (heure, caisse, article) pour que le responsable puisse suivre la réclamation.",
+              "repere": "c7_suivi"
+            },
+            {
+              "texte": "Remercie le client d'avoir signalé l'erreur.",
+              "repere": "c7_apaise"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je vois deux lignes d'huile sur votre ticket. Je préviens le responsable : c'est lui qui valide les remboursements, et il peut venir dans trois minutes. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le client vous montre son ticket : une bouteille d'huile est comptée deux fois. Il n'en a qu'une. Que lui dites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un client revient en caisse, mécontent. Que lui dites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client demande le prix d'une bouteille d'huile. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un client veut changer sa bouteille d'huile contre une autre marque. Que lui dites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le ticket montre deux lignes pour la bouteille d'huile.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Deux clients attendent derrière lui.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Seul le responsable valide un remboursement.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client a payé par carte.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le responsable peut venir en trois minutes.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le client a payé il y a dix minutes.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Une fois le remboursement validé, je rembourse la ligne en double, je remets le ticket au client et je le remercie d'avoir signalé l'erreur.",
+                "points": 2,
+                "repere": "c7_suivi"
+              },
+              {
+                "id": "b",
+                "texte": "Une fois le remboursement validé, je rembourse la ligne en double, puis je passe au client suivant sans un mot.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je dis au client qu'il peut repasser plus tard pour récupérer son argent, quand le responsable sera libre.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              },
+              {
+                "id": "d",
+                "texte": "Sans attendre le responsable, je lui rends 6,50 € sans passer par la caisse, pour aller plus vite.",
+                "points": 0,
+                "repere": "c7_hors_regle"
+              }
+            ]
+          },
+          "explication": "La réponse part des faits du ticket et dit qui décide et quand. Une fois le remboursement validé par le responsable, on le fait dans la caisse et on le dit au client."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous dites au client",
+          "consigne": "Pour chaque phrase dite au client, **choisissez son effet**.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Apaise avec des faits"
+            },
+            {
+              "id": "k2",
+              "nom": "Ne règle rien"
+            },
+            {
+              "id": "k3",
+              "nom": "Aggrave la situation"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "« Je vois deux lignes d'huile sur votre ticket. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle part du ticket : un fait que le client peut vérifier."
+            },
+            {
+              "id": "e2",
+              "texte": "« Calmez-vous, je ne peux pas vous parler comme ça. »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Elle reproche au client sa colère au lieu de traiter son problème."
+            },
+            {
+              "id": "e3",
+              "texte": "« Je préviens le responsable, qui valide les remboursements. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle dit qui décide et ce qui va se passer."
+            },
+            {
+              "id": "e4",
+              "texte": "« Ce n'est pas mon problème, allez voir quelqu'un d'autre. »",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "Elle renvoie le client sans l'aider : selon le ton, elle ne règle rien ou elle aggrave."
+            },
+            {
+              "id": "e5",
+              "texte": "« Oui, oui, on va voir. »",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Elle ne dit ni ce qui est vérifié, ni quand."
+            },
+            {
+              "id": "e6",
+              "texte": "« Le responsable peut être là dans trois minutes. »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle donne un délai précis, qui est celui du magasin."
+            },
+            {
+              "id": "e7",
+              "texte": "« Vous êtes sûr de ne pas avoir pris deux bouteilles ? »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Le client a montré une seule bouteille : douter de lui aggrave le conflit."
+            },
+            {
+              "id": "e8",
+              "texte": "« Je suis désolé pour ce désagrément. »",
+              "accepte": [
+                "k1",
+                "k2"
+              ],
+              "explication": "S'excuser apaise, mais sans fait ni suite, cela ne règle rien à soi seul."
+            }
+          ],
+          "repere_reussite": "c7_apaise",
+          "repere_echec": "c7_aggrave",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le client qui revient avec un ticket contenant une ligne en double, une autre joue le responsable. La personne candidate répond au client, appelle le responsable et annonce la suite.",
+            "criteres": [
+              {
+                "texte": "Écoute le client avant de répondre",
+                "repere": "c7_besoin"
+              },
+              {
+                "texte": "S'appuie sur le ticket, c'est-à-dire sur les faits",
+                "repere": "c7_apaise"
+              },
+              {
+                "texte": "Ne promet pas le remboursement avant la validation du responsable",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Annonce la suite et le délai au client",
+                "repere": "c7_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Note les faits pour que le responsable suive la réclamation",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Un client revient avec son ticket, très énervé. Que faites-vous **en premier** ?",
+              "justes": [
+                {
+                  "texte": "Je l'écoute sans l'interrompre.",
+                  "repere": "c7_besoin"
+                },
+                {
+                  "texte": "Je regarde son ticket avec lui pour comprendre le problème.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je lui demande ce qui s'est passé, puis je répète ce que j'ai compris.",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je m'excuse tout de suite.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui demande de se calmer.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Une ligne est **en double** sur son ticket. Que **lui dites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je vois la ligne en double, et je préviens le responsable qui valide les remboursements.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "Le responsable arrive dans environ trois minutes, et je vous préviens dès qu'il est là.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Je lui propose d'attendre sur le côté pendant que j'encaisse les autres clients.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis que je m'en occupe.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis que ce sera réglé tout de suite.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le client est remboursé et reparti. Que faites-vous **de cet incident** ?",
+              "justes": [
+                {
+                  "texte": "Je note les faits : l'article, l'heure et la caisse.",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "Je les donne au responsable, pour qu'il cherche pourquoi la ligne s'est doublée.",
+                  "repere": "c7_suivi"
+                },
+                {
+                  "texte": "Je propose de relire le ticket avec chaque client avant qu'il parte, pour repérer une ligne en double.",
+                  "repere": "c6_recidive"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je dis au responsable que le client était énervé.",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je n'en parle à personne : c'est terminé.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de vérifier si d'autres tickets de la matinée ont une ligne en double.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner une règle écrite : qui valide un remboursement, comment appeler le responsable, et quoi dire au client en attendant.",
+        "Faire un jeu de rôle de dix minutes avec un client mécontent, puis en parler avec l'équipe à partir des faits."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Appliquer les règles de la caisse : alcool et paiement par carte",
+      "pourquoi": "Vendre de l'alcool à un mineur ou mal gérer un paiement refusé expose le client et le magasin : la règle s'applique de la même façon à tous.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Des bières et une carte refusée",
+        "texte": "Samedi, 16 h 20, caisse 2. Le magasin utilise un nouveau terminal de paiement depuis lundi : la fiche de procédure est collée à la caisse (voir ci-dessous). Un client qui paraît très jeune pose six bières et un paquet de chips. La caisse affiche « Âge à vérifier » et bloque les bières. Il veut payer par carte.",
+        "document": {
+          "type": "liste",
+          "titre": "Fiche de procédure collée à la caisse",
+          "items": [
+            "Alcool : la vente est interdite aux mineurs.",
+            "En cas de doute sur l'âge : demandez une pièce d'identité officielle, avec photo, et lisez la date de naissance.",
+            "Pièce valable et client majeur : validez l'âge sur la caisse. Sinon, ne vendez pas l'alcool ; les autres articles restent en vente.",
+            "Carte refusée : dites-le simplement, sans en donner la raison. Proposez un nouvel essai ou un autre moyen de paiement.",
+            "Le client tape lui-même son code confidentiel. Ne le demandez jamais, ne le tapez pas, ne le notez pas. Ne gardez jamais sa carte.",
+            "Message inconnu sur le terminal : appelez le responsable."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le client paraît très jeune et la caisse affiche « **Âge à vérifier** ». Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je valide l'âge sur la caisse : le magasin contrôle sûrement les clients à l'entrée.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'appelle le responsable pour qu'il vienne vérifier l'âge du client à ma place.",
+                  "points": 1
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande une pièce d'identité officielle et je lis sa date de naissance avant de valider.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui demande s'il a plus de 18 ans, et je valide l'âge s'il me répond que oui.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "En cas de doute, la fiche demande une pièce d'identité officielle et la lecture de la date de naissance : une réponse orale n'est pas une preuve. Appeler le responsable n'est pas une faute, mais la fiche vous demande de faire ce contrôle vous-même.",
+              "relance": "Qu'est-ce qui prouve l'âge d'un client : sa réponse ou sa pièce d'identité ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le client dit : « J'ai 19 ans, mais je **n'ai pas ma pièce d'identité** sur moi. » Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne vends pas les bières, j'explique la règle calmement et je propose de revenir avec une pièce d'identité.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je vends les bières : il dit avoir 19 ans, il me paraît sûr de lui et il paie par carte.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je refuse de vendre les bières, sans lui donner d'explication sur la règle ni lui proposer de solution.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui vends seulement deux bières au lieu de six, par prudence, pour limiter le risque.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Sans pièce d'identité valable, on ne vend pas l'alcool, quelle que soit la quantité. Expliquer la règle et proposer de revenir garde un échange correct ; un refus sans explication est juste, mais plus sec.",
+              "relance": "Que dites-vous à un client à qui vous ne pouvez pas vendre un article ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Il garde seulement les chips et paie par carte. Le terminal affiche « **Paiement refusé** ». Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui dis que sa carte est sans doute bloquée et qu'il doit appeler sa banque pour comprendre.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis que le paiement est refusé, puis j'attends qu'il trouve lui-même une solution.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui demande de me confier sa carte, pour la tester sur la caisse voisine avec un autre terminal.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis simplement que le paiement est refusé, sans la raison, et je propose de réessayer ou de payer autrement.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                }
+              ],
+              "explication": "La fiche demande de dire le refus simplement, sans en donner la raison que l'on ne connaît pas, puis de proposer une solution. Une carte ne quitte jamais les mains de son propriétaire.",
+              "relance": "Que dites-vous à un client dont le paiement est refusé ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le client vous dit son code confidentiel à voix haute et vous demande de le **taper à sa place**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je tape son code : c'est plus rapide, et il me l'a donné lui-même.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je refuse poliment : il doit taper lui-même son code sur le terminal.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je refuse de taper son code, sans lui dire pourquoi.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je note son code sur un papier, pour le retaper si le paiement échoue encore.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Le code confidentiel appartient au client : la fiche interdit de le demander, de le taper ou de le noter. Refuser sans expliquer protège le client, mais l'explication évite un malentendu.",
+              "relance": "Pourquoi un client doit-il taper lui-même son code ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le terminal affiche un message que **la fiche n'explique pas**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'appuie sur « Valider », comme pour les autres messages.",
+                  "points": 0,
+                  "repere": "c5_devine"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'attends quelques secondes, pour voir si le message disparaît.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je préviens le client que je vérifie, et j'appelle le responsable.",
+                  "points": 2,
+                  "repere": "c5_source"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'éteins le terminal et je le rallume moi-même pour qu'il redémarre.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                }
+              ],
+              "explication": "La fiche demande d'appeler le responsable pour un message inconnu : le terminal est nouveau et personne ne doit deviner. Attendre un peu peut aider, mais sans appel le problème peut rester entier.",
+              "relance": "Que faites-vous quand un outil neuf affiche un message que vous ne connaissez pas ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Avant de valider** l'âge d'un client qui paraît très jeune, je…",
+              "justes": [
+                {
+                  "texte": "lui demande une pièce d'identité officielle",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "lis moi-même la date de naissance sur sa pièce d'identité",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "ne valide l'âge sur la caisse qu'après avoir contrôlé sa pièce",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui demande une pièce d'identité",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "valide l'âge sans rien lui demander",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "le crois sur parole s'il dit avoir plus de 18 ans",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si le client n'a **pas de pièce** d'identité, je…",
+              "justes": [
+                {
+                  "texte": "ne lui vends pas l'alcool et je lui explique la règle calmement",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "lui propose de revenir avec une pièce d'identité",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "continue d'encaisser ses autres articles",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "refuse la vente sans explication",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui vends l'alcool s'il dit être majeur",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "lui vends moins de bouteilles",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si sa carte **est refusée**, je…",
+              "justes": [
+                {
+                  "texte": "lui dis simplement que le paiement est refusé, sans donner de raison",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "lui propose de réessayer ou de payer autrement",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "le lui annonce discrètement, sans faire de remarque",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui dis de payer autrement",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "lui dis que sa carte est sans doute fausse",
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "texte": "lui demande son code pour réessayer",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Signale au responsable un message du terminal qui n'est pas sur la fiche, pour qu'elle soit complétée.",
+              "repere": "c5_ameliore"
+            },
+            {
+              "texte": "Propose d'afficher à la caisse : « Pièce d'identité demandée en cas de doute sur l'âge ».",
+              "repere": "c4_regle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je suis désolé, le paiement est refusé. Vous pouvez réessayer, ou payer avec un autre moyen. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le terminal affiche « Paiement refusé » pour la carte du client. Que lui dites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un paiement ne passe pas. Que dites-vous au client ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le client n'a pas de pièce d'identité pour acheter de l'alcool. Que lui dites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le client demande s'il peut payer en plusieurs fois. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le terminal affiche que le paiement est refusé.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le client paraît très jeune.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La fiche dit de ne pas donner la raison du refus.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "La caisse a bloqué les bières.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La fiche propose un nouvel essai ou un autre moyen de paiement.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le client veut payer en espèces.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Si le paiement est encore refusé, je lui dis que sa carte est sûrement fausse et qu'il doit en changer.",
+                "points": 0,
+                "repere": "c7_aggrave"
+              },
+              {
+                "id": "b",
+                "texte": "Si le paiement est encore refusé, je le laisse réessayer une troisième fois, puis je propose un autre moyen.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Si le paiement est encore refusé, je propose un autre moyen de paiement, sans chercher la raison du refus.",
+                "points": 2,
+                "repere": "c8_savoir"
+              },
+              {
+                "id": "d",
+                "texte": "Si le paiement est encore refusé, je lui demande sa carte pour la tester moi-même sur une autre caisse.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "La réponse suit la fiche : dire le refus simplement, sans en donner la raison, puis proposer une solution. Si le refus se répète, on garde le même calme et on propose un autre moyen."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Alcool, puis paiement : l'ordre de vos actions",
+          "consigne": "Un client qui paraît très jeune achète des bières. Il a sa pièce d'identité, et sa carte est **refusée au premier essai**. Remettez vos actions **dans l'ordre**.",
+          "elements": [
+            {
+              "id": "e5",
+              "texte": "Demander au client de payer par carte"
+            },
+            {
+              "id": "e2",
+              "texte": "Demander une pièce d'identité officielle au client"
+            },
+            {
+              "id": "e7",
+              "texte": "Proposer un nouvel essai ou un autre moyen de paiement"
+            },
+            {
+              "id": "e1",
+              "texte": "Scanner les bières : la caisse affiche « Âge à vérifier »"
+            },
+            {
+              "id": "e4",
+              "texte": "Valider l'âge sur la caisse"
+            },
+            {
+              "id": "e3",
+              "texte": "Lire la date de naissance sur la pièce d'identité"
+            },
+            {
+              "id": "e6",
+              "texte": "Annoncer simplement que le paiement est refusé"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On lit la date de naissance une fois la pièce d'identité en main."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On valide l'âge après avoir lu la date de naissance, jamais avant."
+            },
+            {
+              "avant": "e1",
+              "apres": "e4",
+              "explication": "Le message « Âge à vérifier » apparaît au scan : on ne peut valider qu'ensuite."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "La caisse bloque les bières tant que l'âge n'est pas validé : le paiement vient après."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "Un refus ne peut être annoncé qu'après la tentative de paiement."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "On annonce le refus, puis on propose une solution."
+            }
+          ],
+          "repere_reussite": "c8_savoir",
+          "repere_echec": "c8_erreur",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue un client qui paraît très jeune et achète de l'alcool, avec ou sans pièce d'identité, puis dont la carte est refusée. La personne candidate applique la fiche de procédure.",
+            "criteres": [
+              {
+                "texte": "Demande une pièce d'identité et lit la date de naissance",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Ne vend pas l'alcool sans pièce valable, et l'explique calmement",
+                "repere": "c7_regle"
+              },
+              {
+                "texte": "Annonce le refus de carte sans donner de raison et propose une solution",
+                "repere": "c7_alternative"
+              },
+              {
+                "texte": "Ne demande pas le code confidentiel et ne garde pas la carte",
+                "repere": "c8_securite"
+              }
+            ],
+            "bonus": {
+              "texte": "Appelle le responsable devant un message inconnu du terminal",
+              "repere": "c5_source"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Un client qui paraît très jeune achète de l'alcool. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je lui demande une pièce d'identité officielle et je lis la date de naissance.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Je valide l'âge sur la caisse seulement après avoir contrôlé sa pièce.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "S'il n'a pas de pièce valable, je ne vends pas l'alcool et je continue d'encaisser le reste.",
+                  "repere": "c8_savoir"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui demande une pièce d'identité.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je valide l'âge sans rien demander : il a sûrement plus de 18 ans.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "La carte du client est **refusée**. Que **lui dites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Que le paiement est refusé, sans en donner la raison.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Qu'il peut réessayer ou payer avec un autre moyen.",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "Je le lui dis discrètement, pour qu'il ne soit pas gêné devant la file.",
+                  "repere": "c7_apaise"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je ne peux rien faire pour lui.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que sa carte est sûrement fausse ou bloquée.",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le nouveau terminal affiche un message que **la fiche n'explique pas**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "J'appelle le responsable, qui connaît le terminal.",
+                  "repere": "c5_source"
+                },
+                {
+                  "texte": "Je préviens le client que je vérifie, pour qu'il sache pourquoi il attend.",
+                  "repere": "c7_suite"
+                },
+                {
+                  "texte": "Je lis le message à voix haute au responsable, pour qu'il puisse m'aider.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'attends que le message disparaisse.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'appuie sur « Valider » sans savoir ce que cela fait.",
+                  "repere": "c5_devine"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de noter ce message sur la fiche, pour l'équipe suivante.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Lire la fiche de procédure avec la personne, puis lui faire rejouer le contrôle de l'âge et le refus de carte sur une caisse d'entraînement.",
+        "Indiquer clairement qui appeler en cas de doute ou de message inconnu sur le terminal, et comment le joindre."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Gérer la file d'attente et les priorités à la caisse",
+      "pourquoi": "Quand la file s'allonge, l'attente use la patience des clients : appeler le bon relais tôt et informer la file évite que la situation empire.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "La file s'allonge à 11 h 30",
+        "texte": "Samedi, 11 h 30, caisse 3 : six clients attendent derrière celui que vous encaissez. Les caisses 1, 2 et 4 sont ouvertes, avec de la file elles aussi. Deux caisses automatiques sont libres. Règle du magasin : à partir de quatre clients en attente, vous appelez le responsable de caisse. Il décide d'ouvrir une caisse supplémentaire. Vous pouvez proposer les caisses automatiques aux clients qui ont peu d'articles. Un client dit qu'il attend depuis dix minutes.",
+        "document": null
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Six clients** attendent derrière celui que vous encaissez. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue d'encaisser plus vite qu'avant, sans appeler personne.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'appelle le responsable de caisse, sans quitter ma caisse ni mon client.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ferme ma caisse et je vais chercher le responsable moi-même.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je finis d'encaisser mon client, puis seulement j'appelle le responsable.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Ils sont six : la règle demande d'appeler le responsable à partir de quatre, tout de suite et sans quitter son client. Attendre la fin de l'encaissement retarde l'ouverture d'une caisse.",
+              "relance": "À quel moment appelez-vous le responsable quand la file s'allonge ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Que dites-vous **au responsable** en l'appelant ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Ça devient compliqué à ma caisse, il y a vraiment beaucoup de monde en ce moment. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Caisse 3 : six clients attendent. Je ne sais pas quoi faire dans cette situation. »",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "« Ouvrez tout de suite une caisse : c'est à vous de le faire, pas à moi. »",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Caisse 3 : six clients en attente. Pouvez-vous ouvrir une caisse de plus ? »",
+                  "points": 2,
+                  "repere": "c3_complet"
+                }
+              ],
+              "explication": "Le responsable a besoin du lieu, du nombre de clients et de la demande, en une phrase. Sans demande, il doit deviner ce que vous attendez, mais c'est lui qui décide d'ouvrir une caisse.",
+              "relance": "Quelles informations donnez-vous quand vous appelez un responsable ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Deux caisses automatiques sont libres. Que faites-vous pour les clients qui **n'ont que quelques articles** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je leur propose les caisses automatiques, s'ils le souhaitent.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je leur dis qu'ils doivent passer aux caisses automatiques.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je n'en parle qu'à ceux qui me posent la question.",
+                  "points": 1,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse passer devant les autres ceux qui ont le moins d'articles.",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                }
+              ],
+              "explication": "Proposer les caisses libres fait avancer la file sans forcer personne : le client choisit. Attendre qu'on vous le demande laisse des clients patienter inutilement.",
+              "relance": "Comment orientez-vous un client vers un autre moyen de payer ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Un client dit qu'il attend **depuis dix minutes**. Le responsable **est prévenu**. Que lui répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Une autre caisse ouvre dans deux minutes, c'est promis, vous n'attendrez plus. »",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "b",
+                  "texte": "« Ce n'est pas ma faute : il n'y a pas assez de personnel le samedi matin. »",
+                  "points": 0,
+                  "repere": "c7_aggrave"
+                },
+                {
+                  "id": "c",
+                  "texte": "« J'ai prévenu le responsable pour ouvrir une caisse. Désolé pour l'attente. »",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "d",
+                  "texte": "« Je vous vois bien, merci de patienter encore un peu. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "On dit ce qui a été fait, sans promettre une heure que l'on ne maîtrise pas. Un simple « merci de patienter » reconnaît le client, mais ne lui apprend rien.",
+              "relance": "Que répondez-vous à un client qui se plaint de l'attente ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La file est revenue à deux clients. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je reprends mon travail : le problème est réglé et il n'y a rien à ajouter.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je propose au responsable d'ouvrir une caisse plus tôt le samedi, avant la file.",
+                  "points": 2,
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je dis au responsable que la file était longue vers 11 h 30, sans autre précision.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je dis à mes collègues que le responsable a mis trop de temps à réagir.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Proposer d'ouvrir plus tôt aide le responsable à éviter la file la prochaine fois. Dire l'heure du pic est utile, mais sans proposition, il reste à deviner quoi faire.",
+              "relance": "Que faites-vous après un pic d'affluence pour que le suivant se passe mieux ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand **six clients** attendent à ma caisse, je…",
+              "justes": [
+                {
+                  "texte": "appelle le responsable de caisse, sans quitter ma caisse",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "lui dis ma caisse, le nombre de clients et que je demande une caisse de plus",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "continue d'encaisser pendant que le responsable arrive",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "finis mon client, puis j'appelle le responsable",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "accélère sans appeler personne",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "ferme ma caisse pour aller chercher quelqu'un",
+                  "repere": "c2_dispersion"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Aux clients qui attendent, je dis…",
+              "justes": [
+                {
+                  "texte": "que j'ai prévenu le responsable pour qu'une caisse ouvre",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "que je suis désolé de l'attente et que le responsable est prévenu",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "ce que j'ai fait et que je les encaisse dans l'ordre",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je fais de mon mieux",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "qu'une caisse ouvre dans deux minutes",
+                  "repere": "c7_promesse"
+                },
+                {
+                  "texte": "que ce n'est pas ma faute",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Aux clients qui n'ont que **quelques articles**, je…",
+              "justes": [
+                {
+                  "texte": "propose les caisses automatiques, sans les y obliger",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "leur indique que deux caisses automatiques sont libres",
+                  "repere": "c7_alternative"
+                },
+                {
+                  "texte": "laisse chacun choisir entre la caisse classique et la caisse automatique",
+                  "repere": "c7_besoin"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ne dis rien et j'attends qu'ils demandent",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "leur dis de passer aux caisses automatiques",
+                  "repere": "c7_impose"
+                },
+                {
+                  "texte": "les fais passer devant les autres clients",
+                  "repere": "c7_aggrave"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Signale au responsable que la file s'allonge à cette heure, pour qu'il ouvre une caisse plus tôt les samedis.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Note l'heure et le nombre de clients, pour que le responsable puisse ajuster les caisses ouvertes.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« J'ai prévenu le responsable pour qu'une caisse ouvre. Je suis désolé pour l'attente. Je continue d'encaisser dans l'ordre. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client de votre file dit qu'il attend depuis dix minutes, et le responsable est prévenu. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Un client est mécontent de la file. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un client demande où se trouvent les caisses automatiques. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Un client vous demande un sac supplémentaire. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Six clients attendent derrière celui que vous encaissez.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Deux caisses automatiques sont libres.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "À partir de quatre clients en attente, on appelle le responsable.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client a trop d'articles pour une caisse automatique.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le client dit qu'il attend depuis dix minutes.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable est en pause.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je dis aux clients de ma file que la caisse 5 est ouverte, puis je continue d'encaisser dans l'ordre.",
+                "points": 2,
+                "repere": "c2_previent"
+              },
+              {
+                "id": "b",
+                "texte": "Je ferme ma caisse pour aider à l'ouverture de la caisse 5.",
+                "points": 0,
+                "repere": "c2_dispersion"
+              },
+              {
+                "id": "c",
+                "texte": "Je continue d'encaisser sans rien dire : ils verront bien la caisse 5.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je demande aux clients de rester dans ma file : c'est la règle.",
+                "points": 0,
+                "repere": "c7_impose"
+              }
+            ]
+          },
+          "explication": "La réponse dit ce qui a été fait sans promettre d'heure, car l'ouverture dépend du responsable. Dès qu'une caisse ouvre, on le dit aux clients qui attendent."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre réaction quand la file s'allonge",
+          "consigne": "Six clients attendent à votre caisse. Remettez vos actions **dans l'ordre** où vous les faites, jusqu'à la **fin du pic d'affluence**.",
+          "elements": [
+            {
+              "id": "e4",
+              "texte": "Annoncer aux clients qu'une caisse supplémentaire est ouverte"
+            },
+            {
+              "id": "e6",
+              "texte": "Signaler au responsable, après le pic, l'heure où la file s'est formée"
+            },
+            {
+              "id": "e2",
+              "texte": "Appeler le responsable : caisse 3, six clients, demande d'une caisse de plus"
+            },
+            {
+              "id": "e5",
+              "texte": "Proposer les caisses automatiques aux clients qui ont peu d'articles"
+            },
+            {
+              "id": "e1",
+              "texte": "Compter les clients qui attendent à votre caisse"
+            },
+            {
+              "id": "e3",
+              "texte": "Dire aux clients de la file que le responsable est prévenu"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "On compte avant d'appeler : la règle s'applique à partir de quatre clients en attente."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On ne peut dire « le responsable est prévenu » qu'après l'avoir appelé."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "Une caisse supplémentaire n'ouvre qu'après la demande au responsable."
+            },
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "On propose les caisses automatiques une fois la file constatée."
+            },
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "On signale l'heure du pic après l'ouverture de la caisse, quand la file a diminué."
+            },
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "Le bilan vient en dernier, après avoir informé les clients."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "Le bilan vient en dernier : il se fait quand tout est terminé."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Mise en situation de 10 minutes sur une caisse d'entraînement : six personnes font la queue (jeu de rôle). La personne candidate encaisse, applique la règle d'appel du responsable, informe la file et propose les caisses automatiques.",
+            "criteres": [
+              {
+                "texte": "Appelle le responsable dès que la file atteint quatre clients",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Donne au responsable les informations utiles : caisse, nombre de clients, demande",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Prévient les clients de la file, sans promettre d'heure",
+                "repere": "c2_previent"
+              },
+              {
+                "texte": "Propose les caisses automatiques sans les imposer",
+                "repere": "c7_alternative"
+              }
+            ],
+            "bonus": {
+              "texte": "Signale l'heure du pic au responsable après coup",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Six clients** attendent à votre caisse. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "J'appelle le responsable de caisse, en restant à ma caisse.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je lui dis ma caisse, le nombre de clients et ce que je demande.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je continue d'encaisser pendant qu'il arrive.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je finis mon client, puis j'appelle le responsable.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'encaisse plus vite, sans appeler personne.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que dites-vous aux clients **qui attendent** ?",
+              "justes": [
+                {
+                  "texte": "Que j'ai prévenu le responsable pour qu'une caisse ouvre.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Que je suis désolé pour l'attente.",
+                  "repere": "c7_apaise"
+                },
+                {
+                  "texte": "Je leur propose les caisses automatiques, s'ils n'ont que quelques articles.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Merci de patienter.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Qu'une caisse ouvre dans deux minutes.",
+                  "repere": "c7_promesse"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "La file est revenue à la normale. **Que faites-vous** ?",
+              "justes": [
+                {
+                  "texte": "Je dis au responsable à quelle heure la file s'est formée.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je propose d'ouvrir une caisse plus tôt les samedis.",
+                  "repere": "c2_anticipe"
+                },
+                {
+                  "texte": "Je note l'heure et le nombre de clients pour l'équipe suivante.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je préviens le responsable que la file a diminué.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le problème est réglé.",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de préparer la caisse supplémentaire (fond de caisse, rouleaux de tickets) avant le pic du samedi.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Afficher la règle d'appel à chaque caisse : à partir de combien de clients, qui appeler et quoi dire.",
+        "Faire un point après les premiers samedis : à quelle heure la file se forme et quelles caisses ouvrir."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C6",
+      "texte": "Le code-barres d'un article est abîmé et la caisse **ne le lit pas**. Que faites-vous ?",
+      "suite": [
+        "Et si, une fois l'article saisi, son prix à l'écran est différent de l'étiquette ?"
+      ],
+      "attendus": [
+        "Saisit le code à la main et vérifie l'article affiché (nom, taille)",
+        "Ne tape pas un prix de mémoire ou au hasard",
+        "Ne change pas un prix soi-même : fait vérifier l'étiquette"
+      ],
+      "relance": "Comment vérifiez-vous qu'un article saisi à la main est le bon ?",
+      "alternative": "Si vous n'avez jamais tenu de caisse : un prix affiché dans un magasin est illisible, ou n'est pas celui du ticket. Que faites-vous ?"
+    },
+    {
+      "id": "e2",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez **trouvé un écart** en comptant de l'argent ou du stock. **Que s'était-il passé** ?",
+      "suite": [
+        "Qu'avez-vous fait pour le vérifier ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit l'écart avec des faits ou des montants précis",
+        "Dit comment il a recompté et cherché la cause",
+        "Dit qui il a prévenu et ce qui a changé ensuite"
+      ],
+      "relance": "Qu'auriez-vous fait si vous n'aviez pas trouvé la cause ?",
+      "alternative": "Si vous n'avez jamais tenu de caisse : parlez d'une fois où vous avez compté de l'argent ou du matériel (association, vente, vie quotidienne) et trouvé une différence."
+    },
+    {
+      "id": "e3",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où un client était mécontent de **l'attente ou d'une erreur**. Que s'était-il passé ?",
+      "suite": [
+        "Qu'avez-vous répondu ?",
+        "Comment cela s'est-il terminé ?"
+      ],
+      "attendus": [
+        "Décrit des faits précis",
+        "Décrit ce qu'il a dit ou fait pour le client",
+        "Dit comment la situation s'est terminée"
+      ],
+      "relance": "Qu'auriez-vous pu faire d'autre ?",
+      "alternative": "Si vous n'avez jamais travaillé avec des clients : parlez d'une personne mécontente que vous avez aidée (travail, association, vie quotidienne)."
+    },
+    {
+      "id": "e4",
+      "competence": "C7",
+      "texte": "Un client demande un remboursement que vous n'avez **pas le droit d'accorder seul**. Que lui répondez-vous ?",
+      "suite": [],
+      "attendus": [
+        "Reprend les faits avec le client, sans l'accuser",
+        "Explique la règle simplement, sans rien promettre",
+        "Appelle la bonne personne et dit au client ce qui va se passer"
+      ],
+      "relance": "Que dites-vous si le client insiste devant la file ?",
+      "alternative": "Imaginez qu'une personne vous demande un service que vous n'avez pas le droit de rendre (par exemple prêter un objet qui n'est pas à vous). Que lui répondez-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C8",
+      "texte": "Un client qui paraît très jeune achète de l'alcool. **Que faites-vous** ?",
+      "suite": [
+        "Que dites-vous au client s'il n'a pas de pièce d'identité ?"
+      ],
+      "attendus": [
+        "Demande une pièce d'identité officielle et lit la date de naissance",
+        "Ne vend pas l'alcool sans pièce valable, et l'explique calmement",
+        "Continue d'encaisser les autres articles"
+      ],
+      "relance": "Pourquoi une réponse orale ne suffit-elle pas ?",
+      "alternative": "Si vous n'avez jamais tenu de caisse : une règle impose de contrôler une pièce (carte d'abonnement, badge) et la personne ne l'a pas. Que faites-vous ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C8",
+      "texte": "Votre magasin change de terminal de paiement. **Comment vous assurez-vous** d'appliquer correctement la **nouvelle procédure** ?",
+      "suite": [
+        "Que faites-vous si un message n'est pas expliqué dans la fiche ?"
+      ],
+      "attendus": [
+        "Lit la fiche et pose ses questions avant d'utiliser le terminal",
+        "Se fait montrer ou s'entraîne avec un collègue ou le responsable",
+        "Appelle le responsable devant un cas inconnu, au lieu de deviner"
+      ],
+      "relance": "Comment savez-vous que vous l'utilisez correctement ?",
+      "alternative": "Si vous n'avez jamais changé d'outil au travail : parlez d'un appareil ou d'une application nouvelle que vous avez dû apprendre (téléphone, logiciel, machine)."
+    },
+    {
+      "id": "e7",
+      "competence": "C2",
+      "texte": "La file s'allonge à votre caisse : **six clients** attendent. Que faites-vous ?",
+      "suite": [
+        "Que dites-vous aux clients qui attendent ?"
+      ],
+      "attendus": [
+        "Applique la règle d'appel du responsable",
+        "Informe les clients sans promettre d'heure",
+        "Continue d'encaisser et propose les caisses automatiques si c'est possible"
+      ],
+      "relance": "Comment savez-vous qu'il est temps d'appeler ?",
+      "alternative": "Si vous n'avez jamais tenu de caisse : beaucoup de personnes attendent un service que vous assurez seul (accueil, buvette, association). Que faites-vous ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où vous aviez plusieurs choses à faire **en même temps**. Comment avez-vous **choisi l'ordre** ?",
+      "suite": [
+        "Qu'avez-vous dit aux personnes qui attendaient ?"
+      ],
+      "attendus": [
+        "Donne un critère clair pour choisir l'ordre",
+        "Prévient les personnes qui attendent",
+        "Dit ce qu'il ferait pour mieux s'organiser la fois suivante"
+      ],
+      "relance": "Que feriez-vous si une urgence arrivait en plus ?",
+      "alternative": "Parlez d'une journée chargée (études, association, vie quotidienne) : comment avez-vous choisi ce qui passait en premier ?"
+    }
+  ],
+  "_pv": "86a4419da1"
+}

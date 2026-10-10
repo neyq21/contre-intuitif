@@ -1,0 +1,2735 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "data-analyst",
+  "version": "2026.10",
+  "nom": "Data analyst / Analyste de données",
+  "secteur": "numerique",
+  "alias": [
+    "data analyst",
+    "analyste de données",
+    "chargé d'études statistiques",
+    "analyste BI",
+    "business analyst",
+    "analyste reporting",
+    "contrôleur de gestion junior"
+  ],
+  "resume": "Prépare et contrôle des données de ventes, cherche la cause d'un écart et présente un résultat clair et juste à la direction.",
+  "contexte": "Une enseigne de vêtements de 30 magasins, avec un site de vente en ligne, qui suit ses ventes chaque semaine.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C6",
+      "titre": "Vérifier la qualité des données avant de les analyser",
+      "pourquoi": "Une analyse faite sur un fichier faux donne un résultat faux, que la direction utilisera ensuite pour décider.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Le fichier des commandes de la semaine 40",
+        "texte": "Lundi, 9 h 30. Vous recevez l'export des commandes du site pour la semaine 40, du lundi 28 septembre au dimanche 4 octobre. Le rapport hebdomadaire doit partir à 14 h. La fiche du fichier dit : une ligne par commande, numéro de commande unique, montant en euros TTC. Aucun article du site ne coûte plus de 150 €. Le fichier contient aussi le nom et l'e-mail de chaque client. Voici les premières lignes.",
+        "document": {
+          "type": "tableau",
+          "titre": "Extrait du fichier (8 premières lignes)",
+          "colonnes": [
+            "N° commande",
+            "Date",
+            "Articles",
+            "Montant TTC (€)"
+          ],
+          "lignes": [
+            [
+              "50412",
+              "28/09",
+              "2",
+              "74,80"
+            ],
+            [
+              "50413",
+              "28/09",
+              "1",
+              "149,90"
+            ],
+            [
+              "50414",
+              "29/09",
+              "3",
+              "112,50"
+            ],
+            [
+              "50414",
+              "29/09",
+              "3",
+              "112,50"
+            ],
+            [
+              "50415",
+              "29/09",
+              "1",
+              "12 500,00"
+            ],
+            [
+              "50416",
+              "21/09",
+              "2",
+              "58,00"
+            ],
+            [
+              "50417",
+              "30/09",
+              "1",
+              "(vide)"
+            ],
+            [
+              "50418",
+              "01/10",
+              "2",
+              "89,90"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Avant de calculer le total de la semaine, que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je calcule le total tout de suite, puisque le fichier vient du système de commandes.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je supprime les lignes qui me semblent bizarres, sans chercher à savoir pourquoi.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je regarde le fichier : dates, montants minimum et maximum, cases vides et numéros en double.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je compare le nombre de lignes de ce fichier avec celui de la semaine 39.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                }
+              ],
+              "explication": "Un contrôle rapide avant tout calcul montre les erreurs les plus fréquentes : doublons, cases vides, valeurs impossibles, dates hors période. Comparer seulement le nombre de lignes ne détecte pas ces erreurs.",
+              "relance": "Quelles vérifications faites-vous sur un fichier que vous n'avez pas préparé vous-même ?"
+            },
+            {
+              "id": "q2",
+              "texte": "La commande 50415 a **1 article** et un montant de **12 500 €**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la mets de côté et je demande à l'équipe des commandes de vérifier le montant.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je corrige le montant à 125 € : il manque sûrement la virgule, donc la correction est simple.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je l'enlève du total pour ne pas fausser le résultat, et je note ce choix dans mon rapport.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je la garde : une grosse commande reste possible, et ce n'est pas à moi d'en juger.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Avec 1 article et un prix maximum de 150 €, ce montant est impossible : on met la ligne de côté et on fait vérifier la source. L'enlever et le noter est acceptable, mais l'erreur n'est pas corrigée à la source.",
+              "relance": "Comment savez-vous qu'une valeur est impossible et pas seulement rare ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Deux lignes portent le **même numéro**, 50414, avec les **mêmes valeurs**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je garde les deux : il peut s'agir de deux commandes de même montant, passées le même jour.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je garde une seule des deux lignes, puisque le numéro de commande doit être unique.",
+                  "points": 1,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je supprime les deux lignes par prudence, pour ne pas compter une commande en double.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je garde une ligne, je note combien de doublons j'ai retirés et je préviens l'auteur de l'export.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                }
+              ],
+              "explication": "Le numéro de commande doit être unique : une seule ligne est comptée. Noter le nombre de doublons et prévenir l'auteur de l'export permet de trouver la cause. Garder une ligne sans le dire laisse le problème revenir.",
+              "relance": "Que faites-vous quand les mêmes erreurs reviennent d'une semaine à l'autre ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le service informatique écrit qu'à partir du 1er octobre, le montant **inclut les frais de livraison**. Que faites-vous **avant de comparer** avec la semaine 39 ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je compare directement : quelques euros de livraison ne changent pas le résultat.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je demande le montant sans frais de livraison, pour comparer les deux semaines sur la même base.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je compare quand même, et j'écris dans le rapport que la définition a changé.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne tiens pas compte du message : mon fichier est déjà celui de la semaine 40.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Deux chiffres calculés avec des définitions différentes ne se comparent pas : il faut les remettre sur la même base. Signaler le changement est utile, mais l'écart entre les deux semaines reste faussé.",
+              "relance": "Que faites-vous quand la définition d'un indicateur change en cours de route ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le fichier contient le **nom et l'e-mail** de chaque client. Votre analyse porte sur les **dates et les montants**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je garde seulement les colonnes utiles à l'analyse et je n'utilise ni les noms ni les e-mails.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je garde tout, car ces colonnes pourront servir pour une autre analyse plus tard.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je garde le fichier tel quel, mais je ne le montre à personne.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "J'envoie le fichier complet à un collègue pour qu'il vérifie les montants avec moi.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "On n'utilise que les données nécessaires à l'analyse : ici, les dates et les montants. Les noms et les e-mails n'apportent rien et augmentent le risque de fuite. Garder le fichier tel quel est moins sûr.",
+              "relance": "Quelles colonnes d'un fichier de clients gardez-vous pour une analyse des montants ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Avant de calculer** le total, je vérifie dans le fichier…",
+              "justes": [
+                {
+                  "texte": "les dates, les montants minimum et maximum, les cases vides et les numéros en double",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que chaque numéro de commande apparaît une seule fois et que les dates sont dans la semaine 40",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que les montants sont possibles : 150 € au maximum par article commandé",
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le nombre de lignes",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : le fichier vient du système de commandes, donc il est juste",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "seulement le total, s'il me paraît normal",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour la commande de 1 article à **12 500 €**, je…",
+              "justes": [
+                {
+                  "texte": "la mets de côté et je demande à l'équipe des commandes de vérifier le montant",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "la retire du calcul, je cherche d'où vient l'erreur et je note ce que j'ai fait",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "signale qu'un article ne coûte pas plus de 150 €, donc que ce montant est impossible",
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "l'enlève du total",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la garde : une grosse commande est possible",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "corrige le montant moi-même en supposant une virgule oubliée",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Dans mon rapport, au sujet des **lignes retirées**, j'écris…",
+              "justes": [
+                {
+                  "texte": "combien de lignes j'ai retirées et pourquoi",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "que j'ai retiré un doublon et mis de côté une commande au montant impossible",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "la liste des lignes écartées, pour que quelqu'un puisse les revérifier",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que j'ai nettoyé le fichier",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : le lecteur veut seulement le total",
+                  "repere": "c6_cache"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Ne garde que les colonnes utiles : les noms et les e-mails des clients ne sont pas nécessaires.",
+              "repere": "c6_regle"
+            },
+            {
+              "texte": "Propose un contrôle automatique des doublons et des dates à chaque export.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je mets la commande 50415 de côté : un article ne coûte pas plus de 150 €. Je demande à l'équipe des commandes de vérifier le montant. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le total de la semaine 40 est calculé. Que dites-vous à la direction ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Une ligne du fichier vous paraît étrange. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Une commande de 1 article affiche 12 500 €, et aucun article ne coûte plus de 150 €. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Deux lignes du fichier ont le même numéro de commande. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La commande contient 1 seul article.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le rapport doit partir à 14 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Aucun article du site ne coûte plus de 150 €.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client a passé plusieurs commandes dans la semaine.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le montant affiché est de 12 500 €.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le fichier contient les commandes de la semaine 40.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'indique dans mon rapport que cette commande est écartée, et pourquoi.",
+                "points": 2,
+                "repere": "c6_trace"
+              },
+              {
+                "id": "b",
+                "texte": "Je corrige le montant moi-même et je passe à la suite.",
+                "points": 0,
+                "repere": "c6_cache"
+              },
+              {
+                "id": "c",
+                "texte": "Je recalcule le total sans cette commande, sans autre précision.",
+                "points": 1,
+                "repere": "c6_bloque"
+              },
+              {
+                "id": "d",
+                "texte": "Je laisse la commande dans le total : le montant sera corrigé plus tard.",
+                "points": 0,
+                "repere": "c6_laisse"
+              }
+            ]
+          },
+          "explication": "Le fichier donne deux faits : 1 seul article, et aucun article à plus de 150 €. Le montant est donc impossible : on met la ligne de côté, on fait vérifier, puis on l'écrit dans le rapport."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Les 8 premières lignes du fichier",
+          "consigne": "Cliquez sur **chaque ligne** qui contient une erreur. Pour une commande en double, cliquez sur la ligne répétée (**la seconde**).",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Commande 50412 — 28/09 — 2 articles — 74,80 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Commande 50413 — 28/09 — 1 article — 149,90 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Commande 50414 — 29/09 — 3 articles — 112,50 €",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Commande 50414 — 29/09 — 3 articles — 112,50 €",
+              "erreur": true,
+              "explication": "Cette ligne répète la précédente : le numéro de commande doit être unique."
+            },
+            {
+              "id": "e5",
+              "texte": "Commande 50415 — 29/09 — 1 article — 12 500,00 €",
+              "erreur": true,
+              "explication": "Un article ne coûte pas plus de 150 € : ce montant est impossible."
+            },
+            {
+              "id": "e6",
+              "texte": "Commande 50416 — 21/09 — 2 articles — 58,00 €",
+              "erreur": true,
+              "explication": "Le 21/09 n'est pas dans la semaine 40, qui va du 28/09 au 04/10."
+            },
+            {
+              "id": "e7",
+              "texte": "Commande 50417 — 30/09 — 1 article — montant : (vide)",
+              "erreur": true,
+              "explication": "Le montant est manquant."
+            },
+            {
+              "id": "e8",
+              "texte": "Commande 50418 — 01/10 — 2 articles — 89,90 €",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Contrôle d'un fichier fictif de 30 commandes (15 minutes), sur tableur ou sur papier : un doublon, une case vide, une date hors semaine et un montant impossible y sont placés. La personne contrôle le fichier, puis écrit trois lignes pour le rapport.",
+            "criteres": [
+              {
+                "texte": "Contrôle le fichier avant de calculer : doublons, cases vides, dates, montants",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère les quatre lignes en erreur",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Met de côté les lignes douteuses au lieu de les corriger sans vérifier",
+                "repere": "c6_bloque"
+              },
+              {
+                "texte": "Écrit dans le rapport ce qui a été retiré et pourquoi",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Ne garde que les colonnes utiles : ni nom ni e-mail de client",
+              "repere": "c6_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que vérifiez-vous dans le fichier **avant de calculer** le total ?",
+              "justes": [
+                {
+                  "texte": "Les dates, les montants minimum et maximum, les cases vides et les doublons.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que chaque numéro de commande est unique et que les dates sont dans la semaine 40.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que les montants sont possibles par rapport au prix des articles.",
+                  "repere": "c6_anomalie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Le nombre de lignes.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le fichier vient du système de commandes.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous de la commande de 1 article à **12 500 €** ?",
+              "justes": [
+                {
+                  "texte": "Je la mets de côté et je demande à l'équipe des commandes de vérifier le montant.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Je dis que ce montant est impossible, car un article ne coûte pas plus de 150 €.",
+                  "repere": "c6_anomalie"
+                },
+                {
+                  "texte": "Je la retire du total, je cherche d'où vient l'erreur et je le note.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je la retire du total.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je la garde : c'est peut-être une grosse commande.",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "Je corrige le montant à 125 € sans le dire.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que dites-vous dans le rapport au sujet des **lignes retirées** ?",
+              "justes": [
+                {
+                  "texte": "Combien de lignes sont retirées et pour quelle raison.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Que j'ai retiré un doublon et mis de côté une commande impossible.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je joins la liste des lignes écartées pour qu'on puisse les revérifier.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que j'ai nettoyé le fichier.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le lecteur veut seulement le total.",
+                  "repere": "c6_cache"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Ne garde que les colonnes utiles : les noms et les e-mails des clients ne servent pas.",
+              "repere": "c6_regle"
+            },
+            {
+              "texte": "Propose un contrôle automatique des doublons et des dates à chaque export.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner la fiche des fichiers habituels : colonnes, règles (numéro unique, période) et valeurs normales, pour savoir quoi contrôler.",
+        "Expliquer la règle de la maison sur les données personnelles : quelles colonnes utiliser, lesquelles ne pas copier."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Chercher la cause d'une baisse en testant des hypothèses",
+      "pourquoi": "Quand un chiffre baisse, tester les explications dans le bon ordre évite de conclure trop vite et de donner une fausse cause à la direction.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Les ventes ont baissé en semaine 40",
+        "texte": "Mardi, 10 h. La directrice commerciale vous écrit : « Les ventes de la semaine 40 ont baissé. Regardez ce qui se passe, j'en ai besoin pour le point de jeudi à 9 h. » Les ventes sont comptées en milliers d'euros (k€). Au total : 600 k€ en semaine 39, 556 k€ en semaine 40. Les magasins passent de 412 k€ à 405 k€. Le site passe de 188 k€ à 151 k€. Voici les ventes du site, jour par jour.",
+        "document": {
+          "type": "tableau",
+          "titre": "Ventes du site par jour (en k€)",
+          "colonnes": [
+            "Jour",
+            "Semaine 39",
+            "Semaine 40"
+          ],
+          "lignes": [
+            [
+              "Lundi",
+              "27",
+              "27"
+            ],
+            [
+              "Mardi",
+              "26",
+              "26"
+            ],
+            [
+              "Mercredi",
+              "27",
+              "27"
+            ],
+            [
+              "Jeudi",
+              "28",
+              "3"
+            ],
+            [
+              "Vendredi",
+              "26",
+              "24"
+            ],
+            [
+              "Samedi",
+              "28",
+              "22"
+            ],
+            [
+              "Dimanche",
+              "26",
+              "22"
+            ],
+            [
+              "Total",
+              "188",
+              "151"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le message dit : « Regardez ce qui se passe. » Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je regarde les chiffres de la semaine 40 pour voir où se trouve la baisse.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je propose une explication : à cette saison, les clients achètent moins.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'attends que la directrice précise sa demande avant de commencer.",
+                  "points": 0,
+                  "repere": "c5_attend"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande quelle comparaison elle attend et quelle décision elle doit prendre jeudi.",
+                  "points": 2,
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "explication": "Une demande floue peut mener à répondre à une autre question que celle posée. Demander la comparaison attendue et la décision visée cadre l'analyse. Regarder les chiffres est utile, mais ne précise pas la demande.",
+              "relance": "Que demandez-vous quand une demande d'analyse est trop large ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Par canal, la baisse est de 7 k€ en magasins et de 37 k€ sur le site. Que faites-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je cherche d'abord pourquoi les magasins baissent, car ils représentent une plus grande part du total.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde le site jour par jour, pour voir si la baisse est répartie ou concentrée sur un jour.",
+                  "points": 2,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je me concentre sur le site, car il explique la plus grande partie de la baisse.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je conclus que les clients achètent moins sur internet et je prépare ma réponse.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "La baisse du site est plus de cinq fois plus grande que celle des magasins : on la détaille d'abord. Le détail par jour montre si elle est répartie ou concentrée. Se concentrer sur le site est juste, mais ne dit pas comment avancer.",
+              "relance": "Comment choisissez-vous où chercher en premier quand un total baisse ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Jeudi, le site a vendu 3 k€ contre 28 k€ la semaine d'avant. Quelle explication testez-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Une panne du site : je pose la question à l'équipe informatique, qui suit les incidents.",
+                  "points": 1,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "b",
+                  "texte": "Une baisse de la demande : je cherche ce qui a pu décourager les clients jeudi.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Les données de jeudi : je vérifie qu'elles sont complètes, ce qui se contrôle en quelques minutes.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Aucune : je retire jeudi du calcul, car un jour aussi bas ne peut pas être normal.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                }
+              ],
+              "explication": "On teste d'abord l'explication la plus rapide à vérifier, qui peut tout expliquer : un fichier incomplet. Poser la question de la panne est une bonne seconde explication, mais on ne sait pas encore si le chiffre est réel.",
+              "relance": "Dans quel ordre testez-vous plusieurs explications possibles ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Les données de jeudi **sont complètes**. L'équipe informatique confirme une panne du paiement en ligne jeudi. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je compare l'écart de jeudi (25 k€) à la baisse du site (37 k€) : il reste 12 k€ à expliquer.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je note que la panne explique la baisse de jeudi et je préviens la directrice de ce résultat.",
+                  "points": 1,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je conclus que la panne explique toute la baisse des ventes du site, jeudi comme les autres jours.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je m'arrête là : la panne est terminée, donc le problème est réglé et il n'y a plus rien à chercher.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                }
+              ],
+              "explication": "Vérifier une explication, c'est contrôler qu'elle couvre toute la baisse. Jeudi explique 25 k€ sur 37 k€ : il reste 12 k€ sans explication. Annoncer la panne seule laisse croire que tout est expliqué.",
+              "relance": "Comment vérifiez-vous qu'une cause trouvée explique tout l'écart ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Il reste **12 k€** de baisse sur vendredi, samedi et dimanche, et **7 k€** dans les magasins. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je teste les explications une par une, dans l'ordre où je les trouve, jusqu'à en trouver une qui convienne.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je liste les explications possibles (promotions, stocks, météo) et je teste d'abord les plus rapides à vérifier.",
+                  "points": 2,
+                  "repere": "c1_options"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je choisis l'explication la plus vraisemblable et j'écris mes conclusions tout de suite.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je considère ces écarts comme normaux, donc je n'en parle pas à la directrice.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Quand il reste plusieurs explications possibles, on les liste, puis on teste d'abord celles qui se vérifient vite ou qui expliqueraient le plus. Tester au hasard fait perdre du temps ; conclure sur une seule explication est risqué.",
+              "relance": "Comment décidez-vous quelle explication tester en premier ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Face à la demande « regardez ce qui se passe », **je commence par**…",
+              "justes": [
+                {
+                  "texte": "demander de quelles ventes il s'agit et quelle semaine est comparée",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "demander à la directrice quelle décision elle doit prendre avec cette analyse",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "préciser ce qu'elle veut savoir et pour quand elle en a besoin",
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarder les chiffres de la semaine 40",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "proposer tout de suite une explication, comme la météo",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "attendre une demande plus précise sans rien faire",
+                  "repere": "c5_attend"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Jeudi, le site n'a vendu que 3 k€. Pour trouver la cause, **je teste d'abord**…",
+              "justes": [
+                {
+                  "texte": "si les données de jeudi sont complètes, avant de chercher une autre cause",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "le nombre de commandes enregistrées jeudi, pour savoir si le chiffre est fiable",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "que le fichier de jeudi n'est pas incomplet, puis je demande s'il y a eu un incident",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "une panne du site, en posant la question à l'équipe informatique",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que les clients ont acheté moins jeudi, et je cherche pourquoi",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "rien : je retire jeudi du calcul pour réduire la baisse",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand l'équipe informatique me confirme une panne jeudi, je…",
+              "justes": [
+                {
+                  "texte": "calcule ce que la panne explique : 25 k€ sur les 37 k€ de baisse du site",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "vérifie qu'il reste 12 k€ de baisse à expliquer",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "dis que la panne explique jeudi, mais pas toute la baisse",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "note la panne comme cause de la baisse du site",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "conclus que la panne explique toute la baisse",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "m'arrête là : le problème est trouvé",
+                  "repere": "c1_abandon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Liste les explications possibles pour les 12 k€ restants (promotions, stocks, météo) et les teste de la plus rapide à la plus longue.",
+              "repere": "c1_options"
+            },
+            {
+              "texte": "Demande à l'équipe informatique la liste des incidents de la semaine, pour repérer les jours anormaux.",
+              "repere": "c1_aide"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je vérifie d'abord si les données de jeudi sont complètes. Si elles le sont, je demande à l'équipe informatique s'il y a eu un incident. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le site a vendu 3 k€ jeudi, contre 28 k€ la semaine précédente. Par quoi commencez-vous votre recherche ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Les magasins ont vendu 7 k€ de moins que la semaine précédente. Par quoi commencez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Les ventes du site ont baissé. Par quoi commencez-vous votre recherche ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "La directrice veut une explication pour jeudi à 9 h. Par quoi commencez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Jeudi, le site n'a vendu que 3 k€.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Les magasins ont vendu 405 k€ en semaine 40.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Jeudi de la semaine 39, le site avait vendu 28 k€.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Une promotion s'est terminée jeudi.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Lundi, mardi et mercredi sont identiques dans les deux semaines.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La directrice veut une réponse jeudi à 9 h.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je dis à la directrice que les clients ont acheté moins jeudi.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "b",
+                "texte": "Je demande à l'équipe informatique s'il y a eu une panne jeudi.",
+                "points": 1,
+                "repere": "c1_cause"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends que la directrice me redemande une explication.",
+                "points": 0,
+                "repere": "c1_abandon"
+              },
+              {
+                "id": "d",
+                "texte": "Si les données sont complètes, je demande à l'équipe informatique s'il y a eu un incident jeudi.",
+                "points": 2,
+                "repere": "c1_etapes"
+              }
+            ]
+          },
+          "explication": "Jeudi est le seul jour très éloigné de la semaine d'avant : on commence par vérifier que ce chiffre est fiable. Si les données sont complètes, l'explication suivante à tester est un incident technique."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre recherche sur la baisse, dans l'ordre",
+          "consigne": "**Supposez** que l'équipe informatique confirme une panne du paiement jeudi. Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Demander à la directrice quelle comparaison elle attend et pour quelle décision",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Comparer les deux semaines par canal, puis regarder le site jour par jour",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Vérifier que les données de jeudi sont complètes",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Demander à l'équipe informatique s'il y a eu un incident jeudi",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Calculer ce que la panne explique et ce qu'il reste à expliquer",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Lister les explications possibles de la baisse restante et les tester dans l'ordre",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Écrire à la directrice ce qui est établi et ce qui reste à vérifier",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e7",
+              "explication": "On clarifie la demande avant d'écrire la réponse, pour ne pas répondre à une autre question."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On repère d'abord le jour anormal, puis on vérifie si son chiffre est fiable."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On contrôle la donnée avant de chercher une cause : un fichier incomplet n'a pas d'incident derrière."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On connaît la cause avant de calculer ce qu'elle explique."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "On sait ce qu'il reste à expliquer avant de chercher d'autres explications."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "On écrit après avoir testé les explications, pour dire ce qui est établi."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Exercice de 20 minutes : la personne reçoit une demande floue sur une baisse de ventes et deux petits tableaux fictifs (par canal, par jour). Elle dit ses questions, ses hypothèses, l'ordre dans lequel elle les teste et ce qu'elle conclut.",
+            "criteres": [
+              {
+                "texte": "Pose une question pour préciser la demande",
+                "repere": "c5_clarifie"
+              },
+              {
+                "texte": "Repère où est la baisse avant de chercher la cause",
+                "repere": "c1_etapes"
+              },
+              {
+                "texte": "Teste d'abord l'explication la plus rapide à vérifier : les données",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Vérifie que la cause trouvée explique tout l'écart",
+                "repere": "c1_verifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Liste les explications restantes et choisit un ordre de test",
+              "repere": "c1_options"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "On vous demande « regardez ce qui se passe » sur les ventes. Que faites-vous **en premier** ?",
+              "justes": [
+                {
+                  "texte": "Je demande de quelles ventes il s'agit et quelle semaine est comparée.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je demande quelle décision la directrice doit prendre avec cette analyse.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je précise avec elle ce qu'elle veut savoir et pour quand.",
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde les chiffres de la semaine 40.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je propose une explication sans avoir regardé les données.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Jeudi, le site a vendu 3 k€ au lieu de 28 k€. Quelle explication testez-vous **en premier** ?",
+              "justes": [
+                {
+                  "texte": "Je vérifie que les données de jeudi sont complètes.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je regarde le nombre de commandes enregistrées jeudi.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Les données d'abord, car c'est rapide ; ensuite je demande s'il y a eu un incident.",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je demande à l'équipe informatique s'il y a eu une panne.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je dis que les clients ont acheté moins jeudi.",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "Je retire jeudi du calcul.",
+                  "repere": "c1_symptome"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "La panne explique 25 k€ sur les 37 k€ de baisse du site. Que dites-vous **à la directrice** ?",
+              "justes": [
+                {
+                  "texte": "Que la panne explique jeudi, mais qu'il reste 12 k€ à expliquer.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Que la panne n'explique pas toute la baisse, et je cherche d'autres explications.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Que jeudi explique environ les deux tiers de la baisse du site, pas la totalité.",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que la panne est la cause principale.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que la panne explique toute la baisse.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Liste les explications restantes (promotions, stocks, météo) et les teste de la plus rapide à la plus longue.",
+              "repere": "c1_options"
+            },
+            {
+              "texte": "Demande la liste des incidents de la semaine pour repérer les jours anormaux.",
+              "repere": "c1_aide"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer sur un cas réel comment lister des hypothèses, puis les tester de la plus rapide à la plus longue à vérifier.",
+        "Présenter les interlocuteurs utiles : qui répond sur les pannes, les promotions et les stocks, et comment les contacter."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Choisir la bonne mesure : moyenne, médiane ou total",
+      "pourquoi": "Les mêmes données donnent des chiffres très différents selon la mesure : la bonne est celle qui répond à la question posée.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un achat habituel dans la boutique de Cahors",
+        "texte": "Mardi, 11 h. Le responsable de la petite boutique de Cahors vous demande : « Quel est le montant d'un achat habituel chez nous ? Je veux fixer le seuil d'une offre de remise : 10 € offerts dès X € d'achat. » Vous avez les 9 tickets de lundi. Le ticket 6 est une vraie vente : 24 maillots pour un club. Votre tableur affiche un total de 1 998 € et une moyenne de 222 €.",
+        "document": {
+          "type": "tableau",
+          "titre": "Les 9 tickets de lundi",
+          "colonnes": [
+            "Ticket",
+            "Montant TTC (€)"
+          ],
+          "lignes": [
+            [
+              "1",
+              "38"
+            ],
+            [
+              "2",
+              "45"
+            ],
+            [
+              "3",
+              "52"
+            ],
+            [
+              "4",
+              "47"
+            ],
+            [
+              "5",
+              "61"
+            ],
+            [
+              "6",
+              "1 600"
+            ],
+            [
+              "7",
+              "42"
+            ],
+            [
+              "8",
+              "58"
+            ],
+            [
+              "9",
+              "55"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le responsable demande le montant d'un **achat habituel**. **Quelle mesure** choisissez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La moyenne, car c'est la mesure la plus courante et elle utilise tous les tickets.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le total des tickets, car c'est le chiffre qui compte pour la boutique.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "c",
+                  "texte": "La médiane, car une vente très élevée la déplace beaucoup moins que la moyenne.",
+                  "points": 2,
+                  "repere": "c8_outil"
+                },
+                {
+                  "id": "d",
+                  "texte": "La moyenne et la médiane côte à côte, sans dire laquelle représente un achat habituel.",
+                  "points": 1,
+                  "repere": "c8_outil"
+                }
+              ],
+              "explication": "Pour un achat habituel, on cherche la valeur du milieu : la médiane. Une seule vente très élevée fait monter la moyenne. Donner les deux chiffres sans choisir laisse le responsable décider seul.",
+              "relance": "Dans quel cas la médiane représente-t-elle mieux la situation que la moyenne ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Votre tableur affiche une moyenne de 222 €. Huit tickets sur neuf font 61 € ou moins. **Que concluez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La moyenne est juste : elle tient compte de tous les tickets, donc je la donne telle quelle.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "La moyenne est trop haute pour un achat habituel : le ticket de 1 600 € la fait monter.",
+                  "points": 2,
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je vérifie la formule du tableur, au cas où le calcul serait faux.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je l'arrondis à 200 € pour que le chiffre soit plus simple à retenir.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "La moyenne est bien calculée, mais elle ne décrit pas un achat habituel : un seul ticket de 1 600 € la fait monter à 222 €. Vérifier la formule est une bonne habitude, mais le calcul n'est pas en cause ici.",
+              "relance": "Comment voyez-vous qu'une valeur extrême fait monter une moyenne ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le ticket 6 est une vraie vente : 24 maillots pour un club. Que faites-vous de **ce ticket** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le supprime du fichier, pour que les chiffres ressemblent à une journée normale.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je remplace son montant par celui du ticket suivant, 61 €, pour limiter l'écart.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le retire du calcul et j'écris dans mon rapport que je l'ai retiré.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le garde, puisque c'est une vraie vente, et je choisis une mesure que ce ticket ne fausse pas.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                }
+              ],
+              "explication": "Une valeur extrême réelle fait partie des données : on la garde et on choisit une mesure adaptée, comme la médiane. La retirer en le disant est acceptable, mais cela change les données au lieu de changer la mesure.",
+              "relance": "Quand une valeur extrême est vraie, que faites-vous ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Quelle est **la médiane** des 9 montants du tableau ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "52 € : je range les montants du plus petit au plus grand et je prends le 5e.",
+                  "points": 2,
+                  "repere": "c8_precision"
+                },
+                {
+                  "id": "b",
+                  "texte": "61 € : je prends le 5e ticket de la liste, tel qu'il est écrit.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Environ 50 € : j'estime un montant du milieu en regardant la liste, sans ranger.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "222 € : c'est la valeur que donne le tableur.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "La médiane se lit sur des valeurs rangées : le 5e des 9 montants est 52 €. Prendre le 5e ticket de la liste, sans ranger, donne un autre montant. Une estimation sans ranger les montants donne l'ordre de grandeur, pas la valeur.",
+              "relance": "Comment trouvez-vous la médiane d'une liste de montants ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le responsable demande aussi combien la boutique a **encaissé lundi**. Que lui donnez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La médiane multipliée par 9 tickets, soit 468 €, car c'est le montant habituel.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le total des 9 tickets, soit 1 998 € : le ticket de 1 600 € a bien été encaissé.",
+                  "points": 2,
+                  "repere": "c8_outil"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le ticket le plus élevé, 1 600 €, car il représente la plus grande part de la journée.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "d",
+                  "texte": "La moyenne multipliée par 9 tickets, soit 1 998 €.",
+                  "points": 1,
+                  "repere": "c8_savoir"
+                }
+              ],
+              "explication": "Pour un montant encaissé, on additionne tous les tickets, y compris le plus élevé. Moyenne × 9 donne le même résultat, mais par un détour. La médiane × 9 sous-estime fortement ce qui a été encaissé.",
+              "relance": "Quand utilisez-vous le total plutôt que la moyenne ou la médiane ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour répondre « quel est **l'achat habituel** ? », j'utilise…",
+              "justes": [
+                {
+                  "texte": "la médiane, parce qu'un ticket très élevé ne la déplace presque pas",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "la médiane des 9 tickets, plus représentative que la moyenne ici",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "le montant du milieu une fois les tickets rangés, soit 52 €",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la moyenne, en précisant qu'un ticket très élevé la fait monter",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la moyenne, parce que c'est ce que donne le tableur",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "le total des tickets",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Le ticket de **1 600 €** est une vraie vente, donc je…",
+              "justes": [
+                {
+                  "texte": "le garde dans les données",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "ne le supprime pas et je choisis une mesure que ce ticket ne fausse pas",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "le garde et je le mentionne à part dans ma réponse",
+                  "repere": "c8_pourquoi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le retire du calcul et je le signale dans mon rapport",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le supprime pour que la moyenne soit plus réaliste",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "remplace son montant par celui du ticket suivant",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour savoir combien la boutique a **encaissé lundi**, j'utilise…",
+              "justes": [
+                {
+                  "texte": "la somme des 9 tickets, soit 1 998 €",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "le total, car le ticket de 1 600 € a bien été encaissé",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "la somme de tous les tickets, sans en retirer aucun",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la moyenne multipliée par 9",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la médiane multipliée par 9",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "le ticket le plus élevé",
+                  "repere": "c8_confusion"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Donne la médiane et la moyenne côte à côte, avec une phrase qui explique l'écart.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Explique quand la moyenne est le bon choix : prévoir un total à partir du nombre de tickets.",
+              "repere": "c8_savoir"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je vous donne la médiane : 52 €. La moyenne, 222 €, est trop haute à cause d'une seule vente de 1 600 €. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le responsable demande le montant d'un achat habituel. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Le responsable demande combien la boutique a encaissé lundi. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Le responsable demande si le ticket de 1 600 € est une erreur de saisie. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Lundi, un ticket de 1 600 € a fait monter la moyenne à 222 €. Le responsable demande l'achat habituel : que lui répondez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La moyenne des 9 tickets est de 222 €.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le total des tickets est de 1 998 €.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Huit tickets sur neuf font 61 € ou moins.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le ticket de 1 600 € est une erreur de saisie.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Un seul ticket, de 1 600 €, fait monter la moyenne.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "La boutique est située à Cahors.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je fixe moi-même le seuil de l'offre à 52 €.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "b",
+                "texte": "Je retire le ticket de 1 600 € du fichier, pour que la moyenne s'en approche.",
+                "points": 0,
+                "repere": "c6_cache"
+              },
+              {
+                "id": "c",
+                "texte": "Je propose de calculer la médiane sur plusieurs semaines de tickets avant de fixer le seuil.",
+                "points": 2,
+                "repere": "c8_savoir"
+              },
+              {
+                "id": "d",
+                "texte": "Je lui donne aussi la moyenne, 222 €, en expliquant pourquoi elle est plus haute.",
+                "points": 1,
+                "repere": "c3_complet"
+              }
+            ]
+          },
+          "explication": "Huit tickets sur neuf font 61 € ou moins : un achat habituel est proche de 52 €. La moyenne de 222 € est faussée par un seul ticket. Le responsable doit recevoir la mesure qui répond à sa question."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "La bonne mesure pour chaque question",
+          "consigne": "Pour **chaque question** du responsable, choisissez **la mesure** qui convient le mieux.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Médiane"
+            },
+            {
+              "id": "k2",
+              "nom": "Moyenne"
+            },
+            {
+              "id": "k3",
+              "nom": "Total"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Quel montant dépense un client lors d'un achat habituel ? (quelques achats sont très élevés)",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Quelques achats très élevés font monter la moyenne : la médiane décrit mieux un achat habituel."
+            },
+            {
+              "id": "e2",
+              "texte": "Combien la boutique a-t-elle encaissé lundi ?",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "On additionne tous les tickets : c'est un total, pas un montant habituel."
+            },
+            {
+              "id": "e3",
+              "texte": "Quel est le délai de livraison habituel ? (un colis a mis 35 jours, les autres 2 à 4 jours)",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Un seul colis très en retard fausse la moyenne : la médiane donne le délai habituel."
+            },
+            {
+              "id": "e4",
+              "texte": "Combien de clients entrent par heure ? (de 18 à 25 clients chaque heure, sans heure exceptionnelle)",
+              "accepte": [
+                "k1",
+                "k2"
+              ],
+              "explication": "Sans valeur extrême, la moyenne et la médiane donnent presque le même résultat : les deux sont justes."
+            },
+            {
+              "id": "e5",
+              "texte": "Combien de t-shirts la boutique a-t-elle vendus cette semaine, tous modèles confondus ?",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "On compte tout ce qui a été vendu : c'est un total."
+            },
+            {
+              "id": "e6",
+              "texte": "Pour prévoir les ventes de la semaine, quel montant multipliez-vous par le nombre de tickets attendus ?",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Total = moyenne × nombre de tickets. La médiane sous-estimerait le total, car elle ne tient pas compte du poids des ventes très élevées."
+            },
+            {
+              "id": "e7",
+              "texte": "Quelle est l'attente habituelle en caisse ? (2 à 3 minutes, sauf 40 minutes pendant une panne)",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "L'attente de 40 minutes est exceptionnelle : la médiane donne l'attente habituelle."
+            },
+            {
+              "id": "e8",
+              "texte": "Combien d'euros de remises la boutique a-t-elle accordés ce mois-ci ?",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "On additionne toutes les remises : c'est un total."
+            }
+          ],
+          "repere_reussite": "c8_outil",
+          "repere_echec": "c8_confusion",
+          "reel": {
+            "consigne": "Exercice de 15 minutes : la personne reçoit 10 montants fictifs dont un très élevé, sur tableur ou sur papier, et trois questions (achat habituel, total encaissé, prévision). Elle choisit la mesure pour chacune et explique son choix.",
+            "criteres": [
+              {
+                "texte": "Choisit la médiane pour l'achat habituel",
+                "repere": "c8_outil"
+              },
+              {
+                "texte": "Explique qu'une valeur très élevée fausse la moyenne",
+                "repere": "c8_pourquoi"
+              },
+              {
+                "texte": "Garde la valeur extrême réelle au lieu de la supprimer",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Donne le bon chiffre pour chaque question : médiane, total",
+                "repere": "c8_precision"
+              }
+            ],
+            "bonus": {
+              "texte": "Donne la médiane et la moyenne côte à côte, avec une phrase sur l'écart",
+              "repere": "c8_outil"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Le responsable demande le montant d'un **achat habituel**. **Quelle mesure** utilisez-vous ?",
+              "justes": [
+                {
+                  "texte": "La médiane, parce qu'un ticket très élevé la déplace peu.",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "La médiane, car la moyenne de 222 € est faussée par un seul ticket.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "Le montant du milieu une fois les tickets rangés, soit 52 €.",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "La moyenne, en précisant qu'un ticket la fait monter.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "La moyenne, parce que c'est ce que donne le tableur.",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "Le total des tickets.",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le ticket de 1 600 € est une vraie vente. Que faites-vous de **ce ticket** ?",
+              "justes": [
+                {
+                  "texte": "Je le garde dans les données.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Je ne le supprime pas et je choisis une mesure qu'il ne fausse pas.",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "Je le garde et je le mentionne à part dans ma réponse.",
+                  "repere": "c8_pourquoi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le retire du calcul et je le signale dans mon rapport.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le supprime pour que la moyenne soit plus réaliste.",
+                  "repere": "c6_cache"
+                },
+                {
+                  "texte": "Je change son montant pour limiter l'écart.",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le responsable demande combien la boutique a **encaissé lundi**. Que lui donnez-vous ?",
+              "justes": [
+                {
+                  "texte": "La somme des 9 tickets, soit 1 998 €.",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "Le total, car le ticket de 1 600 € a bien été encaissé.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "La somme de tous les tickets, sans en retirer aucun.",
+                  "repere": "c8_precision"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "La moyenne multipliée par 9.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "La médiane multipliée par 9.",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "Le ticket le plus élevé.",
+                  "repere": "c8_confusion"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Donne la médiane et la moyenne côte à côte, avec une phrase qui explique l'écart.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Explique quand la moyenne est le bon choix : prévoir un total à partir du nombre de tickets.",
+              "repere": "c8_savoir"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner la liste des questions fréquentes de la direction, avec la mesure habituelle pour chacune : médiane, moyenne ou total.",
+        "Demander d'écrire, à côté de chaque chiffre, la mesure utilisée et pourquoi, pour que chacun puisse la relire."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Présenter un résultat à la direction, sans l'exagérer",
+      "pourquoi": "La direction décide à partir de ce qu'elle retient : une phrase claire, juste, avec ses limites, évite une mauvaise décision.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "La promotion a-t-elle marché ?",
+        "texte": "Mercredi, 15 h. Le directeur des magasins vous demande : « La promotion sur le deuxième article à −50 % a-t-elle marché ? » Jeudi, vous avez 5 minutes devant le comité de direction. La promotion a eu lieu en semaine 39, dans 10 magasins choisis par les directeurs régionaux. Dix autres magasins n'ont pas eu de promotion. Voici les ventes des deux groupes, en milliers d'euros (k€).",
+        "document": {
+          "type": "tableau",
+          "titre": "Ventes avant et pendant la promotion",
+          "colonnes": [
+            "Groupe",
+            "Magasins",
+            "Semaine 38",
+            "Semaine 39",
+            "Évolution"
+          ],
+          "lignes": [
+            [
+              "Avec promotion",
+              "10",
+              "250",
+              "270",
+              "+8 %"
+            ],
+            [
+              "Sans promotion",
+              "10",
+              "200",
+              "206",
+              "+3 %"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Par quoi commencez-vous** votre message au comité de direction ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Par la méthode : comment j'ai construit les deux groupes et calculé les évolutions.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Par la question posée, « La promotion a-t-elle marché ? », puis par le résultat.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Par mon avis général : la promotion a plutôt bien fonctionné, selon moi.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Par le résultat : +8 % de ventes avec la promotion, contre +3 % sans promotion.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "explication": "Le comité a 5 minutes : on donne le résultat en premier, avec le chiffre de comparaison. La méthode vient ensuite, si on la demande. Rappeler la question d'abord retarde l'essentiel.",
+              "relance": "Que dites-vous en premier à quelqu'un qui n'a que cinq minutes ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Que dites-vous des **+8 %** de ventes dans les magasins avec promotion ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que la promotion a fait augmenter de 8 % les ventes de tous les magasins qui l'avaient mise en place.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que les ventes ont augmenté de 8 % avec la promotion et de 3 % sans, soit environ 5 points d'écart.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que les ventes ont augmenté de 8 % dans les 10 magasins qui avaient la promotion, de 250 à 270 k€.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que la promotion a rapporté 20 k€ de ventes en plus aux 10 magasins qui l'avaient mise en place.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Les magasins sans promotion ont aussi progressé de 3 % : une partie de la hausse aurait eu lieu sans la promotion. Dire +8 % contre +3 % est juste. Dire +8 % seul laisse croire que tout vient de la promotion.",
+              "relance": "Avec quel chiffre comparez-vous un résultat pour savoir ce qu'une action a apporté ?"
+            },
+            {
+              "id": "q3",
+              "texte": "**Quelle limite** dites-vous à la direction ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que le test a duré une semaine, dans des magasins choisis par les régions : il faut le confirmer.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Aucune : les chiffres sont clairs et une limite affaiblirait le message devant le comité de direction.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que les chiffres peuvent contenir de petites erreurs, comme dans toute analyse de données.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que le test de significativité statistique n'a pas été réalisé sur l'écart entre les groupes.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                }
+              ],
+              "explication": "La limite utile est précise : une seule semaine, et des magasins choisis par les régions, donc pas forcément comparables. Une limite vague ne change rien à la décision ; un terme technique n'est pas compris par le comité.",
+              "relance": "Qu'est-ce qui pourrait expliquer l'écart entre les deux groupes, en dehors de la promotion ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Quelle phrase** envoyez-vous au directeur des magasins ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La promotion a fait augmenter les ventes de 8 % : c'est un succès, et nous pouvons la généraliser à tous les magasins.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Les ventes ont augmenté de 8 % avec la promotion et de 3 % sans promotion, soit 5 points d'écart.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "La promotion semble avoir aidé (+8 % contre +3 % sans), sur une semaine et des magasins choisis par les régions ; à confirmer.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "Les résultats de la promotion sont encourageants, mais il faut rester prudent, car l'analyse comporte plusieurs limites importantes.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "La meilleure phrase donne le résultat, la comparaison et la limite en peu de mots. Les chiffres sans limite sont justes mais incomplets. « Succès » et « généraliser » dépassent ce que les données montrent.",
+              "relance": "Comment résumez-vous un résultat en une phrase, sans l'exagérer ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Au comité, le directeur demande si on **généralise la promotion**. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Oui : les chiffres montrent clairement que la promotion fonctionne, donc on peut l'étendre à tous les magasins.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Pas encore : une semaine ne suffit pas. Je propose de la tester plusieurs semaines et de vous donner la date du résultat.",
+                  "points": 2,
+                  "repere": "c3_suite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Peut-être : c'est difficile à dire pour l'instant, il faudrait plus de données avant de pouvoir décider.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Cela dépend de la significativité statistique de l'écart observé entre les deux groupes de magasins étudiés.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                }
+              ],
+              "explication": "Une semaine et des magasins choisis ne suffisent pas pour décider : on le dit, puis on propose un test plus long avec une date. « Peut-être » reste vrai mais n'aide pas à décider ; « oui » dépasse les données.",
+              "relance": "Que répondez-vous quand on vous demande une certitude que les données ne donnent pas ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Dans mon message, je **commence par**…",
+              "justes": [
+                {
+                  "texte": "le résultat : +8 % avec la promotion, +3 % sans",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "la réponse à la question : la promotion semble avoir aidé",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "le chiffre le plus important, avant d'expliquer la méthode",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "rappeler la question posée, puis le résultat",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "décrire en détail comment j'ai calculé les évolutions",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "donner mon avis général : ça a plutôt bien marché",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour que le résultat reste juste, **je précise**…",
+              "justes": [
+                {
+                  "texte": "que les ventes ont aussi augmenté de 3 % dans les magasins sans promotion",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "que l'écart avec les magasins sans promotion est d'environ 5 points",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "que le test a duré une semaine, dans des magasins choisis par les régions",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que les chiffres peuvent contenir de petites erreurs",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : une limite affaiblirait le message",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "que la promotion a rapporté 20 k€ de ventes en plus",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si le directeur demande « **on la généralise** ? », je réponds…",
+              "justes": [
+                {
+                  "texte": "pas encore : une semaine ne suffit pas, et je propose de refaire le test",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "qu'il faut confirmer sur plusieurs semaines, et je donne une date pour le résultat",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "que le résultat est encourageant, mais pas assez solide pour décider",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que c'est difficile à dire",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "oui, les chiffres montrent que ça marche",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "que cela dépend de la significativité statistique",
+                  "repere": "c3_jargon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Joint le petit tableau des deux groupes, pour que chacun puisse relire les chiffres.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Demande au directeur de reformuler la conclusion, pour vérifier qu'elle est bien comprise.",
+              "repere": "c3_verifie"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« La promotion semble avoir aidé : +8 % de ventes avec la promotion, +3 % sans. Mais le test a duré une semaine, dans des magasins choisis par les régions : il faut le confirmer. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "La direction demande si la promotion a marché. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Le directeur demande combien de magasins ont participé à la promotion. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "La direction demande pourquoi les ventes du site ont baissé en semaine 40. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Les magasins avec promotion ont vendu 8 % de plus, ceux sans promotion 3 % de plus, sur une semaine. Que dites-vous à la direction ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Les ventes ont augmenté de 8 % avec la promotion.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le comité de direction dure 5 minutes pour ce point.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Les ventes ont aussi augmenté de 3 % sans promotion.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Les magasins avec promotion ont vendu 270 k€.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le test a duré une semaine, dans des magasins choisis par les régions.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le site internet a aussi vendu plus.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "J'envoie la phrase seule, sans le tableau des chiffres.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "b",
+                "texte": "J'ajoute le tableau des deux groupes et je propose de refaire le test sur plusieurs semaines.",
+                "points": 2,
+                "repere": "c3_suite"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends les questions de la direction avant d'envoyer les chiffres.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "d",
+                "texte": "Je retire la limite : elle rend la phrase plus longue et moins claire.",
+                "points": 0,
+                "repere": "c3_oubli"
+              }
+            ]
+          },
+          "explication": "La réponse donne le résultat, la comparaison (+3 % sans promotion) et la limite en deux phrases. Elle ne dit pas que la promotion est la seule cause de la hausse."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Quelle phrase pour la direction ?",
+          "consigne": "Pour **chaque phrase**, choisissez ce qu'elle est : claire et juste, trop vague, ou exagérée ou fausse.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Claire et juste"
+            },
+            {
+              "id": "k2",
+              "nom": "Trop vague"
+            },
+            {
+              "id": "k3",
+              "nom": "Exagérée ou fausse"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "La promotion semble avoir aidé : +8 % contre +3 % sans promotion, sur une semaine.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle donne le résultat, la comparaison et la durée."
+            },
+            {
+              "id": "e2",
+              "texte": "La promotion a fait augmenter les ventes de 8 %.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Les ventes ont aussi augmenté de 3 % sans promotion : tout ne vient pas de la promotion."
+            },
+            {
+              "id": "e3",
+              "texte": "Les résultats sont plutôt encourageants.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Aucun chiffre, aucune comparaison : le comité ne peut rien en retenir."
+            },
+            {
+              "id": "e4",
+              "texte": "Les ventes ont augmenté de 8 % avec la promotion et de 3 % sans, soit environ 5 points d'écart.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle donne les deux chiffres et l'écart, sans dire plus que les données."
+            },
+            {
+              "id": "e5",
+              "texte": "La promotion est un succès : il faut la généraliser à tous les magasins.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Une semaine et des magasins choisis ne permettent pas de généraliser."
+            },
+            {
+              "id": "e6",
+              "texte": "Il y a une différence entre les deux groupes de magasins.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "On ne sait ni quel groupe est meilleur, ni de combien."
+            },
+            {
+              "id": "e7",
+              "texte": "La promotion a rapporté 20 k€ de ventes en plus.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Les 20 k€ sont la hausse totale. Sans promotion, les ventes auraient déjà augmenté de 3 %."
+            },
+            {
+              "id": "e8",
+              "texte": "Résultat à confirmer : le test a duré une semaine, dans des magasins choisis par les régions.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Elle donne une limite précise, que la direction peut vérifier."
+            }
+          ],
+          "repere_reussite": "c3_complet",
+          "repere_echec": "c3_faux",
+          "reel": {
+            "consigne": "Exercice de 15 minutes : la personne reçoit le tableau des deux groupes et la question du directeur. Elle écrit, ou dit à voix haute, la phrase qu'elle donnerait au comité, puis répond à « Donc on la généralise ? ».",
+            "criteres": [
+              {
+                "texte": "Donne le résultat en premier, avec le chiffre de comparaison",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Compare avec les magasins sans promotion : +8 % contre +3 %",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Dit une limite précise : une semaine, magasins choisis par les régions",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Dit ce qui se passe ensuite : confirmer sur plusieurs semaines",
+                "repere": "c3_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Garde une trace écrite : joint le tableau des deux groupes",
+              "repere": "c3_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Par quoi commencez-vous** votre message au comité de direction ?",
+              "justes": [
+                {
+                  "texte": "Par le résultat : +8 % avec la promotion, +3 % sans.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Par la réponse à la question : la promotion semble avoir aidé.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Par le chiffre le plus important, avant la méthode.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Par la question posée, puis le résultat.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Par la méthode de calcul, en détail.",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "Par mon avis : ça a plutôt bien marché.",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que dites-vous** pour que le résultat reste juste ?",
+              "justes": [
+                {
+                  "texte": "Que les ventes ont aussi augmenté de 3 % sans promotion.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Que l'écart avec les magasins sans promotion est d'environ 5 points.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Que le test a duré une semaine, dans des magasins choisis par les régions.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que les chiffres peuvent contenir de petites erreurs.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : une limite affaiblirait le message.",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "Que la promotion a rapporté 20 k€.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le directeur demande si on **généralise la promotion**. Que répondez-vous ?",
+              "justes": [
+                {
+                  "texte": "Pas encore : une semaine ne suffit pas, je propose de refaire le test.",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "Qu'il faut confirmer sur plusieurs semaines, et je donne une date pour le résultat.",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "Que le résultat est encourageant, mais pas assez solide pour décider.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que c'est difficile à dire.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Oui, les chiffres montrent que ça marche.",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "Que cela dépend de la significativité statistique.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Joint le petit tableau des deux groupes pour garder une trace des chiffres.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Demande au directeur de reformuler la conclusion, pour vérifier qu'elle est comprise.",
+              "repere": "c3_verifie"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Proposer un modèle de message en trois parties : le résultat, la limite, la suite. Le relire avec la personne les premières semaines.",
+        "Faire présenter un premier résultat à un collègue avant le comité, pour vérifier qu'il est compris sans explication orale."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez **trouvé une erreur** dans un fichier ou un tableau. **Comment l'avez-vous repérée** ?",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur et comment elle a été repérée",
+        "Dit ce qu'il a corrigé ou mis de côté, et ce qu'il a signalé",
+        "Dit ce qui a changé pour la repérer plus tôt"
+      ],
+      "relance": "Comment avez-vous su que c'était une erreur et pas une valeur normale ?",
+      "alternative": "Si vous n'avez jamais travaillé sur des données : parlez d'une erreur trouvée dans un document, une facture ou un relevé (travail, études, association, vie quotidienne)."
+    },
+    {
+      "id": "e2",
+      "competence": "C6",
+      "texte": "Vous recevez un fichier de ventes pour une analyse urgente. Que vérifiez-vous **avant de calculer** ?",
+      "suite": [
+        "Que faites-vous d'une ligne qui vous paraît impossible ?"
+      ],
+      "attendus": [
+        "Cite des contrôles concrets : doublons, cases vides, dates, valeurs impossibles",
+        "Met de côté les lignes douteuses au lieu de les corriger de tête",
+        "Dit ce qu'il écrit dans son rapport sur ce qu'il a retiré"
+      ],
+      "relance": "Et si le fichier contient des noms ou des e-mails de clients dont vous n'avez pas besoin ?",
+      "alternative": "Quand vous recevez une liste ou un tableau à utiliser (budget, inscriptions, notes), que vérifiez-vous avant de compter ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C1",
+      "texte": "On vous demande « une analyse des ventes », **sans autre précision**. Que faites-vous ?",
+      "suite": [
+        "Quelles questions posez-vous ?",
+        "Que faites-vous si la personne ne sait pas précisément ce qu'elle veut ?"
+      ],
+      "attendus": [
+        "Pose des questions précises : période, périmètre, comparaison",
+        "Demande à quoi servira l'analyse ou quelle décision elle prépare",
+        "Reformule la demande et la fait valider avant de commencer"
+      ],
+      "relance": "Comment savez-vous que vous avez bien compris la demande ?",
+      "alternative": "Quand quelqu'un vous donne une consigne trop large (travail, association, vie quotidienne), comment vous assurez-vous de ce qu'il attend ?"
+    },
+    {
+      "id": "e4",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où vous avez cherché la cause d'un problème. **Quelles explications avez-vous testées** ?",
+      "suite": [
+        "Dans quel ordre les avez-vous testées ?",
+        "Comment avez-vous vérifié que c'était bien la cause ?"
+      ],
+      "attendus": [
+        "Cite plusieurs explications possibles",
+        "Explique l'ordre des tests : rapide, probable, important",
+        "Vérifie que la cause trouvée explique tout le problème"
+      ],
+      "relance": "Qu'avez-vous fait quand une explication testée ne donnait rien ?",
+      "alternative": "Parlez d'une panne ou d'un problème du quotidien (appareil, trajet, organisation) dont vous avez cherché la cause."
+    },
+    {
+      "id": "e5",
+      "competence": "C8",
+      "texte": "Un responsable demande le montant d'un **achat habituel**, et quelques achats sont très élevés. **Quelle mesure** utilisez-vous ?",
+      "suite": [
+        "Pourquoi ce choix ?"
+      ],
+      "attendus": [
+        "Choisit la médiane et dit pourquoi",
+        "Explique l'effet d'une valeur extrême sur la moyenne",
+        "Garde la valeur extrême réelle au lieu de la supprimer"
+      ],
+      "relance": "Dans quel cas utilisez-vous la moyenne plutôt que la médiane ?",
+      "alternative": "Si vous n'avez jamais fait d'analyse : sur dix colis, neuf arrivent en 2 à 4 jours et un en 35 jours. Quel délai annoncez-vous comme « habituel » ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C8",
+      "texte": "Un fichier de clients contient des noms, des e-mails et des montants d'achat. Votre analyse **porte sur les montants**. Que faites-vous des **données personnelles** ?",
+      "suite": [
+        "Que faites-vous si un collègue vous demande le fichier complet ?"
+      ],
+      "attendus": [
+        "N'utilise que les colonnes nécessaires à l'analyse",
+        "Ne partage pas les données personnelles sans nécessité",
+        "Sait à qui demander la règle de l'entreprise en cas de doute"
+      ],
+      "relance": "Comment procédez-vous si vous avez un doute sur ce que vous avez le droit d'utiliser ?",
+      "alternative": "Quand vous gérez une liste de personnes (inscriptions, contacts), quelles informations gardez-vous, et lesquelles ne gardez-vous pas ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez présenté un résultat à quelqu'un qui **n'était pas spécialiste**. **Comment l'avez-vous expliqué** ?",
+      "suite": [
+        "Qu'avez-vous dit en premier ?",
+        "Comment avez-vous vérifié qu'il avait compris ?"
+      ],
+      "attendus": [
+        "Donne le résultat avant les détails",
+        "Utilise des mots simples, sans jargon",
+        "Vérifie que le message est compris"
+      ],
+      "relance": "Qu'avez-vous laissé de côté pour rester clair ?",
+      "alternative": "Parlez d'une fois où vous avez expliqué quelque chose de technique à une personne non spécialiste (études, association, loisirs, vie quotidienne)."
+    },
+    {
+      "id": "e8",
+      "competence": "C3",
+      "texte": "Trois personnes vous demandent chacune une analyse pour la même semaine. Vous **ne pouvez pas tout livrer**. Que faites-vous ?",
+      "suite": [
+        "Que dites-vous aux personnes dont la demande sera livrée plus tard ?"
+      ],
+      "attendus": [
+        "Choisit l'ordre avec un critère : urgence, impact, échéance",
+        "Prévient chaque demandeur de ce qui sera livré, ou pas, et quand",
+        "Propose une version réduite ou demande l'avis du responsable"
+      ],
+      "relance": "Comment savez-vous quelle demande est la plus urgente ?",
+      "alternative": "Quand plusieurs personnes vous demandent un service en même temps (travail, association, études), comment choisissez-vous l'ordre ?"
+    }
+  ],
+  "_pv": "62253afa04"
+}

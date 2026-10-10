@@ -1,0 +1,2602 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "cariste",
+  "version": "2026.10",
+  "nom": "Cariste",
+  "secteur": "logistique",
+  "alias": [
+    "cariste",
+    "conducteur de chariot élévateur",
+    "cariste magasinier",
+    "cariste réception",
+    "cariste expédition",
+    "chariot élévateur",
+    "cariste logistique",
+    "conducteur d'engins de manutention"
+  ],
+  "resume": "Conduit un chariot élévateur pour réceptionner, ranger, sortir et charger les palettes, en respectant les règles de sécurité du site.",
+  "contexte": "Un entrepôt de stockage en racks, avec des quais de chargement et des piétons qui circulent dans les allées.",
+  "cadre": "La conduite d'un chariot élévateur demande une autorisation de conduite délivrée par l'employeur, en général après un CACES R489 de la catégorie concernée.",
+  "competences": [
+    {
+      "code": "C8",
+      "titre": "Conduire en sécurité : contrôle du chariot et circulation",
+      "pourquoi": "Un chariot défectueux, ou une conduite mal adaptée parmi les piétons, peut blesser quelqu'un en quelques secondes.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Début de poste et premier trajet",
+        "texte": "Mercredi, 6 h 10. Vous prenez le chariot élévateur n° 4 pour votre première mission : amener une palette de l'allée B au quai 2. Vous faites d'abord le contrôle de prise de poste avec la fiche du site (voir le tableau). Ensuite, vous roulez dans l'allée centrale, où des préparateurs circulent à pied. Le plan de circulation du site fixe le sens de circulation et un passage piétons devant le quai. Règle du site : quand la charge masque la vue vers l'avant, on conduit en marche arrière.",
+        "document": {
+          "type": "tableau",
+          "titre": "Fiche de prise de poste : ce qui doit être conforme",
+          "colonnes": [
+            "Point à contrôler",
+            "Conforme si…"
+          ],
+          "lignes": [
+            [
+              "Pneus et roues",
+              "ni coupure profonde ni pièce manquante"
+            ],
+            [
+              "Fourches",
+              "ni fissure ni déformation"
+            ],
+            [
+              "Fuites",
+              "aucune trace d'huile ou de liquide sous le chariot"
+            ],
+            [
+              "Avertisseur sonore",
+              "il sonne quand on appuie"
+            ],
+            [
+              "Frein de stationnement",
+              "le chariot reste immobile quand il est serré"
+            ],
+            [
+              "Ceinture du conducteur",
+              "elle se verrouille"
+            ],
+            [
+              "Plaque de capacité",
+              "elle est présente et lisible"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous prenez le chariot n° 4. Que faites-vous **avant de partir** en mission ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je démarre et je pars : le chariot a servi cette nuit, donc il fonctionne.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde seulement le niveau de charge ou de carburant, et les pneus.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je contrôle chaque point de la fiche de prise de poste, l'un après l'autre.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je fais le contrôle plus tard, si la mission me laisse du temps.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Le contrôle de prise de poste se fait avant de rouler : il trouve un défaut avant qu'il blesse quelqu'un. Regarder seulement quelques points peut laisser passer un défaut grave.",
+              "relance": "Que contrôlez-vous sur un chariot avant de l'utiliser ?"
+            },
+            {
+              "id": "q2",
+              "texte": "En testant l'avertisseur sonore, vous constatez qu'il **ne sonne pas**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je prends un autre chariot sans signaler la panne : il y en a d'autres.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne prends pas ce chariot et je signale la panne au responsable.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "c",
+                  "texte": "J'utilise le chariot en prévenant les piétons à la voix.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je démonte le boîtier de l'avertisseur pour trouver la panne.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                }
+              ],
+              "explication": "Sans avertisseur, vous ne pouvez pas prévenir les piétons : on n'utilise pas ce chariot. On prévient le responsable pour que la personne suivante ne le prenne pas non plus.",
+              "relance": "Que faites-vous quand vous trouvez une anomalie sur un chariot ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le responsable vous donne le chariot n° 6. Que faites-vous **avant de partir avec** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je pars : le responsable me l'a donné, donc il est en bon état.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je reprends la fiche du n° 4 : les deux chariots sont du même modèle.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je teste seulement l'avertisseur, car c'était le défaut du n° 4.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je fais le contrôle complet de prise de poste sur ce chariot aussi.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                }
+              ],
+              "explication": "Chaque chariot se contrôle à la prise de poste, même quand le responsable vous le confie. Ne tester que l'avertisseur laisse passer d'autres défauts possibles.",
+              "relance": "Pourquoi contrôler un chariot que le responsable vient de vous confier ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Au passage piétons**, un préparateur s'apprête à traverser devant votre chariot. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je m'arrête, je m'assure qu'il m'a vu, puis je le laisse traverser.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je m'arrête et je le laisse traverser.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je klaxonne et je passe avant lui pour ne pas perdre de temps.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ralentis et je passe derrière lui quand il a fait deux pas.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Sur un passage piétons, le chariot s'arrête et laisse passer le piéton. S'assurer qu'il vous a vu évite qu'il traverse sans regarder.",
+              "relance": "Que faites-vous quand un piéton traverse devant votre chariot ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La palette est haute et vous **masque la vue vers l'avant**. Que faites-vous pour aller au quai 2 ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je roule en marche avant, lentement, en me penchant pour voir sur le côté.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je conduis en marche arrière, comme le demande la règle du site.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je roule en marche arrière, en regardant derrière moi, prêt à m'arrêter.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je roule en marche avant en klaxonnant à chaque croisement.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "La règle du site est claire : charge qui masque la vue, marche arrière. Regarder derrière soi et être prêt à s'arrêter complète la règle ; se pencher ou klaxonner ne remplace pas la vue.",
+              "relance": "Que faites-vous quand la charge vous cache la route ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Si l'avertisseur sonore du chariot **ne fonctionne pas**, je…",
+              "justes": [
+                {
+                  "texte": "n'utilise pas ce chariot et je préviens le responsable",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "note la panne sur la fiche et je ne conduis pas ce chariot",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "mets le chariot de côté, sans le conduire, et je signale la panne",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "demande au responsable quel autre chariot je peux prendre, après contrôle",
+                  "repere": "c8_role"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "prends un autre chariot",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "utilise quand même le chariot en prévenant les piétons à la voix",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "essaie de le réparer moi-même",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Quand un préparateur traverse devant mon chariot **au passage piétons**, je…",
+              "justes": [
+                {
+                  "texte": "m'arrête avant le passage et je le laisse traverser",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "m'arrête et je m'assure qu'il m'a vu avant de repartir",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "lui laisse la priorité, puis je repars quand le passage est libre",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ralentis et je klaxonne",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "passe avant lui pour ne pas perdre de temps",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "klaxonne pour qu'il s'arrête, puis je passe",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand la charge me **masque la vue** vers l'avant, je…",
+              "justes": [
+                {
+                  "texte": "conduis en marche arrière, comme le demande la règle du site",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "roule en marche arrière en regardant derrière moi",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "suis la règle du site : marche arrière, et je m'arrête si quelqu'un apparaît",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "roule très lentement",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "me penche sur le côté pour voir devant",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "roule en marche avant en klaxonnant",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique qu'on contrôle le chariot pour trouver un défaut avant qu'il blesse quelqu'un.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Propose un miroir ou un marquage à un angle de l'allée où l'on voit mal les piétons.",
+              "repere": "c5_ameliore"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je conduis en marche arrière, comme le demande la règle du site. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un préparateur s'apprête à traverser devant votre chariot. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous transportez une palette jusqu'au quai 2. Comment conduisez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Vous venez de terminer votre mission au quai 2. Que faites-vous du chariot ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "La palette est haute et vous masque la vue vers l'avant. Comment conduisez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La palette est haute.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le quai 2 est fermé ce matin.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La charge masque la vue vers l'avant.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Il est 6 h 10.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "La règle du site demande la marche arrière dans ce cas.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le contrôle de prise de poste n'a pas été fait.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je repasse en marche avant pour traverser le passage piétons.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "b",
+                "texte": "Je m'arrête avant le passage piétons et je vérifie que personne ne traverse.",
+                "points": 2,
+                "repere": "c8_securite"
+              },
+              {
+                "id": "c",
+                "texte": "Je klaxonne une fois et je traverse sans m'arrêter.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "d",
+                "texte": "Je ralentis devant le passage piétons et je regarde si quelqu'un traverse.",
+                "points": 1,
+                "repere": null
+              }
+            ]
+          },
+          "explication": "La charge masque la vue vers l'avant : la règle du site demande alors la marche arrière. La palette haute explique le problème ; la règle dit quoi faire."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "La fiche de prise de poste d'un collègue",
+          "consigne": "Voici la fiche remplie par un collègue pour un autre chariot. Cliquez sur **chaque ligne qui contient une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Pneus et roues : petites marques en surface, aucune coupure profonde, aucune pièce manquante. Conforme.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Fourches : fissure visible à la base de la fourche gauche. Conforme.",
+              "erreur": true,
+              "explication": "La fiche demande « ni fissure ni déformation » : une fourche fissurée n'est pas conforme."
+            },
+            {
+              "id": "e3",
+              "texte": "Fuites : aucune trace d'huile ni de liquide sous le chariot. Conforme.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Avertisseur sonore : il sonne quand on appuie. Conforme.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Frein de stationnement : le chariot recule un peu quand il est serré. Conforme.",
+              "erreur": true,
+              "explication": "Le chariot doit rester immobile quand le frein est serré : ce n'est pas conforme."
+            },
+            {
+              "id": "e6",
+              "texte": "Ceinture du conducteur : elle se verrouille. Conforme.",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Plaque de capacité : présente, mais les chiffres sont effacés. Conforme.",
+              "erreur": true,
+              "explication": "La plaque doit être présente et lisible : des chiffres effacés ne sont pas conformes."
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Contrôle simulé (10 à 15 minutes) sur un chariot à l'arrêt, ou sur photos, avec la fiche du site. Un défaut a été préparé à l'avance. La personne contrôle chaque point, remplit la fiche et dit ce qu'elle fait du chariot.",
+            "criteres": [
+              {
+                "texte": "Parcourt tous les points de la fiche, sans en sauter",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère le défaut préparé",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Dit qu'elle n'utilise pas le chariot et prévient le responsable",
+                "repere": "c6_bloque"
+              },
+              {
+                "texte": "Écrit le constat sur la fiche",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Explique pourquoi on ne roule pas avec un chariot défectueux",
+              "repere": "c8_pourquoi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous si l'avertisseur sonore du chariot **ne fonctionne pas** ?",
+              "justes": [
+                {
+                  "texte": "Je n'utilise pas ce chariot et je préviens le responsable.",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Je note la panne sur la fiche et je ne conduis pas ce chariot.",
+                  "repere": "c6_trace"
+                },
+                {
+                  "texte": "Je mets le chariot de côté et je signale la panne.",
+                  "repere": "c6_bloque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je prends un autre chariot.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je l'utilise quand même, en prévenant les piétons à la voix.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous quand un préparateur traverse **au passage piétons** devant votre chariot ?",
+              "justes": [
+                {
+                  "texte": "Je m'arrête et je le laisse traverser.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je m'arrête et je vérifie qu'il m'a vu.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je lui laisse la priorité et je repars quand le passage est libre.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je ralentis et je klaxonne.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je passe avant lui pour ne pas perdre de temps.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous quand la charge vous **masque la vue** vers l'avant ?",
+              "justes": [
+                {
+                  "texte": "Je conduis en marche arrière, comme le demande la règle du site.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je roule en marche arrière en regardant derrière moi.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je suis la règle du site et je m'arrête si quelqu'un apparaît.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je roule très lentement.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je me penche pour voir devant et je klaxonne.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique qu'un défaut non signalé peut blesser la personne qui prendra le chariot ensuite.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Propose de noter le numéro du chariot et l'heure de la panne pour l'équipe suivante.",
+              "repere": "c3_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire le premier contrôle de prise de poste avec la personne, sur le chariot qu'elle utilisera, et lui montrer à qui signaler un défaut.",
+        "Parcourir à pied le plan de circulation : sens, passages piétons, angles où l'on voit mal. Rappeler la règle de la charge qui masque la vue."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Contrôler les charges et ranger au bon endroit",
+      "pourquoi": "Une palette abîmée, trop lourde pour son niveau ou mal enregistrée peut tomber d'un rack ou faire perdre du stock.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Des palettes à ranger dans l'allée D",
+        "texte": "Jeudi, 14 h 00. La réception vous confie plusieurs palettes à ranger dans les racks de l'allée D. Votre terminal indique l'emplacement de chaque palette : le niveau 1 est au sol, le niveau 4 est le plus haut. Une palette repose sur deux lisses, les barres horizontales du rack. Avant de ranger, vous contrôlez chaque palette : film, cartons, bois et poids écrit sur l'étiquette. Chaque niveau a une charge maximale par palette (voir le tableau). Règle du site : une palette non conforme va en zone « à traiter » et le responsable de la réception est prévenu. Une fois la palette posée, vous scannez l'étiquette de l'emplacement : le terminal enregistre le rangement.",
+        "document": {
+          "type": "tableau",
+          "titre": "Plaque de charge de l'allée D",
+          "colonnes": [
+            "Niveau",
+            "Charge maximale par palette"
+          ],
+          "lignes": [
+            [
+              "Niveau 1 (au sol)",
+              "1 000 kg"
+            ],
+            [
+              "Niveau 2",
+              "1 000 kg"
+            ],
+            [
+              "Niveau 3",
+              "800 kg"
+            ],
+            [
+              "Niveau 4 (le plus haut)",
+              "600 kg"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "La première palette a un film qui se décolle d'un côté, et un carton du haut dépasse. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la range quand même : la réception l'a déjà acceptée telle quelle.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la mets en zone « à traiter » et je préviens la réception.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je remets le carton en place et je la range au niveau prévu.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je la pose en zone « à traiter », sans prévenir personne.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Avec un film qui se décolle, des cartons peuvent tomber pendant le stockage en hauteur : la règle du site met la palette de côté. Il faut aussi prévenir la réception ; la poser sans rien dire laisse le problème sans suite.",
+              "relance": "Que contrôlez-vous sur une palette avant de la ranger ?"
+            },
+            {
+              "id": "q2",
+              "texte": "La deuxième palette est en bon état. Son étiquette indique **850 kg** et le terminal prévoit le **niveau 4**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je la range au niveau 4, comme le terminal me l'indique.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la range au niveau 2, qui est libre, et je ne préviens personne du changement.",
+                  "points": 1,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je la range au niveau 3, car 800 kg se rapproche de 850 kg.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne la range pas au niveau 4 et je demande un autre emplacement.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                }
+              ],
+              "explication": "La plaque autorise 600 kg au niveau 4 et 800 kg au niveau 3 : 850 kg est trop lourd pour les deux. On demande un autre emplacement ; ranger ailleurs sans prévenir fausse le stock.",
+              "relance": "Comment savez-vous qu'une palette peut aller à un niveau précis ?"
+            },
+            {
+              "id": "q3",
+              "texte": "La troisième palette **n'a pas de poids** sur son étiquette. Le terminal prévoit le **niveau 3**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je cherche son poids sur le bon de livraison ou je le demande à la réception.",
+                  "points": 2,
+                  "repere": "c1_aide"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la range : elle a l'air plus légère que les autres.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je la range au niveau 1, au sol, sans autre vérification.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "J'écris 500 kg sur l'étiquette pour pouvoir valider le rangement dans le terminal.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Sans poids, on ne peut pas comparer avec la plaque : on le cherche sur le bon de livraison ou on le demande à la réception. Deviner un poids est dangereux en hauteur.",
+              "relance": "Que faites-vous quand il manque une information pour ranger une palette ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous avez posé la palette en hauteur. Que vérifiez-vous **avant de retirer les fourches** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : j'ai suivi le terminal, donc le rangement est forcément bon.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Qu'elle est bien visible depuis l'allée, même si elle dépasse un peu.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Qu'elle repose sur les deux lisses, droite, sans dépasser dans l'allée.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que l'étiquette de l'emplacement est bien celle que le terminal indique.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Une palette mal posée ou qui dépasse peut tomber ou être heurtée par un autre chariot. Contrôler la pose avant de retirer les fourches est la dernière vérification ; le terminal ne la remplace pas.",
+              "relance": "Comment vous assurez-vous qu'une palette est bien posée en hauteur ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La palette est posée. Que faites-vous pour que **le stock soit juste** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je note l'emplacement sur un papier et je le saisirai dans le terminal plus tard.",
+                  "points": 1,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je scanne l'étiquette de l'emplacement où la palette est posée.",
+                  "points": 2,
+                  "repere": "c6_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne valide rien : le terminal se mettra à jour tout seul.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je valide sans scanner l'étiquette : l'emplacement est celui prévu.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Le stock n'est juste que si le terminal enregistre l'emplacement réel de la palette. Un papier garde une trace, mais l'équipe ne retrouvera pas la palette dans le terminal.",
+              "relance": "Pourquoi l'emplacement enregistré doit-il être celui où la palette est posée ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand une palette a un film qui se décolle et un carton qui dépasse, je…",
+              "justes": [
+                {
+                  "texte": "ne la range pas : je la pose en zone « à traiter » et je préviens la réception",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "mets la palette de côté et je dis quel défaut j'ai vu, sur quelle palette",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "ne la range pas tant que le responsable n'a pas décidé",
+                  "repere": "c6_bloque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la regarde de plus près",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la range quand même, en bas du rack",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "resserre le film moi-même, puis je la range sans le dire",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Avant de ranger une palette en hauteur, je **compare son poids** à…",
+              "justes": [
+                {
+                  "texte": "la charge maximale du niveau, indiquée sur la plaque du rack",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "la limite écrite sur la plaque de charge du niveau prévu",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "ce que le rack peut porter à ce niveau, d'après la plaque",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ce que mon chariot peut lever",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ce que je pense qu'elle pèse, à vue d'œil",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "rien : le terminal a déjà choisi l'emplacement",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si l'étiquette d'une palette **n'indique pas** son poids, je…",
+              "justes": [
+                {
+                  "texte": "cherche le poids sur le bon de livraison",
+                  "repere": "c1_aide"
+                },
+                {
+                  "texte": "demande le poids à la réception avant de la ranger",
+                  "repere": "c1_aide"
+                },
+                {
+                  "texte": "ne la range pas en hauteur tant que je ne connais pas son poids",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la range au niveau 1, au sol",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "estime son poids à vue d'œil",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "la range au niveau prévu : elle a l'air légère",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de signaler à la réception les étiquettes sans poids, pour que cela ne revienne pas.",
+              "repere": "c6_recidive"
+            },
+            {
+              "texte": "Vérifie que la palette repose sur les deux lisses avant de retirer les fourches.",
+              "repere": "c6_controle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne la range pas au niveau 4 : elle pèse 850 kg et la plaque indique 600 kg. Je demande un autre emplacement. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Une palette a un film qui se décolle. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Une palette de 850 kg est prévue au niveau 4, où la plaque indique 600 kg. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Le terminal prévoit un niveau élevé pour une palette lourde. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "L'étiquette d'une palette n'indique pas son poids. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La palette pèse 850 kg.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La palette est abîmée.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La plaque indique 600 kg maximum au niveau 4.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le niveau 1 accepte jusqu'à 1 000 kg.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le terminal prévoit le niveau 4 pour cette palette.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le niveau 4 est déjà occupé.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je range la palette à l'emplacement donné par le responsable, puis je scanne l'étiquette.",
+                "points": 2,
+                "repere": "c6_trace"
+              },
+              {
+                "id": "b",
+                "texte": "Je la range au niveau 3 : c'est le niveau le plus proche.",
+                "points": 0,
+                "repere": "c8_erreur"
+              },
+              {
+                "id": "c",
+                "texte": "Je la range au niveau 2, qui est libre, sans prévenir le responsable.",
+                "points": 1,
+                "repere": "c6_cache"
+              },
+              {
+                "id": "d",
+                "texte": "Je la laisse dans l'allée en attendant une réponse.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "Le poids de la palette dépasse ce que le niveau 4 peut porter : on ne la range pas là. On obtient un autre emplacement, puis on enregistre celui où la palette est vraiment posée."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Huit palettes à ranger dans l'allée D",
+          "consigne": "Pour **chaque palette**, **choisissez votre décision**. Quand vous ne rangez pas, vous prévenez le responsable.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Je la range à l'emplacement prévu"
+            },
+            {
+              "id": "k2",
+              "nom": "Je ne la range pas : palette non conforme"
+            },
+            {
+              "id": "k3",
+              "nom": "Je ne la range pas : trop lourde pour ce niveau"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Palette de 700 kg, bien filmée, prévue au niveau 3.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "700 kg est sous la limite de 800 kg du niveau 3."
+            },
+            {
+              "id": "e2",
+              "texte": "Palette de 650 kg, bien filmée, prévue au niveau 4.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La plaque indique 600 kg au niveau 4 : 650 kg est trop lourd."
+            },
+            {
+              "id": "e3",
+              "texte": "Palette de 500 kg, film déchiré sur un côté, prévue au niveau 2.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le poids convient, mais un film déchiré rend la palette non conforme."
+            },
+            {
+              "id": "e4",
+              "texte": "Palette de 900 kg, bien filmée, prévue au niveau 2.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "900 kg est sous la limite de 1 000 kg du niveau 2."
+            },
+            {
+              "id": "e5",
+              "texte": "Palette de 750 kg, un carton écrasé en bas, prévue au niveau 3.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le poids convient, mais un carton écrasé rend la palette non conforme."
+            },
+            {
+              "id": "e6",
+              "texte": "Palette de 1 100 kg, bien filmée, prévue au niveau 1.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "La limite est de 1 000 kg même au niveau 1 : 1 100 kg est trop lourd."
+            },
+            {
+              "id": "e7",
+              "texte": "Palette de 550 kg, bien filmée, prévue au niveau 4.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "550 kg est sous la limite de 600 kg du niveau 4."
+            },
+            {
+              "id": "e8",
+              "texte": "Palette de 850 kg, film qui se décolle, prévue au niveau 4.",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "Deux raisons de ne pas la ranger : le film se décolle et 850 kg dépasse les 600 kg du niveau 4."
+            }
+          ],
+          "repere_reussite": "c6_controle",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Atelier simulé (15 minutes) : quatre palettes préparées, avec le poids écrit sur l'étiquette (une a un film qui se décolle) et une plaque de charge fictive. La personne contrôle chaque palette et dit ce qu'elle en fait.",
+            "criteres": [
+              {
+                "texte": "Regarde le film, les cartons et le bois avant de ranger",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Compare le poids de chaque palette à la plaque du niveau",
+                "repere": "c6_regle"
+              },
+              {
+                "texte": "Met de côté la palette non conforme et prévient le responsable",
+                "repere": "c6_bloque"
+              },
+              {
+                "texte": "Dit sa décision avec les faits : poids, niveau, état",
+                "repere": "c3_complet"
+              }
+            ],
+            "bonus": {
+              "texte": "Vérifie que la palette repose sur les deux lisses avant de retirer les fourches",
+              "repere": "c8_securite"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** d'une palette dont le film se décolle et dont un carton dépasse ?",
+              "justes": [
+                {
+                  "texte": "Je ne la range pas : je la pose en zone « à traiter ».",
+                  "repere": "c6_bloque"
+                },
+                {
+                  "texte": "Je préviens le responsable de la réception et je dis ce que j'ai vu.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je la mets de côté et j'attends la décision du responsable.",
+                  "repere": "c6_bloque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je la mets en zone « à traiter », sans prévenir personne.",
+                  "repere": "c3_oubli"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je la range quand même : la réception l'a acceptée.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Une palette de **850 kg** est prévue au **niveau 4**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je compare avec la plaque : 600 kg maximum, donc je ne la range pas là.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je demande un autre emplacement au responsable.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je ne la range qu'à un niveau dont la plaque accepte 850 kg, après accord.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je la range au niveau 2, qui est libre, sans prévenir.",
+                  "repere": "c6_cache"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je la range au niveau 4 : c'est ce que dit le terminal.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "L'étiquette d'une palette **n'indique pas** son poids. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je cherche le poids sur le bon de livraison.",
+                  "repere": "c1_aide"
+                },
+                {
+                  "texte": "Je demande le poids à la réception avant de la ranger.",
+                  "repere": "c1_aide"
+                },
+                {
+                  "texte": "Je ne la range pas en hauteur tant que je ne connais pas son poids.",
+                  "repere": "c6_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je la range au niveau 1, au sol.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'estime le poids à vue d'œil et je la range.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de signaler à la réception les étiquettes sans poids, pour éviter que cela revienne.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer où est la zone « à traiter », à qui signaler une palette non conforme et comment lire la plaque de charge d'un rack.",
+        "Faire ranger les premières palettes avec un collègue qui vérifie avec la personne le poids, le niveau et la pose sur les lisses."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Organiser ses missions selon les départs de camions",
+      "pourquoi": "Un camion qui part en retard rate sa tournée : l'ordre des missions décide de ce qui part à l'heure.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Cinq missions et deux départs de camions",
+        "texte": "Vendredi, 9 h 15. Vous êtes le seul cariste de l'équipe pendant la matinée. Votre terminal affiche cinq missions (voir le tableau). Les heures de départ des camions sont fixes : un camion qui part en retard rate sa tournée. Procédure du quai : on charge seulement quand le camion est calé et que le feu du quai est vert. Le responsable d'équipe est dans le bureau près du quai 3.",
+        "document": {
+          "type": "tableau",
+          "titre": "Missions affichées à 9 h 15",
+          "colonnes": [
+            "Mission",
+            "À terminer avant",
+            "Durée",
+            "Remarque"
+          ],
+          "lignes": [
+            [
+              "Réapprovisionner l'emplacement A12",
+              "9 h 30",
+              "5 min",
+              "Deux préparateurs attendent cette palette"
+            ],
+            [
+              "Charger le camion du quai 1",
+              "Départ à 10 h 00",
+              "20 min",
+              "Camion calé, feu vert"
+            ],
+            [
+              "Charger le camion du quai 3",
+              "Départ à 10 h 30",
+              "20 min",
+              "Camion garé, pas encore calé"
+            ],
+            [
+              "Ranger quatre palettes de la réception",
+              "12 h 00",
+              "20 min",
+              "Aucun camion en attente"
+            ],
+            [
+              "Ranger les palettes vides",
+              "14 h 00",
+              "10 min",
+              "Aucune"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par quelle mission **commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Ranger les quatre palettes de la réception, qui attendent depuis ce matin.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "Réapprovisionner A12 : c'est l'heure limite la plus proche.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "c",
+                  "texte": "Charger le camion du quai 1, car un départ de camion passe avant tout.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Ranger les palettes vides, car c'est la mission la plus simple.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "A12 est la mission la plus courte et l'heure limite la plus proche : faite en premier, tout est tenu. Si vous chargez d'abord le quai 1, A12 sera faite après 9 h 30 et les préparateurs attendront.",
+              "relance": "Comment choisissez-vous la première mission de la liste ?"
+            },
+            {
+              "id": "q2",
+              "texte": "A12 est réapprovisionné, il est **9 h 20**. Que faites-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Ranger les quatre palettes de la réception, pendant que c'est calme.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Charger le camion du quai 3, pour avoir de l'avance.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Ranger d'abord les palettes vides, puis charger le camion du quai 1.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Charger le camion du quai 1 : il est calé et il part à 10 h 00.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                }
+              ],
+              "explication": "Le quai 1 a le prochain départ et le camion est prêt : on le charge maintenant. Ranger les palettes vides avant reste possible, mais prend du temps sur un départ fixe.",
+              "relance": "Qu'est-ce qui passe avant : un départ de camion ou un rangement ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le quai 1 est chargé. Le chauffeur du quai 3 vous dit « Vous pouvez charger », mais **le feu est rouge** et son camion **n'est pas calé**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne charge pas, je rappelle la procédure et je fais une autre mission.",
+                  "points": 2,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne charge pas et j'attends devant le quai que le feu passe au vert.",
+                  "points": 1,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je charge : le chauffeur connaît son camion mieux que moi.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je charge seulement les palettes près de la porte, en attendant que le feu soit vert.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "La procédure du quai demande un camion calé et un feu vert : on ne charge pas avant. Faire une autre mission pendant l'attente évite de perdre du temps ; attendre sans rien faire est acceptable mais moins efficace.",
+              "relance": "Que faites-vous quand une règle de sécurité vous empêche de commencer une mission ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le chargement du quai 3 prend du retard : il finira à **10 h 40**, pour un départ à **10 h 30**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je finis le plus vite possible, sans rien dire : ce n'est que dix minutes.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens seulement le chauffeur du quai 3.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je préviens le responsable d'équipe et le chauffeur, avec l'heure de fin prévue.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse les dernières palettes de côté pour que le camion parte à 10 h 30.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Le chauffeur et le responsable doivent connaître l'heure réelle pour s'organiser. Prévenir seulement le chauffeur laisse le responsable sans information ; se taire ne change pas l'heure de fin.",
+              "relance": "À qui dites-vous qu'une mission va finir en retard ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Les deux camions sont partis. Il vous reste deux missions : ranger les **palettes de la réception** et ranger les **palettes vides**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je range les palettes de la réception, puis les palettes vides.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je range d'abord les palettes vides, car c'est plus rapide à faire.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "J'attends près du quai qu'on me donne une nouvelle mission.",
+                  "points": 0,
+                  "repere": "c2_reactif"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je range un peu des deux en alternant, pour ne rien oublier.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                }
+              ],
+              "explication": "On commence par la mission dont l'heure limite est la plus proche : la réception avant 12 h 00. Ranger d'abord les palettes vides reste possible, mais sans critère clair.",
+              "relance": "Entre deux missions sans départ, comment choisissez-vous l'ordre ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour choisir la **première mission**, je regarde…",
+              "justes": [
+                {
+                  "texte": "l'heure limite de chaque mission et je commence par la plus proche",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "les heures de départ des camions et la durée de chaque mission",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "quelles missions ont des personnes ou un camion qui attendent",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "laquelle est la plus courte",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'ordre dans lequel les missions sont arrivées",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "la mission que je préfère faire en premier",
+                  "repere": "c2_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si le chauffeur du quai 3 me dit de charger alors que **le feu est rouge**, je…",
+              "justes": [
+                {
+                  "texte": "ne charge pas et je lui rappelle la procédure du quai",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "attends le calage et le feu vert, et je fais une autre mission en attendant",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "passe à la mission suivante et je reviens quand le camion est calé",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "attends devant le quai",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "commence à charger : c'est lui qui connaît son camion",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "charge seulement quelques palettes près de l'entrée",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si une mission va prendre **plus de temps** que prévu, je…",
+              "justes": [
+                {
+                  "texte": "préviens le responsable d'équipe et le chauffeur, avec l'heure de fin prévue",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "dis tout de suite quelle mission sera en retard, et de combien",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "préviens la personne qui attend pour qu'elle puisse s'organiser",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "me dépêche pour finir à l'heure",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne dis rien : ce n'est que quelques minutes",
+                  "repere": "c2_silence"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Regroupe ses trajets : en rangeant une palette dans une allée, il en sort une autre pour un camion.",
+              "repere": "c2_regroupe"
+            },
+            {
+              "texte": "Regarde les prochains départs pendant un temps calme pour préparer la suite.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je ne charge pas tout de suite : le camion n'est pas calé et le feu est rouge. Je fais d'abord une autre mission. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le camion du quai 1 est calé et le feu est vert. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le chauffeur du quai 3 vous dit de charger, mais son camion n'est pas calé et le feu est rouge. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Un camion n'est pas prêt pour le chargement. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le chargement du quai 3 prend du retard. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La procédure du quai demande un camion calé et un feu vert.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le camion du quai 3 part à 10 h 30.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le camion du quai 3 n'est pas calé.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le chauffeur du quai 3 n'est pas arrivé.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le feu du quai 3 est rouge.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le quai 3 est réservé aux déchargements.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je charge seulement les palettes près de la porte, en attendant le feu vert.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "b",
+                "texte": "Je passe à la mission suivante et je reviens quand le camion est calé et le feu vert.",
+                "points": 2,
+                "repere": "c2_contraintes"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends devant le quai que le chauffeur finisse de caler.",
+                "points": 1,
+                "repere": "c2_reactif"
+              },
+              {
+                "id": "d",
+                "texte": "Je charge dès que le chauffeur me fait un signe de la main.",
+                "points": 0,
+                "repere": "c8_danger"
+              }
+            ]
+          },
+          "explication": "La procédure du quai demande un camion calé et un feu vert avant de charger : un camion qui peut bouger rend le chargement dangereux. En attendant, une autre mission fait gagner du temps."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre matinée, de 9 h 15 à midi",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites. **Seules comptent** les contraintes du tableau et la procédure du quai.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Ranger les palettes vides"
+            },
+            {
+              "id": "e2",
+              "texte": "Charger le camion du quai 3"
+            },
+            {
+              "id": "e3",
+              "texte": "Réapprovisionner l'emplacement A12"
+            },
+            {
+              "id": "e4",
+              "texte": "Ranger les quatre palettes de la réception"
+            },
+            {
+              "id": "e5",
+              "texte": "Vérifier que le camion du quai 3 est calé et que le feu est vert"
+            },
+            {
+              "id": "e6",
+              "texte": "Charger le camion du quai 1"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "A12 est à faire avant 9 h 30 : son heure limite est plus proche que le départ du quai 1."
+            },
+            {
+              "avant": "e6",
+              "apres": "e2",
+              "explication": "Le quai 1 part à 10 h 00 et le quai 3 à 10 h 30 : le départ le plus proche passe d'abord."
+            },
+            {
+              "avant": "e5",
+              "apres": "e2",
+              "explication": "On vérifie le calage et le feu vert avant de charger : c'est la procédure du quai."
+            },
+            {
+              "avant": "e6",
+              "apres": "e4",
+              "explication": "Un départ de camion à 10 h 00 passe avant un rangement qui peut attendre midi."
+            },
+            {
+              "avant": "e4",
+              "apres": "e1",
+              "explication": "La réception est à ranger avant 12 h 00, les palettes vides avant 14 h 00 : l'heure limite la plus proche d'abord."
+            },
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "Un départ à 10 h 30 passe avant un rangement à faire avant 14 h 00."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Simulation (15 minutes) : la liste des cinq missions est donnée sur papier, avec les heures de départ et l'état des quais. La personne annonce l'ordre qu'elle choisit, dit ce qu'elle fait si un camion n'est pas calé, puis prévient d'un retard imaginaire.",
+            "criteres": [
+              {
+                "texte": "Classe les missions selon l'heure limite ou le départ",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Ne charge pas tant que le camion n'est pas calé et le feu vert",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Utilise le temps d'attente pour une autre mission",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Prévient le responsable et le chauffeur d'un retard, avec l'heure prévue",
+                "repere": "c2_previent"
+              }
+            ],
+            "bonus": {
+              "texte": "Regroupe ses trajets pour gagner du temps",
+              "repere": "c2_regroupe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment choisissez-vous** la **première** mission de la liste ?",
+              "justes": [
+                {
+                  "texte": "Je regarde les heures limites et je commence par la plus proche.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je tiens compte des départs de camions et des personnes qui attendent.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je commence par A12 : c'est court et l'heure limite est la plus proche.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je commence par la mission la plus courte.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je suis la liste dans l'ordre où elle s'affiche.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Le chauffeur du quai 3 vous dit de charger, mais **le feu est rouge**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je ne charge pas et je lui rappelle la procédure du quai.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "J'attends le calage et le feu vert, et je fais une autre mission.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je reviens au quai 3 quand le camion est calé et le feu vert.",
+                  "repere": "c2_contraintes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'attends devant le quai.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je charge : c'est lui qui connaît son camion.",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Le chargement du quai 3 finira **dix minutes** après **l'heure de départ**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je préviens le responsable d'équipe et le chauffeur, avec l'heure de fin prévue.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je dis tout de suite que le départ sera retardé, et de combien.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je préviens le chauffeur pour qu'il puisse s'organiser.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je me dépêche pour finir.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je ne dis rien : ce n'est que dix minutes.",
+                  "repere": "c2_silence"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Regroupe ses trajets : en rangeant une palette, il en sort une autre pour un camion.",
+              "repere": "c2_regroupe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Expliquer la liste des missions et le sens des heures limites, et donner une règle simple : l'échéance la plus proche d'abord.",
+        "Lire ensemble la procédure du quai (camion calé, feu vert) et dire qui prévenir quand une mission prend du retard."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Signaler un incident et transmettre l'information",
+      "pourquoi": "Un choc non signalé reste un danger pour les autres : une information claire, donnée tout de suite, permet de le vérifier.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un choc sur un montant de rack",
+        "texte": "Lundi, 16 h 40. Vous reculez avec le chariot n° 5 dans l'allée C, une palette vide sur les fourches. L'arrière du chariot touche le bas d'un montant du rack (sa partie verticale), avec un petit choc. Personne n'est blessé et aucune palette n'est tombée. La peinture du montant est écaillée ; vous ne voyez pas s'il est tordu. Règle du site : tout choc sur un rack est signalé au responsable, même léger. Le responsable est dans son bureau, à deux minutes de l'allée.",
+        "document": {
+          "type": "liste",
+          "titre": "Fiche d'incident du site : les lignes à remplir",
+          "items": [
+            "Date et heure",
+            "Lieu précis",
+            "Ce qui s'est passé",
+            "Dégâts constatés",
+            "Personne blessée : oui ou non",
+            "Ce que vous avez fait"
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Juste après le choc, que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue mes rangements et j'en parle à la fin de mon poste, avant de partir.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'arrête le chariot et je préviens le responsable tout de suite.",
+                  "points": 2,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je regarde si quelqu'un m'a vu : sinon, je ne dis rien.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'arrête le chariot et j'en parle à un collègue de l'équipe.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                }
+              ],
+              "explication": "La règle du site demande de signaler tout choc sur un rack, même léger, et le montant peut être abîmé sans que cela se voie. Un collègue peut aider, mais c'est le responsable qui décide de faire vérifier le rack.",
+              "relance": "Quand signalez-vous un incident : tout de suite, ou à la fin du poste ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous arrivez devant le responsable. Quelle est **votre première phrase** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "« Je suis désolé, je ne l'ai pas fait exprès. »",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "« J'ai eu un souci dans l'allée C. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "« Choc sur un montant, allée C : personne n'est blessé. »",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "d",
+                  "texte": "« L'allée C est trop étroite, et le chariot n° 5 recule mal. »",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "Le responsable a besoin d'abord de l'essentiel : ce qui s'est passé, où, et s'il y a des blessés. Une phrase vague lui demande de poser des questions ; une cause supposée peut le tromper.",
+              "relance": "Que dites-vous en premier à quelqu'un qui n'était pas là ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le responsable **n'est pas encore venu** voir le montant. Que faites-vous des emplacements à côté ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je continue à ranger : le montant a l'air de tenir.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je redresse le montant moi-même avec les fourches.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande au responsable si je peux continuer à ranger près du montant.",
+                  "points": 1,
+                  "repere": "c4_escalade"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne range plus près de ce montant avant que le responsable l'ait vu.",
+                  "points": 2,
+                  "repere": "c6_bloque"
+                }
+              ],
+              "explication": "Un montant choqué peut être faussé sans que cela se voie : on ne range plus à côté avant l'avis du responsable. Demander l'autorisation est acceptable, mais ne protège pas pendant l'attente.",
+              "relance": "Que faites-vous d'une zone dont vous n'êtes pas sûr qu'elle soit sûre ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Sur la fiche d'incident, **que notez-vous** à la ligne « **Dégâts constatés** » ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Peinture écaillée sur le montant ; je ne sais pas s'il est tordu.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Aucun dégât : le choc était très léger et il n'y a pas eu de bruit.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "c",
+                  "texte": "Montant abîmé, sans autre précision sur l'état du reste du rack.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Montant tordu : il faut le remplacer avant de ranger à nouveau.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "On écrit ce qu'on a vu et ce qu'on n'a pas pu vérifier. « Aucun dégât » ou « tordu » sont des suppositions ; « abîmé » seul est trop vague pour que quelqu'un vérifie.",
+              "relance": "Comment écrivez-vous un constat quand vous n'êtes pas sûr de ce que vous avez vu ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À **17 h 00**, un collègue de **l'équipe suivante** va ranger dans l'allée C. Que lui dites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : le responsable est prévenu, il s'en occupe et il vérifiera lui-même.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Un montant a pris un choc allée C : on ne range pas à côté avant l'avis du responsable.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "De faire attention dans l'allée C, il y a eu un petit problème tout à l'heure.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que l'allée C est dangereuse et qu'il vaut mieux éviter d'y aller ce soir.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "L'équipe suivante doit savoir quel montant, quelle allée et ce qu'elle doit faire. « Faire attention » est trop vague ; dire que l'allée est dangereuse est inexact.",
+              "relance": "Que transmettez-vous à l'équipe suivante quand un problème n'est pas encore réglé ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Juste après** avoir touché le rack, je…",
+              "justes": [
+                {
+                  "texte": "arrête le chariot et je préviens mon responsable tout de suite",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "préviens le responsable sans attendre la fin de mon poste, même si le choc est léger",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "m'arrête, je regarde sans toucher au montant, puis je préviens le responsable",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "en parle à un collègue",
+                  "repere": "c4_informe"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "continue mon travail et j'en parle plus tard",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "ne dis rien, car personne n'a rien vu",
+                  "repere": "c6_cache"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Mon message au responsable **commence par**…",
+              "justes": [
+                {
+                  "texte": "ce qui s'est passé et où : un choc sur un montant, allée C",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "dire s'il y a des blessés et si une palette est tombée",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "l'essentiel : le lieu, le choc, et le fait que personne n'est blessé",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "mes excuses",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "une explication : l'allée est trop étroite",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "dire que ce n'est sûrement pas grave",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour l'équipe **suivante**, je…",
+              "justes": [
+                {
+                  "texte": "dis qu'un montant de l'allée C a pris un choc et qu'on ne range pas à côté avant l'avis du responsable",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "note l'information sur la fiche d'incident ou sur le cahier de liaison",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "préviens mon remplaçant avant qu'il ne range dans l'allée C",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dis de faire attention dans l'allée C",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne dis rien : le responsable s'en occupe",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Montre le montant au responsable, sur place, pour que le constat soit précis.",
+              "repere": "c3_complet"
+            },
+            {
+              "texte": "Propose de noter tous les chocs sur rack dans un cahier commun.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Choc sur un montant de rack, allée C. Personne n'est blessé et aucune palette n'est tombée. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Vous venez de toucher un montant de rack avec le chariot. Quelle est votre première phrase au responsable ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Vous avez un problème dans l'allée C. Que dites-vous au responsable ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Un collègue vous demande où est rangée une palette. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le responsable vous demande si le chariot n° 5 a été contrôlé ce matin. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'arrière du chariot a touché un montant dans l'allée C.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le chariot n° 5 transportait une palette vide.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Personne n'est blessé.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le montant est tordu.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Aucune palette n'est tombée.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable est parti en réunion.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je dis ce que j'ai vu sur le montant et ce que je n'ai pas pu vérifier.",
+                "points": 2,
+                "repere": "c3_complet"
+              },
+              {
+                "id": "b",
+                "texte": "Je dis que ce n'est sûrement pas grave et je retourne ranger.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "c",
+                "texte": "Je propose de lui montrer l'endroit, sans rien dire d'autre.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "J'attends qu'il me pose des questions.",
+                "points": 0,
+                "repere": "c3_oubli"
+              }
+            ]
+          },
+          "explication": "Le responsable doit d'abord savoir ce qui s'est passé, où, et s'il y a des blessés. Ces trois faits tiennent en une phrase : on les dit avant les détails."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Ce que vous dites au responsable",
+          "consigne": "Vous prévenez votre responsable. Pour **chaque phrase**, choisissez la **catégorie** qui convient.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Un fait à dire"
+            },
+            {
+              "id": "k2",
+              "nom": "Ce que j'ai fait ou propose, à dire"
+            },
+            {
+              "id": "k3",
+              "nom": "À éviter : minimiser, supposer ou accuser"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Le chariot n° 5 a touché le bas d'un montant de l'allée C, en reculant.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est le fait principal : quoi, où et comment."
+            },
+            {
+              "id": "e2",
+              "texte": "Ce n'est sûrement pas grave : le rack a l'air solide.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est une supposition : seule une vérification dira si le montant est faussé."
+            },
+            {
+              "id": "e3",
+              "texte": "J'ai arrêté de ranger près de ce montant en attendant votre avis.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le responsable doit savoir ce que vous avez déjà fait."
+            },
+            {
+              "id": "e4",
+              "texte": "Personne n'est blessé et aucune palette n'est tombée.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "L'état des personnes et des charges est une information de sécurité."
+            },
+            {
+              "id": "e5",
+              "texte": "Un collègue range toujours mal ses palettes dans cette allée.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Cela met une personne en cause et n'a pas de lien avec le choc."
+            },
+            {
+              "id": "e6",
+              "texte": "La peinture du montant est écaillée ; je ne sais pas s'il est tordu.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Ce que vous avez vu, et ce que vous n'avez pas pu vérifier."
+            },
+            {
+              "id": "e7",
+              "texte": "Je vous montre l'endroit tout de suite, si vous voulez.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Montrer le montant aide le responsable à le vérifier vite."
+            },
+            {
+              "id": "e8",
+              "texte": "Pas la peine de noter l'incident : il n'y a rien de cassé.",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Un incident sans gravité se note quand même : le montant n'a pas été vérifié."
+            }
+          ],
+          "repere_reussite": "c3_complet",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : un scénario écrit décrit un choc sur un rack. La personne prévient le responsable (joué par l'évaluateur), puis remplit la fiche d'incident du site avec les faits du scénario.",
+            "criteres": [
+              {
+                "texte": "Prévient tout de suite, sans attendre la fin du poste",
+                "repere": "c4_escalade"
+              },
+              {
+                "texte": "Commence par l'essentiel : quoi, où, blessés ou non",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Dit ce qu'elle a vu et ce qu'elle n'a pas pu vérifier",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Remplit la fiche avec des faits précis, sans supposition",
+                "repere": "c3_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Dit ce qu'elle a fait en attendant, par exemple arrêter de ranger près du montant",
+              "repere": "c6_bloque"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous **juste après** avoir touché le montant d'un rack ?",
+              "justes": [
+                {
+                  "texte": "J'arrête le chariot et je préviens le responsable tout de suite.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je préviens le responsable sans attendre la fin de mon poste.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je ne range plus près de ce montant en attendant l'avis du responsable.",
+                  "repere": "c6_bloque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'en parle à un collègue.",
+                  "repere": "c4_informe"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je continue mon travail et j'en parle plus tard.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que dites-vous **en premier** au responsable ?",
+              "justes": [
+                {
+                  "texte": "Un choc sur un montant de rack, allée C.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Personne n'est blessé et aucune palette n'est tombée.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Où, quand et ce qui s'est passé, en une phrase.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je m'excuse, je ne l'ai pas fait exprès.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que ce n'est sûrement pas grave.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que laissez-vous **par écrit** après cet incident ?",
+              "justes": [
+                {
+                  "texte": "Je remplis la fiche d'incident avec l'heure, le lieu et ce que j'ai vu.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "J'écris ce que je n'ai pas pu vérifier, par exemple si le montant est tordu.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je note l'information pour l'équipe suivante.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'écris « montant abîmé ».",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le responsable est déjà prévenu.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Montre le montant au responsable, sur place, pour que le constat soit précis.",
+              "repere": "c3_complet"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Présenter le signalement d'un choc, même léger, comme une règle normale du poste, et dire à qui s'adresser tout de suite.",
+        "Donner un modèle de message en trois éléments (quoi et où, blessés ou dégâts, ce qui a été fait) et montrer la fiche d'incident."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez **trouvé un défaut** sur un chariot ou une machine **avant de l'utiliser**.",
+      "suite": [
+        "Qu'avez-vous fait ensuite ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit un défaut précis et comment il l'a repéré",
+        "N'a pas utilisé l'engin avant la réparation ou l'accord du responsable",
+        "A prévenu la bonne personne et laissé une trace"
+      ],
+      "relance": "Que contrôlez-vous d'habitude avant de démarrer ?",
+      "alternative": "Si vous n'avez jamais conduit de chariot : parlez d'une fois où vous avez trouvé un défaut sur un vélo, une voiture ou un outil avant de l'utiliser."
+    },
+    {
+      "id": "e2",
+      "competence": "C8",
+      "texte": "Vous roulez avec une palette haute qui vous **cache la route**, et des **piétons circulent** dans l'allée. Comment conduisez-vous ?",
+      "suite": [
+        "Que faites-vous à un passage piétons ?"
+      ],
+      "attendus": [
+        "Suit la règle du site pour la charge qui masque la vue, par exemple la marche arrière",
+        "Laisse la priorité aux piétons et s'arrête si besoin",
+        "Respecte le plan de circulation et adapte sa vitesse"
+      ],
+      "relance": "Et si vous n'êtes pas sûr de la règle du site ?",
+      "alternative": "Si vous n'avez jamais conduit de chariot : comment poussez-vous un chariot de courses chargé dans un lieu très fréquenté, quand vous ne voyez pas devant vous ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez trouvé une **marchandise abîmée** ou mal emballée **avant de la ranger** ou de la livrer.",
+      "suite": [
+        "Qu'en avez-vous fait ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Décrit ce qui n'allait pas : emballage, film, état",
+        "A mis la marchandise de côté au lieu de la ranger",
+        "A prévenu et expliqué ce qu'il avait vu"
+      ],
+      "relance": "Comment avez-vous su que la marchandise n'était pas conforme ?",
+      "alternative": "Si vous n'avez jamais travaillé en entrepôt : parlez d'un carton ou d'un meuble abîmé que vous deviez transporter, et de ce que vous avez fait."
+    },
+    {
+      "id": "e4",
+      "competence": "C6",
+      "texte": "Une palette est **plus lourde que la limite** indiquée sur le niveau du rack prévu. Que faites-vous ?",
+      "suite": [
+        "Et si l'étiquette de la palette n'indique pas son poids ?"
+      ],
+      "attendus": [
+        "Compare le poids à la limite indiquée sur le rack",
+        "Ne range pas et demande un autre emplacement",
+        "Ne devine pas un poids manquant : le cherche ou le demande"
+      ],
+      "relance": "Où trouvez-vous la limite d'un niveau de rack ?",
+      "alternative": "Si vous n'avez jamais travaillé en entrepôt : une étagère indique une charge maximale et un objet est plus lourd. Que faites-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C2",
+      "texte": "Plusieurs missions arrivent en même temps, avec des **heures de départ** de camions différentes. **Comment choisissez-vous l'ordre** ?",
+      "suite": [
+        "Que faites-vous si un camion n'est pas prêt pour le chargement ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : l'heure de départ ou l'urgence",
+        "Tient compte des contraintes : camion calé, feu vert, durée",
+        "Utilise le temps d'attente pour une autre mission"
+      ],
+      "relance": "Pouvez-vous donner un exemple vécu ?",
+      "alternative": "Quand plusieurs tâches ont des heures limites différentes (travail, études, maison), comment choisissez-vous l'ordre ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où une tâche a pris **plus de temps que prévu**. Que s'est-il passé ?",
+      "suite": [
+        "Qui avez-vous prévenu ?",
+        "Qu'avez-vous changé ensuite ?"
+      ],
+      "attendus": [
+        "Décrit le retard avec des faits : heure, durée",
+        "A prévenu les personnes concernées avant l'heure limite",
+        "A ajusté la suite de son travail"
+      ],
+      "relance": "À quel moment avez-vous prévenu ?",
+      "alternative": "Parlez d'une fois où vous avez pris du retard sur un projet ou un rendez-vous (études, association, vie quotidienne), et de ce que vous avez fait."
+    },
+    {
+      "id": "e7",
+      "competence": "C3",
+      "texte": "Vous heurtez légèrement un rack avec le chariot. Personne n'est blessé. **Que faites-vous** ?",
+      "suite": [
+        "Que dites-vous au responsable ?",
+        "Que laissez-vous par écrit ?"
+      ],
+      "attendus": [
+        "Prévient tout de suite, même si c'est léger",
+        "Commence par l'essentiel : quoi, où, blessés ou non",
+        "Laisse une trace écrite avec des faits, sans supposition"
+      ],
+      "relance": "Et si personne ne vous a vu ?",
+      "alternative": "Si vous n'avez jamais conduit de chariot : vous abîmez légèrement un équipement d'un lieu partagé. Que faites-vous, et que dites-vous ?"
+    },
+    {
+      "id": "e8",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez transmis une **information importante** à un collègue qui **prenait la suite**.",
+      "suite": [
+        "Comment avez-vous su qu'il avait compris ?"
+      ],
+      "attendus": [
+        "Cite l'essentiel : quoi, où, ce que l'autre doit faire",
+        "Choisit un moyen adapté : à l'oral, par écrit ou les deux",
+        "Vérifie que le message est compris"
+      ],
+      "relance": "Qu'ajouteriez-vous avec le recul ?",
+      "alternative": "Parlez d'une fois où vous avez laissé une consigne à la personne qui vous remplaçait (travail, association, maison), et de ce qui s'est passé."
+    }
+  ],
+  "_pv": "ae53ed65d7"
+}

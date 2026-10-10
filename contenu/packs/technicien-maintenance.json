@@ -1,0 +1,2611 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "technicien-maintenance",
+  "version": "2026.10",
+  "nom": "Technicien de maintenance / Technicienne de maintenance",
+  "secteur": "industrie",
+  "alias": [
+    "technicien de maintenance",
+    "technicienne de maintenance",
+    "électromécanicien",
+    "électromécanicienne",
+    "mécanicien de maintenance",
+    "agent de maintenance",
+    "maintenance industrielle",
+    "technicien de maintenance industrielle",
+    "dépanneur industriel"
+  ],
+  "resume": "Assure la maintenance industrielle des machines d'une usine : dépannage, entretien préventif, remise en service et compte rendu dans la GMAO.",
+  "contexte": "Une usine de production avec quatre lignes de conditionnement, deux équipes et une gestion de la maintenance assistée par ordinateur (GMAO).",
+  "cadre": "Les interventions sur les installations électriques demandent une habilitation électrique adaptée, délivrée par l'employeur.",
+  "competences": [
+    {
+      "code": "C1",
+      "titre": "Trouver la cause d'une panne, étape par étape",
+      "pourquoi": "Chercher la cause évite de changer des pièces au hasard, de perdre du temps et de voir la même panne revenir.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un poussoir qui s'arrête sans cesse",
+        "texte": "Mercredi, 14 h 20. Sur la ligne 2, le poussoir de cartons s'est arrêté trois fois en 30 minutes. L'écran affiche : « Poussoir P2 : fin de course sortie non atteinte ». L'opérateur valide l'alarme, la ligne repart, puis le poussoir s'arrête de nouveau. La ligne est maintenant à l'arrêt et vous êtes appelé. Vous menez votre recherche de panne : le tableau donne ce que vous trouvez.",
+        "document": {
+          "type": "tableau",
+          "titre": "Ce que vous trouvez",
+          "colonnes": [
+            "Contrôle",
+            "Résultat"
+          ],
+          "lignes": [
+            [
+              "Historique du poussoir dans la GMAO",
+              "Le détecteur de fin de course a été remplacé il y a 9 jours."
+            ],
+            [
+              "Pression d'air, au manomètre de la machine",
+              "6 bar. La plaque de la machine indique 6 bar."
+            ],
+            [
+              "Tige du vérin, vue à travers le carter",
+              "Elle sort jusqu'au bout, sans à-coup."
+            ],
+            [
+              "Voyant du détecteur, quand la tige est sortie",
+              "Il reste éteint."
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Avant de démonter quoi que ce soit, que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je valide l'alarme et je relance le poussoir pour voir s'il repart seul.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je relève les faits : l'alarme, l'historique, le vérin et le détecteur.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je demande à l'opérateur ce qu'il a vu avant chaque arrêt.",
+                  "points": 1,
+                  "repere": "c1_aide"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je change le vérin par un neuf : il y en a un au magasin.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                }
+              ],
+              "explication": "On relève d'abord les faits (alarme, historique, mesures) avant de toucher à une pièce. Demander à l'opérateur est utile, mais ne suffit pas pour trouver la cause.",
+              "relance": "Avant de démonter, quelles informations rassemblez-vous sur une panne ?"
+            },
+            {
+              "id": "q2",
+              "texte": "L'historique indique que le détecteur a été remplacé **il y a 9 jours**. Qu'en faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande à mon collègue qui l'a remplacé comment il l'a réglé.",
+                  "points": 1,
+                  "repere": "c1_aide"
+                },
+                {
+                  "id": "b",
+                  "texte": "Rien : une pièce neuve ne peut pas être en cause.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je remplace de nouveau le détecteur, par un autre neuf.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le garde comme cause possible : c'est le dernier changement fait.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                }
+              ],
+              "explication": "Le dernier changement fait sur une machine est une piste sérieuse : on la garde comme hypothèse, sans conclure. Interroger le collègue aide, mais ne remplace pas le contrôle.",
+              "relance": "Que cherchez-vous dans l'historique d'une machine qui tombe en panne ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le manomètre indique **6 bar**, comme la plaque de la machine. **Que concluez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le manque d'air est écarté : je passe à l'hypothèse suivante.",
+                  "points": 2,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le manomètre est sûrement faux : j'augmente la pression pour que le vérin sorte plus fort.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "La pression est correcte. Je le note, sans aller plus loin.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le problème vient quand même de l'air : je fais contrôler le réseau d'air de l'usine.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Une pression égale à la valeur de la plaque écarte le manque d'air : on avance par élimination. Noter la valeur sans en tirer de conclusion fait perdre du temps.",
+              "relance": "Comment savez-vous qu'une hypothèse peut être écartée ?"
+            },
+            {
+              "id": "q4",
+              "texte": "La tige sort jusqu'au bout, mais le voyant du détecteur reste éteint. Que **contrôlez-vous en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le vérin : je le démonte pour vérifier son intérieur.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "b",
+                  "texte": "L'automate : je suppose qu'il ne reçoit pas le signal.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "La position du détecteur, remplacé il y a 9 jours.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le câble et le connecteur du détecteur.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                }
+              ],
+              "explication": "Un voyant éteint alors que la tige est sortie montre que le détecteur ne voit pas la tige. On contrôle d'abord le détecteur changé récemment ; le câble est une autre piste, ensuite.",
+              "relance": "Que vous apprend un voyant éteint sur un détecteur ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Vous avez corrigé la position du détecteur : son voyant s'allume en bout de course. Que **faites-vous ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je fais plusieurs cycles en regardant le voyant et l'alarme, puis je rends la ligne.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je rends la ligne à la production : le voyant s'allume, donc c'est bien réparé.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je remplace aussi le câble du détecteur, par précaution.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je fais un seul cycle d'essai, puis je rends la ligne.",
+                  "points": 1,
+                  "repere": "c1_verifie"
+                }
+              ],
+              "explication": "Une panne intermittente peut revenir : on vérifie sur plusieurs cycles avant de rendre la ligne. Un seul essai ne prouve pas que la panne est réparée.",
+              "relance": "Comment vous assurez-vous qu'une panne est bien réparée ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour trouver la cause de la panne, je **commence par**…",
+              "justes": [
+                {
+                  "texte": "lire l'alarme, regarder l'historique et poser des questions à l'opérateur",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "relever des faits simples : la pression d'air, le mouvement du vérin, le voyant du détecteur",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "rassembler les informations avant de démonter quoi que ce soit",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "demander à l'opérateur ce qu'il a vu",
+                  "repere": "c1_aide"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "valider l'alarme et relancer, sans autre contrôle",
+                  "repere": "c1_symptome"
+                },
+                {
+                  "texte": "changer une pièce pour voir si ça marche",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Le manomètre indique **6 bar**, comme la plaque. J'en **conclus** que…",
+              "justes": [
+                {
+                  "texte": "le manque d'air est écarté et je passe à l'hypothèse suivante",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "ce n'est pas un problème de pression : je contrôle autre chose",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "l'alimentation en air est normale, donc je regarde le vérin et le détecteur",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la pression est correcte",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le manomètre est faux, et je règle la pression plus haut",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "ça vient quand même de l'air",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Une fois** la panne réparée, je…",
+              "justes": [
+                {
+                  "texte": "fais tourner plusieurs cycles et je vérifie que l'alarme ne revient pas",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "surveille le poussoir quelques minutes avant de rendre la ligne",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "contrôle que le voyant s'allume à chaque cycle",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "fais un essai",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rends la ligne tout de suite",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "passe à la demande suivante sans regarder la ligne tourner",
+                  "repere": "c1_abandon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Cherche pourquoi le détecteur s'était déréglé : fixation desserrée, vibrations, réglage fait trop vite.",
+              "repere": "c1_cause"
+            },
+            {
+              "texte": "Propose de faire plusieurs cycles d'essai après chaque remplacement de détecteur.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« La pression est bonne et la tige sort jusqu'au bout. Mais le voyant du détecteur reste éteint : je contrôle donc d'abord sa position. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le poussoir s'arrête sans cesse. Que contrôlez-vous d'abord ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Le poussoir est trop lent. Faut-il augmenter la pression ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "La pression est à 6 bar et la tige sort jusqu'au bout, mais le voyant du détecteur reste éteint. Que contrôlez-vous d'abord ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "L'opérateur valide l'alarme et la ligne repart. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La pression d'air est de 6 bar, comme sur la plaque.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le poussoir s'est arrêté trois fois en 30 minutes.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La tige du vérin sort jusqu'au bout.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le vérin fuit d'huile.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le voyant du détecteur reste éteint quand la tige est sortie.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "L'opérateur a modifié le réglage de la machine.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je règle la position du détecteur selon la procédure de sécurité, puis je vérifie sur plusieurs cycles que le voyant s'allume et que l'alarme ne revient pas.",
+                "points": 2,
+                "repere": "c1_verifie"
+              },
+              {
+                "id": "b",
+                "texte": "Je change le détecteur : un autre neuf marchera sûrement mieux.",
+                "points": 0,
+                "repere": "c1_precipite"
+              },
+              {
+                "id": "c",
+                "texte": "Je règle la position du détecteur selon la procédure de sécurité, puis je note le réglage dans la GMAO.",
+                "points": 1,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "d",
+                "texte": "Je valide l'alarme et je relance, en espérant que ça tienne.",
+                "points": 0,
+                "repere": "c1_symptome"
+              }
+            ]
+          },
+          "explication": "Le voyant éteint, alors que la pression est bonne et que la tige sort jusqu'au bout, désigne le détecteur. On le contrôle en premier, puis on vérifie que la réparation tient."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Vos hypothèses, après les relevés",
+          "consigne": "Pour **chaque hypothèse**, dites si les **relevés du tableau** l'écartent ou si elle reste à vérifier.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Écartée par les relevés"
+            },
+            {
+              "id": "k2",
+              "nom": "Pas écartée : à vérifier"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "La pression d'air est trop basse.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le manomètre indique 6 bar, comme la plaque de la machine."
+            },
+            {
+              "id": "e2",
+              "texte": "La tige du vérin est bloquée ou grippée.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La tige sort jusqu'au bout, sans à-coup."
+            },
+            {
+              "id": "e3",
+              "texte": "L'électrovanne du vérin ne s'ouvre pas.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le vérin reçoit de l'air : sa tige sort jusqu'au bout."
+            },
+            {
+              "id": "e4",
+              "texte": "Le détecteur est mal positionné depuis son remplacement.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le voyant reste éteint alors que la tige est sortie, et le détecteur a été remplacé il y a 9 jours : la piste est à vérifier."
+            },
+            {
+              "id": "e5",
+              "texte": "Le détecteur neuf est défectueux.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Le relevé ne le prouve pas et ne l'exclut pas : le voyant éteint désigne le détecteur."
+            },
+            {
+              "id": "e6",
+              "texte": "Le câble ou le connecteur du détecteur est abîmé.",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Un voyant éteint peut aussi venir du câble : aucun relevé ne l'exclut."
+            },
+            {
+              "id": "e7",
+              "texte": "Le tuyau d'air du vérin est coupé ou débranché.",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "La tige sort jusqu'au bout : l'air arrive bien au vérin."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_suppose",
+          "reel": {
+            "consigne": "Sur un banc d'essai ou une machine d'atelier (un vérin avec un détecteur de fin de course), une panne est préparée à l'avance. La personne cherche la cause à voix haute, pendant 15 minutes, avec un manomètre et la fiche de la machine.",
+            "criteres": [
+              {
+                "texte": "Relève l'alarme, l'historique et l'état de la machine avant de toucher une pièce",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Fait un contrôle à la fois et dit ce qu'elle écarte",
+                "repere": "c1_etapes"
+              },
+              {
+                "texte": "Désigne le détecteur à partir du voyant éteint, et pas au hasard",
+                "repere": "c1_cause"
+              },
+              {
+                "texte": "Vérifie sur plusieurs cycles que la panne ne revient pas",
+                "repere": "c1_verifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose une action pour que le réglage ne bouge plus (fixation, contrôle après remplacement)",
+              "repere": "c6_recidive"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous **avant de démonter** quoi que ce soit ?",
+              "justes": [
+                {
+                  "texte": "Je lis l'alarme et je regarde l'historique de la machine.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je pose des questions à l'opérateur et je relève des mesures simples.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je rassemble les faits avant de toucher à une pièce.",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je demande à l'opérateur ce qu'il a vu.",
+                  "repere": "c1_aide"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je valide l'alarme et je relance.",
+                  "repere": "c1_symptome"
+                },
+                {
+                  "texte": "Je change une pièce pour voir.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que **concluez-vous de ces relevés** : 6 bar au manomètre, tige sortie jusqu'au bout, voyant éteint ?",
+              "justes": [
+                {
+                  "texte": "Que l'air et le vérin sont écartés, et que je contrôle le détecteur.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Que le détecteur ne voit pas la tige : je vérifie sa position en premier.",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "Que la panne vient du détecteur ou de sa position, pas de la pression.",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que la pression est correcte.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que le vérin est à changer.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment vérifiez-vous** que la panne est réparée ?",
+              "justes": [
+                {
+                  "texte": "Je fais plusieurs cycles en regardant le voyant et l'alarme.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je surveille le poussoir quelques minutes avant de rendre la ligne.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je contrôle que le voyant s'allume à chaque cycle.",
+                  "repere": "c1_verifie"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je fais un essai.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je rends la ligne sans essai.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Cherche pourquoi le détecteur s'était déréglé : fixation, vibrations, réglage fait trop vite.",
+              "repere": "c1_cause"
+            },
+            {
+              "texte": "Propose de faire plusieurs cycles d'essai après chaque remplacement de détecteur.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer comment lire l'historique d'une machine dans la GMAO et quoi y chercher : les derniers changements de pièces.",
+        "Faire les premiers dépannages avec un collègue, qui demande à chaque étape : « Qu'avez-vous écarté, et comment le savez-vous ? »"
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Intervenir en sécurité : consigner, puis remettre en service",
+      "pourquoi": "Une machine qui redémarre, ou une énergie restée dans la machine, peut blesser gravement : la consignation protège, et personne ne doit la contourner.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Changer une courroie, la ligne attend",
+        "texte": "Jeudi, 9 h 40. Sur la ligne 3, vous devez changer la courroie du convoyeur d'entrée : il faut pour cela ouvrir le carter du moteur. Une butée à air comprimé se trouve juste à côté de la courroie. Vous avez l'habilitation pour cette intervention et vous estimez le travail à 40 minutes, consignation comprise. Le responsable de production vous dit : « La ligne est à l'arrêt, personne n'y touche. Pas besoin de cadenasser, on doit relancer à 10 h. » La fiche de consignation est affichée (voir le tableau).",
+        "document": {
+          "type": "tableau",
+          "titre": "Fiche de consignation : convoyeur d'entrée, ligne 3",
+          "colonnes": [
+            "Point",
+            "Où agir",
+            "Action prévue"
+          ],
+          "lignes": [
+            [
+              "Électricité",
+              "Sectionneur Q1, dans l'armoire de la ligne 3",
+              "Ouvrir, puis cadenasser"
+            ],
+            [
+              "Air comprimé",
+              "Vanne V3, à l'entrée de la machine",
+              "Fermer, cadenasser, puis purger"
+            ],
+            [
+              "Cadenas",
+              "Un cadenas personnel par intervenant",
+              "Chacun pose le sien, avec son étiquette, et garde sa clé"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le responsable dit qu'il **n'est pas utile de cadenasser**, car la ligne est arrêtée. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'ouvre le carter tout de suite : la ligne est à l'arrêt, personne ne la relancera.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je consigne la machine sans rien dire, pour éviter la discussion.",
+                  "points": 1,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je consigne avant d'ouvrir et je lui annonce une remise en route vers 10 h 20.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'appuie sur l'arrêt d'urgence et je commence : c'est suffisant.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "Une ligne à l'arrêt peut être relancée par erreur : seule la consignation protège pendant l'intervention. On ne la supprime pas sous la pression, et on donne une heure réaliste au responsable.",
+              "relance": "Que répondez-vous quand on vous demande d'intervenir sans consigner ?"
+            },
+            {
+              "id": "q2",
+              "texte": "La fiche demande aussi de consigner **l'air comprimé**. **Pourquoi** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Parce que la butée à air peut bouger et blesser, même si le moteur est coupé.",
+                  "points": 2,
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "id": "b",
+                  "texte": "Parce que l'air comprimé fait tourner le moteur qui entraîne la courroie.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Parce que la fiche de consignation le demande.",
+                  "points": 1,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Parce que l'arrêt d'urgence de la ligne fonctionne à l'air comprimé.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "Chaque énergie présente près de la zone de travail peut provoquer un mouvement. Suivre la fiche est juste, mais comprendre pourquoi permet de ne rien oublier sur une autre machine.",
+              "relance": "Quelles énergies peuvent encore faire bouger une machine dont le moteur est coupé ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le sectionneur Q1 est ouvert. **Comment empêchez-vous** qu'il soit refermé ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je colle une étiquette « Ne pas toucher » sur le sectionneur.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je demande à un collègue de surveiller le sectionneur.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je pose mon cadenas, sans étiquette.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je pose mon cadenas et mon étiquette, et je garde la clé sur moi.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Seul le cadenas bloque le sectionneur, et la clé reste avec celui qui intervient. L'étiquette dit qui est derrière le cadenas : sans elle, on ne sait pas qui prévenir.",
+              "relance": "Qu'est-ce qui empêche vraiment quelqu'un de refermer un sectionneur ?"
+            },
+            {
+              "id": "q4",
+              "texte": "**Avant d'ouvrir** le carter, que vérifiez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que la courroie ne tourne plus quand je la regarde.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "Qu'il n'y a plus de tension au moteur, avec l'appareil prévu, ni de pression d'air.",
+                  "points": 2,
+                  "repere": "c8_precision"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que le sectionneur est bien ouvert et cadenassé, et que la vanne V3 est bien fermée.",
+                  "points": 1,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que la ligne est arrêtée sur l'écran de commande.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "On vérifie l'absence d'énergie elle-même, avec l'appareil prévu et après purge de l'air. Constater que les appareils sont bien positionnés ne prouve pas que plus rien n'arrive au moteur.",
+              "relance": "Comment êtes-vous sûr qu'une machine n'est plus sous tension ?"
+            },
+            {
+              "id": "q5",
+              "texte": "La courroie est changée et l'essai est bon. Que **contrôlez-vous avant de rendre** la ligne ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que les protecteurs sont remis et que l'arrêt d'urgence coupe bien la machine.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Rien de plus : l'essai est bon, donc la machine est réparée et je la rends.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que la courroie tourne droit, ne frotte pas et ne fait pas de bruit anormal.",
+                  "points": 1,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que la production est prête à relancer la ligne dès que j'aurai terminé.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                }
+              ],
+              "explication": "Après une intervention, on contrôle que les sécurités fonctionnent : protecteurs en place, arrêt d'urgence efficace. Vérifier le bon tournage de la courroie est utile, mais ne protège personne.",
+              "relance": "Quelles sécurités contrôlez-vous avant de rendre une machine ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Au responsable qui me demande de **ne pas cadenasser**, je réponds…",
+              "justes": [
+                {
+                  "texte": "que je consigne avant d'ouvrir le carter, et que la ligne repartira vers 10 h 20",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "qu'une ligne arrêtée peut être relancée par erreur, donc je consigne d'abord",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "que je ne commence pas sans consignation, et que je le préviens dès que c'est fini",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je vais faire aussi vite que possible",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "d'accord, la ligne est arrêtée, je commence",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "que l'arrêt d'urgence suffit pour travailler en sécurité",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "**Avant d'ouvrir** le carter, je vérifie…",
+              "justes": [
+                {
+                  "texte": "qu'il n'y a plus de tension au moteur, avec l'appareil prévu",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "qu'il n'y a plus de pression d'air dans la butée, après l'avoir purgée",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "l'absence de tension et de pression, pas seulement la position du sectionneur et de la vanne",
+                  "repere": "c8_savoir"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le sectionneur est ouvert et cadenassé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que la ligne est arrêtée sur l'écran",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "que la courroie ne tourne plus",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant de rendre** la ligne à la production, je…",
+              "justes": [
+                {
+                  "texte": "contrôle que l'arrêt d'urgence coupe bien la machine",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "vérifie que tous les protecteurs sont remis en place",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "fais un essai et je contrôle les sécurités avant de rendre la ligne à la production",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "fais un essai de quelques minutes",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rends la ligne sans essai : la courroie est neuve",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "laisse un protecteur de côté pour gagner du temps",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose d'afficher « ligne en maintenance » à l'entrée de la ligne, pour éviter une relance par erreur.",
+              "repere": "c4_regle"
+            },
+            {
+              "texte": "Demande que la durée de consignation soit prévue dans le planning des arrêts de ligne.",
+              "repere": "c2_anticipe"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je consigne avant d'ouvrir le carter, car le moteur et la butée à air peuvent encore bouger. Comptez 40 minutes : la ligne repartira vers 10 h 20. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un opérateur demande s'il peut remettre la ligne en route. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le responsable demande de ne pas cadenasser la ligne arrêtée, pour relancer à 10 h. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Le responsable est pressé de relancer la ligne. Que lui répondez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Le responsable demande si la ligne est prête à relancer. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Il est 9 h 40.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La fiche de consignation est affichée.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Une butée à air comprimé se trouve à côté de la courroie.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le carter du moteur est déjà ouvert.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Vous estimez le travail à 40 minutes, consignation comprise.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le responsable a déjà cadenassé la ligne.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je coupe seulement le sectionneur Q1 : l'air ne concerne pas la courroie.",
+                "points": 0,
+                "repere": "c8_erreur"
+              },
+              {
+                "id": "b",
+                "texte": "Je repère sur la fiche le sectionneur Q1 et la vanne V3, puis je les coupe.",
+                "points": 2,
+                "repere": "c8_securite"
+              },
+              {
+                "id": "c",
+                "texte": "Je demande à l'opérateur de couper à ma place pendant que je prépare mes outils.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              },
+              {
+                "id": "d",
+                "texte": "Je coupe le sectionneur Q1 et la vanne V3 de mémoire, sans relire la fiche.",
+                "points": 1,
+                "repere": "c5_devine"
+              }
+            ]
+          },
+          "explication": "La réponse tient compte de deux faits : les énergies encore présentes (moteur, air) et le temps nécessaire, consignation comprise. La consignation commence ensuite par la fiche, qui liste chaque énergie."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "De la fiche de consignation à la remise en service",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Ouvrir le carter et changer la courroie"
+            },
+            {
+              "id": "e2",
+              "texte": "Poser votre cadenas et votre étiquette"
+            },
+            {
+              "id": "e3",
+              "texte": "Faire l'essai, contrôler l'arrêt d'urgence et les protecteurs, puis rendre la ligne"
+            },
+            {
+              "id": "e4",
+              "texte": "Repérer sur la fiche les énergies à couper"
+            },
+            {
+              "id": "e5",
+              "texte": "Remettre le carter, retirer vos outils, puis votre cadenas"
+            },
+            {
+              "id": "e6",
+              "texte": "Ouvrir le sectionneur Q1 et fermer la vanne V3"
+            },
+            {
+              "id": "e7",
+              "texte": "Purger l'air et vérifier qu'il n'y a plus ni tension ni pression"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e4",
+              "apres": "e6",
+              "explication": "On repère les énergies avant de couper : une énergie oubliée reste dangereuse."
+            },
+            {
+              "avant": "e6",
+              "apres": "e2",
+              "explication": "On cadenasse ce qu'on a ouvert ou fermé, pour que personne ne le remette en service."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "On purge et on vérifie après avoir séparé la machine de ses énergies."
+            },
+            {
+              "avant": "e2",
+              "apres": "e7",
+              "explication": "On vérifie une fois la machine condamnée : plus personne ne peut remettre l'énergie pendant la vérification."
+            },
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "On ne touche pas à la machine tant que le cadenas n'est pas posé."
+            },
+            {
+              "avant": "e7",
+              "apres": "e1",
+              "explication": "On n'ouvre le carter qu'après avoir vérifié l'absence d'énergie."
+            },
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "On remet le carter et on retire son cadenas une fois le travail terminé."
+            },
+            {
+              "avant": "e5",
+              "apres": "e3",
+              "explication": "L'essai se fait protecteurs remis, outils retirés et cadenas retiré."
+            }
+          ],
+          "repere_reussite": "c8_securite",
+          "repere_echec": "c8_erreur",
+          "reel": {
+            "consigne": "Sur une machine d'atelier ou un banc pédagogique avec deux énergies (un sectionneur et une vanne d'air), la personne consigne, change une pièce simple, déconsigne et remet en service, en 20 minutes. Un responsable joue la production et lui demande d'aller plus vite.",
+            "criteres": [
+              {
+                "texte": "Lit la fiche et coupe les deux énergies indiquées",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Cadenasse, puis vérifie l'absence d'énergie avant d'ouvrir",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Reste ferme et donne un délai réaliste quand on la presse",
+                "repere": "c4_faits"
+              },
+              {
+                "texte": "Contrôle l'arrêt d'urgence et les protecteurs avant de rendre la machine",
+                "repere": "c8_securite"
+              }
+            ],
+            "bonus": {
+              "texte": "Explique à voix haute pourquoi chaque étape est nécessaire",
+              "repere": "c8_pourquoi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Le responsable vous demande de **ne pas consigner** la ligne arrêtée. Que **répondez-vous** ?",
+              "justes": [
+                {
+                  "texte": "Que je consigne avant d'ouvrir le carter, et que la ligne repartira vers 10 h 20.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Qu'une ligne arrêtée peut être relancée par erreur : je ne commence pas sans consigner.",
+                  "repere": "c8_pourquoi"
+                },
+                {
+                  "texte": "Que je ne travaille pas sans consignation, et que je le préviens dès que c'est fini.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je vais faire vite.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "D'accord, la ligne est à l'arrêt.",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "Que l'arrêt d'urgence suffit.",
+                  "repere": "c8_confusion"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Avant d'ouvrir** le carter, que vérifiez-vous ?",
+              "justes": [
+                {
+                  "texte": "Qu'il n'y a plus de tension au moteur, avec l'appareil prévu.",
+                  "repere": "c8_outil"
+                },
+                {
+                  "texte": "Qu'il n'y a plus de pression d'air, après avoir purgé.",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "Que l'énergie est absente, pas seulement que la ligne est arrêtée.",
+                  "repere": "c8_savoir"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le sectionneur est ouvert et cadenassé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que la courroie ne tourne plus.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que **contrôlez-vous après l'essai**, avant de rendre la ligne ?",
+              "justes": [
+                {
+                  "texte": "Que l'arrêt d'urgence coupe bien la machine.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Que tous les protecteurs sont remis en place.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Que personne n'est près de la machine avant de la relancer.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que la courroie tourne droit.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : l'essai est bon.",
+                  "repere": "c8_danger"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Explique le pourquoi de chaque étape de la consignation.",
+              "repere": "c8_pourquoi"
+            },
+            {
+              "texte": "Propose de signaler à la production que la ligne est en maintenance, pour éviter une relance par erreur.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire consigner la personne en binôme avec un collègue expérimenté, fiche en main, pendant les premières semaines, jusqu'à ce que chaque étape soit sûre.",
+        "Donner par écrit la règle de l'entreprise : aucune intervention sans consignation, même courte, et aucun responsable ne peut demander d'y renoncer."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Choisir l'ordre des interventions : sécurité, ligne arrêtée, préventif",
+      "pourquoi": "Seul pendant une heure, un technicien doit traiter d'abord ce qui met des personnes en danger, puis ce qui arrête la production, sans oublier le préventif.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Cinq demandes, un seul technicien",
+        "texte": "Mardi, 13 h 05, début de l'équipe de l'après-midi. Vous êtes le seul technicien de maintenance jusqu'à 14 h : un collègue arrive à ce moment-là. Cinq demandes attendent dans la GMAO (voir le tableau). Vous estimez 10 minutes pour la ligne 1 et 30 minutes pour la ligne 3. Le graissage de la ligne 4 n'est possible que pendant l'arrêt de cette ligne pour un changement de format, de 14 h 30 à 15 h 30.",
+        "document": {
+          "type": "tableau",
+          "titre": "Demandes ouvertes dans la GMAO à 13 h 05",
+          "colonnes": [
+            "Reçue",
+            "Ligne",
+            "Demande",
+            "État"
+          ],
+          "lignes": [
+            [
+              "12 h 40",
+              "Ligne 3",
+              "L'étiqueteuse est en défaut",
+              "Ligne arrêtée depuis 12 h 40"
+            ],
+            [
+              "Hier, 18 h",
+              "Ligne 2",
+              "Voyant vert grillé sur la colonne lumineuse",
+              "La ligne tourne normalement"
+            ],
+            [
+              "13 h 00",
+              "Ligne 1",
+              "Le protecteur de la chaîne du convoyeur est décroché",
+              "La ligne tourne ; la chaîne en mouvement est accessible"
+            ],
+            [
+              "Hier, 16 h",
+              "Ligne 2",
+              "Fuite d'air à un raccord, bruit de souffle",
+              "La ligne tourne normalement"
+            ],
+            [
+              "Ce matin, 6 h",
+              "Ligne 4",
+              "Graissage hebdomadaire des chaînes (préventif)",
+              "À faire aujourd'hui, de 14 h 30 à 15 h 30"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Par quoi **commencez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Traiter la demande la plus ancienne : la fuite d'air de la ligne 2.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "Me partager entre les lignes 1 et 3, en alternant toutes les 10 minutes.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "c",
+                  "texte": "Aller à la ligne 1 : l'arrêter, la consigner et remettre le protecteur en place.",
+                  "points": 2,
+                  "repere": "c2_risque"
+                },
+                {
+                  "id": "d",
+                  "texte": "Faire arrêter la ligne 1 par son chef d'équipe, puis dépanner la ligne 3.",
+                  "points": 1,
+                  "repere": "c4_informe"
+                }
+              ],
+              "explication": "Une chaîne en mouvement accessible peut blesser quelqu'un : on la traite avant tout, et cela ne prend que 10 minutes. Faire arrêter la ligne protège, mais le protecteur reste à remettre.",
+              "relance": "Quand plusieurs demandes arrivent en même temps, qu'est-ce qui passe en premier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Avant de partir** à la ligne 1, que faites-vous pour l'équipe de la **ligne 3**, qui attend ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je préviens son chef d'équipe : j'arrive après la ligne 1, dans environ 15 minutes.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens son chef d'équipe que je passerai plus tard, sans lui donner d'heure.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ne dis rien : je leur expliquerai en arrivant à la ligne 3.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je dis à son chef d'équipe d'essayer de relancer l'étiqueteuse lui-même.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                }
+              ],
+              "explication": "Une équipe qui attend peut s'organiser si on lui donne une heure réaliste. Dire « plus tard » sans heure l'informe, mais ne l'aide pas à s'organiser.",
+              "relance": "Que dites-vous à une équipe dont vous ne pouvez pas vous occuper tout de suite ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Il est **14 h 20**. La fuite d'air de la ligne 2 **n'est pas finie**, et le graissage de la ligne 4 commence à **14 h 30**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je termine la fuite d'air : le graissage se fera demain.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je fais un peu de graissage et un peu de fuite d'air, en alternant.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je laisse la fuite d'air, je note où j'en suis dans la GMAO et je vais graisser.",
+                  "points": 1,
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande à mon collègue de finir la fuite d'air, et je prépare le graissage.",
+                  "points": 2,
+                  "repere": "c2_regroupe"
+                }
+              ],
+              "explication": "Le créneau de 14 h 30 est le seul de la journée : on le tient, et on confie la fin de la fuite d'air au collègue arrivé. Noter où l'on en est est utile, mais la fuite reste sans responsable.",
+              "relance": "Que faites-vous quand une tâche a un créneau fixe et qu'une autre n'est pas finie ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le voyant vert de la ligne 2 attend depuis hier soir et vous **n'aurez pas le temps aujourd'hui**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ferme la demande dans la GMAO pour qu'elle ne reste pas en retard dans la liste.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je la laisse ouverte, avec une date de reprise, et je préviens le chef d'équipe de la ligne 2.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je la laisse ouverte dans la GMAO, sans prévenir personne ni indiquer de date.",
+                  "points": 1,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne fais rien : un voyant grillé n'intéresse personne.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                }
+              ],
+              "explication": "Une demande reportée reste ouverte, avec une date, et la personne concernée est prévenue. La laisser ouverte sans rien dire est correct, mais personne ne sait quand elle sera traitée.",
+              "relance": "Que faites-vous d'une demande que vous ne pouvez pas traiter aujourd'hui ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Un opérateur de la ligne 2 vous signale un bruit inhabituel sur un convoyeur qui tourne normalement. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande ce qu'il observe, je note la demande et je lui dis quand je passerai.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'y vais tout de suite : c'est la dernière demande arrivée dans la liste.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis que je passerai quand j'aurai un moment de libre dans mon poste.",
+                  "points": 1,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne réponds pas : j'ai déjà cinq demandes à traiter avant celle-là.",
+                  "points": 0,
+                  "repere": "c2_silence"
+                }
+              ],
+              "explication": "Une question rapide permet de juger le risque : s'il y a danger, on y va ; sinon on note la demande et on annonce un moment. « Quand j'aurai le temps » ne donne aucun repère.",
+              "relance": "Comment décidez-vous si une nouvelle demande passe avant celles que vous avez déjà ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Je commence par…",
+              "justes": [
+                {
+                  "texte": "la ligne 1 : le protecteur décroché est un risque pour les opérateurs",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "arrêter la ligne 1 et remettre le protecteur, parce qu'une personne peut se blesser",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "ce qui présente un danger, avant la production",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "la ligne 3, parce que la production y est arrêtée",
+                  "repere": "c2_critere"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "la demande la plus ancienne, celle de la fuite d'air",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "ce que le chef d'équipe me demande le plus fort",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "À l'équipe de la **ligne 3**, qui attend, je…",
+              "justes": [
+                {
+                  "texte": "fais dire par son chef d'équipe que j'arrive après la ligne 1, avec une heure",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "dis dans combien de temps j'arrive",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "annonce un délai réaliste pour qu'elle puisse s'organiser",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "dis que j'arrive bientôt",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne dis rien",
+                  "repere": "c2_silence"
+                },
+                {
+                  "texte": "dis d'essayer de relancer l'étiqueteuse seule",
+                  "repere": "c7_renvoie"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour que le graissage de **14 h 30** soit fait, je…",
+              "justes": [
+                {
+                  "texte": "garde le créneau de 14 h 30 à 15 h 30 et je finis les autres tâches avant",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "demande à mon collègue de finir la fuite d'air quand il arrive à 14 h",
+                  "repere": "c2_regroupe"
+                },
+                {
+                  "texte": "prépare la graisse et le matériel avant 14 h 30",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le fais si j'ai le temps",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le remets à demain",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "attends qu'on me le rappelle",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Regroupe les deux demandes de la ligne 2 (fuite d'air et voyant) en un seul passage.",
+              "repere": "c2_regroupe"
+            },
+            {
+              "texte": "Note dans la GMAO ce qui est reporté, avec une nouvelle date.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« J'arrête et je consigne d'abord la ligne 1, puis je remets son protecteur : la chaîne en mouvement est accessible. Je préviens l'équipe de la ligne 3 que j'arrive dans une quinzaine de minutes. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Plusieurs lignes ont une demande. Quel travail faites-vous en dernier ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Plusieurs demandes arrivent en même temps. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "La chaîne en mouvement de la ligne 1 est accessible et la ligne 3 est arrêtée depuis 12 h 40. Que faites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "La ligne 3 est arrêtée et son équipe demande quand elle redémarre. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La chaîne en mouvement de la ligne 1 est accessible.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le voyant vert de la ligne 2 est grillé depuis hier.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La ligne 3 est arrêtée depuis 12 h 40 : son équipe attend.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le graissage de la ligne 4 est prévu ce matin.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Vous estimez 10 minutes pour la ligne 1.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Votre collègue est déjà arrivé.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je passe à la ligne 3 sans remettre le protecteur : l'équipe attend.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "b",
+                "texte": "Je dépanne l'étiqueteuse de la ligne 3, puis je me prépare au graissage de 14 h 30.",
+                "points": 2,
+                "repere": "c2_contraintes"
+              },
+              {
+                "id": "c",
+                "texte": "Je dépanne la ligne 3, puis je regarde la liste pour choisir la suite.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je fais une pause : le plus urgent est fait.",
+                "points": 0,
+                "repere": "c2_reactif"
+              }
+            ]
+          },
+          "explication": "La réponse applique un critère : le risque pour les personnes d'abord, puis la ligne arrêtée. L'équipe qui attend est prévenue avec un délai réaliste, tiré de l'estimation de 10 minutes."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "L'ordre de vos interventions",
+          "consigne": "Remettez ces six actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Traiter la fuite d'air de la ligne 2"
+            },
+            {
+              "id": "e2",
+              "texte": "Dépanner l'étiqueteuse de la ligne 3"
+            },
+            {
+              "id": "e3",
+              "texte": "Arrêter et consigner la ligne 1"
+            },
+            {
+              "id": "e4",
+              "texte": "Changer le voyant vert de la ligne 2"
+            },
+            {
+              "id": "e5",
+              "texte": "Graisser les chaînes de la ligne 4"
+            },
+            {
+              "id": "e6",
+              "texte": "Remettre en place le protecteur de la ligne 1"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e3",
+              "apres": "e6",
+              "explication": "On arrête et on consigne la ligne avant de remettre un protecteur près d'une chaîne."
+            },
+            {
+              "avant": "e3",
+              "apres": "e2",
+              "explication": "Un risque pour les personnes passe avant une ligne arrêtée."
+            },
+            {
+              "avant": "e6",
+              "apres": "e2",
+              "explication": "On termine la ligne 1 avant de partir : le travail est court (10 minutes), et la ligne repart au lieu de rester arrêtée pendant tout le dépannage de la ligne 3."
+            },
+            {
+              "avant": "e6",
+              "apres": "e1",
+              "explication": "Un risque pour les personnes passe avant une fuite d'air sur une ligne qui tourne."
+            },
+            {
+              "avant": "e6",
+              "apres": "e5",
+              "explication": "Un risque pour les personnes passe avant le préventif."
+            },
+            {
+              "avant": "e2",
+              "apres": "e1",
+              "explication": "Une ligne arrêtée passe avant une fuite d'air sur une ligne qui tourne."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "Une ligne arrêtée passe avant un voyant grillé sur une ligne qui tourne."
+            },
+            {
+              "avant": "e2",
+              "apres": "e5",
+              "explication": "Une ligne arrêtée passe avant le préventif, qui a son créneau plus tard."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Simulation de 15 minutes : cinq cartes de demandes sont posées devant la personne, avec l'heure de réception, l'état de la ligne et la durée estimée. Elle les range dans l'ordre où elle les traite et explique son choix à voix haute.",
+            "criteres": [
+              {
+                "texte": "Traite en premier ce qui présente un risque pour les personnes",
+                "repere": "c2_risque"
+              },
+              {
+                "texte": "Place la ligne arrêtée avant les lignes qui tournent",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Tient compte du créneau de 14 h 30 pour le préventif",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Dit qui elle prévient et ce qu'elle annonce",
+                "repere": "c2_previent"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de confier une demande au collègue qui arrive à 14 h",
+              "repere": "c2_regroupe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Par quoi **commencez-vous**, et **pourquoi** ?",
+              "justes": [
+                {
+                  "texte": "Par la ligne 1 : le protecteur décroché est un risque pour les opérateurs.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Par ce qui présente un danger : la chaîne en mouvement est accessible.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Par la ligne 1, car la sécurité passe avant la production.",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Par la ligne 3, car la production y est arrêtée.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Par la demande la plus ancienne.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que **dites-vous** à l'équipe de la **ligne 3**, qui attend ?",
+              "justes": [
+                {
+                  "texte": "Que j'arrive après la ligne 1, dans une quinzaine de minutes.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je préviens leur chef d'équipe de l'heure à laquelle j'arrive.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je leur dis pourquoi je passe d'abord à la ligne 1 et quand j'arrive.",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que j'arrive bientôt.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je les verrai en arrivant.",
+                  "repere": "c2_silence"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment** faites-vous pour que le graissage de **14 h 30** soit fait ?",
+              "justes": [
+                {
+                  "texte": "Je garde ce créneau et je finis les autres tâches avant.",
+                  "repere": "c2_contraintes"
+                },
+                {
+                  "texte": "Je demande à mon collègue de reprendre la fuite d'air à 14 h.",
+                  "repere": "c2_regroupe"
+                },
+                {
+                  "texte": "Je prépare la graisse et le matériel avant 14 h 30.",
+                  "repere": "c2_anticipe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le fais si j'ai le temps.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le remets à demain.",
+                  "repere": "c2_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Note dans la GMAO ce qui est reporté, avec une nouvelle date.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Propose de regrouper la fuite d'air et le voyant de la ligne 2 en un seul passage.",
+              "repere": "c2_regroupe"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit une règle de priorité simple : danger pour les personnes, puis ligne arrêtée, puis préventif prévu, puis le reste.",
+        "Montrer comment lire les priorités et les échéances dans la GMAO, et à qui annoncer un retard."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Rédiger le compte rendu d'intervention et le transmettre",
+      "pourquoi": "Le compte rendu dit à l'équipe suivante ce qui est tombé en panne, ce qui a été fait et dans quel état est la machine : sans lui, la même panne revient.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Le compte rendu d'un dépannage",
+        "texte": "Vendredi, 12 h 20, fin de l'équipe du matin. Vous venez de dépanner le convoyeur de sortie de la ligne 4. Vous devez écrire le compte rendu dans la GMAO, puis passer la consigne à l'équipe de l'après-midi. Voici vos notes.",
+        "document": {
+          "type": "liste",
+          "titre": "Vos notes d'intervention, ligne 4",
+          "items": [
+            "10 h 15 : le convoyeur de sortie s'arrête, alarme « surcharge moteur ».",
+            "10 h 25 : machine consignée. Le rouleau n° 7 est très dur à tourner à la main.",
+            "Cause : le roulement du rouleau n° 7 est grippé et surcharge le moteur.",
+            "Travail : roulement remplacé (1 pièce prise au magasin), rouleau remonté, fin à 11 h 40.",
+            "11 h 45 : ligne relancée. 12 h 15 : 30 minutes de fonctionnement sans alarme.",
+            "Le rouleau n° 8, du même âge, fait un léger bruit : à surveiller.",
+            "Magasin : plus de roulement de ce type, à commander."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Comment décrivez-vous **la panne** dans la GMAO ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le convoyeur de la ligne 4 s'est arrêté et ne fonctionnait plus.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le convoyeur a encore eu un problème comme d'habitude, il faudrait enfin le changer.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Convoyeur de sortie de la ligne 4 arrêté à 10 h 15, alarme « surcharge moteur ».",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "d",
+                  "texte": "Moteur du convoyeur de la ligne 4 en panne : il s'est arrêté à 10 h 15 en surchauffe.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "La panne se décrit avec la machine, le symptôme, l'alarme et l'heure : la personne qui lit sait de quoi on parle. Dire seulement que le convoyeur s'est arrêté est vrai, mais trop court pour être utile.",
+              "relance": "Quelles informations donnez-vous pour décrire une panne à quelqu'un qui n'était pas là ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Que notez-vous comme **cause** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Roulement du rouleau n° 7 grippé, qui a surchargé le moteur du convoyeur.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Moteur défectueux, qui s'arrête en surcharge dès qu'il chauffe.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "c",
+                  "texte": "Surcharge du moteur, signalée par l'alarme de la machine.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Cause non précisée : la machine remarche depuis la remise en service.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "La cause est ce que vous avez trouvé : le roulement grippé. « Surcharge du moteur » est l'alarme, c'est-à-dire l'effet, pas la cause.",
+              "relance": "Quelle différence faites-vous entre ce qu'on voit à l'écran et la cause de la panne ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Que notez-vous comme **action** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rouleau n° 7 graissé et remis en place, sans changer de pièce.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Réparation effectuée sur le convoyeur de la ligne 4 par la maintenance.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rouleau n° 7 et moteur du convoyeur remplacés (2 pièces du magasin).",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "d",
+                  "texte": "Roulement du rouleau n° 7 remplacé (1 pièce du magasin), rouleau remonté.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                }
+              ],
+              "explication": "On écrit exactement ce qui a été fait et la pièce utilisée : cela permet de suivre le stock. Une « réparation effectuée » ne dit ni quoi, ni avec quelle pièce.",
+              "relance": "Que doit-on retrouver dans la GMAO sur une pièce que vous avez changée ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Quel **état final** indiquez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Réparé définitivement : aucun suivi n'est nécessaire sur cette machine, tout est en ordre.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "En service depuis 11 h 45 ; 30 minutes d'essai sans alarme ; rouleau n° 8 à surveiller.",
+                  "points": 2,
+                  "repere": "c3_suite"
+                },
+                {
+                  "id": "c",
+                  "texte": "En service depuis 11 h 45 : la ligne 4 produit de nouveau normalement.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Essais à faire par l'équipe de l'après-midi, avant de relancer vraiment la ligne.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                }
+              ],
+              "explication": "L'état final dit dans quel état la machine est rendue, ce qui a été contrôlé et ce qui reste à suivre. Dire seulement que la ligne produit de nouveau ne dit rien de l'essai ni du rouleau n° 8.",
+              "relance": "Que doit savoir la personne qui reprend la machine après vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Avant de partir, que dites-vous à l'équipe de l'après-midi, **en plus du compte rendu** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "De surveiller le bruit du rouleau n° 8, et de commander le roulement : plus de stock.",
+                  "points": 2,
+                  "repere": "c3_suite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que le convoyeur est réparé et que tout le détail de l'intervention est dans la GMAO.",
+                  "points": 1,
+                  "repere": "c3_trace"
+                },
+                {
+                  "id": "c",
+                  "texte": "Rien : ce n'est plus mon équipe, c'est à eux de regarder la machine en arrivant.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que le convoyeur est fragile et qu'il faudra faire attention, sans autre précision.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Ce qui est à surveiller et à commander doit être dit, pas seulement écrit : l'équipe peut agir tout de suite. Renvoyer à la GMAO sans rien préciser est correct, mais incomplet.",
+              "relance": "Qu'est-ce que vous dites à l'oral en plus de ce que vous écrivez ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour décrire **la panne** dans la GMAO, j'écris…",
+              "justes": [
+                {
+                  "texte": "la machine, le symptôme, l'alarme et l'heure",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "que le convoyeur de sortie de la ligne 4 s'est arrêté à 10 h 15 avec l'alarme « surcharge moteur »",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "ce qui s'est passé, où et à quelle heure",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le convoyeur était arrêté",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que le moteur est en panne, sans l'avoir vérifié",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "que la machine a encore un problème",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour la **cause** et **l'action**, j'écris…",
+              "justes": [
+                {
+                  "texte": "que le roulement du rouleau n° 7 était grippé et que je l'ai remplacé",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "la cause trouvée, l'action faite et la pièce utilisée",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "que le roulement grippé surchargeait le moteur, et ce que j'ai changé",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que j'ai réparé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que le moteur a été remplacé",
+                  "repere": "c3_faux"
+                },
+                {
+                  "texte": "que la cause est inconnue",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Avant de partir, je dis à **l'équipe de l'après-midi**…",
+              "justes": [
+                {
+                  "texte": "de surveiller le bruit du rouleau n° 8",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "que le roulement est à commander, car il n'y en a plus au magasin",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "où lire le compte rendu et ce qu'il faut surveiller",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le convoyeur est réparé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : ce n'est plus mon équipe",
+                  "repere": "c3_oubli"
+                },
+                {
+                  "texte": "que la machine est fragile",
+                  "repere": "c3_flou"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Écrit une phrase de synthèse en tête du compte rendu : panne, cause, état final.",
+              "repere": "c3_essentiel"
+            },
+            {
+              "texte": "Propose de créer une demande de contrôle pour les autres rouleaux du même âge.",
+              "repere": "c6_recidive"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Le convoyeur de la ligne 4 est reparti à 11 h 45. Le roulement du rouleau n° 7 était grippé : je l'ai remplacé. Surveillez le rouleau n° 8, qui fait un léger bruit. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un opérateur demande si le convoyeur de la ligne 4 peut être relancé. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous avez dépanné le convoyeur de la ligne 4. Que dites-vous à l'équipe de l'après-midi, qui reprend la ligne ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Vous avez dépanné une machine. Que dites-vous à l'équipe suivante ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Un collègue demande s'il reste des roulements au magasin. Que répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le convoyeur a été relancé à 11 h 45.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "L'alarme « surcharge moteur » est apparue à 10 h 15.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le roulement du rouleau n° 7 était grippé.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le moteur du convoyeur a été remplacé.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le rouleau n° 8 fait un léger bruit.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Il reste des roulements au magasin.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je m'assure que le compte rendu est dans la GMAO, avec les mêmes informations.",
+                "points": 2,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "b",
+                "texte": "Je demande à mon collègue s'il a des questions, puis je pars.",
+                "points": 1,
+                "repere": "c3_verifie"
+              },
+              {
+                "id": "c",
+                "texte": "Je pars : il a tout retenu de ce que je viens de lui dire.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "d",
+                "texte": "Je note dans la GMAO que tout est réparé, sans parler du rouleau n° 8.",
+                "points": 0,
+                "repere": "c3_faux"
+              }
+            ]
+          },
+          "explication": "La réponse donne l'essentiel à l'équipe suivante : l'état de la machine, ce qui a été fait et ce qu'il faut surveiller. Le compte rendu écrit garde ensuite la trace de ces informations."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le compte rendu à vérifier",
+          "consigne": "Un collègue a préparé le compte rendu à partir de **vos notes**. Cliquez sur **chaque ligne** qui contient **une erreur**.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Équipement : convoyeur de sortie, ligne 4",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Panne : arrêt à 10 h 15, alarme « surcharge moteur »",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "Cause : moteur défectueux",
+              "erreur": true,
+              "explication": "Le moteur n'est pas en cause : c'est le roulement grippé du rouleau n° 7 qui l'a surchargé."
+            },
+            {
+              "id": "e4",
+              "texte": "Action : roulement du rouleau n° 7 remplacé (1 pièce du magasin)",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "Arrêt de la ligne : de 10 h 15 à 12 h 15",
+              "erreur": true,
+              "explication": "La ligne a été relancée à 11 h 45 ; 12 h 15 est la fin de l'essai de 30 minutes."
+            },
+            {
+              "id": "e6",
+              "texte": "État final : en service, essai de 30 minutes sans alarme",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "À surveiller : rien à signaler",
+              "erreur": true,
+              "explication": "Le rouleau n° 8 fait un léger bruit : il est à surveiller."
+            },
+            {
+              "id": "e8",
+              "texte": "Magasin : plus de roulement de ce type, à commander",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Exercice de 15 minutes : la personne reçoit des notes d'intervention fictives et un compte rendu de GMAO rédigé à partir de ces notes, avec des erreurs. Elle corrige le compte rendu, puis le présente à l'oral à l'équipe suivante.",
+            "criteres": [
+              {
+                "texte": "Repère que la cause écrite ne correspond pas aux notes",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Vérifie les heures et la durée d'arrêt",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Écrit panne, cause, action et état final, chacun en une phrase",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Dit à l'oral ce qu'il faut surveiller et ce qui est à commander",
+                "repere": "c3_suite"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose un modèle de compte rendu en quatre rubriques pour toute l'équipe",
+              "repere": "c4_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Comment décrivez-vous **la panne** et sa **cause** dans la GMAO ?",
+              "justes": [
+                {
+                  "texte": "J'écris le convoyeur, la ligne, l'alarme et l'heure, puis la cause que j'ai trouvée.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Le convoyeur de la ligne 4 s'est arrêté à 10 h 15 ; la cause est un roulement grippé.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je distingue ce que j'ai vu, comme l'alarme, de la cause que j'ai trouvée.",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "J'écris que le convoyeur était en panne.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'écris que le moteur est en panne.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que mettez-vous comme **action** et comme **état final** ?",
+              "justes": [
+                {
+                  "texte": "Roulement remplacé, rouleau remonté, essai de 30 minutes sans alarme, en service à 11 h 45.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "L'action faite, la pièce utilisée et l'état de la machine à la fin.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je précise que la machine est en service et ce qui reste à surveiller.",
+                  "repere": "c3_suite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Réparé, en service.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Réparé définitivement, rien à surveiller.",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que **dites-vous** à **l'équipe** de l'après-midi ?",
+              "justes": [
+                {
+                  "texte": "De surveiller le bruit du rouleau n° 8.",
+                  "repere": "c3_suite"
+                },
+                {
+                  "texte": "Que le roulement est à commander, car il n'y en a plus au magasin.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Que la machine est en service depuis 11 h 45, et où lire le compte rendu.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que le convoyeur est réparé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : ce n'est plus mon équipe.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Écrit une phrase de synthèse en tête du compte rendu : panne, cause, état final.",
+              "repere": "c3_essentiel"
+            },
+            {
+              "texte": "Propose de créer une demande de contrôle pour les autres rouleaux du même âge.",
+              "repere": "c6_recidive"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Fournir un modèle de compte rendu en quatre rubriques (panne, cause, action, état final) avec un exemple bien rempli.",
+        "Faire relire les premiers comptes rendus par un collègue, puis les commenter ensemble : ce qui est clair, ce qui manque."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C1",
+      "texte": "Parlez d'une panne que vous avez cherchée et trouvée. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Qu'avez-vous vérifié en premier, et pourquoi ?",
+        "Comment avez-vous su que la panne était réparée ?"
+      ],
+      "attendus": [
+        "Décrit des faits relevés avant d'agir : alarme, mesure, historique",
+        "Explique l'ordre de ses vérifications et ce qu'il a écarté",
+        "Dit comment il a contrôlé que la panne ne revenait pas"
+      ],
+      "relance": "Qu'avez-vous écarté, et comment le saviez-vous ?",
+      "alternative": "Si vous n'avez jamais dépanné de machine : parlez d'une panne que vous avez cherchée (vélo, voiture, appareil de la maison) et de votre méthode."
+    },
+    {
+      "id": "e2",
+      "competence": "C1",
+      "texte": "Une machine s'arrête et affiche une alarme que vous **ne connaissez pas**. Que faites-vous ?",
+      "suite": [
+        "Où cherchez-vous l'information qui vous manque ?"
+      ],
+      "attendus": [
+        "Relève l'alarme, l'état de la machine et ce que dit l'opérateur",
+        "Cherche dans l'historique, la documentation ou auprès d'un collègue",
+        "Ne change pas de pièce au hasard et ne relance pas sans comprendre"
+      ],
+      "relance": "Que faites-vous si l'historique n'apporte rien ?",
+      "alternative": "Un appareil de la maison s'arrête sans explication. Comment cherchez-vous ce qui ne va pas, avant de le réparer ou de le remplacer ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C8",
+      "texte": "Parlez d'une fois où vous avez **consigné** une machine **avant d'intervenir**. Comment cela s'est-il passé ?",
+      "suite": [
+        "Quelles étapes avez-vous suivies ?",
+        "Comment avez-vous vérifié qu'il n'y avait plus d'énergie ?"
+      ],
+      "attendus": [
+        "Cite les étapes : séparer, condamner, vérifier l'absence d'énergie",
+        "Pense à toutes les énergies présentes, pas seulement à l'électricité",
+        "Dit comment la remise en service a été faite et contrôlée"
+      ],
+      "relance": "Qui a retiré les cadenas, et à quel moment ?",
+      "alternative": "Si vous n'avez jamais consigné : parlez d'une règle de sécurité appliquée avant un travail (atelier, stage, bricolage) et de ce qu'elle protégeait."
+    },
+    {
+      "id": "e4",
+      "competence": "C8",
+      "texte": "Un responsable de production vous demande de **commencer sans consigner**, car la machine est arrêtée. Que lui **répondez-vous** ?",
+      "suite": [
+        "Que faites-vous s'il insiste ?"
+      ],
+      "attendus": [
+        "Refuse de travailler sans consignation et explique pourquoi",
+        "Donne un délai réaliste pour rassurer le responsable",
+        "Fait remonter à son propre responsable si on insiste"
+      ],
+      "relance": "Comment restez-vous ferme sans vous opposer au responsable ?",
+      "alternative": "Quelqu'un vous demande de sauter une règle de sécurité pour gagner du temps (stage, bricolage, association). Que répondez-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C2",
+      "texte": "Trois demandes arrivent **en même temps** : un danger, une ligne arrêtée, un entretien prévu. Comment décidez-vous de **l'ordre** ?",
+      "suite": [
+        "Que dites-vous aux personnes qui attendent ?"
+      ],
+      "attendus": [
+        "Traite d'abord ce qui met une personne en danger",
+        "Place la ligne arrêtée avant l'entretien prévu, en tenant compte de son échéance",
+        "Prévient les personnes qui attendent et leur donne un délai"
+      ],
+      "relance": "Que faites-vous si un collègue peut vous aider ?",
+      "alternative": "Quand plusieurs choses urgentes arrivent en même temps (travail, études, maison), comment décidez-vous de ce que vous faites d'abord ?"
+    },
+    {
+      "id": "e6",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où vous avez dû **reporter un entretien** prévu à cause d'une urgence. **Qu'avez-vous fait** ?",
+      "suite": [
+        "Qui avez-vous prévenu ?",
+        "Comment avez-vous évité d'oublier la tâche reportée ?"
+      ],
+      "attendus": [
+        "Décrit l'urgence et la tâche reportée avec des faits",
+        "Dit à qui il a annoncé le report, avec quelle nouvelle date",
+        "Explique comment la tâche reportée a été notée et reprise"
+      ],
+      "relance": "Qu'avez-vous fait pour que ce report n'ait pas de conséquence ?",
+      "alternative": "Parlez d'une fois où une urgence vous a obligé à décaler une tâche prévue (stage, études, association) et de la façon dont vous avez géré ce report."
+    },
+    {
+      "id": "e7",
+      "competence": "C3",
+      "texte": "Parlez d'un **compte rendu** d'intervention que vous avez écrit. **Que contenait-il** ?",
+      "suite": [
+        "Comment avez-vous décrit la cause ?",
+        "Qui l'a lu, et à quoi lui a-t-il servi ?"
+      ],
+      "attendus": [
+        "Cite les éléments utiles : panne, cause, action, état final",
+        "Écrit des faits précis : machine, heure, pièce utilisée",
+        "Pense à la personne qui le lira après lui"
+      ],
+      "relance": "Qu'avez-vous mis pour que le lecteur sache quoi surveiller ensuite ?",
+      "alternative": "Si vous n'avez jamais écrit de compte rendu : parlez d'une consigne écrite pour qu'un collègue reprenne un travail à votre place (stage, association)."
+    },
+    {
+      "id": "e8",
+      "competence": "C3",
+      "texte": "Vous finissez votre poste et la machine que vous avez dépannée doit être surveillée. Que **transmettez-vous** à **l'équipe suivante** ?",
+      "suite": [
+        "Comment vous assurez-vous que le message est compris ?"
+      ],
+      "attendus": [
+        "Dit à l'oral ce qui est à surveiller et pourquoi",
+        "Laisse une trace écrite dans la GMAO",
+        "Vérifie que l'équipe suivante a compris"
+      ],
+      "relance": "Qu'écrivez-vous si une pièce est à commander ?",
+      "alternative": "Vous passez un travail inachevé à un collègue (stage, association, cours). Que lui dites-vous, et que lui écrivez-vous ?"
+    }
+  ],
+  "_pv": "1b762352ea"
+}

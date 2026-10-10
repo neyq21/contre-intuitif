@@ -1,0 +1,2571 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "plombier",
+  "version": "2026.10",
+  "nom": "Plombier-chauffagiste / Plombière-chauffagiste",
+  "secteur": "btp",
+  "alias": [
+    "plombier",
+    "plombière",
+    "plombier chauffagiste",
+    "chauffagiste",
+    "installateur sanitaire",
+    "technicien chauffage",
+    "dépannage plomberie",
+    "plombier dépanneur",
+    "installateur chauffage"
+  ],
+  "resume": "Dépanne et rénove les installations d'eau, de sanitaires et de chauffage chez des particuliers : cherche la panne, répare, contrôle et explique au client.",
+  "contexte": "Une entreprise de plomberie et de chauffage de huit personnes, qui fait du dépannage et de la rénovation chez des particuliers.",
+  "cadre": "Les travaux sur les installations de gaz demandent une formation et des qualifications spécifiques.",
+  "competences": [
+    {
+      "code": "C1",
+      "titre": "Trouver d'où vient une fuite et limiter les dégâts",
+      "pourquoi": "Une fuite mal cherchée revient et abîme le logement : il faut arrêter l'eau, protéger, puis chercher méthodiquement.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "De l'eau sous l'évier de la cuisine",
+        "texte": "Mercredi, 9 h 40, chez un client. Le meuble sous son évier est mouillé. Le client dit que le fond du meuble était sec hier à 21 h, et qu'il n'a utilisé ni l'évier ni le lave-vaisselle depuis. Ce matin, sa bassine était déjà à moitié pleine. Sous l'évier, vous voyez deux flexibles d'arrivée d'eau, chacun avec son robinet d'arrêt, le siphon, et le tuyau du lave-vaisselle raccordé au siphon.",
+        "document": {
+          "type": "tableau",
+          "titre": "Où l'eau passe sous l'évier",
+          "colonnes": [
+            "Pièce",
+            "Quand l'eau passe dedans"
+          ],
+          "lignes": [
+            [
+              "Flexibles d'arrivée d'eau, raccords et robinets d'arrêt",
+              "Toujours : l'eau y est sous pression, même si personne ne l'utilise"
+            ],
+            [
+              "Siphon",
+              "Seulement quand l'évier se vide"
+            ],
+            [
+              "Tuyau du lave-vaisselle",
+              "Seulement quand le lave-vaisselle se vide"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Vous arrivez devant le meuble mouillé. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je cherche tout de suite le raccord qui fuit, avec l'eau encore ouverte.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je coupe l'eau de tout le logement au compteur, puis je cherche la fuite.",
+                  "points": 1,
+                  "repere": "c2_risque"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ferme les deux robinets d'arrêt, puis je protège le sol et le meuble.",
+                  "points": 2,
+                  "repere": "c2_risque"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je démonte le siphon pour le vérifier, parce que c'est lui qui fuit le plus souvent.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Les robinets d'arrêt coupent l'eau de l'évier sans priver tout le logement, et on protège avant de chercher. Couper au compteur marche aussi, mais coupe toute la maison.",
+              "relance": "Pourquoi coupez-vous l'eau avant de chercher la fuite ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le client n'a rien utilisé depuis hier soir. **Quelles pièces** regardez-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Les pièces toujours sous pression : flexibles, raccords, robinets d'arrêt.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le siphon, parce que l'eau de l'évier y passe tous les jours.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Aucune en particulier : je vérifie toutes les pièces, une par une.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le tuyau du lave-vaisselle, qui a pu se vider tout seul.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Rien n'a servi depuis hier soir : d'après le tableau, seules les pièces sous pression peuvent couler sans être utilisées. Tout vérifier est possible, mais plus long.",
+              "relance": "Comment les informations du client vous aident-elles à choisir où chercher ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Les robinets d'arrêt sont fermés et le meuble est essuyé. Que faites-vous **ensuite** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je serre tous les raccords à fond avec une clé, au cas où.",
+                  "points": 0,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je remplis l'évier et je le vide d'un coup pour regarder le siphon.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je rouvre les deux robinets d'arrêt et je regarde d'où l'eau sort.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je rouvre un robinet à la fois et je passe un papier sec sous chaque raccord.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "En rouvrant un robinet à la fois, vous savez quel flexible fuit ; le papier sec montre la plus petite goutte. Rouvrir les deux ensemble marche aussi, mais on distingue moins bien la source.",
+              "relance": "Comment repérez-vous une très petite fuite ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous voyez une goutte sous l'écrou du flexible d'eau froide. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'enroule du ruban d'étanchéité autour de l'écrou pour boucher.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ferme son robinet d'arrêt, je démonte le flexible et je vérifie son joint.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je serre l'écrou un peu plus et je regarde si la goutte s'arrête ensuite.",
+                  "points": 1,
+                  "repere": "c1_symptome"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je laisse en l'état : ce n'est qu'une goutte, la bassine suffit.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                }
+              ],
+              "explication": "Une goutte à un raccord vient souvent d'un joint abîmé : on ferme l'eau, on démonte et on regarde pourquoi. Resserrer peut arrêter la goutte un moment, mais ne traite pas la cause.",
+              "relance": "Si la goutte continue après un resserrage, que faites-vous ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le flexible est remplacé. **Comment savez-vous** que la fuite d'hier soir **est réparée** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le flexible est neuf : je considère donc que la fuite est réparée.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je rouvre l'eau et je regarde un instant : rien ne coule.",
+                  "points": 1,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je rouvre l'eau et je vérifie après quelques minutes que tout reste sec.",
+                  "points": 2,
+                  "repere": "c1_verifie"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au client de me prévenir si l'eau revient.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                }
+              ],
+              "explication": "Une fuite lente peut ne se voir qu'au bout de quelques minutes : on laisse l'eau ouverte et on regarde de nouveau. Un coup d'œil rapide ou une pièce neuve ne le prouvent pas.",
+              "relance": "Comment vous assurez-vous qu'une réparation tient ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "En arrivant devant le meuble mouillé, je **commence par**…",
+              "justes": [
+                {
+                  "texte": "fermer les robinets d'arrêt pour arrêter l'eau",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "couper l'eau, puis protéger le sol et vider le meuble",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "arrêter l'arrivée d'eau avant de chercher d'où vient la fuite",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "poser une bassine sous la fuite",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "chercher le raccord qui fuit, avec l'eau ouverte",
+                  "repere": "c1_precipite"
+                },
+                {
+                  "texte": "démonter le siphon pour voir",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Comme le client n'a rien utilisé depuis hier soir, je **regarde d'abord**…",
+              "justes": [
+                {
+                  "texte": "les flexibles, leurs raccords et les robinets d'arrêt, car l'eau y est toujours sous pression",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "les pièces qui reçoivent de l'eau en permanence",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "l'arrivée d'eau avant le siphon, parce que le siphon ne reçoit rien la nuit",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "là où c'est le plus mouillé",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le siphon, parce que c'est souvent lui",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "toutes les pièces à la fois, en les serrant",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand je vois une goutte à un raccord, **avant de réparer**, je…",
+              "justes": [
+                {
+                  "texte": "ferme l'eau, j'essuie et je regarde pourquoi ça fuit : joint, écrou ou filetage",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "démonte le raccord et je vérifie l'état du joint",
+                  "repere": "c1_cause"
+                },
+                {
+                  "texte": "vérifie que c'est bien ce raccord qui goutte, en essuyant et en regardant de nouveau",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "serre un peu l'écrou",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "mets du ruban autour du raccord pour boucher",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "laisse la goutte, elle est petite",
+                  "repere": "c1_abandon"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Pense à tester aussi le siphon et le tuyau du lave-vaisselle, au cas où il y aurait une deuxième fuite.",
+              "repere": "c1_verifie"
+            },
+            {
+              "texte": "Prévient le client que l'autre flexible a le même âge et pourrait s'user aussi.",
+              "repere": "c3_complet"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« J'ai fermé les deux robinets d'arrêt et protégé le sol. Je les rouvre un à un et je passe un papier sec sous chaque raccord. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le client vous dit que l'évier fuit seulement quand il le vide. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Il y a de l'eau sous l'évier d'un client. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le client n'a rien utilisé depuis hier soir et la bassine est à moitié pleine. Comment cherchez-vous la fuite ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Le lave-vaisselle vient de se vider et le meuble est mouillé. Que faites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le client n'a rien utilisé depuis hier soir.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le tuyau du lave-vaisselle est raccordé au siphon.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La bassine était déjà à moitié pleine ce matin.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le client doit partir à midi.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Les flexibles et leurs raccords sont toujours sous pression.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le meuble était déjà humide la semaine dernière.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Si je ne vois rien tout de suite, je conclus que la fuite vient d'ailleurs.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "b",
+                "texte": "Si une goutte apparaît, je ferme l'eau et je cherche pourquoi ce raccord fuit.",
+                "points": 2,
+                "repere": "c1_cause"
+              },
+              {
+                "id": "c",
+                "texte": "Je remonte le meuble et je passe à autre chose.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "d",
+                "texte": "Si une goutte apparaît, je resserre le raccord.",
+                "points": 1,
+                "repere": "c1_symptome"
+              }
+            ]
+          },
+          "explication": "Le client n'a rien utilisé de la nuit : la fuite vient d'une pièce toujours sous pression. On coupe, on protège, puis on rouvre un robinet à la fois pour voir lequel goutte."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre intervention sous l'évier, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Fermer les deux robinets d'arrêt"
+            },
+            {
+              "id": "e2",
+              "texte": "Protéger le sol et vider le meuble"
+            },
+            {
+              "id": "e3",
+              "texte": "Essuyer le fond du meuble et les raccords"
+            },
+            {
+              "id": "e4",
+              "texte": "Rouvrir un robinet à la fois et regarder chaque raccord"
+            },
+            {
+              "id": "e5",
+              "texte": "Refermer le robinet concerné et remplacer la pièce qui fuit"
+            },
+            {
+              "id": "e6",
+              "texte": "Vérifier que plus rien ne goutte"
+            },
+            {
+              "id": "e7",
+              "texte": "Expliquer au client ce qui a été réparé"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e3",
+              "explication": "On coupe l'eau avant d'essuyer, sinon le meuble se mouille de nouveau."
+            },
+            {
+              "avant": "e2",
+              "apres": "e3",
+              "explication": "On vide le meuble avant de l'essuyer."
+            },
+            {
+              "avant": "e3",
+              "apres": "e4",
+              "explication": "On essuie avant de rouvrir l'eau : sur un raccord sec, la première goutte se voit."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "On protège avant de rouvrir l'eau, car la fuite va couler de nouveau."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On trouve la fuite avant de remplacer une pièce."
+            },
+            {
+              "avant": "e1",
+              "apres": "e5",
+              "explication": "On ne démonte rien tant que l'eau n'est pas coupée."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "On vérifie après la réparation."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "On annonce que c'est réparé après avoir vérifié."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_precipite",
+          "reel": {
+            "consigne": "Sur un meuble d'évier de démonstration (flexibles, siphon, tuyau de lave-vaisselle) avec une petite fuite créée à un raccord, la personne coupe l'eau, protège, cherche la source et répare, en 20 minutes.",
+            "criteres": [
+              {
+                "texte": "Coupe l'eau avant de chercher la fuite",
+                "repere": "c2_risque"
+              },
+              {
+                "texte": "Protège le sol et essuie avant de chercher",
+                "repere": "c1_etapes"
+              },
+              {
+                "texte": "Trouve le raccord qui fuit en regardant les pièces une à une",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Répare la bonne pièce et vérifie que plus rien ne goutte",
+                "repere": "c1_verifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Teste aussi le siphon et le tuyau du lave-vaisselle",
+              "repere": "c1_options"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que faites-vous **en premier** devant le meuble mouillé ?",
+              "justes": [
+                {
+                  "texte": "Je ferme les robinets d'arrêt sous l'évier.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Je coupe l'eau, puis je protège le sol et le meuble.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "J'arrête d'abord l'eau, ensuite je cherche.",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je mets une bassine et j'essuie.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je cherche le raccord qui fuit, avec l'eau ouverte.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Comment **choisissez-vous** les pièces à vérifier **en premier** ?",
+              "justes": [
+                {
+                  "texte": "Je pars des faits : rien n'a servi de la nuit, donc je regarde ce qui est toujours sous pression.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je regarde les flexibles, leurs raccords et les robinets d'arrêt avant le siphon.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "J'élimine pièce par pièce, en commençant par ce que les faits désignent.",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde là où c'est le plus mouillé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je commence par le siphon, c'est toujours lui.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Comment savez-vous** que la fuite est **réparée** ?",
+              "justes": [
+                {
+                  "texte": "Je rouvre l'eau et je regarde les raccords avec un papier sec.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je surveille quelques minutes et je vérifie que le fond du meuble reste sec.",
+                  "repere": "c1_verifie"
+                },
+                {
+                  "texte": "Je teste aussi le siphon, au cas où il y aurait une deuxième fuite.",
+                  "repere": "c1_options"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde un instant si ça coule.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Le flexible est neuf : je ne vérifie pas.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prévient le client que l'autre flexible a le même âge et pourrait s'user aussi.",
+              "repere": "c3_complet"
+            },
+            {
+              "texte": "Montre au client où se trouvent les robinets d'arrêt, pour une prochaine fuite.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer dès le premier jour la méthode : couper, protéger, essuyer, puis regarder les pièces une à une.",
+        "Faire s'entraîner sur un meuble d'évier de démonstration, avec un collègue qui crée une petite fuite."
+      ]
+    },
+    {
+      "code": "C8",
+      "titre": "Réagir à une odeur de gaz et rester dans son rôle",
+      "pourquoi": "Une odeur de gaz peut mener à une explosion : la procédure de sécurité passe avant tout, et le gaz reste réservé aux personnes qualifiées.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Une chaudière en panne, puis une odeur de gaz",
+        "texte": "Jeudi, 14 h, chez un client. Sa chaudière ne démarre plus. Vous avez vérifié l'alimentation électrique et la pression d'eau : tout est normal. En vous approchant de la chaudière, dans le cellier, vous sentez une forte odeur de gaz. Le client est dans la cuisine, à côté. Dans votre entreprise, les travaux sur le gaz sont réservés aux techniciens qualifiés gaz. Ce n'est pas votre cas.",
+        "document": {
+          "type": "liste",
+          "titre": "Ce que vous voyez dans le cellier",
+          "items": [
+            "Le robinet de gaz de la chaudière : sur le tuyau, sous l'appareil, à portée de main.",
+            "La fenêtre du cellier : elle s'ouvre. La porte du cellier donne sur le jardin.",
+            "L'interrupteur du cellier : à côté de la porte. La lumière est éteinte et le cellier est sombre.",
+            "Le client : dans la cuisine, qui est à côté du cellier."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le cellier est sombre et l'odeur de gaz est forte. Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'allume la lumière du cellier pour voir d'où vient l'odeur.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je n'actionne aucun interrupteur et j'ouvre la fenêtre du cellier.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je cherche la fuite en passant la main sur les raccords de la chaudière.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'ouvre la fenêtre du cellier.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Un interrupteur peut produire une étincelle : on n'actionne rien, et on aère. Ouvrir seulement la fenêtre est juste, mais cela ne protège pas d'une étincelle.",
+              "relance": "Pourquoi n'actionnez-vous aucun interrupteur ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le robinet de gaz est sous la chaudière, à portée de main. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je laisse le robinet ouvert : le gaz part plus vite par la fenêtre.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je dévisse le raccord sous la chaudière pour trouver la fuite.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je sors tout de suite du cellier, sans fermer le robinet.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ferme le robinet, puis je sors du cellier.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                }
+              ],
+              "explication": "Fermer un robinet à portée de main arrête l'arrivée de gaz avant de sortir. Sortir sans le fermer protège la personne, mais le gaz continue d'arriver.",
+              "relance": "Pourquoi fermez-vous le robinet de gaz avant de sortir ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client est dans la cuisine, à côté du cellier. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le préviens, je lui dis de ne toucher à rien et nous sortons ensemble.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis de rester dans la cuisine, porte fermée.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis de sortir de la maison.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne lui dis rien pour ne pas l'inquiéter, et je continue ma recherche.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "On prévient le client, on lui dit de ne toucher à aucun interrupteur et on sort avec lui : le gaz peut s'enflammer dans toute la maison. Lui dire seulement de sortir est juste, mais incomplet.",
+              "relance": "Que dites-vous au client, mot pour mot ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous êtes sorti avec le client. **Qui appelez-vous en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je demande au client d'appeler lui-même le numéro d'urgence gaz.",
+                  "points": 1
+                },
+                {
+                  "id": "b",
+                  "texte": "Personne : j'ai fermé le robinet, le danger est écarté.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le numéro d'urgence gaz, depuis l'extérieur de la maison.",
+                  "points": 2,
+                  "repere": "c8_securite"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je retourne chercher mon téléphone dans le cellier, puis j'appelle.",
+                  "points": 0,
+                  "repere": "c8_danger"
+                }
+              ],
+              "explication": "Le numéro d'urgence gaz envoie directement les secours, et on appelle depuis l'extérieur. Laisser le client appeler fonctionne, mais c'est vous qui savez décrire ce que vous avez constaté. Passer d'abord par le responsable retarderait les secours.",
+              "relance": "Depuis où appelez-vous les secours, et pourquoi ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Le client vous demande de **chercher la fuite** pour **réparer** tout de suite. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que je regarde rapidement, la fenêtre étant ouverte, puis que je répare.",
+                  "points": 0,
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "id": "b",
+                  "texte": "Non : personne ne rentre sans l'accord des secours, et le gaz est réservé aux qualifiés.",
+                  "points": 2,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que je ne peux pas intervenir sur le gaz, car ce n'est pas mon rôle.",
+                  "points": 1,
+                  "repere": "c8_role"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que je reviendrai réparer dès que l'odeur aura disparu, sans attendre personne.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Personne ne rentre tant que les secours n'ont pas dit que c'est sûr, et le gaz est réservé aux techniciens qualifiés. Dire seulement « je ne peux pas » est juste, mais n'explique pas pourquoi attendre.",
+              "relance": "Qui peut intervenir sur une installation de gaz, dans votre entreprise ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "**Dès que** je sens une odeur de gaz, je…",
+              "justes": [
+                {
+                  "texte": "n'actionne aucun interrupteur et j'ouvre la fenêtre",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "n'allume ni flamme ni lumière, et j'aère la pièce",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "ferme le robinet de gaz s'il est à portée de main, et j'ouvre la fenêtre",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ouvre la fenêtre",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "cherche d'où vient l'odeur avec une lampe ou un briquet",
+                  "repere": "c8_danger"
+                },
+                {
+                  "texte": "allume la lumière pour mieux voir",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Ensuite, j'emmène le client dehors et **j'appelle**…",
+              "justes": [
+                {
+                  "texte": "le numéro d'urgence gaz, depuis l'extérieur",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "les secours gaz depuis le jardin, sans rentrer",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "le numéro d'urgence gaz, puis je préviens mon responsable",
+                  "repere": "c4_informe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "mon responsable, qui préviendra les secours",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "personne : le robinet est fermé",
+                  "repere": "c8_erreur"
+                },
+                {
+                  "texte": "depuis le cellier, en rentrant pour aller plus vite",
+                  "repere": "c8_danger"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Je ne cherche pas la fuite de gaz moi-même, **parce que**…",
+              "justes": [
+                {
+                  "texte": "les travaux sur le gaz demandent une formation et des qualifications spécifiques",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "c'est le travail d'un technicien qualifié gaz",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "chercher une fuite de gaz peut provoquer une explosion",
+                  "repere": "c8_pourquoi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ce n'est pas mon travail",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "je le ferai plus tard, quand j'aurai le temps",
+                  "repere": "c8_hors_role"
+                },
+                {
+                  "texte": "je la trouverais plus vite que les secours",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Reste dehors pour accueillir les secours et leur dire où est l'odeur et ce qui a été fait.",
+              "repere": "c3_complet"
+            },
+            {
+              "texte": "Note ensuite l'heure, l'endroit de l'odeur et ce qui a été fait, puis prévient son responsable.",
+              "repere": "c3_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je vous appelle de l'extérieur : il y a une forte odeur de gaz dans le cellier. Le robinet est fermé, la fenêtre est ouverte et tout le monde est sorti. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Votre responsable vous demande si la chaudière est réparée. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous appelez les secours. Que leur dites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le client vous demande ce qui se passe. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Vous êtes sorti de la maison et vous appelez le numéro d'urgence gaz. Que dites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'odeur de gaz est forte, dans le cellier.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Vous avez vérifié l'alimentation électrique de la chaudière.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le robinet de gaz est à portée de main.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "L'odeur était faible et passagère.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le client était dans la maison, à côté du cellier.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le client a déjà appelé le numéro d'urgence.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je retourne dans le cellier vérifier si l'odeur a disparu.",
+                "points": 0,
+                "repere": "c8_danger"
+              },
+              {
+                "id": "b",
+                "texte": "J'attends dehors avec le client et je ne laisse personne rentrer avant l'accord des secours.",
+                "points": 2,
+                "repere": "c8_securite"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends dehors avec le client.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je reprends la recherche de panne de la chaudière pendant que j'attends.",
+                "points": 0,
+                "repere": "c8_hors_role"
+              }
+            ]
+          },
+          "explication": "L'odeur est dans le cellier : tout le monde sort, on coupe ce qu'on peut sans risque et on appelle depuis l'extérieur. Les secours doivent savoir où est l'odeur et que personne n'est resté dedans."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Vos gestes devant une odeur de gaz",
+          "consigne": "**Pour chaque geste**, **choisissez la case** qui convient : à faire tout de suite, réservé aux qualifiés ou aux secours, ou à ne jamais faire.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "À faire tout de suite"
+            },
+            {
+              "id": "k2",
+              "nom": "Réservé aux qualifiés ou aux secours"
+            },
+            {
+              "id": "k3",
+              "nom": "À ne jamais faire"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Ouvrir la fenêtre du cellier",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "On aère tout de suite pour que le gaz ne s'accumule pas."
+            },
+            {
+              "id": "e2",
+              "texte": "Fermer le robinet de gaz sous la chaudière",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Il est à portée de main : on arrête l'arrivée de gaz avant de sortir."
+            },
+            {
+              "id": "e3",
+              "texte": "Faire sortir le client de la maison",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Tout le monde quitte la maison, car le gaz peut s'enflammer."
+            },
+            {
+              "id": "e4",
+              "texte": "Appeler le numéro d'urgence gaz depuis l'extérieur",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "L'appel part dès que vous êtes dehors : c'est un geste immédiat."
+            },
+            {
+              "id": "e5",
+              "texte": "Allumer la lumière du cellier pour y voir clair",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Un interrupteur peut produire une étincelle."
+            },
+            {
+              "id": "e6",
+              "texte": "Chercher d'où vient la fuite de gaz",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "Un technicien qualifié le fait avec le bon matériel. Pour vous, c'est interdit : les deux cases se défendent."
+            },
+            {
+              "id": "e7",
+              "texte": "Réparer le raccord de gaz de la chaudière",
+              "accepte": [
+                "k2",
+                "k3"
+              ],
+              "explication": "Les travaux sur le gaz demandent une formation et des qualifications spécifiques : un technicien qualifié le fait, pas vous. Les deux cases se défendent."
+            },
+            {
+              "id": "e8",
+              "texte": "Rentrer chercher ses outils dans le cellier",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "Personne ne rentre tant que les secours n'ont pas dit que c'est sûr."
+            }
+          ],
+          "repere_reussite": "c8_savoir",
+          "repere_echec": "c8_erreur",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes dans une pièce de démonstration : une personne dit « Ça sent le gaz ! ». La personne candidate annonce à voix haute ce qu'elle fait, dans l'ordre, sans appeler de vrai numéro.",
+            "criteres": [
+              {
+                "texte": "N'actionne aucun interrupteur et n'allume aucune flamme",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Aère et ferme le robinet de gaz s'il est à portée de main",
+                "repere": "c8_securite"
+              },
+              {
+                "texte": "Fait sortir tout le monde, puis appelle le numéro d'urgence gaz depuis l'extérieur",
+                "repere": "c8_savoir"
+              },
+              {
+                "texte": "Ne cherche pas et ne répare pas la fuite : le gaz est réservé aux qualifiés",
+                "repere": "c8_role"
+              }
+            ],
+            "bonus": {
+              "texte": "Reste dehors, empêche tout retour et dit aux secours où est l'odeur",
+              "repere": "c3_complet"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "Que **ne faites-vous surtout pas** en sentant une odeur de gaz ?",
+              "justes": [
+                {
+                  "texte": "Je n'actionne aucun interrupteur.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je n'allume ni flamme ni cigarette.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je ne cherche pas la fuite moi-même.",
+                  "repere": "c8_role"
+                },
+                {
+                  "texte": "Je ne rentre pas avant l'accord des secours.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je fais attention à ne rien allumer.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je cherche la fuite pour la réparer vite.",
+                  "repere": "c8_hors_role"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous **pour le client** ?",
+              "justes": [
+                {
+                  "texte": "Je le préviens et je le fais sortir avec moi.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je lui dis de ne toucher à aucun interrupteur et de sortir tout de suite.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Je m'assure que personne ne reste dans la maison.",
+                  "repere": "c8_securite"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui dis de s'éloigner du cellier.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je ne lui dis rien pour ne pas l'inquiéter.",
+                  "repere": "c3_oubli"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Qui** appelez-vous, et **depuis où** ?",
+              "justes": [
+                {
+                  "texte": "Le numéro d'urgence gaz, depuis l'extérieur.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Les secours gaz, une fois dehors, sans rentrer.",
+                  "repere": "c8_securite"
+                },
+                {
+                  "texte": "Les secours depuis le jardin, puis mon responsable.",
+                  "repere": "c4_informe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Mon responsable.",
+                  "repere": "c4_escalade"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Personne : le robinet est fermé.",
+                  "repere": "c8_erreur"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Attend les secours dehors et leur dit où est l'odeur et ce qui a été fait.",
+              "repere": "c3_complet"
+            },
+            {
+              "texte": "Note ensuite l'heure et ce qui a été fait, et prévient son responsable.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Donne l'adresse et l'endroit de l'odeur dès le début de l'appel.",
+              "repere": "c3_complet"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Faire apprendre la procédure « odeur de gaz » de l'entreprise, avec le numéro d'urgence gaz, et la refaire à voix haute le premier jour.",
+        "Donner par écrit les travaux sur le gaz réservés aux techniciens qualifiés, et la personne à prévenir quand on les croise."
+      ]
+    },
+    {
+      "code": "C7",
+      "titre": "Expliquer une panne et présenter un devis clair au client",
+      "pourquoi": "Un client qui comprend la panne, le prix et le délai accepte plus facilement le devis, et n'est pas surpris à la fin.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un chauffe-eau qui fuit et un client inquiet du prix",
+        "texte": "Vendredi, 11 h, chez un client. Son chauffe-eau électrique est percé : l'eau sort de la cuve elle-même. Il ne peut pas être réparé et doit être remplacé. Le client est inquiet et demande : « Combien ça coûte, et quand aurez-vous fini ? » Vous avez un chauffe-eau de 150 litres dans la camionnette ; un modèle de 200 litres serait livré lundi. Règle de l'entreprise : aucun travail ne commence sans devis signé.",
+        "document": {
+          "type": "tableau",
+          "titre": "Les deux offres de l'entreprise",
+          "colonnes": [
+            "Offre",
+            "Ce qui est compris",
+            "Pose",
+            "Prix TTC"
+          ],
+          "lignes": [
+            [
+              "A : chauffe-eau de 150 litres",
+              "Groupe de sécurité neuf, reprise de l'ancien chauffe-eau, mise en service",
+              "Aujourd'hui",
+              "640 €"
+            ],
+            [
+              "B : chauffe-eau de 200 litres",
+              "Groupe de sécurité neuf, reprise de l'ancien chauffe-eau, mise en service",
+              "Lundi",
+              "740 €"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Le client demande le prix. **Que lui répondez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que je ne sais pas avant la fin des travaux : on verra à la facture.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je donne le prix de l'offre A : 640 € TTC.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Que ce n'est pas cher et qu'il ne doit pas s'inquiéter.",
+                  "points": 0,
+                  "repere": "c7_promesse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je dis pourquoi il faut le remplacer, puis je donne le prix des deux offres.",
+                  "points": 2,
+                  "repere": "c7_alternative"
+                }
+              ],
+              "explication": "Le client veut comprendre, puis choisir : on explique la panne et on présente les deux offres avec leur prix. Donner un seul prix répond à la question, mais ne laisse pas de choix.",
+              "relance": "Que doit savoir un client avant de donner son accord ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le client demande **pourquoi** vous **ne pouvez pas** simplement le réparer. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que l'anode sacrificielle est épuisée et que le revêtement de la cuve est corrodé.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui montre où l'eau sort de la cuve et j'explique qu'une cuve percée ne se répare pas.",
+                  "points": 2,
+                  "repere": "c3_adapte"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que c'est une pièce qu'on ne trouve plus.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis que la fuite vient de la cuve, donc qu'il faut changer l'appareil.",
+                  "points": 1,
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "explication": "Montrer l'endroit et dire qu'une cuve percée ne se répare pas se comprend sans mots techniques. Dire seulement que la fuite vient de la cuve est juste, mais le client ne voit pas la preuve.",
+              "relance": "Comment expliquez-vous une panne à quelqu'un qui ne connaît pas la plomberie ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le client vous demande quelle offre vous lui conseillez. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je lui demande comment il utilise l'eau chaude, puis je lui conseille une offre.",
+                  "points": 2,
+                  "repere": "c7_besoin"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je lui dis de prendre la plus grande : on ne regrette jamais.",
+                  "points": 0,
+                  "repere": "c7_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui conseille l'offre A, parce qu'elle est moins chère et posée aujourd'hui.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je lui dis que le choix lui appartient et que je ne peux pas le conseiller.",
+                  "points": 0,
+                  "repere": "c7_ignore"
+                }
+              ],
+              "explication": "Le besoin en eau chaude du client décide du bon modèle : on le demande avant de conseiller. Conseiller sur le seul prix est possible, mais peut ne pas répondre à son besoin.",
+              "relance": "Quelle question posez-vous au client avant de lui conseiller un modèle ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le client veut que vous commenciez tout de suite, **sans devis**, pour avoir de l'eau chaude ce soir. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "D'accord, je commence et je ferai le devis après les travaux.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Qu'il doit rappeler le bureau pour le devis, et je pars.",
+                  "points": 0,
+                  "repere": "c7_renvoie"
+                },
+                {
+                  "id": "c",
+                  "texte": "Que je dois d'abord lui faire signer le devis, et je le lui remets tout de suite.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que je ne peux pas commencer sans devis signé : c'est la règle de l'entreprise.",
+                  "points": 1,
+                  "repere": "c7_regle"
+                }
+              ],
+              "explication": "La règle protège le client et l'entreprise : on explique le devis et on le fait signer avant de commencer. Refuser sans proposer de solution respecte la règle, mais laisse le client sans réponse.",
+              "relance": "Que faites-vous quand un client vous demande de sortir d'une règle de l'entreprise ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Pendant la pose, vous voyez que le robinet d'arrêt de l'arrivée d'eau est usé et devrait être changé. Il **n'est pas dans le devis**. Que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je le change sans rien dire : c'est mieux pour le client.",
+                  "points": 0,
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je ne dis rien : ce n'est pas dans le devis.",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le signale au client, sans donner de prix, et je continue le travail prévu.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je m'arrête, j'explique, je donne le prix du supplément et j'attends son accord.",
+                  "points": 2,
+                  "repere": "c7_regle"
+                }
+              ],
+              "explication": "Un travail en plus change le prix : le client doit le savoir et dire oui avant qu'on le fasse. Le signaler sans prix est honnête, mais il ne peut pas encore décider.",
+              "relance": "Que faites-vous quand vous découvrez un travail qui n'est pas dans le devis ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **expliquer la panne** au client, je lui dis que…",
+              "justes": [
+                {
+                  "texte": "la cuve fuit et qu'une cuve percée ne se répare pas, donc il faut changer le chauffe-eau",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "l'eau sort de la cuve elle-même, je lui montre l'endroit, et il faut remplacer l'appareil",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "le chauffe-eau est en fin de vie : la cuve fuit et le remplacer est la seule solution",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "l'appareil est trop vieux",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "le revêtement de la cuve est corrodé et l'anode est épuisée",
+                  "repere": "c3_jargon"
+                },
+                {
+                  "texte": "ce n'est rien de grave",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour le **prix** et le **délai**, je lui donne…",
+              "justes": [
+                {
+                  "texte": "les deux offres du devis, avec ce qui est compris, le prix et le jour de pose",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "le prix TTC de chaque offre et le délai : aujourd'hui ou lundi",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "les deux offres par écrit, pour qu'il choisisse tranquillement",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le prix de l'offre la moins chère",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "un prix à l'oral, et on fera le devis après",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "une estimation « à peu près », on verra à la fin",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Si je découvre **un travail en plus** pendant la pose, je…",
+              "justes": [
+                {
+                  "texte": "m'arrête, je préviens le client et je lui donne le prix avant de continuer",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "demande son accord avant de faire le supplément",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "ajoute une ligne au devis et je la fais signer avant de faire le travail",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "préviens le client à la fin du travail",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "fais le travail et je l'ajoute sur la facture",
+                  "repere": "c7_hors_regle"
+                },
+                {
+                  "texte": "ne dis rien",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Montre au client où se trouvent le robinet d'arrêt et le disjoncteur du chauffe-eau.",
+              "repere": "c7_suivi"
+            },
+            {
+              "texte": "Prévient le client de la coupure d'eau chaude et de sa durée avant de commencer.",
+              "repere": "c7_suite"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Votre chauffe-eau est percé : l'eau sort de la cuve, il ne peut pas être réparé. Je vous propose deux offres, avec le prix, ce qui est compris et le jour de pose. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Un client demande ce qui ne va pas avec son chauffe-eau. Que lui dites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "b",
+                "texte": "Le client dit que le prix est trop cher. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "c",
+                "texte": "Le chauffe-eau est percé et le client demande le prix. Vous avez deux offres. Que lui dites-vous ?",
+                "points": 2
+              },
+              {
+                "id": "d",
+                "texte": "Le client vous demande de commencer tout de suite, sans devis. Que lui dites-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La cuve du chauffe-eau est percée.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le client a déjà signé le devis.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le chauffe-eau ne peut pas être réparé.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le chauffe-eau a été installé il y a un an.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "L'entreprise a deux offres : une en stock, une livrée lundi.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Aucun travail ne commence sans devis signé.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je commence la dépose de l'ancien appareil pendant qu'il réfléchit.",
+                "points": 0,
+                "repere": "c7_hors_regle"
+              },
+              {
+                "id": "b",
+                "texte": "Je lui donne les prix à l'oral et je note son choix sur mon carnet.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je lui dis de rappeler le bureau pour choisir, et je pars.",
+                "points": 0,
+                "repere": "c7_renvoie"
+              },
+              {
+                "id": "d",
+                "texte": "Je lui remets le devis écrit avec les deux offres, et il choisit.",
+                "points": 2,
+                "repere": "c3_trace"
+              }
+            ]
+          },
+          "explication": "La réponse explique d'abord la panne en peu de mots, puis présente deux offres complètes. Le client choisit sur un devis écrit : rien ne commence avant sa signature."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Votre devis pour l'offre A",
+          "consigne": "Le client a choisi l'offre A. Voici votre devis. Cliquez sur **chaque ligne** qui **ne correspond pas** à l'offre A.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Remplacement du chauffe-eau électrique d'un particulier",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "Chauffe-eau de 200 litres",
+              "erreur": true,
+              "explication": "L'offre A est un chauffe-eau de 150 litres."
+            },
+            {
+              "id": "e3",
+              "texte": "Groupe de sécurité neuf",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e4",
+              "texte": "Reprise de l'ancien chauffe-eau : non comprise",
+              "erreur": true,
+              "explication": "La reprise de l'ancien chauffe-eau est comprise dans l'offre A."
+            },
+            {
+              "id": "e5",
+              "texte": "Mise en service comprise",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e6",
+              "texte": "Pose : aujourd'hui",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "Prix TTC : 740 €",
+              "erreur": true,
+              "explication": "L'offre A coûte 640 € TTC. 740 € est le prix de l'offre B."
+            },
+            {
+              "id": "e8",
+              "texte": "Signature du client avant le début des travaux",
+              "erreur": false,
+              "explication": ""
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Jeu de rôle de 10 minutes : une personne joue le client inquiet du prix. La personne candidate explique la panne, présente deux offres sur une fiche fictive et répond aux questions.",
+            "criteres": [
+              {
+                "texte": "Explique la panne avec des mots simples, sans jargon",
+                "repere": "c3_adapte"
+              },
+              {
+                "texte": "Donne pour chaque offre le prix, ce qui est compris et le délai",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Laisse le client choisir, sans le presser",
+                "repere": "c7_alternative"
+              },
+              {
+                "texte": "Rappelle qu'aucun travail ne commence sans devis signé",
+                "repere": "c7_regle"
+              }
+            ],
+            "bonus": {
+              "texte": "Dit ce qui va se passer ensuite : coupure d'eau chaude, durée, mise en service",
+              "repere": "c7_suite"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment expliquez-vous** la panne au client ?",
+              "justes": [
+                {
+                  "texte": "Je dis que la cuve fuit et qu'elle ne peut pas être réparée.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Je lui montre où l'eau sort et je dis qu'il faut changer l'appareil.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "J'explique avec des mots simples, sans termes techniques.",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je dis que l'appareil est trop vieux.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je parle de l'anode et du revêtement de la cuve.",
+                  "repere": "c3_jargon"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que lui dites-vous pour le **prix** et le **délai** ?",
+              "justes": [
+                {
+                  "texte": "Je donne les deux offres, avec ce qui est compris, le prix et le jour de pose.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Je lui remets le devis écrit et je lui laisse le temps de choisir.",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "Je réponds à ses questions et je le laisse choisir.",
+                  "repere": "c7_alternative"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je donne le prix de l'offre la moins chère.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je donne un prix à l'oral et je dis qu'on fera le devis après.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous si **un travail en plus** apparaît pendant la pose ?",
+              "justes": [
+                {
+                  "texte": "Je m'arrête et je préviens le client.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "Je lui donne le prix du supplément et j'attends son accord.",
+                  "repere": "c7_regle"
+                },
+                {
+                  "texte": "J'ajoute le supplément au devis et je le fais signer avant.",
+                  "repere": "c7_regle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je le préviens à la fin du travail.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je le fais sans rien dire et je l'ajoute à la facture.",
+                  "repere": "c7_hors_regle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Montre au client où se trouvent le robinet d'arrêt et le disjoncteur du chauffe-eau.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit les offres types de l'entreprise et la règle du devis signé : qui propose quoi, et à quel prix.",
+        "S'entraîner avec un collègue à expliquer une panne en trois phrases simples, sans termes techniques."
+      ]
+    },
+    {
+      "code": "C6",
+      "titre": "Contrôler et laisser propre un radiateur remplacé",
+      "pourquoi": "Une fuite ou un reste de chantier découvert après le départ coûte un retour et la confiance du client : on contrôle et on range avant de partir.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un radiateur neuf : contrôler avant de partir",
+        "texte": "Mardi, 15 h 30, chez un client. Vous venez de poser un radiateur neuf dans la chambre : il est vide, les deux robinets sont fermés et les raccords sont remontés avec des joints neufs. Le parquet est protégé par une bâche, avec une cuvette d'eau sale, vos outils et l'ancien radiateur à côté. La chaudière est en marche et le client rentre à 17 h.",
+        "document": {
+          "type": "liste",
+          "titre": "Extrait de la notice de la chaudière",
+          "items": [
+            "Le manomètre indique la pression de l'eau dans le circuit de chauffage.",
+            "La pression doit rester dans la zone verte du manomètre.",
+            "Si l'aiguille est sous la zone verte, remplir lentement le circuit avec le robinet de remplissage, jusqu'à la zone verte."
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Les raccords sont remontés. Que faites-vous des **robinets du radiateur** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je les rouvre lentement, un à un, en regardant les raccords.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je les rouvre en grand d'un coup, pour que l'eau arrive vite.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je les rouvre lentement, les deux ensemble.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je les laisse fermés et je préviens le client de les ouvrir lui-même.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Une ouverture lente laisse le temps de voir un raccord qui suinte, avant que la pression monte. Ouvrir les deux ensemble marche aussi, mais on repère moins bien d'où vient une fuite.",
+              "relance": "Pourquoi ouvrez-vous les robinets lentement ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le radiateur se remplit, mais le haut reste froid et on entend de l'air. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je laisse : l'air sortira tout seul quand le radiateur chauffera.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'ouvre le purgeur quelques secondes, puis je le referme tout de suite.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "J'ouvre le purgeur, un récipient dessous, jusqu'à ce que l'eau sorte sans air.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je desserre un raccord du radiateur pour faire sortir l'air plus vite.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "On purge par le purgeur, avec un récipient dessous, jusqu'à ce que l'eau sorte sans air. Ouvrir le purgeur quelques secondes peut laisser de l'air dans le radiateur.",
+              "relance": "Comment savez-vous que le radiateur est bien purgé ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Le radiateur est purgé. **Que contrôlez-vous** sur **la chaudière** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : je n'ai pas touché à la chaudière, donc je n'ai rien à vérifier.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "La pression : si l'aiguille est sous la zone verte, je remplis lentement.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je regarde le manomètre : si la pression est basse, je préviens le client.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je remplis le circuit jusqu'en haut du manomètre, pour avoir de la marge.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                }
+              ],
+              "explication": "Une purge fait baisser la pression : on la contrôle et on remplit lentement jusqu'à la zone verte de la notice. Prévenir le client sans remplir laisse le travail inachevé.",
+              "relance": "Pourquoi regardez-vous la pression après une purge ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Le radiateur est chaud. Que faites-vous des **raccords** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien : je les ai déjà contrôlés à froid, ils n'ont pas changé.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je regarde les raccords à l'œil, de près.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Je serre tous les écrous à fond, par précaution, avant de partir.",
+                  "points": 0,
+                  "repere": "c8_erreur"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je repasse un papier sec sous chaque raccord, à chaud.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                }
+              ],
+              "explication": "Quand l'eau chauffe, les pièces se dilatent : un raccord sec à froid peut suinter à chaud. Un coup d'œil sans papier peut manquer une petite goutte.",
+              "relance": "Pourquoi revérifiez-vous les raccords quand le radiateur est chaud ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Tout est contrôlé. **Que laissez-vous** dans la chambre **en partant** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Mes outils et l'ancien radiateur : je les reprendrai demain.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "b",
+                  "texte": "Rien : j'emporte tout, l'eau sale comprise, et j'essuie le parquet.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "La bâche et la cuvette : le client les rangera à son retour.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Rien : j'emporte mes outils et l'ancien radiateur.",
+                  "points": 1,
+                  "repere": null
+                }
+              ],
+              "explication": "Le client retrouve sa chambre propre, sans eau sale ni outils : c'est la marque d'un travail soigné. Emporter le matériel sans essuyer le sol laisse un reste de chantier.",
+              "relance": "Que vérifiez-vous dans la pièce avant de la quitter ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour **remettre le radiateur** en service, je…",
+              "justes": [
+                {
+                  "texte": "rouvre les robinets lentement et je regarde chaque raccord",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "passe un papier sec sous chaque raccord pour voir la moindre goutte",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "purge le radiateur avec un récipient dessous, jusqu'à ce que l'eau sorte sans air",
+                  "repere": "c8_savoir"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "ouvre les robinets et je regarde si ça coule",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ouvre les robinets en grand d'un coup",
+                  "repere": "c6_raccourci"
+                },
+                {
+                  "texte": "ne regarde pas les raccords : les joints sont neufs",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Avant de partir, je **contrôle aussi**…",
+              "justes": [
+                {
+                  "texte": "la pression sur le manomètre de la chaudière, et je remplis si elle est sous la zone verte",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "les raccords une deuxième fois, quand le radiateur est chaud",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "que le radiateur chauffe bien, en haut comme en bas",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que le radiateur chauffe",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "rien : j'ai déjà tout contrôlé à froid",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "seulement le sol, s'il est mouillé",
+                  "repere": "c6_laisse"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant de quitter** la chambre, je…",
+              "justes": [
+                {
+                  "texte": "emporte mes outils, l'ancien radiateur, la bâche et l'eau sale",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "essuie le parquet et je vérifie qu'il ne reste aucune tache",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "note sur le bon ce que j'ai remplacé et les contrôles faits",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "range mes outils",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "laisse la bâche et la cuvette pour le client",
+                  "repere": "c6_laisse"
+                },
+                {
+                  "texte": "pars sans rien noter",
+                  "repere": "c3_oubli"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Montre au client le manomètre et lui dit ce qu'il doit surveiller les jours suivants.",
+              "repere": "c7_suivi"
+            },
+            {
+              "texte": "Note sur le bon que la pression est à regarder si le chauffage baisse les jours suivants.",
+              "repere": "c6_trace"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je rouvre les robinets lentement, un par un, et je regarde chaque raccord. Je purge ensuite le radiateur avec un récipient dessous. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Les raccords du radiateur neuf sont remontés et les robinets sont fermés. Que faites-vous pour le remettre en service ?",
+                "points": 2
+              },
+              {
+                "id": "b",
+                "texte": "Vous avez fini un travail chez un client. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "La pression de la chaudière est basse. Que faites-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le client demande si le radiateur chauffera ce soir. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le radiateur neuf est vide.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Les raccords sont remontés avec des joints neufs.",
+                "juste": true
+              },
+              {
+                "id": "i3",
+                "texte": "Le client rentre à 17 h.",
+                "juste": false
+              },
+              {
+                "id": "i4",
+                "texte": "Les deux robinets du radiateur sont fermés.",
+                "juste": true
+              },
+              {
+                "id": "i5",
+                "texte": "La chaudière est arrêtée depuis ce matin.",
+                "juste": false
+              },
+              {
+                "id": "i6",
+                "texte": "Les raccords sont déjà bloqués avec du ruban d'étanchéité.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je range mes outils et je pars.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "b",
+                "texte": "Je règle le thermostat au maximum pour tester le radiateur.",
+                "points": 0,
+                "repere": "c6_raccourci"
+              },
+              {
+                "id": "c",
+                "texte": "Je regarde la pression sur le manomètre.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "d",
+                "texte": "Je contrôle la pression et je remplis lentement si elle est sous la zone verte.",
+                "points": 2,
+                "repere": "c6_controle"
+              }
+            ]
+          },
+          "explication": "Un radiateur neuf est vide : on rouvre doucement, on regarde les raccords et on purge. Ensuite on contrôle la pression de la chaudière, qui a baissé."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre remise en service du radiateur, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Rouvrir lentement les deux robinets du radiateur"
+            },
+            {
+              "id": "e2",
+              "texte": "Purger l'air du radiateur avec un récipient dessous"
+            },
+            {
+              "id": "e3",
+              "texte": "Contrôler chaque raccord avec un papier sec"
+            },
+            {
+              "id": "e4",
+              "texte": "Contrôler la pression de la chaudière et remplir si besoin"
+            },
+            {
+              "id": "e5",
+              "texte": "Revérifier les raccords quand le radiateur est chaud"
+            },
+            {
+              "id": "e6",
+              "texte": "Emporter les outils et l'eau sale, essuyer le parquet"
+            },
+            {
+              "id": "e7",
+              "texte": "Noter l'intervention et montrer le travail au client"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e2",
+              "explication": "L'air sort quand l'eau arrive : on purge une fois les robinets rouverts."
+            },
+            {
+              "avant": "e1",
+              "apres": "e3",
+              "explication": "On rouvre l'eau avant de chercher une fuite."
+            },
+            {
+              "avant": "e2",
+              "apres": "e4",
+              "explication": "La purge fait baisser la pression : on la contrôle après."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "Le contrôle à froid vient avant le contrôle à chaud."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On remet la pression dans la zone verte avant de laisser le circuit chauffer."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "On range après le dernier contrôle : en cas de fuite, il faut encore les outils et la bâche."
+            },
+            {
+              "avant": "e6",
+              "apres": "e7",
+              "explication": "On montre au client un chantier propre et fini."
+            }
+          ],
+          "repere_reussite": "c6_controle",
+          "repere_echec": "c6_sans_controle",
+          "reel": {
+            "consigne": "En atelier (20 minutes) : sur un radiateur de démonstration relié à un circuit d'eau, la personne remet en service, purge, contrôle les raccords et la pression, puis range le poste.",
+            "criteres": [
+              {
+                "texte": "Rouvre lentement et contrôle chaque raccord avec un papier sec",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Purge l'air avec un récipient dessous",
+                "repere": "c8_outil"
+              },
+              {
+                "texte": "Contrôle la pression et revérifie les raccords à chaud",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Laisse le poste propre et note l'intervention",
+                "repere": "c6_trace"
+              }
+            ],
+            "bonus": {
+              "texte": "Montre au client le manomètre et ce qu'il doit surveiller",
+              "repere": "c7_suivi"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment contrôlez-vous l'étanchéité** du radiateur ?",
+              "justes": [
+                {
+                  "texte": "Je rouvre lentement les robinets et je regarde chaque raccord.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je passe un papier sec sous chaque raccord.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je revérifie les raccords quand le radiateur est chaud.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde si le sol est mouillé.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je ne regarde pas : les joints sont neufs.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Que contrôlez-vous** sur la **chaudière** avant de partir ?",
+              "justes": [
+                {
+                  "texte": "La pression sur le manomètre.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Si elle est sous la zone verte, je remplis lentement jusqu'à la zone verte.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Que la pression reste stable quand le circuit chauffe.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que la chaudière chauffe.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : je n'ai pas touché à la chaudière.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que **laissez-vous** dans la chambre **en partant** ?",
+              "justes": [
+                {
+                  "texte": "Rien : j'emporte mes outils, l'ancien radiateur et l'eau sale.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je vérifie que le parquet est propre et sec.",
+                  "repere": "c6_regle"
+                },
+                {
+                  "texte": "Je laisse un bon avec ce qui a été fait.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je range mes outils.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "La bâche et la cuvette : le client les rangera.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Montre au client le manomètre et ce qu'il doit surveiller les jours suivants.",
+              "repere": "c7_suivi"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner une check-list de fin d'intervention : étanchéité, purge, pression, propreté, bon d'intervention.",
+        "Faire les premiers contrôles à deux, pour montrer comment passer un papier sec sous un raccord et lire le manomètre."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où vous avez **cherché la cause** d'une panne ou d'une fuite. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Qu'avez-vous vérifié en premier, et pourquoi ?",
+        "Comment avez-vous su que le problème était réglé ?"
+      ],
+      "attendus": [
+        "Décrit des vérifications dans un ordre logique",
+        "Explique ce qui a permis d'écarter ou de confirmer une cause",
+        "Dit comment le résultat a été contrôlé"
+      ],
+      "relance": "Qu'avez-vous éliminé avant de trouver la cause ?",
+      "alternative": "Si vous n'avez jamais travaillé en plomberie : parlez d'une panne ou d'un problème que vous avez cherché à comprendre (appareil, vélo, bricolage)."
+    },
+    {
+      "id": "e2",
+      "competence": "C1",
+      "texte": "Un client n'a plus d'eau chaude. **Comment cherchez-vous** la cause, **étape par étape** ?",
+      "suite": [
+        "Et si l'appareil est une chaudière à gaz ?"
+      ],
+      "attendus": [
+        "Pose des questions et regarde les faits avant de démonter : voyants, code affiché, un seul robinet ou tous",
+        "Vérifie l'alimentation et les réglages simples avant de toucher à l'appareil",
+        "Ne touche pas à la partie gaz sans qualification et sait à qui la passer"
+      ],
+      "relance": "Que faites-vous vous-même, et que laissez-vous à un technicien qualifié gaz ?",
+      "alternative": "Un appareil de votre maison ne marche plus (lave-linge, bouilloire, vélo). Comment cherchez-vous la cause, étape par étape ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C8",
+      "texte": "Parlez d'une **règle de sécurité** que vous appliquez **toujours** sur un chantier. **Pourquoi** cette règle existe-t-elle ?",
+      "suite": [
+        "Que se passe-t-il si on ne l'applique pas ?",
+        "Comment l'avez-vous apprise ?"
+      ],
+      "attendus": [
+        "Cite une règle concrète du métier : eau coupée, courant coupé, protection",
+        "Explique le risque que la règle évite",
+        "Dit comment la règle est appliquée même quand le temps manque"
+      ],
+      "relance": "Quand cette règle est-elle la plus difficile à tenir ?",
+      "alternative": "Si vous n'avez jamais travaillé sur un chantier : parlez d'une règle de sécurité que vous appliquez en bricolage ou dans une activité (échelle, électricité, cuisine)."
+    },
+    {
+      "id": "e4",
+      "competence": "C8",
+      "texte": "Un client vous demande de réparer le brûleur de sa chaudière à gaz. Vous **n'avez pas la qualification gaz**. Que lui répondez-vous ?",
+      "suite": [
+        "Que pouvez-vous faire quand même pour lui ?"
+      ],
+      "attendus": [
+        "Dit clairement que le gaz demande une qualification et qu'il ne le fait pas",
+        "Propose une solution : technicien qualifié, rendez-vous, délai",
+        "Reste poli et explique pourquoi, sans laisser le client sans réponse"
+      ],
+      "relance": "Et si le client insiste en disant que c'est urgent ?",
+      "alternative": "Imaginez qu'on vous demande un travail que vous n'avez pas le droit de faire (une règle, un diplôme). Que répondez-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C7",
+      "texte": "Parlez d'une fois où vous avez **expliqué un problème technique** à une personne qui **ne connaissait pas** le sujet. Comment avez-vous fait ?",
+      "suite": [
+        "Quels mots avez-vous utilisés ?",
+        "Comment avez-vous su qu'elle avait compris ?"
+      ],
+      "attendus": [
+        "Donne l'essentiel d'abord, avec des mots simples",
+        "Utilise un exemple ou montre le problème",
+        "Vérifie que la personne a compris"
+      ],
+      "relance": "Quels termes techniques avez-vous évités ?",
+      "alternative": "Si vous n'avez jamais travaillé chez des clients : parlez d'une fois où vous avez expliqué quelque chose de technique à quelqu'un (études, association, bricolage)."
+    },
+    {
+      "id": "e6",
+      "competence": "C7",
+      "texte": "Vous avez trois dépannages aujourd'hui. Le premier dure **plus longtemps que prévu**. Que faites-vous pour le **client suivant** ?",
+      "suite": [
+        "Que lui dites-vous, mot pour mot ?"
+      ],
+      "attendus": [
+        "Prévient le client suivant dès que le retard est connu",
+        "Donne une nouvelle heure réaliste",
+        "Propose une solution si le client ne peut pas attendre : autre créneau, collègue"
+      ],
+      "relance": "Et si le client suivant a une fuite qui continue de couler ?",
+      "alternative": "Imaginez trois rendez-vous dans la journée (travail, études, association) et un premier qui déborde. Que faites-vous pour les suivants ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C6",
+      "texte": "Parlez d'un travail que vous avez **dû reprendre** parce qu'une erreur avait été laissée. **Que s'était-il passé** ?",
+      "suite": [
+        "Comment avez-vous découvert l'erreur ?",
+        "Qu'avez-vous changé ensuite ?"
+      ],
+      "attendus": [
+        "Décrit l'erreur sans la minimiser",
+        "Dit comment elle a été trouvée et corrigée",
+        "Dit ce qu'il contrôle maintenant pour éviter qu'elle revienne"
+      ],
+      "relance": "Qui avez-vous prévenu ?",
+      "alternative": "Si vous n'avez jamais travaillé sur un chantier : parlez d'un travail (bricolage, études, association) que vous avez dû refaire à cause d'une erreur."
+    },
+    {
+      "id": "e8",
+      "competence": "C6",
+      "texte": "Vous terminez un dépannage chez un client. Que faites-vous **avant de partir** ?",
+      "suite": [],
+      "attendus": [
+        "Contrôle l'étanchéité : eau ouverte, papier sec, attente de quelques minutes",
+        "Range et nettoie : outils, déchets, sol",
+        "Explique le travail au client et note l'intervention"
+      ],
+      "relance": "Comment savez-vous que vous pouvez partir ?",
+      "alternative": "Quand vous terminez un travail chez quelqu'un (bricolage, peinture, déménagement), que faites-vous avant de partir ?"
+    }
+  ],
+  "_pv": "c0da515ff9"
+}

@@ -1,0 +1,2635 @@
+{
+  "schema": "ci5p-pack/2",
+  "id": "testeur",
+  "version": "2026.10",
+  "nom": "Testeur / Testeuse logiciel",
+  "secteur": "numerique",
+  "alias": [
+    "testeur",
+    "testeuse",
+    "testeur logiciel",
+    "testeur QA",
+    "analyste test",
+    "ingénieur qualité logicielle",
+    "recette",
+    "test fonctionnel",
+    "assurance qualité logicielle"
+  ],
+  "resume": "Teste les nouvelles versions d'une application, décrit les anomalies pour les développeurs et vérifie que tout fonctionne avant chaque livraison.",
+  "contexte": "Une équipe de dix personnes qui livre chaque mois une nouvelle version de l'application mobile d'une banque, testée sur un environnement de recette avec des comptes fictifs.",
+  "cadre": "",
+  "competences": [
+    {
+      "code": "C6",
+      "titre": "Préparer des cas de test justes à partir de la spécification",
+      "pourquoi": "Un cas de test faux laisse passer un vrai défaut ou fait perdre du temps à l'équipe : chaque résultat attendu doit suivre la spécification.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Le plan de test de l'écran « Nouveau virement »",
+        "texte": "Lundi matin, vous préparez les tests de l'écran « Nouveau virement » pour la version de ce mois. La spécification de l'écran est ci-dessous. Pour chaque champ, vous choisissez des valeurs à tester, surtout aux limites, puis vous écrivez le résultat attendu. Un collègue a déjà commencé un plan de test : vous le relisez avant de l'exécuter.",
+        "document": {
+          "type": "tableau",
+          "titre": "Spécification de l'écran « Nouveau virement » (extrait)",
+          "colonnes": [
+            "Champ",
+            "Règle",
+            "Comportement attendu"
+          ],
+          "lignes": [
+            [
+              "Montant",
+              "De 1,00 € à 2 000,00 €, bornes incluses",
+              "Hors de ces limites : message « Montant non autorisé »"
+            ],
+            [
+              "Libellé",
+              "Facultatif. 30 caractères maximum",
+              "Au-delà de 30 caractères : la saisie s'arrête au 30e caractère"
+            ],
+            [
+              "Bénéficiaire",
+              "Obligatoire. Choisi dans la liste enregistrée",
+              "Aucun bénéficiaire choisi : le bouton « Valider » reste grisé"
+            ],
+            [
+              "Date d'exécution",
+              "Aujourd'hui ou une date future",
+              "Date passée : message « Date non valide »"
+            ],
+            [
+              "Compte à débiter",
+              "Le solde doit couvrir le montant",
+              "Solde insuffisant : message « Solde insuffisant »"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Pour le champ Montant, quelles valeurs testez-vous **en priorité** pour vérifier **les limites** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "50 € et 100 €, des montants que les clients saisissent souvent.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "1,00 € et 2 000,00 €, sans autre valeur.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "1,00 € et 2 000,00 €, puis 0,99 € et 2 000,01 €.",
+                  "points": 2,
+                  "repere": "c8_precision"
+                },
+                {
+                  "id": "d",
+                  "texte": "10 000 €, pour voir si l'application bloque un montant très élevé.",
+                  "points": 0,
+                  "repere": "c6_raccourci"
+                }
+              ],
+              "explication": "Les erreurs se cachent aux limites : on teste chaque limite et la valeur juste à côté. Tester seulement les deux limites ne vérifie pas que 0,99 € et 2 000,01 € sont bien refusés.",
+              "relance": "Comment choisissez-vous les valeurs à tester pour un champ limité ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Vous testez le cas « **aucun bénéficiaire** choisi ». **Que vérifiez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Que le bouton « Valider » reste grisé.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Que le virement n'est pas exécuté.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "c",
+                  "texte": "Que le message « Montant non autorisé » s'affiche.",
+                  "points": 0,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "d",
+                  "texte": "Que le virement est refusé avec un message d'erreur.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "La spécification dit que le bouton reste grisé : c'est ce que l'on vérifie. Constater que le virement n'est pas exécuté est vrai, mais ne confirme pas la règle de l'écran.",
+              "relance": "Où trouvez-vous le résultat attendu d'un cas de test ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Vous voulez tester un libellé avec une apostrophe et un accent. La spécification **n'en parle pas**. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne le teste pas, car ce n'est pas dans la spécification.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je le teste et j'écris comme résultat attendu ce que l'écran affiche.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je le teste et je regarde seulement si l'application se ferme.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Je le teste et je demande à l'auteur de la spécification quel résultat est attendu.",
+                  "points": 2,
+                  "repere": "c5_clarifie"
+                }
+              ],
+              "explication": "Un caractère spécial peut casser un champ : on le teste, puis on demande le résultat attendu à l'auteur au lieu de l'inventer. Regarder seulement si l'application se ferme est un début, mais il manque le résultat attendu.",
+              "relance": "Que faites-vous quand une règle manque dans la spécification ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Vous testez un libellé de **31 caractères**. **Quel résultat attendu** écrivez-vous dans le plan ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Un message d'erreur s'affiche.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "La saisie s'arrête au 30e caractère.",
+                  "points": 2,
+                  "repere": "c6_regle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le libellé est limité à 30 caractères.",
+                  "points": 1,
+                  "repere": null
+                },
+                {
+                  "id": "d",
+                  "texte": "Le virement est refusé.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Le résultat attendu vient de la spécification, sans rien ajouter : la saisie s'arrête au 30e caractère. « Limité à 30 caractères » est juste, mais ne dit pas ce que l'écran fait.",
+              "relance": "Pourquoi écrire dans le résultat attendu le comportement exact de l'écran ?"
+            },
+            {
+              "id": "q5",
+              "texte": "Votre cas avec 2 000,00 € affiche « Montant non autorisé ». Que faites-vous **avant de signaler** une anomalie ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je signale tout de suite une anomalie, car le résultat est différent.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je change le résultat attendu du cas pour qu'il réussisse.",
+                  "points": 0,
+                  "repere": "c6_cache"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je relis la spécification, je vérifie que 2 000,00 € est autorisé, puis je refais le cas.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je refais le cas une deuxième fois.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                }
+              ],
+              "explication": "Avant de signaler, on vérifie que l'écart est réel : on relit la règle (2 000,00 € est autorisé, bornes incluses) et on refait le cas. Refaire le cas seul ne vérifie pas que le résultat attendu est le bon.",
+              "relance": "Comment savez-vous qu'un écart est une vraie anomalie et pas une erreur de votre test ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour tester **les limites** du champ Montant, je choisis…",
+              "justes": [
+                {
+                  "texte": "1,00 € et 2 000,00 €, puis une valeur juste en dessous et une juste au-dessus",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "0,99 €, 1,00 €, 2 000,00 € et 2 000,01 €",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "les deux limites, et la valeur juste à côté de chacune, de chaque côté",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "une valeur très élevée, pour voir si l'application bloque",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "des montants courants, comme 50 € ou 100 €",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "une seule valeur, au hasard",
+                  "repere": "c6_raccourci"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Quand la spécification **ne dit pas** ce qui doit se passer, je…",
+              "justes": [
+                {
+                  "texte": "demande à son auteur quel résultat est attendu",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "pose la question à l'équipe avant d'écrire le résultat attendu",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "teste quand même le cas et je note ma question pour l'auteur",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "regarde comment font d'autres applications",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "écris comme résultat attendu ce que l'écran affiche",
+                  "repere": "c1_suppose"
+                },
+                {
+                  "texte": "ne teste pas ce cas",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant d'exécuter** le plan de test d'un collègue, je…",
+              "justes": [
+                {
+                  "texte": "compare chaque résultat attendu à la spécification",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "vérifie que chaque règle de la spécification a au moins un cas",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "signale à mon collègue les lignes qui ne suivent pas la spécification",
+                  "repere": "c4_informe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lis le plan en entier",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'exécute tel quel, car il est déjà écrit",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "supprime les lignes que je ne comprends pas",
+                  "repere": "c6_cache"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de noter, pour chaque cas, la ligne de la spécification qu'il vérifie.",
+              "repere": "c6_trace"
+            },
+            {
+              "texte": "Ajoute, pour chaque champ, un cas « champ vide » et un cas avec un caractère spécial.",
+              "repere": "c6_controle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je mets un montant plus grand que le solde du compte, par exemple 150 € pour un solde de 100 €. Comme résultat attendu, j'écris le message prévu par la spécification. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Vous testez le montant maximum d'un virement. Quel cas préparez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous testez la règle « le solde doit couvrir le montant ». Quel cas de test préparez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Vous préparez un cas de test pour l'écran « Nouveau virement ». Que notez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "d",
+                "texte": "Un client se plaint que son solde est faux. Que lui répondez-vous ?",
+                "points": 0
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "La spécification dit que le solde doit couvrir le montant.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le montant maximum d'un virement est de 2 000,00 €.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le message attendu est « Solde insuffisant ».",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le libellé est limité à 30 caractères.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le résultat attendu d'un cas doit venir de la spécification.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le solde du compte de test est de 5 000 €.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je lance le cas et je note « réussi » sans regarder le message.",
+                "points": 0,
+                "repere": "c6_sans_controle"
+              },
+              {
+                "id": "b",
+                "texte": "Je lance le cas et je regarde seulement si l'application se ferme.",
+                "points": 1,
+                "repere": null
+              },
+              {
+                "id": "c",
+                "texte": "Je lance le cas et je compare le message affiché au résultat attendu.",
+                "points": 2,
+                "repere": "c6_controle"
+              },
+              {
+                "id": "d",
+                "texte": "Je change le résultat attendu si le message est différent.",
+                "points": 0,
+                "repere": "c6_cache"
+              }
+            ]
+          },
+          "explication": "La règle de la spécification donne le cas : un montant plus grand que le solde. Le résultat attendu est le message écrit dans la spécification, sans rien ajouter."
+        },
+        "p4": {
+          "type": "reperer",
+          "titre": "Le plan de test commencé par votre collègue",
+          "consigne": "Voici huit lignes du plan de test. Cliquez sur **chaque ligne** dont le résultat attendu **ne suit pas** la spécification.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "T1 — Montant 1,00 € → le virement est accepté",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e2",
+              "texte": "T2 — Montant 0,99 € → message « Montant non autorisé »",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e3",
+              "texte": "T3 — Montant 2 000,00 € → message « Montant non autorisé »",
+              "erreur": true,
+              "explication": "Les bornes sont incluses : 2 000,00 € est autorisé, le virement doit être accepté."
+            },
+            {
+              "id": "e4",
+              "texte": "T4 — Libellé de 31 caractères → la saisie s'arrête au 30e caractère",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e5",
+              "texte": "T5 — Libellé vide → message « Libellé obligatoire »",
+              "erreur": true,
+              "explication": "Le libellé est facultatif : un libellé vide doit être accepté."
+            },
+            {
+              "id": "e6",
+              "texte": "T6 — Date d'exécution d'hier → message « Date non valide »",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e7",
+              "texte": "T7 — Solde de 100 €, montant de 150 € → message « Solde insuffisant »",
+              "erreur": false,
+              "explication": ""
+            },
+            {
+              "id": "e8",
+              "texte": "T8 — Aucun bénéficiaire choisi → le virement est accepté",
+              "erreur": true,
+              "explication": "Le bénéficiaire est obligatoire : sans bénéficiaire, le bouton « Valider » reste grisé."
+            }
+          ],
+          "repere_reussite": "c6_anomalie",
+          "repere_echec": "c6_laisse",
+          "reel": {
+            "consigne": "Relecture de 15 minutes : la personne reçoit la spécification de l'écran et un plan de test de huit lignes (fictif). Elle repère les lignes fausses, puis ajoute deux cas aux limites.",
+            "criteres": [
+              {
+                "texte": "Compare chaque résultat attendu à la spécification",
+                "repere": "c6_controle"
+              },
+              {
+                "texte": "Repère les résultats attendus qui ne suivent pas la spécification",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Choisit des valeurs aux limites, pas seulement des valeurs courantes",
+                "repere": "c8_precision"
+              },
+              {
+                "texte": "Pose une question quand la spécification ne dit rien",
+                "repere": "c5_clarifie"
+              }
+            ],
+            "bonus": {
+              "texte": "Relie chaque cas à la règle de la spécification qu'il vérifie",
+              "repere": "c6_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Quelles valeurs** testez-vous pour le champ Montant ?",
+              "justes": [
+                {
+                  "texte": "1,00 € et 2 000,00 €, puis 0,99 € et 2 000,01 €.",
+                  "repere": "c8_precision"
+                },
+                {
+                  "texte": "Les deux limites et une valeur juste hors limites de chaque côté.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Les limites exactes et les valeurs juste à côté, pas seulement des montants courants.",
+                  "repere": "c6_controle"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Une valeur très basse et une valeur très élevée.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Des montants courants, comme 50 € et 100 €.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que faites-vous quand la spécification **ne dit pas** quel résultat est attendu ?",
+              "justes": [
+                {
+                  "texte": "Je demande à l'auteur de la spécification.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je pose la question à l'équipe avant d'écrire le résultat attendu.",
+                  "repere": "c5_clarifie"
+                },
+                {
+                  "texte": "Je teste quand même et je note ma question pour l'auteur.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je regarde comment font d'autres applications.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'écris comme résultat attendu ce que l'écran affiche.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que faites-vous **avant d'exécuter** le plan de test d'un collègue ?",
+              "justes": [
+                {
+                  "texte": "Je compare chaque résultat attendu à la spécification.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je vérifie que chaque règle de la spécification a un cas.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Je signale à mon collègue les lignes qui ne suivent pas la spécification.",
+                  "repere": "c4_informe"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lis le plan en entier.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je l'exécute tel quel, car il est déjà écrit.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de noter, pour chaque cas, la ligne de la spécification qu'il vérifie.",
+              "repere": "c6_trace"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner la spécification à jour et un plan de test modèle, avec une règle simple : un résultat attendu vient toujours de la spécification.",
+        "Prévoir une relecture de ses premiers plans de test par un collègue expérimenté, ligne par ligne, avec la spécification sous les yeux."
+      ]
+    },
+    {
+      "code": "C1",
+      "titre": "Reproduire et isoler un problème quand « chez moi, ça marche »",
+      "pourquoi": "Un problème que personne ne peut reproduire n'est jamais corrigé : isoler les conditions permet au développeur de le voir, puis de le réparer.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "« Chez moi, ça marche »",
+        "texte": "Mardi, 10 h. Hier, vous avez signalé : « L'application se ferme quand on valide un virement avec un libellé de 30 caractères. » Le développeur répond : « Chez moi, ça marche. » Vous avez un second téléphone sous Android 14 et un autre compte de test, le compte B. Le tableau compare votre essai et celui du développeur.",
+        "document": {
+          "type": "tableau",
+          "titre": "Les deux essais",
+          "colonnes": [
+            "Information",
+            "Votre essai",
+            "Essai du développeur"
+          ],
+          "lignes": [
+            [
+              "Téléphone",
+              "Android 12",
+              "Android 14"
+            ],
+            [
+              "Version de l'application",
+              "3.8.0",
+              "3.8.0"
+            ],
+            [
+              "Compte de test",
+              "Compte A",
+              "Compte B"
+            ],
+            [
+              "Libellé saisi",
+              "30 caractères",
+              "Non précisé"
+            ],
+            [
+              "Résultat",
+              "L'application se ferme (3 essais sur 3)",
+              "Le virement est accepté"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Que faites-vous **en premier** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ferme l'anomalie : le développeur ne constate rien de son côté.",
+                  "points": 0,
+                  "repere": "c1_abandon"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je refais les mêmes étapes sur mon téléphone pour voir si ça plante encore.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je réponds que ça plante chez moi, donc que c'est bien une anomalie.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je demande au développeur de me montrer comment il fait son essai.",
+                  "points": 1,
+                  "repere": "c1_aide"
+                }
+              ],
+              "explication": "Avant de discuter, on vérifie que le problème se reproduit encore chez soi, avec les mêmes étapes. Demander ses conditions au développeur est utile ensuite, mais ne confirme pas votre propre résultat.",
+              "relance": "Comment vérifiez-vous qu'une anomalie existe toujours ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Dans le tableau, le libellé saisi par le développeur est « Non précisé ». **Que lui demandez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Quelles étapes il a suivies pour faire le virement.",
+                  "points": 1,
+                  "repere": "c1_aide"
+                },
+                {
+                  "id": "b",
+                  "texte": "Qu'il refasse son essai jusqu'à ce que l'application se ferme.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "c",
+                  "texte": "S'il est certain de ne pas s'être trompé.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "Quelles étapes il a suivies et quel libellé il a saisi.",
+                  "points": 2,
+                  "repere": "c1_faits"
+                }
+              ],
+              "explication": "Le problème apparaît avec un libellé de 30 caractères : si le développeur a saisi un libellé court, son essai n'est pas le même que le vôtre. Demander seulement les étapes laisse ce point ouvert.",
+              "relance": "Pourquoi faut-il savoir quel libellé le développeur a saisi ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Pour trouver ce qui fait fermer l'application, **comment changez-vous** **les conditions** de votre essai ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je change un seul élément à la fois, d'abord le téléphone, puis le compte.",
+                  "points": 2,
+                  "repere": "c1_etapes"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je change le téléphone, le compte et le libellé en même temps, pour gagner du temps.",
+                  "points": 0,
+                  "repere": "c1_precipite"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je teste sur plusieurs téléphones au hasard, sans noter les résultats.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je change seulement le téléphone, et je ne teste pas le reste.",
+                  "points": 1,
+                  "repere": "c1_etapes"
+                }
+              ],
+              "explication": "En changeant un seul élément à la fois, on sait lequel modifie le résultat. Changer seulement le téléphone est une bonne idée, mais le compte reste possible comme cause.",
+              "relance": "Pourquoi change-t-on un seul élément à la fois ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Sur votre second téléphone (Android 14) avec le compte A, l'application **ne se ferme pas**. Sur votre téléphone avec le compte B, elle se ferme. **Que concluez-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le problème vient de mon téléphone : ce n'est pas une anomalie.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le compte ne change rien au résultat.",
+                  "points": 1,
+                  "repere": "c1_faits"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le plantage semble lié au téléphone ou à la version d'Android, pas au compte.",
+                  "points": 2,
+                  "repere": "c1_cause"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le plantage est lié au libellé de 30 caractères, quel que soit le téléphone.",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                }
+              ],
+              "explication": "Quand on change le téléphone, le résultat change ; quand on change le compte, il ne change pas. Dire seulement que le compte n'a pas d'effet est vrai, mais ne dit pas ce qui compte.",
+              "relance": "Que vous apprend chacun de ces deux essais ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Que faites-vous** des résultats de vos essais ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je ne dis rien de plus : le développeur a écrit que ça marchait chez lui.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                },
+                {
+                  "id": "b",
+                  "texte": "J'écris au développeur : « Ça plante sur le téléphone sous Android 12. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je lui dis qu'il n'a pas testé comme il le fallait et qu'il doit recommencer.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'envoie les essais qui plantent et ceux qui marchent, avec une vidéo de l'écran.",
+                  "points": 2,
+                  "repere": "c4_faits"
+                }
+              ],
+              "explication": "Le développeur a besoin de voir ce qui plante et ce qui marche, avec les conditions de chaque essai. Une phrase seule ne lui permet pas de reproduire le problème.",
+              "relance": "Que doit contenir votre message pour que le développeur puisse reproduire le problème ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Quand le développeur me dit « chez moi, ça marche », **je commence par**…",
+              "justes": [
+                {
+                  "texte": "refaire les mêmes étapes sur mon téléphone pour confirmer le problème",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "vérifier que l'anomalie se reproduit encore chez moi",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "comparer son essai et le mien : téléphone, version, compte, libellé",
+                  "repere": "c1_faits"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "lui demander ce qu'il a fait",
+                  "repere": "c1_aide"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "répondre que c'est lui qui se trompe",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "fermer l'anomalie",
+                  "repere": "c1_abandon"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Pour savoir ce qui provoque le problème, **je change**…",
+              "justes": [
+                {
+                  "texte": "un seul élément à la fois, et je note le résultat de chaque essai",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "d'abord le téléphone, puis le compte, en gardant le reste identique",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "une condition après l'autre, pour voir laquelle change le résultat",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le téléphone, sans essayer le reste",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "plusieurs éléments en même temps, pour aller plus vite",
+                  "repere": "c1_precipite"
+                },
+                {
+                  "texte": "les conditions au hasard, sans rien noter",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Pour que le développeur puisse reproduire le problème, **je lui envoie**…",
+              "justes": [
+                {
+                  "texte": "les étapes, le téléphone et la version d'Android où ça plante",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "les essais qui plantent et ceux qui marchent",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "une vidéo de l'écran pendant l'essai qui plante",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "un message qui dit que ça plante",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "un message qui dit qu'il a mal testé",
+                  "repere": "c4_personne"
+                },
+                {
+                  "texte": "rien de plus, car il a dit que ça marchait chez lui",
+                  "repere": "c4_evite"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de regarder l'essai ensemble, sur son téléphone ou sur le mien.",
+              "repere": "c4_aide"
+            },
+            {
+              "texte": "Propose de noter la version d'Android dans chaque anomalie, pour éviter la question la prochaine fois.",
+              "repere": "c4_regle"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je refais le test avec le même libellé sur un téléphone Android 14, puis avec le compte B. Je vous envoie ensuite le résultat de chaque essai. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le développeur vous demande quand l'anomalie sera corrigée. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le développeur dit « chez moi, ça marche » avec un téléphone Android 14, alors que le vôtre est sous Android 12. Que lui répondez-vous ?",
+                "points": 2
+              },
+              {
+                "id": "c",
+                "texte": "Le développeur vous demande la version de l'application. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le développeur dit « chez moi, ça marche ». Que lui répondez-vous ?",
+                "points": 1
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Le développeur a testé sur Android 14 et vous sur Android 12.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Vous avez signalé l'anomalie hier.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Le développeur n'a pas précisé le libellé qu'il a saisi.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Les deux essais utilisent le même compte de test.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Vous avez un second téléphone sous Android 14 et le compte B.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le développeur a déjà corrigé l'anomalie.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je ferme l'anomalie si le test marche sur Android 14.",
+                "points": 0,
+                "repere": "c1_suppose"
+              },
+              {
+                "id": "b",
+                "texte": "Je compare les résultats et j'écris au développeur dans quelles conditions ça plante.",
+                "points": 2,
+                "repere": "c4_faits"
+              },
+              {
+                "id": "c",
+                "texte": "J'attends sa réponse avant de refaire un essai.",
+                "points": 0,
+                "repere": "c1_abandon"
+              },
+              {
+                "id": "d",
+                "texte": "Je lui envoie seulement le résultat du dernier essai.",
+                "points": 1,
+                "repere": "c3_flou"
+              }
+            ]
+          },
+          "explication": "La réponse tient compte de deux faits : le développeur a testé sur Android 14 et vous sur Android 12, et son libellé n'est pas précisé. On refait le test en changeant un élément à la fois, puis on partage tous les résultats."
+        },
+        "p4": {
+          "type": "ordonner",
+          "titre": "Votre enquête, dans l'ordre",
+          "consigne": "Remettez ces actions **dans l'ordre** où vous les faites.",
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Refaire l'anomalie sur mon téléphone, avec les mêmes étapes et le compte A"
+            },
+            {
+              "id": "e2",
+              "texte": "Écrire les différences entre mon essai et celui du développeur"
+            },
+            {
+              "id": "e3",
+              "texte": "Refaire les mêmes étapes sur le second téléphone, sous Android 14, avec le compte A"
+            },
+            {
+              "id": "e4",
+              "texte": "Refaire les mêmes étapes sur mon téléphone, avec le compte B"
+            },
+            {
+              "id": "e5",
+              "texte": "Comparer les résultats des trois essais"
+            },
+            {
+              "id": "e6",
+              "texte": "Écrire au développeur dans quelles conditions ça plante et dans quelles conditions ça marche"
+            }
+          ],
+          "regles": [
+            {
+              "avant": "e1",
+              "apres": "e3",
+              "explication": "On confirme d'abord le problème de départ : il sert de référence pour juger l'essai sur Android 14."
+            },
+            {
+              "avant": "e1",
+              "apres": "e4",
+              "explication": "Même raison : sans résultat de départ, on ne sait pas ce que le compte B a changé."
+            },
+            {
+              "avant": "e3",
+              "apres": "e5",
+              "explication": "On compare les résultats une fois que l'essai sur Android 14 est fait."
+            },
+            {
+              "avant": "e4",
+              "apres": "e5",
+              "explication": "On compare les résultats une fois que l'essai avec le compte B est fait."
+            },
+            {
+              "avant": "e5",
+              "apres": "e6",
+              "explication": "On écrit au développeur après avoir comparé, pour lui donner une conclusion."
+            },
+            {
+              "avant": "e2",
+              "apres": "e6",
+              "explication": "La liste des différences fait partie du message envoyé au développeur."
+            }
+          ],
+          "repere_reussite": "c1_etapes",
+          "repere_echec": "c1_precipite",
+          "reel": {
+            "consigne": "Jeu de rôle de 15 minutes : une personne joue le développeur qui répond « chez moi, ça marche ». La personne candidate dispose de deux téléphones ou deux navigateurs et d'une application de démonstration avec une anomalie connue. Elle isole le problème, puis écrit son message.",
+            "criteres": [
+              {
+                "texte": "Refait d'abord l'anomalie avant de changer quoi que ce soit",
+                "repere": "c1_faits"
+              },
+              {
+                "texte": "Change un seul élément à la fois",
+                "repere": "c1_etapes"
+              },
+              {
+                "texte": "Note le résultat de chaque essai",
+                "repere": "c6_trace"
+              },
+              {
+                "texte": "Écrit un message factuel, sans mettre en cause le développeur",
+                "repere": "c4_faits"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose une règle : noter la version d'Android dans chaque anomalie",
+              "repere": "c4_regle"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que faites-vous** quand le développeur répond « chez moi, ça marche » ?",
+              "justes": [
+                {
+                  "texte": "Je refais mes étapes pour confirmer que le problème existe encore.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je compare son essai et le mien : téléphone, version, compte, libellé.",
+                  "repere": "c1_faits"
+                },
+                {
+                  "texte": "Je lui demande ses étapes exactes et ses conditions de test.",
+                  "repere": "c1_aide"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je lui demande de refaire son essai.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je lui dis qu'il se trompe.",
+                  "repere": "c4_personne"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "**Comment cherchez-vous** ce qui provoque le problème ?",
+              "justes": [
+                {
+                  "texte": "Je change un seul élément à la fois et je note le résultat.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Je garde les mêmes étapes et je change d'abord le téléphone, puis le compte.",
+                  "repere": "c1_etapes"
+                },
+                {
+                  "texte": "Je compare les essais qui plantent et ceux qui marchent.",
+                  "repere": "c1_cause"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je teste sur un autre téléphone.",
+                  "repere": "c1_etapes"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Je change plusieurs conditions en même temps.",
+                  "repere": "c1_precipite"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "**Que contient** votre message au développeur ?",
+              "justes": [
+                {
+                  "texte": "Les étapes, le téléphone, la version d'Android et la version de l'application.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Ce qui plante et ce qui marche, avec les conditions de chaque essai.",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "Une vidéo de l'écran au moment où l'application se ferme.",
+                  "repere": "c3_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que ça plante sur mon téléphone.",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que le développeur a mal testé.",
+                  "repere": "c4_personne"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de regarder l'essai ensemble, sur son téléphone ou sur le mien.",
+              "repere": "c4_aide"
+            },
+            {
+              "texte": "Propose de noter la version d'Android dans chaque anomalie.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Montrer où trouver la version d'Android et la version de l'application sur chaque téléphone de test, et comment les noter.",
+        "Donner une méthode écrite en trois temps : confirmer le problème, changer un seul élément à la fois, noter chaque essai."
+      ]
+    },
+    {
+      "code": "C3",
+      "titre": "Écrire une fiche d'anomalie que le développeur peut reproduire",
+      "pourquoi": "Une fiche claire permet au développeur de refaire l'essai et de corriger vite ; une fiche floue lui fait perdre du temps ou reste sans réponse.",
+      "niveau_requis": 3,
+      "situation": {
+        "titre": "Un solde qui ne se met pas à jour",
+        "texte": "Mercredi, 14 h. Vous testez la version 3.8.0 de l'application sur un téléphone Android 12, avec le compte de test A, dont le solde est de 500 €. Vous ouvrez « Virements », choisissez le bénéficiaire « Compte épargne test », saisissez 150 € et appuyez sur « Valider ». Le message « Virement effectué » s'affiche, mais le solde reste à 500 €. Après un redémarrage de l'application, il affiche 350 €. Vous obtenez ce résultat à chaque essai. La spécification dit que le solde est mis à jour dès la validation. Vous rédigez la fiche d'anomalie.",
+        "document": {
+          "type": "liste",
+          "titre": "Les rubriques de la fiche d'anomalie de l'équipe",
+          "items": [
+            "Titre : une phrase qui dit ce qui ne va pas et dans quelle situation",
+            "Étapes : les actions à faire, dans l'ordre, pour revoir le problème",
+            "Résultat attendu : ce que prévoit la spécification",
+            "Résultat obtenu : ce que vous constatez",
+            "Environnement : version de l'application, téléphone, version d'Android, compte de test",
+            "Pièces jointes : capture d'écran ou vidéo"
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "**Quel titre** donnez-vous à la fiche ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "URGENT : l'application ne marche plus du tout, à corriger tout de suite.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Problème d'affichage du solde après un virement depuis l'écran « Virements ».",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Virement de 150 € : le solde affiché reste à 500 € jusqu'au redémarrage.",
+                  "points": 2,
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "id": "d",
+                  "texte": "Anomalie trouvée mercredi à 14 h pendant les tests de la version 3.8.0.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                }
+              ],
+              "explication": "Un bon titre dit ce qui ne va pas et dans quelle situation : le développeur comprend le problème avant d'ouvrir la fiche. « Problème d'affichage » est juste, mais ne dit pas ce que l'on voit.",
+              "relance": "Que doit dire le titre d'une fiche d'anomalie ?"
+            },
+            {
+              "id": "q2",
+              "texte": "**Comment écrivez-vous** les étapes pour revoir le problème ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Une action par ligne : ouvrir « Virements », choisir le bénéficiaire, saisir 150 €, valider.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "b",
+                  "texte": "Une seule phrase : « Faire un virement de 150 € vers le compte épargne test, puis regarder le solde. »",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Mon avis sur la cause : « Le solde n'est pas rafraîchi dans le code de l'écran des virements. »",
+                  "points": 0,
+                  "repere": "c1_suppose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Un renvoi : « Mêmes étapes que dans la fiche du mois dernier, avec le compte A. »",
+                  "points": 0,
+                  "repere": "c3_oubli"
+                }
+              ],
+              "explication": "Une action par ligne, dans l'ordre, permet de refaire exactement ce que vous avez fait. Une seule phrase mélange les actions, et le développeur doit deviner l'ordre.",
+              "relance": "Comment écrivez-vous des étapes qu'une autre personne peut refaire sans vous poser de question ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Que mettez-vous dans la rubrique « **Résultat attendu** » ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Le solde affiché reste à 500 € jusqu'au redémarrage, puis passe à 350 €.",
+                  "points": 0,
+                  "repere": "c3_faux"
+                },
+                {
+                  "id": "b",
+                  "texte": "Le virement fonctionne normalement, sans message d'erreur ni blocage.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "Le message « Virement effectué » s'affiche, ce qui montre que le virement a fonctionné.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le solde passe de 500 € à 350 € dès la validation, comme le dit la spécification.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                }
+              ],
+              "explication": "Le résultat attendu vient de la spécification : le solde est mis à jour dès la validation. Écrire « le virement fonctionne » est juste, mais trop vague pour savoir quoi vérifier.",
+              "relance": "D'où vient le résultat attendu que vous écrivez dans une fiche ?"
+            },
+            {
+              "id": "q4",
+              "texte": "Que mettez-vous dans la rubrique « **Environnement** » ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "La version 3.8.0 de l'application et Android 12, sans le compte de test.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "b",
+                  "texte": "La version 3.8.0 de l'application, Android 12 et le compte de test A.",
+                  "points": 2,
+                  "repere": "c3_complet"
+                },
+                {
+                  "id": "c",
+                  "texte": "Mon téléphone, comme dans toutes mes autres fiches d'anomalie de la semaine.",
+                  "points": 0,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "d",
+                  "texte": "Le nom du développeur qui a écrit l'écran des virements et la date de sa dernière modification.",
+                  "points": 0,
+                  "repere": "c3_jargon"
+                }
+              ],
+              "explication": "L'environnement permet au développeur de refaire l'essai dans les mêmes conditions : version, Android et compte. Sans le compte de test, il peut ne pas retrouver le problème.",
+              "relance": "Quelles informations donnez-vous pour que le développeur refasse l'essai dans les mêmes conditions ?"
+            },
+            {
+              "id": "q5",
+              "texte": "**Avant d'envoyer** la fiche, que faites-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'envoie la fiche tout de suite : le développeur comprendra ce que j'ai voulu dire.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je relis la fiche pour corriger les fautes et les mots peu clairs, puis je l'envoie.",
+                  "points": 1,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je suis mes étapes à la lettre pour vérifier qu'on retrouve le même résultat.",
+                  "points": 2,
+                  "repere": "c6_controle"
+                },
+                {
+                  "id": "d",
+                  "texte": "J'ajoute une phrase pour dire que le développeur aurait dû tester ce cas lui-même.",
+                  "points": 0,
+                  "repere": "c4_personne"
+                }
+              ],
+              "explication": "Suivre vos propres étapes à la lettre montre qu'une autre personne pourra les refaire. Relire pour les fautes améliore la forme, mais ne vérifie pas que les étapes sont complètes.",
+              "relance": "Comment vérifiez-vous une fiche avant de l'envoyer ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour écrire **les étapes** de l'anomalie, je…",
+              "justes": [
+                {
+                  "texte": "note une action par ligne, dans l'ordre, avec les valeurs saisies",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "indique le bénéficiaire et le montant de 150 €",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "écris des étapes qu'une personne qui n'était pas là peut refaire",
+                  "repere": "c3_adapte"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "écris ce que j'ai fait en une phrase",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "écris « faire un virement » et le développeur comprendra",
+                  "repere": "c3_flou"
+                },
+                {
+                  "texte": "explique ce que je pense de la cause dans le code",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Dans « Résultat **attendu** » et « Résultat **obtenu** », j'écris…",
+              "justes": [
+                {
+                  "texte": "attendu : le solde passe à 350 € dès la validation ; obtenu : il reste à 500 €",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "ce que dit la spécification d'un côté, ce que je constate de l'autre",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "deux phrases séparées : ce qui devrait se passer et ce qui se passe",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "seulement ce que je constate",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que ça ne marche pas",
+                  "repere": "c3_flou"
+                },
+                {
+                  "texte": "le même texte dans les deux rubriques",
+                  "repere": "c3_faux"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "**Avant d'envoyer** la fiche, je…",
+              "justes": [
+                {
+                  "texte": "refais mes étapes une dernière fois pour vérifier qu'elles marchent",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "joins une capture ou une vidéo de l'écran",
+                  "repere": "c3_trace"
+                },
+                {
+                  "texte": "relis le titre : il dit ce qui ne va pas et dans quelle situation",
+                  "repere": "c3_essentiel"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "relis les fautes",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'envoie sans relire, pour gagner du temps",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "ajoute que le développeur aurait dû le voir",
+                  "repere": "c4_personne"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Précise que le problème arrive à chaque essai.",
+              "repere": "c3_complet"
+            },
+            {
+              "texte": "Note que le solde est juste après un redémarrage, ce qui aide le développeur à chercher la cause.",
+              "repere": "c1_cause"
+            },
+            {
+              "texte": "Indique l'effet pour le client : il peut croire que le virement a échoué et le refaire.",
+              "repere": "c3_complet"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Dans la version 3.8.0, sous Android 12, avec le compte A : après un virement de 150 €, le solde reste à 500 € au lieu de passer à 350 €. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le développeur vous demande si l'anomalie est grave. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Le développeur vous demande de résumer l'anomalie. Que lui écrivez-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Le développeur vous demande comment réparer le solde. Que lui répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Le développeur vous demande dans quelles conditions vous voyez l'anomalie et ce que vous attendiez. Que lui écrivez-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "L'application est en version 3.8.0, sous Android 12, avec le compte A.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "Le bénéficiaire du virement est « Compte épargne test ».",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "La spécification dit que le solde est mis à jour dès la validation.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Le solde reste faux même après un redémarrage de l'application.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le solde du compte A est de 500 € avant le virement de 150 €.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "L'application a refusé le virement.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je n'envoie rien de plus : il retrouvera les étapes lui-même.",
+                "points": 0,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "b",
+                "texte": "J'ajoute les étapes dans l'ordre et une capture ou une vidéo de l'écran.",
+                "points": 2,
+                "repere": "c3_trace"
+              },
+              {
+                "id": "c",
+                "texte": "J'ajoute seulement une capture d'écran, sans les étapes.",
+                "points": 1,
+                "repere": "c3_oubli"
+              },
+              {
+                "id": "d",
+                "texte": "J'ajoute mon avis : « Le développeur a encore cassé l'écran des virements. »",
+                "points": 0,
+                "repere": "c4_personne"
+              }
+            ]
+          },
+          "explication": "Le message donne les conditions, ce que l'on attend et ce que l'on obtient. Les étapes dans l'ordre et une capture permettent ensuite de refaire l'essai sans poser de question."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "Où va chaque information dans la fiche ?",
+          "consigne": "Pour **chaque information**, choisissez **la rubrique** de la fiche où vous l'écrivez.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Étapes"
+            },
+            {
+              "id": "k2",
+              "nom": "Résultat attendu"
+            },
+            {
+              "id": "k3",
+              "nom": "Résultat obtenu"
+            },
+            {
+              "id": "k4",
+              "nom": "Environnement"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "Ouvrir « Virements » et choisir le bénéficiaire « Compte épargne test »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est une action à faire pour revoir le problème."
+            },
+            {
+              "id": "e2",
+              "texte": "Saisir 150 € et appuyer sur « Valider »",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Ce sont des actions, dans l'ordre."
+            },
+            {
+              "id": "e3",
+              "texte": "Le solde passe à 350 € dès la validation",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "C'est ce que prévoit la spécification."
+            },
+            {
+              "id": "e4",
+              "texte": "Le solde reste à 500 € après le message « Virement effectué »",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est ce que vous constatez."
+            },
+            {
+              "id": "e5",
+              "texte": "Après un redémarrage de l'application, le solde affiché est 350 €",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est aussi ce que vous constatez, et non ce que prévoit la spécification."
+            },
+            {
+              "id": "e6",
+              "texte": "Version 3.8.0 de l'application, sous Android 12",
+              "accepte": [
+                "k4"
+              ],
+              "explication": "Ce sont les conditions techniques de l'essai."
+            },
+            {
+              "id": "e7",
+              "texte": "Compte de test A, avec un solde de départ de 500 €",
+              "accepte": [
+                "k4",
+                "k1"
+              ],
+              "explication": "Le compte et son solde de départ sont des conditions de l'essai : on les note dans l'environnement ou au début des étapes."
+            },
+            {
+              "id": "e8",
+              "texte": "Se connecter avec le compte de test A",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "C'est une action à faire avant le virement."
+            }
+          ],
+          "repere_reussite": "c3_complet",
+          "repere_echec": "c3_flou",
+          "reel": {
+            "consigne": "Rédaction de 15 minutes : la personne observe une anomalie sur une application de démonstration (ou des captures fournies) et remplit la fiche d'anomalie : titre, étapes, résultat attendu, résultat obtenu, environnement.",
+            "criteres": [
+              {
+                "texte": "Écrit un titre précis : ce qui ne va pas et dans quelle situation",
+                "repere": "c3_essentiel"
+              },
+              {
+                "texte": "Écrit des étapes dans l'ordre, une action par ligne, avec les valeurs",
+                "repere": "c3_complet"
+              },
+              {
+                "texte": "Sépare le résultat attendu et le résultat obtenu, sans les mélanger",
+                "repere": "c6_anomalie"
+              },
+              {
+                "texte": "Refait ses étapes pour vérifier que la fiche permet de reproduire le problème",
+                "repere": "c6_controle"
+              }
+            ],
+            "bonus": {
+              "texte": "Joint une capture ou une vidéo qui montre le problème",
+              "repere": "c3_trace"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Que contiennent** les étapes de votre fiche ?",
+              "justes": [
+                {
+                  "texte": "Une action par ligne, dans l'ordre, avec les valeurs : bénéficiaire, montant de 150 €.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Tout ce qu'il faut pour refaire l'essai sans me poser de question.",
+                  "repere": "c3_adapte"
+                },
+                {
+                  "texte": "Les écrans et les boutons dans l'ordre : « Virements », bénéficiaire, montant, « Valider ».",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Ce que j'ai fait, en gros.",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Mon avis sur la cause de l'anomalie.",
+                  "repere": "c1_suppose"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que mettez-vous dans le **résultat attendu** et dans le **résultat obtenu** ?",
+              "justes": [
+                {
+                  "texte": "Attendu : le solde passe à 350 € dès la validation. Obtenu : il reste à 500 €.",
+                  "repere": "c3_complet"
+                },
+                {
+                  "texte": "Ce que dit la spécification, puis ce que je constate.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Deux phrases séparées, avec les montants exacts.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Ce que je constate.",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Que ça ne marche pas.",
+                  "repere": "c3_flou"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "Que vérifiez-vous **avant d'envoyer** la fiche ?",
+              "justes": [
+                {
+                  "texte": "Qu'une autre personne peut refaire mes étapes, en les refaisant moi-même.",
+                  "repere": "c6_controle"
+                },
+                {
+                  "texte": "Que le titre dit ce qui ne va pas et dans quelle situation.",
+                  "repere": "c3_essentiel"
+                },
+                {
+                  "texte": "Que l'environnement est complet : version, téléphone, Android, compte.",
+                  "repere": "c3_complet"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Que je n'ai pas fait de fautes.",
+                  "repere": null
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien : le développeur me posera des questions s'il en a.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Joint une capture ou une vidéo de l'écran.",
+              "repere": "c3_trace"
+            },
+            {
+              "texte": "Note que le solde est juste après un redémarrage, ce qui aide à chercher la cause.",
+              "repere": "c1_cause"
+            },
+            {
+              "texte": "Indique l'effet pour le client : il peut croire que le virement a échoué et le refaire.",
+              "repere": "c3_complet"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner un modèle de fiche d'anomalie remplie avec un exemple clair, et montrer ce que le développeur en fait.",
+        "Faire relire ses premières fiches par un développeur, qui dit s'il a pu refaire l'essai sans poser de question."
+      ]
+    },
+    {
+      "code": "C2",
+      "titre": "Prioriser les anomalies avant une livraison",
+      "pourquoi": "Quand le temps manque, tout corriger est impossible : il faut distinguer ce qui empêche le client de faire son opération de ce qui peut attendre.",
+      "niveau_requis": 2,
+      "situation": {
+        "titre": "Vendredi 16 h : la livraison est lundi",
+        "texte": "Vendredi, 16 h. La version 3.9.0 doit être livrée lundi à 9 h. Six anomalies sont ouvertes (voir le tableau). Les développeurs peuvent en corriger deux : vous recevrez les corrections à 18 h et vous aurez deux heures pour les retester et pour vérifier le reste de l'application. Le responsable de l'équipe décide de la livraison. Grille de l'équipe : bloquante = le client ne peut pas terminer une opération, ou un montant est faux ; majeure = une fonction marche mal, mais un contournement existe ; mineure = défaut d'affichage ou de texte, sans effet sur l'opération.",
+        "document": {
+          "type": "tableau",
+          "titre": "Anomalies ouvertes pour la version 3.9.0",
+          "colonnes": [
+            "N°",
+            "Anomalie",
+            "Clients concernés",
+            "Contournement"
+          ],
+          "lignes": [
+            [
+              "1",
+              "Le message d'erreur après un mauvais mot de passe est en anglais",
+              "Les clients qui se trompent de mot de passe",
+              "Sans objet"
+            ],
+            [
+              "2",
+              "Le bouton « Annuler » d'un virement programmé ne répond pas dans la liste",
+              "Les clients qui ont un virement programmé",
+              "Annuler depuis la fiche du virement"
+            ],
+            [
+              "3",
+              "Le bouton « Valider » du virement ne répond plus",
+              "Tous les clients qui font un virement",
+              "Aucun"
+            ],
+            [
+              "4",
+              "Le logo est flou sur l'écran d'accueil de certains téléphones",
+              "Les clients de ces téléphones",
+              "Sans objet"
+            ],
+            [
+              "5",
+              "Un virement programmé est débité deux fois",
+              "Les clients qui programment un virement",
+              "Aucun"
+            ],
+            [
+              "6",
+              "La recherche d'un montant dans l'historique ne trouve rien",
+              "Les clients qui cherchent une opération",
+              "Parcourir la liste à la main"
+            ]
+          ]
+        }
+      },
+      "portes": {
+        "p1": {
+          "questions": [
+            {
+              "id": "q1",
+              "texte": "Les développeurs peuvent corriger **deux anomalies** avant lundi. **Lesquelles** proposez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Les n° 1 et 4 : elles sont les plus rapides à corriger, donc prêtes à 18 h.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "id": "b",
+                  "texte": "Les n° 2 et 3 : elles touchent des clients qui font ou qui annulent un virement.",
+                  "points": 1,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "c",
+                  "texte": "Les n° 3 et 5 : le virement est impossible ou un montant est faux, sans contournement.",
+                  "points": 2,
+                  "repere": "c2_risque"
+                },
+                {
+                  "id": "d",
+                  "texte": "Les n° 1 et 2 : ce sont les deux premières lignes du tableau.",
+                  "points": 0,
+                  "repere": "c2_arrivee"
+                }
+              ],
+              "explication": "Les n° 3 et 5 empêchent un virement ou faussent un montant, sans contournement : elles passent en premier. La n° 2 a un contournement, donc elle vient après.",
+              "relance": "Selon quels critères choisissez-vous les anomalies à corriger en premier ?"
+            },
+            {
+              "id": "q2",
+              "texte": "Le responsable de l'équipe vous demande **pourquoi** vous **n'avez pas choisi** la n° 6, la recherche dans l'historique. Que répondez-vous ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Elle a un contournement : on parcourt la liste à la main. Les n° 3 et 5 n'en ont pas.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je pense qu'elle est moins grave que les n° 3 et 5, c'est mon avis de testeur.",
+                  "points": 1,
+                  "repere": "c3_flou"
+                },
+                {
+                  "id": "c",
+                  "texte": "C'est le rôle des testeurs de choisir : je n'ai pas à justifier mon classement.",
+                  "points": 0,
+                  "repere": "c4_impose"
+                },
+                {
+                  "id": "d",
+                  "texte": "Vous avez raison, je l'ajoute aussi à la liste des corrections prioritaires.",
+                  "points": 0,
+                  "repere": "c4_evite"
+                }
+              ],
+              "explication": "On justifie par des faits : la n° 6 a un contournement, alors que les n° 3 et 5 empêchent un virement ou faussent un montant. Donner seulement son avis ne convainc pas.",
+              "relance": "Comment expliquez-vous un choix de priorité à quelqu'un qui n'est pas d'accord ?"
+            },
+            {
+              "id": "q3",
+              "texte": "Que testez-vous avant la livraison, **en plus** des deux corrections ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Rien d'autre : les développeurs ont déjà testé leurs corrections.",
+                  "points": 0,
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "id": "b",
+                  "texte": "Seulement les deux corrections, pour vérifier qu'elles fonctionnent bien.",
+                  "points": 1,
+                  "repere": "c8_confusion"
+                },
+                {
+                  "id": "c",
+                  "texte": "Toutes les fonctions de l'application, une par une, dans l'ordre des menus.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "d",
+                  "texte": "Les parcours principaux : connexion, solde, virement, pour voir que rien n'est cassé.",
+                  "points": 2,
+                  "repere": "c8_savoir"
+                }
+              ],
+              "explication": "Une correction peut casser autre chose : la non-régression revérifie ce qui marchait déjà, en commençant par les parcours les plus utilisés. Tester seulement les corrections ne vérifie pas le reste.",
+              "relance": "Que vérifie un test de non-régression ?"
+            },
+            {
+              "id": "q4",
+              "texte": "À 19 h, la correction de l'anomalie n° 5 **ne marche pas** : le virement programmé est encore débité deux fois. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "J'attends lundi matin pour en parler, pour ne pas déranger l'équipe pendant le week-end.",
+                  "points": 0,
+                  "repere": "c2_oubli"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je préviens tout de suite le développeur et le responsable, avec les étapes et une capture.",
+                  "points": 2,
+                  "repere": "c2_previent"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je ferme l'anomalie, puisque le développeur m'a dit qu'elle était corrigée vendredi.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je note le résultat du retest dans l'outil de suivi, sans prévenir personne.",
+                  "points": 1,
+                  "repere": "c2_silence"
+                }
+              ],
+              "explication": "La livraison est lundi à 9 h : le développeur et le responsable doivent le savoir tout de suite, avec les faits. Noter le résultat sans prévenir laisse l'équipe découvrir le problème trop tard.",
+              "relance": "Qui prévenez-vous quand un retest échoue ?"
+            },
+            {
+              "id": "q5",
+              "texte": "À 19 h 40, il reste **vingt minutes** de tests prévus. Vous voyez une faute d'orthographe sur un bouton. **Que faites-vous** ?",
+              "options": [
+                {
+                  "id": "a",
+                  "texte": "Je note la faute et je préviens tout de suite le responsable, en arrêtant mes tests.",
+                  "points": 1,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "b",
+                  "texte": "Je cherche d'abord pourquoi la faute est là, avant de continuer mes tests.",
+                  "points": 0,
+                  "repere": "c2_dispersion"
+                },
+                {
+                  "id": "c",
+                  "texte": "Je note la faute avec la gravité « mineure », puis je continue les tests prévus.",
+                  "points": 2,
+                  "repere": "c2_critere"
+                },
+                {
+                  "id": "d",
+                  "texte": "Je ne la note pas : une faute d'orthographe est trop petite pour être signalée.",
+                  "points": 0,
+                  "repere": "c6_laisse"
+                }
+              ],
+              "explication": "Les tests prévus protègent la livraison : on les termine, et on note la faute avec sa gravité pour la traiter plus tard. Arrêter les tests pour la signaler tout de suite fait perdre du temps.",
+              "relance": "Que faites-vous d'un défaut mineur trouvé pendant un test important ?"
+            }
+          ]
+        },
+        "p2": {
+          "debuts": [
+            {
+              "id": "d1",
+              "debut": "Pour choisir les **deux anomalies** à faire corriger, je regarde…",
+              "justes": [
+                {
+                  "texte": "si le client peut terminer son opération et s'il existe un contournement",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "la gravité, le nombre de clients touchés et le contournement",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "d'abord les anomalies qui empêchent un virement ou faussent un montant",
+                  "repere": "c2_risque"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "le nombre de clients touchés",
+                  "repere": "c2_critere"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "l'ordre de la liste",
+                  "repere": "c2_arrivee"
+                },
+                {
+                  "texte": "lesquelles sont les plus rapides à corriger",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "d2",
+              "debut": "Si on me demande **pourquoi** une anomalie **n'est pas corrigée**, je réponds…",
+              "justes": [
+                {
+                  "texte": "qu'elle a un contournement, alors que les anomalies bloquantes n'en ont pas",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "avec les faits : la gravité, les clients touchés et le contournement",
+                  "repere": "c4_faits"
+                },
+                {
+                  "texte": "qu'elle est majeure dans la grille, alors que d'autres sont bloquantes",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "que je la trouve moins grave",
+                  "repere": "c3_flou"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "que c'est ma décision",
+                  "repere": "c4_impose"
+                },
+                {
+                  "texte": "que je l'ajoute aussi, pour éviter de discuter",
+                  "repere": "c4_evite"
+                }
+              ]
+            },
+            {
+              "id": "d3",
+              "debut": "Quand je reçois les corrections à **18 h**, je…",
+              "justes": [
+                {
+                  "texte": "reteste d'abord les anomalies corrigées, puis les parcours principaux : connexion, solde, virement",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "vérifie que les corrections n'ont rien cassé ailleurs",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "note chaque résultat et je préviens le responsable s'il y a un problème",
+                  "repere": "c2_previent"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "reteste seulement les deux anomalies corrigées",
+                  "repere": "c8_confusion"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "ne reteste rien, car les développeurs ont déjà testé",
+                  "repere": "c6_sans_controle"
+                },
+                {
+                  "texte": "attends la livraison pour tester",
+                  "repere": "c2_reactif"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Prépare à l'avance la liste des parcours à vérifier, pour gagner du temps à 18 h.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Prévient le responsable dès qu'une correction échoue, sans attendre la fin des tests.",
+              "repere": "c2_previent"
+            }
+          ]
+        },
+        "p3": {
+          "reponse": "« Je reteste d'abord les anomalies n° 3 et 5. Ensuite, je refais les parcours principaux. Puis je donne au responsable l'état des tests : il décide de la livraison. »",
+          "question": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Le responsable vous demande combien d'anomalies sont ouvertes. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "b",
+                "texte": "Vous recevez des corrections à 18 h. Que faites-vous ?",
+                "points": 1
+              },
+              {
+                "id": "c",
+                "texte": "Les développeurs vous demandent quelle anomalie est la plus rapide à corriger. Que répondez-vous ?",
+                "points": 0
+              },
+              {
+                "id": "d",
+                "texte": "Les corrections des n° 3 et 5 arrivent à 18 h et vous avez deux heures de test. Que faites-vous ?",
+                "points": 2
+              }
+            ]
+          },
+          "indices": {
+            "options": [
+              {
+                "id": "i1",
+                "texte": "Les anomalies n° 3 et 5 sont bloquantes.",
+                "juste": true
+              },
+              {
+                "id": "i2",
+                "texte": "La livraison est prévue mardi à 9 h.",
+                "juste": false
+              },
+              {
+                "id": "i3",
+                "texte": "Vous avez deux heures de test après la réception des corrections.",
+                "juste": true
+              },
+              {
+                "id": "i4",
+                "texte": "Les développeurs peuvent corriger quatre anomalies.",
+                "juste": false
+              },
+              {
+                "id": "i5",
+                "texte": "Le responsable de l'équipe décide de la livraison.",
+                "juste": true
+              },
+              {
+                "id": "i6",
+                "texte": "Le logo est flou sur l'écran d'accueil de certains téléphones.",
+                "juste": false
+              }
+            ]
+          },
+          "suite": {
+            "options": [
+              {
+                "id": "a",
+                "texte": "Je note chaque résultat au fur et à mesure, pour pouvoir informer le responsable.",
+                "points": 2,
+                "repere": "c6_trace"
+              },
+              {
+                "id": "b",
+                "texte": "Je commence à tester une autre fonction sans avoir fini la première.",
+                "points": 0,
+                "repere": "c2_dispersion"
+              },
+              {
+                "id": "c",
+                "texte": "Je note seulement les tests qui échouent.",
+                "points": 1,
+                "repere": "c6_trace"
+              },
+              {
+                "id": "d",
+                "texte": "Je ne note rien : je dirai oralement lundi ce que j'ai vu.",
+                "points": 0,
+                "repere": "c3_oubli"
+              }
+            ]
+          },
+          "explication": "La réponse suit une priorité : d'abord les corrections des anomalies bloquantes, puis le reste de l'application, puis le compte rendu au responsable, qui décide de la livraison."
+        },
+        "p4": {
+          "type": "classer",
+          "titre": "La gravité de chaque anomalie",
+          "consigne": "Avec la **grille** de l'équipe, choisissez la **gravité** de chaque anomalie.",
+          "categories": [
+            {
+              "id": "k1",
+              "nom": "Bloquante"
+            },
+            {
+              "id": "k2",
+              "nom": "Majeure"
+            },
+            {
+              "id": "k3",
+              "nom": "Mineure"
+            }
+          ],
+          "elements": [
+            {
+              "id": "e1",
+              "texte": "N° 1 — Le message d'erreur après un mauvais mot de passe est en anglais",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est un défaut de texte, sans effet sur l'opération."
+            },
+            {
+              "id": "e2",
+              "texte": "N° 2 — Le bouton « Annuler » d'un virement programmé ne répond pas dans la liste (on peut annuler depuis la fiche du virement)",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Une fonction marche mal, mais un contournement existe."
+            },
+            {
+              "id": "e3",
+              "texte": "N° 3 — Le bouton « Valider » du virement ne répond plus (aucun contournement)",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Le client ne peut plus terminer son virement."
+            },
+            {
+              "id": "e4",
+              "texte": "N° 4 — Le logo est flou sur l'écran d'accueil de certains téléphones",
+              "accepte": [
+                "k3"
+              ],
+              "explication": "C'est un défaut d'affichage, sans effet sur l'opération."
+            },
+            {
+              "id": "e5",
+              "texte": "N° 5 — Un virement programmé est débité deux fois (aucun contournement)",
+              "accepte": [
+                "k1"
+              ],
+              "explication": "Un montant est faux : l'anomalie est bloquante."
+            },
+            {
+              "id": "e6",
+              "texte": "N° 6 — La recherche d'un montant dans l'historique ne trouve rien (on peut parcourir la liste à la main)",
+              "accepte": [
+                "k2"
+              ],
+              "explication": "Une fonction marche mal, mais un contournement existe."
+            }
+          ],
+          "repere_reussite": "c2_critere",
+          "repere_echec": null,
+          "reel": {
+            "consigne": "Mise en situation de 15 minutes : la personne reçoit un tableau de six anomalies fictives, la grille de gravité et une contrainte de temps. Elle classe les anomalies, choisit les deux à faire corriger en premier et explique son choix à une personne qui joue le responsable.",
+            "criteres": [
+              {
+                "texte": "Applique la grille de gravité à chaque anomalie",
+                "repere": "c2_critere"
+              },
+              {
+                "texte": "Choisit d'abord celles qui bloquent une opération ou faussent un montant",
+                "repere": "c2_risque"
+              },
+              {
+                "texte": "Tient compte du contournement et du nombre de clients touchés",
+                "repere": "c2_contraintes"
+              },
+              {
+                "texte": "Explique son choix avec des faits, sans imposer sa décision",
+                "repere": "c4_faits"
+              }
+            ],
+            "bonus": {
+              "texte": "Propose de revérifier les parcours principaux après les corrections",
+              "repere": "c2_anticipe"
+            }
+          }
+        },
+        "p5": {
+          "questions": [
+            {
+              "id": "o1",
+              "texte": "**Comment** choisissez-vous les deux anomalies à faire corriger **en premier** ?",
+              "justes": [
+                {
+                  "texte": "Celles qui empêchent un virement ou faussent un montant, sans contournement.",
+                  "repere": "c2_risque"
+                },
+                {
+                  "texte": "Je classe avec la grille : bloquante, majeure, mineure, puis je prends les bloquantes.",
+                  "repere": "c2_critere"
+                },
+                {
+                  "texte": "Je regarde la gravité, les clients touchés et le contournement.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Celles qui touchent le plus de clients.",
+                  "repere": "c2_critere"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Les plus rapides à corriger.",
+                  "repere": "c2_arrivee"
+                }
+              ]
+            },
+            {
+              "id": "o2",
+              "texte": "Que testez-vous avant la livraison, **en plus** des deux corrections ?",
+              "justes": [
+                {
+                  "texte": "Les parcours principaux : connexion, solde, virement.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Que les corrections n'ont rien cassé ailleurs.",
+                  "repere": "c8_savoir"
+                },
+                {
+                  "texte": "Les fonctions proches de l'écran de virement, qui ont pu être touchées.",
+                  "repere": "c8_pourquoi"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Seulement les deux corrections.",
+                  "repere": "c8_confusion"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "Rien d'autre : les développeurs ont déjà testé.",
+                  "repere": "c6_sans_controle"
+                }
+              ]
+            },
+            {
+              "id": "o3",
+              "texte": "À 19 h, une correction **ne marche pas**. Que faites-vous ?",
+              "justes": [
+                {
+                  "texte": "Je préviens tout de suite le développeur, avec les étapes et une capture.",
+                  "repere": "c2_previent"
+                },
+                {
+                  "texte": "Je préviens aussi le responsable, car la livraison de lundi est concernée.",
+                  "repere": "c4_escalade"
+                },
+                {
+                  "texte": "Je rouvre l'anomalie et je note le résultat du retest.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "partielles": [
+                {
+                  "texte": "Je note le résultat dans l'outil de suivi.",
+                  "repere": "c6_trace"
+                }
+              ],
+              "a_eviter": [
+                {
+                  "texte": "J'attends lundi matin pour en parler.",
+                  "repere": "c2_oubli"
+                },
+                {
+                  "texte": "Je ferme l'anomalie.",
+                  "repere": "c6_laisse"
+                }
+              ]
+            }
+          ],
+          "bonus": [
+            {
+              "texte": "Propose de préparer la liste des parcours à vérifier avant 18 h, pour gagner du temps.",
+              "repere": "c2_anticipe"
+            },
+            {
+              "texte": "Propose de signaler à chaque livraison les anomalies restantes et leur gravité.",
+              "repere": "c4_regle"
+            }
+          ]
+        }
+      },
+      "integration": [
+        "Donner par écrit la grille de gravité de l'équipe, avec un exemple pour chaque niveau, et la liste des parcours à revérifier avant chaque livraison.",
+        "Prévoir un binôme les premières livraisons : un testeur expérimenté relit le classement des anomalies et explique ses choix."
+      ]
+    }
+  ],
+  "entretien": [
+    {
+      "id": "e1",
+      "competence": "C6",
+      "texte": "Parlez d'une fois où vous avez **trouvé une erreur** dans un document, un tableau ou un formulaire. **Qu'avez-vous remarqué** ?",
+      "suite": [
+        "Comment avez-vous vérifié que c'était bien une erreur ?",
+        "Qu'avez-vous fait ensuite ?"
+      ],
+      "attendus": [
+        "Décrit un contrôle précis : comparaison avec une règle ou une source",
+        "Dit comment il a confirmé que c'était une vraie erreur",
+        "Dit qui il a prévenu et ce qui a été corrigé"
+      ],
+      "relance": "Qu'est-ce qui vous a fait remarquer cette erreur ?",
+      "alternative": "Si vous n'avez jamais testé de logiciel : parlez d'une erreur trouvée dans un devis, un relevé ou un formulaire (travail, études, association)."
+    },
+    {
+      "id": "e2",
+      "competence": "C6",
+      "texte": "Une spécification dit qu'un champ accepte de **1 à 50** caractères. **Quelles valeurs** testez-vous ?",
+      "suite": [
+        "Que faites-vous si la spécification ne dit pas ce qui doit se passer ?"
+      ],
+      "attendus": [
+        "Cite les limites : 1 et 50 caractères",
+        "Cite les valeurs juste à côté : 0 et 51 caractères",
+        "Pense au champ vide ou à un caractère spécial"
+      ],
+      "relance": "Comment savez-vous quel résultat est attendu pour chaque valeur ?",
+      "alternative": "Un site de réservation limite une réservation de 1 à 8 personnes. Quelles valeurs essayez-vous pour vérifier cette limite ?"
+    },
+    {
+      "id": "e3",
+      "competence": "C1",
+      "texte": "Parlez d'une fois où vous avez **cherché pourquoi** quelque chose ne marchait pas. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Qu'avez-vous changé en premier ?",
+        "Comment avez-vous su que le problème était réglé ?"
+      ],
+      "attendus": [
+        "Décrit des étapes dans un ordre logique",
+        "Change un élément à la fois",
+        "Vérifie que le problème est bien résolu"
+      ],
+      "relance": "Qu'avez-vous noté pendant vos essais ?",
+      "alternative": "Si vous n'avez jamais testé de logiciel : parlez d'un appareil ou d'un outil du quotidien qui ne marchait pas, et de la façon dont vous avez trouvé pourquoi."
+    },
+    {
+      "id": "e4",
+      "competence": "C1",
+      "texte": "Un développeur vous dit « chez moi, ça marche » alors que **vous constatez** le problème. **Que faites-vous** ?",
+      "suite": [
+        "Que lui écrivez-vous ensuite ?"
+      ],
+      "attendus": [
+        "Refait le test pour confirmer le problème",
+        "Compare les conditions : appareil, version, compte",
+        "Reste sur les faits, sans mettre le développeur en cause"
+      ],
+      "relance": "Que faites-vous si le problème n'apparaît plus ?",
+      "alternative": "Un collègue dit « chez moi, ça marche » alors que vous n'y arrivez pas (logiciel, imprimante, formulaire en ligne). Que faites-vous ?"
+    },
+    {
+      "id": "e5",
+      "competence": "C3",
+      "texte": "Parlez d'une fois où vous avez **expliqué un problème** à quelqu'un pour qu'il le règle. **Comment avez-vous procédé** ?",
+      "suite": [
+        "Qu'avez-vous écrit ou montré ?",
+        "Comment avez-vous su que la personne avait compris ?"
+      ],
+      "attendus": [
+        "Donne des faits précis : où, quand, ce qui se passe",
+        "Choisit un message adapté à la personne",
+        "Vérifie que la personne a compris"
+      ],
+      "relance": "Qu'a pu faire la personne grâce à votre message ?",
+      "alternative": "Si vous n'avez jamais testé de logiciel : parlez d'une fois où vous avez signalé une panne ou une erreur à un service (travail, association, vie quotidienne)."
+    },
+    {
+      "id": "e6",
+      "competence": "C3",
+      "texte": "Vous constatez une anomalie dans une application. **Que contient** la fiche que vous écrivez **pour le développeur** ?",
+      "suite": [
+        "Dans quel ordre écrivez-vous ces informations ?"
+      ],
+      "attendus": [
+        "Cite le titre, les étapes, le résultat attendu et le résultat obtenu",
+        "Cite l'environnement : version, appareil, compte",
+        "Écrit des étapes qu'une autre personne peut refaire"
+      ],
+      "relance": "Comment vérifiez-vous que votre fiche est assez claire ?",
+      "alternative": "Vous devez expliquer par écrit à un collègue comment refaire une manipulation (une machine, un formulaire, un outil). Que contient votre message ?"
+    },
+    {
+      "id": "e7",
+      "competence": "C2",
+      "texte": "Parlez d'une fois où vous aviez **trop de choses** à faire pour le temps disponible. Comment avez-vous choisi **par quoi commencer** ?",
+      "suite": [
+        "Qu'avez-vous laissé de côté ?",
+        "Qui avez-vous prévenu ?"
+      ],
+      "attendus": [
+        "Donne un critère clair : gravité, urgence ou échéance",
+        "Dit ce qui a été reporté et pourquoi",
+        "Prévient les personnes concernées"
+      ],
+      "relance": "Que se serait-il passé si vous aviez commencé par autre chose ?",
+      "alternative": "Si vous n'avez jamais testé de logiciel : parlez d'une période chargée (études, association, vie quotidienne) et de la façon dont vous avez choisi vos priorités."
+    },
+    {
+      "id": "e8",
+      "competence": "C2",
+      "texte": "Avant une livraison, dix anomalies sont ouvertes et il reste **peu de temps**. Comment choisissez-vous lesquelles faire corriger **en premier** ?",
+      "suite": [
+        "Que faites-vous des anomalies que vous laissez de côté ?"
+      ],
+      "attendus": [
+        "Cite la gravité pour le client : opération impossible, montant faux",
+        "Tient compte des clients touchés et du contournement",
+        "Informe le responsable, qui décide de la livraison"
+      ],
+      "relance": "Qui décide de livrer ou non ?",
+      "alternative": "Avant une visite, dix défauts sont à réparer dans un local et il reste peu de temps. Comment choisissez-vous les plus importants ?"
+    }
+  ],
+  "_pv": "e792f55b70"
+}

@@ -1,0 +1,194 @@
+KIT EMPLOYEUR — LA MÉTHODE DES 5 PORTES
+Contre-Intuitif · version 5.0 · octobre 2026
+« Changez le test. Pas la personne. »
+
+
+CE QUE CONTIENT CE DOSSIER
+Kit-5-portes-Contre-Intuitif.html ...... l'application du kit (tout se fait dedans)
+Presentation-kit-5-portes.mp4 .......... la vidéo du kit, 2 min 35 (à garder à côté de l'application)
+LISEZ-MOI.txt .......................... ce fichier
+LICENCE.txt ............................ vos droits d'utilisation
+
+
+NOUVEAU DANS LA VERSION 5
+- Une vidéo de 2 min 35 pour tout voir avant de commencer : vous choisissez le métier, le
+  candidat passe l'épreuve, vous lisez les résultats. Elle se lance depuis l'accueil
+  (« Le kit en 2 min 35 »), avec sa transcription. La voix est une voix de synthèse ; les écrans
+  sont ceux du kit, avec des données de démonstration. Gardez le fichier vidéo dans le même
+  dossier que l'application.
+- Un accueil qui vous met en situation : les trois étapes, et tout ce que vous pouvez faire à
+  chacune, avec un bouton pour essayer.
+- Les métiers rangés par domaine, comme des dossiers à ouvrir (12 domaines), et les métiers les
+  plus recherchés en France (enquête BMO 2026) mis en avant. « Décrire mon besoin » reste toujours à portée de main,
+  dans une fenêtre sur le côté.
+- Votre métier manque, pharmacien par exemple ? Il est créé pour vous sous 72 h ouvrées
+  (3 jours ouvrés) après réception de votre demande complète (tous les champs du formulaire
+  « Demander un métier » remplis). Objectif : 100 métiers, ajoutés par lots de 20, sans
+  engagement de date.
+- Les mots clés de chaque question sont surlignés en vert, pour voir d'un coup d'œil ce qui est
+  demandé. Le candidat peut revenir au texte simple dans « Affichage ».
+- Le profil de travail : vous choisissez jusqu'à 3 savoir-être essentiels pour le poste, comme
+  dans une offre de France Travail. Le kit montre, pour chacun, ce que le candidat a fait dans
+  les situations. En option, à la fin de l'épreuve, il peut répondre à quelques phrases
+  « Au travail… » sur ces savoir-être (2 ou 3 par savoir-être), facultatives et jamais notées,
+  affichées à côté. C'est une piste pour l'entretien et pour l'accueil : le profil n'entre pas
+  dans le classement et ne sert pas à écarter une candidature. Aucune question ne porte sur
+  la santé.
+- Le classement des candidats, du niveau prouvé le plus haut au plus bas, avec leur profil de
+  travail à côté.
+- « Méthode et droit » se lit plus facilement : schémas, graphiques et mots clés en couleur.
+  Le guide compte maintenant 49 sources.
+
+DÉJÀ DANS LA VERSION 4
+- Vous choisissez les questions. Pour chaque compétence et chaque porte, vous choisissez les
+  questions posées et leur nombre (porte 1 : de 3 à 10 ; portes 2 et 5 : de 2 à 6 ; une version
+  au choix pour les portes 3 et 4), et les portes proposées (au moins 3, dont une sans écrit).
+  « Autre tirage » change de questions d'un recrutement à l'autre. Toutes les personnes d'un
+  même recrutement ont exactement les mêmes questions, et la note s'adapte à leur nombre.
+- Une banque de questions pour 8 des métiers les plus recherchés en 2026 (enquête BMO de France
+  Travail) : employé polyvalent de restauration, serveur, ouvrier agricole, agent d'entretien,
+  aide à domicile, aide-soignant, employé de libre-service, cuisinier. Pour chaque compétence :
+  10 questions en porte 1, 6 en porte 2, 5 versions des portes 3 et 4, 6 en porte 5 et
+  5 questions d'entretien. D'autres métiers s'ajoutent régulièrement.
+- Vos propres questions : jusqu'à 2 par porte aux portes 2 et 5, et jusqu'à 3 par compétence à
+  l'entretien. Le kit signale toute question qui touche à la santé, un handicap, la famille,
+  l'âge, l'origine, la religion, les opinions ou la vie privée.
+- Votre besoin en une phrase : « un serveur débutant pour le coup de feu, épreuve courte ».
+  Le kit reconnaît le métier et règle le recrutement (compétences, niveau, nombre de questions,
+  questions qui en parlent). Aucune intelligence artificielle : des mots-clés et leurs
+  synonymes, toujours les mêmes, et chaque réglage dit quels mots l'ont déclenché.
+- Chaque réponse reçue garde la trace des questions posées : la correction se fait toujours
+  avec elles. Une fois l'épreuve commencée, les questions sont figées ; pour en changer,
+  dupliquez le recrutement.
+
+DÉJÀ DANS LA VERSION 3
+- Des liens à la place des fichiers : chaque candidat reçoit un lien personnel vers son
+  épreuve, avec l'e-mail déjà écrit. Un lien ouvert à tous peut aussi aller dans une annonce.
+  À la fin, le candidat vous envoie ses réponses en un clic (code CI5Z-…) ; vous l'importez,
+  tout se range tout seul. L'envoi par fichier reste possible.
+- Un lien privé par recrutement, pour retrouver d'un clic tous vos candidats et où ils en sont.
+- La préparation pas à pas : le poste, l'épreuve, l'entretien, les envois, la vérification.
+  Avec la fiche d'entretien à imprimer, et pour chaque candidat une fiche avec ses questions
+  de relance.
+- En option, le « déroulé » de l'épreuve : pour chaque candidat, sa démarche (portes
+  regardées et essayées, réponses changées, retours, relectures), pour préparer des
+  questions sur sa méthode de travail. Le temps n'est jamais mesuré : ni chronomètre, ni
+  durée. Jamais dans la note. Le candidat en est prévenu et peut le refuser en un clic.
+  Jamais pour une personne qui a signalé un besoin d'aménagement.
+- Une application plus simple à lire : pictogrammes, sections repliées, moins de texte à
+  l'écran, sans rien retirer.
+
+DÉJÀ DANS LA VERSION 2
+- Tout se fait à l'écran, dans une seule application : choix du métier, épreuve du candidat,
+  entretien, analyses, décision et retour au candidat.
+- 33 métiers prêts à l'emploi (liste plus bas). Chaque métier a 4 compétences, 4 situations
+  concrètes du métier, les 5 portes avec plusieurs réponses possibles, et un entretien
+  structuré (8 questions par défaut).
+- Les analyses sont faites pour vous : niveau par compétence, ce que la personne a montré,
+  points à vérifier, questions de relance, conseils pour bien l'accueillir, brouillon du
+  retour au candidat, comparaison des candidats et suivi de l'équité entre les portes.
+- Aucune séance d'accompagnement n'est nécessaire : le guide complet est dans l'application,
+  rubrique « Méthode et droit ».
+
+
+DÉMARRER (10 MINUTES)
+1. Décompressez tout le dossier, puis ouvrez « Kit-5-portes-Contre-Intuitif.html » (double-clic).
+   Il s'ouvre dans votre navigateur (Chrome, Edge, Firefox ou Safari récent).
+   Aucune installation, aucun compte. L'application fonctionne sans internet ; seules les
+   épreuves envoyées par lien passent par notre page d'épreuve en ligne.
+2. Accueil → « Le kit en 2 min 35 » : la vidéo de présentation. Puis « Voir un exemple rempli » :
+   un recrutement fictif avec trois candidats, leur classement et leur profil de travail, pour
+   tout découvrir en cinq minutes.
+3. Métiers → choisissez votre métier → « Essayer comme un candidat » : passez l'épreuve
+   vous-même, c'est le meilleur moyen de la comprendre.
+4. « Créer un recrutement » (ou, dans Métiers, « Décrivez votre besoin en une phrase ») :
+   l'onglet « Préparer » vous guide en 6 étapes (le poste, l'épreuve, les questions, l'entretien,
+   les envois, vérifier), avec les e-mails et les questions à envoyer à l'avance.
+5. Onglet « Candidats » : ajoutez chaque personne (un prénom ou un code suffit), puis
+   - « Sur cet écran » : elle passe l'épreuve sur place, sur votre ordinateur ;
+   - « À distance » : vous lui envoyez son lien (l'e-mail est prêt à copier), ou un fichier
+     d'épreuve. Elle vous renvoie ses réponses : un code (CI5Z-…) ou un fichier, que vous
+     importez dans le même onglet.
+6. Pour chaque candidat : onglets « Épreuve », « Entretien », « Analyse », « Décision ».
+   La décision reste la vôtre, avec ses motifs écrits.
+7. Avant le premier recrutement : « Méthode et droit » → « Le droit : check-list ».
+
+Chaque fiche métier et chaque analyse s'imprime ou s'enregistre en PDF depuis l'application.
+
+
+VOS DONNÉES RESTENT CHEZ VOUS
+- L'application enregistre tout dans votre navigateur, sur cet ordinateur. Rien n'est envoyé
+  à Contre-Intuitif.
+- À distance, la page d'épreuve en ligne ne contient que les situations et les questions des
+  métiers. Les réponses restent dans le navigateur du candidat jusqu'à ce qu'il vous les envoie.
+  Notre hébergeur (Shopify) ne reçoit que les données techniques de connexion (adresse IP,
+  navigateur), comme pour toute page web. Aucun outil de mesure d'audience.
+- En fin de recrutement : « Préparer » → « Fin du recrutement » : téléchargez l'archive
+  (réponses, grilles et motifs, sans déroulé ni besoins), puis supprimez le recrutement.
+- Sauvegardez régulièrement : « Données et réglages » → « Sauvegarder dans un fichier ».
+  Rangez ce fichier dans un dossier à accès restreint : il contient les réponses des candidats.
+- Pour changer d'ordinateur ou de navigateur : sauvegardez, puis « Restaurer une sauvegarde »
+  sur l'autre poste.
+- Effacer les données de navigation peut effacer les données du kit : sauvegardez avant.
+- Si vous déplacez ou renommez le fichier de l'application, votre navigateur peut ne plus
+  retrouver vos données : restaurez alors votre dernière sauvegarde.
+
+
+VOTRE MÉTIER N'EST PAS DANS LA LISTE ?
+Dans l'application, « Demander un métier » prépare votre demande. Envoyez-la par la page
+contact du site ou en message privé Instagram. Le métier est créé pour vous sous 72 h ouvrées
+(3 jours ouvrés) après réception de votre demande complète, avec ses 4 situations, ses 5 portes et son
+entretien. Vous recevez un fichier .json à importer : « Données et réglages » → « Importer un
+métier ».
+
+
+LES 33 MÉTIERS, EN 12 DOMAINES
+- Hôtellerie et restauration : Cuisinier / Cuisinière ; Employé polyvalent / Employée
+  polyvalente de restauration ; Serveur / Serveuse.
+- Santé et aide à la personne : Aide à domicile / Auxiliaire de vie ; Aide-soignant /
+  Aide-soignante ; Infirmier / Infirmière.
+- Propreté et sécurité : Agent d'entretien / Agente d'entretien ; Agent de sécurité / Agente de
+  sécurité.
+- Commerce, vente et relation client : Commercial / Commerciale ; Conseiller clientèle /
+  Conseillère clientèle ; Employé de libre-service / Employée de libre-service ; Hôte de caisse
+  / Hôtesse de caisse ; Vendeur / Vendeuse en magasin.
+- Logistique et transport : Cariste ; Chauffeur-livreur / Chauffeuse-livreuse ; Préparateur de
+  commandes / Préparatrice de commandes.
+- Industrie et maintenance : Contrôleur qualité / Contrôleuse qualité ; Opérateur de production
+  / Opératrice de production ; Technicien de maintenance / Technicienne de maintenance.
+- Bâtiment : Électricien / Électricienne du bâtiment ; Maçon / Maçonne ; Plombier-chauffagiste /
+  Plombière-chauffagiste.
+- Administratif et gestion : Assistant administratif / Assistante administrative ; Comptable /
+  Assistant comptable / Assistante comptable ; Gestionnaire de paie.
+- Informatique et données : Data analyst / Analyste de données ; Développeur / Développeuse ;
+  Technicien / Technicienne support informatique ; Testeur / Testeuse logiciel.
+- Communication et management : Chargé de communication / Chargée de communication ; Manager
+  d'équipe / Responsable d'équipe.
+- Agriculture : Ouvrier agricole / Ouvrière agricole.
+- Éducation et animation : Animateur / Animatrice.
+
+
+IMPORTANT
+- Ce kit n'est ni un avis juridique, ni un outil de diagnostic, ni une intelligence
+  artificielle : les calculs suivent des règles fixes, expliquées dans « Méthode et droit » →
+  « Comment les analyses sont calculées ». Faites valider la notice d'information et les
+  durées de conservation par votre DPO.
+- Aucune question sur la santé, un diagnostic, un traitement ou la RQTH. La seule question :
+  « De quoi avez-vous besoin pour que l'entretien se passe bien ? »
+- Les situations donnent elles-mêmes les règles à suivre (« règles de la maison » fictives) :
+  le candidat n'a pas besoin de connaître vos procédures pour répondre.
+- L'épreuve évalue des compétences. Elle ne remplace ni un diplôme, ni une habilitation.
+- La méthode des 5 portes est une proposition, pas encore évaluée par une étude : testez-la
+  avec le pilote de 8 semaines (« Méthode et droit » → « Le pilote de 8 semaines »).
+- Le profil de travail n'est pas un test de personnalité ni un outil de diagnostic : il ne
+  dit rien de la santé, n'entre pas dans le classement et ne sert pas à écarter une
+  candidature. Les phrases « Au travail… » n'ont été ni validées ni étalonnées : les seuils
+  sont des repères fixés par Contre-Intuitif.
+- Le classement aide à décider, il ne décide pas : la décision et ses motifs restent écrits
+  par des personnes.
+- Sources vérifiées du 4 au 7 octobre 2026. Les textes évoluent : vérifiez les liens avant usage.
+- La vidéo est en MP4 (H.264). Si elle ne se lance pas dans l'application, ouvrez le fichier
+  « Presentation-kit-5-portes.mp4 » directement.
+
+LICENCE : voir LICENCE.txt
+© 2026 Contre-Intuitif · TikTok @contreintuitifoff · Instagram @contre.intuitifoff
