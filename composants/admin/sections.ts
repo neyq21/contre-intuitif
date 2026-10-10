@@ -1,0 +1,25 @@
+/** Sections éditables de la base (pas de "use client" : partagé serveur / client). */
+export const SECTIONS_BASE = [
+  { id: "meta", libelle: "Identité", description: "Titre, sous-titre, slogan, version, date.", notes: false },
+  { id: "baremes", libelle: "Barèmes", description: "Seuils et textes des 5 portes, de la variante réelle et de l'entretien.", notes: true },
+  { id: "niveaux", libelle: "Niveaux", description: "Les quatre niveaux.", notes: true },
+  { id: "competences", libelle: "Compétences transverses", description: "C1 à C8 : définitions, ancres, équivalences, pistes.", notes: true },
+  { id: "reperes", libelle: "Repères", description: "Ce que montrent les réponses (+) et les points à vérifier (−).", notes: true },
+  { id: "portes", libelle: "Les cinq portes", description: "Textes candidat et recruteur, durées indicatives.", notes: false },
+  { id: "exemple", libelle: "Exemple des portes", description: "La situation d'exemple du guide.", notes: false },
+  { id: "emails", libelle: "E-mails", description: "Les 8 modèles.", notes: false },
+  { id: "bonus", libelle: "Textes utiles", description: "Paragraphe d'offre, notice RGPD.", notes: false },
+  { id: "guide", libelle: "Guide", description: "Méthode, règles des portes, pilote, FAQ, limites.", notes: false },
+  { id: "sources", libelle: "Sources", description: "Les 49 sources.", notes: false },
+  { id: "checklist", libelle: "Check-list du droit", description: "Avant, pendant, données, décision.", notes: false },
+  { id: "besoins", libelle: "Besoins d'aménagement", description: "La liste proposée aux candidats.", notes: false },
+  { id: "ne_pas_noter", libelle: "Ne pas noter", description: "Ce qui ne se note jamais.", notes: false },
+  { id: "a_eviter", libelle: "Questions à éviter", description: "Et quoi dire à la place.", notes: false },
+  { id: "profils", libelle: "Profils (aides d'accueil)", description: "Autisme, TDAH, dys, HPI, hypersensible.", notes: false },
+  { id: "relances", libelle: "Relances neutres", description: "Les relances de l'entretien.", notes: false },
+  { id: "profil_travail", libelle: "Profil de travail", description: "Dimensions, items « Au travail… », échelle, défauts par métier.", notes: true },
+  { id: "secteurs", libelle: "Secteurs (texte de base)", description: "Copie de référence ; les domaines du catalogue se gèrent dans Catalogue → Domaines.", notes: false },
+  { id: "domaines_a_venir", libelle: "Domaines à venir", description: "Annoncés sur la page Métiers.", notes: false },
+  { id: "catalogue", libelle: "Promesse du catalogue", description: "Objectif, lots, délai, promesse, plus recrutés (texte).", notes: false },
+] as const;
+export type SectionBaseId = (typeof SECTIONS_BASE)[number]["id"];
